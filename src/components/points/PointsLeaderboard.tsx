@@ -24,7 +24,7 @@ export const PointsLeaderboard = () => {
 
   useEffect(() => {
     const loadLeaderboard = async () => {
-      const data = await getLeaderboard(10);
+      const data = await getLeaderboard();
       setLeaderboard(data);
       setLoading(false);
     };

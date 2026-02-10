@@ -21,7 +21,7 @@ export const PointsHistory = () => {
 
   useEffect(() => {
     const loadHistory = async () => {
-      const data = await getPointHistory(20);
+      const data = await getPointHistory();
       setHistory(data);
       setLoading(false);
     };
