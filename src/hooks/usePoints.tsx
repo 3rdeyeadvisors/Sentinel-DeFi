@@ -114,7 +114,7 @@ export const usePoints = () => {
     mutationFn: async ({ actionType, actionId, metadata, pointsOverride }: {
       actionType: PointActionType,
       actionId?: string,
-      metadata?: Record<string, unknown>,
+      metadata?: Record<string, any>,
       pointsOverride?: number
     }) => {
       if (!user) throw new Error('User not authenticated');
@@ -142,7 +142,7 @@ export const usePoints = () => {
   const awardPoints = useCallback(async (
     actionType: PointActionType,
     actionId?: string,
-    metadata?: Record<string, unknown>,
+    metadata?: Record<string, any>,
     pointsOverride?: number
   ) => {
     try {

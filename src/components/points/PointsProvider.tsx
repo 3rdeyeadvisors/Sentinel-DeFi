@@ -10,7 +10,7 @@ interface PointsContextType {
   todayPoints: number;
   loading: boolean;
   daysRemaining: number;
-  awardPoints: (actionType: PointActionType, actionId?: string, metadata?: Record<string, any>) => Promise<{ success: boolean; pointsAwarded: number }>;
+  awardPoints: (actionType: PointActionType, actionId?: string, metadata?: Record<string, any>) => Promise<{ success: boolean; pointsAwarded: number; message: string }>;
   refreshPoints: () => Promise<void>;
 }
 
@@ -114,7 +114,9 @@ export const PointsProvider = ({ children }: PointsProviderProps) => {
     loading,
     daysRemaining: getDaysRemaining(),
     awardPoints,
-    refreshPoints,
+    refreshPoints: async () => {
+      await refreshPoints();
+    },
   };
 
   return (

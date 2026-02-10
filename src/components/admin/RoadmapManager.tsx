@@ -176,7 +176,7 @@ export const RoadmapManager = () => {
                     {items.length} item{items.length !== 1 ? 's' : ''} • Sorted by votes
                   </CardDescription>
                 </div>
-                <Button variant="outline" size="sm" onClick={refreshItems} disabled={loading}>
+                <Button variant="outline" size="sm" onClick={() => refreshItems()} disabled={loading}>
                   {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <ArrowUpDown className="w-4 h-4" />}
                 </Button>
               </div>
