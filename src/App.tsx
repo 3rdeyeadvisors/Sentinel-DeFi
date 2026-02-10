@@ -21,6 +21,7 @@ import ReloadPrompt from "./components/pwa/ReloadPrompt";
 const Index = lazy(() => import("./pages/Index"));
 const Subscription = lazy(() => import("./pages/Subscription"));
 const Philosophy = lazy(() => import("./pages/Philosophy"));
+const OurStory = lazy(() => import("./pages/OurStory"));
 const Courses = lazy(() => import("./pages/Courses"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Resources = lazy(() => import("./pages/Resources"));
@@ -120,6 +121,7 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={getStableKey()}>
         <Route path="/" element={<PageTransition><Index /></PageTransition>} />
         <Route path="/philosophy" element={<PageTransition><Philosophy /></PageTransition>} />
+        <Route path="/our-story" element={<PageTransition><OurStory /></PageTransition>} />
         <Route path="/courses" element={<PageTransition><Courses /></PageTransition>} />
         <Route path="/courses/:courseId" element={<PageTransition><CourseDetail /></PageTransition>} />
         <Route path="/courses/:courseId/module/:moduleId" element={<PageTransition><ModuleViewer /></PageTransition>} />

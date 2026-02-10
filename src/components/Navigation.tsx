@@ -108,6 +108,7 @@ const Navigation = () => {
   const mobileNavSections = {
     main: [
       { path: "/", label: "Home", icon: Home },
+      { path: "/our-story", label: "Our Story", icon: FileText },
       { path: "/philosophy", label: "Philosophy", icon: Lightbulb },
       { path: "/store", label: "Store", icon: Package },
       { path: "/vault-access", label: "Vault Access", icon: Vault },
@@ -171,12 +172,24 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border pt-[env(safe-area-inset-top)]">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo/Brand */}
-          <Link to="/" className="flex items-center gap-2 group min-h-[44px]" aria-label="3rdeyeadvisors home">
-            <div className="text-lg md:text-xl font-consciousness font-bold text-primary whitespace-nowrap group-hover:text-primary-glow transition-all duration-300">
-              3rdeyeadvisors
-            </div>
-          </Link>
+          <div className="flex items-center">
+            {/* Our Story Button (Desktop) */}
+            <Link
+              to="/our-story"
+              className={`hidden md:flex items-center text-sm font-consciousness transition-all duration-cosmic hover:text-primary whitespace-nowrap min-h-[44px] mr-6 ${
+                isActive("/our-story") ? "text-primary font-medium" : "text-muted-foreground"
+              }`}
+            >
+              Our Story
+            </Link>
+
+            {/* Logo/Brand */}
+            <Link to="/" className="flex items-center gap-2 group min-h-[44px]" aria-label="Nina Armend home">
+              <div className="text-lg md:text-xl font-consciousness font-bold text-primary whitespace-nowrap group-hover:text-primary-glow transition-all duration-300">
+                Nina Armend
+              </div>
+            </Link>
+          </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-end flex-1 ml-8 gap-1 lg:gap-4 xl:gap-6">
@@ -390,7 +403,7 @@ const Navigation = () => {
               ) : (
                 <div className="p-4 border-b border-border/50 bg-gradient-to-b from-primary/5 to-transparent">
                   <div className="text-center space-y-3">
-                    <p className="text-sm font-medium text-foreground">Welcome to 3rdeyeadvisors</p>
+                    <p className="text-sm font-medium text-foreground">Welcome to Nina Armend</p>
                     <Button asChild className="w-full">
                       <Link to="/auth" className="flex items-center justify-center gap-2">
                         <LogIn className="w-4 h-4" />
