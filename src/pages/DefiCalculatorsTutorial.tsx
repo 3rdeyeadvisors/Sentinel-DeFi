@@ -162,7 +162,7 @@ const DefiCalculatorsTutorial = () => {
       icon: AlertTriangle,
       duration: "5 min",
       content: {
-        overview: "Learn to calculate and understand impermanent loss - the hidden risk in liquidity providing.",
+        overview: "Learn to calculate and understand impermanent loss: the hidden risk in liquidity providing.",
         whatIsIL: {
           definition: "The temporary loss of funds when providing liquidity to volatile trading pairs",
           occurs: "When token prices diverge significantly from initial ratio",
@@ -201,7 +201,7 @@ const DefiCalculatorsTutorial = () => {
             tokenA: "0%",
             tokenB: "0%",
             il: "0%",
-            meaning: "No impermanent loss - perfect scenario"
+            meaning: "No impermanent loss: perfect scenario"
           },
           {
             scenario: "Moderate Divergence",

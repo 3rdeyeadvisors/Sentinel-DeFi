@@ -279,7 +279,7 @@ const StripeDiagnostic = () => {
                       <div className="mt-2 space-y-1 pl-4">
                         {product.variants?.slice(0, 5).map((variant: any, idx: number) => (
                           <div key={idx} className="text-xs text-muted-foreground">
-                            • {variant.title} - ${variant.price}
+                            • {variant.title}: ${variant.price}
                           </div>
                         ))}
                         {product.variants?.length > 5 && (

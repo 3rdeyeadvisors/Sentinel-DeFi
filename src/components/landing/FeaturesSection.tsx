@@ -1,80 +1,89 @@
-import { ShieldCheck, Cpu, BarChart3, Fingerprint, LucideIcon } from 'lucide-react';
+import { BookOpen, Video, Trophy, Users, Zap, Shield } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
-import GlowCard from './GlowCard';
-import { useStaggeredAnimation } from '@/hooks/useScrollAnimation';
-import { useGalaxySounds } from '@/hooks/useGalaxySounds';
 
-interface Feature {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
-
-const features: Feature[] = [
+const offerings = [
   {
-    icon: ShieldCheck,
-    title: "Protocol Auditing",
-    description: "Deep-dive technical analysis of smart contract security and risk parameters."
+    icon: BookOpen,
+    label: "Structured Courses",
+    headline: "Zero to DeFi in weeks, not years",
+    body: "Five complete courses built for beginners. Start with how a blockchain works and finish understanding yield farming, staking, and protocol governance.",
+    accent: "violet"
   },
   {
-    icon: Cpu,
-    title: "Yield Optimization",
-    description: "Advanced strategies for algorithmic capital allocation and liquidity provision."
+    icon: Video,
+    label: "Step-by-Step Tutorials",
+    headline: "Follow along. Do it live. Get it done.",
+    body: "Twelve hands-on tutorials walk you through real actions: setting up your first wallet, making your first swap, reading on-chain data without getting lost.",
+    accent: "blue"
   },
   {
-    icon: Fingerprint,
-    title: "Risk Mitigation",
-    description: "Institutional-grade frameworks for identifying and neutralizing systemic DeFi risks."
+    icon: Trophy,
+    label: "Quizzes and Badges",
+    headline: "Prove what you know. Earn what you deserve.",
+    body: "Every module has a quiz. Pass it and earn a badge. Build a track record of verified knowledge that you actually own.",
+    accent: "amber"
   },
   {
-    icon: BarChart3,
-    title: "Capital Efficiency",
-    description: "Maximizing ROI through sophisticated cross-chain architectural understanding."
+    icon: Shield,
+    label: "Security Training",
+    headline: "The one thing most courses skip entirely",
+    body: "Scam identification, wallet security, smart contract risk, rug pull patterns. The skills that protect your capital before you ever deploy it.",
+    accent: "green"
+  },
+  {
+    icon: Users,
+    label: "Community Powered",
+    headline: "Learn with people who are figuring it out too",
+    body: "Comments, Q&A, discussions, and ratings on every piece of content. The community votes on the roadmap. You help build what comes next.",
+    accent: "violet"
+  },
+  {
+    icon: Zap,
+    label: "Orion AI Assistant",
+    headline: "Ask anything. Get a straight answer.",
+    body: "Orion is our built-in AI tutor. Ask it to explain a concept in simpler terms, quiz you on what you just learned, or help you understand a protocol.",
+    accent: "purple"
   }
 ];
 
-const FeaturesSection = () => {
-  const { containerRef, isItemVisible } = useStaggeredAnimation(features.length, 150);
-  const { playWhoosh } = useGalaxySounds();
+const accentMap: Record<string, string> = {
+  violet: "border-violet-500/30 bg-violet-500/5 text-violet-400",
+  blue: "border-blue-500/30 bg-blue-500/5 text-blue-400",
+  amber: "border-amber-500/30 bg-amber-500/5 text-amber-400",
+  green: "border-emerald-500/30 bg-emerald-500/5 text-emerald-400",
+  purple: "border-purple-500/30 bg-purple-500/5 text-purple-400",
+};
 
+const FeaturesSection = () => {
   return (
-    <section className="py-10 md:py-14 lg:py-20 relative">
+    <section className="py-16 md:py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <AnimatedSection className="text-center mb-10 md:mb-16">
-          <span className="inline-block text-xs md:text-sm uppercase tracking-[0.4em] text-primary font-semibold mb-4">
-            Core Competencies
-          </span>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-consciousness font-bold text-foreground mb-6">
-            Elite DeFi Capabilities
+        <AnimatedSection animation="fade-up" className="text-center mb-14">
+          <span className="inline-block font-body text-xs uppercase tracking-widest text-violet-400 mb-4">What Is Inside</span>
+          <h2 className="font-consciousness text-3xl md:text-5xl font-bold text-white mb-5">
+            One Platform. Everything You Need.
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground font-consciousness max-w-3xl mx-auto opacity-80">
-            Providing the technical foundation and strategic intelligence required for sophisticated decentralized finance operations.
+          <p className="font-body text-lg text-white/50 max-w-2xl mx-auto">
+            Not a YouTube channel. Not a newsletter. A structured education system built to take you from confused to capable.
           </p>
         </AnimatedSection>
 
-        <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
-          {features.map((feature, index) => (
-            <GlowCard 
-              key={feature.title}
-              delay={index * 100}
-              isVisible={isItemVisible(index)}
-            >
-              <div
-                className="p-4 md:p-5 lg:p-6 flex flex-col items-center text-center h-full cursor-pointer"
-                onMouseEnter={playWhoosh}
-              >
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                  <feature.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {offerings.map((item, index) => {
+            const accent = accentMap[item.accent] || accentMap.violet;
+            return (
+              <AnimatedSection key={item.label} animation="fade-up" delay={index * 80}>
+                <div className="group h-full p-6 rounded-2xl border border-white/8 bg-white/3 hover:border-violet-500/30 hover:bg-violet-500/5 transition-all duration-300 backdrop-blur-sm">
+                  <div className={`inline-flex p-2.5 rounded-xl border mb-4 ${accent}`}>
+                    <item.icon className="w-5 h-5" />
+                  </div>
+                  <p className="font-body text-xs uppercase tracking-widest text-white/40 mb-1">{item.label}</p>
+                  <h3 className="font-consciousness text-lg font-semibold text-white mb-3 leading-snug">{item.headline}</h3>
+                  <p className="font-body text-sm text-white/50 leading-relaxed">{item.body}</p>
                 </div>
-                <h3 className="text-base md:text-lg font-consciousness font-semibold text-foreground mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-muted-foreground font-consciousness leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </GlowCard>
-          ))}
+              </AnimatedSection>
+            );
+          })}
         </div>
       </div>
     </section>

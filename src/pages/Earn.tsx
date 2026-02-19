@@ -129,7 +129,7 @@ const Earn = () => {
       try {
         await navigator.share({
           title: "Join 3rdeyeadvisors",
-          text: "Learn DeFi with 3rdeyeadvisors - Start your free trial today!",
+          text: "Learn DeFi with 3rdeyeadvisors: Start your free trial today!",
           url: referralLink,
         });
       } catch {
@@ -216,7 +216,7 @@ const Earn = () => {
   return (
     <>
       <SEO
-        title="Earn with 3EA - Up to 60% Commission Program"
+        title="Earn with 3EA: Up to 60% Commission Program"
         description={`Earn up to 60% commission by sharing 3rdeyeadvisors. Refer friends and earn $${COMMISSIONS.monthly} to $${COMMISSIONS.annual} per subscription.`}
         keywords="referral program, earn crypto, affiliate program, defi education"
       />
@@ -233,7 +233,7 @@ const Earn = () => {
               Earn Up to 60% Commission
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
-              Share 3rdeyeadvisors and earn ${COMMISSIONS.monthly} - ${COMMISSIONS.annual} per referral
+              Share 3rdeyeadvisors and earn ${COMMISSIONS.monthly} to ${COMMISSIONS.annual} per referral
             </p>
           </div>
 
@@ -268,7 +268,7 @@ const Earn = () => {
                   </div>
                   <h3 className="font-semibold mb-2">3. You Get Paid</h3>
                   <p className="text-sm text-foreground/70">
-                    Earn {Math.round(COMMISSION_RATES.monthly * 100)}%-{Math.round(COMMISSION_RATES.annual * 100)}% commission paid in crypto or Zelle
+                    Earn {Math.round(COMMISSION_RATES.monthly * 100)}% to {Math.round(COMMISSION_RATES.annual * 100)}% commission paid in crypto or Zelle
                   </p>
                 </div>
               </div>

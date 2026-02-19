@@ -254,10 +254,10 @@ const PortfolioTrackingTutorial = () => {
             <CardContent className="space-y-2 text-sm">
               <p>Use clear wallet labels to track strategy:</p>
               <ul className="space-y-1 ml-4 text-muted-foreground">
-                <li>• "Conservative Stables" - Low-risk stable farming</li>
-                <li>• "High Yield Farming" - Aggressive strategies</li>
-                <li>• "Long-term Holdings" - Buy and hold positions</li>
-                <li>• "Trading Wallet" - Active trading</li>
+                <li>• "Conservative Stables": Low-risk stable farming</li>
+                <li>• "High Yield Farming": Aggressive strategies</li>
+                <li>• "Long-term Holdings": Buy and hold positions</li>
+                <li>• "Trading Wallet": Active trading</li>
               </ul>
             </CardContent>
           </Card>

@@ -910,7 +910,7 @@ const EmailLogsAdmin = () => {
                               </div>
                             </div>
                             <span className="text-xs text-muted-foreground">
-                              {new Date(lastLog.created_at).toLocaleDateString()} - {new Date(firstLog.created_at).toLocaleDateString()}
+                              {new Date(lastLog.created_at).toLocaleDateString()} to {new Date(firstLog.created_at).toLocaleDateString()}
                             </span>
                           </div>
                         </AccordionTrigger>

@@ -61,7 +61,7 @@ const RwaOvertakesDex2025 = () => {
                   <strong className="text-foreground">Something remarkable happened in DeFi this December.</strong> According to DefiLlama's category rankings, Real World Assets (RWA) have officially surpassed Decentralized Exchanges (DEXs) in Total Value Locked for the first time in the history of decentralized finance.
                 </BlogParagraph>
                 <BlogParagraph className="text-lg">
-                  This isn't just a statistical curiosity—it represents a fundamental shift in what capital is flowing into DeFi and why. For years, DEXs like Uniswap, Curve, and SushiSwap were the beating heart of DeFi activity. Now, tokenized treasuries, real estate, and other traditional assets are commanding more locked capital than the trading infrastructure that defined DeFi's first era.
+                  This isn't just a statistical curiosity: it represents a fundamental shift in what capital is flowing into DeFi and why. For years, DEXs like Uniswap, Curve, and SushiSwap were the beating heart of DeFi activity. Now, tokenized treasuries, real estate, and other traditional assets are commanding more locked capital than the trading infrastructure that defined DeFi's first era.
                 </BlogParagraph>
               </div>
 
@@ -83,8 +83,8 @@ const RwaOvertakesDex2025 = () => {
                   { label: "2. Liquid Staking", description: "$54.85 billion (267 protocols)" },
                   { label: "3. Bridge", description: "$46.39 billion (145 protocols)" },
                   { label: "4. Restaking", description: "$18.86 billion (15 protocols)" },
-                  { label: "5. RWA", description: "$17.15 billion (129 protocols) — +4.85% monthly" },
-                  { label: "6. DEXs", description: "$16.88 billion (1,871 protocols) — +0.04% weekly" }
+                  { label: "5. RWA", description: "$17.15 billion (129 protocols) :  +4.85% monthly" },
+                  { label: "6. DEXs", description: "$16.88 billion (1,871 protocols) :  +0.04% weekly" }
                 ]} />
                 <BlogParagraph>
                   The growth trajectories tell an important story. RWA protocols are experiencing sustained momentum: +1.25% daily, +3.10% weekly, and +4.85% monthly. Meanwhile, DEXs have essentially plateaued with only +0.04% weekly growth despite having over 1,800 protocols competing for market share.
@@ -136,7 +136,7 @@ const RwaOvertakesDex2025 = () => {
               <BlogSection title="What RWA Growth Means for DeFi" icon={Target}>
                 <BlogSubsection title="DeFi Is Becoming Financial Infrastructure">
                   <BlogParagraph>
-                    <strong className="text-foreground">The RWA overtake signals that DeFi is transitioning from an alternative financial system to foundational financial infrastructure.</strong> Instead of competing with traditional finance, DeFi is becoming the rails upon which traditional assets move. This is significant because infrastructure persists—speculative applications come and go, but the plumbing that moves trillions of dollars becomes entrenched and difficult to displace.
+                    <strong className="text-foreground">The RWA overtake signals that DeFi is transitioning from an alternative financial system to foundational financial infrastructure.</strong> Instead of competing with traditional finance, DeFi is becoming the rails upon which traditional assets move. This is significant because infrastructure persists: speculative applications come and go, but the plumbing that moves trillions of dollars becomes entrenched and difficult to displace.
                   </BlogParagraph>
                 </BlogSubsection>
 
@@ -211,11 +211,11 @@ const RwaOvertakesDex2025 = () => {
                 </BlogParagraph>
                 <BlogList items={[
                   { label: "Institutional Validation", description: "When BlackRock, Franklin Templeton, and major banks tokenize assets on public blockchains, it signals that the technology has crossed a threshold of legitimacy." },
-                  { label: "Sustainable Yield", description: "RWA yields come from real economic activity—government interest payments, corporate debt service, real estate income. These sources are more sustainable than token emissions." },
+                  { label: "Sustainable Yield", description: "RWA yields come from real economic activity: government interest payments, corporate debt service, real estate income. These sources are more sustainable than token emissions." },
                   { label: "Regulatory Integration", description: "The growth of compliant RWA platforms suggests that DeFi and traditional finance can coexist within regulatory frameworks." }
                 ]} />
                 <BlogParagraph>
-                  The December 2024 RWA overtake is not the end of DEXs—they remain essential infrastructure for trading. But it marks a pivot point where DeFi's center of gravity shifted from trading crypto assets to integrating with the broader financial system.
+                  The December 2024 RWA overtake is not the end of DEXs: they remain essential infrastructure for trading. But it marks a pivot point where DeFi's center of gravity shifted from trading crypto assets to integrating with the broader financial system.
                 </BlogParagraph>
               </BlogSection>
 

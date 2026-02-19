@@ -101,7 +101,7 @@ const WalletSetupTutorial = () => {
         ],
         warnings: [
           "Only download from metamask.io or official browser stores",
-          "Check the URL carefully - scammers create fake sites",
+          "Check the URL carefully: scammers create fake sites",
           "Verify the extension has millions of users and good ratings"
         ]
       }
@@ -316,7 +316,7 @@ const WalletSetupTutorial = () => {
   return (
     <>
       <SEO 
-        title="DeFi Wallet Setup Tutorial - MetaMask Security Guide"
+        title="DeFi Wallet Setup Tutorial: MetaMask Security Guide"
         description="Complete step-by-step guide to setting up MetaMask wallet safely. Learn wallet security, seed phrase protection, and DeFi best practices for beginners."
         keywords="MetaMask setup, DeFi wallet security, cryptocurrency wallet tutorial, seed phrase backup, blockchain wallet guide, DeFi security"
         url="https://www.the3rdeyeadvisors.com/tutorials/wallet-setup"
@@ -704,7 +704,7 @@ const WalletSetupTutorial = () => {
                     <AlertTriangle className="h-4 w-4 text-destructive" />
                     <AlertDescription className="text-foreground">
                       <div className="space-y-2">
-                        <p className="font-medium text-destructive">Red Flags - Never Trust:</p>
+                        <p className="font-medium text-destructive">Red Flags: Never Trust:</p>
                         <ul className="space-y-1 text-sm">
                           {currentStepData.content.redFlags?.map((flag, index) => (
                             <li key={index} className="flex items-start gap-2">

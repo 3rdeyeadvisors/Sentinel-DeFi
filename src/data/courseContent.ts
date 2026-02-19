@@ -50,7 +50,7 @@ export interface CourseContentData {
   public_release_date?: string | null; // When all subscribers can access
 }
 
-// Course content data - static content for all courses
+// Course content data: static content for all courses
 export const courseContent: CourseContentData[] = [
   {
     id: 1,
@@ -73,26 +73,26 @@ export const courseContent: CourseContentData[] = [
 ## Traditional Banking vs DeFi
 
 ### Traditional Banking 🏦
-- **Centralized**: One institution controls everything
-- **Gatekeepers**: Banks decide who gets loans, accounts, etc.
-- **Fees**: Banks charge for most services
-- **Hours**: Limited by business hours and locations
-- **Trust**: You trust the bank to handle your money
+• **Centralized**: One institution controls everything
+• **Gatekeepers**: Banks decide who gets loans, accounts, etc.
+• **Fees**: Banks charge for most services
+• **Hours**: Limited by business hours and locations
+• **Trust**: You trust the bank to handle your money
 
 ### DeFi 🌐
-- **Decentralized**: No single entity controls the system
-- **Open Access**: Anyone with internet can participate
-- **Lower Fees**: Automated systems reduce costs
-- **24/7**: Always available, never closes
-- **Trustless**: Smart contracts handle transactions automatically
+• **Decentralized**: No single entity controls the system
+• **Open Access**: Anyone with internet can participate
+• **Lower Fees**: Automated systems reduce costs
+• **24/7**: Always available, never closes
+• **Trustless**: Smart contracts handle transactions automatically
 
 ## Why Does This Matter?
 
 Imagine you want to:
-- **Send money** to someone in another country
-- **Earn interest** on your savings
-- **Get a loan** without paperwork
-- **Trade assets** without going through a broker
+• **Send money** to someone in another country
+• **Earn interest** on your savings
+• **Get a loan** without paperwork
+• **Trade assets** without going through a broker
 
 DeFi makes all of this possible **without** traditional financial institutions. It's like having a bank that's run by code instead of people.
 
@@ -126,7 +126,7 @@ DeFi makes all of this possible **without** traditional financial institutions. 
 *Next, we'll explore WHY DeFi exists and what problems it solves.*`,
           quiz: {
             id: "quiz-1-1",
-            title: "What is DeFi? - Knowledge Check",
+            title: "What is DeFi?: Knowledge Check",
             description: "Test your understanding of DeFi basics and how it compares to traditional finance.",
             passingScore: 70,
             timeLimit: 10,
@@ -143,7 +143,7 @@ DeFi makes all of this possible **without** traditional financial institutions. 
                   "Distributed Finance"
                 ],
                 correctAnswers: [1],
-                explanation: "DeFi stands for Decentralized Finance - a financial system that operates without traditional centralized intermediaries like banks.",
+                explanation: "DeFi stands for Decentralized Finance: a financial system that operates without traditional centralized intermediaries like banks.",
                 points: 10
               },
               {
@@ -168,7 +168,7 @@ DeFi makes all of this possible **without** traditional financial institutions. 
                   "The customers collectively",
                   "Centralized institutions like banks",
                   "Smart contracts",
-                  "No one - it's completely decentralized"
+                  "No one: it's completely decentralized"
                 ],
                 correctAnswers: [1],
                 explanation: "Traditional banking is centralized, meaning single institutions (banks) control the system and make decisions about who gets access to financial services.",
@@ -194,7 +194,7 @@ DeFi makes all of this possible **without** traditional financial institutions. 
                   "To replace all forms of currency with cryptocurrency"
                 ],
                 correctAnswers: [1],
-                explanation: "DeFi aims to create an alternative financial system that's more accessible, transparent, and efficient - not to instantly replace all traditional finance.",
+                explanation: "DeFi aims to create an alternative financial system that's more accessible, transparent, and efficient: not to instantly replace all traditional finance.",
                 points: 10
               }
             ]
@@ -215,7 +215,7 @@ DeFi makes all of this possible **without** traditional financial institutions. 
       },
       {
         id: "1-2", 
-        title: "Why DeFi Exists (The problems it solves – fees, middlemen, accessibility)",
+        title: "Why DeFi Exists (The problems it solves : fees, middlemen, accessibility)",
         type: "text",
         duration: 20,
         content: {
@@ -226,64 +226,64 @@ DeFi wasn't created just because it could be built. It exists to solve **real pr
 ## Problem 1: High Fees 💸
 
 ### Traditional Finance
-- International wire transfers: $15-50+ per transaction
-- Currency exchange: 2-4% markup
-- Investment management: 1-2% annually
-- Credit card processing: 2-3% per transaction
+• International wire transfers: $15-50+ per transaction
+• Currency exchange: 2-4% markup
+• Investment management: 1-2% annually
+• Credit card processing: 2-3% per transaction
 
 ### DeFi Solution
-- Cross-border transfers: Often under $5
-- Automated investing: 0.1-0.5% fees
-- Direct peer-to-peer transactions
-- No hidden fees or markups
+• Cross-border transfers: Often under $5
+• Automated investing: 0.1-0.5% fees
+• Direct peer-to-peer transactions
+• No hidden fees or markups
 
 ## Problem 2: Exclusion & Access 🚫
 
 ### Who Gets Left Out?
-- **2 billion people** worldwide have no bank account
-- People with poor credit history
-- Small businesses in developing countries
-- Anyone in countries with unstable currencies
+• **2 billion people** worldwide have no bank account
+• People with poor credit history
+• Small businesses in developing countries
+• Anyone in countries with unstable currencies
 
 ### DeFi Solution
-- **Only need**: Internet connection + smartphone
-- No credit checks or minimum balances
-- Same opportunities regardless of location
-- Protection against currency devaluation
+• **Only need**: Internet connection + smartphone
+• No credit checks or minimum balances
+• Same opportunities regardless of location
+• Protection against currency devaluation
 
 [COMPONENT:DID_YOU_KNOW]
 {
-  "fact": "Over 2 billion people worldwide lack access to traditional banking services, but many have smartphones and internet access - making DeFi their gateway to financial services."
+  "fact": "Over 2 billion people worldwide lack access to traditional banking services, but many have smartphones and internet access: making DeFi their gateway to financial services."
 }
 [/COMPONENT]
 
 ## Problem 3: Lack of Transparency 🤔
 
 ### Traditional Banking
-- "Black box" - you don't know what happens to your money
-- Complex fee structures
-- Decisions made behind closed doors
-- Limited insight into risk management
+• "Black box": you don't know what happens to your money
+• Complex fee structures
+• Decisions made behind closed doors
+• Limited insight into risk management
 
 ### DeFi Solution
-- **Complete transparency** - all transactions visible
-- Open-source code you can verify
-- Clear, predictable rules
-- Real-time risk assessment
+• **Complete transparency**: all transactions visible
+• Open-source code you can verify
+• Clear, predictable rules
+• Real-time risk assessment
 
 ## Problem 4: Speed & Efficiency ⏰
 
 ### Traditional System
-- Bank transfers: 1-3 business days
-- International transfers: 3-7 days
-- Loan approvals: Days to weeks
-- Investment settlements: 2-3 days
+• Bank transfers: 1-3 business days
+• International transfers: 3-7 days
+• Loan approvals: Days to weeks
+• Investment settlements: 2-3 days
 
 ### DeFi System
-- Most transactions: Seconds to minutes
-- Global transfers: Same speed everywhere
-- Automated loan approvals: Instant
-- Investment settlements: Immediate
+• Most transactions: Seconds to minutes
+• Global transfers: Same speed everywhere
+• Automated loan approvals: Instant
+• Investment settlements: Immediate
 
 ## The Big Picture
 
@@ -292,7 +292,7 @@ DeFi exists because the current financial system was built decades ago and hasn'
 *Next, we'll cover the blockchain basics you need to understand how DeFi actually works.*`,
           quiz: {
             id: "quiz-1-2",
-            title: "Why DeFi Exists - Knowledge Check",
+            title: "Why DeFi Exists: Knowledge Check",
             description: "Test your understanding of the key problems that DeFi solves in traditional finance.",
             passingScore: 70,
             timeLimit: 10,
@@ -323,7 +323,7 @@ DeFi exists because the current financial system was built decades ago and hasn'
                   "5 billion people"
                 ],
                 correctAnswers: [2],
-                explanation: "Over 2 billion people worldwide lack access to traditional banking services, yet many have smartphones and internet access - making DeFi their potential gateway to financial services.",
+                explanation: "Over 2 billion people worldwide lack access to traditional banking services, yet many have smartphones and internet access: making DeFi their potential gateway to financial services.",
                 points: 10
               },
               {
@@ -337,7 +337,7 @@ DeFi exists because the current financial system was built decades ago and hasn'
                   "Guaranteed profits for all investors"
                 ],
                 correctAnswers: [0, 1, 2],
-                explanation: "DeFi addresses high fees, lack of transparency, and slow settlement times. However, it does NOT guarantee profits - DeFi still involves risks and market volatility.",
+                explanation: "DeFi addresses high fees, lack of transparency, and slow settlement times. However, it does NOT guarantee profits: DeFi still involves risks and market volatility.",
                 points: 15
               },
               {
@@ -351,7 +351,7 @@ DeFi exists because the current financial system was built decades ago and hasn'
                   "A minimum deposit of $1000"
                 ],
                 correctAnswers: [1],
-                explanation: "DeFi only requires an internet connection and a smartphone - no credit checks, minimum balances, or traditional banking requirements needed.",
+                explanation: "DeFi only requires an internet connection and a smartphone: no credit checks, minimum balances, or traditional banking requirements needed.",
                 points: 10
               },
               {
@@ -387,28 +387,28 @@ You don't need to understand how a car engine works to drive a car. Similarly, y
 Think of blockchain as a **digital ledger** (like a bank's record book) with three special properties:
 
 ### 1. Shared & Public
-- Instead of one bank keeping the records, **thousands of computers** keep identical copies
-- Anyone can view all transactions (but personal info stays private)
-- Like having thousands of witnesses for every transaction
+• Instead of one bank keeping the records, **thousands of computers** keep identical copies
+• Anyone can view all transactions (but personal info stays private)
+• Like having thousands of witnesses for every transaction
 
 ### 2. Unchangeable
-- Once a transaction is recorded, it **cannot be deleted or modified**
-- Like writing in permanent ink
-- This prevents fraud and "cooking the books"
+• Once a transaction is recorded, it **cannot be deleted or modified**
+• Like writing in permanent ink
+• This prevents fraud and "cooking the books"
 
 ### 3. No Central Authority
-- No single entity controls the ledger
-- Decisions are made by **consensus** among the network
-- Like a democracy instead of a dictatorship
+• No single entity controls the ledger
+• Decisions are made by **consensus** among the network
+• Like a democracy instead of a dictatorship
 
 ## How Does This Enable DeFi?
 
 ### Smart Contracts = Automated Agreements
 Think of smart contracts as **"if-then" statements** that execute automatically:
 
-- **If** you deposit $100 and lock it for 1 year
-- **Then** you automatically receive 5% interest
-- **No human intervention needed**
+• **If** you deposit $100 and lock it for 1 year
+• **Then** you automatically receive 5% interest
+• **No human intervention needed**
 
 ### Example: Traditional Loan vs DeFi Loan
 
@@ -439,14 +439,14 @@ Think of smart contracts as **"if-then" statements** that execute automatically:
 ## Key Blockchain Networks for DeFi
 
 ### Ethereum 🔷
-- **Most popular** for DeFi applications
-- Like the "iPhone" of blockchains - lots of apps
-- Higher fees but most secure and established
+• **Most popular** for DeFi applications
+• Like the "iPhone" of blockchains: lots of apps
+• Higher fees but most secure and established
 
 ### Others to Know
-- **Polygon**: Faster, cheaper version of Ethereum
-- **Binance Smart Chain**: Lower fees, different trade-offs
-- **Solana**: Very fast, growing ecosystem
+• **Polygon**: Faster, cheaper version of Ethereum
+• **Binance Smart Chain**: Lower fees, different trade-offs
+• **Solana**: Very fast, growing ecosystem
 
 [COMPONENT:KEY_TAKEAWAY]
 {
@@ -469,7 +469,7 @@ Think of smart contracts as **"if-then" statements** that execute automatically:
 *Next, we'll explore the key players in the DeFi ecosystem and what they do.*`,
           quiz: {
             id: "quiz-1-3",
-            title: "Blockchain Basics - Knowledge Check",
+            title: "Blockchain Basics: Knowledge Check",
             description: "Test your understanding of blockchain technology and how it enables DeFi.",
             passingScore: 70,
             timeLimit: 10,
@@ -480,13 +480,13 @@ Think of smart contracts as **"if-then" statements** that execute automatically:
                 question: "Which of the following are key properties of blockchain? (Select all that apply)",
                 type: "multiple",
                 options: [
-                  "Shared & Public - thousands of computers keep identical copies",
-                  "Unchangeable - transactions cannot be deleted or modified",
-                  "Centralized - controlled by one organization",
-                  "No Central Authority - decisions made by consensus"
+                  "Shared & Public: thousands of computers keep identical copies",
+                  "Unchangeable: transactions cannot be deleted or modified",
+                  "Centralized: controlled by one organization",
+                  "No Central Authority: decisions made by consensus"
                 ],
                 correctAnswers: [0, 1, 3],
-                explanation: "Blockchain is shared/public, unchangeable, and has no central authority. It is specifically NOT centralized - that's the opposite of blockchain's core principle.",
+                explanation: "Blockchain is shared/public, unchangeable, and has no central authority. It is specifically NOT centralized: that's the opposite of blockchain's core principle.",
                 points: 15
               },
               {
@@ -514,7 +514,7 @@ Think of smart contracts as **"if-then" statements** that execute automatically:
                   "You need to submit paperwork and credit history"
                 ],
                 correctAnswers: [2],
-                explanation: "In DeFi, smart contracts automatically verify your collateral and provide the loan instantly - no waiting, paperwork, or human review required.",
+                explanation: "In DeFi, smart contracts automatically verify your collateral and provide the loan instantly: no waiting, paperwork, or human review required.",
                 points: 10
               },
               {
@@ -558,61 +558,61 @@ Think of smart contracts as **"if-then" statements** that execute automatically:
       },
       {
         id: "1-4",
-        title: "The Key Players (Stablecoins, DEXs, lending protocols – explained simply)",
+        title: "The Key Players (Stablecoins, DEXs, lending protocols : explained simply)",
         type: "text",
         duration: 35,
         content: {
           text: `# Key Players in the DeFi Ecosystem
 
-The DeFi world has several types of "players" - think of them as different types of businesses, each serving a specific purpose.
+The DeFi world has several types of "players": think of them as different types of businesses, each serving a specific purpose.
 
 ## 1. Stablecoins 💵 (The "Digital Dollars")
 
 ### What They Are
-- Cryptocurrencies designed to maintain stable value
-- Usually pegged to $1 USD
-- The "stable money" of the DeFi world
+• Cryptocurrencies designed to maintain stable value
+• Usually pegged to $1 USD
+• The "stable money" of the DeFi world
 
 ### Popular Stablecoins
-- **USDC**: Backed by real dollars in bank accounts
-- **USDT (Tether)**: Most widely used globally
-- **DAI**: Created through smart contracts (no central authority)
+• **USDC**: Backed by real dollars in bank accounts
+• **USDT (Tether)**: Most widely used globally
+• **DAI**: Created through smart contracts (no central authority)
 
 ### Why They Matter
-- Allow you to use DeFi without crypto price volatility
-- Like having digital cash that works globally
-- Essential for trading, lending, and earning yield
+• Allow you to use DeFi without crypto price volatility
+• Like having digital cash that works globally
+• Essential for trading, lending, and earning yield
 
-## 2. DEXs - Decentralized Exchanges 🔄 (The "Stock Markets")
+## 2. DEXs: Decentralized Exchanges 🔄 (The "Stock Markets")
 
 ### What They Do
-- Allow you to trade one cryptocurrency for another
-- No central authority or order books
-- Automated trading through smart contracts
+• Allow you to trade one cryptocurrency for another
+• No central authority or order books
+• Automated trading through smart contracts
 
 ### How They Work
 Think of a DEX like a **vending machine for crypto**:
-- You put in one type of crypto
-- The machine automatically gives you another type
-- Rates determined by supply and demand
+• You put in one type of crypto
+• The machine automatically gives you another type
+• Rates determined by supply and demand
 
 ### Popular DEXs
-- **Uniswap**: The most popular on Ethereum
-- **PancakeSwap**: Popular on Binance Smart Chain
-- **SushiSwap**: Community-owned alternative
+• **Uniswap**: The most popular on Ethereum
+• **PancakeSwap**: Popular on Binance Smart Chain
+• **SushiSwap**: Community-owned alternative
 
 ### Benefits vs Traditional Exchanges
-- **No KYC required** (no personal information)
-- **Always available** (24/7 global access)
-- **Lower fees** (no middleman taking cuts)
-- **You control your funds** (no exchange can freeze your account)
+• **No KYC required** (no personal information)
+• **Always available** (24/7 global access)
+• **Lower fees** (no middleman taking cuts)
+• **You control your funds** (no exchange can freeze your account)
 
 ## 3. Lending Protocols 🏦 (The "Banks")
 
 ### What They Do
-- Allow people to **lend crypto and earn interest**
-- Allow people to **borrow crypto by putting up collateral**
-- All automated through smart contracts
+• Allow people to **lend crypto and earn interest**
+• Allow people to **borrow crypto by putting up collateral**
+• All automated through smart contracts
 
 ### How It Works
 
@@ -628,46 +628,46 @@ Think of a DEX like a **vending machine for crypto**:
 4. Pay back loan + interest to get collateral back
 
 ### Popular Lending Protocols
-- **Aave**: Most feature-rich, supports many assets
-- **Compound**: Simple, established protocol
-- **MakerDAO**: Creates DAI stablecoin through borrowing
+• **Aave**: Most feature-rich, supports many assets
+• **Compound**: Simple, established protocol
+• **MakerDAO**: Creates DAI stablecoin through borrowing
 
 ## 4. Yield Farming Protocols 🌾 (The "Investment Funds")
 
 ### What They Are
-- Platforms that help you **earn higher returns** on your crypto
-- Automatically move your funds to the best opportunities
-- Like having a financial advisor that works 24/7
+• Platforms that help you **earn higher returns** on your crypto
+• Automatically move your funds to the best opportunities
+• Like having a financial advisor that works 24/7
 
 ### How They Work
 1. You deposit stablecoins or crypto
 2. Protocol automatically:
-   - Lends your funds
-   - Provides liquidity to DEXs
-   - Stakes in various protocols
-   - Compounds your earnings
+  : Lends your funds
+  : Provides liquidity to DEXs
+  : Stakes in various protocols
+  : Compounds your earnings
 3. You earn higher yields than simple lending
 
 ### Popular Yield Protocols
-- **Yearn Finance**: The "grandfather" of yield farming
-- **Harvest Finance**: Automated yield strategies
-- **Beefy Finance**: Multi-chain yield optimization
+• **Yearn Finance**: The "grandfather" of yield farming
+• **Harvest Finance**: Automated yield strategies
+• **Beefy Finance**: Multi-chain yield optimization
 
 ## 5. Liquidity Pools 🌊 (The "Market Makers")
 
 ### What They Are
-- Collections of funds that enable DEXs to function
-- Users provide equal value of two assets (like $1000 USDC + $1000 ETH)
-- Earn fees from people trading between those assets
+• Collections of funds that enable DEXs to function
+• Users provide equal value of two assets (like $1000 USDC + $1000 ETH)
+• Earn fees from people trading between those assets
 
 ### Benefits
-- **Earn trading fees** (usually 0.1-1% of each trade)
-- **Additional rewards** (many protocols give bonus tokens)
-- **Help the ecosystem** (enable others to trade)
+• **Earn trading fees** (usually 0.1-1% of each trade)
+• **Additional rewards** (many protocols give bonus tokens)
+• **Help the ecosystem** (enable others to trade)
 
 ### Risks to Understand
-- **Impermanent Loss**: If prices change a lot, you might have been better off just holding
-- **Smart Contract Risk**: Protocol bugs could cause losses
+• **Impermanent Loss**: If prices change a lot, you might have been better off just holding
+• **Smart Contract Risk**: Protocol bugs could cause losses
 
 [COMPONENT:KEY_TAKEAWAY]
 {
@@ -679,7 +679,7 @@ Think of a DEX like a **vending machine for crypto**:
 *Next, we'll address the risks and myths around DeFi so you can use it safely.*`,
           quiz: {
             id: "quiz-1-4",
-            title: "DeFi Key Players - Knowledge Check",
+            title: "DeFi Key Players: Knowledge Check",
             description: "Test your understanding of the major players in the DeFi ecosystem including stablecoins, DEXs, and lending protocols.",
             passingScore: 70,
             timeLimit: 10,
@@ -710,7 +710,7 @@ Think of a DEX like a **vending machine for crypto**:
                   "DAI"
                 ],
                 correctAnswers: [0, 2, 3],
-                explanation: "USDC, USDT, and DAI are all stablecoins pegged to the US Dollar. Bitcoin is a cryptocurrency but not a stablecoin - its price fluctuates significantly.",
+                explanation: "USDC, USDT, and DAI are all stablecoins pegged to the US Dollar. Bitcoin is a cryptocurrency but not a stablecoin: its price fluctuates significantly.",
                 points: 15
               },
               {
@@ -778,42 +778,42 @@ Before diving into DeFi, it's crucial to understand both the **real risks** and 
 [/COMPONENT]
 
 **Mitigation**: 
-- Use established protocols with security audits
-- Don't put more than you can afford to lose
-- Start small to learn
+• Use established protocols with security audits
+• Don't put more than you can afford to lose
+• Start small to learn
 
 ### 2. Impermanent Loss (For Liquidity Providers)
 **What it is**: When providing liquidity, price changes can reduce your total value
 **Example**: You provide ETH/USDC liquidity, ETH price doubles, you end up with less total value than just holding ETH
 **Mitigation**: 
-- Understand the concept before providing liquidity
-- Consider stable-stable pairs (USDC/USDT) to minimize risk
-- Factor in trading fees that offset some losses
+• Understand the concept before providing liquidity
+• Consider stable-stable pairs (USDC/USDT) to minimize risk
+• Factor in trading fees that offset some losses
 
 ### 3. Regulatory Risk
 **What it is**: Governments might restrict or ban certain DeFi activities
 **Example**: Country bans DEXs or certain protocols
 **Mitigation**:
-- Stay informed about regulations in your country
-- Use compliant protocols when possible
-- Understand the legal implications
+• Stay informed about regulations in your country
+• Use compliant protocols when possible
+• Understand the legal implications
 
 ### 4. User Error
 **What it is**: Mistakes can be costly and irreversible
 **Example**: Sending funds to wrong address, approving malicious contracts
 **Mitigation**:
-- **Always test with small amounts first**
-- Double-check addresses and transaction details
-- Learn about wallet security
-- Never share your private keys
+• **Always test with small amounts first**
+• Double-check addresses and transaction details
+• Learn about wallet security
+• Never share your private keys
 
 ### 5. Market Volatility
 **What it is**: Crypto prices can be extremely volatile
 **Example**: Your $1000 in ETH becomes $500 overnight
 **Mitigation**:
-- Use stablecoins for steady value
-- Only invest what you can afford to lose
-- Understand that volatility goes both ways
+• Use stablecoins for steady value
+• Only invest what you can afford to lose
+• Understand that volatility goes both ways
 
 ## Common Myths (Debunked) 🚫
 
@@ -878,7 +878,7 @@ With proper education, security practices, and gradual exposure, DeFi can be a v
 *Congratulations! You've completed the DeFi Foundations course. You now have the knowledge to safely explore the DeFi ecosystem.*`,
           quiz: {
             id: "quiz-1-5",
-            title: "DeFi Risks and Myths - Knowledge Check",
+            title: "DeFi Risks and Myths: Knowledge Check",
             description: "Test your understanding of real DeFi risks, common myths, and risk management best practices.",
             passingScore: 70,
             timeLimit: 10,
@@ -895,7 +895,7 @@ With proper education, security practices, and gradual exposure, DeFi can be a v
                   "Market volatility causing significant price changes"
                 ],
                 correctAnswers: [0, 1, 3],
-                explanation: "Smart contract risk, user error, and market volatility are all real risks. However, 'DeFi is only for tech experts' is a myth - modern DeFi interfaces are often easier to use than traditional banking.",
+                explanation: "Smart contract risk, user error, and market volatility are all real risks. However, 'DeFi is only for tech experts' is a myth: modern DeFi interfaces are often easier to use than traditional banking.",
                 points: 15
               },
               {
@@ -981,9 +981,9 @@ With proper education, security practices, and gradual exposure, DeFi can be a v
 Prove your expertise in DeFi vaults and managed investing.
 
 ### Exam Details:
-- **Questions**: 33
-- **Passing Score**: 80%
-- **Time Limit**: 60 minutes`,
+• **Questions**: 33
+• **Passing Score**: 80%
+• **Time Limit**: 60 minutes`,
           quiz: {
             id: "exam-5",
             title: "Vault Mastery Final Exam",
@@ -1047,7 +1047,7 @@ Prove your expertise in DeFi vaults and managed investing.
         content: {
           text: `# Choosing the Right Wallet for DeFi
 
-Your wallet is your gateway to DeFi - it's like choosing the right bank, but more important because **you're in complete control**. Let's break down your options.
+Your wallet is your gateway to DeFi: it's like choosing the right bank, but more important because **you're in complete control**. Let's break down your options.
 
 ## Types of Wallets 📱
 
@@ -1067,40 +1067,40 @@ Your wallet is your gateway to DeFi - it's like choosing the right bank, but mor
 
 ### MetaMask 🦊
 **Best for**: Beginners to DeFi
-- **Pros**: Most widely supported, easy to use, built-in DeFi features
-- **Cons**: Browser-based (less secure than mobile), can be overwhelming
-- **Supports**: Ethereum, Polygon, BSC, and many other networks
-- **Perfect if**: You're new to DeFi and want maximum compatibility
+• **Pros**: Most widely supported, easy to use, built-in DeFi features
+• **Cons**: Browser-based (less secure than mobile), can be overwhelming
+• **Supports**: Ethereum, Polygon, BSC, and many other networks
+• **Perfect if**: You're new to DeFi and want maximum compatibility
 
 ### Trust Wallet 📱
 **Best for**: Mobile-first users
-- **Pros**: Mobile-native, supports many cryptocurrencies, clean interface
-- **Cons**: Less DeFi integration than MetaMask
-- **Supports**: 60+ blockchains including all major DeFi networks
-- **Perfect if**: You prefer mobile and want a simple experience
+• **Pros**: Mobile-native, supports many cryptocurrencies, clean interface
+• **Cons**: Less DeFi integration than MetaMask
+• **Supports**: 60+ blockchains including all major DeFi networks
+• **Perfect if**: You prefer mobile and want a simple experience
 
 ### Coinbase Wallet 🔵
 **Best for**: Coinbase users transitioning to DeFi
-- **Pros**: Integrates with Coinbase exchange, user-friendly
-- **Cons**: Less features than MetaMask, newer to DeFi space
-- **Supports**: Ethereum and major Layer 2 networks
-- **Perfect if**: You already use Coinbase and want familiar experience
+• **Pros**: Integrates with Coinbase exchange, user-friendly
+• **Cons**: Less features than MetaMask, newer to DeFi space
+• **Supports**: Ethereum and major Layer 2 networks
+• **Perfect if**: You already use Coinbase and want familiar experience
 
 ## Hardware Wallets 🔐
 
 ### Ledger Nano S Plus / Nano X
 **Best for**: Security-conscious users with significant funds
-- **Pros**: Industry standard, supports 5,500+ cryptocurrencies
-- **Cons**: $80-150 cost, learning curve
-- **DeFi Usage**: Connect to MetaMask for best DeFi experience
-- **Perfect if**: You have $5,000+ in crypto or prioritize maximum security
+• **Pros**: Industry standard, supports 5,500+ cryptocurrencies
+• **Cons**: $80-150 cost, learning curve
+• **DeFi Usage**: Connect to MetaMask for best DeFi experience
+• **Perfect if**: You have $5,000+ in crypto or prioritize maximum security
 
 ### Trezor Model One / Model T
 **Best for**: Open-source security advocates
-- **Pros**: Fully open-source, excellent security track record
-- **Cons**: Slightly less user-friendly than Ledger
-- **DeFi Usage**: Works with MetaMask and other interfaces
-- **Perfect if**: You value open-source security and transparency
+• **Pros**: Fully open-source, excellent security track record
+• **Cons**: Slightly less user-friendly than Ledger
+• **DeFi Usage**: Works with MetaMask and other interfaces
+• **Perfect if**: You value open-source security and transparency
 
 ## Wallet Security Levels 🛡️
 
@@ -1125,73 +1125,73 @@ Your wallet is your gateway to DeFi - it's like choosing the right bank, but mor
 ## Wallet Features That Matter for DeFi 🎯
 
 ### Must-Have Features
-- **Multi-chain support** (Ethereum, Polygon, etc.)
-- **DApp browser** or easy connection to DeFi protocols
-- **Transaction customization** (gas fees, slippage)
-- **Seed phrase backup and recovery**
+• **Multi-chain support** (Ethereum, Polygon, etc.)
+• **DApp browser** or easy connection to DeFi protocols
+• **Transaction customization** (gas fees, slippage)
+• **Seed phrase backup and recovery**
 
 ### Nice-to-Have Features
-- **Built-in DEX** for quick swaps
-- **NFT support** if you're interested
-- **Staking features** for earning rewards
-- **Price tracking** and portfolio overview
+• **Built-in DEX** for quick swaps
+• **NFT support** if you're interested
+• **Staking features** for earning rewards
+• **Price tracking** and portfolio overview
 
 ## Common Mistakes to Avoid ❌
 
 ### 1. Using Exchange Wallets for DeFi
-- **Wrong**: Keeping funds on Coinbase/Binance for DeFi
-- **Right**: Moving funds to your own wallet first
+• **Wrong**: Keeping funds on Coinbase/Binance for DeFi
+• **Right**: Moving funds to your own wallet first
 
 ### 2. Not Backing Up Seed Phrases
-- **Wrong**: Screenshotting or saving digitally
-- **Right**: Writing down on paper, storing in safe place
+• **Wrong**: Screenshotting or saving digitally
+• **Right**: Writing down on paper, storing in safe place
 
 ### 3. Using Same Wallet for Everything
-- **Wrong**: One wallet for trading, storing, and experimenting
-- **Right**: Different wallets for different purposes and risk levels
+• **Wrong**: One wallet for trading, storing, and experimenting
+• **Right**: Different wallets for different purposes and risk levels
 
 ### 4. Ignoring Network Fees
-- **Wrong**: Not checking gas fees before transactions
-- **Right**: Understanding and planning for transaction costs
+• **Wrong**: Not checking gas fees before transactions
+• **Right**: Understanding and planning for transaction costs
 
 ## My Recommended Progression 📈
 
 ### Week 1-2: Start Simple
-- **Download MetaMask** or Trust Wallet
-- **Transfer $50-100** from an exchange
-- **Try basic DeFi** activities (swapping, providing liquidity)
-- **Learn the interface** and how transactions work
+• **Download MetaMask** or Trust Wallet
+• **Transfer $50-100** from an exchange
+• **Try basic DeFi** activities (swapping, providing liquidity)
+• **Learn the interface** and how transactions work
 
 ### Month 1-3: Build Confidence  
-- **Increase amounts** gradually as you learn
-- **Explore different protocols** and features
-- **Consider Layer 2** solutions for lower fees
-- **Start thinking about** hardware wallet
+• **Increase amounts** gradually as you learn
+• **Explore different protocols** and features
+• **Consider Layer 2** solutions for lower fees
+• **Start thinking about** hardware wallet
 
 ### Month 3+: Optimize Security
-- **Buy hardware wallet** if you have $5,000+
-- **Set up proper backup** systems
-- **Consider advanced features** like multisig
-- **Separate hot/cold** storage strategies
+• **Buy hardware wallet** if you have $5,000+
+• **Set up proper backup** systems
+• **Consider advanced features** like multisig
+• **Separate hot/cold** storage strategies
 
 [COMPONENT:FLIP_CARDS]
 {
   "cards": [
     {
       "front": "I'm brand new to DeFi",
-      "back": "MetaMask browser extension + mobile app - most compatible and beginner-friendly"
+      "back": "MetaMask browser extension + mobile app: most compatible and beginner-friendly"
     },
     {
       "front": "I prefer mobile apps",
-      "back": "Trust Wallet - mobile-native with clean interface"
+      "back": "Trust Wallet: mobile-native with clean interface"
     },
     {
       "front": "I have $5,000+ in crypto",
-      "back": "Ledger Nano X + MetaMask - maximum security for larger amounts"
+      "back": "Ledger Nano X + MetaMask: maximum security for larger amounts"
     },
     {
       "front": "I'm a Coinbase user",
-      "back": "Coinbase Wallet - familiar experience with exchange integration"
+      "back": "Coinbase Wallet: familiar experience with exchange integration"
     }
   ]
 }
@@ -1215,18 +1215,18 @@ This is **THE MOST IMPORTANT** lesson in all of DeFi. Get this wrong, and you co
 ## What is a Private Key? 🔑
 
 Think of your private key like the **master key to your house**:
-- It proves ownership of your crypto
-- It's a long string of letters and numbers
-- **Anyone with your private key owns your crypto**
-- There's no "forgot password" button - lose it, lose everything
+• It proves ownership of your crypto
+• It's a long string of letters and numbers
+• **Anyone with your private key owns your crypto**
+• There's no "forgot password" button: lose it, lose everything
 
 ## What is a Seed Phrase? 📝
 
 Your seed phrase (also called recovery phrase) is:
-- **12 or 24 words** that represent your private key
-- Like having your master key written in human language
-- Can recreate your wallet on any device
-- **The backup that saves you if your device breaks**
+• **12 or 24 words** that represent your private key
+• Like having your master key written in human language
+• Can recreate your wallet on any device
+• **The backup that saves you if your device breaks**
 
 ### Example Seed Phrase:
 \`apple bicycle cat dog elephant forest garden house ice jungle king lemon\`
@@ -1242,9 +1242,9 @@ Your seed phrase (also called recovery phrase) is:
 {
   "title": "The 3 Golden Rules for Seed Phrases",
   "steps": [
-    "NEVER share your seed phrase with anyone - not via email, text, website, or even family",
-    "ALWAYS write it down physically on paper or metal - never digitally or in the cloud",
-    "ALWAYS test your backup before sending real money - make sure you can restore your wallet"
+    "NEVER share your seed phrase with anyone: not via email, text, website, or even family",
+    "ALWAYS write it down physically on paper or metal: never digitally or in the cloud",
+    "ALWAYS test your backup before sending real money: make sure you can restore your wallet"
   ]
 }
 [/COMPONENT]
@@ -1317,10 +1317,10 @@ Your seed phrase (also called recovery phrase) is:
 4. **Consider how it was compromised**
 
 ### Investigation:
-- Did you type it somewhere?
-- Was it stored digitally?
-- Did someone see it?
-- Was your device compromised?
+• Did you type it somewhere?
+• Was it stored digitally?
+• Did someone see it?
+• Was your device compromised?
 
 ## Recovery Scenarios 💭
 
@@ -1341,32 +1341,32 @@ Your seed phrase (also called recovery phrase) is:
 ## Advanced Security Tips 🎯
 
 ### For Paranoid (but Smart) People:
-- **Test your backups** every 6 months
-- **Use passphrase protection** (25th word)
-- **Consider multisig** for large amounts
-- **Geographic distribution** of backups
+• **Test your backups** every 6 months
+• **Use passphrase protection** (25th word)
+• **Consider multisig** for large amounts
+• **Geographic distribution** of backups
 
 ### Inheritance Planning:
-- How will family access if something happens to you?
-- Consider lawyer-held instructions
-- Don't just hide it - document the process
+• How will family access if something happens to you?
+• Consider lawyer-held instructions
+• Don't just hide it: document the process
 
 ## Quick Self-Test ✅
 
 Before moving on, ask yourself:
-- [ ] Do I understand what a seed phrase is?
-- [ ] Do I know the golden rules?
-- [ ] Do I have a plan for physical storage?
-- [ ] Can I recognize seed phrase scams?
-- [ ] Do I know what to do if compromised?
+• [ ] Do I understand what a seed phrase is?
+• [ ] Do I know the golden rules?
+• [ ] Do I have a plan for physical storage?
+• [ ] Can I recognize seed phrase scams?
+• [ ] Do I know what to do if compromised?
 
 ## Key Takeaway
 
 Your seed phrase is **more valuable than cash**. Treat it like you would treat a briefcase full of money:
-- Don't leave it lying around
-- Don't tell strangers about it
-- Don't store it where thieves can find it
-- Make backups in case of disaster
+• Don't leave it lying around
+• Don't tell strangers about it
+• Don't store it where thieves can find it
+• Make backups in case of disaster
 
 **Remember**: In DeFi, you are your own bank. With great power comes great responsibility.
 
@@ -1386,17 +1386,17 @@ DeFi scams steal **billions** every year. But they all follow predictable patter
 ## The Big Picture: Why Scams Work 🎯
 
 ### Scammers Exploit:
-- **FOMO** (Fear of Missing Out)
-- **Greed** (too-good-to-be-true returns)  
-- **Urgency** ("limited time offer")
-- **Authority** (fake endorsements)
-- **Trust** (impersonating legitimate projects)
+• **FOMO** (Fear of Missing Out)
+• **Greed** (too-good-to-be-true returns)
+• **Urgency** ("limited time offer")
+• **Authority** (fake endorsements)
+• **Trust** (impersonating legitimate projects)
 
 ### Your Defense:
-- **Slow down** and think
-- **Verify everything** independently  
-- **Trust but verify** all claims
-- **When in doubt, don't**
+• **Slow down** and think
+• **Verify everything** independently
+• **Trust but verify** all claims
+• **When in doubt, don't**
 
 ## Scam Category 1: Fake Tokens & Rug Pulls 🚩
 
@@ -1409,7 +1409,7 @@ DeFi scams steal **billions** every year. But they all follow predictable patter
 [COMPONENT:ALERT]
 {
   "type": "warning",
-  "message": "⚠️ Rug Pull Warning: If a project promises 1000%+ returns, has an anonymous team, and pushes heavy marketing - it's likely a scam. Always research thoroughly before investing."
+  "message": "⚠️ Rug Pull Warning: If a project promises 1000%+ returns, has an anonymous team, and pushes heavy marketing: it's likely a scam. Always research thoroughly before investing."
 }
 [/COMPONENT]
 
@@ -1418,7 +1418,7 @@ DeFi scams steal **billions** every year. But they all follow predictable patter
   "title": "How to Spot a Rug Pull",
   "steps": [
     "Check if the team is anonymous or uses real identities with verifiable credentials",
-    "Look for a working product - not just promises and marketing",
+    "Look for a working product: not just promises and marketing",
     "Be skeptical of unrealistic returns (1000%+ APY is a red flag)",
     "Verify liquidity is locked for a reasonable period (6+ months)",
     "Check for third-party security audits from reputable firms"
@@ -1469,11 +1469,11 @@ DeFi scams steal **billions** every year. But they all follow predictable patter
 ## Scam Category 3: Social Media & Discord Scams 💬
 
 ### Common Tactics:
-- **Fake giveaways** requiring wallet connection
-- **Impersonator accounts** of popular influencers
-- **Discord DMs** offering "exclusive opportunities"
-- **Telegram groups** with fake admins
-- **"Customer support"** asking for private keys
+• **Fake giveaways** requiring wallet connection
+• **Impersonator accounts** of popular influencers
+• **Discord DMs** offering "exclusive opportunities"
+• **Telegram groups** with fake admins
+• **"Customer support"** asking for private keys
 
 ### Red Flags:
 ❌ **Unsolicited DMs** about opportunities
@@ -1513,10 +1513,10 @@ DeFi scams steal **billions** every year. But they all follow predictable patter
 ## Scam Category 5: Investment Scams 💰
 
 ### Common Types:
-- **Ponzi schemes** disguised as DeFi protocols
-- **Fake farming** opportunities
-- **"Guaranteed returns"** programs
-- **Pyramid schemes** with crypto rewards
+• **Ponzi schemes** disguised as DeFi protocols
+• **Fake farming** opportunities
+• **"Guaranteed returns"** programs
+• **Pyramid schemes** with crypto rewards
 
 ### Red Flags:
 ❌ **Guaranteed profits** (nothing is guaranteed)
@@ -1535,65 +1535,65 @@ DeFi scams steal **billions** every year. But they all follow predictable patter
 ## The Scammer's Playbook: Common Tactics 📚
 
 ### Urgency:
-- "Limited time offer"
-- "Only 24 hours left"
-- "Price going up soon"
+• "Limited time offer"
+• "Only 24 hours left"
+• "Price going up soon"
 
 ### Authority:
-- Fake endorsements from celebrities
-- Impersonating official accounts
-- Using similar logos/branding
+• Fake endorsements from celebrities
+• Impersonating official accounts
+• Using similar logos/branding
 
 ### Social Proof:
-- Fake testimonials
-- Bot followers and engagement
-- Purchased positive reviews
+• Fake testimonials
+• Bot followers and engagement
+• Purchased positive reviews
 
 ### Fear:
-- "Your account will be closed"
-- "Update required immediately"
-- "Security breach - act now"
+• "Your account will be closed"
+• "Update required immediately"
+• "Security breach: act now"
 
 ## Due Diligence Checklist ✅
 
 ### Before Using Any DeFi Protocol:
 
 #### Team Research:
-- [ ] Real names and backgrounds of team members
-- [ ] LinkedIn profiles and professional history
-- [ ] Previous successful projects
-- [ ] Public appearances or interviews
+• [ ] Real names and backgrounds of team members
+• [ ] LinkedIn profiles and professional history
+• [ ] Previous successful projects
+• [ ] Public appearances or interviews
 
 #### Technology Check:
-- [ ] Open source code available
-- [ ] Third-party security audits
-- [ ] Bug bounty programs
-- [ ] Active development on GitHub
+• [ ] Open source code available
+• [ ] Third-party security audits
+• [ ] Bug bounty programs
+• [ ] Active development on GitHub
 
 #### Community Verification:
-- [ ] Active, organic community discussions
-- [ ] Legitimate influencer endorsements
-- [ ] Positive sentiment from experienced users
-- [ ] No paid promotion red flags
+• [ ] Active, organic community discussions
+• [ ] Legitimate influencer endorsements
+• [ ] Positive sentiment from experienced users
+• [ ] No paid promotion red flags
 
 #### Financial Logic:
-- [ ] Understand how the protocol makes money
-- [ ] Returns seem realistic and sustainable
-- [ ] Clear tokenomics and use cases
-- [ ] Transparent fee structures
+• [ ] Understand how the protocol makes money
+• [ ] Returns seem realistic and sustainable
+• [ ] Clear tokenomics and use cases
+• [ ] Transparent fee structures
 
 ## Emergency Response Plan 🚨
 
 ### If You Think You've Been Scammed:
 
 #### Immediate Actions (First 5 Minutes):
-1. **Stop all activity** - don't interact with anything
+1. **Stop all activity**: don't interact with anything
 2. **Change passwords** on all accounts
 3. **Revoke approvals** on platforms like Revoke.cash
 4. **Move remaining funds** to a new wallet
 
 #### Investigation (Next Hour):
-1. **Document everything** - screenshots, transaction hashes
+1. **Document everything**: screenshots, transaction hashes
 2. **Check blockchain explorer** for unauthorized transactions
 3. **Report to platform** if applicable
 4. **Post warnings** in community channels
@@ -1607,42 +1607,42 @@ DeFi scams steal **billions** every year. But they all follow predictable patter
 ## Tools for Staying Safe 🛠️
 
 ### Verification Tools:
-- **Etherscan/Block Explorers** - verify contracts
-- **DeFiPulse/DeFiLlama** - check protocol legitimacy
-- **Revoke.cash** - manage token approvals
-- **Scam database sites** - check known scams
+• **Etherscan/Block Explorers**: verify contracts
+• **DeFiPulse/DeFiLlama**: check protocol legitimacy
+• **Revoke.cash**: manage token approvals
+• **Scam database sites**: check known scams
 
 ### Security Extensions:
-- **MetaMask** - shows transaction warnings
-- **Pocket Universe** - transaction simulation
-- **Fire** - additional security layers
+• **MetaMask**: shows transaction warnings
+• **Pocket Universe**: transaction simulation
+• **Fire**: additional security layers
 
 ## Red Flag Summary Card 🚩
 
 Print this and keep it handy:
 
 **STOP** if you see:
-- Requests for seed phrase
-- Guaranteed high returns
-- Pressure to act quickly
-- Anonymous teams
-- No working product
-- Fake social media accounts
-- Unsolicited investment opportunities
-- Apps from unofficial sources
+• Requests for seed phrase
+• Guaranteed high returns
+• Pressure to act quickly
+• Anonymous teams
+• No working product
+• Fake social media accounts
+• Unsolicited investment opportunities
+• Apps from unofficial sources
 
 **GO** when you see:
-- Transparent team information
-- Realistic return expectations
-- Third-party audits
-- Strong community consensus
-- Working products
-- Clear documentation
-- Official channels only
+• Transparent team information
+• Realistic return expectations
+• Third-party audits
+• Strong community consensus
+• Working products
+• Clear documentation
+• Official channels only
 
 ## Key Takeaway
 
-**Scammers are professionals** - they're good at what they do. But they rely on predictable psychological triggers. By understanding their playbook and taking time to verify, you can protect yourself.
+**Scammers are professionals**: they're good at what they do. But they rely on predictable psychological triggers. By understanding their playbook and taking time to verify, you can protect yourself.
 
 **Remember**: In DeFi, taking 30 minutes to research can save you thousands of dollars. When in doubt, wait it out.
 
@@ -1657,16 +1657,16 @@ Print this and keep it handy:
         content: {
           text: `# Security Best Practices: Your Daily DeFi Safety Routine
 
-Security isn't a one-time setup - it's a daily practice. Here's how to build bulletproof security habits that become second nature.
+Security isn't a one-time setup: it's a daily practice. Here's how to build bulletproof security habits that become second nature.
 
 ## Device Security: Your First Line of Defense 💻
 
 ### Computer/Phone Basics:
-✅ **Keep OS updated** - install security patches immediately
-✅ **Use antivirus software** - even on Mac
-✅ **Enable automatic locks** - 5-10 minute timeout
-✅ **Use strong passwords** - unique for every account
-✅ **Enable 2FA everywhere** - especially email and crypto accounts
+✅ **Keep OS updated**: install security patches immediately
+✅ **Use antivirus software**: even on Mac
+✅ **Enable automatic locks**: 5-10 minute timeout
+✅ **Use strong passwords**: unique for every account
+✅ **Enable 2FA everywhere**: especially email and crypto accounts
 
 ### Browser Security:
 ✅ **Use reputable browser** (Chrome, Firefox, Safari)
@@ -1691,17 +1691,17 @@ Security isn't a one-time setup - it's a daily practice. Here's how to build bul
 ✅ **Regular approval audits** (Revoke.cash)
 
 ### Multi-Wallet Strategy:
-1. **Hot Wallet** (MetaMask) - small amounts, daily use
-2. **Cold Wallet** (Ledger) - large amounts, rare use
-3. **Burner Wallet** - experimental protocols only
+1. **Hot Wallet** (MetaMask): small amounts, daily use
+2. **Cold Wallet** (Ledger): large amounts, rare use
+3. **Burner Wallet**: experimental protocols only
 
 ### Transaction Verification:
 Before signing ANY transaction:
-- What contract am I interacting with?
-- How much am I spending/approving?
-- What permissions am I granting?
-- Do I recognize this protocol?
-- Does the transaction match my intention?
+• What contract am I interacting with?
+• How much am I spending/approving?
+• What permissions am I granting?
+• Do I recognize this protocol?
+• Does the transaction match my intention?
 
 ## Website & App Security 🌐
 
@@ -1720,7 +1720,7 @@ Before signing ANY transaction:
 4. **Check for audit reports**
 
 ### Safe Browsing Habits:
-✅ **One tab for DeFi** - close everything else
+✅ **One tab for DeFi**: close everything else
 ✅ **No downloads** while using DeFi
 ✅ **Clear cache** after sessions
 ✅ **Use dedicated browser** for crypto only
@@ -1752,40 +1752,40 @@ Before signing ANY transaction:
 ## Regular Security Maintenance 🔧
 
 ### Weekly Tasks:
-- [ ] **Review wallet approvals** (Revoke.cash)
-- [ ] **Check for software updates**
-- [ ] **Verify backup integrity**
-- [ ] **Review recent transactions**
+• [ ] **Review wallet approvals** (Revoke.cash)
+• [ ] **Check for software updates**
+• [ ] **Verify backup integrity**
+• [ ] **Review recent transactions**
 
 ### Monthly Tasks:
-- [ ] **Password manager audit**
-- [ ] **2FA backup codes check**
-- [ ] **Security question updates**
-- [ ] **Account access review**
+• [ ] **Password manager audit**
+• [ ] **2FA backup codes check**
+• [ ] **Security question updates**
+• [ ] **Account access review**
 
 ### Quarterly Tasks:
-- [ ] **Seed phrase test recovery**
-- [ ] **Security practice review**
-- [ ] **Emergency plan update**
-- [ ] **Hardware wallet firmware update**
+• [ ] **Seed phrase test recovery**
+• [ ] **Security practice review**
+• [ ] **Emergency plan update**
+• [ ] **Hardware wallet firmware update**
 
 ## Risk Management Strategies 📊
 
 ### Portfolio Allocation:
-- **80% in established protocols** (Uniswap, Compound, Aave)
-- **15% in newer but audited** protocols
-- **5% in experimental** (only what you can lose)
+• **80% in established protocols** (Uniswap, Compound, Aave)
+• **15% in newer but audited** protocols
+• **5% in experimental** (only what you can lose)
 
 ### Interaction Limits:
-- **Daily interaction limit** - don't exceed $X per day
-- **New protocol limit** - max $100 first time
-- **Experimental limit** - max 1% of portfolio
+• **Daily interaction limit**: don't exceed $X per day
+• **New protocol limit**: max $100 first time
+• **Experimental limit**: max 1% of portfolio
 
 ### Geographic/Time Diversification:
-- **Don't do everything at once**
-- **Spread interactions** over time
-- **Different devices** for different protocols
-- **Different networks** when possible
+• **Don't do everything at once**
+• **Spread interactions** over time
+• **Different devices** for different protocols
+• **Different networks** when possible
 
 ## Emergency Preparedness 🚨
 
@@ -1811,34 +1811,34 @@ Before signing ANY transaction:
 
 ### Emergency Contact List:
 Keep written list of:
-- Hardware wallet support
-- Exchange support contacts
-- Trusted crypto-savvy friends
-- Local cybersecurity experts
+• Hardware wallet support
+• Exchange support contacts
+• Trusted crypto-savvy friends
+• Local cybersecurity experts
 
 ## Advanced Security Techniques 🎯
 
 ### For Power Users:
 
 #### Air-Gapped Signing:
-- Use offline device for transaction signing
-- Transfer via QR codes or USB
-- Ultimate security for large transactions
+• Use offline device for transaction signing
+• Transfer via QR codes or USB
+• Ultimate security for large transactions
 
 #### Multi-Signature Wallets:
-- Require multiple approvals for transactions
-- Distribute keys across devices/locations
-- Excellent for business or family funds
+• Require multiple approvals for transactions
+• Distribute keys across devices/locations
+• Excellent for business or family funds
 
 #### Time-Locked Contracts:
-- Build in delays for large withdrawals
-- Gives time to detect and prevent theft
-- Available on some advanced platforms
+• Build in delays for large withdrawals
+• Gives time to detect and prevent theft
+• Available on some advanced platforms
 
 #### Decoy Wallets:
-- Keep small amounts in "obvious" wallets
-- Hide main funds in less obvious locations
-- Psychological protection against targeted attacks
+• Keep small amounts in "obvious" wallets
+• Hide main funds in less obvious locations
+• Psychological protection against targeted attacks
 
 ## Security Mindset 🧠
 
@@ -1850,25 +1850,25 @@ Keep written list of:
 5. **Security is a process**, not a destination
 
 ### Daily Questions:
-- Am I being careful enough?
-- What could go wrong here?
-- Have I verified this independently?
-- Am I being pressured to move quickly?
-- Does this feel too good to be true?
+• Am I being careful enough?
+• What could go wrong here?
+• Have I verified this independently?
+• Am I being pressured to move quickly?
+• Does this feel too good to be true?
 
 ## Quick Security Checklist ✅
 
 Before ANY DeFi interaction:
-- [ ] Am I on the correct URL?
-- [ ] Is my wallet updated?
-- [ ] Do I understand this transaction?
-- [ ] Have I checked the contract address?
-- [ ] Am I using a secure connection?
-- [ ] Is this amount acceptable to lose?
+• [ ] Am I on the correct URL?
+• [ ] Is my wallet updated?
+• [ ] Do I understand this transaction?
+• [ ] Have I checked the contract address?
+• [ ] Am I using a secure connection?
+• [ ] Is this amount acceptable to lose?
 
 ## Key Takeaway
 
-Security in DeFi is like wearing a seatbelt - it seems unnecessary until you really need it. The difference is that in DeFi, there's no insurance company or government to bail you out.
+Security in DeFi is like wearing a seatbelt: it seems unnecessary until you really need it. The difference is that in DeFi, there's no insurance company or government to bail you out.
 
 **Remember**: Every security practice feels like overkill until the day it saves you from losing everything. Better paranoid than sorry.
 
@@ -1890,19 +1890,19 @@ This is where theory meets practice. Here's exactly how to interact with DeFi pr
 ### Before touching ANY DeFi protocol:
 
 #### Research Phase (20-30 minutes):
-- [ ] **Protocol audit status** - check for recent audits
-- [ ] **Team verification** - real names and backgrounds
-- [ ] **Community sentiment** - what are users saying?
-- [ ] **TVL and volume** - metrics from DeFiLlama
-- [ ] **Recent incidents** - any hacks or issues?
-- [ ] **Contract addresses** - verify from official sources
+• [ ] **Protocol audit status**: check for recent audits
+• [ ] **Team verification**: real names and backgrounds
+• [ ] **Community sentiment**: what are users saying?
+• [ ] **TVL and volume**: metrics from DeFiLlama
+• [ ] **Recent incidents**: any hacks or issues?
+• [ ] **Contract addresses**: verify from official sources
 
 #### Technical Verification:
-- [ ] **Contract verification** on block explorer
-- [ ] **Recent transactions** look normal
-- [ ] **No unusual token approvals** requested
-- [ ] **Gas fees reasonable** for network conditions
-- [ ] **Slippage tolerance** set appropriately
+• [ ] **Contract verification** on block explorer
+• [ ] **Recent transactions** look normal
+• [ ] **No unusual token approvals** requested
+• [ ] **Gas fees reasonable** for network conditions
+• [ ] **Slippage tolerance** set appropriately
 
 ## Your First DeFi Interaction: A Safe Approach 🔄
 
@@ -1910,60 +1910,60 @@ This is where theory meets practice. Here's exactly how to interact with DeFi pr
 
 #### Step 1: Preparation (5 minutes)
 1. **Go to official site**: https://app.uniswap.org
-   - Bookmark this URL for future use
-   - Never use search results for crypto sites
+  : Bookmark this URL for future use
+  : Never use search results for crypto sites
 
 2. **Verify SSL certificate**: 
-   - Look for padlock icon
-   - Certificate should be issued to uniswap.org
+  : Look for padlock icon
+  : Certificate should be issued to uniswap.org
 
 3. **Check network status**:
-   - Is Ethereum network congested?
-   - Are gas fees reasonable for your trade size?
+  : Is Ethereum network congested?
+  : Are gas fees reasonable for your trade size?
 
 #### Step 2: Wallet Connection (2 minutes)
 1. **Click "Connect Wallet"**
 2. **Choose your wallet** (MetaMask)
 3. **Verify the connection request**:
-   - Does the site name match what you expect?
-   - Are the permissions reasonable?
+  : Does the site name match what you expect?
+  : Are the permissions reasonable?
 4. **Accept connection**
 
 ⚠️ **Red Flag**: If the site asks for seed phrase during connection, STOP immediately.
 
 #### Step 3: Setting Up the Swap (3 minutes)
 1. **Select tokens**:
-   - From: ETH
-   - To: USDC
+  : From: ETH
+  : To: USDC
 2. **Verify token contracts**:
-   - ETH: Native token (no contract needed)
-   - USDC: 0xA0b86a33E6...
+  : ETH: Native token (no contract needed)
+  : USDC: 0xA0b86a33E6...
 3. **Enter amount**: Start small (0.01 ETH for first time)
 4. **Check exchange rate**: Compare to other sources
 
 #### Step 4: Transaction Review (5 minutes)
 1. **Review swap details**:
-   - Amount in: 0.01 ETH
-   - Amount out: ~$25 USDC (depending on price)
-   - Price impact: Should be <0.1% for liquid pairs
-   - Gas fee: Check current network rates
+  : Amount in: 0.01 ETH
+  : Amount out: ~$25 USDC (depending on price)
+  : Price impact: Should be <0.1% for liquid pairs
+  : Gas fee: Check current network rates
 
 2. **Set slippage tolerance**:
-   - 0.5% for stablecoins
-   - 1-3% for other tokens
-   - Higher slippage = higher risk of loss
+  : 0.5% for stablecoins
+  : 1-3% for other tokens
+  : Higher slippage = higher risk of loss
 
 3. **Check for warnings**:
-   - High price impact warnings
-   - Unusual token warnings
-   - Network congestion alerts
+  : High price impact warnings
+  : Unusual token warnings
+  : Network congestion alerts
 
 #### Step 5: Execute Transaction (2 minutes)
 1. **Click "Swap"**
 2. **Review MetaMask popup**:
-   - Contract address matches Uniswap
-   - Gas limit reasonable (usually 150k-300k)
-   - Total fee acceptable
+  : Contract address matches Uniswap
+  : Gas limit reasonable (usually 150k-300k)
+  : Total fee acceptable
 3. **Confirm transaction**
 4. **Wait for confirmation** (1-5 minutes)
 
@@ -1979,10 +1979,10 @@ This is where theory meets practice. Here's exactly how to interact with DeFi pr
 ### Lending (Compound, Aave):
 
 #### Before Lending:
-- [ ] **Protocol audit date** - recent is better
-- [ ] **Liquidation parameters** - understand the risks
-- [ ] **Interest rate model** - how rates are calculated
-- [ ] **Asset risk** - is the token you're lending risky?
+• [ ] **Protocol audit date**: recent is better
+• [ ] **Liquidation parameters**: understand the risks
+• [ ] **Interest rate model**: how rates are calculated
+• [ ] **Asset risk**: is the token you're lending risky?
 
 #### Safe Lending Practice:
 1. **Start with established assets** (ETH, USDC, DAI)
@@ -1994,11 +1994,11 @@ This is where theory meets practice. Here's exactly how to interact with DeFi pr
 ### Yield Farming:
 
 #### Risk Assessment:
-- [ ] **Impermanent loss** potential
-- [ ] **Smart contract risk** 
-- [ ] **Token risk** (could token prices crash?)
-- [ ] **Lock-up periods** and exit liquidity
-- [ ] **Reward token sustainability**
+• [ ] **Impermanent loss** potential
+• [ ] **Smart contract risk**
+• [ ] **Token risk** (could token prices crash?)
+• [ ] **Lock-up periods** and exit liquidity
+• [ ] **Reward token sustainability**
 
 #### Safe Farming Approach:
 1. **Use stablecoin pairs** initially (USDC/DAI)
@@ -2010,11 +2010,11 @@ This is where theory meets practice. Here's exactly how to interact with DeFi pr
 ### Borrowing:
 
 #### Before Borrowing:
-- [ ] **Liquidation price** calculated
-- [ ] **Interest rate stability** 
-- [ ] **Collateral asset volatility**
-- [ ] **Liquidation penalty** fees
-- [ ] **Emergency repayment plan**
+• [ ] **Liquidation price** calculated
+• [ ] **Interest rate stability**
+• [ ] **Collateral asset volatility**
+• [ ] **Liquidation penalty** fees
+• [ ] **Emergency repayment plan**
 
 #### Safe Borrowing Rules:
 1. **Never borrow more than 50%** of collateral value
@@ -2026,13 +2026,13 @@ This is where theory meets practice. Here's exactly how to interact with DeFi pr
 ## Gas Fee Management ⛽
 
 ### Understanding Gas:
-- **Gas price**: How much you pay per unit of computation
-- **Gas limit**: Maximum computation you're willing to pay for
-- **Total fee**: Gas price × Gas used
+• **Gas price**: How much you pay per unit of computation
+• **Gas limit**: Maximum computation you're willing to pay for
+• **Total fee**: Gas price × Gas used
 
 ### Gas Safety Rules:
 ✅ **Check gas tracker** before transactions (ethgasstation.info)
-✅ **Use appropriate gas price** - not always fastest
+✅ **Use appropriate gas price**: not always fastest
 ✅ **Batch transactions** when possible to save fees
 ✅ **Avoid peak hours** (US market open/close)
 ✅ **Consider Layer 2** for smaller transactions
@@ -2062,19 +2062,19 @@ When you interact with DeFi protocols, you often need to "approve" them to spend
 ## Mistake Prevention Checklist ✅
 
 ### Before Every Transaction:
-- [ ] **Double-check recipient** address
-- [ ] **Verify token contracts** 
-- [ ] **Confirm transaction amounts**
-- [ ] **Check gas price** is reasonable
-- [ ] **Understand what** you're signing
-- [ ] **Have exit strategy** planned
+• [ ] **Double-check recipient** address
+• [ ] **Verify token contracts**
+• [ ] **Confirm transaction amounts**
+• [ ] **Check gas price** is reasonable
+• [ ] **Understand what** you're signing
+• [ ] **Have exit strategy** planned
 
 ### After Every Transaction:
-- [ ] **Verify completion** on block explorer
-- [ ] **Check wallet balances** match expectations
-- [ ] **Disconnect wallet** from site
-- [ ] **Document transaction** for taxes
-- [ ] **Note any issues** for future reference
+• [ ] **Verify completion** on block explorer
+• [ ] **Check wallet balances** match expectations
+• [ ] **Disconnect wallet** from site
+• [ ] **Document transaction** for taxes
+• [ ] **Note any issues** for future reference
 
 ## Common Mistakes & How to Avoid Them 🚫
 
@@ -2107,14 +2107,14 @@ When you interact with DeFi protocols, you often need to "approve" them to spend
 ## Emergency Procedures 🚨
 
 ### If Transaction is Stuck:
-1. **Don't panic** - funds are safe
+1. **Don't panic**: funds are safe
 2. **Check gas price** vs network conditions
 3. **Speed up transaction** in MetaMask (pay more gas)
 4. **Or cancel transaction** (also requires gas)
-5. **Wait if gas is too expensive** - transaction will eventually confirm or be dropped
+5. **Wait if gas is too expensive**: transaction will eventually confirm or be dropped
 
 ### If You Made a Mistake:
-1. **Stay calm** - many mistakes are recoverable
+1. **Stay calm**: many mistakes are recoverable
 2. **Don't make more transactions** hastily
 3. **Analyze what happened** using block explorer
 4. **Seek help** in official protocol Discord/forums
@@ -2124,10 +2124,10 @@ When you interact with DeFi protocols, you often need to "approve" them to spend
 
 ### The 1% Rule:
 Never risk more than 1% of your portfolio on:
-- New protocols
-- Experimental features
-- High-risk yield farms
-- Unaudited contracts
+• New protocols
+• Experimental features
+• High-risk yield farms
+• Unaudited contracts
 
 ### The Testing Ladder:
 1. **First interaction**: Minimum amount possible
@@ -2137,7 +2137,7 @@ Never risk more than 1% of your portfolio on:
 
 ## Key Takeaway
 
-Safe DeFi interaction isn't about avoiding all risks - it's about understanding and managing them. Start small, verify everything, and build confidence gradually.
+Safe DeFi interaction isn't about avoiding all risks: it's about understanding and managing them. Start small, verify everything, and build confidence gradually.
 
 **Remember**: In DeFi, there's no customer service to call if you make a mistake. Prevention is your only protection.
 
@@ -2157,22 +2157,22 @@ Despite your best efforts, things can still go wrong in DeFi. Here's your comple
 ## Emergency Classification System 🚨
 
 ### Level 1: Minor Issues (Fixable)
-- Stuck transactions
-- Wrong slippage settings
-- Small overpayment of gas fees
-- Accidentally connected to wrong network
+• Stuck transactions
+• Wrong slippage settings
+• Small overpayment of gas fees
+• Accidentally connected to wrong network
 
 ### Level 2: Moderate Issues (Recoverable with effort)
-- Sent tokens to wrong address (but recoverable)
-- Impermanent loss from volatile farming
-- Liquidation from borrowed positions
-- Lost access to one wallet (but have backup)
+• Sent tokens to wrong address (but recoverable)
+• Impermanent loss from volatile farming
+• Liquidation from borrowed positions
+• Lost access to one wallet (but have backup)
 
 ### Level 3: Critical Issues (Potentially permanent loss)
-- Compromise of seed phrase
-- Interaction with malicious contract
-- Phishing attack with signed transactions
-- Lost seed phrase with no backup
+• Compromise of seed phrase
+• Interaction with malicious contract
+• Phishing attack with signed transactions
+• Lost seed phrase with no backup
 
 ## Level 1 Emergencies: Quick Fixes 🔧
 
@@ -2182,9 +2182,9 @@ Despite your best efforts, things can still go wrong in DeFi. Here's your comple
 Your transaction has been pending for hours/days without confirming.
 
 #### Why This Happens:
-- Gas price too low for network conditions
-- Network congestion
-- Nonce errors
+• Gas price too low for network conditions
+• Network congestion
+• Nonce errors
 
 #### Fix Strategy:
 1. **Check transaction status** on Etherscan
@@ -2206,9 +2206,9 @@ Your transaction has been pending for hours/days without confirming.
 5. Try original transaction again with higher gas
 
 **Option C: Wait It Out**
-- Transactions eventually get dropped (24-48 hours)
-- Your funds remain safe during this time
-- Free but requires patience
+• Transactions eventually get dropped (24-48 hours)
+• Your funds remain safe during this time
+• Free but requires patience
 
 ### Wrong Network Connection:
 
@@ -2218,10 +2218,10 @@ You're connected to Polygon instead of Ethereum (or vice versa).
 #### Fix Strategy:
 1. **Check MetaMask network** in top-right
 2. **Switch to correct network**:
-   - Ethereum Mainnet
-   - Polygon
-   - Arbitrum
-   - etc.
+  : Ethereum Mainnet
+  : Polygon
+  : Arbitrum
+  : etc.
 3. **Refresh the DeFi site**
 4. **Verify you see correct balances**
 
@@ -2233,18 +2233,18 @@ You're connected to Polygon instead of Ethereum (or vice versa).
 You sent tokens to the wrong address.
 
 #### Assessment Questions:
-- Is it an exchange address? (Often recoverable)
-- Is it a smart contract? (Check if it has recovery function)
-- Is it another person's wallet? (Contact them if possible)
-- Is it a dead address? (Usually unrecoverable)
+• Is it an exchange address? (Often recoverable)
+• Is it a smart contract? (Check if it has recovery function)
+• Is it another person's wallet? (Contact them if possible)
+• Is it a dead address? (Usually unrecoverable)
 
 #### Recovery Steps:
 1. **Verify transaction** on block explorer
 2. **Identify recipient address type**
 3. **Contact recipient** if possible:
-   - Exchange: Contact customer support with transaction hash
-   - Known person: Reach out directly
-   - Smart contract: Check documentation for recovery
+  : Exchange: Contact customer support with transaction hash
+  : Known person: Reach out directly
+  : Smart contract: Check documentation for recovery
 4. **Document everything** for taxes (may be deductible loss)
 
 ### Liquidation Recovery:
@@ -2256,9 +2256,9 @@ Your collateral was liquidated in a lending protocol.
 1. **Stop all borrowing activity**
 2. **Calculate actual loss** (liquidation penalty + debt)
 3. **Review what went wrong**:
-   - Market volatility?
-   - Insufficient monitoring?
-   - Overleveraged position?
+  : Market volatility?
+  : Insufficient monitoring?
+  : Overleveraged position?
 
 #### Recovery Strategy:
 1. **Start smaller** next time
@@ -2275,29 +2275,29 @@ Your liquidity pool lost value compared to holding tokens.
 #### Response Strategy:
 1. **Calculate actual loss** vs holding
 2. **Consider exit timing**:
-   - Wait for rebalancing if temporary
-   - Exit if trend is permanent
+  : Wait for rebalancing if temporary
+  : Exit if trend is permanent
 3. **Claim any rewards** to offset loss
 4. **Adjust strategy** for future:
-   - Use more correlated pairs
-   - Consider impermanent loss protection
-   - Stick to stablecoin pairs
+  : Use more correlated pairs
+  : Consider impermanent loss protection
+  : Stick to stablecoin pairs
 
 ## Level 3 Emergencies: Crisis Management 💥
 
 ### Compromised Seed Phrase:
 
 #### Immediate Actions (First 5 Minutes):
-1. **STOP** - don't panic, act systematically
+1. **STOP**: don't panic, act systematically
 2. **Create new wallet** on different device
 3. **Transfer ALL funds** to new wallet immediately
-4. **Work fast** - assume attacker has access
+4. **Work fast**: assume attacker has access
 
 #### Emergency Transfer Protocol:
 1. **Prioritize by value**: Largest amounts first
 2. **Use maximum gas** to ensure fast confirmation
-3. **Don't worry about fees** - speed is critical
-4. **Transfer everything** - even small amounts
+3. **Don't worry about fees**: speed is critical
+4. **Transfer everything**: even small amounts
 
 #### Post-Emergency Actions:
 1. **Never use old wallet** again
@@ -2322,40 +2322,40 @@ You signed a transaction that gave a malicious contract access to your funds.
 2. Connect affected wallet
 3. Review all approvals
 4. Revoke any:
-   - Unknown contracts
-   - Unlimited approvals
-   - Recently granted approvals
+  : Unknown contracts
+  : Unlimited approvals
+  : Recently granted approvals
 5. Pay gas fees to revoke (worth it for security)
 
 ### Phishing Attack Recovery:
 
 #### Assessment Phase:
 1. **What information was compromised?**
-   - Seed phrase: Critical emergency
-   - Private key: Critical emergency  
-   - Password only: Moderate issue
-   - Email access: High concern
+  : Seed phrase: Critical emergency
+  : Private key: Critical emergency
+  : Password only: Moderate issue
+  : Email access: High concern
 
 #### Recovery Based on Compromise Level:
 
 **If Seed Phrase Compromised:**
-- Follow "Compromised Seed Phrase" protocol above
-- Assume total compromise
-- Start completely fresh
+• Follow "Compromised Seed Phrase" protocol above
+• Assume total compromise
+• Start completely fresh
 
 **If Passwords Compromised:**
-- Change all crypto-related passwords immediately
-- Enable 2FA everywhere possible
-- Monitor accounts for suspicious activity
-- Consider new email address for crypto
+• Change all crypto-related passwords immediately
+• Enable 2FA everywhere possible
+• Monitor accounts for suspicious activity
+• Consider new email address for crypto
 
 ## Prevention vs Recovery 🛡️
 
 ### Why Prevention is Better:
-- **Recovery often impossible** in DeFi
-- **Time pressure** during emergencies leads to mistakes
-- **Emotional stress** impairs decision-making
-- **No customer service** to help you
+• **Recovery often impossible** in DeFi
+• **Time pressure** during emergencies leads to mistakes
+• **Emotional stress** impairs decision-making
+• **No customer service** to help you
 
 ### Building Your Emergency Kit:
 1. **Emergency wallet** pre-setup with small amount of ETH for gas
@@ -2374,48 +2374,48 @@ You signed a transaction that gave a malicious contract access to your funds.
 5. **How can I improve my setup?**
 
 ### Learning from Mistakes:
-- **Document the incident** in detail
-- **Share lessons** with trusted crypto community
-- **Update security practices** based on learnings
-- **Test new procedures** with small amounts
-- **Regular security reviews** to prevent recurrence
+• **Document the incident** in detail
+• **Share lessons** with trusted crypto community
+• **Update security practices** based on learnings
+• **Test new procedures** with small amounts
+• **Regular security reviews** to prevent recurrence
 
 ## Emergency Contact Resources 📞
 
 ### Technical Support:
-- **MetaMask**: help.metamask.io
-- **Ledger**: support.ledger.com
-- **Protocol Discord**: Official community channels
-- **Etherscan**: For transaction verification
+• **MetaMask**: help.metamask.io
+• **Ledger**: support.ledger.com
+• **Protocol Discord**: Official community channels
+• **Etherscan**: For transaction verification
 
 ### Community Help:
-- **Reddit**: r/ethereum, r/DeFi (be careful of scammers)
-- **Discord**: Official protocol servers only
-- **Twitter**: Verified accounts only
+• **Reddit**: r/ethereum, r/DeFi (be careful of scammers)
+• **Discord**: Official protocol servers only
+• **Twitter**: Verified accounts only
 
 ⚠️ **Warning**: Never trust unsolicited help or DMs claiming to offer assistance.
 
 ## Insurance & Loss Mitigation 🛡️
 
 ### DeFi Insurance Options:
-- **Nexus Mutual**: Smart contract coverage
-- **Cover Protocol**: Various DeFi risks
-- **Unslashed Finance**: Validator and protocol coverage
+• **Nexus Mutual**: Smart contract coverage
+• **Cover Protocol**: Various DeFi risks
+• **Unslashed Finance**: Validator and protocol coverage
 
 ### Consider Insurance For:
-- Large positions in newer protocols
-- Experimental yield farming
-- Long-term staking positions
-- Business-critical DeFi operations
+• Large positions in newer protocols
+• Experimental yield farming
+• Long-term staking positions
+• Business-critical DeFi operations
 
 ## Psychological Aspects of Emergencies 🧠
 
 ### Emotional Management:
-- **Don't panic** - panic leads to more mistakes
-- **Take deep breaths** before acting
-- **Think systematically** through the problem
-- **Ask for help** from experienced users
-- **Learn from the experience**
+• **Don't panic**: panic leads to more mistakes
+• **Take deep breaths** before acting
+• **Think systematically** through the problem
+• **Ask for help** from experienced users
+• **Learn from the experience**
 
 ### Common Emotional Traps:
 ❌ **Revenge trading** after losses
@@ -2432,12 +2432,12 @@ You signed a transaction that gave a malicious contract access to your funds.
 
 Emergencies in DeFi are often more recoverable than they initially appear. The key is staying calm, acting systematically, and learning from the experience.
 
-**Remember**: Every experienced DeFi user has made mistakes. The difference is they learned from them and improved their security practices. Your goal isn't to never make mistakes - it's to make smaller, recoverable ones and learn continuously.
+**Remember**: Every experienced DeFi user has made mistakes. The difference is they learned from them and improved their security practices. Your goal isn't to never make mistakes: it's to make smaller, recoverable ones and learn continuously.
 
 *Congratulations! You've completed the DeFi Security course. You now have the knowledge and tools to navigate DeFi safely and handle emergencies when they arise.*`,
           quiz: {
             id: "quiz-2-6",
-            title: "Recovery & Emergencies - Knowledge Check",
+            title: "Recovery & Emergencies: Knowledge Check",
             passingScore: 70,
             maxAttempts: 3,
             questions: [
@@ -2459,10 +2459,10 @@ Emergencies in DeFi are often more recoverable than they initially appear. The k
 Test your knowledge on how to stay safe in the decentralized world.
 
 ### Exam Details:
-- **Questions**: 33
-- **Passing Score**: 80% (27 correct answers)
-- **Time Limit**: 60 minutes
-- **Topics**: Wallet types, Seed phrases, Private keys, Scams, Best practices, Emergency response.`,
+• **Questions**: 33
+• **Passing Score**: 80% (27 correct answers)
+• **Time Limit**: 60 minutes
+• **Topics**: Wallet types, Seed phrases, Private keys, Scams, Best practices, Emergency response.`,
           quiz: {
             id: "exam-2",
             title: "DeFi Security Final Exam",
@@ -2532,9 +2532,9 @@ The promise of "earning passive income" in DeFi is everywhere. But what does tha
 ## The Big Picture: DeFi Income Streams 💰
 
 ### Traditional Finance vs DeFi
-**Traditional Bank Savings**: 0.01% - 0.5% per year
-**Traditional CDs**: 1% - 4% per year  
-**DeFi Opportunities**: 3% - 25%+ per year (with varying risks)
+**Traditional Bank Savings**: 0.01%: 0.5% per year
+**Traditional CDs**: 1%: 4% per year
+**DeFi Opportunities**: 3%: 25%+ per year (with varying risks)
 
 **The catch?** In DeFi, **YOU manage the risk**. Higher returns come with higher responsibility.
 
@@ -2547,9 +2547,9 @@ The promise of "earning passive income" in DeFi is everywhere. But what does tha
 **Typical returns**: 4-12% annually
 
 **Example**: Staking ETH on Ethereum 2.0
-- Lock your ETH to help secure the network
-- Earn approximately 4-6% annually in ETH rewards
-- Your ETH is locked but earning consistently
+• Lock your ETH to help secure the network
+• Earn approximately 4-6% annually in ETH rewards
+• Your ETH is locked but earning consistently
 
 ### 2. Liquidity Providing (Medium Risk)
 **What it is**: Providing tokens to trading pools
@@ -2558,9 +2558,9 @@ The promise of "earning passive income" in DeFi is everywhere. But what does tha
 **Typical returns**: 5-20% annually
 
 **Example**: Providing USDC/ETH to Uniswap
-- You provide equal dollar amounts of USDC and ETH
-- Traders pay fees when they swap between these tokens
-- You earn a portion of those fees
+• You provide equal dollar amounts of USDC and ETH
+• Traders pay fees when they swap between these tokens
+• You earn a portion of those fees
 
 ### 3. Yield Farming (Higher Risk)
 **What it is**: Moving funds to maximize returns across protocols
@@ -2569,9 +2569,9 @@ The promise of "earning passive income" in DeFi is everywhere. But what does tha
 **Typical returns**: 8-30%+ annually
 
 **Example**: Farming on Compound
-- Lend USDC to earn interest
-- Borrow against it to farm additional protocols
-- Earn from multiple sources simultaneously
+• Lend USDC to earn interest
+• Borrow against it to farm additional protocols
+• Earn from multiple sources simultaneously
 
 ### 4. Token Rewards/Airdrops (Highest Risk)
 **What it is**: Earning new tokens from protocol participation
@@ -2580,21 +2580,21 @@ The promise of "earning passive income" in DeFi is everywhere. But what does tha
 **Potential returns**: 0% to 1000%+ (extremely variable)
 
 **Example**: Early Uniswap users
-- Used the protocol when it was new
-- Received UNI tokens worth thousands
-- Many didn't know this was coming
+• Used the protocol when it was new
+• Received UNI tokens worth thousands
+• Many didn't know this was coming
 
 ## Risk vs Reward Reality Check ⚖️
 
 ### Low Risk = Lower Returns
-- **Staking ETH**: Predictable, but "only" 4-6%
-- **Stablecoin lending**: Safe, but "only" 3-8%
-- **Established protocols**: Tested, but competitive rates
+• **Staking ETH**: Predictable, but "only" 4-6%
+• **Stablecoin lending**: Safe, but "only" 3-8%
+• **Established protocols**: Tested, but competitive rates
 
 ### High Risk = Higher Potential (and Higher Loss Potential)
-- **New protocols**: 50%+ returns possible, but could lose everything
-- **Complex strategies**: More moving parts = more ways to fail
-- **Volatile tokens**: Returns could be huge or worthless
+• **New protocols**: 50%+ returns possible, but could lose everything
+• **Complex strategies**: More moving parts = more ways to fail
+• **Volatile tokens**: Returns could be huge or worthless
 
 ## Income Stability Spectrum 📊
 
@@ -2616,40 +2616,40 @@ The promise of "earning passive income" in DeFi is everywhere. But what does tha
 5. **Market inefficiencies** create opportunities
 
 ### Why Returns Fluctuate:
-- **Supply and demand** for lending/borrowing
-- **Network congestion** affects profitability
-- **Protocol changes** and upgrades
-- **Market cycles** (bull vs bear markets)
-- **Competition** between protocols
+• **Supply and demand** for lending/borrowing
+• **Network congestion** affects profitability
+• **Protocol changes** and upgrades
+• **Market cycles** (bull vs bear markets)
+• **Competition** between protocols
 
 ## Real Examples: What People Actually Earn 💡
 
 ### Conservative Approach (Sarah, $10,000):
-- **50% in ETH staking**: $500/year (5%)
-- **30% in USDC lending**: $240/year (8% on $3,000)
-- **20% in stable LPs**: $200/year (10% on $2,000)
-- **Total**: ~$940/year (9.4% return)
+• **50% in ETH staking**: $500/year (5%)
+• **30% in USDC lending**: $240/year (8% on $3,000)
+• **20% in stable LPs**: $200/year (10% on $2,000)
+• **Total**: ~$940/year (9.4% return)
 
 ### Moderate Approach (Mike, $25,000):
-- **40% in stable strategies**: $800/year
-- **40% in established LPs**: $2,000/year  
-- **20% in yield farming**: $1,000/year
-- **Total**: ~$3,800/year (15.2% return)
+• **40% in stable strategies**: $800/year
+• **40% in established LPs**: $2,000/year
+• **20% in yield farming**: $1,000/year
+• **Total**: ~$3,800/year (15.2% return)
 
 ### Aggressive Approach (Alex, $50,000):
-- **30% in stable base**: $1,500/year
-- **50% in active farming**: $6,250/year
-- **20% in new opportunities**: $2,000/year (highly variable)
-- **Total**: ~$9,750/year (19.5% return, but much higher risk)
+• **30% in stable base**: $1,500/year
+• **50% in active farming**: $6,250/year
+• **20% in new opportunities**: $2,000/year (highly variable)
+• **Total**: ~$9,750/year (19.5% return, but much higher risk)
 
 ## The Compound Effect 📈
 
 ### Starting with $1,000:
-- **Year 1**: $1,000 → $1,100 (10% return)
-- **Year 2**: $1,100 → $1,210 (reinvesting gains)
-- **Year 3**: $1,210 → $1,331
-- **Year 5**: $1,610
-- **Year 10**: $2,594
+• **Year 1**: $1,000 → $1,100 (10% return)
+• **Year 2**: $1,100 → $1,210 (reinvesting gains)
+• **Year 3**: $1,210 → $1,331
+• **Year 5**: $1,610
+• **Year 10**: $2,594
 
 **The magic**: Reinvesting your DeFi earnings can significantly accelerate growth.
 
@@ -2670,38 +2670,38 @@ The promise of "earning passive income" in DeFi is everywhere. But what does tha
 ## Getting Started Framework 🎯
 
 ### Step 1: Start Small ($100-$500)
-- Learn with amounts you can afford to lose
-- Focus on understanding rather than maximizing returns
-- Use established protocols only
+• Learn with amounts you can afford to lose
+• Focus on understanding rather than maximizing returns
+• Use established protocols only
 
 ### Step 2: Build Knowledge
-- Understand each protocol before using it
-- Learn to read smart contracts and audits
-- Join communities and follow experienced users
+• Understand each protocol before using it
+• Learn to read smart contracts and audits
+• Join communities and follow experienced users
 
 ### Step 3: Scale Gradually
-- Increase amounts as comfort and knowledge grow
-- Diversify across multiple strategies
-- Never put more than 5-10% of net worth in DeFi
+• Increase amounts as comfort and knowledge grow
+• Diversify across multiple strategies
+• Never put more than 5-10% of net worth in DeFi
 
 ### Step 4: Develop Systems
-- Regular portfolio reviews
-- Profit-taking strategies
-- Risk management rules
+• Regular portfolio reviews
+• Profit-taking strategies
+• Risk management rules
 
 ## Tax Considerations 💼
 
 ### What's Taxable:
-- **Interest earned** from lending
-- **Rewards claimed** from staking/farming
-- **Gains from trading** rewards tokens
-- **Impermanent loss recovery** might be taxable
+• **Interest earned** from lending
+• **Rewards claimed** from staking/farming
+• **Gains from trading** rewards tokens
+• **Impermanent loss recovery** might be taxable
 
 ### What to Track:
-- All transactions with USD values
-- Dates and protocols used
-- Cost basis of tokens earned
-- Gas fees (often deductible)
+• All transactions with USD values
+• Dates and protocols used
+• Cost basis of tokens earned
+• Gas fees (often deductible)
 
 ## Key Questions Before You Start ❓
 
@@ -2714,25 +2714,25 @@ The promise of "earning passive income" in DeFi is everywhere. But what does tha
 ## Reality Check: What to Expect 📝
 
 ### First Month:
-- Lots of learning and small transactions
-- Probably losing money to gas fees while learning
-- Understanding how protocols work
+• Lots of learning and small transactions
+• Probably losing money to gas fees while learning
+• Understanding how protocols work
 
 ### First Quarter:
-- Basic strategies working
-- 5-15% annual returns if conservative
-- Comfort with major protocols
+• Basic strategies working
+• 5-15% annual returns if conservative
+• Comfort with major protocols
 
 ### First Year:
-- Developed personal strategy and risk tolerance
-- Consistent returns matching your approach
-- Experience with market cycles
+• Developed personal strategy and risk tolerance
+• Consistent returns matching your approach
+• Experience with market cycles
 
 ## Key Takeaway
 
 DeFi earning opportunities are real, but they require **education, caution, and realistic expectations**. The people making consistent money treat it like a skill to develop, not a lottery ticket.
 
-**Start small, learn continuously, and build systems**. The goal isn't to get rich quick - it's to build sustainable, profitable strategies that work in various market conditions.
+**Start small, learn continuously, and build systems**. The goal isn't to get rich quick: it's to build sustainable, profitable strategies that work in various market conditions.
 
 *Next: We'll compare staking vs yield farming to help you choose your first strategy.*`
         },
@@ -2751,7 +2751,7 @@ DeFi earning opportunities are real, but they require **education, caution, and 
       },
       {
         id: "3-2",
-        title: "Staking vs Yield Farming – Which is Better for You?",
+        title: "Staking vs Yield Farming : Which is Better for You?",
         type: "text",
         duration: 35,
         content: {
@@ -2776,32 +2776,32 @@ This is probably the most important decision you'll make as a DeFi beginner. Bot
 
 #### Native Staking (Direct)
 **Examples**: Ethereum 2.0, Cardano, Polkadot
-- **Minimum**: Often 32 ETH ($50,000+) for Ethereum
-- **Returns**: 4-12% annually
-- **Lock-up**: 6 months to 2+ years
-- **Risk**: Protocol risk, slashing risk
+• **Minimum**: Often 32 ETH ($50,000+) for Ethereum
+• **Returns**: 4-12% annually
+• **Lock-up**: 6 months to 2+ years
+• **Risk**: Protocol risk, slashing risk
 
 #### Liquid Staking (Through Protocols)
 **Examples**: Lido, Rocket Pool, Coinbase
-- **Minimum**: No minimum (can stake 0.01 ETH)
-- **Returns**: 3-10% annually (slightly lower due to fees)
-- **Lock-up**: None (you get liquid tokens)
-- **Risk**: Protocol risk, smart contract risk
+• **Minimum**: No minimum (can stake 0.01 ETH)
+• **Returns**: 3-10% annually (slightly lower due to fees)
+• **Lock-up**: None (you get liquid tokens)
+• **Risk**: Protocol risk, smart contract risk
 
 ### Staking Pros ✅
-- **Lower risk** compared to yield farming
-- **Predictable returns** (usually stable rates)
-- **Less time intensive** (set and forget)
-- **Easier to understand** (straightforward concept)
-- **Less gas fees** (fewer transactions)
-- **Helps secure networks** (good for ecosystem)
+• **Lower risk** compared to yield farming
+• **Predictable returns** (usually stable rates)
+• **Less time intensive** (set and forget)
+• **Easier to understand** (straightforward concept)
+• **Less gas fees** (fewer transactions)
+• **Helps secure networks** (good for ecosystem)
 
 ### Staking Cons ❌
-- **Lower returns** than yield farming
-- **Lock-up periods** (funds not accessible)
-- **Slashing risk** (penalties for validator misbehavior)
-- **Opportunity cost** (miss other opportunities while locked)
-- **Inflation risk** (earning tokens that might lose value)
+• **Lower returns** than yield farming
+• **Lock-up periods** (funds not accessible)
+• **Slashing risk** (penalties for validator misbehavior)
+• **Opportunity cost** (miss other opportunities while locked)
+• **Inflation risk** (earning tokens that might lose value)
 
 ## Yield Farming: The "Active Management" Approach 🌾
 
@@ -2838,20 +2838,20 @@ This is probably the most important decision you'll make as a DeFi beginner. Bot
 **Risks**: Liquidation, high complexity, gas costs
 
 ### Yield Farming Pros ✅
-- **Higher potential returns** than staking
-- **Flexibility** (can exit anytime)
-- **Multiple income streams** (fees + rewards)
-- **Skill development** (learn about DeFi deeply)
-- **Compounding opportunities** (reinvest frequently)
-- **Market exposure** (can benefit from token appreciation)
+• **Higher potential returns** than staking
+• **Flexibility** (can exit anytime)
+• **Multiple income streams** (fees + rewards)
+• **Skill development** (learn about DeFi deeply)
+• **Compounding opportunities** (reinvest frequently)
+• **Market exposure** (can benefit from token appreciation)
 
 ### Yield Farming Cons ❌
-- **Higher risk** (many things can go wrong)
-- **Time intensive** (requires active management)
-- **Complex strategies** (steep learning curve)
-- **Impermanent loss** risk (LP tokens)
-- **High gas fees** (frequent transactions)
-- **Tax complexity** (many transactions to track)
+• **Higher risk** (many things can go wrong)
+• **Time intensive** (requires active management)
+• **Complex strategies** (steep learning curve)
+• **Impermanent loss** risk (LP tokens)
+• **High gas fees** (frequent transactions)
+• **Tax complexity** (many transactions to track)
 
 ## Side-by-Side Comparison 📊
 
@@ -2871,8 +2871,8 @@ This is probably the most important decision you'll make as a DeFi beginner. Bot
 ### Sarah's Staking Strategy ($5,000):
 **Goal**: Earn passive income with minimal effort
 **Strategy**: 
-- 60% ETH staking via Lido (liquid staking)
-- 40% USDC lending on Aave
+• 60% ETH staking via Lido (liquid staking)
+• 40% USDC lending on Aave
 **Time commitment**: 2 hours/month checking performance
 **Expected return**: 6-8% annually
 **Risk**: Low
@@ -2880,9 +2880,9 @@ This is probably the most important decision you'll make as a DeFi beginner. Bot
 ### Mike's Yield Farming Strategy ($10,000):
 **Goal**: Higher returns with moderate time investment
 **Strategy**:
-- 40% in stablecoin LP pairs (USDC/DAI)
-- 30% in ETH/USDC farming
-- 30% rotated between best opportunities
+• 40% in stablecoin LP pairs (USDC/DAI)
+• 30% in ETH/USDC farming
+• 30% rotated between best opportunities
 **Time commitment**: 10 hours/month monitoring and adjusting
 **Expected return**: 15-25% annually
 **Risk**: Medium
@@ -2890,62 +2890,62 @@ This is probably the most important decision you'll make as a DeFi beginner. Bot
 ## Which Approach Fits You? 🤔
 
 ### Choose Staking If:
-- ✅ You prefer **predictable, steady returns**
-- ✅ You have **limited time** for active management
-- ✅ You're **risk-averse** and prefer simplicity
-- ✅ You're **new to DeFi** and want to start conservatively
-- ✅ You believe in **long-term network growth**
-- ✅ You don't want to **monitor markets daily**
+• ✅ You prefer **predictable, steady returns**
+• ✅ You have **limited time** for active management
+• ✅ You're **risk-averse** and prefer simplicity
+• ✅ You're **new to DeFi** and want to start conservatively
+• ✅ You believe in **long-term network growth**
+• ✅ You don't want to **monitor markets daily**
 
 ### Choose Yield Farming If:
-- ✅ You want **potentially higher returns**
-- ✅ You have **time to actively manage** positions
-- ✅ You're **comfortable with complexity** and learning
-- ✅ You understand and accept **impermanent loss**
-- ✅ You enjoy **optimizing and strategizing**
-- ✅ You have enough capital to make **gas fees worthwhile**
+• ✅ You want **potentially higher returns**
+• ✅ You have **time to actively manage** positions
+• ✅ You're **comfortable with complexity** and learning
+• ✅ You understand and accept **impermanent loss**
+• ✅ You enjoy **optimizing and strategizing**
+• ✅ You have enough capital to make **gas fees worthwhile**
 
 ## Hybrid Approach: Best of Both Worlds 🎯
 
 ### The 70/30 Strategy:
-- **70% in staking** (stable base layer)
-- **30% in yield farming** (higher returns)
+• **70% in staking** (stable base layer)
+• **30% in yield farming** (higher returns)
 
 ### The Progressive Strategy:
-- **Start with 100% staking** (learn the basics)
-- **Add 10% farming** each month as you learn
-- **Find your optimal balance** over time
+• **Start with 100% staking** (learn the basics)
+• **Add 10% farming** each month as you learn
+• **Find your optimal balance** over time
 
 ### The Risk-Adjusted Strategy:
-- **Bull market**: More yield farming (higher risk tolerance)
-- **Bear market**: More staking (preserve capital)
-- **Uncertain times**: Equal weight both
+• **Bull market**: More yield farming (higher risk tolerance)
+• **Bear market**: More staking (preserve capital)
+• **Uncertain times**: Equal weight both
 
 ## Getting Started: Your First 30 Days 📅
 
 ### Week 1: Education
-- [ ] Read about your chosen approach thoroughly
-- [ ] Join relevant Discord/Telegram communities
-- [ ] Watch tutorial videos and guides
-- [ ] Practice with testnet if available
+• [ ] Read about your chosen approach thoroughly
+• [ ] Join relevant Discord/Telegram communities
+• [ ] Watch tutorial videos and guides
+• [ ] Practice with testnet if available
 
 ### Week 2: Platform Research
-- [ ] Compare different staking/farming platforms
-- [ ] Check audit reports and security records
-- [ ] Read user reviews and community sentiment
-- [ ] Verify smart contract addresses
+• [ ] Compare different staking/farming platforms
+• [ ] Check audit reports and security records
+• [ ] Read user reviews and community sentiment
+• [ ] Verify smart contract addresses
 
 ### Week 3: Small Test
-- [ ] Start with $100-500 maximum
-- [ ] Choose one simple strategy
-- [ ] Document the process thoroughly
-- [ ] Track all transactions for taxes
+• [ ] Start with $100-500 maximum
+• [ ] Choose one simple strategy
+• [ ] Document the process thoroughly
+• [ ] Track all transactions for taxes
 
 ### Week 4: Evaluate and Plan
-- [ ] Assess how the test went
-- [ ] Calculate actual returns vs expectations
-- [ ] Identify what you learned
-- [ ] Plan next steps based on results
+• [ ] Assess how the test went
+• [ ] Calculate actual returns vs expectations
+• [ ] Identify what you learned
+• [ ] Plan next steps based on results
 
 ## Common Mistakes to Avoid 🚫
 
@@ -2965,21 +2965,21 @@ This is probably the most important decision you'll make as a DeFi beginner. Bot
 ## Advanced Considerations 🎯
 
 ### Tax Implications:
-- **Staking rewards**: Usually taxed as income when received
-- **Farming rewards**: More complex, multiple taxable events
-- **Impermanent loss**: May or may not be deductible
-- **Track everything**: Both approaches require detailed records
+• **Staking rewards**: Usually taxed as income when received
+• **Farming rewards**: More complex, multiple taxable events
+• **Impermanent loss**: May or may not be deductible
+• **Track everything**: Both approaches require detailed records
 
 ### Market Cycle Awareness:
-- **Bull markets**: Yield farming often more profitable
-- **Bear markets**: Staking provides stability
-- **Sideways markets**: Both can be equally viable
-- **High volatility**: Staking reduces emotional stress
+• **Bull markets**: Yield farming often more profitable
+• **Bear markets**: Staking provides stability
+• **Sideways markets**: Both can be equally viable
+• **High volatility**: Staking reduces emotional stress
 
 ### Portfolio Integration:
-- **Staking fits**: Long-term holders, retirement accounts
-- **Farming fits**: Active traders, opportunistic investors
-- **Consider**: How this fits your overall investment strategy
+• **Staking fits**: Long-term holders, retirement accounts
+• **Farming fits**: Active traders, opportunistic investors
+• **Consider**: How this fits your overall investment strategy
 
 ## Key Decision Framework ✅
 
@@ -3027,10 +3027,10 @@ Liquidity pools are the foundation of most DeFi earning opportunities. But they'
 
 ### Simple Analogy:
 Imagine a **community water well** where:
-- Everyone contributes water (tokens)
-- Anyone can draw water when needed (trade tokens)
-- Contributors get paid (earn fees) for keeping the well full
-- The well never runs dry because it's always being refilled
+• Everyone contributes water (tokens)
+• Anyone can draw water when needed (trade tokens)
+• Contributors get paid (earn fees) for keeping the well full
+• The well never runs dry because it's always being refilled
 
 ### Technical Definition:
 A liquidity pool is a **smart contract** that holds two or more tokens and allows people to trade between them automatically, while rewarding those who provide the tokens.
@@ -3039,64 +3039,64 @@ A liquidity pool is a **smart contract** that holds two or more tokens and allow
 
 ### Step 1: Pool Creation
 Someone creates a trading pair like **ETH/USDC**:
-- The pool starts empty
-- First person adds equal dollar values of both tokens
-- This sets the initial price ratio
+• The pool starts empty
+• First person adds equal dollar values of both tokens
+• This sets the initial price ratio
 
 ### Step 2: Liquidity Provision
 Other people add tokens to the pool:
-- Must add **equal dollar values** of both tokens
-- Example: $1,000 ETH + $1,000 USDC
-- Receive **LP tokens** representing their share
+• Must add **equal dollar values** of both tokens
+• Example: $1,000 ETH + $1,000 USDC
+• Receive **LP tokens** representing their share
 
 ### Step 3: Trading Happens
 Traders swap tokens using the pool:
-- Want to buy ETH with USDC? Take ETH, leave USDC
-- Pool automatically adjusts prices based on supply/demand
-- Each trade pays a **small fee** (usually 0.3%)
+• Want to buy ETH with USDC? Take ETH, leave USDC
+• Pool automatically adjusts prices based on supply/demand
+• Each trade pays a **small fee** (usually 0.3%)
 
 ### Step 4: Fee Distribution
 Trading fees get distributed:
-- All liquidity providers earn fees **proportionally**
-- If you own 1% of pool, you get 1% of all fees
-- Fees automatically compound in the pool
+• All liquidity providers earn fees **proportionally**
+• If you own 1% of pool, you get 1% of all fees
+• Fees automatically compound in the pool
 
 ## Real Example: ETH/USDC Pool 💡
 
 ### Pool Setup:
-- **Total pool size**: $10 million
-- **Your contribution**: $10,000 (0.1% of pool)
-- **Your share**: 0.1% of all trading fees
+• **Total pool size**: $10 million
+• **Your contribution**: $10,000 (0.1% of pool)
+• **Your share**: 0.1% of all trading fees
 
 ### Daily Trading:
-- **Pool volume**: $1 million per day
-- **Trading fees**: $3,000 per day (0.3% of volume)
-- **Your daily earnings**: $3 (0.1% of $3,000)
-- **Annual return**: ~11% just from fees
+• **Pool volume**: $1 million per day
+• **Trading fees**: $3,000 per day (0.3% of volume)
+• **Your daily earnings**: $3 (0.1% of $3,000)
+• **Annual return**: ~11% just from fees
 
 ### Plus Price Appreciation:
-- If ETH/USDC both go up, your LP tokens are worth more
-- If trading volume increases, you earn more fees
-- Compound effect as fees auto-reinvest
+• If ETH/USDC both go up, your LP tokens are worth more
+• If trading volume increases, you earn more fees
+• Compound effect as fees auto-reinvest
 
 ## The Magic of Automated Market Makers (AMMs) 🎪
 
 ### Traditional Exchange:
-- Buyer: "I want to buy 1 ETH for $1,800"
-- Seller: "I want to sell 1 ETH for $1,850"
-- **Problem**: No trade happens (price mismatch)
+• Buyer: "I want to buy 1 ETH for $1,800"
+• Seller: "I want to sell 1 ETH for $1,850"
+• **Problem**: No trade happens (price mismatch)
 
 ### AMM Pool:
-- Pool has ETH and USDC in a ratio
-- Algorithm automatically calculates fair price
-- Trade happens instantly at current market rate
-- Price adjusts automatically for next trade
+• Pool has ETH and USDC in a ratio
+• Algorithm automatically calculates fair price
+• Trade happens instantly at current market rate
+• Price adjusts automatically for next trade
 
 ### The Formula (Don't Worry, You Don't Need Math):
 **x × y = k** (constant product formula)
-- As one token is removed, its price goes up
-- As the other token is added, its price goes down
-- This creates natural price discovery
+• As one token is removed, its price goes up
+• As the other token is added, its price goes down
+• This creates natural price discovery
 
 ## Types of Liquidity Pools 🎯
 
@@ -3131,36 +3131,36 @@ When token prices move differently than when you provided liquidity, you might h
 
 ### Simple Example:
 **At Start**:
-- 1 ETH = $2,000
-- You provide: 1 ETH + $2,000 USDC
-- Total value: $4,000
+• 1 ETH = $2,000
+• You provide: 1 ETH + $2,000 USDC
+• Total value: $4,000
 
 **ETH Doubles to $4,000**:
-- **If you just held**: 1 ETH + $2,000 USDC = $6,000
-- **In liquidity pool**: ~0.707 ETH + $2,828 USDC = $5,656
-- **Impermanent loss**: $344 (5.7%)
+• **If you just held**: 1 ETH + $2,000 USDC = $6,000
+• **In liquidity pool**: ~0.707 ETH + $2,828 USDC = $5,656
+• **Impermanent loss**: $344 (5.7%)
 
 ### Why It's "Impermanent":
-- Loss only realized if you withdraw
-- If ETH returns to $2,000, loss disappears
-- Meanwhile, you've been earning trading fees
+• Loss only realized if you withdraw
+• If ETH returns to $2,000, loss disappears
+• Meanwhile, you've been earning trading fees
 
 ### When IL Doesn't Matter:
-- Fees earned > impermanent loss
-- Both tokens move in same direction
-- You believe in long-term growth of both tokens
-- You're providing liquidity for stablecoin pairs
+• Fees earned > impermanent loss
+• Both tokens move in same direction
+• You believe in long-term growth of both tokens
+• You're providing liquidity for stablecoin pairs
 
 ## Calculating Pool Returns 📊
 
 ### Total Return Formula:
-**Total Return = Trading Fees + Token Appreciation - Impermanent Loss**
+**Total Return = Trading Fees + Token Appreciation minus Impermanent Loss**
 
 ### Example Calculation (ETH/USDC over 1 year):
-- **Trading fees earned**: +12%
-- **Token appreciation**: +15% (average of ETH and USDC)
-- **Impermanent loss**: -3% (due to ETH volatility)
-- **Net return**: 24%
+• **Trading fees earned**: +12%
+• **Token appreciation**: +15% (average of ETH and USDC)
+• **Impermanent loss**: -3% (due to ETH volatility)
+• **Net return**: 24%
 
 ### Factors Affecting Returns:
 1. **Trading volume** (more volume = more fees)
@@ -3172,32 +3172,32 @@ When token prices move differently than when you provided liquidity, you might h
 ## Choosing the Right Pool 🎯
 
 ### For Beginners:
-- **Start with stablecoin pools** (USDC/DAI)
-- **Low risk, predictable returns**
-- **Learn the mechanics safely**
-- **Expected return**: 3-6% annually
+• **Start with stablecoin pools** (USDC/DAI)
+• **Low risk, predictable returns**
+• **Learn the mechanics safely**
+• **Expected return**: 3-6% annually
 
 ### For Moderate Risk:
-- **ETH/stablecoin pairs** (ETH/USDC)
-- **Balanced exposure** to crypto and stable value
-- **Good fee generation** from high volume
-- **Expected return**: 8-15% annually
+• **ETH/stablecoin pairs** (ETH/USDC)
+• **Balanced exposure** to crypto and stable value
+• **Good fee generation** from high volume
+• **Expected return**: 8-15% annually
 
 ### For Higher Risk:
-- **Popular token pairs** (ETH/BTC, UNI/ETH)
-- **Higher potential returns** and higher volatility
-- **Requires market timing** skills
-- **Expected return**: 15-30%+ annually
+• **Popular token pairs** (ETH/BTC, UNI/ETH)
+• **Higher potential returns** and higher volatility
+• **Requires market timing** skills
+• **Expected return**: 15-30%+ annually
 
 ## Pool Selection Criteria ✅
 
 ### Research Checklist:
-- [ ] **Protocol reputation** (Uniswap, SushiSwap, Curve)
-- [ ] **Audit status** (has the pool been audited?)
-- [ ] **Trading volume** (higher volume = more fees)
-- [ ] **Pool age** (newer pools higher risk)
-- [ ] **Team behind protocol** (known and trusted?)
-- [ ] **Smart contract risk** (pool code security)
+• [ ] **Protocol reputation** (Uniswap, SushiSwap, Curve)
+• [ ] **Audit status** (has the pool been audited?)
+• [ ] **Trading volume** (higher volume = more fees)
+• [ ] **Pool age** (newer pools higher risk)
+• [ ] **Team behind protocol** (known and trusted?)
+• [ ] **Smart contract risk** (pool code security)
 
 ### Red Flags to Avoid:
 ❌ **Unaudited protocols**
@@ -3211,19 +3211,19 @@ When token prices move differently than when you provided liquidity, you might h
 
 ### Step 1: Choose Your Platform
 **Beginner-friendly options**:
-- **Uniswap**: Most popular, highest liquidity
-- **SushiSwap**: Good rewards, active community  
-- **Curve**: Best for stablecoin pools
-- **Balancer**: Multi-token pools available
+• **Uniswap**: Most popular, highest liquidity
+• **SushiSwap**: Good rewards, active community
+• **Curve**: Best for stablecoin pools
+• **Balancer**: Multi-token pools available
 
 ### Step 2: Select Your Pair
 **Conservative start**: USDC/DAI or USDC/USDT
 **Why these**: Very low impermanent loss risk
 
 ### Step 3: Calculate Amounts
-- Check current pool ratio
-- Prepare equal dollar amounts of both tokens
-- Account for gas fees (can be $50-200 on Ethereum)
+• Check current pool ratio
+• Prepare equal dollar amounts of both tokens
+• Account for gas fees (can be $50-200 on Ethereum)
 
 ### Step 4: Provide Liquidity
 1. Go to chosen platform
@@ -3235,66 +3235,66 @@ When token prices move differently than when you provided liquidity, you might h
 7. Receive LP tokens
 
 ### Step 5: Monitor and Manage
-- Track performance weekly
-- Harvest rewards if available
-- Consider when to exit
-- Reinvest profits or take profits
+• Track performance weekly
+• Harvest rewards if available
+• Consider when to exit
+• Reinvest profits or take profits
 
 ## Advanced Pool Strategies 🎯
 
 ### Strategy 1: Pool Hopping
-- Move between pools chasing highest returns
-- Requires active management and gas fee consideration
-- Best for larger amounts ($10,000+)
+• Move between pools chasing highest returns
+• Requires active management and gas fee consideration
+• Best for larger amounts ($10,000+)
 
 ### Strategy 2: Diversified LP
-- Spread across multiple pools
-- Reduces single-pool risk
-- More stable overall returns
+• Spread across multiple pools
+• Reduces single-pool risk
+• More stable overall returns
 
 ### Strategy 3: Range Orders (Uniswap V3)
-- Provide liquidity in specific price ranges
-- Higher efficiency but requires more management
-- Can earn more fees in active price ranges
+• Provide liquidity in specific price ranges
+• Higher efficiency but requires more management
+• Can earn more fees in active price ranges
 
 ### Strategy 4: Auto-Compounding
-- Use platforms that automatically reinvest rewards
-- Examples: Yearn Finance, Beefy Finance
-- Slightly lower returns but much less work
+• Use platforms that automatically reinvest rewards
+• Examples: Yearn Finance, Beefy Finance
+• Slightly lower returns but much less work
 
 ## Tax Implications 💼
 
 ### What's Taxable:
-- **Adding liquidity**: Usually not taxable (like-kind exchange)
-- **Removing liquidity**: May create taxable event
-- **Trading fees earned**: Taxable as income
-- **Token rewards**: Taxable as income when received
-- **Impermanent loss**: May be deductible loss
+• **Adding liquidity**: Usually not taxable (like-kind exchange)
+• **Removing liquidity**: May create taxable event
+• **Trading fees earned**: Taxable as income
+• **Token rewards**: Taxable as income when received
+• **Impermanent loss**: May be deductible loss
 
 ### Record Keeping:
-- Track all LP transactions
-- Note token amounts and values at entry/exit
-- Keep records of fees earned
-- Calculate cost basis changes
-- Consider using DeFi tax software
+• Track all LP transactions
+• Note token amounts and values at entry/exit
+• Keep records of fees earned
+• Calculate cost basis changes
+• Consider using DeFi tax software
 
 ## Risk Management Best Practices 🛡️
 
 ### Position Sizing:
-- Never put more than 10% of portfolio in one pool
-- Start with 1-5% until comfortable
-- Consider correlation between tokens
+• Never put more than 10% of portfolio in one pool
+• Start with 1-5% until comfortable
+• Consider correlation between tokens
 
 ### Diversification:
-- Use multiple pools across different protocols
-- Mix risk levels (stable, medium, high)
-- Don't chase only highest yields
+• Use multiple pools across different protocols
+• Mix risk levels (stable, medium, high)
+• Don't chase only highest yields
 
 ### Exit Planning:
-- Set profit-taking rules in advance
-- Monitor impermanent loss vs fees earned
-- Have trigger points for exiting
-- Don't get emotional about positions
+• Set profit-taking rules in advance
+• Monitor impermanent loss vs fees earned
+• Have trigger points for exiting
+• Don't get emotional about positions
 
 ## Common Mistakes to Avoid 🚫
 
@@ -3343,7 +3343,7 @@ Liquidity pools are powerful tools for earning in DeFi, but they require underst
         content: {
           text: `# Risk vs Reward: The Math That Protects Your Money
 
-The difference between successful DeFi investors and those who lose money isn't luck - it's **systematic risk assessment**. Here's how to evaluate any DeFi opportunity before risking your capital.
+The difference between successful DeFi investors and those who lose money isn't luck: it's **systematic risk assessment**. Here's how to evaluate any DeFi opportunity before risking your capital.
 
 ## The DeFi Risk Framework 📊
 
@@ -3358,36 +3358,36 @@ The difference between successful DeFi investors and those who lose money isn't 
 ### Audit Status (Weight: 40% of decision)
 
 #### Green Flags ✅:
-- **Multiple audits** from reputable firms (ConsenSys, Trail of Bits, Quantstamp)
-- **Recent audits** (within 6 months for new protocols)
-- **All critical issues resolved** 
-- **Bug bounty program** active
-- **Open source code** available for review
+• **Multiple audits** from reputable firms (ConsenSys, Trail of Bits, Quantstamp)
+• **Recent audits** (within 6 months for new protocols)
+• **All critical issues resolved**
+• **Bug bounty program** active
+• **Open source code** available for review
 
 #### Yellow Flags ⚠️:
-- **Single audit** only
-- **Audit older than 1 year**
-- **Some medium issues unresolved**
-- **Closed source** but reputable team
+• **Single audit** only
+• **Audit older than 1 year**
+• **Some medium issues unresolved**
+• **Closed source** but reputable team
 
 #### Red Flags 🚩:
-- **No audit** at all
-- **Critical issues unresolved**
-- **Anonymous team** with closed source
-- **Fork without additional security review**
+• **No audit** at all
+• **Critical issues unresolved**
+• **Anonymous team** with closed source
+• **Fork without additional security review**
 
 ### Code Maturity Assessment:
 
 #### Questions to Ask:
-- How long has the protocol been live?
-- What's the total value locked (TVL)?
-- Any previous security incidents?
-- How active is development?
+• How long has the protocol been live?
+• What's the total value locked (TVL)?
+• Any previous security incidents?
+• How active is development?
 
 #### Scoring System:
-- **6+ months live + $100M+ TVL**: Low risk
-- **3-6 months live + $10M+ TVL**: Medium risk
-- **<3 months live or <$10M TVL**: High risk
+• **6+ months live + $100M+ TVL**: Low risk
+• **3-6 months live + $10M+ TVL**: Medium risk
+• **<3 months live or <$10M TVL**: High risk
 
 ## Financial Risk Assessment 💰
 
@@ -3399,38 +3399,38 @@ The difference between successful DeFi investors and those who lose money isn't 
 **Fee offset time**: How long to earn back potential IL?
 
 #### Example Calculation (ETH/USDC):
-- **Historical IL range**: 2-8% annually
-- **Trading fee APR**: 12%
-- **Net expected return**: 4-10%
-- **Risk assessment**: Moderate (fees likely cover IL)
+• **Historical IL range**: 2-8% annually
+• **Trading fee APR**: 12%
+• **Net expected return**: 4-10%
+• **Risk assessment**: Moderate (fees likely cover IL)
 
 ### For Lending/Borrowing:
 
 #### Key Metrics:
-- **Liquidation threshold**: What price triggers liquidation?
-- **Safety buffer**: How far from liquidation?
-- **Interest rate stability**: How volatile are rates?
+• **Liquidation threshold**: What price triggers liquidation?
+• **Safety buffer**: How far from liquidation?
+• **Interest rate stability**: How volatile are rates?
 
 #### Example Calculation (Compound Borrowing):
-- **Collateral**: $10,000 ETH
-- **Borrowed**: $6,000 USDC (60% LTV)
-- **Liquidation price**: 75% price drop in ETH
-- **Current safety margin**: 15%
-- **Risk level**: Moderate to high
+• **Collateral**: $10,000 ETH
+• **Borrowed**: $6,000 USDC (60% LTV)
+• **Liquidation price**: 75% price drop in ETH
+• **Current safety margin**: 15%
+• **Risk level**: Moderate to high
 
 ## Market Risk Analysis 📈
 
 ### Volatility Assessment:
 
 #### Historical Volatility Check:
-- **Low volatility**: Stablecoins (1-5% monthly swings)
-- **Medium volatility**: ETH, BTC (10-30% monthly swings)
-- **High volatility**: Altcoins (30-80% monthly swings)
+• **Low volatility**: Stablecoins (1-5% monthly swings)
+• **Medium volatility**: ETH, BTC (10-30% monthly swings)
+• **High volatility**: Altcoins (30-80% monthly swings)
 
 #### Correlation Analysis:
-- **Positively correlated**: ETH/altcoins (risk amplification)
-- **Negatively correlated**: Crypto/USD (natural hedge)
-- **Uncorrelated**: Different asset classes
+• **Positively correlated**: ETH/altcoins (risk amplification)
+• **Negatively correlated**: Crypto/USD (natural hedge)
+• **Uncorrelated**: Different asset classes
 
 ### Scenario Modeling:
 
@@ -3440,7 +3440,7 @@ The difference between successful DeFi investors and those who lose money isn't 
 3. **Bear case** (30% token depreciation)
 
 #### Example for ETH/USDC LP:
-**Bull case**: +15% return (appreciation + fees - small IL)
+**Bull case**: +15% return (appreciation + fees: small IL)
 **Base case**: +8% return (fees only, minimal IL)
 **Bear case**: +3% return (fees offset most IL)
 
@@ -3449,217 +3449,217 @@ The difference between successful DeFi investors and those who lose money isn't 
 ### Team and Governance Risk:
 
 #### Team Assessment:
-- **Known team members** with track records?
-- **Previous successful projects**?
-- **Active communication** with community?
-- **Transparent** about risks and limitations?
+• **Known team members** with track records?
+• **Previous successful projects**?
+• **Active communication** with community?
+• **Transparent** about risks and limitations?
 
 #### Governance Evaluation:
-- **Decentralized governance** or single points of failure?
-- **Timelock** on critical changes?
-- **Community involvement** in decisions?
-- **Emergency procedures** clearly defined?
+• **Decentralized governance** or single points of failure?
+• **Timelock** on critical changes?
+• **Community involvement** in decisions?
+• **Emergency procedures** clearly defined?
 
 ### External Dependencies:
 
 #### Oracle Risk:
-- **Price feed reliability** (Chainlink vs others)
-- **Oracle attack history**
-- **Backup mechanisms** if oracles fail
+• **Price feed reliability** (Chainlink vs others)
+• **Oracle attack history**
+• **Backup mechanisms** if oracles fail
 
 #### Infrastructure Risk:
-- **Blockchain congestion** impact
-- **Layer 2 bridge** risks
-- **Key infrastructure** dependencies
+• **Blockchain congestion** impact
+• **Layer 2 bridge** risks
+• **Key infrastructure** dependencies
 
 ## Risk Scoring System 🎯
 
 ### Overall Risk Score (1-10 scale):
 
 #### Score 1-3 (Conservative):
-- Multiple audits ✅
-- 6+ months live ✅
-- $100M+ TVL ✅
-- Known team ✅
-- Established tokens only ✅
+• Multiple audits ✅
+• 6+ months live ✅
+• $100M+ TVL ✅
+• Known team ✅
+• Established tokens only ✅
 
 #### Score 4-6 (Moderate):
-- At least one audit ✅
-- 3+ months live ✅
-- $10M+ TVL ✅
-- Some unknowns ⚠️
+• At least one audit ✅
+• 3+ months live ✅
+• $10M+ TVL ✅
+• Some unknowns ⚠️
 
 #### Score 7-10 (Aggressive):
-- Limited or no audits 🚩
-- New protocol 🚩
-- Low TVL 🚩
-- Anonymous team 🚩
-- Experimental features 🚩
+• Limited or no audits 🚩
+• New protocol 🚩
+• Low TVL 🚩
+• Anonymous team 🚩
+• Experimental features 🚩
 
 ## Expected Return Calculation 📊
 
 ### Components of DeFi Returns:
 
 #### For Liquidity Pools:
-**Total Return = Trading Fees + Token Appreciation + Bonus Rewards - Impermanent Loss - Gas Costs**
+**Total Return = Trading Fees + Token Appreciation + Bonus Rewards: Impermanent Loss: Gas Costs**
 
 #### Example Calculation:
-- **Trading fees**: 8% APR
-- **Token appreciation**: 5% expected
-- **Bonus rewards**: 3% in governance tokens
-- **Impermanent loss**: -2% expected
-- **Gas costs**: -1% (frequent transactions)
-- **Net expected return**: 13% APR
+• **Trading fees**: 8% APR
+• **Token appreciation**: 5% expected
+• **Bonus rewards**: 3% in governance tokens
+• **Impermanent loss**: -2% expected
+• **Gas costs**: -1% (frequent transactions)
+• **Net expected return**: 13% APR
 
 ### Risk-Adjusted Returns:
 
 #### Sharpe Ratio for DeFi:
-**Sharpe Ratio = (Expected Return - Risk-free Rate) / Volatility**
+**Sharpe Ratio = (Expected Return: Risk-free Rate) / Volatility**
 
 #### Example Comparison:
-- **Strategy A**: 15% return, 20% volatility = 0.5 Sharpe
-- **Strategy B**: 10% return, 10% volatility = 0.8 Sharpe
-- **Strategy B is better** risk-adjusted return
+• **Strategy A**: 15% return, 20% volatility = 0.5 Sharpe
+• **Strategy B**: 10% return, 10% volatility = 0.8 Sharpe
+• **Strategy B is better** risk-adjusted return
 
 ## Position Sizing Framework 💼
 
 ### The 1-5-10 Rule:
 
 #### 1% Allocation: Experimental/High Risk
-- New protocols
-- Unaudited contracts
-- Speculative tokens
-- Learning opportunities
+• New protocols
+• Unaudited contracts
+• Speculative tokens
+• Learning opportunities
 
 #### 5% Allocation: Moderate Risk
-- Audited protocols
-- Some track record
-- Moderate volatility
-- Good risk/reward ratio
+• Audited protocols
+• Some track record
+• Moderate volatility
+• Good risk/reward ratio
 
 #### 10% Allocation: Conservative
-- Established protocols
-- Multiple audits
-- Long track record
-- Lower but stable returns
+• Established protocols
+• Multiple audits
+• Long track record
+• Lower but stable returns
 
 ### Portfolio Context:
 
 #### Total DeFi Allocation Guidelines:
-- **Conservative investor**: 5-10% of portfolio
-- **Moderate investor**: 10-25% of portfolio
-- **Aggressive investor**: 25-50% of portfolio
-- **Never exceed**: What you can afford to lose completely
+• **Conservative investor**: 5-10% of portfolio
+• **Moderate investor**: 10-25% of portfolio
+• **Aggressive investor**: 25-50% of portfolio
+• **Never exceed**: What you can afford to lose completely
 
 ## Due Diligence Checklist ✅
 
 ### Before Any Investment:
 
 #### Protocol Research (2-4 hours):
-- [ ] Read whitepaper/documentation
-- [ ] Check audit reports
-- [ ] Review GitHub activity
-- [ ] Analyze tokenomics
-- [ ] Check team backgrounds
-- [ ] Read community discussions
+• [ ] Read whitepaper/documentation
+• [ ] Check audit reports
+• [ ] Review GitHub activity
+• [ ] Analyze tokenomics
+• [ ] Check team backgrounds
+• [ ] Read community discussions
 
 #### Financial Analysis (1-2 hours):
-- [ ] Calculate expected returns
-- [ ] Model different scenarios
-- [ ] Assess maximum loss potential
-- [ ] Compare to alternatives
-- [ ] Factor in all costs
+• [ ] Calculate expected returns
+• [ ] Model different scenarios
+• [ ] Assess maximum loss potential
+• [ ] Compare to alternatives
+• [ ] Factor in all costs
 
 #### Risk Assessment (1 hour):
-- [ ] Score each risk category
-- [ ] Calculate overall risk score
-- [ ] Determine appropriate position size
-- [ ] Set exit criteria
-- [ ] Plan monitoring schedule
+• [ ] Score each risk category
+• [ ] Calculate overall risk score
+• [ ] Determine appropriate position size
+• [ ] Set exit criteria
+• [ ] Plan monitoring schedule
 
 ## Real-World Examples 💡
 
 ### Example 1: Conservative Play (Aave USDC Lending)
 
 #### Risk Assessment:
-- **Smart contract**: Score 2/10 (multiple audits, established)
-- **Financial**: Score 1/10 (lending to overcollateralized borrowers)
-- **Market**: Score 2/10 (USDC stability)
-- **Operational**: Score 2/10 (proven team, mature governance)
-- **Overall risk**: 2/10
+• **Smart contract**: Score 2/10 (multiple audits, established)
+• **Financial**: Score 1/10 (lending to overcollateralized borrowers)
+• **Market**: Score 2/10 (USDC stability)
+• **Operational**: Score 2/10 (proven team, mature governance)
+• **Overall risk**: 2/10
 
 #### Return Calculation:
-- **Expected APR**: 4-6%
-- **Volatility**: Very low
-- **Maximum loss**: Near zero (excluding smart contract risk)
-- **Position size**: Up to 10% of portfolio
+• **Expected APR**: 4-6%
+• **Volatility**: Very low
+• **Maximum loss**: Near zero (excluding smart contract risk)
+• **Position size**: Up to 10% of portfolio
 
 ### Example 2: Moderate Play (Uniswap ETH/USDC LP)
 
 #### Risk Assessment:
-- **Smart contract**: Score 3/10 (well-audited, battle-tested)
-- **Financial**: Score 5/10 (impermanent loss possible)
-- **Market**: Score 6/10 (ETH volatility)
-- **Operational**: Score 2/10 (decentralized, proven)
-- **Overall risk**: 4/10
+• **Smart contract**: Score 3/10 (well-audited, battle-tested)
+• **Financial**: Score 5/10 (impermanent loss possible)
+• **Market**: Score 6/10 (ETH volatility)
+• **Operational**: Score 2/10 (decentralized, proven)
+• **Overall risk**: 4/10
 
 #### Return Calculation:
-- **Expected APR**: 8-15%
-- **Volatility**: Medium
-- **Maximum loss**: ~20% (extreme impermanent loss)
-- **Position size**: 3-5% of portfolio
+• **Expected APR**: 8-15%
+• **Volatility**: Medium
+• **Maximum loss**: ~20% (extreme impermanent loss)
+• **Position size**: 3-5% of portfolio
 
 ### Example 3: Aggressive Play (New Protocol Farming)
 
 #### Risk Assessment:
-- **Smart contract**: Score 8/10 (single audit, new code)
-- **Financial**: Score 7/10 (complex mechanics)
-- **Market**: Score 9/10 (new token volatility)
-- **Operational**: Score 6/10 (new team, untested governance)
-- **Overall risk**: 8/10
+• **Smart contract**: Score 8/10 (single audit, new code)
+• **Financial**: Score 7/10 (complex mechanics)
+• **Market**: Score 9/10 (new token volatility)
+• **Operational**: Score 6/10 (new team, untested governance)
+• **Overall risk**: 8/10
 
 #### Return Calculation:
-- **Expected APR**: 30-100%+ (but highly uncertain)
-- **Volatility**: Very high
-- **Maximum loss**: 100% (total loss possible)
-- **Position size**: 1% of portfolio maximum
+• **Expected APR**: 30-100%+ (but highly uncertain)
+• **Volatility**: Very high
+• **Maximum loss**: 100% (total loss possible)
+• **Position size**: 1% of portfolio maximum
 
 ## Monitoring and Adjustment 📊
 
 ### Regular Review Schedule:
 
 #### Daily (for active positions):
-- Check for any protocol announcements
-- Monitor significant price movements
-- Watch for unusual trading activity
+• Check for any protocol announcements
+• Monitor significant price movements
+• Watch for unusual trading activity
 
 #### Weekly:
-- Review performance vs expectations
-- Check if risk factors have changed
-- Assess whether to rebalance
+• Review performance vs expectations
+• Check if risk factors have changed
+• Assess whether to rebalance
 
 #### Monthly:
-- Full portfolio risk assessment
-- Compare actual vs expected returns
-- Adjust position sizes based on performance
+• Full portfolio risk assessment
+• Compare actual vs expected returns
+• Adjust position sizes based on performance
 
 ### Exit Triggers:
 
 #### Immediate Exit Scenarios:
-- Security incident in protocol
-- Major team members leaving
-- Fundamental tokenomics change
-- Personal risk tolerance change
+• Security incident in protocol
+• Major team members leaving
+• Fundamental tokenomics change
+• Personal risk tolerance change
 
 #### Gradual Exit Scenarios:
-- Returns consistently below expectations
-- Risk level increases beyond comfort
-- Better opportunities elsewhere
-- Approaching profit-taking targets
+• Returns consistently below expectations
+• Risk level increases beyond comfort
+• Better opportunities elsewhere
+• Approaching profit-taking targets
 
 ## Key Takeaway
 
-**Successful DeFi investing isn't about finding the highest APY** - it's about finding the **best risk-adjusted returns** that fit your situation and risk tolerance.
+**Successful DeFi investing isn't about finding the highest APY**: it's about finding the **best risk-adjusted returns** that fit your situation and risk tolerance.
 
 The math doesn't have to be perfect, but it has to be **systematic**. Having a framework prevents emotional decisions and helps you build wealth consistently over time.
 
@@ -3693,30 +3693,30 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 ## Platform Selection Criteria 🎯
 
 ### What Makes a Platform Beginner-Friendly:
-- **Simple, intuitive interface**
-- **Extensive documentation and tutorials**
-- **Strong security track record** (audits, bug bounties)
-- **Active community support**
-- **Reasonable gas fees** and optimization
-- **Clear risk disclosures**
-- **Mobile-friendly** design
+• **Simple, intuitive interface**
+• **Extensive documentation and tutorials**
+• **Strong security track record** (audits, bug bounties)
+• **Active community support**
+• **Reasonable gas fees** and optimization
+• **Clear risk disclosures**
+• **Mobile-friendly** design
 
 ## Tier 1: Start Here (Safest for Beginners) 🛡️
 
-### 1. **Aave** - Lending and Borrowing
+### 1. **Aave**: Lending and Borrowing
 **Best for**: Earning yield on stablecoins and major cryptocurrencies
 
 #### Why It's Beginner-Friendly:
-✅ **Clean, simple interface** - easy to understand
-✅ **Multiple security audits** - battle-tested code
-✅ **Clear risk indicators** - health factors and liquidation warnings
-✅ **Established reputation** - billions in TVL
-✅ **Good documentation** - extensive guides available
+✅ **Clean, simple interface**: easy to understand
+✅ **Multiple security audits**: battle-tested code
+✅ **Clear risk indicators**: health factors and liquidation warnings
+✅ **Established reputation**: billions in TVL
+✅ **Good documentation**: extensive guides available
 
 #### What You Can Do:
-- **Lend USDC/DAI** for 3-6% APY (very low risk)
-- **Lend ETH/BTC** for 2-5% APY (low risk)
-- **Borrow against collateral** (advanced feature)
+• **Lend USDC/DAI** for 3-6% APY (very low risk)
+• **Lend ETH/BTC** for 2-5% APY (low risk)
+• **Borrow against collateral** (advanced feature)
 
 #### Getting Started:
 1. Go to app.aave.com
@@ -3726,24 +3726,24 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 5. Supply tokens and start earning immediately
 
 #### Typical Returns:
-- **Stablecoins**: 3-8% APY
-- **ETH**: 1-4% APY
-- **BTC**: 1-3% APY
+• **Stablecoins**: 3-8% APY
+• **ETH**: 1-4% APY
+• **BTC**: 1-3% APY
 
-### 2. **Compound** - Simple Lending
+### 2. **Compound**: Simple Lending
 **Best for**: Set-and-forget lending with automatic compounding
 
 #### Why It's Great for Beginners:
-✅ **Automatic compounding** - no need to manually claim rewards
-✅ **Simple concept** - just deposit and earn
-✅ **Long track record** - one of the oldest DeFi protocols
-✅ **Clear risk metrics** - easy to understand borrowing power
-✅ **Educational resources** - good learning materials
+✅ **Automatic compounding**: no need to manually claim rewards
+✅ **Simple concept**: just deposit and earn
+✅ **Long track record**: one of the oldest DeFi protocols
+✅ **Clear risk metrics**: easy to understand borrowing power
+✅ **Educational resources**: good learning materials
 
 #### What You Can Do:
-- **Supply tokens** to earn interest automatically
-- **Borrow against collateral** with clear risk management
-- **Earn COMP tokens** as additional rewards
+• **Supply tokens** to earn interest automatically
+• **Borrow against collateral** with clear risk management
+• **Earn COMP tokens** as additional rewards
 
 #### Getting Started:
 1. Visit compound.finance
@@ -3753,24 +3753,24 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 5. Watch your balance grow automatically
 
 #### Typical Returns:
-- **USDC**: 2-6% APY + COMP rewards
-- **DAI**: 2-6% APY + COMP rewards
-- **ETH**: 1-4% APY + COMP rewards
+• **USDC**: 2-6% APY + COMP rewards
+• **DAI**: 2-6% APY + COMP rewards
+• **ETH**: 1-4% APY + COMP rewards
 
-### 3. **Curve Finance** - Stablecoin Specialist
+### 3. **Curve Finance**: Stablecoin Specialist
 **Best for**: Maximum returns on stablecoin trading with minimal impermanent loss
 
 #### Why Beginners Love It:
-✅ **Specialized in stablecoins** - much lower impermanent loss risk
+✅ **Specialized in stablecoins**: much lower impermanent loss risk
 ✅ **Higher yields** than lending platforms
-✅ **Proven algorithm** - excellent for stable asset swaps
-✅ **Lower slippage** - better execution for large trades
-✅ **CRV rewards** - additional earning potential
+✅ **Proven algorithm**: excellent for stable asset swaps
+✅ **Lower slippage**: better execution for large trades
+✅ **CRV rewards**: additional earning potential
 
 #### What You Can Do:
-- **Provide liquidity** to stablecoin pools (USDC/DAI/USDT)
-- **Earn trading fees** plus CRV token rewards
-- **Minimal impermanent loss** due to stable price correlation
+• **Provide liquidity** to stablecoin pools (USDC/DAI/USDT)
+• **Earn trading fees** plus CRV token rewards
+• **Minimal impermanent loss** due to stable price correlation
 
 #### Getting Started:
 1. Go to curve.fi
@@ -3780,25 +3780,25 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 5. Stake LP tokens for additional CRV rewards
 
 #### Typical Returns:
-- **3pool (USDC/DAI/USDT)**: 5-15% APY
-- **Other stable pools**: 4-20% APY
-- **Plus CRV rewards**: Variable bonus
+• **3pool (USDC/DAI/USDT)**: 5-15% APY
+• **Other stable pools**: 4-20% APY
+• **Plus CRV rewards**: Variable bonus
 
 ## Tier 2: Next Level (Moderate Complexity) ⚡
 
-### 4. **Uniswap** - The Original DEX
+### 4. **Uniswap**: The Original DEX
 **Best for**: Learning about liquidity provision and getting familiar with trading
 
 #### Why It's Educational:
-✅ **Most popular DEX** - lots of educational content available
-✅ **Simple interface** - straightforward swapping and LP provision
-✅ **High liquidity** - best execution for most trades
-✅ **Version 3** - concentrated liquidity for advanced users
+✅ **Most popular DEX**: lots of educational content available
+✅ **Simple interface**: straightforward swapping and LP provision
+✅ **High liquidity**: best execution for most trades
+✅ **Version 3**: concentrated liquidity for advanced users
 
 #### What You Can Do:
-- **Swap tokens** - trade any ERC-20 token
-- **Provide liquidity** to trading pairs
-- **Earn trading fees** from your LP positions
+• **Swap tokens**: trade any ERC-20 token
+• **Provide liquidity** to trading pairs
+• **Earn trading fees** from your LP positions
 
 #### Getting Started (Conservative Approach):
 1. Visit app.uniswap.org
@@ -3808,23 +3808,23 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 5. Monitor impermanent loss vs fees earned
 
 #### Typical Returns:
-- **ETH/USDC**: 5-15% APY (depending on volume)
-- **Stablecoin pairs**: 2-8% APY
-- **Volatile pairs**: 10-30% APY (higher risk)
+• **ETH/USDC**: 5-15% APY (depending on volume)
+• **Stablecoin pairs**: 2-8% APY
+• **Volatile pairs**: 10-30% APY (higher risk)
 
-### 5. **SushiSwap** - Community-Driven DEX
+### 5. **SushiSwap**: Community-Driven DEX
 **Best for**: Higher yields through SUSHI token rewards
 
 #### Why Consider It:
-✅ **Additional SUSHI rewards** - often higher total APY
-✅ **Active community** - good support and resources
-✅ **Multiple chains** - Ethereum, Polygon, Arbitrum
-✅ **Onsen program** - boosted rewards for specific pools
+✅ **Additional SUSHI rewards**: often higher total APY
+✅ **Active community**: good support and resources
+✅ **Multiple chains**: Ethereum, Polygon, Arbitrum
+✅ **Onsen program**: boosted rewards for specific pools
 
 #### What You Can Do:
-- **Provide liquidity** similar to Uniswap
-- **Stake LP tokens** for additional SUSHI rewards
-- **Farm SUSHI tokens** through various incentive programs
+• **Provide liquidity** similar to Uniswap
+• **Stake LP tokens** for additional SUSHI rewards
+• **Farm SUSHI tokens** through various incentive programs
 
 #### Getting Started:
 1. Go to sushi.com
@@ -3834,23 +3834,23 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 5. Stake LP tokens in "Farms" for SUSHI rewards
 
 #### Typical Returns:
-- **Base trading fees**: 5-15% APY
-- **Plus SUSHI rewards**: 5-25% additional APY
-- **Total**: Often 15-30% APY (variable based on SUSHI price)
+• **Base trading fees**: 5-15% APY
+• **Plus SUSHI rewards**: 5-25% additional APY
+• **Total**: Often 15-30% APY (variable based on SUSHI price)
 
-### 6. **Yearn Finance** - Automated Yield Farming
+### 6. **Yearn Finance**: Automated Yield Farming
 **Best for**: Hands-off yield optimization without active management
 
 #### Why It's Great for Busy People:
-✅ **Automated strategy** - professionals manage your funds
-✅ **Gas optimization** - share costs with other users
-✅ **Diversified strategies** - reduces single-protocol risk
+✅ **Automated strategy**: professionals manage your funds
+✅ **Gas optimization**: share costs with other users
+✅ **Diversified strategies**: reduces single-protocol risk
 ✅ **No need to constantly** monitor and adjust
 
 #### What You Can Do:
-- **Deposit into vaults** - let strategies run automatically
-- **Earn optimized yields** - often better than DIY approaches
-- **Set and forget** - minimal ongoing management required
+• **Deposit into vaults**: let strategies run automatically
+• **Earn optimized yields**: often better than DIY approaches
+• **Set and forget**: minimal ongoing management required
 
 #### Getting Started:
 1. Visit yearn.finance
@@ -3860,9 +3860,9 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 5. Check performance periodically
 
 #### Typical Returns:
-- **Stablecoin vaults**: 4-12% APY
-- **ETH strategies**: 5-18% APY
-- **Mixed strategies**: 6-20% APY
+• **Stablecoin vaults**: 4-12% APY
+• **ETH strategies**: 5-18% APY
+• **Mixed strategies**: 6-20% APY
 
 ## Platform-by-Platform Comparison 📊
 
@@ -3878,40 +3878,40 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 ## Layer 2 Solutions for Lower Fees 🚀
 
 ### Why Layer 2 Matters:
-- **Much lower gas fees** (often <$1 instead of $50+)
-- **Faster transactions** (seconds instead of minutes)
-- **Same security** as Ethereum mainnet
-- **Better for small amounts** ($100-$1,000 positions)
+• **Much lower gas fees** (often <$1 instead of $50+)
+• **Faster transactions** (seconds instead of minutes)
+• **Same security** as Ethereum mainnet
+• **Better for small amounts** ($100-$1,000 positions)
 
 ### Top Layer 2 Platforms:
 
 #### **Polygon Network**:
-- **Aave on Polygon** - same features, much cheaper
-- **SushiSwap on Polygon** - identical to mainnet
-- **Curve on Polygon** - stable swaps for cents
-- **Bridge cost**: $20-50 to move funds initially
+• **Aave on Polygon**: same features, much cheaper
+• **SushiSwap on Polygon**: identical to mainnet
+• **Curve on Polygon**: stable swaps for cents
+• **Bridge cost**: $20-50 to move funds initially
 
 #### **Arbitrum**:
-- **Uniswap V3** - full features available
-- **SushiSwap** - complete DEX functionality
-- **Curve** - efficient stable swaps
-- **GMX** - popular perpetual trading platform
+• **Uniswap V3**: full features available
+• **SushiSwap**: complete DEX functionality
+• **Curve**: efficient stable swaps
+• **GMX**: popular perpetual trading platform
 
 #### **Optimism**:
-- **Synthetix** - synthetic asset trading
-- **Uniswap V3** - concentrated liquidity
-- **1inch** - optimized trade routing
-- **Velodrome** - ve(3,3) tokenomics
+• **Synthetix**: synthetic asset trading
+• **Uniswap V3**: concentrated liquidity
+• **1inch**: optimized trade routing
+• **Velodrome**: ve(3,3) tokenomics
 
 ## Getting Started Strategy: The 30-60-90 Day Plan 📅
 
 ### Days 1-30: Foundation Building
 **Goal**: Learn basics with minimal risk
 
-- **Week 1**: Set up MetaMask, get familiar with interfaces
-- **Week 2**: Try Aave with $100-200 in USDC
-- **Week 3**: Experiment with Compound lending
-- **Week 4**: Learn about Curve stablecoin pools
+• **Week 1**: Set up MetaMask, get familiar with interfaces
+• **Week 2**: Try Aave with $100-200 in USDC
+• **Week 3**: Experiment with Compound lending
+• **Week 4**: Learn about Curve stablecoin pools
 
 **Total Investment**: $200-500 maximum
 **Expected Learning**: Platform navigation, gas fees, basic DeFi mechanics
@@ -3919,9 +3919,9 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 ### Days 31-60: Expand Knowledge
 **Goal**: Try different strategies with slightly higher amounts
 
-- **Week 5-6**: Try Uniswap LP with ETH/USDC (small amount)
-- **Week 7-8**: Experiment with SushiSwap farming
-- **Current positions**: Monitor and learn from first month
+• **Week 5-6**: Try Uniswap LP with ETH/USDC (small amount)
+• **Week 7-8**: Experiment with SushiSwap farming
+• **Current positions**: Monitor and learn from first month
 
 **Total Investment**: $500-1,500 total
 **Expected Learning**: Impermanent loss, LP mechanics, comparing returns
@@ -3929,9 +3929,9 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 ### Days 61-90: Develop Strategy
 **Goal**: Find your preferred approach and scale appropriately
 
-- **Week 9-10**: Try Layer 2 solutions (Polygon or Arbitrum)
-- **Week 11-12**: Experiment with Yearn vaults or similar automation
-- **Strategy**: Focus on what worked best from first 60 days
+• **Week 9-10**: Try Layer 2 solutions (Polygon or Arbitrum)
+• **Week 11-12**: Experiment with Yearn vaults or similar automation
+• **Strategy**: Focus on what worked best from first 60 days
 
 **Total Investment**: Based on comfort level and results
 **Expected Learning**: Personal risk tolerance, preferred strategies
@@ -3939,19 +3939,19 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 ## Red Flags to Avoid 🚨
 
 ### Platform Red Flags:
-❌ **Unaudited protocols** - no security review
-❌ **Anonymous teams** - no accountability
-❌ **Extremely high APY** - unsustainable rewards (>100%)
-❌ **No documentation** - unclear how it works
-❌ **Recent launch** - insufficient testing period
-❌ **Low TVL** - indicates low confidence
+❌ **Unaudited protocols**: no security review
+❌ **Anonymous teams**: no accountability
+❌ **Extremely high APY**: unsustainable rewards (>100%)
+❌ **No documentation**: unclear how it works
+❌ **Recent launch**: insufficient testing period
+❌ **Low TVL**: indicates low confidence
 
 ### Strategy Red Flags:
-❌ **Promising guaranteed returns** - nothing is guaranteed
-❌ **Pressure to invest quickly** - legitimate DeFi doesn't rush you
-❌ **Requiring recruitment** - pyramid scheme characteristics
-❌ **Locked funds** - can't withdraw when you want
-❌ **Unclear fee structure** - hidden costs
+❌ **Promising guaranteed returns**: nothing is guaranteed
+❌ **Pressure to invest quickly**: legitimate DeFi doesn't rush you
+❌ **Requiring recruitment**: pyramid scheme characteristics
+❌ **Locked funds**: can't withdraw when you want
+❌ **Unclear fee structure**: hidden costs
 
 ## Beginner Mistakes to Avoid 🚫
 
@@ -3968,14 +3968,14 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 
 **Start simple, start small, and start learning**. The platforms listed in Tier 1 are where 80% of your DeFi journey should begin. They offer the best combination of **safety, education value, and reasonable returns**.
 
-**Remember**: Your goal in the first few months isn't to maximize returns - it's to **build knowledge and confidence** while risking only small amounts you can afford to lose.
+**Remember**: Your goal in the first few months isn't to maximize returns: it's to **build knowledge and confidence** while risking only small amounts you can afford to lose.
 
 Once you understand the basics deeply, you can gradually explore more complex strategies and higher-yield opportunities.
 
 *Congratulations! You've completed the DeFi Earning course. You now understand how to evaluate opportunities, assess risks, and choose appropriate platforms for your situation and experience level.*`,
           quiz: {
             id: "quiz-3-5",
-            title: "DeFi Platforms - Knowledge Check",
+            title: "DeFi Platforms: Knowledge Check",
             passingScore: 70,
             maxAttempts: 3,
             questions: [
@@ -4013,9 +4013,9 @@ Once you understand the basics deeply, you can gradually explore more complex st
 Prove your knowledge of staking, yield farming, and liquidity pools.
 
 ### Exam Details:
-- **Questions**: 33
-- **Passing Score**: 80%
-- **Time Limit**: 60 minutes`,
+• **Questions**: 33
+• **Passing Score**: 80%
+• **Time Limit**: 60 minutes`,
           quiz: {
             id: "exam-3",
             title: "DeFi Earning Final Exam",
@@ -4091,11 +4091,11 @@ You don't need $10,000 or $100,000 to start building a meaningful DeFi portfolio
 
 ### The "Learning Portfolio" Mindset:
 Your first DeFi portfolio is primarily an **education vehicle** that happens to potentially make money. Every decision teaches you something about:
-- Risk management
-- Market dynamics  
-- Protocol behavior
-- Your own psychology
-- Portfolio mechanics
+• Risk management
+• Market dynamics
+• Protocol behavior
+• Your own psychology
+• Portfolio mechanics
 
 ## Small Portfolio Strategies ($100-$1,000) 💰
 
@@ -4106,15 +4106,15 @@ Your first DeFi portfolio is primarily an **education vehicle** that happens to 
 ### Strategy 1: The "Layer 2 Start" ($100-300)
 
 #### Allocation:
-- **60% Polygon/Arbitrum stablecoin lending** (Aave)
-- **30% Polygon LP position** (USDC/DAI on SushiSwap)
-- **10% Learning fund** (try different protocols)
+• **60% Polygon/Arbitrum stablecoin lending** (Aave)
+• **30% Polygon LP position** (USDC/DAI on SushiSwap)
+• **10% Learning fund** (try different protocols)
 
 #### Advantages:
-✅ **Low gas fees** - more of your money working
-✅ **Full DeFi experience** - lending, LP, farming
-✅ **Easy to manage** - simple strategies
-✅ **Educational value** - learn without high costs
+✅ **Low gas fees**: more of your money working
+✅ **Full DeFi experience**: lending, LP, farming
+✅ **Easy to manage**: simple strategies
+✅ **Educational value**: learn without high costs
 
 #### Getting Started:
 1. **Bridge $100 to Polygon** ($15-30 bridge cost)
@@ -4125,122 +4125,122 @@ Your first DeFi portfolio is primarily an **education vehicle** that happens to 
 ### Strategy 2: The "Single Protocol Focus" ($200-500)
 
 #### Allocation:
-- **80% in one main protocol** (e.g., Aave or Curve)
-- **20% for experimentation**
+• **80% in one main protocol** (e.g., Aave or Curve)
+• **20% for experimentation**
 
 #### Why This Works:
-✅ **Lower gas costs** - fewer protocols to interact with
-✅ **Deep learning** - understand one platform completely
-✅ **Easier tracking** - simpler portfolio management
-✅ **Compound benefits** - loyalty rewards in some protocols
+✅ **Lower gas costs**: fewer protocols to interact with
+✅ **Deep learning**: understand one platform completely
+✅ **Easier tracking**: simpler portfolio management
+✅ **Compound benefits**: loyalty rewards in some protocols
 
 #### Example: Aave-Focused Portfolio
-- **$160 USDC lending** on Aave (stable income)
-- **$80 ETH lending** on Aave (growth exposure)  
-- **$40 for trying** other Aave features
-- **$20 for different** protocols entirely
+• **$160 USDC lending** on Aave (stable income)
+• **$80 ETH lending** on Aave (growth exposure)
+• **$40 for trying** other Aave features
+• **$20 for different** protocols entirely
 
 ### Strategy 3: The "Stablecoin Maximizer" ($300-800)
 
 #### Allocation:
-- **40% Curve 3pool** (USDC/DAI/USDT)
-- **30% Aave USDC** lending
-- **20% Yearn USDC** vault
-- **10% experimental**
+• **40% Curve 3pool** (USDC/DAI/USDT)
+• **30% Aave USDC** lending
+• **20% Yearn USDC** vault
+• **10% experimental**
 
 #### Advantages:
-✅ **Minimal impermanent loss** - all stablecoins
-✅ **Predictable returns** - 4-12% annually
-✅ **Low volatility stress** - focus on learning
-✅ **Multiple strategies** - diversified approach
+✅ **Minimal impermanent loss**: all stablecoins
+✅ **Predictable returns**: 4-12% annually
+✅ **Low volatility stress**: focus on learning
+✅ **Multiple strategies**: diversified approach
 
 ## Medium Portfolio Strategies ($1,000-$5,000) 📈
 
 ### Strategy 4: The "Balanced Growth" ($1,000-2,500)
 
 #### Core Allocation (70%):
-- **25% ETH staking** (Lido or similar)
-- **25% Stablecoin lending** (Aave/Compound)
-- **20% Established LP** (ETH/USDC on Uniswap)
+• **25% ETH staking** (Lido or similar)
+• **25% Stablecoin lending** (Aave/Compound)
+• **20% Established LP** (ETH/USDC on Uniswap)
 
 #### Opportunity Allocation (30%):
-- **15% Yield farming** rotation
-- **10% New protocol** testing  
-- **5% High-risk** opportunities
+• **15% Yield farming** rotation
+• **10% New protocol** testing
+• **5% High-risk** opportunities
 
 #### Why This Works:
-- **Stable base** provides consistent returns
-- **Growth component** benefits from ETH appreciation
-- **Opportunity fund** allows strategic risk-taking
-- **Diversified risk** across multiple strategies
+• **Stable base** provides consistent returns
+• **Growth component** benefits from ETH appreciation
+• **Opportunity fund** allows strategic risk-taking
+• **Diversified risk** across multiple strategies
 
 ### Strategy 5: The "Layer 2 Native" ($1,500-4,000)
 
 #### Polygon Focus (60%):
-- **30% Aave lending** (USDC, DAI, WETH)
-- **20% SushiSwap farming** (multiple pairs)
-- **10% QuickSwap** or other native protocols
+• **30% Aave lending** (USDC, DAI, WETH)
+• **20% SushiSwap farming** (multiple pairs)
+• **10% QuickSwap** or other native protocols
 
 #### Arbitrum Focus (30%):
-- **15% GMX** staking/LP
-- **10% Uniswap V3** positions
-- **5% Curve** pools
+• **15% GMX** staking/LP
+• **10% Uniswap V3** positions
+• **5% Curve** pools
 
 #### Ethereum Mainnet (10%):
-- **10% Blue-chip** positions (when gas is low)
+• **10% Blue-chip** positions (when gas is low)
 
 #### Advantages:
-✅ **Much lower fees** - more active management possible
-✅ **Diverse ecosystems** - different opportunities
-✅ **Learning multiple chains** - valuable skill
-✅ **Better risk/reward** - gas doesn't eat profits
+✅ **Much lower fees**: more active management possible
+✅ **Diverse ecosystems**: different opportunities
+✅ **Learning multiple chains**: valuable skill
+✅ **Better risk/reward**: gas doesn't eat profits
 
 ## Large Portfolio Strategies ($5,000+) 🚀
 
 ### Strategy 6: The "Institutional Approach" ($5,000-20,000)
 
 #### Conservative Core (50%):
-- **20% ETH staking** (multiple validators/protocols)
-- **15% BTC on DeFi** (WBTC lending/LP)
-- **15% Stablecoin** strategies (multiple protocols)
+• **20% ETH staking** (multiple validators/protocols)
+• **15% BTC on DeFi** (WBTC lending/LP)
+• **15% Stablecoin** strategies (multiple protocols)
 
 #### Growth Component (30%):
-- **15% Established** ALT exposure (UNI, AAVE, CRV)
-- **10% LP positions** in major pairs
-- **5% Yield farming** rotation
+• **15% Established** ALT exposure (UNI, AAVE, CRV)
+• **10% LP positions** in major pairs
+• **5% Yield farming** rotation
 
 #### Opportunity Component (20%):
-- **10% New protocols** (small positions)
-- **5% Leverage strategies** (advanced)
-- **5% Speculation** fund
+• **10% New protocols** (small positions)
+• **5% Leverage strategies** (advanced)
+• **5% Speculation** fund
 
 ### Advanced Allocation Principles:
 
 #### Risk Budgeting:
-- **No single position >10%** of portfolio
-- **No single protocol >25%** of portfolio  
-- **Maximum 50%** in experimental strategies
-- **Keep 10-20%** for opportunities
+• **No single position >10%** of portfolio
+• **No single protocol >25%** of portfolio
+• **Maximum 50%** in experimental strategies
+• **Keep 10-20%** for opportunities
 
 #### Correlation Management:
-- **Mix uncorrelated** assets (ETH + stables)
-- **Different risk types** (lending + LP + staking)
-- **Various time horizons** (liquid + locked)
-- **Multiple chains** (Ethereum + L2s)
+• **Mix uncorrelated** assets (ETH + stables)
+• **Different risk types** (lending + LP + staking)
+• **Various time horizons** (liquid + locked)
+• **Multiple chains** (Ethereum + L2s)
 
 ## Rebalancing Strategies 🔄
 
 ### When to Rebalance:
 
 #### Time-Based Rebalancing:
-- **Monthly**: Check allocations vs targets
-- **Quarterly**: Major rebalancing if needed
-- **Annually**: Strategy review and adjustment
+• **Monthly**: Check allocations vs targets
+• **Quarterly**: Major rebalancing if needed
+• **Annually**: Strategy review and adjustment
 
 #### Threshold-Based Rebalancing:
-- **>15% drift** from target allocation
-- **>25% drift** triggers immediate rebalancing
-- **New opportunities** causing strategic shifts
+• **>15% drift** from target allocation
+• **>25% drift** triggers immediate rebalancing
+• **New opportunities** causing strategic shifts
 
 ### How to Rebalance Efficiently:
 
@@ -4260,95 +4260,95 @@ Your first DeFi portfolio is primarily an **education vehicle** that happens to 
 ### Essential Metrics to Track:
 
 #### Performance Metrics:
-- **Total portfolio value** (USD)
-- **Daily/weekly/monthly returns**
-- **Return by strategy** type
-- **Gas fees as % of returns**
-- **Risk-adjusted returns** (Sharpe ratio)
+• **Total portfolio value** (USD)
+• **Daily/weekly/monthly returns**
+• **Return by strategy** type
+• **Gas fees as % of returns**
+• **Risk-adjusted returns** (Sharpe ratio)
 
 #### Risk Metrics:
-- **Maximum drawdown** experienced
-- **Correlation between** positions
-- **Impermanent loss** totals
-- **Protocol concentration** risk
+• **Maximum drawdown** experienced
+• **Correlation between** positions
+• **Impermanent loss** totals
+• **Protocol concentration** risk
 
 ### Tracking Tools:
 
 #### Free Options:
-- **Zapper.fi** - portfolio overview
-- **DeBank** - multi-chain tracking
-- **DeFiPulse** - protocol performance
-- **CoinGecko Portfolio** - basic tracking
+• **Zapper.fi**: portfolio overview
+• **DeBank**: multi-chain tracking
+• **DeFiPulse**: protocol performance
+• **CoinGecko Portfolio**: basic tracking
 
 #### Paid Options:
-- **Rotki** - comprehensive tracking
-- **Koinly** - tax-focused tracking
-- **TokenTax** - DeFi-specific features
-- **Custom spreadsheets** - full control
+• **Rotki**: comprehensive tracking
+• **Koinly**: tax-focused tracking
+• **TokenTax**: DeFi-specific features
+• **Custom spreadsheets**: full control
 
 ### Portfolio Review Process:
 
 #### Weekly Review (15 minutes):
-- Check overall performance
-- Note any significant changes
-- Identify positions needing attention
-- Plan any upcoming moves
+• Check overall performance
+• Note any significant changes
+• Identify positions needing attention
+• Plan any upcoming moves
 
 #### Monthly Review (1 hour):
-- Detailed performance analysis
-- Compare to benchmarks (ETH, BTC)
-- Assess risk metrics
-- Consider rebalancing needs
-- Update strategy if needed
+• Detailed performance analysis
+• Compare to benchmarks (ETH, BTC)
+• Assess risk metrics
+• Consider rebalancing needs
+• Update strategy if needed
 
 #### Quarterly Review (2-3 hours):
-- Full strategy assessment
-- Tax planning considerations
-- Major allocation changes
-- Learning review and goal setting
+• Full strategy assessment
+• Tax planning considerations
+• Major allocation changes
+• Learning review and goal setting
 
 ## Tax Considerations for Portfolio Management 📋
 
 ### What's Taxable in DeFi:
-- **Lending interest** earned
-- **LP fees** earned
-- **Farming rewards** claimed
-- **Trading gains** when swapping
-- **Impermanent loss** recovery
+• **Lending interest** earned
+• **LP fees** earned
+• **Farming rewards** claimed
+• **Trading gains** when swapping
+• **Impermanent loss** recovery
 
 ### Tax-Efficient Strategies:
-- **Minimize swapping** (reduces taxable events)
-- **Use like-kind** protocols when possible
-- **Time harvesting** losses strategically
-- **Keep detailed** records from day one
-- **Consider tax-loss** harvesting
+• **Minimize swapping** (reduces taxable events)
+• **Use like-kind** protocols when possible
+• **Time harvesting** losses strategically
+• **Keep detailed** records from day one
+• **Consider tax-loss** harvesting
 
 ### Record Keeping:
-- **All transaction hashes** and dates
-- **USD values** at time of transaction
-- **Protocol interactions** and purposes
-- **Gas fees** paid (often deductible)
-- **Cost basis** calculations
+• **All transaction hashes** and dates
+• **USD values** at time of transaction
+• **Protocol interactions** and purposes
+• **Gas fees** paid (often deductible)
+• **Cost basis** calculations
 
 ## Risk Management for Small Portfolios ⚖️
 
 ### Position Sizing Rules:
-- **Maximum 10%** in any single position
-- **Maximum 25%** in any single protocol
-- **Maximum 50%** in experimental strategies
-- **Minimum 20%** in "safe" protocols
+• **Maximum 10%** in any single position
+• **Maximum 25%** in any single protocol
+• **Maximum 50%** in experimental strategies
+• **Minimum 20%** in "safe" protocols
 
 ### Diversification Guidelines:
-- **At least 3 different** protocols
-- **Mix of strategy** types (lending/LP/farming)
-- **Various risk levels** (conservative to aggressive)
-- **Multiple assets** (not 100% in one token)
+• **At least 3 different** protocols
+• **Mix of strategy** types (lending/LP/farming)
+• **Various risk levels** (conservative to aggressive)
+• **Multiple assets** (not 100% in one token)
 
 ### Emergency Planning:
-- **Know how to exit** each position quickly
-- **Keep some** funds liquid for opportunities
-- **Have plan** for market crashes
-- **Understand** each protocol's risks
+• **Know how to exit** each position quickly
+• **Keep some** funds liquid for opportunities
+• **Have plan** for market crashes
+• **Understand** each protocol's risks
 
 ## Common Portfolio Mistakes 🚫
 
@@ -4445,18 +4445,18 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 ## Why Portfolio Tracking Matters 📊
 
 ### The Hidden Costs of Poor Tracking:
-- **Missing optimization opportunities** (not seeing what's working)
-- **Tax nightmares** (incomplete records cost money)
-- **Risk blindness** (not seeing concentration buildups)
-- **Performance illusions** (thinking you're doing better/worse than reality)
-- **Decision paralysis** (no data to guide choices)
+• **Missing optimization opportunities** (not seeing what's working)
+• **Tax nightmares** (incomplete records cost money)
+• **Risk blindness** (not seeing concentration buildups)
+• **Performance illusions** (thinking you're doing better/worse than reality)
+• **Decision paralysis** (no data to guide choices)
 
 ### What Good Tracking Provides:
-- **Clear performance picture** across all positions
-- **Risk exposure** visibility and management
-- **Tax compliance** with minimal stress
-- **Optimization insights** for better allocation
-- **Confidence** in decision-making
+• **Clear performance picture** across all positions
+• **Risk exposure** visibility and management
+• **Tax compliance** with minimal stress
+• **Optimization insights** for better allocation
+• **Confidence** in decision-making
 
 ## The Complete Tracking Framework 🎯
 
@@ -4485,44 +4485,44 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 ### Core Performance Metrics:
 
 #### 1. Total Portfolio Value
-- **Current USD value** of all positions
-- **Daily/weekly/monthly change** percentages
-- **Growth vs deposits** (actual returns vs new money)
+• **Current USD value** of all positions
+• **Daily/weekly/monthly change** percentages
+• **Growth vs deposits** (actual returns vs new money)
 
 #### 2. Strategy Performance
-- **Lending returns** (APY and total earned)
-- **LP position** performance (fees vs impermanent loss)
-- **Farming rewards** (token rewards and USD value)
-- **Staking returns** (rewards and principal appreciation)
+• **Lending returns** (APY and total earned)
+• **LP position** performance (fees vs impermanent loss)
+• **Farming rewards** (token rewards and USD value)
+• **Staking returns** (rewards and principal appreciation)
 
 #### 3. Risk Metrics
-- **Maximum drawdown** (largest peak-to-trough decline)
-- **Volatility** (standard deviation of returns)
-- **Sharpe ratio** (return per unit of risk)
-- **Protocol concentration** (% in any single protocol)
+• **Maximum drawdown** (largest peak-to-trough decline)
+• **Volatility** (standard deviation of returns)
+• **Sharpe ratio** (return per unit of risk)
+• **Protocol concentration** (% in any single protocol)
 
 ### Advanced Metrics:
 
 #### 4. Efficiency Metrics
-- **Gas fees as % of returns** (efficiency indicator)
-- **Time-weighted returns** (actual performance)
-- **Alpha generation** (returns vs passive holding)
+• **Gas fees as % of returns** (efficiency indicator)
+• **Time-weighted returns** (actual performance)
+• **Alpha generation** (returns vs passive holding)
 
 #### 5. Risk-Adjusted Metrics
-- **Sortino ratio** (downside risk adjusted)
-- **Maximum loss** in any single position
-- **Correlation** between major positions
+• **Sortino ratio** (downside risk adjusted)
+• **Maximum loss** in any single position
+• **Correlation** between major positions
 
 ## Free Portfolio Tracking Tools 🆓
 
-### 1. **Zapper.fi** - Best Overall Free Option
+### 1. **Zapper.fi**: Best Overall Free Option
 
 #### Strengths:
-✅ **Multi-chain support** - Ethereum, Polygon, Arbitrum
-✅ **Real-time updates** - current positions and values
-✅ **DeFi protocol** integration - sees LP tokens, staked assets
-✅ **Clean interface** - easy to understand visually
-✅ **Mobile friendly** - good on phone/tablet
+✅ **Multi-chain support**: Ethereum, Polygon, Arbitrum
+✅ **Real-time updates**: current positions and values
+✅ **DeFi protocol** integration: sees LP tokens, staked assets
+✅ **Clean interface**: easy to understand visually
+✅ **Mobile friendly**: good on phone/tablet
 
 #### Limitations:
 ❌ **No historical** performance tracking
@@ -4532,7 +4532,7 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 
 #### Best For: Daily overview and position monitoring
 
-### 2. **DeBank** - Great Multi-Chain Tracker
+### 2. **DeBank**: Great Multi-Chain Tracker
 
 #### Strengths:
 ✅ **Comprehensive** multi-chain coverage
@@ -4549,7 +4549,7 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 
 #### Best For: Multi-chain portfolio overview
 
-### 3. **DeFiPulse Portfolio** - Protocol-Focused
+### 3. **DeFiPulse Portfolio**: Protocol-Focused
 
 #### Strengths:
 ✅ **Deep protocol** integration
@@ -4566,24 +4566,24 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 
 ## Paid Portfolio Tracking Tools 💰
 
-### 1. **Rotki** - Best for Privacy ($120-300/year)
+### 1. **Rotki**: Best for Privacy ($120-300/year)
 
 #### Strengths:
-✅ **Complete privacy** - runs locally
+✅ **Complete privacy**: runs locally
 ✅ **Comprehensive** DeFi support
 ✅ **Tax reporting** built-in
 ✅ **Historical data** and analytics
-✅ **Open source** - community driven
+✅ **Open source**: community driven
 ✅ **Custom reports** and analysis
 
 #### Limitations:
-❌ **Setup complexity** - requires technical skill
-❌ **Resource intensive** - needs powerful computer
-❌ **Learning curve** - many features to master
+❌ **Setup complexity**: requires technical skill
+❌ **Resource intensive**: needs powerful computer
+❌ **Learning curve**: many features to master
 
 #### Best For: Privacy-focused power users
 
-### 2. **Koinly** - Best for Tax Compliance ($50-180/year)
+### 2. **Koinly**: Best for Tax Compliance ($50-180/year)
 
 #### Strengths:
 ✅ **Excellent tax** preparation
@@ -4593,23 +4593,23 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 ✅ **Professional reports** for accountants
 
 #### Limitations:
-❌ **Tax-focused** - limited portfolio analytics
-❌ **Subscription cost** - ongoing expense
-❌ **DeFi complexity** - some manual work needed
+❌ **Tax-focused**: limited portfolio analytics
+❌ **Subscription cost**: ongoing expense
+❌ **DeFi complexity**: some manual work needed
 
 #### Best For: Tax compliance and reporting
 
-### 3. **TokenTax** - DeFi Specialist ($65-400/year)
+### 3. **TokenTax**: DeFi Specialist ($65-400/year)
 
 #### Strengths:
-✅ **DeFi expertise** - understands complex transactions
+✅ **DeFi expertise**: understands complex transactions
 ✅ **Tax optimization** features
 ✅ **Portfolio tracking** included
 ✅ **Professional support** available
 
 #### Limitations:
 ❌ **Expensive** for small portfolios
-❌ **US tax focus** - limited international
+❌ **US tax focus**: limited international
 ❌ **Learning curve** for full features
 
 #### Best For: Active DeFi traders with tax complexity
@@ -4622,47 +4622,47 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 ✅ **Complete control** over metrics
 ✅ **Custom analysis** capabilities  
 ✅ **Free** (except your time)
-✅ **Privacy** - your data stays local
-✅ **Learning** - understand your portfolio deeply
+✅ **Privacy**: your data stays local
+✅ **Learning**: understand your portfolio deeply
 
 ### Essential Spreadsheet Components:
 
 #### Sheet 1: Portfolio Overview
-- **Position list** with current values
-- **Allocation percentages** by strategy/protocol
-- **Total portfolio** value and change
-- **Daily/weekly** value tracking
+• **Position list** with current values
+• **Allocation percentages** by strategy/protocol
+• **Total portfolio** value and change
+• **Daily/weekly** value tracking
 
 #### Sheet 2: Transaction Log
-- **Date, protocol, action** (deposit/withdraw/claim)
-- **Token amounts** and USD values
-- **Gas fees** paid
-- **Transaction hashes** for verification
+• **Date, protocol, action** (deposit/withdraw/claim)
+• **Token amounts** and USD values
+• **Gas fees** paid
+• **Transaction hashes** for verification
 
 #### Sheet 3: Performance Analysis
-- **Strategy performance** comparison
-- **Return calculations** (time-weighted)
-- **Risk metrics** (volatility, drawdowns)
-- **Benchmark comparisons** (ETH, BTC)
+• **Strategy performance** comparison
+• **Return calculations** (time-weighted)
+• **Risk metrics** (volatility, drawdowns)
+• **Benchmark comparisons** (ETH, BTC)
 
 #### Sheet 4: Tax Records
-- **All taxable events** with dates and values
-- **Cost basis** calculations
-- **Capital gains/losses**
-- **Income events** (staking, farming rewards)
+• **All taxable events** with dates and values
+• **Cost basis** calculations
+• **Capital gains/losses**
+• **Income events** (staking, farming rewards)
 
 ### Automation Options:
 
 #### API Integration:
-- **CoinGecko API** - price data
-- **DeFiPulse API** - protocol data
-- **Etherscan API** - transaction data
-- **Google Sheets** - web scraping functions
+• **CoinGecko API**: price data
+• **DeFiPulse API**: protocol data
+• **Etherscan API**: transaction data
+• **Google Sheets**: web scraping functions
 
 #### Semi-Manual Updates:
-- **Weekly data** entry sessions
-- **Monthly reconciliation** with on-chain data
-- **Quarterly deep** analysis and review
+• **Weekly data** entry sessions
+• **Monthly reconciliation** with on-chain data
+• **Quarterly deep** analysis and review
 
 ## Setting Up Your Tracking System 🛠️
 
@@ -4670,29 +4670,29 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 
 #### For Beginners ($100-1,000):
 **Recommended**: Zapper.fi + simple spreadsheet
-- Use Zapper for daily overview
-- Track major transactions in spreadsheet
-- Focus on learning rather than optimization
+• Use Zapper for daily overview
+• Track major transactions in spreadsheet
+• Focus on learning rather than optimization
 
 #### For Intermediate ($1,000-10,000):
 **Recommended**: Koinly + detailed spreadsheet
-- Koinly for tax compliance
-- Spreadsheet for performance analysis
-- Regular weekly reviews
+• Koinly for tax compliance
+• Spreadsheet for performance analysis
+• Regular weekly reviews
 
 #### For Advanced ($10,000+):
 **Recommended**: Rotki or custom system
-- Full analytics and privacy
-- Sophisticated risk management
-- Professional-level reporting
+• Full analytics and privacy
+• Sophisticated risk management
+• Professional-level reporting
 
 ### Step 2: Initial Setup (Week 2)
 
 #### Data Collection:
-1. **Historical transactions** - gather all past activity
-2. **Current positions** - snapshot all holdings
-3. **Cost basis** - calculate initial investments
-4. **Benchmark starting** point - set baseline
+1. **Historical transactions**: gather all past activity
+2. **Current positions**: snapshot all holdings
+3. **Cost basis**: calculate initial investments
+4. **Benchmark starting** point: set baseline
 
 #### Tool Configuration:
 1. **Connect wallets** to chosen tracker
@@ -4703,31 +4703,31 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 ### Step 3: Establish Routines (Week 3-4)
 
 #### Daily (5 minutes):
-- Check overall portfolio value
-- Note any significant changes
-- Record major transactions
+• Check overall portfolio value
+• Note any significant changes
+• Record major transactions
 
 #### Weekly (30 minutes):
-- Update detailed tracking
-- Review performance vs benchmarks
-- Plan upcoming week's activities
+• Update detailed tracking
+• Review performance vs benchmarks
+• Plan upcoming week's activities
 
 #### Monthly (2 hours):
-- Deep performance analysis
-- Risk assessment and rebalancing
-- Tax planning updates
+• Deep performance analysis
+• Risk assessment and rebalancing
+• Tax planning updates
 
 ## Key Performance Indicators (KPIs) 🎯
 
 ### Primary KPIs:
 
 #### 1. Total Return
-**Formula**: (Current Value - Total Invested) / Total Invested
+**Formula**: (Current Value: Total Invested) / Total Invested
 **Target**: Beat ETH/BTC holding returns
 **Review**: Weekly
 
 #### 2. Risk-Adjusted Return
-**Formula**: (Return - Risk-Free Rate) / Volatility
+**Formula**: (Return: Risk-Free Rate) / Volatility
 **Target**: >0.5 Sharpe ratio
 **Review**: Monthly
 
@@ -4758,105 +4758,105 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 ### Setting Appropriate Benchmarks:
 
 #### Conservative Portfolio:
-- **Primary**: 60/40 ETH/Stablecoin hold
-- **Secondary**: High-yield savings account
-- **Target**: Beat by 3-5% annually
+• **Primary**: 60/40 ETH/Stablecoin hold
+• **Secondary**: High-yield savings account
+• **Target**: Beat by 3-5% annually
 
 #### Moderate Portfolio:
-- **Primary**: ETH buy-and-hold
-- **Secondary**: 70/30 ETH/BTC hold
-- **Target**: Beat by 5-10% annually
+• **Primary**: ETH buy-and-hold
+• **Secondary**: 70/30 ETH/BTC hold
+• **Target**: Beat by 5-10% annually
 
 #### Aggressive Portfolio:
-- **Primary**: Crypto index fund
-- **Secondary**: Individual best performer
-- **Target**: Beat with lower volatility
+• **Primary**: Crypto index fund
+• **Secondary**: Individual best performer
+• **Target**: Beat with lower volatility
 
 ### Benchmark Tracking:
-- **Calculate benchmark** returns weekly
-- **Compare actual** vs benchmark performance
-- **Analyze sources** of over/under-performance
-- **Adjust strategy** based on sustained differences
+• **Calculate benchmark** returns weekly
+• **Compare actual** vs benchmark performance
+• **Analyze sources** of over/under-performance
+• **Adjust strategy** based on sustained differences
 
 ## Tax Tracking Best Practices 📋
 
 ### Essential Tax Records:
 
 #### For Every Transaction:
-- **Date and time** (with timezone)
-- **Protocol and** specific action
-- **Token amounts** sent/received  
-- **USD values** at time of transaction
-- **Gas fees** paid
-- **Transaction hash** for verification
+• **Date and time** (with timezone)
+• **Protocol and** specific action
+• **Token amounts** sent/received
+• **USD values** at time of transaction
+• **Gas fees** paid
+• **Transaction hash** for verification
 
 #### For DeFi-Specific Events:
-- **LP token** creation/destruction events
-- **Reward claiming** transactions
-- **Governance token** distributions
-- **Protocol migrations** or upgrades
-- **Flash loan** transactions (if any)
+• **LP token** creation/destruction events
+• **Reward claiming** transactions
+• **Governance token** distributions
+• **Protocol migrations** or upgrades
+• **Flash loan** transactions (if any)
 
 ### Tax Optimization Strategies:
-- **Harvest losses** strategically
-- **Time reward** claiming for tax efficiency
-- **Use FIFO/LIFO** appropriately
-- **Consider long-term** vs short-term gains
-- **Plan withdrawals** around tax years
+• **Harvest losses** strategically
+• **Time reward** claiming for tax efficiency
+• **Use FIFO/LIFO** appropriately
+• **Consider long-term** vs short-term gains
+• **Plan withdrawals** around tax years
 
 ## Troubleshooting Common Tracking Issues 🔧
 
 ### Issue 1: Missing Transactions
 **Symptoms**: Portfolio value doesn't match tracker
 **Solutions**:
-- Check all connected wallet addresses
-- Verify multi-chain transactions included
-- Look for internal transactions (contract calls)
-- Manual entry for missing items
+• Check all connected wallet addresses
+• Verify multi-chain transactions included
+• Look for internal transactions (contract calls)
+• Manual entry for missing items
 
 ### Issue 2: Incorrect Valuations
 **Symptoms**: Token prices seem wrong
 **Solutions**:
-- Check price source reliability
-- Verify token contract addresses
-- Look for pricing delays (especially new tokens)
-- Use multiple price sources for verification
+• Check price source reliability
+• Verify token contract addresses
+• Look for pricing delays (especially new tokens)
+• Use multiple price sources for verification
 
 ### Issue 3: Complex DeFi Transactions
 **Symptoms**: Unclear transaction categorization
 **Solutions**:
-- Research specific protocol mechanics
-- Check transaction details on block explorer
-- Consult protocol documentation
-- Ask community for clarification
+• Research specific protocol mechanics
+• Check transaction details on block explorer
+• Consult protocol documentation
+• Ask community for clarification
 
 ### Issue 4: Performance Calculation Errors
 **Symptoms**: Returns don't feel accurate
 **Solutions**:
-- Verify deposit/withdrawal accounting
-- Check time-weighted return calculations
-- Account for unrealized gains/losses
-- Compare with manual calculations
+• Verify deposit/withdrawal accounting
+• Check time-weighted return calculations
+• Account for unrealized gains/losses
+• Compare with manual calculations
 
 ## Advanced Tracking Techniques 🎯
 
 ### Portfolio Attribution Analysis:
-- **Strategy contribution** - which strategies drive returns
-- **Asset contribution** - which tokens perform best
-- **Protocol contribution** - which platforms add value
-- **Time contribution** - when returns are generated
+• **Strategy contribution**: which strategies drive returns
+• **Asset contribution**: which tokens perform best
+• **Protocol contribution**: which platforms add value
+• **Time contribution**: when returns are generated
 
 ### Risk Decomposition:
-- **Systematic risk** - general market movements
-- **Specific risk** - individual protocol/token risk
-- **Concentration risk** - portfolio allocation effects
-- **Liquidity risk** - ability to exit positions
+• **Systematic risk**: general market movements
+• **Specific risk**: individual protocol/token risk
+• **Concentration risk**: portfolio allocation effects
+• **Liquidity risk**: ability to exit positions
 
 ### Correlation Analysis:
-- **Inter-strategy** correlations
-- **Token correlation** within portfolio
-- **Market correlation** (crypto vs traditional)
-- **Time-varying** correlation patterns
+• **Inter-strategy** correlations
+• **Token correlation** within portfolio
+• **Market correlation** (crypto vs traditional)
+• **Time-varying** correlation patterns
 
 ## Key Takeaway
 
@@ -4864,7 +4864,7 @@ Managing a DeFi portfolio without proper tracking is like driving blindfolded. H
 
 **Start simple and build complexity gradually**. A basic system used consistently is better than a sophisticated system used sporadically.
 
-**Remember**: The goal of tracking isn't perfection - it's **actionable insights** that help you make better decisions and achieve your financial goals.
+**Remember**: The goal of tracking isn't perfection: it's **actionable insights** that help you make better decisions and achieve your financial goals.
 
 *Next: We'll learn how to make smart decisions about when to take profits versus when to reinvest.*`
         },
@@ -4900,10 +4900,10 @@ This might be the most important skill in DeFi portfolio management. The differe
 **The secret**: Most successful DeFi investors do **both strategically** rather than choosing one approach.
 
 ### The Psychological Battle:
-- **Fear of missing out** (FOMO) → Over-reinvestment
-- **Fear of losing gains** → Over-cautious profit-taking
-- **Greed** → Ignoring risk accumulation
-- **Anxiety** → Premature profit-taking
+• **Fear of missing out** (FOMO) → Over-reinvestment
+• **Fear of losing gains** → Over-cautious profit-taking
+• **Greed** → Ignoring risk accumulation
+• **Anxiety** → Premature profit-taking
 
 **Solution**: Systematic, rule-based decision making
 
@@ -4934,60 +4934,60 @@ This might be the most important skill in DeFi portfolio management. The differe
 ### Step 1: Categorize Your Gains
 
 #### Low-Risk Gains (Usually Reinvest):
-- **Stablecoin lending** interest
-- **Established protocol** staking rewards
-- **Blue-chip LP** trading fees
-- **Conservative yield** farming
+• **Stablecoin lending** interest
+• **Established protocol** staking rewards
+• **Blue-chip LP** trading fees
+• **Conservative yield** farming
 
 #### Medium-Risk Gains (Balanced Approach):
-- **ETH/token LP** fees with some IL risk
-- **Moderate farming** rewards
-- **Established token** staking rewards
-- **Protocol tokens** with utility
+• **ETH/token LP** fees with some IL risk
+• **Moderate farming** rewards
+• **Established token** staking rewards
+• **Protocol tokens** with utility
 
 #### High-Risk Gains (Often Take Profits):
-- **New protocol** token rewards
-- **Highly volatile** farming rewards
-- **Speculative position** appreciation
-- **Unproven token** accumulation
+• **New protocol** token rewards
+• **Highly volatile** farming rewards
+• **Speculative position** appreciation
+• **Unproven token** accumulation
 
 ### Step 2: Assess Current Market Conditions
 
 #### Bull Market Indicators → Favor Reinvestment:
-- **Rising asset prices** across crypto
-- **Increasing DeFi TVL** and activity
-- **Positive sentiment** and media coverage
-- **New protocol** launches and innovation
-- **Institutional adoption** increasing
+• **Rising asset prices** across crypto
+• **Increasing DeFi TVL** and activity
+• **Positive sentiment** and media coverage
+• **New protocol** launches and innovation
+• **Institutional adoption** increasing
 
 #### Bear Market Indicators → Favor Profit-Taking:
-- **Declining asset prices** and volume
-- **DeFi TVL** decreasing
-- **Negative sentiment** and uncertainty
-- **Regulatory concerns** increasing
-- **Risk-off environment** in broader markets
+• **Declining asset prices** and volume
+• **DeFi TVL** decreasing
+• **Negative sentiment** and uncertainty
+• **Regulatory concerns** increasing
+• **Risk-off environment** in broader markets
 
 #### Sideways Market → Balanced Approach:
-- **Mixed signals** in price action
-- **Stable but not growing** TVL
-- **Uncertainty** about direction
-- **Focus on yield** rather than appreciation
+• **Mixed signals** in price action
+• **Stable but not growing** TVL
+• **Uncertainty** about direction
+• **Focus on yield** rather than appreciation
 
 ### Step 3: Evaluate Personal Factors
 
 #### Favor Reinvestment When:
-- **Portfolio size** still small (<target allocation)
-- **High risk tolerance** for this portion
-- **Long investment** time horizon
-- **Strong conviction** in positions
-- **Adequate emergency** fund outside crypto
+• **Portfolio size** still small (<target allocation)
+• **High risk tolerance** for this portion
+• **Long investment** time horizon
+• **Strong conviction** in positions
+• **Adequate emergency** fund outside crypto
 
 #### Favor Profit-Taking When:
-- **Portfolio** approaching target size
-- **Need liquidity** for other opportunities
-- **Risk exposure** getting uncomfortably high
-- **Uncertainty** about position fundamentals
-- **Life circumstances** changing
+• **Portfolio** approaching target size
+• **Need liquidity** for other opportunities
+• **Risk exposure** getting uncomfortably high
+• **Uncertainty** about position fundamentals
+• **Life circumstances** changing
 
 ## Reinvestment Strategies 🔄
 
@@ -4995,44 +4995,44 @@ This might be the most important skill in DeFi portfolio management. The differe
 **Best for**: Stable yield positions (lending, staking)
 
 #### Implementation:
-- **Reinvest all** stablecoin lending interest
-- **Compound staking** rewards automatically
-- **Use protocols** with auto-compounding features
-- **Set schedule** for manual compounding (weekly/monthly)
+• **Reinvest all** stablecoin lending interest
+• **Compound staking** rewards automatically
+• **Use protocols** with auto-compounding features
+• **Set schedule** for manual compounding (weekly/monthly)
 
 #### Example: Aave USDC Lending
-- **Earned**: $50 USDC interest monthly
-- **Action**: Immediately lend the $50 back to Aave
-- **Result**: Compound growth on growing principal
+• **Earned**: $50 USDC interest monthly
+• **Action**: Immediately lend the $50 back to Aave
+• **Result**: Compound growth on growing principal
 
 ### Strategy 2: **Threshold-Based Reinvestment**
 **Best for**: Variable yield positions (LP fees, farming)
 
 #### Implementation:
-- **Set minimum** threshold for reinvestment ($100-500)
-- **Accumulate rewards** until threshold reached
-- **Reinvest in** same or related strategy
-- **Adjust threshold** based on gas costs
+• **Set minimum** threshold for reinvestment ($100-500)
+• **Accumulate rewards** until threshold reached
+• **Reinvest in** same or related strategy
+• **Adjust threshold** based on gas costs
 
 #### Example: Uniswap ETH/USDC LP
-- **Earned**: $25 in fees weekly
-- **Threshold**: $200 for reinvestment
-- **Action**: After 8 weeks, add $200 to LP position
-- **Benefit**: Minimize gas costs while compounding
+• **Earned**: $25 in fees weekly
+• **Threshold**: $200 for reinvestment
+• **Action**: After 8 weeks, add $200 to LP position
+• **Benefit**: Minimize gas costs while compounding
 
 ### Strategy 3: **Diversified Reinvestment**
 **Best for**: Token rewards and multiple strategies
 
 #### Implementation:
-- **Reinvest 50%** into same strategy (compound)
-- **Reinvest 30%** into different strategy (diversify)
-- **Take 20%** as profit (secure gains)
+• **Reinvest 50%** into same strategy (compound)
+• **Reinvest 30%** into different strategy (diversify)
+• **Take 20%** as profit (secure gains)
 
 #### Example: SushiSwap Farming Rewards
-- **Earned**: $300 SUSHI rewards
-- **Reinvest $150**: Back into same SUSHI farm
-- **Reinvest $90**: Into ETH/USDC LP elsewhere
-- **Take $60**: Sell for stablecoins
+• **Earned**: $300 SUSHI rewards
+• **Reinvest $150**: Back into same SUSHI farm
+• **Reinvest $90**: Into ETH/USDC LP elsewhere
+• **Take $60**: Sell for stablecoins
 
 ## Profit-Taking Strategies 💵
 
@@ -5040,173 +5040,173 @@ This might be the most important skill in DeFi portfolio management. The differe
 **Best for**: Volatile token rewards and appreciation gains
 
 #### Implementation:
-- **Take 10-25%** of gains at regular intervals
-- **Scale percentage** based on volatility and conviction
-- **Higher percentages** for more speculative positions
-- **Lower percentages** for established positions
+• **Take 10-25%** of gains at regular intervals
+• **Scale percentage** based on volatility and conviction
+• **Higher percentages** for more speculative positions
+• **Lower percentages** for established positions
 
 #### Example: Governance Token Rewards
-- **Earn**: 100 UNI tokens monthly from farming
-- **Take 25%**: Sell 25 UNI for stablecoins monthly
-- **Reinvest 75%**: Keep 75 UNI for potential appreciation
+• **Earn**: 100 UNI tokens monthly from farming
+• **Take 25%**: Sell 25 UNI for stablecoins monthly
+• **Reinvest 75%**: Keep 75 UNI for potential appreciation
 
 ### Strategy 2: **Threshold-Based Profit Taking**
 **Best for**: Managing position sizes and risk
 
 #### Implementation:
-- **Set maximum** position size as % of portfolio
-- **Take profits** when position exceeds threshold
-- **Trim back** to target allocation
-- **Use profits** for diversification or cash
+• **Set maximum** position size as % of portfolio
+• **Take profits** when position exceeds threshold
+• **Trim back** to target allocation
+• **Use profits** for diversification or cash
 
 #### Example: ETH Position Management
-- **Target**: 30% of portfolio in ETH
-- **Current**: 40% due to appreciation
-- **Action**: Sell ETH worth 10% of portfolio
-- **Use proceeds**: Add to stablecoin positions
+• **Target**: 30% of portfolio in ETH
+• **Current**: 40% due to appreciation
+• **Action**: Sell ETH worth 10% of portfolio
+• **Use proceeds**: Add to stablecoin positions
 
 ### Strategy 3: **Time-Based Profit Taking**
 **Best for**: Regular income generation and rebalancing
 
 #### Implementation:
-- **Monthly/quarterly** profit-taking schedule
-- **Fixed percentage** or dollar amount
-- **Regardless** of market conditions
-- **Disciplined approach** reduces emotion
+• **Monthly/quarterly** profit-taking schedule
+• **Fixed percentage** or dollar amount
+• **Regardless** of market conditions
+• **Disciplined approach** reduces emotion
 
 #### Example: Regular Income Strategy
-- **Schedule**: Take 15% of all gains monthly
-- **Amount**: Whatever profits accumulated that month
-- **Purpose**: Generate regular cash flow
-- **Benefit**: Reduces timing risk
+• **Schedule**: Take 15% of all gains monthly
+• **Amount**: Whatever profits accumulated that month
+• **Purpose**: Generate regular cash flow
+• **Benefit**: Reduces timing risk
 
 ## Advanced Decision-Making Techniques 🎯
 
 ### The **"Barbell"** Approach:
-- **80% conservative** (always reinvest for compounding)
-- **20% aggressive** (take profits frequently)
-- **Benefits**: Stable base + upside capture + downside protection
+• **80% conservative** (always reinvest for compounding)
+• **20% aggressive** (take profits frequently)
+• **Benefits**: Stable base + upside capture + downside protection
 
 ### The **"Scaling"** Approach:
-- **Take increasing %** as gains get larger
-- **10% profit-taking** on first 20% gains
-- **25% profit-taking** on next 50% gains  
-- **50% profit-taking** on gains beyond 100%
-- **Benefits**: Let winners run while securing some gains
+• **Take increasing %** as gains get larger
+• **10% profit-taking** on first 20% gains
+• **25% profit-taking** on next 50% gains
+• **50% profit-taking** on gains beyond 100%
+• **Benefits**: Let winners run while securing some gains
 
 ### The **"Conviction-Based"** Approach:
-- **High conviction** → Reinvest more aggressively
-- **Medium conviction** → Balanced approach
-- **Low conviction** → Take profits quickly
-- **Benefits**: Aligns actions with beliefs
+• **High conviction** → Reinvest more aggressively
+• **Medium conviction** → Balanced approach
+• **Low conviction** → Take profits quickly
+• **Benefits**: Aligns actions with beliefs
 
 ## Market Cycle Considerations 📈📉
 
 ### Early Bull Market:
-- **Reinvest aggressively** (70-90% of gains)
-- **Focus on** position building
-- **Take minimal** profits
-- **Prepare for** volatility
+• **Reinvest aggressively** (70-90% of gains)
+• **Focus on** position building
+• **Take minimal** profits
+• **Prepare for** volatility
 
 ### Mid Bull Market:
-- **Balanced approach** (50-70% reinvestment)
-- **Start taking** some profits
-- **Diversify** across strategies
-- **Prepare for** potential correction
+• **Balanced approach** (50-70% reinvestment)
+• **Start taking** some profits
+• **Diversify** across strategies
+• **Prepare for** potential correction
 
 ### Late Bull Market:
-- **Take profits** more aggressively (40-60% reinvestment)
-- **Reduce risk** exposure
-- **Secure gains** in stable assets
-- **Prepare for** market top
+• **Take profits** more aggressively (40-60% reinvestment)
+• **Reduce risk** exposure
+• **Secure gains** in stable assets
+• **Prepare for** market top
 
 ### Bear Market:
-- **Minimal reinvestment** (0-30%)
-- **Focus on** capital preservation
-- **Take profits** on any gains
-- **Build cash** for opportunities
+• **Minimal reinvestment** (0-30%)
+• **Focus on** capital preservation
+• **Take profits** on any gains
+• **Build cash** for opportunities
 
 ### Market Bottom/Recovery:
-- **Begin reinvesting** (30-50%)
-- **Look for** high-quality opportunities
-- **Start building** positions again
-- **Prepare for** next cycle
+• **Begin reinvesting** (30-50%)
+• **Look for** high-quality opportunities
+• **Start building** positions again
+• **Prepare for** next cycle
 
 ## Specific DeFi Strategy Guidelines 🔧
 
 ### Lending/Staking (Low Risk):
-- **Default**: Reinvest 90-100% automatically
-- **Exception**: When rebalancing portfolio
-- **Frequency**: Continuous compounding when possible
-- **Profit-taking**: Only for portfolio management
+• **Default**: Reinvest 90-100% automatically
+• **Exception**: When rebalancing portfolio
+• **Frequency**: Continuous compounding when possible
+• **Profit-taking**: Only for portfolio management
 
 ### Liquidity Provision (Medium Risk):
-- **Bull market**: Reinvest 70-80% of fees
-- **Bear market**: Take 50-70% of fees as profit
-- **Consider**: Impermanent loss vs fee accumulation
-- **Monitor**: Pool volume and token correlation
+• **Bull market**: Reinvest 70-80% of fees
+• **Bear market**: Take 50-70% of fees as profit
+• **Consider**: Impermanent loss vs fee accumulation
+• **Monitor**: Pool volume and token correlation
 
 ### Yield Farming (High Risk):
-- **Take profits**: 50-80% of token rewards
-- **Reinvest**: 20-50% based on conviction
-- **Frequency**: Weekly or bi-weekly
-- **Focus**: Don't let speculative tokens dominate portfolio
+• **Take profits**: 50-80% of token rewards
+• **Reinvest**: 20-50% based on conviction
+• **Frequency**: Weekly or bi-weekly
+• **Focus**: Don't let speculative tokens dominate portfolio
 
 ### New Protocol Farming (Very High Risk):
-- **Take profits**: 70-90% immediately
-- **Reinvest**: Only small amounts for learning
-- **Exit strategy**: Plan from day one
-- **Risk management**: Never more than 5% of portfolio
+• **Take profits**: 70-90% immediately
+• **Reinvest**: Only small amounts for learning
+• **Exit strategy**: Plan from day one
+• **Risk management**: Never more than 5% of portfolio
 
 ## Tax Implications of Each Strategy 💼
 
 ### Reinvestment Tax Effects:
-- **No immediate** tax on unrealized gains
-- **Compound growth** on pre-tax dollars
-- **Larger eventual** tax bill when realized
-- **Potential for** long-term capital gains
+• **No immediate** tax on unrealized gains
+• **Compound growth** on pre-tax dollars
+• **Larger eventual** tax bill when realized
+• **Potential for** long-term capital gains
 
 ### Profit-Taking Tax Effects:
-- **Immediate tax** on realized gains
-- **Smaller tax** bills but more frequent
-- **Potential for** short-term capital gains rates
-- **Cash available** for tax payments
+• **Immediate tax** on realized gains
+• **Smaller tax** bills but more frequent
+• **Potential for** short-term capital gains rates
+• **Cash available** for tax payments
 
 ### Tax-Optimized Strategies:
-- **Hold > 1 year** when possible for long-term rates
-- **Harvest losses** to offset gains
-- **Time profit-taking** around tax years
-- **Consider Roth** IRA conversions during bear markets
+• **Hold > 1 year** when possible for long-term rates
+• **Harvest losses** to offset gains
+• **Time profit-taking** around tax years
+• **Consider Roth** IRA conversions during bear markets
 
 ## Creating Your Personal Rules 📋
 
 ### Sample Rule Set for Conservative Investor:
 
 #### Reinvestment Rules:
-- **Reinvest 100%** of stablecoin lending interest
-- **Reinvest 80%** of ETH staking rewards
-- **Reinvest 60%** of LP fees from major pairs
-- **Reinvest 20%** of governance token rewards
+• **Reinvest 100%** of stablecoin lending interest
+• **Reinvest 80%** of ETH staking rewards
+• **Reinvest 60%** of LP fees from major pairs
+• **Reinvest 20%** of governance token rewards
 
 #### Profit-Taking Rules:
-- **Take 20%** monthly from any position >10% of portfolio
-- **Take 50%** of gains from experimental positions
-- **Take 100%** of gains from positions with >100% returns
-- **Rebalance monthly** to target allocations
+• **Take 20%** monthly from any position >10% of portfolio
+• **Take 50%** of gains from experimental positions
+• **Take 100%** of gains from positions with >100% returns
+• **Rebalance monthly** to target allocations
 
 ### Sample Rule Set for Aggressive Investor:
 
 #### Reinvestment Rules:
-- **Reinvest 100%** during confirmed bull markets
-- **Reinvest 70%** during neutral markets
-- **Reinvest 30%** during bear markets
-- **Always compound** lending and staking
+• **Reinvest 100%** during confirmed bull markets
+• **Reinvest 70%** during neutral markets
+• **Reinvest 30%** during bear markets
+• **Always compound** lending and staking
 
 #### Profit-Taking Rules:
-- **Take 25%** of governance token rewards monthly
-- **Take 50%** when any position doubles
-- **Take 75%** when any position triples
-- **Keep 6 months** expenses in stablecoins
+• **Take 25%** of governance token rewards monthly
+• **Take 50%** when any position doubles
+• **Take 75%** when any position triples
+• **Keep 6 months** expenses in stablecoins
 
 ## Common Mistakes to Avoid 🚫
 
@@ -5232,7 +5232,7 @@ This might be the most important skill in DeFi portfolio management. The differe
 
 **The reinvest vs profit-taking decision should be systematic, not emotional**. Your approach should consider **position risk level, market conditions, personal situation, and portfolio balance**.
 
-**Most successful DeFi investors use a blended approach** - automatically reinvesting low-risk yields while systematically taking profits from higher-risk positions.
+**Most successful DeFi investors use a blended approach**: automatically reinvesting low-risk yields while systematically taking profits from higher-risk positions.
 
 **Remember**: There's no single "right" approach. The best strategy is one you can execute consistently over multiple market cycles.
 
@@ -5269,10 +5269,10 @@ The difference between successful long-term DeFi investors and those who get bur
 **Noise**: Random short-term fluctuations that appear meaningful but lack underlying fundamental drivers.
 
 ### Why This Matters in DeFi:
-- **Trends help** optimize allocation timing
-- **Trends indicate** when to be aggressive vs conservative
-- **Trends help** avoid major losses
-- **Following noise** leads to poor timing and losses
+• **Trends help** optimize allocation timing
+• **Trends indicate** when to be aggressive vs conservative
+• **Trends help** avoid major losses
+• **Following noise** leads to poor timing and losses
 
 ### The Challenge:
 **Everything looks like a trend in hindsight**, but recognizing trends **in real-time** requires systematic analysis, not gut feelings.
@@ -5281,22 +5281,22 @@ The difference between successful long-term DeFi investors and those who get bur
 
 ### Layer 1: Macro Crypto Trends (6-24 month cycles)
 **What to watch**: Overall crypto adoption, institutional involvement, regulatory environment
-**Impact on DeFi**: Massive - drives overall capital in/out of space
+**Impact on DeFi**: Massive: drives overall capital in/out of space
 **Time horizon**: Long-term portfolio strategy
 
 ### Layer 2: DeFi Ecosystem Trends (3-12 month cycles)
 **What to watch**: Total Value Locked (TVL), new protocol adoption, yield trends
-**Impact on DeFi**: High - affects all protocols and strategies
+**Impact on DeFi**: High: affects all protocols and strategies
 **Time horizon**: Medium-term allocation decisions
 
 ### Layer 3: Protocol-Specific Trends (1-6 month cycles)
 **What to watch**: Individual protocol growth, competitive position, tokenomics
-**Impact on DeFi**: Medium - affects specific positions
+**Impact on DeFi**: Medium: affects specific positions
 **Time horizon**: Position-specific decisions
 
 ### Layer 4: Strategy-Specific Trends (days to 3 months)
 **What to watch**: Yield changes, liquidity flows, risk/reward shifts
-**Impact on DeFi**: Direct - affects day-to-day decisions
+**Impact on DeFi**: Direct: affects day-to-day decisions
 **Time horizon**: Tactical adjustments
 
 ## Layer 1: Macro Crypto Trend Analysis 🌍
@@ -5304,28 +5304,28 @@ The difference between successful long-term DeFi investors and those who get bur
 ### Key Indicators to Track:
 
 #### 1. **Institutional Adoption Metrics**
-- **Corporate treasury** BTC/ETH allocations (MicroStrategy, Tesla, etc.)
-- **Traditional finance** DeFi involvement (JPMorgan, Goldman, etc.)
-- **ETF flows** and institutional product launches
-- **Central bank** digital currency developments
+• **Corporate treasury** BTC/ETH allocations (MicroStrategy, Tesla, etc.)
+• **Traditional finance** DeFi involvement (JPMorgan, Goldman, etc.)
+• **ETF flows** and institutional product launches
+• **Central bank** digital currency developments
 
 **Trend Signal**: Increasing institutional involvement = Long-term bullish
 **Anti-trend Signal**: Institutional retreat = Prepare for longer downturn
 
 #### 2. **Regulatory Clarity Trends**
-- **Clear regulation** development in major jurisdictions
-- **Industry collaboration** with regulators
-- **Compliance infrastructure** development
-- **Legal precedent** establishment
+• **Clear regulation** development in major jurisdictions
+• **Industry collaboration** with regulators
+• **Compliance infrastructure** development
+• **Legal precedent** establishment
 
 **Trend Signal**: Increasing clarity = Reduced regulatory risk
 **Anti-trend Signal**: Increasing uncertainty = Higher risk environment
 
 #### 3. **Developer Activity and Innovation**
-- **GitHub commits** across major protocols
-- **New protocol** launches and innovation
-- **Cross-chain** development and adoption
-- **Infrastructure** improvements (scaling, UX)
+• **GitHub commits** across major protocols
+• **New protocol** launches and innovation
+• **Cross-chain** development and adoption
+• **Infrastructure** improvements (scaling, UX)
 
 **Trend Signal**: Increasing innovation = Healthy ecosystem growth
 **Anti-trend Signal**: Stagnant development = Maturity or decline phase
@@ -5353,9 +5353,9 @@ The difference between successful long-term DeFi investors and those who get bur
 #### 1. **Total Value Locked (TVL) Trends**
 **What it shows**: Overall capital confidence in DeFi
 **How to analyze**:
-- **3-month moving** average direction
-- **TVL growth rate** vs crypto market cap growth
-- **Distribution** across protocols (concentration vs diversification)
+• **3-month moving** average direction
+• **TVL growth rate** vs crypto market cap growth
+• **Distribution** across protocols (concentration vs diversification)
 
 **Bullish trend**: TVL growing faster than overall crypto market
 **Bearish trend**: TVL declining despite stable crypto prices
@@ -5363,38 +5363,38 @@ The difference between successful long-term DeFi investors and those who get bur
 #### 2. **Yield Compression/Expansion Trends**
 **What it shows**: Supply/demand balance for DeFi capital
 **How to analyze**:
-- **Average lending** rates across major protocols
-- **LP yield** trends for established pairs
-- **Yield spread** between DeFi and traditional finance
+• **Average lending** rates across major protocols
+• **LP yield** trends for established pairs
+• **Yield spread** between DeFi and traditional finance
 
 **Trend interpretation**:
-- **Yield compression** = More capital chasing returns (maturity phase)
-- **Yield expansion** = Capital scarcity or new opportunities
+• **Yield compression** = More capital chasing returns (maturity phase)
+• **Yield expansion** = Capital scarcity or new opportunities
 
 #### 3. **New Protocol Adoption Patterns**
 **What it shows**: Innovation pace and market appetite for new strategies
 **How to analyze**:
-- **Time to reach** $100M TVL for new protocols
-- **User acquisition** rates for new platforms
-- **Capital migration** patterns between protocols
+• **Time to reach** $100M TVL for new protocols
+• **User acquisition** rates for new platforms
+• **Capital migration** patterns between protocols
 
 **Innovation trends**:
-- **Fast adoption** = Healthy appetite for innovation
-- **Slow adoption** = Market saturation or risk aversion
+• **Fast adoption** = Healthy appetite for innovation
+• **Slow adoption** = Market saturation or risk aversion
 
 ### DeFi-Specific Leading Indicators:
 
 #### 4. **Gas Fee Trends**
 **What it shows**: Network usage and demand for DeFi transactions
-- **High sustained** gas fees = High DeFi activity
-- **Low gas** fees = Reduced activity or L2 migration
-- **Gas fee spikes** during volatility = Stress testing
+• **High sustained** gas fees = High DeFi activity
+• **Low gas** fees = Reduced activity or L2 migration
+• **Gas fee spikes** during volatility = Stress testing
 
 #### 5. **Stablecoin Supply and Yield**
 **What it shows**: Capital inflow/outflow and liquidity conditions
-- **Stablecoin supply** growth = New capital entering
-- **Stablecoin yields** = Demand for leverage and speculation
-- **Stablecoin exchange** flows = Capital deployment patterns
+• **Stablecoin supply** growth = New capital entering
+• **Stablecoin yields** = Demand for leverage and speculation
+• **Stablecoin exchange** flows = Capital deployment patterns
 
 ## Layer 3: Protocol-Specific Trend Analysis 🔍
 
@@ -5402,33 +5402,33 @@ The difference between successful long-term DeFi investors and those who get bur
 
 #### 1. **Competitive Position Trends**
 **Market share** within protocol category:
-- **Growing share** = Strong competitive position
-- **Stable share** = Mature but solid position
-- **Declining share** = Competitive pressure or obsolescence
+• **Growing share** = Strong competitive position
+• **Stable share** = Mature but solid position
+• **Declining share** = Competitive pressure or obsolescence
 
 #### 2. **Protocol Development Velocity**
 **Development activity** indicators:
-- **Feature releases** and upgrades frequency
-- **Community proposals** and governance activity
-- **Integration** with other protocols
-- **Bug fixes** and security improvements
+• **Feature releases** and upgrades frequency
+• **Community proposals** and governance activity
+• **Integration** with other protocols
+• **Bug fixes** and security improvements
 
 #### 3. **Tokenomics Health**
 **Token utility** and value accrual:
-- **Real utility** vs pure speculation
-- **Token distribution** and concentration
-- **Burn/buyback** mechanisms
-- **Governance effectiveness**
+• **Real utility** vs pure speculation
+• **Token distribution** and concentration
+• **Burn/buyback** mechanisms
+• **Governance effectiveness**
 
 ### Protocol Trend Checklist:
-- [ ] **TVL trend** vs category average
-- [ ] **User growth** rate and retention
-- [ ] **Revenue** (fees generated) trends
-- [ ] **Token price** performance vs fundamentals
-- [ ] **Development** activity and roadmap progress
-- [ ] **Community** engagement and governance participation
-- [ ] **Partnership** and integration announcements
-- [ ] **Security** track record and audit frequency
+• [ ] **TVL trend** vs category average
+• [ ] **User growth** rate and retention
+• [ ] **Revenue** (fees generated) trends
+• [ ] **Token price** performance vs fundamentals
+• [ ] **Development** activity and roadmap progress
+• [ ] **Community** engagement and governance participation
+• [ ] **Partnership** and integration announcements
+• [ ] **Security** track record and audit frequency
 
 ## Layer 4: Strategy-Specific Trend Analysis ⚡
 
@@ -5436,64 +5436,64 @@ The difference between successful long-term DeFi investors and those who get bur
 
 #### 1. **APY Sustainability Trends**
 **Questions to ask**:
-- Is high APY driven by **sustainable fees** or **unsustainable token emissions**?
-- Are **token emissions** decreasing over time (halving schedules)?
-- Is **protocol revenue** supporting current yield levels?
+• Is high APY driven by **sustainable fees** or **unsustainable token emissions**?
+• Are **token emissions** decreasing over time (halving schedules)?
+• Is **protocol revenue** supporting current yield levels?
 
 #### 2. **Pool Health Indicators**
 **Liquidity stability**:
-- **Total liquidity** trends in pools
-- **Trading volume** consistency
-- **Impermanent loss** frequency and magnitude
-- **Whale behavior** (large position entries/exits)
+• **Total liquidity** trends in pools
+• **Trading volume** consistency
+• **Impermanent loss** frequency and magnitude
+• **Whale behavior** (large position entries/exits)
 
 ### Lending/Borrowing Trend Analysis:
 
 #### 3. **Interest Rate Cycles**
 **Supply/demand dynamics**:
-- **Utilization rates** across major lending protocols
-- **Spread** between lending and borrowing rates
-- **Liquidation** frequency and amounts
-- **Collateral composition** trends
+• **Utilization rates** across major lending protocols
+• **Spread** between lending and borrowing rates
+• **Liquidation** frequency and amounts
+• **Collateral composition** trends
 
 #### 4. **Credit Market Health**
 **Risk indicators**:
-- **Default/liquidation** rates
-- **Collateral diversity** and quality
-- **Borrower behavior** patterns
-- **Protocol risk** parameters and changes
+• **Default/liquidation** rates
+• **Collateral diversity** and quality
+• **Borrower behavior** patterns
+• **Protocol risk** parameters and changes
 
 ## Practical Trend Recognition Tools 🛠️
 
 ### Tool 1: **Multi-Timeframe Dashboard**
 
 #### Create tracking dashboard with:
-- **Daily**: Price movements, gas fees, social sentiment
-- **Weekly**: TVL changes, volume trends, yield movements
-- **Monthly**: Fundamental metrics, development activity
-- **Quarterly**: Strategic positioning, competitive analysis
+• **Daily**: Price movements, gas fees, social sentiment
+• **Weekly**: TVL changes, volume trends, yield movements
+• **Monthly**: Fundamental metrics, development activity
+• **Quarterly**: Strategic positioning, competitive analysis
 
 ### Tool 2: **Correlation Analysis**
 
 #### Track relationships between:
-- **DeFi TVL** vs crypto market cap
-- **Yield levels** vs risk appetite
-- **New protocol** launches vs market cycle
-- **Gas fees** vs DeFi activity
+• **DeFi TVL** vs crypto market cap
+• **Yield levels** vs risk appetite
+• **New protocol** launches vs market cycle
+• **Gas fees** vs DeFi activity
 
 ### Tool 3: **Leading Indicator Matrix**
 
 #### Macro indicators (3-6 month lead time):
-- **Developer activity** changes
-- **Institutional** announcement patterns
-- **Regulatory** development timelines
-- **Infrastructure** upgrade schedules
+• **Developer activity** changes
+• **Institutional** announcement patterns
+• **Regulatory** development timelines
+• **Infrastructure** upgrade schedules
 
 #### DeFi indicators (1-3 month lead time):
-- **Whale wallet** activity patterns
-- **Protocol treasury** management
-- **Token unlock** schedules
-- **Major upgrade** announcements
+• **Whale wallet** activity patterns
+• **Protocol treasury** management
+• **Token unlock** schedules
+• **Major upgrade** announcements
 
 ## Trend vs Speculation Decision Framework 📋
 
@@ -5507,11 +5507,11 @@ The difference between successful long-term DeFi investors and those who get bur
 ✅ **Volume** supporting price movements
 
 #### Example: DeFi Summer 2020
-- **Fundamental**: New yield farming opportunities
-- **Institutional**: Growing DeFi recognition
-- **Technical**: TVL exponential growth
-- **Volume**: Massive user adoption
-- **Result**: Major multi-month trend
+• **Fundamental**: New yield farming opportunities
+• **Institutional**: Growing DeFi recognition
+• **Technical**: TVL exponential growth
+• **Volume**: Massive user adoption
+• **Result**: Major multi-month trend
 
 ### When to Avoid Speculation:
 
@@ -5523,10 +5523,10 @@ The difference between successful long-term DeFi investors and those who get bur
 ❌ **Contradictory** long-term indicators
 
 #### Example: Many "DeFi killers" 2021
-- **Hype**: Massive social media promotion
-- **No fundamentals**: Limited real usage
-- **Short-term**: Price spikes without TVL growth
-- **Result**: Pump and dump patterns
+• **Hype**: Massive social media promotion
+• **No fundamentals**: Limited real usage
+• **Short-term**: Price spikes without TVL growth
+• **Result**: Pump and dump patterns
 
 ## Market Cycle Position Framework 🔄
 
@@ -5555,28 +5555,28 @@ The difference between successful long-term DeFi investors and those who get bur
 ### Positioning Strategy by Cycle:
 
 #### Accumulation Strategy:
-- **Increase DeFi** allocation from 5% to 15%
-- **Focus on** established protocols with sustainable yields
-- **Dollar-cost average** into positions
-- **Prepare for** volatility and patience required
+• **Increase DeFi** allocation from 5% to 15%
+• **Focus on** established protocols with sustainable yields
+• **Dollar-cost average** into positions
+• **Prepare for** volatility and patience required
 
 #### Markup Strategy:
-- **Increase DeFi** allocation from 15% to 25%
-- **Add moderate** risk strategies
-- **Reinvest** most profits
-- **Expand** into promising new protocols
+• **Increase DeFi** allocation from 15% to 25%
+• **Add moderate** risk strategies
+• **Reinvest** most profits
+• **Expand** into promising new protocols
 
 #### Distribution Strategy:
-- **Reduce DeFi** allocation from 25% to 10%
-- **Take profits** systematically
-- **Focus on** capital preservation
-- **Avoid** high-risk new protocols
+• **Reduce DeFi** allocation from 25% to 10%
+• **Take profits** systematically
+• **Focus on** capital preservation
+• **Avoid** high-risk new protocols
 
 #### Markdown Strategy:
-- **Maintain DeFi** allocation at 5-10%
-- **Focus on** yield generation over appreciation
-- **Take profits** on any gains
-- **Research** opportunities for next cycle
+• **Maintain DeFi** allocation at 5-10%
+• **Focus on** yield generation over appreciation
+• **Take profits** on any gains
+• **Research** opportunities for next cycle
 
 ## Trend Following vs Market Timing ⏰
 
@@ -5591,8 +5591,8 @@ The difference between successful long-term DeFi investors and those who get bur
 **Results**: Usually leads to buying high and selling low
 
 ### The 70/30 Approach:
-- **70% trend following**: Systematic response to confirmed trends
-- **30% contrarian**: Small positions against trends for diversification
+• **70% trend following**: Systematic response to confirmed trends
+• **30% contrarian**: Small positions against trends for diversification
 
 ## Common Trend Recognition Mistakes 🚫
 
@@ -5619,23 +5619,23 @@ The difference between successful long-term DeFi investors and those who get bur
 ## Building Your Trend Recognition System 🎯
 
 ### Weekly Routine (30 minutes):
-- [ ] **Review** macro crypto indicators
-- [ ] **Check** DeFi ecosystem health metrics
-- [ ] **Analyze** individual protocol trends
-- [ ] **Assess** strategy-specific conditions
-- [ ] **Update** trend dashboard and notes
+• [ ] **Review** macro crypto indicators
+• [ ] **Check** DeFi ecosystem health metrics
+• [ ] **Analyze** individual protocol trends
+• [ ] **Assess** strategy-specific conditions
+• [ ] **Update** trend dashboard and notes
 
 ### Monthly Routine (2 hours):
-- [ ] **Deep dive** analysis of major trends
-- [ ] **Review** and adjust position sizes based on trends
-- [ ] **Research** new trends emerging
-- [ ] **Plan** strategic changes for following month
+• [ ] **Deep dive** analysis of major trends
+• [ ] **Review** and adjust position sizes based on trends
+• [ ] **Research** new trends emerging
+• [ ] **Plan** strategic changes for following month
 
 ### Quarterly Routine (4 hours):
-- [ ] **Comprehensive** cycle analysis
-- [ ] **Strategic** portfolio rebalancing
-- [ ] **Trend system** effectiveness review
-- [ ] **Long-term** goal and strategy adjustment
+• [ ] **Comprehensive** cycle analysis
+• [ ] **Strategic** portfolio rebalancing
+• [ ] **Trend system** effectiveness review
+• [ ] **Long-term** goal and strategy adjustment
 
 ## Key Takeaway
 
@@ -5668,16 +5668,16 @@ The difference between successful long-term DeFi investors and those who get bur
         content: {
           text: `# Staying Consistent: Building a Sustainable Long-Term DeFi Mindset
 
-The hardest part of DeFi isn't learning the technology or finding opportunities - it's **maintaining discipline over months and years** while markets swing wildly and new "opportunities" constantly tempt you to abandon your strategy.
+The hardest part of DeFi isn't learning the technology or finding opportunities: it's **maintaining discipline over months and years** while markets swing wildly and new "opportunities" constantly tempt you to abandon your strategy.
 
 ## The Psychology of Long-Term Success 🧠
 
 ### Why Consistency is Hard in DeFi:
-- **Constant innovation** creates FOMO for "better" opportunities
-- **High volatility** triggers emotional decision-making
-- **Fast-moving narratives** make current strategy feel outdated
-- **Social media** amplifies both fear and greed
-- **Complex strategies** are difficult to evaluate objectively
+• **Constant innovation** creates FOMO for "better" opportunities
+• **High volatility** triggers emotional decision-making
+• **Fast-moving narratives** make current strategy feel outdated
+• **Social media** amplifies both fear and greed
+• **Complex strategies** are difficult to evaluate objectively
 
 ### What Separates Winners from Losers:
 **Winners**: Develop systematic approaches and stick to them through cycles
@@ -5690,22 +5690,22 @@ The hardest part of DeFi isn't learning the technology or finding opportunities 
 ### Define Your Core Beliefs:
 
 #### Question 1: Why are you in DeFi?
-- **Yield generation** for income?
-- **Portfolio diversification** from traditional assets?
-- **Belief in decentralized** future?
-- **Speculation** on crypto appreciation?
-- **Learning** about emerging technology?
+• **Yield generation** for income?
+• **Portfolio diversification** from traditional assets?
+• **Belief in decentralized** future?
+• **Speculation** on crypto appreciation?
+• **Learning** about emerging technology?
 
 #### Question 2: What's your time horizon?
-- **6-12 months** (short-term trading)
-- **1-3 years** (medium-term positioning)
-- **3-10 years** (long-term accumulation)
-- **10+ years** (generational wealth building)
+• **6-12 months** (short-term trading)
+• **1-3 years** (medium-term positioning)
+• **3-10 years** (long-term accumulation)
+• **10+ years** (generational wealth building)
 
 #### Question 3: How does DeFi fit your overall finances?
-- **What percentage** of net worth is appropriate?
-- **How much** can you afford to lose completely?
-- **What role** does this play in your financial plan?
+• **What percentage** of net worth is appropriate?
+• **How much** can you afford to lose completely?
+• **What role** does this play in your financial plan?
 
 ### Sample Investment Philosophy Statement:
 *"I believe DeFi will capture increasing share of global finance over the next 5-10 years. I'm allocating 10-15% of my portfolio to DeFi to generate yield and participate in this growth. I focus on established protocols with proven track records and sustainable economics. I'm willing to accept high volatility for potentially higher returns than traditional investments. I rebalance quarterly and take systematic profits during euphoric periods."*
@@ -5715,43 +5715,43 @@ The hardest part of DeFi isn't learning the technology or finding opportunities 
 ### The Power of Systems Over Goals:
 
 #### Goals-Based Approach (Often Fails):
-- "I want to make 50% returns this year"
-- "I want to find the next 10x protocol"
-- "I want to time the market perfectly"
+• "I want to make 50% returns this year"
+• "I want to find the next 10x protocol"
+• "I want to time the market perfectly"
 
 #### Systems-Based Approach (Often Succeeds):
-- "I will allocate new savings to DeFi monthly"
-- "I will research new protocols for 2 hours weekly"
-- "I will rebalance portfolio quarterly"
+• "I will allocate new savings to DeFi monthly"
+• "I will research new protocols for 2 hours weekly"
+• "I will rebalance portfolio quarterly"
 
 ### Essential DeFi Habits:
 
 #### Daily Habits (5-10 minutes):
-- [ ] **Check portfolio** overview (total value)
-- [ ] **Review** any protocol announcements
-- [ ] **Note** significant market movements
-- [ ] **Resist urge** to make emotional changes
+• [ ] **Check portfolio** overview (total value)
+• [ ] **Review** any protocol announcements
+• [ ] **Note** significant market movements
+• [ ] **Resist urge** to make emotional changes
 
 #### Weekly Habits (30-60 minutes):
-- [ ] **Detailed portfolio** review and analysis
-- [ ] **Research** one new protocol or strategy
-- [ ] **Review** performance vs benchmarks
-- [ ] **Plan** any strategic adjustments
-- [ ] **Update** tracking systems
+• [ ] **Detailed portfolio** review and analysis
+• [ ] **Research** one new protocol or strategy
+• [ ] **Review** performance vs benchmarks
+• [ ] **Plan** any strategic adjustments
+• [ ] **Update** tracking systems
 
 #### Monthly Habits (2-3 hours):
-- [ ] **Comprehensive** performance analysis
-- [ ] **Rebalance** portfolio if needed
-- [ ] **Tax planning** and record organization
-- [ ] **Strategy review** and adjustment
-- [ ] **Goal progress** assessment
+• [ ] **Comprehensive** performance analysis
+• [ ] **Rebalance** portfolio if needed
+• [ ] **Tax planning** and record organization
+• [ ] **Strategy review** and adjustment
+• [ ] **Goal progress** assessment
 
 #### Quarterly Habits (Half day):
-- [ ] **Deep strategic** review and planning
-- [ ] **Major allocation** decisions
-- [ ] **Tax optimization** moves
-- [ ] **System and process** improvements
-- [ ] **Education** and skill development planning
+• [ ] **Deep strategic** review and planning
+• [ ] **Major allocation** decisions
+• [ ] **Tax optimization** moves
+• [ ] **System and process** improvements
+• [ ] **Education** and skill development planning
 
 ## Managing Emotional Cycles 🎢
 
@@ -5806,10 +5806,10 @@ The hardest part of DeFi isn't learning the technology or finding opportunities 
 #### Step 2: **The Opportunity Cost Analysis**
 **Before changing** strategy, quantify what you're giving up
 **Questions**:
-- What are you **exiting** and why?
-- What **fees/taxes** will the change cost?
-- What **risks** is the new opportunity really taking?
-- What if you're **wrong** about the new opportunity?
+• What are you **exiting** and why?
+• What **fees/taxes** will the change cost?
+• What **risks** is the new opportunity really taking?
+• What if you're **wrong** about the new opportunity?
 
 #### Step 3: **The 5% Rule**
 **Allocate maximum** 5% of portfolio to "FOMO" opportunities
@@ -5819,10 +5819,10 @@ The hardest part of DeFi isn't learning the technology or finding opportunities 
 ### Managing Information Overload:
 
 #### Curate Your Information Diet:
-- **Limit** social media exposure during volatile periods
-- **Follow** 3-5 high-quality information sources consistently
-- **Avoid** daily price checking beyond basic portfolio review
-- **Focus** on fundamentals over short-term movements
+• **Limit** social media exposure during volatile periods
+• **Follow** 3-5 high-quality information sources consistently
+• **Avoid** daily price checking beyond basic portfolio review
+• **Focus** on fundamentals over short-term movements
 
 #### Information Quality Hierarchy:
 1. **Official protocol** announcements and documentation
@@ -5848,16 +5848,16 @@ The hardest part of DeFi isn't learning the technology or finding opportunities 
 ### Historical Context Awareness:
 
 #### Remember Previous Cycles:
-- **2017 ICO** bubble and crash
-- **2020 DeFi** summer and subsequent cooling
-- **2021 NFT** mania and correction
-- **Each cycle** brings innovation but also speculation
+• **2017 ICO** bubble and crash
+• **2020 DeFi** summer and subsequent cooling
+• **2021 NFT** mania and correction
+• **Each cycle** brings innovation but also speculation
 
 #### Learn from History:
-- **Fundamentally sound** projects tend to survive cycles
-- **Hype-driven** projects often disappear
-- **"This time is different"** is usually wrong
-- **Patience** is rewarded more than cleverness
+• **Fundamentally sound** projects tend to survive cycles
+• **Hype-driven** projects often disappear
+• **"This time is different"** is usually wrong
+• **Patience** is rewarded more than cleverness
 
 ## Building Antifragility 💪
 
@@ -5865,17 +5865,17 @@ The hardest part of DeFi isn't learning the technology or finding opportunities 
 **Definition**: Portfolio and mindset that gets **stronger** from volatility and stress rather than merely surviving it
 
 #### Antifragile Portfolio Characteristics:
-- **Diversified** across protocols and strategies
-- **Optionality** built in (small bets on many opportunities)
-- **Systematic** profit-taking during euphoria
-- **Systematic** accumulation during despair
-- **Cash reserves** for opportunities
+• **Diversified** across protocols and strategies
+• **Optionality** built in (small bets on many opportunities)
+• **Systematic** profit-taking during euphoria
+• **Systematic** accumulation during despair
+• **Cash reserves** for opportunities
 
 #### Antifragile Mindset Characteristics:
-- **Learning** from every mistake and market cycle
-- **Adapting** strategies based on new information
-- **Maintaining** core principles while being tactically flexible
-- **Viewing** volatility as opportunity rather than threat
+• **Learning** from every mistake and market cycle
+• **Adapting** strategies based on new information
+• **Maintaining** core principles while being tactically flexible
+• **Viewing** volatility as opportunity rather than threat
 
 ### Building Antifragile Systems:
 
@@ -5899,9 +5899,9 @@ The hardest part of DeFi isn't learning the technology or finding opportunities 
 ### Understanding Compound Growth:
 
 #### The Magic of Time:
-- **10% annually** for 1 year = 10% total return
-- **10% annually** for 10 years = 159% total return
-- **10% annually** for 20 years = 573% total return
+• **10% annually** for 1 year = 10% total return
+• **10% annually** for 10 years = 159% total return
+• **10% annually** for 20 years = 573% total return
 
 #### Compound Growth in DeFi:
 **Year 1**: Earn 15% on $10,000 = $11,500
@@ -5926,25 +5926,25 @@ The hardest part of DeFi isn't learning the technology or finding opportunities 
 ## Creating Your Long-Term Success Plan 📅
 
 ### 90-Day Quick Start:
-- [ ] **Define** investment philosophy and write it down
-- [ ] **Set up** systematic tracking and review processes
-- [ ] **Establish** initial portfolio allocation
-- [ ] **Create** profit-taking and rebalancing rules
-- [ ] **Join** 2-3 quality educational communities
+• [ ] **Define** investment philosophy and write it down
+• [ ] **Set up** systematic tracking and review processes
+• [ ] **Establish** initial portfolio allocation
+• [ ] **Create** profit-taking and rebalancing rules
+• [ ] **Join** 2-3 quality educational communities
 
 ### 1-Year Foundation:
-- [ ] **Experience** at least one major market cycle
-- [ ] **Refine** strategy based on real experience
-- [ ] **Build** emergency fund outside of DeFi
-- [ ] **Develop** tax-efficient systems and processes
-- [ ] **Create** comprehensive risk management systems
+• [ ] **Experience** at least one major market cycle
+• [ ] **Refine** strategy based on real experience
+• [ ] **Build** emergency fund outside of DeFi
+• [ ] **Develop** tax-efficient systems and processes
+• [ ] **Create** comprehensive risk management systems
 
 ### 3-5 Year Vision:
-- [ ] **Achieve** consistent risk-adjusted returns
-- [ ] **Build** substantial position in DeFi ecosystem
-- [ ] **Develop** expertise in 2-3 specialized areas
-- [ ] **Consider** more sophisticated strategies (if appropriate)
-- [ ] **Share** knowledge and mentor others
+• [ ] **Achieve** consistent risk-adjusted returns
+• [ ] **Build** substantial position in DeFi ecosystem
+• [ ] **Develop** expertise in 2-3 specialized areas
+• [ ] **Consider** more sophisticated strategies (if appropriate)
+• [ ] **Share** knowledge and mentor others
 
 ## Red Flags: When to Question Your Approach 🚩
 
@@ -5966,14 +5966,14 @@ The hardest part of DeFi isn't learning the technology or finding opportunities 
 
 **Long-term success in DeFi comes from boring consistency, not exciting discoveries**. Build systems you can follow regardless of market conditions, and focus on **process over performance**.
 
-**The goal isn't to maximize returns in any single year** - it's to build sustainable wealth over multiple market cycles while managing risk appropriately.
+**The goal isn't to maximize returns in any single year**: it's to build sustainable wealth over multiple market cycles while managing risk appropriately.
 
 **Remember**: Every expert was once a beginner. Your knowledge and skills will compound just like your investments if you stay curious and disciplined.
 
 *Congratulations! You've completed the DeFi Portfolio Management course. You now have the frameworks and mindset needed to build and manage a successful long-term DeFi portfolio.*`,
           quiz: {
             id: "quiz-4-5",
-            title: "Risk Management - Knowledge Check",
+            title: "Risk Management: Knowledge Check",
             passingScore: 70,
             maxAttempts: 3,
             questions: [
@@ -6011,9 +6011,9 @@ The hardest part of DeFi isn't learning the technology or finding opportunities 
 Demonstrate your ability to manage and grow a DeFi portfolio.
 
 ### Exam Details:
-- **Questions**: 33
-- **Passing Score**: 80%
-- **Time Limit**: 60 minutes`,
+• **Questions**: 33
+• **Passing Score**: 80%
+• **Time Limit**: 60 minutes`,
           quiz: {
             id: "exam-4",
             title: "Portfolio Mastery Final Exam",
@@ -6080,18 +6080,18 @@ Welcome to your complete guide on DeFi vaults. This course will take you from un
 
 ## The Simple Explanation
 
-A **DeFi vault** is like having a professional investment manager for your cryptocurrency - but instead of a person, it's **smart contract code** that automatically executes investment strategies on your behalf.
+A **DeFi vault** is like having a professional investment manager for your cryptocurrency: but instead of a person, it's **smart contract code** that automatically executes investment strategies on your behalf.
 
 ### Think of it Like This:
-- **Traditional Investment Fund**: You give money to a fund manager who makes investment decisions
-- **DeFi Vault**: You deposit crypto into a smart contract that automatically follows pre-programmed investment strategies
+• **Traditional Investment Fund**: You give money to a fund manager who makes investment decisions
+• **DeFi Vault**: You deposit crypto into a smart contract that automatically follows pre-programmed investment strategies
 
 ## Key Definitions You Need to Know 📚
 
 [COMPONENT:KEY_TAKEAWAY]
 {
   "title": "Essential Vault Terminology",
-  "content": "**Vault**: A smart contract that pools user funds and executes automated investment strategies\n\n**TVL (Total Value Locked)**: The total amount of assets deposited in a vault - a key metric of vault size and trust\n\n**APY (Annual Percentage Yield)**: The projected annual return, including compound interest\n\n**Strategist**: The person or team that designs and manages the vault's investment strategy\n\n**Depositor/Investor**: You - the person depositing assets into the vault"
+  "content": "**Vault**: A smart contract that pools user funds and executes automated investment strategies\n\n**TVL (Total Value Locked)**: The total amount of assets deposited in a vault: a key metric of vault size and trust\n\n**APY (Annual Percentage Yield)**: The projected annual return, including compound interest\n\n**Strategist**: The person or team that designs and manages the vault's investment strategy\n\n**Depositor/Investor**: You: the person depositing assets into the vault"
 }
 [/COMPONENT]
 
@@ -6137,31 +6137,31 @@ Some vaults require you to keep funds deposited for a minimum time. Not all vaul
 ## Types of DeFi Vaults 🏦
 
 ### 1. Yield Optimization Vaults
-- **Purpose**: Maximize returns on deposited assets
-- **Strategy**: Automatically move funds to highest-yielding opportunities
-- **Example**: Yearn Finance vaults
-- **Risk Level**: Medium (smart contract risk, strategy risk)
+• **Purpose**: Maximize returns on deposited assets
+• **Strategy**: Automatically move funds to highest-yielding opportunities
+• **Example**: Yearn Finance vaults
+• **Risk Level**: Medium (smart contract risk, strategy risk)
 
 ### 2. Liquidity Pool Vaults
-- **Purpose**: Earn trading fees by providing liquidity
-- **Strategy**: Deposit into DEX liquidity pools
-- **Risk Level**: Medium-High (impermanent loss risk)
+• **Purpose**: Earn trading fees by providing liquidity
+• **Strategy**: Deposit into DEX liquidity pools
+• **Risk Level**: Medium-High (impermanent loss risk)
 
 ### 3. Lending Vaults
-- **Purpose**: Earn interest by lending assets
-- **Strategy**: Supply assets to lending protocols
-- **Risk Level**: Low-Medium (protocol risk, utilization risk)
+• **Purpose**: Earn interest by lending assets
+• **Strategy**: Supply assets to lending protocols
+• **Risk Level**: Low-Medium (protocol risk, utilization risk)
 
 ### 4. Managed Strategy Vaults
-- **Purpose**: Follow curated investment strategies
-- **Strategy**: Active management by experienced strategists
-- **Example**: Enzyme Finance vaults, 3EA Vault
-- **Risk Level**: Varies by strategy
+• **Purpose**: Follow curated investment strategies
+• **Strategy**: Active management by experienced strategists
+• **Example**: Enzyme Finance vaults, 3EA Vault
+• **Risk Level**: Varies by strategy
 
 ### 5. Delta-Neutral Vaults
-- **Purpose**: Earn yield while minimizing price exposure
-- **Strategy**: Hedge positions to eliminate directional risk
-- **Risk Level**: Medium (complex strategy risk)
+• **Purpose**: Earn yield while minimizing price exposure
+• **Strategy**: Hedge positions to eliminate directional risk
+• **Risk Level**: Medium (complex strategy risk)
 
 ## Why Use Vaults Instead of DIY? 🤔
 
@@ -6190,11 +6190,11 @@ Some vaults require you to keep funds deposited for a minimum time. Not all vaul
 [/COMPONENT]
 
 ### Key Benefits of Vaults:
-- **Automation**: Set and forget - no daily management needed
-- **Cost Efficiency**: Share gas costs with other depositors
-- **Professional Strategies**: Access sophisticated techniques
-- **Compounding**: Auto-reinvestment of earnings
-- **Diversification**: Some vaults spread across multiple protocols
+• **Automation**: Set and forget: no daily management needed
+• **Cost Efficiency**: Share gas costs with other depositors
+• **Professional Strategies**: Access sophisticated techniques
+• **Compounding**: Auto-reinvestment of earnings
+• **Diversification**: Some vaults spread across multiple protocols
 
 ## Important Disclaimer ⚠️
 
@@ -6208,7 +6208,7 @@ Some vaults require you to keep funds deposited for a minimum time. Not all vaul
 *Next module: We'll explore the major vault protocols and how they differ.*`,
           quiz: {
             id: "quiz-5-1",
-            title: "Vault Basics - Knowledge Check",
+            title: "Vault Basics: Knowledge Check",
             description: "Test your understanding of DeFi vault fundamentals and key terminology.",
             passingScore: 70,
             timeLimit: 10,
@@ -6233,10 +6233,10 @@ Some vaults require you to keep funds deposited for a minimum time. Not all vaul
                 question: "What does TVL stand for and what does it measure?",
                 type: "single",
                 options: [
-                  "Total Value Locked - the total assets deposited in a protocol or vault",
-                  "Transaction Volume Limit - maximum daily transactions",
-                  "Token Value Level - the price of a token",
-                  "Trading Verification Ledger - record of trades"
+                  "Total Value Locked: the total assets deposited in a protocol or vault",
+                  "Transaction Volume Limit: maximum daily transactions",
+                  "Token Value Level: the price of a token",
+                  "Trading Verification Ledger: record of trades"
                 ],
                 correctAnswers: [0],
                 explanation: "TVL stands for Total Value Locked and measures the total amount of assets deposited in a vault or protocol. It's a key metric indicating size and trust.",
@@ -6253,7 +6253,7 @@ Some vaults require you to keep funds deposited for a minimum time. Not all vaul
                   "Access to professional strategies"
                 ],
                 correctAnswers: [0, 1, 3],
-                explanation: "Vaults offer automation, shared gas costs, and access to professional strategies. However, they do NOT guarantee profits - all DeFi investments carry risk.",
+                explanation: "Vaults offer automation, shared gas costs, and access to professional strategies. However, they do NOT guarantee profits: all DeFi investments carry risk.",
                 points: 15
               },
               {
@@ -6333,21 +6333,21 @@ Now that you understand what vaults are, let's explore the most important protoc
 Enzyme is an **asset management infrastructure** that allows anyone to create, manage, and invest in on-chain investment vaults. Think of it as the platform that powers managed investment funds in DeFi.
 
 ### How It Works
-- **Vault Managers** create vaults with specific strategies
-- **Investors** deposit assets into vaults they trust
-- **All actions** are transparent and verifiable on-chain
-- **Smart contracts** enforce rules and protect investors
+• **Vault Managers** create vaults with specific strategies
+• **Investors** deposit assets into vaults they trust
+• **All actions** are transparent and verifiable on-chain
+• **Smart contracts** enforce rules and protect investors
 
 ### Key Features
-- **Customizable Strategies**: Managers can trade, lend, stake, and more
-- **Investor Protections**: Built-in safeguards and transparency
-- **Real-Time Tracking**: See exactly what the vault is doing
-- **Multiple Asset Types**: Support for diverse crypto assets
+• **Customizable Strategies**: Managers can trade, lend, stake, and more
+• **Investor Protections**: Built-in safeguards and transparency
+• **Real-Time Tracking**: See exactly what the vault is doing
+• **Multiple Asset Types**: Support for diverse crypto assets
 
 ### Fee Structure
-- **Management fees**: Set by vault manager (typically 0-2%)
-- **Performance fees**: Set by vault manager (typically 10-20%)
-- **Protocol fees**: Small fee to Enzyme protocol
+• **Management fees**: Set by vault manager (typically 0-2%)
+• **Performance fees**: Set by vault manager (typically 10-20%)
+• **Protocol fees**: Small fee to Enzyme protocol
 
 [COMPONENT:DID_YOU_KNOW]
 {
@@ -6367,21 +6367,21 @@ Enzyme is an **asset management infrastructure** that allows anyone to create, m
 Yearn is a **yield aggregator** that automatically moves your funds to the highest-yielding opportunities. It pioneered the "vault" concept in DeFi.
 
 ### How It Works
-- Deposit a single asset (e.g., USDC)
-- Yearn's strategies automatically deploy to best opportunities
-- Earnings are auto-compounded
-- Withdraw anytime with accumulated gains
+• Deposit a single asset (e.g., USDC)
+• Yearn's strategies automatically deploy to best opportunities
+• Earnings are auto-compounded
+• Withdraw anytime with accumulated gains
 
 ### Key Strategies
-- **Lending**: Supply to Aave, Compound, etc.
-- **Liquidity Providing**: Earn DEX trading fees
-- **Leverage**: Borrow to amplify returns (advanced)
-- **Multi-Step**: Combine strategies for optimization
+• **Lending**: Supply to Aave, Compound, etc.
+• **Liquidity Providing**: Earn DEX trading fees
+• **Leverage**: Borrow to amplify returns (advanced)
+• **Multi-Step**: Combine strategies for optimization
 
 ### Fee Structure
-- **Management fee**: 2% annually
-- **Performance fee**: 20% of profits
-- **No deposit/withdrawal fees**
+• **Management fee**: 2% annually
+• **Performance fee**: 20% of profits
+• **No deposit/withdrawal fees**
 
 ### Best For
 ✅ Passive investors who want "set and forget"
@@ -6395,21 +6395,21 @@ Yearn is a **yield aggregator** that automatically moves your funds to the highe
 A **multi-chain yield optimizer** that auto-compounds your DeFi earnings across dozens of blockchains.
 
 ### How It Works
-- Choose a vault on your preferred chain
-- Deposit LP tokens or single assets
-- Beefy automatically compounds earnings
-- Benefit from shared gas costs
+• Choose a vault on your preferred chain
+• Deposit LP tokens or single assets
+• Beefy automatically compounds earnings
+• Benefit from shared gas costs
 
 ### Key Features
-- **Multi-Chain**: Available on 20+ blockchains
-- **Safety Scoring**: Rates vault risk levels
-- **Auto-Compound**: Maximizes APY through frequent harvesting
-- **Community-Driven**: Open-source and transparent
+• **Multi-Chain**: Available on 20+ blockchains
+• **Safety Scoring**: Rates vault risk levels
+• **Auto-Compound**: Maximizes APY through frequent harvesting
+• **Community-Driven**: Open-source and transparent
 
 ### Fee Structure
-- **Performance fee**: Variable (usually ~4.5% of earnings)
-- **No management fee**
-- **No deposit/withdrawal fees on most vaults**
+• **Performance fee**: Variable (usually ~4.5% of earnings)
+• **No management fee**
+• **No deposit/withdrawal fees on most vaults**
 
 ### Best For
 ✅ Users on non-Ethereum chains
@@ -6420,52 +6420,52 @@ A **multi-chain yield optimizer** that auto-compounds your DeFi earnings across 
 ## 4. Other Notable Protocols 📊
 
 ### Harvest Finance
-- Focus on farming and yield aggregation
-- Simple interface for beginners
-- Ethereum and select L2s
+• Focus on farming and yield aggregation
+• Simple interface for beginners
+• Ethereum and select L2s
 
 ### Convex Finance
-- Specialized for Curve protocol yields
-- Boost CRV rewards without locking
-- Best for Curve LP providers
+• Specialized for Curve protocol yields
+• Boost CRV rewards without locking
+• Best for Curve LP providers
 
 ### Sommelier Finance
-- AI-powered vault strategies
-- More sophisticated strategy execution
-- Newer but innovative approach
+• AI-powered vault strategies
+• More sophisticated strategy execution
+• Newer but innovative approach
 
 ## Comparing Protocols: Key Metrics 📈
 
 ### When Evaluating Any Vault Protocol, Check:
 
 1. **Track Record**
-   - How long has it operated?
-   - Any security incidents?
-   - Historical performance data?
+  : How long has it operated?
+  : Any security incidents?
+  : Historical performance data?
 
 2. **Security**
-   - Audit history
-   - Bug bounty programs
-   - Insurance coverage (if any)
+  : Audit history
+  : Bug bounty programs
+  : Insurance coverage (if any)
 
 3. **TVL Trends**
-   - Growing or declining deposits?
-   - Sudden changes to investigate?
+  : Growing or declining deposits?
+  : Sudden changes to investigate?
 
 4. **Fee Transparency**
-   - Clear fee structure?
-   - Hidden costs?
-   - Fee changes over time?
+  : Clear fee structure?
+  : Hidden costs?
+  : Fee changes over time?
 
 5. **Team and Governance**
-   - Known team or anonymous?
-   - Decentralized governance?
-   - Community involvement?
+  : Known team or anonymous?
+  : Decentralized governance?
+  : Community involvement?
 
 [COMPONENT:KEY_TAKEAWAY]
 {
   "title": "Protocol Selection Summary",
-  "content": "• **Enzyme**: Best for following trusted strategists with active management\n• **Yearn**: Best for passive, automated yield optimization on Ethereum\n• **Beefy**: Best for multi-chain exposure and LP auto-compounding\n\nNo single protocol is 'best' - choose based on your goals, risk tolerance, and preferred blockchain."
+  "content": "• **Enzyme**: Best for following trusted strategists with active management\n• **Yearn**: Best for passive, automated yield optimization on Ethereum\n• **Beefy**: Best for multi-chain exposure and LP auto-compounding\n\nNo single protocol is 'best': choose based on your goals, risk tolerance, and preferred blockchain."
 }
 [/COMPONENT]
 
@@ -6478,9 +6478,9 @@ Every protocol has smart contract risk. Even audited contracts can have vulnerab
 Different strategies have different risk profiles. Understand what the vault is doing with your funds.
 
 ### Protocol-Specific Risks
-- **Enzyme**: Dependent on vault manager competence
-- **Yearn**: Complex multi-strategy risks
-- **Beefy**: Third-party protocol dependencies
+• **Enzyme**: Dependent on vault manager competence
+• **Yearn**: Complex multi-strategy risks
+• **Beefy**: Third-party protocol dependencies
 
 [COMPONENT:ALERT]
 {
@@ -6492,7 +6492,7 @@ Different strategies have different risk profiles. Understand what the vault is 
 *Next module: We'll cover how to stay safe when using vaults and red flags to watch for.*`,
           quiz: {
             id: "quiz-5-2",
-            title: "Vault Protocols - Knowledge Check",
+            title: "Vault Protocols: Knowledge Check",
             description: "Test your understanding of major vault protocols and their differences.",
             passingScore: 70,
             timeLimit: 10,
@@ -6560,7 +6560,7 @@ Different strategies have different risk profiles. Understand what the vault is 
                 type: "true-false",
                 options: ["True", "False"],
                 correctAnswers: [0],
-                explanation: "True. One of Enzyme's key features is complete transparency - all vault actions are recorded on-chain and can be verified by anyone.",
+                explanation: "True. One of Enzyme's key features is complete transparency: all vault actions are recorded on-chain and can be verified by anyone.",
                 points: 10
               }
             ]
@@ -6616,29 +6616,29 @@ Security should be your top priority when using DeFi vaults. This module covers 
     "Research the strategist/manager's track record",
     "Understand the exact strategy being used",
     "Calculate all fees and their impact on returns",
-    "Check TVL trends - declining TVL may signal problems",
+    "Check TVL trends: declining TVL may signal problems",
     "Start with a small test deposit first"
   ]
 }
 [/COMPONENT]
 
 ### Website Verification
-- **Bookmark official sites** - never Google and click ads
-- **Check the URL carefully** - scammers use similar domains
-- **Look for HTTPS** - secure connection indicator
-- **Verify on official social channels** - confirm the correct URL
+• **Bookmark official sites**: never Google and click ads
+• **Check the URL carefully**: scammers use similar domains
+• **Look for HTTPS**: secure connection indicator
+• **Verify on official social channels**: confirm the correct URL
 
 ### Smart Contract Safety
-- **Check for audits** from reputable firms (OpenZeppelin, Trail of Bits, Consensys Diligence)
-- **Look for bug bounty programs** - shows commitment to security
-- **Review audit reports** - understand what was found and fixed
-- **Time in market** - longer operation often means more battle-tested
+• **Check for audits** from reputable firms (OpenZeppelin, Trail of Bits, Consensys Diligence)
+• **Look for bug bounty programs**: shows commitment to security
+• **Review audit reports**: understand what was found and fixed
+• **Time in market**: longer operation often means more battle-tested
 
 ### Wallet Security
-- **Use a hardware wallet** for significant amounts
-- **Revoke unused approvals** regularly
-- **Don't connect to unknown sites**
-- **Keep seed phrase completely offline**
+• **Use a hardware wallet** for significant amounts
+• **Revoke unused approvals** regularly
+• **Don't connect to unknown sites**
+• **Keep seed phrase completely offline**
 
 ## Red Flags to Watch For 🚩
 
@@ -6652,95 +6652,95 @@ Security should be your top priority when using DeFi vaults. This module covers 
 [/COMPONENT]
 
 **1. Unrealistic Returns**
-- APY promises of 1000%+ with no clear source
-- "Guaranteed" or "risk-free" claims
-- Returns that seem too good compared to market rates
+• APY promises of 1000%+ with no clear source
+• "Guaranteed" or "risk-free" claims
+• Returns that seem too good compared to market rates
 
 **2. Anonymous or Unverifiable Teams**
-- No public information about who runs the protocol
-- Team refuses to do video calls or AMAs
-- Social media accounts created recently
+• No public information about who runs the protocol
+• Team refuses to do video calls or AMAs
+• Social media accounts created recently
 
 **3. Poor Documentation**
-- No clear explanation of strategy
-- Missing or outdated audit reports
-- Vague or confusing fee structures
+• No clear explanation of strategy
+• Missing or outdated audit reports
+• Vague or confusing fee structures
 
 **4. Pressure Tactics**
-- "Limited time" opportunities
-- Urgent messages to deposit quickly
-- Fear of missing out (FOMO) marketing
+• "Limited time" opportunities
+• Urgent messages to deposit quickly
+• Fear of missing out (FOMO) marketing
 
 **5. Technical Red Flags**
-- Recently deployed contracts (less than 6 months)
-- No multi-sig or governance safeguards
-- Admin keys that could drain funds
-- Unusual tokenomics or mechanisms
+• Recently deployed contracts (less than 6 months)
+• No multi-sig or governance safeguards
+• Admin keys that could drain funds
+• Unusual tokenomics or mechanisms
 
 ### Vault-Specific Red Flags
 
 **Declining TVL Without Explanation**
-- Users leaving could signal problems
-- Check community channels for reasons
+• Users leaving could signal problems
+• Check community channels for reasons
 
 **Strategy Changes Without Notice**
-- Legitimate protocols communicate changes
-- Sudden shifts may indicate problems
+• Legitimate protocols communicate changes
+• Sudden shifts may indicate problems
 
 **Unusual Withdrawal Restrictions**
-- New lock-ups implemented suddenly
-- "Technical issues" preventing withdrawals
+• New lock-ups implemented suddenly
+• "Technical issues" preventing withdrawals
 
 **Communication Blackouts**
-- Team stops responding to questions
-- Social media goes quiet
+• Team stops responding to questions
+• Social media goes quiet
 
 ## How to Research a Vault 🔍
 
 ### Step 1: Protocol-Level Research
-- How long has the protocol operated?
-- What's the total TVL across all vaults?
-- Any security incidents in history?
-- Is the code open-source?
+• How long has the protocol operated?
+• What's the total TVL across all vaults?
+• Any security incidents in history?
+• Is the code open-source?
 
 ### Step 2: Vault-Level Research
-- What's the specific strategy?
-- Historical performance (be skeptical of short track records)
-- Current TVL and trends
-- Fee structure and impact
+• What's the specific strategy?
+• Historical performance (be skeptical of short track records)
+• Current TVL and trends
+• Fee structure and impact
 
 ### Step 3: Strategist Research (for managed vaults)
-- Who manages the vault?
-- Their track record and reputation
-- Are they accessible for questions?
-- Alignment of incentives (do they have skin in the game?)
+• Who manages the vault?
+• Their track record and reputation
+• Are they accessible for questions?
+• Alignment of incentives (do they have skin in the game?)
 
 ### Step 4: Community Research
-- What does the community say?
-- Check Discord, Twitter, forums
-- Look for both positive AND negative feedback
-- Be wary of only positive reviews (could be fake)
+• What does the community say?
+• Check Discord, Twitter, forums
+• Look for both positive AND negative feedback
+• Be wary of only positive reviews (could be fake)
 
 ## What To Do If Something Goes Wrong 🆘
 
 ### If You Suspect a Problem
-1. **Don't panic** - assess the situation calmly
-2. **Check official channels** - Discord, Twitter for announcements
+1. **Don't panic**: assess the situation calmly
+2. **Check official channels**: Discord, Twitter for announcements
 3. **Don't click random links** claiming to help
 4. **If possible, withdraw to safety** while evaluating
 
 ### If Funds Are Compromised
-1. **Document everything** - screenshots, transaction hashes
+1. **Document everything**: screenshots, transaction hashes
 2. **Report to the protocol** if legitimate
 3. **Warn others** in community channels
 4. **Report to relevant authorities** if appropriate
 5. **Learn from the experience** for future
 
 ### Prevention Is Better Than Cure
-- **Diversify** across protocols and vaults
-- **Never go "all in"** on any single opportunity
-- **Stay updated** on security news in DeFi
-- **Continuously educate yourself**
+• **Diversify** across protocols and vaults
+• **Never go "all in"** on any single opportunity
+• **Stay updated** on security news in DeFi
+• **Continuously educate yourself**
 
 ## Trust Framework 🏗️
 
@@ -6775,7 +6775,7 @@ Security should be your top priority when using DeFi vaults. This module covers 
 *Next module: How to choose a vault that's right for YOUR goals and risk tolerance.*`,
           quiz: {
             id: "quiz-5-3",
-            title: "Vault Safety - Knowledge Check",
+            title: "Vault Safety: Knowledge Check",
             description: "Test your understanding of vault security practices and how to identify red flags.",
             passingScore: 70,
             timeLimit: 10,
@@ -6884,22 +6884,22 @@ Choosing a vault isn't just about finding the highest APY. It's about finding th
 ### Goal-Based Vault Selection
 
 **If Your Goal Is: Stable, Predictable Income**
-- Look for: Single-asset lending vaults
-- Focus on: Stablecoin vaults (USDC, DAI)
-- Accept: Lower APY for lower volatility
-- Avoid: High-risk farming strategies
+• Look for: Single-asset lending vaults
+• Focus on: Stablecoin vaults (USDC, DAI)
+• Accept: Lower APY for lower volatility
+• Avoid: High-risk farming strategies
 
 **If Your Goal Is: Growing Crypto Holdings**
-- Look for: ETH or BTC-focused vaults
-- Focus on: Strategies that compound in your base asset
-- Accept: Price volatility with strategy returns
-- Avoid: Strategies with high impermanent loss risk
+• Look for: ETH or BTC-focused vaults
+• Focus on: Strategies that compound in your base asset
+• Accept: Price volatility with strategy returns
+• Avoid: Strategies with high impermanent loss risk
 
 **If Your Goal Is: Maximum Yield (Higher Risk)**
-- Look for: Multi-strategy yield optimization
-- Focus on: Leverage and farming strategies
-- Accept: Significant risk of loss
-- Avoid: Investing more than you can lose
+• Look for: Multi-strategy yield optimization
+• Focus on: Leverage and farming strategies
+• Accept: Significant risk of loss
+• Avoid: Investing more than you can lose
 
 ## Step 2: Assess Your Risk Tolerance 📊
 
@@ -6921,54 +6921,54 @@ Choosing a vault isn't just about finding the highest APY. It's about finding th
 ### Matching Risk Tolerance to Vault Type
 
 **Conservative Investors**
-- Stick to established protocols (2+ years old)
-- Prefer stablecoin or single-asset vaults
-- Accept returns of 3-10% APY
-- Prioritize capital preservation
+• Stick to established protocols (2+ years old)
+• Prefer stablecoin or single-asset vaults
+• Accept returns of 3-10% APY
+• Prioritize capital preservation
 
 **Moderate Investors**
-- Mix of stable and growth-focused vaults
-- Comfortable with managed strategy vaults
-- Accept returns of 5-20% APY
-- Balance growth with risk management
+• Mix of stable and growth-focused vaults
+• Comfortable with managed strategy vaults
+• Accept returns of 5-20% APY
+• Balance growth with risk management
 
 **Aggressive Investors**
-- Willing to try newer protocols
-- Comfortable with complex strategies
-- Seeking 15%+ APY
-- Accept possibility of significant losses
+• Willing to try newer protocols
+• Comfortable with complex strategies
+• Seeking 15%+ APY
+• Accept possibility of significant losses
 
 ## Step 3: Evaluate Vault Specifics 🔬
 
 ### The Vault Evaluation Framework
 
 **1. Track Record (Weight: 25%)**
-- How long has this specific vault operated?
-- Historical performance (minimum 6 months data)
-- Consistency of returns
-- Performance during market downturns
+• How long has this specific vault operated?
+• Historical performance (minimum 6 months data)
+• Consistency of returns
+• Performance during market downturns
 
 **2. Strategy Clarity (Weight: 25%)**
-- Can you explain what the vault does?
-- Are the mechanics transparent?
-- Do you understand the risks involved?
-- Is the strategy appropriate for market conditions?
+• Can you explain what the vault does?
+• Are the mechanics transparent?
+• Do you understand the risks involved?
+• Is the strategy appropriate for market conditions?
 
 **3. Fee Impact (Weight: 20%)**
-- Calculate actual returns AFTER all fees
-- Compare fee structure to alternatives
-- Consider if fees align with value provided
+• Calculate actual returns AFTER all fees
+• Compare fee structure to alternatives
+• Consider if fees align with value provided
 
 **4. Security Posture (Weight: 20%)**
-- Audit status and recency
-- Protocol track record
-- Team transparency
-- Insurance or safety mechanisms
+• Audit status and recency
+• Protocol track record
+• Team transparency
+• Insurance or safety mechanisms
 
 **5. Liquidity & Flexibility (Weight: 10%)**
-- Can you withdraw easily?
-- Are there lock-up periods?
-- What are withdrawal fees?
+• Can you withdraw easily?
+• Are there lock-up periods?
+• What are withdrawal fees?
 
 ### Calculating Real Returns
 
@@ -6979,65 +6979,65 @@ Choosing a vault isn't just about finding the highest APY. It's about finding th
 [/COMPONENT]
 
 **Example Calculation:**
-- Gross APY: 15%
-- Less Management Fee: 15% - 2% = 13%
-- Less Performance Fee: 13% × (1 - 0.20) = 10.4%
-- **Actual Returns: ~10.4% APY**
+• Gross APY: 15%
+• Less Management Fee: 15%: 2% = 13%
+• Less Performance Fee: 13% × (1: 0.20) = 10.4%
+• **Actual Returns: ~10.4% APY**
 
 ## Step 4: Due Diligence Checklist ✅
 
 ### Before Investing in ANY Vault:
 
 **Protocol Level**
-- [ ] Protocol has operated 12+ months
-- [ ] No major security incidents
-- [ ] Active development and updates
-- [ ] Clear governance structure
+• [ ] Protocol has operated 12+ months
+• [ ] No major security incidents
+• [ ] Active development and updates
+• [ ] Clear governance structure
 
 **Vault Level**
-- [ ] Strategy is clearly explained
-- [ ] Historical performance data available
-- [ ] Fees are transparent and reasonable
-- [ ] TVL is stable or growing
+• [ ] Strategy is clearly explained
+• [ ] Historical performance data available
+• [ ] Fees are transparent and reasonable
+• [ ] TVL is stable or growing
 
 **Security Level**
-- [ ] Recent audit from reputable firm
-- [ ] Bug bounty program exists
-- [ ] Multi-sig or governance for changes
-- [ ] No admin keys that could drain funds
+• [ ] Recent audit from reputable firm
+• [ ] Bug bounty program exists
+• [ ] Multi-sig or governance for changes
+• [ ] No admin keys that could drain funds
 
 **Personal Level**
-- [ ] I understand the strategy
-- [ ] I'm comfortable with the risks
-- [ ] I can afford to lose this amount
-- [ ] This fits my overall portfolio
+• [ ] I understand the strategy
+• [ ] I'm comfortable with the risks
+• [ ] I can afford to lose this amount
+• [ ] This fits my overall portfolio
 
 ## Common Mistakes to Avoid ❌
 
 ### Mistake 1: Chasing Highest APY
-- High APY often means high risk
-- Unsustainable yields eventually drop
-- Focus on risk-adjusted returns instead
+• High APY often means high risk
+• Unsustainable yields eventually drop
+• Focus on risk-adjusted returns instead
 
 ### Mistake 2: Not Diversifying
-- Single vault exposure is risky
-- Spread across protocols and strategies
-- Don't put all eggs in one basket
+• Single vault exposure is risky
+• Spread across protocols and strategies
+• Don't put all eggs in one basket
 
 ### Mistake 3: Ignoring Fees
-- High fees can eat significant returns
-- Always calculate net APY
-- Compare total cost of ownership
+• High fees can eat significant returns
+• Always calculate net APY
+• Compare total cost of ownership
 
 ### Mistake 4: FOMO Investing
-- Rushed decisions lead to losses
-- Take time to research properly
-- Missing one opportunity is better than losing money
+• Rushed decisions lead to losses
+• Take time to research properly
+• Missing one opportunity is better than losing money
 
 ### Mistake 5: Set and Forget Completely
-- Markets and protocols change
-- Review positions periodically
-- Stay informed about your investments
+• Markets and protocols change
+• Review positions periodically
+• Stay informed about your investments
 
 ## Decision Framework Summary 📋
 
@@ -7048,10 +7048,10 @@ Choosing a vault isn't just about finding the highest APY. It's about finding th
 }
 [/COMPONENT]
 
-*Next module: Getting access to the 3EA managed vault - step by step.*`,
+*Next module: Getting access to the 3EA managed vault: step by step.*`,
           quiz: {
             id: "quiz-5-4",
-            title: "Choosing the Right Vault - Knowledge Check",
+            title: "Choosing the Right Vault: Knowledge Check",
             description: "Test your understanding of how to evaluate and select appropriate vaults for your goals.",
             passingScore: 70,
             timeLimit: 10,
@@ -7082,7 +7082,7 @@ Choosing a vault isn't just about finding the highest APY. It's about finding th
                   "10% APY"
                 ],
                 correctAnswers: [2],
-                explanation: "20% - 2% management = 18%, then 18% × (1 - 0.20 performance) = 14.4% actual APY. Always calculate returns after fees.",
+                explanation: "20%: 2% management = 18%, then 18% × (1: 0.20 performance) = 14.4% actual APY. Always calculate returns after fees.",
                 points: 15
               },
               {
@@ -7153,11 +7153,11 @@ This module provides a step-by-step guide to understanding and accessing the 3EA
 The 3EA Vault is a managed investment vault on the Enzyme Finance protocol, providing curated DeFi strategy exposure with transparent, on-chain execution.
 
 ### Key Features
-- **Platform**: Enzyme Finance (established 2017)
-- **Network**: Ethereum Mainnet
-- **Strategy**: Professionally managed DeFi allocation
-- **Transparency**: All actions verifiable on-chain
-- **Access**: NFT-gated for whitelisted investors
+• **Platform**: Enzyme Finance (established 2017)
+• **Network**: Ethereum Mainnet
+• **Strategy**: Professionally managed DeFi allocation
+• **Transparency**: All actions verifiable on-chain
+• **Access**: NFT-gated for whitelisted investors
 
 [COMPONENT:KEY_TAKEAWAY]
 {
@@ -7173,19 +7173,19 @@ Unlike open vaults where anyone can deposit, the 3EA Vault uses a **whitelisting
 ### The NFT Access Model
 
 **Step 1: Acquire the 3EA Earth Access NFT**
-- The NFT serves as your membership credential
-- Purchase available through the official link
-- One NFT = one wallet whitelisted for vault access
+• The NFT serves as your membership credential
+• Purchase available through the official link
+• One NFT = one wallet whitelisted for vault access
 
 **Step 2: Whitelist Processing**
-- After purchasing your NFT, your wallet address is queued for whitelisting
-- **Please allow up to 7 days** for your wallet to be added to the vault whitelist
-- This manual verification ensures security and proper onboarding
+• After purchasing your NFT, your wallet address is queued for whitelisting
+• **Please allow up to 7 days** for your wallet to be added to the vault whitelist
+• This manual verification ensures security and proper onboarding
 
 **Step 3: Vault Access**
-- Once whitelisted, you can deposit into the vault via Enzyme Finance
-- Your NFT ownership is verified
-- You can participate in the vault's strategy
+• Once whitelisted, you can deposit into the vault via Enzyme Finance
+• Your NFT ownership is verified
+• You can participate in the vault's strategy
 
 [COMPONENT:ALERT]
 {
@@ -7222,43 +7222,43 @@ Unlike open vaults where anyone can deposit, the 3EA Vault uses a **whitelisting
 
 ### Fee Structure
 All fees are transparent and enforced by smart contracts:
-- **Management Fee**: Annual fee for vault operation
-- **Performance Fee**: Percentage of profits for the strategist
+• **Management Fee**: Annual fee for vault operation
+• **Performance Fee**: Percentage of profits for the strategist
 
 *Specific fee rates are visible on the Enzyme vault page before you deposit.*
 
 ## What You Get with Vault Access ✅
 
 ### Exclusive Vault Access Membership
-- Access to the managed vault strategy
-- Transparent, on-chain portfolio management
-- Professional DeFi exposure
-- No need to manage positions yourself
+• Access to the managed vault strategy
+• Transparent, on-chain portfolio management
+• Professional DeFi exposure
+• No need to manage positions yourself
 
 ### What's NOT Included
-- This is NOT financial advice
-- No guaranteed returns
-- Past performance doesn't guarantee future results
-- You maintain custody of the decision to deposit/withdraw
+• This is NOT financial advice
+• No guaranteed returns
+• Past performance doesn't guarantee future results
+• You maintain custody of the decision to deposit/withdraw
 
 ## Important Considerations ⚠️
 
 ### Before You Proceed
 
 **Understand the Risks**
-- All DeFi investments carry risk of loss
-- Smart contract vulnerabilities exist in all protocols
-- Market conditions can cause losses regardless of strategy
-- Only invest what you can afford to lose completely
+• All DeFi investments carry risk of loss
+• Smart contract vulnerabilities exist in all protocols
+• Market conditions can cause losses regardless of strategy
+• Only invest what you can afford to lose completely
 
 **Technical Requirements**
-- Ethereum-compatible wallet (MetaMask recommended)
-- ETH for gas fees (Ethereum network fees apply)
-- Understanding of basic DeFi transactions
+• Ethereum-compatible wallet (MetaMask recommended)
+• ETH for gas fees (Ethereum network fees apply)
+• Understanding of basic DeFi transactions
 
 **Investment Minimums**
-- Check the Enzyme vault page for any minimum deposit requirements
-- Factor in gas costs when deciding deposit amounts
+• Check the Enzyme vault page for any minimum deposit requirements
+• Factor in gas costs when deciding deposit amounts
 
 [COMPONENT:ALERT]
 {
@@ -7304,7 +7304,7 @@ Ready to explore vault access? Here are your next steps:
 *Ready to explore? Visit the Vault Access page to learn more about membership options.*`,
           quiz: {
             id: "quiz-5-5",
-            title: "3EA Vault Access - Knowledge Check",
+            title: "3EA Vault Access: Knowledge Check",
             description: "Test your understanding of the 3EA vault access process and requirements.",
             passingScore: 70,
             timeLimit: 10,
@@ -7363,7 +7363,7 @@ Ready to explore vault access? Here are your next steps:
                   "It uses transparent, on-chain execution"
                 ],
                 correctAnswers: [0, 2, 3],
-                explanation: "The vault offers on-chain transparency and operates on Ethereum. However, NO returns are guaranteed in DeFi - all investments carry risk.",
+                explanation: "The vault offers on-chain transparency and operates on Ethereum. However, NO returns are guaranteed in DeFi: all investments carry risk.",
                 points: 15
               },
               {
@@ -7427,16 +7427,16 @@ Welcome to this community-requested course on **Real World Asset (RWA) Tokenizat
 Imagine you want to invest in a $10 million commercial building:
 
 **Traditional Way:**
-- Need $10 million (or at least a significant down payment)
-- Complex legal paperwork
-- Limited to accredited investors
-- Illiquid (hard to sell your share)
+• Need $10 million (or at least a significant down payment)
+• Complex legal paperwork
+• Limited to accredited investors
+• Illiquid (hard to sell your share)
 
 **Tokenized Way:**
-- Building is divided into 10,000 tokens
-- Each token = $1,000 ownership stake
-- Buy as many or few tokens as you want
-- Trade tokens 24/7 on secondary markets
+• Building is divided into 10,000 tokens
+• Each token = $1,000 ownership stake
+• Buy as many or few tokens as you want
+• Trade tokens 24/7 on secondary markets
 
 [COMPONENT:KEY_TAKEAWAY]
 {
@@ -7449,10 +7449,10 @@ Imagine you want to invest in a $10 million commercial building:
 
 The RWA tokenization sector has experienced explosive growth:
 
-- **Current Market Size**: Over $30 billion in tokenized assets
-- **Growth Rate**: 224% sector growth since 2024
-- **Major Players**: BlackRock, Ondo Finance, Centrifuge, Securitize
-- **Projection**: Boston Consulting Group estimates $16 trillion by 2030
+• **Current Market Size**: Over $30 billion in tokenized assets
+• **Growth Rate**: 224% sector growth since 2024
+• **Major Players**: BlackRock, Ondo Finance, Centrifuge, Securitize
+• **Projection**: Boston Consulting Group estimates $16 trillion by 2030
 
 [COMPONENT:DID_YOU_KNOW]
 {
@@ -7502,26 +7502,26 @@ Smart contracts automate the entire tokenization process:
 ## Why Tokenization Matters for Financial Accessibility
 
 ### Traditional Finance Barriers
-- High minimum investments ($10,000 - $1,000,000+)
-- Geographic restrictions
-- Accredited investor requirements
-- Limited trading hours
-- Slow settlement (T+2 or T+3 days)
+• High minimum investments ($10,000 to $1,000,000+)
+• Geographic restrictions
+• Accredited investor requirements
+• Limited trading hours
+• Slow settlement (T+2 or T+3 days)
 
 ### DeFi Solutions
-- Low minimums (sometimes $1)
-- Global access with internet
-- Open to anyone
-- 24/7 trading
-- Near-instant settlement
+• Low minimums (sometimes $1)
+• Global access with internet
+• Open to anyone
+• 24/7 trading
+• Near-instant settlement
 
 [COMPONENT:COMPARISON_TABLE]
 {
   "title": "Traditional vs Tokenized Asset Investment",
   "items": [
     {
-      "traditional": "Minimum investment: $10,000 - $1,000,000+",
-      "defi": "Minimum investment: As low as $1 - $100"
+      "traditional": "Minimum investment: $10,000 to $1,000,000+",
+      "defi": "Minimum investment: As low as $1 to $100"
     },
     {
       "traditional": "Settlement time: 2-3 business days",
@@ -7553,10 +7553,10 @@ Let's walk through a concrete example:
 5. Tokens tradeable on compliant secondary markets
 
 **Investor Benefits**:
-- Invest $5,000 to own 5 tokens (0.05% of building)
-- Receive proportional rental income (~$40/month)
-- Sell tokens when you want liquidity
-- No property management hassles
+• Invest $5,000 to own 5 tokens (0.05% of building)
+• Receive proportional rental income (~$40/month)
+• Sell tokens when you want liquidity
+• No property management hassles
 
 [COMPONENT:ALERT]
 {
@@ -7573,7 +7573,7 @@ In the next module, we'll explore the different types of real-world assets being
 *Module 2: Types of Real World Assets Being Tokenized*`,
           quiz: {
             id: "quiz-6-1",
-            title: "What is Asset Tokenization? - Knowledge Check",
+            title: "What is Asset Tokenization?: Knowledge Check",
             description: "Test your understanding of tokenization fundamentals and key terminology.",
             passingScore: 70,
             timeLimit: 10,
@@ -7618,7 +7618,7 @@ In the next module, we'll explore the different types of real-world assets being
                   "Faster settlement times"
                 ],
                 correctAnswers: [0, 1, 3],
-                explanation: "Tokenized assets offer lower minimums, 24/7 trading, and faster settlement. However, NO investment guarantees returns - all investments carry risk.",
+                explanation: "Tokenized assets offer lower minimums, 24/7 trading, and faster settlement. However, NO investment guarantees returns: all investments carry risk.",
                 points: 15
               },
               {
@@ -7676,29 +7676,29 @@ The RWA tokenization landscape spans multiple asset classes, each with different
 
 ### Why Treasuries Dominate
 
-- **Safety**: Backed by U.S. government
-- **Yield**: Currently offering 4-5%+ returns
-- **Liquidity**: Massive underlying market
-- **Regulatory Clarity**: Well-understood legal framework
+• **Safety**: Backed by U.S. government
+• **Yield**: Currently offering 4-5%+ returns
+• **Liquidity**: Massive underlying market
+• **Regulatory Clarity**: Well-understood legal framework
 
 ### Leading Tokenized Treasury Products
 
 **BlackRock BUIDL**
-- Largest tokenized treasury fund
-- Backed by one of the world's biggest asset managers
-- Over $500 million in assets
-- Institutional-grade infrastructure
+• Largest tokenized treasury fund
+• Backed by one of the world's biggest asset managers
+• Over $500 million in assets
+• Institutional-grade infrastructure
 
 **Ondo Finance (OUSG, USDY)**
-- OUSG: Tokenized U.S. Treasuries
-- USDY: Yield-bearing stablecoin backed by Treasuries
-- Accessible to DeFi users
-- Strong compliance framework
+• OUSG: Tokenized U.S. Treasuries
+• USDY: Yield-bearing stablecoin backed by Treasuries
+• Accessible to DeFi users
+• Strong compliance framework
 
 **Franklin Templeton BENJI**
-- Major traditional asset manager
-- On-chain money market fund
-- Regulatory-compliant structure
+• Major traditional asset manager
+• On-chain money market fund
+• Regulatory-compliant structure
 
 [COMPONENT:DID_YOU_KNOW]
 {
@@ -7728,21 +7728,21 @@ Private credit tokenization brings institutional lending to the blockchain.
 ### Key Platforms
 
 **Centrifuge**
-- Pioneer in on-chain real-world credit
-- Partners with MakerDAO for liquidity
-- Finances invoices, real estate loans, and more
-- Transparent risk metrics on-chain
+• Pioneer in on-chain real-world credit
+• Partners with MakerDAO for liquidity
+• Finances invoices, real estate loans, and more
+• Transparent risk metrics on-chain
 
 **Maple Finance**
-- Institutional lending marketplace
-- Focus on crypto-native borrowers
-- Competitive yields for lenders
-- Rigorous borrower vetting
+• Institutional lending marketplace
+• Focus on crypto-native borrowers
+• Competitive yields for lenders
+• Rigorous borrower vetting
 
 **Goldfinch Protocol**
-- Lending to emerging markets
-- No collateral required from borrowers
-- Higher risk, higher potential returns
+• Lending to emerging markets
+• No collateral required from borrowers
+• Higher risk, higher potential returns
 
 ## 3. Commodities
 
@@ -7751,21 +7751,21 @@ Tokenized commodities bring physical assets to the blockchain.
 ### Tokenized Gold
 
 **Paxos Gold (PAXG)**
-- Each token = 1 fine troy ounce of gold
-- Held in London Brink's vaults
-- Fully audited and regulated
-- Redeemable for physical gold
+• Each token = 1 fine troy ounce of gold
+• Held in London Brink's vaults
+• Fully audited and regulated
+• Redeemable for physical gold
 
 **Matrixdock XAUm**
-- $45M+ market value
-- Gold-backed token
-- Transparent custody
+• $45M+ market value
+• Gold-backed token
+• Transparent custody
 
 ### Other Commodities
 
-- Silver tokenization emerging
-- Agricultural commodities in development
-- Energy credits being explored
+• Silver tokenization emerging
+• Agricultural commodities in development
+• Energy credits being explored
 
 [COMPONENT:KEY_TAKEAWAY]
 {
@@ -7781,31 +7781,31 @@ Real estate tokenization enables fractional ownership of property.
 ### Types of Tokenized Real Estate
 
 **Single Properties**
-- Individual buildings or units
-- Direct ownership through tokens
-- Rental income distributed to holders
+• Individual buildings or units
+• Direct ownership through tokens
+• Rental income distributed to holders
 
 **Real Estate Funds**
-- Diversified property portfolios
-- Professional management
-- Lower individual property risk
+• Diversified property portfolios
+• Professional management
+• Lower individual property risk
 
 **REITs (Real Estate Investment Trusts)**
-- Tokenized versions of traditional REITs
-- Publicly traded real estate
-- More regulatory clarity
+• Tokenized versions of traditional REITs
+• Publicly traded real estate
+• More regulatory clarity
 
 ### Leading Platforms
 
 **RealtyX**
-- Fractional real estate investment
-- Properties across multiple markets
-- Low minimum investments
+• Fractional real estate investment
+• Properties across multiple markets
+• Low minimum investments
 
 **Securitize**
-- Full-service tokenization platform
-- Regulatory-compliant structure
-- Institutional partnerships
+• Full-service tokenization platform
+• Regulatory-compliant structure
+• Institutional partnerships
 
 ## 5. Equities & Funds
 
@@ -7814,16 +7814,16 @@ Tokenized securities represent ownership in companies and investment funds.
 ### Current Landscape
 
 **Ondo Global Markets**
-- Tokenized access to traditional equities
-- Expanding product range
+• Tokenized access to traditional equities
+• Expanding product range
 
 **Securitize MI4 Fund**
-- BlackRock-partnered investment product
-- Diversified portfolio exposure
+• BlackRock-partnered investment product
+• Diversified portfolio exposure
 
 **Centrifuge JAAA**
-- Tokenized credit fund
-- Institutional-grade structure
+• Tokenized credit fund
+• Institutional-grade structure
 
 ## Asset Class Comparison
 
@@ -7854,18 +7854,18 @@ Tokenized securities represent ownership in companies and investment funds.
 ## Market Maturity by Asset Class
 
 ### Established (Product-Market Fit Achieved)
-- U.S. Treasuries
-- Government Bonds
-- Gold
+• U.S. Treasuries
+• Government Bonds
+• Gold
 
 ### Growing (Significant Traction)
-- Private Credit
-- Money Market Funds
+• Private Credit
+• Money Market Funds
 
 ### Emerging (Early Stage)
-- Real Estate
-- Equities
-- Other Commodities
+• Real Estate
+• Equities
+• Other Commodities
 
 [COMPONENT:ALERT]
 {
@@ -7882,7 +7882,7 @@ In the next module, we'll dive into the technical mechanics of how RWA tokenizat
 *Module 3: How RWA Tokenization Actually Works*`,
           quiz: {
             id: "quiz-6-2",
-            title: "Types of RWAs Being Tokenized - Knowledge Check",
+            title: "Types of RWAs Being Tokenized: Knowledge Check",
             description: "Test your understanding of different tokenized asset classes and their characteristics.",
             passingScore: 70,
             timeLimit: 10,
@@ -7927,7 +7927,7 @@ In the next module, we'll dive into the technical mechanics of how RWA tokenizat
                   "Well-understood legal framework"
                 ],
                 correctAnswers: [0, 1, 3],
-                explanation: "Tokenized treasuries offer government backing, competitive yields, and regulatory clarity. However, no investment is 'zero risk' - even government bonds carry interest rate and inflation risks.",
+                explanation: "Tokenized treasuries offer government backing, competitive yields, and regulatory clarity. However, no investment is 'zero risk': even government bonds carry interest rate and inflation risks.",
                 points: 15
               },
               {
@@ -8003,27 +8003,27 @@ Understanding the technical and legal mechanics of RWA tokenization helps you ev
 An **SPV (Special Purpose Vehicle)** is a separate legal entity created specifically to hold the tokenized asset.
 
 **Why Use an SPV?**
-- **Bankruptcy Protection**: Asset isolated from parent company risks
-- **Legal Clarity**: Clean ownership structure for token holders
-- **Regulatory Compliance**: Enables proper securities structuring
-- **Tax Efficiency**: Can optimize for different jurisdictions
+• **Bankruptcy Protection**: Asset isolated from parent company risks
+• **Legal Clarity**: Clean ownership structure for token holders
+• **Regulatory Compliance**: Enables proper securities structuring
+• **Tax Efficiency**: Can optimize for different jurisdictions
 
 ### Common SPV Structures
 
 **Delaware LLC**
-- Most common for U.S. tokenizations
-- Flexible legal structure
-- Well-understood by courts
+• Most common for U.S. tokenizations
+• Flexible legal structure
+• Well-understood by courts
 
 **Cayman Islands Entities**
-- Popular for international offerings
-- Tax-neutral jurisdiction
-- Investor-friendly regulations
+• Popular for international offerings
+• Tax-neutral jurisdiction
+• Investor-friendly regulations
 
 **Singapore Structures**
-- Growing in popularity
-- Clear crypto regulations
-- Asian market access
+• Growing in popularity
+• Clear crypto regulations
+• Asian market access
 
 [COMPONENT:KEY_TAKEAWAY]
 {
@@ -8037,30 +8037,30 @@ An **SPV (Special Purpose Vehicle)** is a separate legal entity created specific
 ### Token Standards
 
 **ERC-20** (Basic Token)
-- Standard fungible token
-- All tokens identical
-- Widely supported
+• Standard fungible token
+• All tokens identical
+• Widely supported
 
 **ERC-1400** (Security Token)
-- Purpose-built for securities
-- Transfer restrictions built-in
-- Compliance automation
-- Document attachments
+• Purpose-built for securities
+• Transfer restrictions built-in
+• Compliance automation
+• Document attachments
 
 **ERC-3643** (T-REX)
-- Identity-verified transfers
-- Regulatory compliance
-- Permissioned trading
+• Identity-verified transfers
+• Regulatory compliance
+• Permissioned trading
 
 ### Compliance Automation
 
 Smart contracts can automatically enforce:
 
-- **Transfer Restrictions**: Only verified investors can receive tokens
-- **Holding Limits**: Maximum ownership per investor
-- **Lockup Periods**: Tokens can't be sold before certain dates
-- **Jurisdiction Checks**: Block transfers to restricted countries
-- **Accreditation Verification**: Ensure investor qualifications
+• **Transfer Restrictions**: Only verified investors can receive tokens
+• **Holding Limits**: Maximum ownership per investor
+• **Lockup Periods**: Tokens can't be sold before certain dates
+• **Jurisdiction Checks**: Block transfers to restricted countries
+• **Accreditation Verification**: Ensure investor qualifications
 
 ## Oracle Integration
 
@@ -8068,10 +8068,10 @@ Smart contracts can automatically enforce:
 
 Oracles are services that bring real-world data onto the blockchain. For RWAs, oracles provide:
 
-- **Price Feeds**: Current asset values
-- **NAV Updates**: Net Asset Value calculations
-- **Interest Rates**: For yield calculations
-- **Proof of Reserves**: Verification of backing assets
+• **Price Feeds**: Current asset values
+• **NAV Updates**: Net Asset Value calculations
+• **Interest Rates**: For yield calculations
+• **Proof of Reserves**: Verification of backing assets
 
 ### Chainlink: The Market Leader
 
@@ -8094,9 +8094,9 @@ Chainlink provides most RWA oracle services:
 
 For tokenized funds, NAV updates tell you the current value of each token:
 
-- Traditional funds: NAV calculated once daily
-- Tokenized funds: Can update every block (seconds)
-- On-chain verification: Anyone can audit the calculation
+• Traditional funds: NAV calculated once daily
+• Tokenized funds: Can update every block (seconds)
+• On-chain verification: Anyone can audit the calculation
 
 ## Settlement and Redemption
 
@@ -8119,19 +8119,19 @@ Unlike traditional securities (T+2 or T+3 days), tokenized assets can settle ins
 Different assets have different redemption mechanisms:
 
 **Tokenized Treasuries (e.g., BUIDL)**
-- Redeem tokens for USD
-- Usually 24-48 hour processing
-- Sent to verified bank account
+• Redeem tokens for USD
+• Usually 24-48 hour processing
+• Sent to verified bank account
 
 **Tokenized Gold (e.g., PAXG)**
-- Redeem for physical gold bars
-- Minimum typically 400+ ounces
-- Delivery to approved vaults
+• Redeem for physical gold bars
+• Minimum typically 400+ ounces
+• Delivery to approved vaults
 
 **Real Estate Tokens**
-- Usually no direct redemption
-- Sell on secondary markets
-- Or hold until property sale
+• Usually no direct redemption
+• Sell on secondary markets
+• Or hold until property sale
 
 ## Major RWA Platforms Deep-Dive
 
@@ -8140,14 +8140,14 @@ Different assets have different redemption mechanisms:
 **Focus**: Treasury and bond tokenization
 
 **Products**:
-- OUSG (Tokenized Treasuries)
-- USDY (Yield-bearing stablecoin)
-- OMMF (Money Market Fund)
+• OUSG (Tokenized Treasuries)
+• USDY (Yield-bearing stablecoin)
+• OMMF (Money Market Fund)
 
 **Key Features**:
-- Institutional partnerships
-- Regulatory compliance focus
-- DeFi integrations
+• Institutional partnerships
+• Regulatory compliance focus
+• DeFi integrations
 
 ### Centrifuge
 
@@ -8160,38 +8160,38 @@ Different assets have different redemption mechanisms:
 4. Loans paid back with interest
 
 **Key Features**:
-- Partner with MakerDAO
-- Transparent risk metrics
-- Diversified credit exposure
+• Partner with MakerDAO
+• Transparent risk metrics
+• Diversified credit exposure
 
 ### Maple Finance
 
 **Focus**: Institutional lending
 
 **Model**:
-- Pool delegates assess borrowers
-- Institutional-grade underwriting
-- Higher yields for lenders
+• Pool delegates assess borrowers
+• Institutional-grade underwriting
+• Higher yields for lenders
 
 **Key Features**:
-- Focus on crypto-native borrowers
-- Professional risk management
-- Clear loan terms
+• Focus on crypto-native borrowers
+• Professional risk management
+• Clear loan terms
 
 ### Securitize
 
 **Focus**: Full-service tokenization platform
 
 **Services**:
-- End-to-end tokenization
-- Regulatory compliance
-- Transfer agent services
-- Secondary market infrastructure
+• End-to-end tokenization
+• Regulatory compliance
+• Transfer agent services
+• Secondary market infrastructure
 
 **Notable Partners**:
-- BlackRock
-- KKR
-- Hamilton Lane
+• BlackRock
+• KKR
+• Hamilton Lane
 
 [COMPONENT:COMPARISON_TABLE]
 {
@@ -8232,7 +8232,7 @@ Now that you understand how RWA tokenization works technically and legally, the 
 *Module 4: Evaluating RWA Investment Opportunities*`,
           quiz: {
             id: "quiz-6-3",
-            title: "How RWA Tokenization Works - Knowledge Check",
+            title: "How RWA Tokenization Works: Knowledge Check",
             description: "Test your understanding of the technical mechanics behind RWA tokenization.",
             passingScore: 70,
             timeLimit: 10,
@@ -8336,10 +8336,10 @@ Before investing in any tokenized RWA, systematically evaluate these key areas:
 ### 1. Verify the Underlying Asset Exists
 
 **Questions to Ask:**
-- Is there proof of reserves?
-- Who is the custodian?
-- Are independent audits available?
-- Can you verify holdings on-chain?
+• Is there proof of reserves?
+• Who is the custodian?
+• Are independent audits available?
+• Can you verify holdings on-chain?
 
 **Green Flags:**
 ✅ Regular third-party audits (Big 4 firms preferred)
@@ -8350,10 +8350,10 @@ Before investing in any tokenized RWA, systematically evaluate these key areas:
 ### 2. Research the Issuing Entity
 
 **Questions to Ask:**
-- Who is behind this project?
-- What is their track record?
-- Are they properly licensed?
-- Do they have institutional backing?
+• Who is behind this project?
+• What is their track record?
+• Are they properly licensed?
+• Do they have institutional backing?
 
 **Green Flags:**
 ✅ Known, doxxed team with relevant experience
@@ -8364,10 +8364,10 @@ Before investing in any tokenized RWA, systematically evaluate these key areas:
 ### 3. Understand the Legal Structure
 
 **Questions to Ask:**
-- What legal entity holds the asset?
-- In which jurisdiction is it registered?
-- What happens in bankruptcy?
-- What are your rights as a token holder?
+• What legal entity holds the asset?
+• In which jurisdiction is it registered?
+• What happens in bankruptcy?
+• What are your rights as a token holder?
 
 **Green Flags:**
 ✅ Clear SPV structure explained
@@ -8385,10 +8385,10 @@ Before investing in any tokenized RWA, systematically evaluate these key areas:
 ### 4. Check Audit History and Security
 
 **Questions to Ask:**
-- Have the smart contracts been audited?
-- By which firms?
-- Were critical issues found and fixed?
-- Is there a bug bounty program?
+• Have the smart contracts been audited?
+• By which firms?
+• Were critical issues found and fixed?
+• Is there a bug bounty program?
 
 **Green Flags:**
 ✅ Multiple audits from reputable firms (Trail of Bits, OpenZeppelin)
@@ -8399,10 +8399,10 @@ Before investing in any tokenized RWA, systematically evaluate these key areas:
 ### 5. Analyze Fee Structure
 
 **Questions to Ask:**
-- What fees do you pay?
-- Are fees transparent?
-- How do fees compare to competitors?
-- Are there hidden costs?
+• What fees do you pay?
+• Are fees transparent?
+• How do fees compare to competitors?
+• Are there hidden costs?
 
 **Green Flags:**
 ✅ All fees clearly documented
@@ -8415,28 +8415,28 @@ Before investing in any tokenized RWA, systematically evaluate these key areas:
 Different RWAs generate yield through different mechanisms:
 
 ### Treasury Yields
-- **Source**: Interest from U.S. government bonds
-- **Sustainability**: Highly sustainable (government-backed)
-- **Current Range**: 4-5%+
-- **Risk Level**: Low
+• **Source**: Interest from U.S. government bonds
+• **Sustainability**: Highly sustainable (government-backed)
+• **Current Range**: 4-5%+
+• **Risk Level**: Low
 
 ### Real Estate Income
-- **Source**: Rental payments from properties
-- **Sustainability**: Depends on occupancy and market
-- **Current Range**: 5-10%
-- **Risk Level**: Medium
+• **Source**: Rental payments from properties
+• **Sustainability**: Depends on occupancy and market
+• **Current Range**: 5-10%
+• **Risk Level**: Medium
 
 ### Private Credit Interest
-- **Source**: Loan interest payments
-- **Sustainability**: Depends on borrower quality
-- **Current Range**: 8-15%
-- **Risk Level**: Medium-High
+• **Source**: Loan interest payments
+• **Sustainability**: Depends on borrower quality
+• **Current Range**: 8-15%
+• **Risk Level**: Medium-High
 
 ### Commodity Appreciation
-- **Source**: Price changes (no yield)
-- **Sustainability**: Market-dependent
-- **Current Range**: Variable
-- **Risk Level**: Medium
+• **Source**: Price changes (no yield)
+• **Sustainability**: Market-dependent
+• **Current Range**: Variable
+• **Risk Level**: Medium
 
 [COMPONENT:ALERT]
 {
@@ -8452,41 +8452,41 @@ Different RWAs generate yield through different mechanisms:
 **Definition**: Risk that the entity managing the asset fails
 
 **Mitigation:**
-- Choose established, well-funded issuers
-- Verify proper insurance coverage
-- Understand bankruptcy procedures
+• Choose established, well-funded issuers
+• Verify proper insurance coverage
+• Understand bankruptcy procedures
 
 ### Regulatory Risk
 **Definition**: Risk that regulations change unfavorably
 
 **Mitigation:**
-- Focus on compliant offerings
-- Diversify across jurisdictions
-- Monitor regulatory developments
+• Focus on compliant offerings
+• Diversify across jurisdictions
+• Monitor regulatory developments
 
 ### Liquidity Risk
 **Definition**: Risk that you can't exit your position
 
 **Mitigation:**
-- Check daily trading volumes
-- Understand redemption terms
-- Don't over-allocate to illiquid assets
+• Check daily trading volumes
+• Understand redemption terms
+• Don't over-allocate to illiquid assets
 
 ### Smart Contract Risk
 **Definition**: Risk of bugs or vulnerabilities in code
 
 **Mitigation:**
-- Only use audited protocols
-- Check for historical exploits
-- Start with small amounts
+• Only use audited protocols
+• Check for historical exploits
+• Start with small amounts
 
 ### Oracle Risk
 **Definition**: Risk of incorrect data feeds
 
 **Mitigation:**
-- Verify oracle providers
-- Understand data update frequency
-- Check for manipulation protections
+• Verify oracle providers
+• Understand data update frequency
+• Check for manipulation protections
 
 [COMPONENT:STEP_BLOCK]
 {
@@ -8506,31 +8506,31 @@ Different RWAs generate yield through different mechanisms:
 ### 🚩 Immediate Warning Signs
 
 **No Proof of Reserves**
-- If you can't verify the asset exists, don't invest
+• If you can't verify the asset exists, don't invest
 
 **Anonymous Team**
-- RWAs require legal accountability
-- Anonymous = no one to hold responsible
+• RWAs require legal accountability
+• Anonymous = no one to hold responsible
 
 **Unrealistic Yield Promises**
-- "50% APY on tokenized treasuries" = impossible
-- Real yields match underlying asset yields
+• "50% APY on tokenized treasuries" = impossible
+• Real yields match underlying asset yields
 
 **No Audit or Legal Opinion**
-- Reputable projects invest in proper documentation
-- Missing audits suggest cutting corners
+• Reputable projects invest in proper documentation
+• Missing audits suggest cutting corners
 
 **Unclear Redemption Process**
-- How do you get your money back?
-- If it's unclear, you may not be able to
+• How do you get your money back?
+• If it's unclear, you may not be able to
 
 ### 🚩 Yellow Flags (Investigate Further)
 
-- New platform with limited track record
-- Single point of failure in custody
-- Complex or unusual fee structures
-- Limited secondary market liquidity
-- Regulatory uncertainty in jurisdiction
+• New platform with limited track record
+• Single point of failure in custody
+• Complex or unusual fee structures
+• Limited secondary market liquidity
+• Regulatory uncertainty in jurisdiction
 
 ## Questions to Ask Before Investing
 
@@ -8548,7 +8548,7 @@ Now that you can evaluate RWA opportunities, the final module covers market tren
 *Module 5: The Future of Tokenization and Getting Started*`,
           quiz: {
             id: "quiz-6-4",
-            title: "Evaluating RWA Opportunities - Knowledge Check",
+            title: "Evaluating RWA Opportunities: Knowledge Check",
             description: "Test your understanding of due diligence and risk assessment for RWA investments.",
             passingScore: 70,
             timeLimit: 10,
@@ -8649,20 +8649,20 @@ This final module covers market trends, institutional adoption, regulatory devel
 
 ### Current State (2026)
 
-- **Total RWA Market**: $30+ billion in tokenized assets
-- **Leading Category**: Tokenized treasuries (60%+ of market)
-- **Growth Rate**: 224% sector growth since 2024
-- **Daily Volume**: Billions in on-chain RWA transactions
+• **Total RWA Market**: $30+ billion in tokenized assets
+• **Leading Category**: Tokenized treasuries (60%+ of market)
+• **Growth Rate**: 224% sector growth since 2024
+• **Daily Volume**: Billions in on-chain RWA transactions
 
 ### Growth Projections
 
 **Boston Consulting Group Estimate**: $16 trillion by 2030
 
 **Key Growth Drivers**:
-- Institutional adoption accelerating
-- Regulatory clarity improving
-- Technology infrastructure maturing
-- Yield-seeking in volatile markets
+• Institutional adoption accelerating
+• Regulatory clarity improving
+• Technology infrastructure maturing
+• Yield-seeking in volatile markets
 
 [COMPONENT:DID_YOU_KNOW]
 {
@@ -8675,24 +8675,24 @@ This final module covers market trends, institutional adoption, regulatory devel
 ### Major Players Entering the Space
 
 **BlackRock**
-- Launched BUIDL (tokenized treasury fund)
-- $500M+ in assets within months
-- CEO Larry Fink: "Tokenization is the next evolution of markets"
+• Launched BUIDL (tokenized treasury fund)
+• $500M+ in assets within months
+• CEO Larry Fink: "Tokenization is the next evolution of markets"
 
 **Goldman Sachs**
-- Digital Assets Platform (GS DAP)
-- Focus on institutional tokenization
-- Multiple pilot projects completed
+• Digital Assets Platform (GS DAP)
+• Focus on institutional tokenization
+• Multiple pilot projects completed
 
 **JPMorgan**
-- Onyx platform for blockchain banking
-- Tokenized repo transactions
-- Institutional blockchain network
+• Onyx platform for blockchain banking
+• Tokenized repo transactions
+• Institutional blockchain network
 
 **Franklin Templeton**
-- BENJI tokenized money market fund
-- Early mover in regulated tokenization
-- Proven track record
+• BENJI tokenized money market fund
+• Early mover in regulated tokenization
+• Proven track record
 
 ### Why Institutions Lead Adoption
 
@@ -8714,75 +8714,75 @@ This final module covers market trends, institutional adoption, regulatory devel
 ### United States
 
 **SEC Approach**:
-- Security tokens subject to securities laws
-- Enforcement actions against non-compliant issuers
-- Regulatory sandbox discussions ongoing
+• Security tokens subject to securities laws
+• Enforcement actions against non-compliant issuers
+• Regulatory sandbox discussions ongoing
 
 **Key Developments**:
-- Multiple tokenization-specific exemptions proposed
-- Growing clarity on compliant structures
-- State-level innovation (Wyoming, Texas)
+• Multiple tokenization-specific exemptions proposed
+• Growing clarity on compliant structures
+• State-level innovation (Wyoming, Texas)
 
 ### European Union
 
 **MiCA (Markets in Crypto-Assets)**:
-- Comprehensive regulatory framework
-- Clear rules for tokenized securities
-- Takes effect 2024-2025
+• Comprehensive regulatory framework
+• Clear rules for tokenized securities
+• Takes effect 2024-2025
 
 **Impact**:
-- Legal certainty for EU operations
-- Passport for cross-border offerings
-- Higher compliance costs but clearer path
+• Legal certainty for EU operations
+• Passport for cross-border offerings
+• Higher compliance costs but clearer path
 
 ### Singapore
 
 **MAS (Monetary Authority of Singapore)**:
-- Progressive, innovation-friendly approach
-- Project Guardian pilots with major banks
-- Clear licensing framework
+• Progressive, innovation-friendly approach
+• Project Guardian pilots with major banks
+• Clear licensing framework
 
 **Why Singapore Matters**:
-- Asia-Pacific gateway
-- Institutional hub for tokenization
-- Balance of innovation and protection
+• Asia-Pacific gateway
+• Institutional hub for tokenization
+• Balance of innovation and protection
 
 ### What Regulatory Clarity Means for Investors
 
 **Positive Effects**:
-- More institutional participation
-- Greater investor protection
-- Improved infrastructure
-- Higher liquidity
+• More institutional participation
+• Greater investor protection
+• Improved infrastructure
+• Higher liquidity
 
 **Considerations**:
-- Compliance may limit some offerings
-- KYC/AML requirements standard
-- Geographic restrictions possible
+• Compliance may limit some offerings
+• KYC/AML requirements standard
+• Geographic restrictions possible
 
 ## Challenges and Limitations
 
 ### Current Limitations
 
 **Liquidity Fragmentation**
-- Many small markets instead of one large one
-- Can make exiting positions difficult
-- Improving as market matures
+• Many small markets instead of one large one
+• Can make exiting positions difficult
+• Improving as market matures
 
 **Regulatory Uncertainty**
-- Rules still evolving in many jurisdictions
-- Compliance costs can be high
-- Different rules in different countries
+• Rules still evolving in many jurisdictions
+• Compliance costs can be high
+• Different rules in different countries
 
 **Technical Complexity**
-- Custody solutions still developing
-- Oracle reliability concerns
-- Smart contract risks remain
+• Custody solutions still developing
+• Oracle reliability concerns
+• Smart contract risks remain
 
 **Education Gap**
-- Many investors don't understand RWAs
-- Advisors unfamiliar with technology
-- Slower mainstream adoption
+• Many investors don't understand RWAs
+• Advisors unfamiliar with technology
+• Slower mainstream adoption
 
 [COMPONENT:ALERT]
 {
@@ -8830,9 +8830,9 @@ This final module covers market trends, institutional adoption, regulatory devel
 ### Platform Recommendations
 
 **Most Established**:
-- Ondo Finance (treasuries)
-- Centrifuge (credit)
-- Paxos (gold)
+• Ondo Finance (treasuries)
+• Centrifuge (credit)
+• Paxos (gold)
 
 **Requirements Before Investing**:
 ✅ KYC verification completed
@@ -8850,7 +8850,7 @@ This final module covers market trends, institutional adoption, regulatory devel
 
 **Module 3**: Legal structures (SPVs), smart contracts, and oracles work together to create secure tokenized assets.
 
-**Module 4**: Due diligence is essential - verify assets, research teams, check audits, and understand redemption before investing.
+**Module 4**: Due diligence is essential: verify assets, research teams, check audits, and understand redemption before investing.
 
 **Module 5**: Institutional adoption validates RWA tokenization; start small with established products and expand gradually.
 
@@ -8881,15 +8881,15 @@ This final module covers market trends, institutional adoption, regulatory devel
 You've completed the **Tokenizing Real World Assets** course! This course was developed based on community voting through our Platform Roadmap, demonstrating the power of our community-driven approach.
 
 **Continue Learning:**
-- Explore our other DeFi courses
-- Join community discussions
-- Practice with small amounts first
-- Stay updated on RWA developments
+• Explore our other DeFi courses
+• Join community discussions
+• Practice with small amounts first
+• Stay updated on RWA developments
 
 *Thank you for learning with 3rdeyeadvisors!*`,
           quiz: {
             id: "quiz-6-5",
-            title: "The Future of Tokenization - Knowledge Check",
+            title: "The Future of Tokenization: Knowledge Check",
             description: "Test your understanding of market trends and safe practices for getting started with RWAs.",
             passingScore: 70,
             timeLimit: 10,
@@ -8992,9 +8992,9 @@ You've completed the **Tokenizing Real World Assets** course! This course was de
 Prove your knowledge of Real World Asset tokenization and its impact on finance.
 
 ### Exam Details:
-- **Questions**: 33
-- **Passing Score**: 80%
-- **Time Limit**: 60 minutes`,
+• **Questions**: 33
+• **Passing Score**: 80%
+• **Time Limit**: 60 minutes`,
           quiz: {
             id: "exam-6",
             title: "RWA Mastery Final Exam",

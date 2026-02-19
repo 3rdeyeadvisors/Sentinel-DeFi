@@ -21,7 +21,7 @@ const EmailPreview = () => {
   const templates = {
     announcement: {
       title: "Raffle Announcement Email",
-      subject: "🎟 Learn to Earn — Join Our $50 Bitcoin Raffle Now",
+      subject: "🎟 Learn to Earn: Join Our $50 Bitcoin Raffle Now",
       html: `
         <!DOCTYPE html>
         <html>
@@ -48,7 +48,7 @@ const EmailPreview = () => {
                       </p>
                       
                       <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; color: #1f2937;">
-                        The future of finance is decentralized — and now, learning it pays.
+                        The future of finance is decentralized, and now, learning it pays.
                       </p>
                       
                       <p style="font-size: 16px; line-height: 1.6; margin: 0 0 32px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; color: #1f2937;">
@@ -96,7 +96,7 @@ const EmailPreview = () => {
                                 Prize: ${sampleData.prize}
                               </p>
                               <p style="font-size: 16px; margin: 8px 0; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">
-                                🕒 Active Period: November 10–23, 2025
+                                🕒 Active Period: November 10 to 23, 2025
                               </p>
                             </div>
                           </td>
@@ -114,7 +114,7 @@ const EmailPreview = () => {
                       </table>
                       
                       <p style="font-size: 16px; line-height: 1.6; font-style: italic; text-align: center; color: #6b7280; margin: 0 0 40px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">
-                        The more you learn, the more you earn — because awareness is the real currency.
+                        The more you learn, the more you earn: because awareness is the real currency.
                       </p>
                       
                       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top: 2px solid #e5e7eb; padding-top: 24px; margin-top: 20px;">
@@ -124,7 +124,7 @@ const EmailPreview = () => {
                               Awareness is advantage.
                             </p>
                             <p style="font-size: 14px; color: #6b7280; margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">
-                              — 3rdeyeadvisors
+                             3rdeyeadvisors
                             </p>
                           </td>
                         </tr>
@@ -141,7 +141,7 @@ const EmailPreview = () => {
     },
     confirmation: {
       title: "Entry Confirmation Email",
-      subject: "You're officially entered — 3rdeyeadvisors Learn-to-Earn Raffle 🎟",
+      subject: "You're officially entered: 3rdeyeadvisors Learn-to-Earn Raffle 🎟",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h1 style="color: #3B82F6; margin-bottom: 20px;">You're In! 🎉</h1>
@@ -151,11 +151,11 @@ const EmailPreview = () => {
           </p>
           
           <p style="font-size: 16px; line-height: 1.6;">
-            You've successfully joined our <strong>Learn-to-Earn Raffle</strong> — welcome to the next evolution of financial consciousness.
+            You've successfully joined our <strong>Learn-to-Earn Raffle</strong>. Welcome to the next evolution of financial consciousness.
           </p>
           
           <p style="font-size: 16px; line-height: 1.6;">
-            Each step you took — learning, sharing, and engaging — earns you energy in return. The system remembers. 🌐
+            Each step you took, including learning, sharing, and engaging, earns you energy in return. The system remembers. 🌐
           </p>
           
           <div style="background-color: #3B82F6; color: white; padding: 30px; border-radius: 12px; margin: 30px 0; text-align: center;">
@@ -179,7 +179,7 @@ const EmailPreview = () => {
               Awareness is advantage.
             </p>
             <p style="font-size: 14px; color: #666;">
-              — The 3rdeyeadvisors Team
+             The 3rdeyeadvisors Team
             </p>
           </div>
           
@@ -193,7 +193,7 @@ const EmailPreview = () => {
     },
     ended: {
       title: "Raffle Ended Notification",
-      subject: `⏰ ${sampleData.raffle_title} Has Ended — Winner Coming Soon!`,
+      subject: `⏰ ${sampleData.raffle_title} Has Ended: Winner Coming Soon!`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h1 style="color: #3B82F6; margin-bottom: 20px;">The Wait is Almost Over ⏰</h1>
@@ -239,7 +239,7 @@ const EmailPreview = () => {
               Awareness is advantage.
             </p>
             <p style="font-size: 14px; color: #666;">
-              — The 3rdeyeadvisors Team
+             The 3rdeyeadvisors Team
             </p>
           </div>
         </div>
@@ -285,7 +285,7 @@ const EmailPreview = () => {
               Awareness is advantage.
             </p>
             <p style="font-size: 14px; color: #666;">
-              — The 3rdeyeadvisors Team
+             The 3rdeyeadvisors Team
             </p>
           </div>
         </div>
@@ -337,7 +337,7 @@ const EmailPreview = () => {
               Awareness is advantage.
             </p>
             <p style="font-size: 14px; color: #666;">
-              — The 3rdeyeadvisors Team
+             The 3rdeyeadvisors Team
             </p>
           </div>
           

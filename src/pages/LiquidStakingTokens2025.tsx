@@ -7,7 +7,7 @@ import { BRAND_AUTHOR } from "@/lib/constants";
 const LiquidStakingTokens2025 = () => {
   const blogPost = {
     title: "Liquid Staking Tokens in 2025: The Future of DeFi Yield",
-    excerpt: "Discover how Liquid Staking Tokens are revolutionizing Ethereum staking by combining yield generation with liquidity and composability—ushering in DeFi Summer 2.0.",
+    excerpt: "Discover how Liquid Staking Tokens are revolutionizing Ethereum staking by combining yield generation with liquidity and composability: ushering in DeFi Summer 2.0.",
     author: BRAND_AUTHOR,
     publishedDate: "2025-01-15",
     category: "DeFi Trends",
@@ -68,10 +68,10 @@ const LiquidStakingTokens2025 = () => {
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-foreground">What Are Liquid Staking Tokens?</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Liquid Staking Tokens (LSTs) represent a paradigm shift in how we think about Ethereum staking. When you stake ETH traditionally, your capital gets locked—earning yield but sacrificing liquidity. LSTs solve this elegantly: stake your ETH, receive a liquid token (like stETH or rETH) that represents your staked position, and continue using that token across DeFi protocols. It's the best of both worlds—earning staking rewards while maintaining capital flexibility.
+                  Liquid Staking Tokens (LSTs) represent a paradigm shift in how we think about Ethereum staking. When you stake ETH traditionally, your capital gets locked: earning yield but sacrificing liquidity. LSTs solve this elegantly: stake your ETH, receive a liquid token (like stETH or rETH) that represents your staked position, and continue using that token across DeFi protocols. It's the best of both worlds: earning staking rewards while maintaining capital flexibility.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  In 2025, LSTs have evolved from a novel experiment to a foundational DeFi primitive, with over $40 billion in total value locked across major protocols. They're not just popular—they're reshaping how institutional and retail investors approach crypto yield generation.
+                  In 2025, LSTs have evolved from a novel experiment to a foundational DeFi primitive, with over $40 billion in total value locked across major protocols. They're not just popular: they're reshaping how institutional and retail investors approach crypto yield generation.
                 </p>
               </section>
 
@@ -83,10 +83,10 @@ const LiquidStakingTokens2025 = () => {
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                   <li><strong className="text-foreground">Yield Generation:</strong> Earn native Ethereum staking rewards (4-6% APY) simply by holding the token.</li>
                   <li><strong className="text-foreground">Liquidity Preservation:</strong> Unlike locked staking, LSTs can be traded, sold, or transferred instantly on any DEX.</li>
-                  <li><strong className="text-foreground">Composability:</strong> Deploy your LSTs as collateral in lending protocols, liquidity pools, or yield farming strategies—stacking multiple yield sources simultaneously.</li>
+                  <li><strong className="text-foreground">Composability:</strong> Deploy your LSTs as collateral in lending protocols, liquidity pools, or yield farming strategies: stacking multiple yield sources simultaneously.</li>
                 </ul>
                 <p className="text-muted-foreground leading-relaxed">
-                  This composability unlocks strategies previously impossible: imagine earning 5% from ETH staking, another 8% from providing liquidity on Curve, and 3% from lending on Aave—all from the same capital. That's the power of liquid staking in action.
+                  This composability unlocks strategies previously impossible: imagine earning 5% from ETH staking, another 8% from providing liquidity on Curve, and 3% from lending on Aave: all from the same capital. That's the power of liquid staking in action.
                 </p>
               </section>
 
@@ -120,7 +120,7 @@ const LiquidStakingTokens2025 = () => {
                       </a>
                     </h3>
                     <p className="text-muted-foreground">
-                      The innovation frontier. EigenLayer introduces "restaking"—allowing LST holders to secure additional protocols beyond Ethereum, earning extra yield streams. It's composability taken to the next level, though with correspondingly higher complexity and risk.
+                      The innovation frontier. EigenLayer introduces "restaking": allowing LST holders to secure additional protocols beyond Ethereum, earning extra yield streams. It's composability taken to the next level, though with correspondingly higher complexity and risk.
                     </p>
                   </div>
                 </div>
@@ -142,7 +142,7 @@ const LiquidStakingTokens2025 = () => {
                     <h3 className="text-lg font-semibold mb-3 text-destructive">Risks</h3>
                     <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                       <li><strong className="text-foreground">Centralization concerns:</strong> Large protocols controlling validator sets could threaten Ethereum's neutrality</li>
-                      <li><strong className="text-foreground">Smart contract vulnerabilities:</strong> Complex protocols mean larger attack surfaces—audits don't eliminate risk</li>
+                      <li><strong className="text-foreground">Smart contract vulnerabilities:</strong> Complex protocols mean larger attack surfaces: audits don't eliminate risk</li>
                       <li><strong className="text-foreground">Liquidity crunches:</strong> During market stress, LST/ETH peg can break, causing cascade liquidations</li>
                       <li><strong className="text-foreground">Slashing risk:</strong> Validator misbehavior can reduce your staked principal</li>
                     </ul>
@@ -156,7 +156,7 @@ const LiquidStakingTokens2025 = () => {
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-foreground">The Future: DeFi Summer 2.0?</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Analysts aren't exaggerating when they call this DeFi Summer 2.0. The 2020 DeFi boom was about yield farming and governance tokens. The 2025 LST wave is more mature—institutional-grade infrastructure, regulatory clarity emerging, and sustainable yield models replacing unsustainable token emissions.
+                  Analysts aren't exaggerating when they call this DeFi Summer 2.0. The 2020 DeFi boom was about yield farming and governance tokens. The 2025 LST wave is more mature: institutional-grade infrastructure, regulatory clarity emerging, and sustainable yield models replacing unsustainable token emissions.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Ethereum's roadmap strengthens the thesis: increased validator limits, improved withdrawal mechanisms, and layer-2 scaling all enhance LST utility. Meanwhile, traditional finance institutions are exploring LSTs as fixed-income alternatives in their digital asset portfolios.

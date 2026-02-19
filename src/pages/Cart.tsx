@@ -284,7 +284,7 @@ const CartItem = ({ item }: { item: any }) => {
               <Alert variant="default" className="py-2">
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription className="text-xs">
-                  Low stock - only {currentVariantStock.count} remaining
+                  Low stock: only {currentVariantStock.count} remaining
                 </AlertDescription>
               </Alert>
             )}
@@ -434,7 +434,7 @@ const Cart = () => {
         window.location.href = data.url;
       } else {
         console.error('No checkout URL received:', data);
-        toast.error('Failed to create checkout session - no URL returned');
+        toast.error('Failed to create checkout session: no URL returned');
       }
     } catch (error: any) {
       console.error('Error creating checkout:', error);

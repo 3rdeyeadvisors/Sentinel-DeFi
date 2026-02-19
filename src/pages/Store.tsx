@@ -94,7 +94,7 @@ const Store = () => {
         type: "merchandise",
         category: "Apparel",
         icon: Package,
-        features: Array.isArray(product.variants) ? product.variants.map((v: any) => `${v.title} - $${v.price}`) : []
+        features: Array.isArray(product.variants) ? product.variants.map((v: any) => `${v.title}: $${v.price}`) : []
       })) || [];
       
       setPrintifyProducts(formattedProducts);

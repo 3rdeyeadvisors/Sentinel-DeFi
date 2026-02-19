@@ -45,15 +45,15 @@ const AwarenessBlueprintLanding = () => {
   return (
     <>
       <SEO 
-        title="The Awareness Blueprint - Free Download"
-        description="A 10-page breakdown showing how money, value, and power are shifting on-chain — written in plain English, without hype."
+        title="The Awareness Blueprint: Free Download"
+        description="A 10-page breakdown showing how money, value, and power are shifting on-chain :  written in plain English, without hype."
         keywords="DeFi education, blockchain awareness, financial literacy, tokenization, AI finance"
       />
       
       <div className="min-h-screen bg-background flex items-center justify-center px-4 py-12">
         <div className="max-w-2xl w-full space-y-12 text-center">
           
-          {/* SECTION 1 — HEADLINE + SUBHEADLINE */}
+          {/* SECTION 1 :  HEADLINE + SUBHEADLINE */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               The Financial System Is Shifting Faster Than Anyone Realizes
@@ -63,14 +63,14 @@ const AwarenessBlueprintLanding = () => {
             </p>
           </div>
 
-          {/* SECTION 2 — VALUE PROMISE */}
+          {/* SECTION 2 :  VALUE PROMISE */}
           <div className="space-y-4">
             <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
-              A 10-page breakdown showing how money, value, and power are shifting on-chain — written in plain English, without hype.
+              A 10-page breakdown showing how money, value, and power are shifting on-chain :  written in plain English, without hype.
             </p>
           </div>
 
-          {/* SECTION 3 — BENEFITS */}
+          {/* SECTION 3 :  BENEFITS */}
           <div className="space-y-6">
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
               What You'll Learn Inside the Blueprint
@@ -99,14 +99,14 @@ const AwarenessBlueprintLanding = () => {
             </ul>
           </div>
 
-          {/* SECTION 4 — WHY IT MATTERS */}
+          {/* SECTION 4 :  WHY IT MATTERS */}
           <div className="space-y-4">
             <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
               Most people won't realize the world changed until they're already living inside the new system. Awareness now is worth more than reaction later.
             </p>
           </div>
 
-          {/* SECTION 5 — FREE DOWNLOAD CALL-TO-ACTION */}
+          {/* SECTION 5 :  FREE DOWNLOAD CALL-TO-ACTION */}
           <div className="space-y-6 pt-8">
             <div className="space-y-2">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -137,7 +137,7 @@ const AwarenessBlueprintLanding = () => {
             </form>
           </div>
 
-          {/* SECTION 6 — FINAL LINE */}
+          {/* SECTION 6 :  FINAL LINE */}
           <div className="pt-8">
             <p className="text-lg md:text-xl text-muted-foreground italic">
               Knowledge is free. Awareness is the real currency.

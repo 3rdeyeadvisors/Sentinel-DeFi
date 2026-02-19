@@ -245,7 +245,7 @@ const ReadingDefiMetricsTutorial = () => {
             model: "Transaction Fees",
             description: "Fixed or percentage fees on transactions",
             examples: ["Uniswap 0.3%", "Compound borrowing fees"],
-            sustainability: "High - scales with usage",
+            sustainability: "High: scales with usage",
             analysis: ["Fee levels vs competition", "Volume trends", "User sensitivity"],
             concerns: ["Fee wars", "Volume decline", "Alternative solutions"]
           },
@@ -253,7 +253,7 @@ const ReadingDefiMetricsTutorial = () => {
             model: "Spread/Slippage",
             description: "Profit from bid-ask spreads or price impact",
             examples: ["Market makers", "AMM curves", "Orderbook DEXes"],
-            sustainability: "Medium - depends on market conditions",
+            sustainability: "Medium: depends on market conditions",
             analysis: ["Spread consistency", "Market efficiency", "Competition"],
             concerns: ["Tightening spreads", "MEV extraction", "Arbitrage"]
           },
@@ -261,7 +261,7 @@ const ReadingDefiMetricsTutorial = () => {
             model: "Interest Rate Spreads",
             description: "Difference between borrowing and lending rates",
             examples: ["Aave", "Compound interest margins"],
-            sustainability: "High - fundamental banking model",
+            sustainability: "High: fundamental banking model",
             analysis: ["Spread stability", "Utilization rates", "Bad debt levels"],
             concerns: ["Rate compression", "Default risk", "Competition"]
           },
@@ -269,7 +269,7 @@ const ReadingDefiMetricsTutorial = () => {
             model: "Performance Fees",
             description: "Percentage of profits generated",
             examples: ["Yearn vaults", "Alpha Homora"],
-            sustainability: "Variable - depends on performance",
+            sustainability: "Variable: depends on performance",
             analysis: ["Fee structure", "Performance consistency", "Benchmark"],
             concerns: ["Poor performance", "Fee sensitivity", "Competition"]
           }

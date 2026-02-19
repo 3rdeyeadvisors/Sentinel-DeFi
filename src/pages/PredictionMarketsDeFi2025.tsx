@@ -130,7 +130,7 @@ const PredictionMarketsDeFi2025 = () => {
 
               <BlogSection title="Why Prediction Markets Outperform Traditional Forecasting" icon={Scale}>
                 <BlogParagraph>
-                  <strong className="text-foreground">Academic research has consistently shown that prediction markets outperform polls, expert forecasts, and pundit predictions.</strong> This is not accidental—the structure of prediction markets creates powerful incentives for accuracy.
+                  <strong className="text-foreground">Academic research has consistently shown that prediction markets outperform polls, expert forecasts, and pundit predictions.</strong> This is not accidental: the structure of prediction markets creates powerful incentives for accuracy.
                 </BlogParagraph>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -144,7 +144,7 @@ const PredictionMarketsDeFi2025 = () => {
                   <div className="bg-muted/30 rounded-lg p-5">
                     <h3 className="text-lg font-semibold text-foreground mb-3">Information Aggregation</h3>
                     <p className="text-foreground/80 text-sm leading-relaxed">
-                      Markets aggregate dispersed information. A trader with unique insight—perhaps industry knowledge or local information—can profit by trading on that insight, contributing it to the market price.
+                      Markets aggregate dispersed information. A trader with unique insight: perhaps industry knowledge or local information: can profit by trading on that insight, contributing it to the market price.
                     </p>
                   </div>
 
@@ -254,7 +254,7 @@ const PredictionMarketsDeFi2025 = () => {
 
                 <BlogSubsection title="The Oracle Challenge">
                   <BlogParagraph>
-                    One critical infrastructure component for prediction markets is oracles—systems that bring real-world information on-chain to resolve markets. Platforms like UMA's Optimistic Oracle use economic incentives to ensure accurate resolution without centralized authority.
+                    One critical infrastructure component for prediction markets is oracles: systems that bring real-world information on-chain to resolve markets. Platforms like UMA's Optimistic Oracle use economic incentives to ensure accurate resolution without centralized authority.
                   </BlogParagraph>
                 </BlogSubsection>
               </BlogSection>
@@ -274,7 +274,7 @@ const PredictionMarketsDeFi2025 = () => {
 
               <BlogSection title="The Future of Information Markets" icon={CheckCircle}>
                 <BlogParagraph>
-                  <strong className="text-foreground">Prediction markets represent more than a new betting venue—they are tools for truth discovery in an era of information overload.</strong> When pundits can make wrong predictions without consequence and social media algorithms optimize for engagement over accuracy, markets that reward correct forecasts fill a critical gap.
+                  <strong className="text-foreground">Prediction markets represent more than a new betting venue: they are tools for truth discovery in an era of information overload.</strong> When pundits can make wrong predictions without consequence and social media algorithms optimize for engagement over accuracy, markets that reward correct forecasts fill a critical gap.
                 </BlogParagraph>
                 <BlogParagraph>
                   As infrastructure improves and regulatory clarity emerges, prediction markets are likely to expand into corporate decision-making, scientific research, and policy analysis. The 2024 election cycle demonstrated that when millions of dollars are at stake, crowd forecasting can outperform traditional information sources.

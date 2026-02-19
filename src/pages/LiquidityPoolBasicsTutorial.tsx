@@ -885,7 +885,7 @@ const LiquidityPoolBasicsTutorial = () => {
                               <p className="text-xs font-medium text-foreground mb-1">Fee Tiers:</p>
                               {step.feeTiers.map((tier, tidx) => (
                                 <p key={tidx} className="text-xs text-muted-foreground">
-                                  • {tier.tier} - {tier.bestFor}
+                                  • {tier.tier}: {tier.bestFor}
                                 </p>
                               ))}
                             </div>

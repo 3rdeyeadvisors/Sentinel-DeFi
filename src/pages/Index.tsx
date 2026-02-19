@@ -6,7 +6,6 @@ import {
   HeroSection,
   FeaturesSection,
   AboutSection,
-  PlatformFeaturesSection,
   VaultSection,
   PricingSection,
   CTASection,
@@ -49,10 +48,9 @@ const Index = () => {
           <WhoIsThisForSection />
           <VaultSection />
           <AboutSection />
-          <PlatformFeaturesSection />
-        <PricingSection />
-        <Founding33Section />
-        <InstitutionalSection />
+          <PricingSection />
+          <Founding33Section />
+          <InstitutionalSection />
           <CTASection />
           
           {/* Newsletter */}

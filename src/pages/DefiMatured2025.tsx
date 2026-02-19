@@ -8,7 +8,7 @@ import { BRAND_AUTHOR } from "@/lib/constants";
 const DefiMatured2025 = () => {
   const blogPost = {
     title: "How DeFi Quietly Matured in 2025: Real Utility, Infrastructure, and the End of Hype",
-    excerpt: "Decentralized finance has moved beyond speculation. In 2025, the focus shifted to real-world utility, institutional adoption, and sustainable infrastructure—signaling a more grounded future for blockchain-based finance.",
+    excerpt: "Decentralized finance has moved beyond speculation. In 2025, the focus shifted to real-world utility, institutional adoption, and sustainable infrastructure: signaling a more grounded future for blockchain-based finance.",
     author: BRAND_AUTHOR,
     date: "December 22, 2025",
     category: "DeFi Education",
@@ -71,10 +71,10 @@ const DefiMatured2025 = () => {
             <div className="space-y-8">
               <section className="space-y-4">
                 <p className="text-foreground/90 leading-relaxed">
-                  Between 2020 and 2022, decentralized finance (DeFi) experienced explosive growth—often driven by speculation, unsustainable yields, and hype cycles. Many projects promised revolutionary returns but lacked real-world application or long-term viability.
+                  Between 2020 and 2022, decentralized finance (DeFi) experienced explosive growth: often driven by speculation, unsustainable yields, and hype cycles. Many projects promised revolutionary returns but lacked real-world application or long-term viability.
                 </p>
                 <p className="text-foreground/90 leading-relaxed">
-                  By 2025, the landscape has shifted significantly. The protocols that survived the volatility of previous years are now focused on utility, compliance, and infrastructure. This article examines how DeFi has quietly matured—backed by verifiable data and developments from credible sources.
+                  By 2025, the landscape has shifted significantly. The protocols that survived the volatility of previous years are now focused on utility, compliance, and infrastructure. This article examines how DeFi has quietly matured: backed by verifiable data and developments from credible sources.
                 </p>
               </section>
 
@@ -87,14 +87,14 @@ const DefiMatured2025 = () => {
                   According to <strong className="text-foreground font-semibold">DefiLlama</strong>, a widely used DeFi analytics platform, TVL across all chains reached approximately <strong className="text-foreground font-semibold">$200 billion by late 2024</strong>, recovering from the lows of around $40 billion in late 2022. This recovery reflects renewed confidence in protocols that have demonstrated resilience and utility.
                 </p>
                 <p className="text-foreground/90 leading-relaxed">
-                  Notably, the growth has been less speculative. Rather than chasing high-yield opportunities, capital is flowing into established protocols like <strong className="text-foreground font-semibold">Lido, Aave, and MakerDAO</strong>—platforms with proven track records and transparent governance.
+                  Notably, the growth has been less speculative. Rather than chasing high-yield opportunities, capital is flowing into established protocols like <strong className="text-foreground font-semibold">Lido, Aave, and MakerDAO</strong>: platforms with proven track records and transparent governance.
                 </p>
               </section>
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold mb-4 text-foreground">2. Stablecoins Have Become Core Infrastructure</h2>
                 <p className="text-foreground/90 leading-relaxed">
-                  Stablecoins are no longer just trading tools—they are becoming foundational infrastructure for payments, remittances, and institutional transactions.
+                  Stablecoins are no longer just trading tools: they are becoming foundational infrastructure for payments, remittances, and institutional transactions.
                 </p>
                 <p className="text-foreground/90 leading-relaxed">
                   <strong className="text-foreground font-semibold">Chainalysis</strong> reported that stablecoin transaction volume exceeded <strong className="text-foreground font-semibold">$10 trillion in 2024</strong>, surpassing the combined volume of Visa and Mastercard for the first time. This milestone underscores the growing role of stablecoins in global finance.
@@ -113,7 +113,7 @@ const DefiMatured2025 = () => {
                   <strong className="text-foreground font-semibold">BlackRock's BUIDL Fund</strong>, launched in March 2024, became the largest tokenized Treasury fund within months of its debut. According to <strong className="text-foreground font-semibold">CoinDesk</strong> and <strong className="text-foreground font-semibold">Bloomberg</strong>, the fund surpassed <strong className="text-foreground font-semibold">$500 million in assets under management</strong> by mid-2024, signaling strong institutional demand for tokenized real-world assets (RWAs).
                 </p>
                 <p className="text-foreground/90 leading-relaxed">
-                  Beyond BlackRock, firms like <strong className="text-foreground font-semibold">Franklin Templeton, JPMorgan, and Goldman Sachs</strong> have launched or expanded blockchain-based financial products. These developments reflect a broader trend: institutions are no longer experimenting—they are integrating.
+                  Beyond BlackRock, firms like <strong className="text-foreground font-semibold">Franklin Templeton, JPMorgan, and Goldman Sachs</strong> have launched or expanded blockchain-based financial products. These developments reflect a broader trend: institutions are no longer experimenting: they are integrating.
                 </p>
               </section>
 
@@ -192,7 +192,7 @@ const DefiMatured2025 = () => {
                   For those interested in understanding this space, the emphasis should be on education, awareness, and long-term thinking rather than short-term speculation. The infrastructure being built today will likely shape the financial systems of tomorrow.
                 </p>
               <p className="text-foreground/90 leading-relaxed">
-                  At <strong className="text-foreground font-semibold">3rdeyeadvisors</strong>, we believe that informed participation—grounded in research and understanding—is the foundation for navigating this evolving landscape.
+                  At <strong className="text-foreground font-semibold">3rdeyeadvisors</strong>, we believe that informed participation: grounded in research and understanding: is the foundation for navigating this evolving landscape.
                 </p>
               </section>
 
