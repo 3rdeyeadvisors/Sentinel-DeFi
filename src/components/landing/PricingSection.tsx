@@ -51,9 +51,9 @@ const PricingSection = () => {
             14-Day Free Trial
           </span>
           <h2 className="text-3xl md:text-5xl font-consciousness font-bold text-foreground mb-6">
-            Start Your Journey Risk-Free
+            Start Your Journey Risk Free
           </h2>
-          <p className="text-lg text-muted-foreground font-consciousness max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
             Try everything free for 14 days. Cancel anytime.
           </p>
         </AnimatedSection>
@@ -67,25 +67,25 @@ const PricingSection = () => {
                   <h3 className="text-lg font-consciousness font-semibold text-foreground mb-2">
                     Monthly
                   </h3>
-                  <p className="text-sm text-muted-foreground font-consciousness mb-4">
-                    Full access, billed monthly
+                  <p className="text-sm text-muted-foreground font-body mb-4">
+                    Full access billed monthly
                   </p>
                   <div className="mb-1">
                     <span className="text-4xl font-consciousness font-bold text-foreground">{PRICING.monthly.display}</span>
-                    <span className="text-muted-foreground font-consciousness">{PRICING.monthly.period}</span>
+                    <span className="text-muted-foreground font-body">{PRICING.monthly.period}</span>
                   </div>
                 </div>
                 
                 <ul className="space-y-3 mb-6 flex-grow">
                   {[
-                    '14-day free trial',
+                    '14 day free trial',
                     'All DeFi courses and tutorials',
                     'Exclusive content and resources',
                     'Community access',
                     `${Math.round(COMMISSION_RATES.monthly * 100)}% referral commission`,
                     'Cancel anytime'
                   ].map((feature, i) => (
-                    <li key={i} className="flex items-center text-sm text-foreground/80 font-consciousness">
+                    <li key={i} className="flex items-center text-sm text-foreground/80 font-body">
                       <CheckCircle2 className="w-4 h-4 text-primary mr-3 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
@@ -94,7 +94,7 @@ const PricingSection = () => {
                 
                 <Button 
                   variant="outline"
-                  className="w-full font-consciousness py-6 border-border hover:border-primary/50 hover:bg-primary/5"
+                  className="w-full font-body py-6 border-border hover:border-primary/50 hover:bg-primary/5"
                   onClick={() => handleSubscribe('monthly')}
                   disabled={checkoutLoading !== null}
                 >
@@ -130,18 +130,18 @@ const PricingSection = () => {
                   <h3 className="text-lg font-consciousness font-semibold text-foreground mb-2">
                     Annual
                   </h3>
-                  <p className="text-sm text-muted-foreground font-consciousness mb-4">
+                  <p className="text-sm text-muted-foreground font-body mb-4">
                     Full year commitment
                   </p>
                   <div className="mb-1">
                     <span className="text-4xl font-consciousness font-bold text-foreground">{PRICING.annual.display}</span>
-                    <span className="text-muted-foreground font-consciousness">{PRICING.annual.period}</span>
+                    <span className="text-muted-foreground font-body">{PRICING.annual.period}</span>
                   </div>
                 </div>
                 
                 <ul className="space-y-3 mb-6 flex-grow">
                   {[
-                    '14-day free trial',
+                    '14 day free trial',
                     'All DeFi courses and tutorials',
                     'Early access to new courses',
                     `${ANNUAL_BENEFITS.bonusRaffleTickets} bonus raffle entries per raffle`,
@@ -149,7 +149,7 @@ const PricingSection = () => {
                     `${Math.round(COMMISSION_RATES.annual * 100)}% referral commission`,
                     'Vote on platform roadmap'
                   ].map((feature, i) => (
-                    <li key={i} className="flex items-center text-sm text-foreground/80 font-consciousness">
+                    <li key={i} className="flex items-center text-sm text-foreground/80 font-body">
                       <CheckCircle2 className="w-4 h-4 text-primary mr-3 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
@@ -157,7 +157,7 @@ const PricingSection = () => {
                 </ul>
                 
                 <Button 
-                  className="w-full font-consciousness py-6 bg-primary hover:bg-primary/90"
+                  className="w-full font-body py-6 bg-primary hover:bg-primary/90"
                   onClick={() => handleSubscribe('annual')}
                   disabled={checkoutLoading !== null}
                 >
@@ -176,7 +176,7 @@ const PricingSection = () => {
         </div>
 
         <AnimatedSection delay={200}>
-          <p className="text-center text-sm text-muted-foreground font-consciousness mt-8">
+          <p className="text-center text-sm text-muted-foreground font-body mt-8">
             Cancel anytime during your trial. No questions asked.
           </p>
         </AnimatedSection>

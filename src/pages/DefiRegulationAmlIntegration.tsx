@@ -144,7 +144,7 @@ const DefiRegulationAmlIntegration = () => {
                   className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  U.S. Treasury Federal Register - Request for Comment on Digital Asset Illicit Activity Detection
+                  U.S. Treasury Federal Register: Request for Comment on Digital Asset Illicit Activity Detection
                 </a>
                 <a 
                   href="https://cointelegraph.com/news/us-treasury-digital-id-defi-illicit-finance"
@@ -153,7 +153,7 @@ const DefiRegulationAmlIntegration = () => {
                   className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  Cointelegraph - US Treasury weighs digital ID verification in DeFi
+                  Cointelegraph: US Treasury weighs digital ID verification in DeFi
                 </a>
               </div>
             </div>

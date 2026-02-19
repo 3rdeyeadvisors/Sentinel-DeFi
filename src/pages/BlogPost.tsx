@@ -188,7 +188,7 @@ const BlogPost = () => {
                     url: url,
                   });
                 } else {
-                  navigator.clipboard.writeText(`${text} - ${url}`);
+                  navigator.clipboard.writeText(`${text}: ${url}`);
                   // You could add a toast notification here
                 }
               }}

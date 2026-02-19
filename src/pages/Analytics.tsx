@@ -9,7 +9,7 @@ const Analytics = () => {
   return (
     <>
       <SEO 
-        title="DeFi Analytics & Market Data - Real-Time Protocol Insights"
+        title="DeFi Analytics & Market Data: Real-Time Protocol Insights"
         description="Live DeFi analytics dashboard powered by DefiLlama API with real-time market data, yield farming insights, TVL tracking, and protocol performance metrics from Aave, Uniswap, and 200+ protocols."
         keywords="DeFi analytics, real-time DeFi data, DefiLlama API, yield farming analytics, TVL tracking, DeFi market insights, protocol analytics, crypto market data, DeFi charts, blockchain analytics, Aave data, Uniswap analytics"
         url="https://www.the3rdeyeadvisors.com/analytics"

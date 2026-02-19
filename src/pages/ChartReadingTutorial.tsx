@@ -42,7 +42,7 @@ const ChartReadingTutorial = () => {
                 <BarChart3 className="w-5 h-5 text-awareness" />
                 <h4 className="font-semibold">Candlestick Charts</h4>
               </div>
-              <p className="text-sm text-muted-foreground">Shows open, high, low, close prices - most detailed view</p>
+              <p className="text-sm text-muted-foreground">Shows open, high, low, close prices: most detailed view</p>
             </Card>
             <Card className="p-4">
               <div className="flex items-center gap-3 mb-2">
@@ -170,7 +170,7 @@ const ChartReadingTutorial = () => {
           <div className="border rounded p-4">
             <h4 className="font-semibold mb-2">Trend Trading Rules</h4>
             <ul className="text-sm space-y-1">
-              <li>• "The trend is your friend" - trade with the trend</li>
+              <li>• "The trend is your friend": trade with the trend</li>
               <li>• Don't try to catch falling knives</li>
               <li>• Wait for confirmation before entering counter-trend trades</li>
               <li>• Use multiple timeframes to confirm trend direction</li>

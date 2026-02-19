@@ -166,7 +166,7 @@ const DefiVaultsExplained = () => {
                   <div className="border-l-4 border-amber-500/50 pl-6">
                     <h3 className="text-xl font-semibold text-foreground mb-3">Counterparty Risk</h3>
                     <p className="text-foreground/90 leading-relaxed">
-                      When you invest with a traditional institution, your assets are held by that institution. History is filled with examples of financial institutions that seemed trustworthy until they were not—from Bernie Madoff to the 2022 crypto CeFi collapses.
+                      When you invest with a traditional institution, your assets are held by that institution. History is filled with examples of financial institutions that seemed trustworthy until they were not: from Bernie Madoff to the 2022 crypto CeFi collapses.
                     </p>
                   </div>
                 </div>
@@ -467,7 +467,7 @@ const DefiVaultsExplained = () => {
                 </p>
 
                 <p className="text-foreground/90 leading-relaxed mb-6">
-                  This shift matters. In a world where financial institutions have repeatedly betrayed customer trust, the ability to verify everything independently is not just convenient—it is essential. DeFi vaults are not just a new investment product. They are a new paradigm for how investment management should work.
+                  This shift matters. In a world where financial institutions have repeatedly betrayed customer trust, the ability to verify everything independently is not just convenient: it is essential. DeFi vaults are not just a new investment product. They are a new paradigm for how investment management should work.
                 </p>
 
                 <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg p-6 border border-primary/20">

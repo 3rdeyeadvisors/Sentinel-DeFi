@@ -53,8 +53,8 @@ const SetupStripeProducts = () => {
             <AlertDescription>
               <strong>Courses to setup:</strong>
               <ul className="list-disc list-inside mt-2 space-y-1">
-                <li>Course #3: Earning with DeFi - $67.00</li>
-                <li>Course #4: Managing Your Own DeFi Portfolio - $97.00</li>
+                <li>Course #3: Earning with DeFi: $67.00</li>
+                <li>Course #4: Managing Your Own DeFi Portfolio: $97.00</li>
               </ul>
             </AlertDescription>
           </Alert>

@@ -209,7 +209,7 @@ const CrossChainBridgingTutorial = () => {
           {
             factor: "Transfer Amount",
             small: "< $1,000",
-            medium: "$1,000 - $10,000", 
+            medium: "$1,000 to $10,000",
             large: "> $10,000",
             recommendation: {
               small: "Fast liquidity bridges (Hop, Across)",
@@ -220,7 +220,7 @@ const CrossChainBridgingTutorial = () => {
           {
             factor: "Time Sensitivity",
             urgent: "< 30 minutes",
-            normal: "30 min - 2 hours",
+            normal: "30 min to 2 hours",
             patient: "> 2 hours",
             recommendation: {
               urgent: "Liquidity pool bridges only",

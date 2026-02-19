@@ -1,76 +1,54 @@
-import { Shield, Briefcase, Building } from "lucide-react";
-import AnimatedSection from "./AnimatedSection";
+import { Shield, Briefcase, Building } from 'lucide-react';
+import AnimatedSection from './AnimatedSection';
 
-interface PersonaCard {
-  icon: React.ReactNode;
-  label: string;
-  headline: string;
-  body: string;
-}
-
-const personas: PersonaCard[] = [
+const personas = [
   {
-    icon: <Shield className="w-8 h-8" />,
-    label: "The Safety First Individual",
-    headline: "The Protective Guardian",
-    body: "You have capital you want to move on-chain, but you're terrified of 'pressing the wrong button.' We provide the roadmap to secure your assets, vet protocols, and sleep soundly knowing your keys are safe.",
+    icon: <Shield className="w-7 h-7" />,
+    tag: "For the cautious beginner",
+    headline: "You heard about crypto but you are scared to touch it",
+    body: "Smart. Most people lose money because they skip the foundation. We start with the basics: what a wallet actually is, how to keep it secure, and why none of this requires trusting a stranger on the internet.",
   },
   {
-    icon: <Briefcase className="w-8 h-8" />,
-    label: "The Career Strategist",
-    headline: "The Future Proof Professional",
-    body: "Traditional finance is being rewritten in code. Whether you're an accountant, lawyer, or entrepreneur, we bridge the knowledge gap so you can lead the transition into the decentralized economy.",
+    icon: <Briefcase className="w-7 h-7" />,
+    tag: "For the professional catching up",
+    headline: "Your clients are asking about crypto and you have no answer",
+    body: "Financial advisors, accountants, and lawyers are watching their clients move money into assets they cannot explain, track, or advise on. We bridge that gap so you can advise with confidence instead of deflecting.",
   },
   {
-    icon: <Building className="w-8 h-8" />,
-    label: "The Sovereign Architect",
-    headline: "The Independent Builder",
-    body: "Tired of centralized exchanges and banking limits? We teach you the mechanics of lending, staking, and yield farming so you can manage your own wealth without a middleman.",
+    icon: <Building className="w-7 h-7" />,
+    tag: "For the self-directed investor",
+    headline: "You are tired of asking permission to access your own money",
+    body: "Lending protocols, staking, yield strategies. We teach you how decentralized finance actually works so you can participate directly. No broker. No minimum balance. No geography required.",
   },
 ];
 
 const WhoIsThisForSection = () => {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-      
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <AnimatedSection animation="fade-up" className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+      <div className="max-w-7xl mx-auto px-6">
+        <AnimatedSection animation="fade-up" className="text-center mb-16">
+          <h2 className="font-consciousness text-3xl md:text-5xl font-bold text-white mb-6">
             Who Is This For?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our platform is designed for individuals, families, institutions and corporations ready to take control of their financial future.
+          <p className="font-body text-lg text-white/50 max-w-2xl mx-auto">
+            Whether you are protecting a family estate or advising high net worth clients, the rules of money have changed.
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {personas.map((persona, index) => (
-            <AnimatedSection
-              key={persona.label}
-              animation="fade-up"
-              delay={index * 150}
-              className="group"
-            >
-              <div className="h-full p-6 md:p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                {/* Icon */}
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 md:mb-6 mx-auto md:mx-0 group-hover:bg-primary/20 transition-colors">
+            <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
+              <div className="h-full p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md hover:border-violet-500/30 transition-all duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 mb-6">
                   {persona.icon}
                 </div>
-                
-                {/* Label */}
-                <p className="text-sm font-medium text-primary uppercase tracking-wider mb-1 md:mb-2 text-center md:text-left">
-                  {persona.label}
-                </p>
-                
-                {/* Headline */}
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4 text-center md:text-left">
+                <span className="inline-block font-body text-xs uppercase tracking-widest text-violet-400 border border-violet-500/30 bg-violet-500/10 rounded-full px-3 py-1 mb-3">
+                  {persona.tag}
+                </span>
+                <h3 className="font-consciousness text-xl font-bold text-white mb-4 leading-snug">
                   {persona.headline}
                 </h3>
-                
-                {/* Body */}
-                <p className="text-muted-foreground leading-relaxed text-center md:text-left">
+                <p className="font-body text-white/50 leading-relaxed">
                   {persona.body}
                 </p>
               </div>

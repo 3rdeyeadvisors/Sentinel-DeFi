@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { BookOpen, ArrowRight, Zap, Check } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const benefits = [
@@ -12,83 +12,52 @@ const benefits = [
 
 const CTASection = () => {
   return (
-    <section className="py-10 md:py-14 lg:py-20 relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+    <section className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-violet-600/5 pointer-events-none" />
       
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
-        {/* Why This Matters Card */}
-        <AnimatedSection className="mb-8 md:mb-12 lg:mb-14">
-          <div className="relative p-5 md:p-6 lg:p-8 xl:p-10 rounded-2xl bg-gradient-to-b from-card/80 to-card/40 border border-border/50 overflow-hidden max-w-3xl mx-auto">
-            {/* Decorative elements */}
-            <div className="absolute top-3 left-3 w-2 h-2 rounded-full bg-primary/50" />
-            <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-accent/50" />
-            <div className="absolute bottom-3 left-3 w-2 h-2 rounded-full bg-awareness/50" />
-            <div className="absolute bottom-3 right-3 w-2 h-2 rounded-full bg-primary/50" />
-            
-            <div className="text-center mb-6">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-              </div>
-              
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-consciousness font-bold text-foreground mb-3">
-                Why This Matters
-              </h2>
-              
-              <p className="text-sm md:text-base lg:text-lg text-foreground/90 font-consciousness leading-relaxed">
-                Your bank can freeze your account. Your government can inflate your savings away. <span className="text-primary font-semibold">DeFi gives you tools they can't control.</span> This isn't about getting rich—it's about reclaiming ownership of what's yours.
-              </p>
-            </div>
-            
-            {/* Benefits list */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3">
-              {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-start gap-2 text-left">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-xs md:text-sm text-muted-foreground font-consciousness">
-                    {benefit}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="relative z-10 p-8 md:p-16 rounded-[2.5rem] border border-violet-500/20 bg-gradient-to-br from-violet-600/10 via-black to-black overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-violet-600/10 blur-[100px] -translate-y-1/2 translate-x-1/2" />
 
-        {/* Final CTA */}
-        <AnimatedSection className="text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-consciousness font-bold text-foreground mb-3 md:mb-4">
-            Ready to Begin Your Journey?
-          </h2>
-          <p className="text-base md:text-lg text-muted-foreground font-consciousness mb-6 md:mb-8 max-w-2xl mx-auto">
-            Start learning today. No hype. No confusion. Just clear education.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
-            <Link to="/courses">
-              <Button 
-                size="lg" 
-                className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-5 md:py-6 text-base md:text-lg font-consciousness min-w-[180px] md:min-w-[200px]"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 md:w-5 md:h-5" />
-                  Begin Learning
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Button>
-            </Link>
-            
-            <Link to="/tutorials">
-              <Button 
-                variant="outline"
-                size="lg" 
-                className="group border-border hover:border-primary/50 hover:bg-primary/5 px-6 md:px-8 py-5 md:py-6 text-base md:text-lg font-consciousness min-w-[180px] md:min-w-[200px]"
-              >
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                Explore Tutorials
-              </Button>
-            </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <AnimatedSection animation="fade-right">
+              <h2 className="font-consciousness text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+                Ready to Begin Your Journey?
+              </h2>
+              <p className="font-body text-xl text-white/60 mb-10 leading-relaxed">
+                Start learning today. No hype. No confusion. Just clear education.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/auth">
+                  <Button size="lg" className="font-body bg-violet-600 hover:bg-violet-500 text-white px-10 py-7 text-lg rounded-2xl shadow-xl shadow-violet-900/20 flex items-center gap-2 group w-full sm:w-auto">
+                    Create Your Account
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link to="/courses">
+                  <Button variant="outline" size="lg" className="font-body border-white/10 hover:border-white/20 text-white px-10 py-7 text-lg rounded-2xl w-full sm:w-auto">
+                    Explore Courses
+                  </Button>
+                </Link>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-left" className="space-y-6">
+              <p className="font-body text-lg text-white/80 mb-8 italic">
+                Your bank can freeze your account. Your government can inflate your savings away. DeFi gives you tools they cannot control. This is not about getting rich. It is about reclaiming ownership of what is yours.
+              </p>
+              <div className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-violet-400 flex-shrink-0" />
+                    <span className="font-body text-white/70">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
           </div>
-        </AnimatedSection>
+        </div>
       </div>
     </section>
   );

@@ -411,7 +411,7 @@ const PortfolioRebalancingTutorial = () => {
           {
             metric: "Rebalancing Alpha",
             description: "Excess return attributed to rebalancing",
-            calculation: "Portfolio Return - Buy & Hold Return",
+            calculation: "Portfolio Return minus Buy & Hold Return",
             target: "Positive over rolling 12-month periods",
             interpretation: "Higher values indicate effective rebalancing"
           },

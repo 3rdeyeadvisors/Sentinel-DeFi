@@ -54,9 +54,9 @@ const Courses = () => {
       students: 1234,
       modules: [
         "What is DeFi? (Simple explanation with comparisons to traditional banking)",
-        "Why DeFi Exists (The problems it solves – fees, middlemen, accessibility)",
+        "Why DeFi Exists (The problems it solves :  fees, middlemen, accessibility)",
         "The Blockchain Basics You Actually Need to Know (No tech overload)",
-        "The Key Players (Stablecoins, DEXs, lending protocols – explained simply)",
+        "The Key Players (Stablecoins, DEXs, lending protocols :  explained simply)",
         "Risks and Myths (Separating facts from hype)"
       ],
       icon: BookOpen,
@@ -77,9 +77,9 @@ const Courses = () => {
       students: 987,
       modules: [
         "Choosing the Right Wallet (MetaMask, Trust Wallet, or Ledger?)",
-        "Private Keys & Seed Phrases – The Rule You Can't Break",
+        "Private Keys & Seed Phrases :  The Rule You Can't Break",
         "Spotting Scams and Fake Projects Before You Click",
-        "Safe Transactions – Sending, Receiving, and Testing Small First",
+        "Safe Transactions :  Sending, Receiving, and Testing Small First",
         "The Beginner's Checklist for DeFi Security"
       ],
       icon: BookOpen,
@@ -100,7 +100,7 @@ const Courses = () => {
       students: 756,
       modules: [
         "How People Earn with DeFi (Overview)",
-        "Staking vs Yield Farming – Which is Better for You?",
+        "Staking vs Yield Farming :  Which is Better for You?",
         "What Are Liquidity Pools (Explained Without Confusion)",
         "How to Calculate Risk vs Reward Before You Invest",
         "Beginner-Friendly Platforms to Start With"
@@ -209,7 +209,7 @@ const Courses = () => {
         };
       }
       
-      // Past public release date - available to all
+      // Past public release date: available to all
       return { ...course, isEarlyAccess: false, isLocked: false };
     });
   }, [isPremiumMember]);
@@ -267,7 +267,7 @@ const Courses = () => {
   return (
     <>
       <SEO 
-        title="DeFi Courses & Cryptocurrency Education - Learn Blockchain Investing"
+        title="DeFi Courses & Cryptocurrency Education: Learn Blockchain Investing"
         description="Comprehensive DeFi courses from beginner to advanced. Learn yield farming, staking, DeFi protocols, and passive income strategies. Free and paid courses available for cryptocurrency education."
         keywords="DeFi courses, cryptocurrency education, blockchain courses, yield farming course, DeFi beginner guide, crypto passive income, DeFi training, blockchain investing course"
         url="https://www.the3rdeyeadvisors.com/courses"

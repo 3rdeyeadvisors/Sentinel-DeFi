@@ -228,7 +228,7 @@ const WhyMostPeopleLoseCrypto = () => {
                   </div>
 
                   <p className="text-foreground/90 leading-relaxed">
-                    DeFi doesn't eliminate risk—smart contract bugs, oracle failures, and market volatility remain real concerns. But it eliminates <em>counterparty risk</em>: the risk that a centralized entity will fail, cheat, or disappear with your assets.
+                    DeFi doesn't eliminate risk: smart contract bugs, oracle failures, and market volatility remain real concerns. But it eliminates <em>counterparty risk</em>: the risk that a centralized entity will fail, cheat, or disappear with your assets.
                   </p>
                 </div>
 
@@ -242,7 +242,7 @@ const WhyMostPeopleLoseCrypto = () => {
                   </div>
 
                   <p className="text-foreground/90 leading-relaxed mb-6">
-                    Understanding why people lose and how DeFi differs is only valuable if it changes behavior. The solution isn't more information—it's better systems.
+                    Understanding why people lose and how DeFi differs is only valuable if it changes behavior. The solution isn't more information: it's better systems.
                   </p>
 
                   <div className="space-y-6 mb-8">
@@ -256,14 +256,14 @@ const WhyMostPeopleLoseCrypto = () => {
                     <div>
                       <h3 className="text-xl font-semibold text-foreground mb-3">DeFi Automation Removes Human Error</h3>
                       <p className="text-foreground/90 leading-relaxed">
-                        Smart contracts can automatically compound yields, rebalance positions, and execute stop-losses without requiring you to watch screens 24/7. Automation isn't just convenient—it's protective against the behavioral mistakes that destroy most portfolios.
+                        Smart contracts can automatically compound yields, rebalance positions, and execute stop-losses without requiring you to watch screens 24/7. Automation isn't just convenient: it's protective against the behavioral mistakes that destroy most portfolios.
                       </p>
                     </div>
 
                     <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg p-6 border border-primary/20">
                       <h3 className="text-xl font-bold text-foreground mb-3">Awareness is the Real Currency</h3>
                       <p className="text-foreground/90 leading-relaxed">
-                        The most valuable asset you can develop isn't a token—it's awareness. Awareness of your own psychology, awareness of how markets manipulate emotions, awareness of the difference between speculation and investing, and awareness of the structural differences between centralized and decentralized systems.
+                        The most valuable asset you can develop isn't a token: it's awareness. Awareness of your own psychology, awareness of how markets manipulate emotions, awareness of the difference between speculation and investing, and awareness of the structural differences between centralized and decentralized systems.
                       </p>
                       <p className="text-foreground/90 leading-relaxed mt-4">
                         <strong className="text-foreground">This awareness compound over time.</strong> Every lesson learned, every mistake avoided, every decision made with clarity rather than emotion increases your long-term odds of success.
@@ -295,7 +295,7 @@ const WhyMostPeopleLoseCrypto = () => {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-primary font-bold">→</span>
-                      <span>Understand that volatility is a feature, not a bug—plan accordingly</span>
+                      <span>Understand that volatility is a feature, not a bug: plan accordingly</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-primary font-bold">→</span>

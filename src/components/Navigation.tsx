@@ -185,7 +185,7 @@ const Navigation = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-sm font-consciousness transition-all duration-cosmic hover:text-primary whitespace-nowrap min-h-[44px] flex items-center px-2 ${
+                  className={`text-sm font-body transition-all duration-cosmic hover:text-primary whitespace-nowrap min-h-[44px] flex items-center px-2 ${
                     isActive(item.path)
                       ? "text-primary font-medium"
                       : "text-muted-foreground"
@@ -200,7 +200,7 @@ const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-consciousness h-auto py-1 px-2 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+                  <NavigationMenuTrigger className="text-sm font-body h-auto py-1 px-2 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
                     More
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -215,7 +215,7 @@ const Navigation = () => {
                                 isActive(item.path) ? "bg-accent text-accent-foreground" : ""
                               }`}
                             >
-                              <div className="text-sm font-medium font-consciousness">
+                              <div className="text-sm font-medium font-body">
                                 {item.label}
                               </div>
                             </Link>
@@ -233,7 +233,7 @@ const Navigation = () => {
                                 isActive(item.path) ? "bg-accent text-accent-foreground" : ""
                               }`}
                             >
-                              <div className="text-sm font-medium font-consciousness">
+                              <div className="text-sm font-medium font-body">
                                 {item.label}
                               </div>
                             </Link>

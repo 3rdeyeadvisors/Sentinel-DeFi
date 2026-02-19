@@ -97,7 +97,7 @@ const Subscription = () => {
   return (
     <>
       <SEO
-        title="Subscription - 3rdeyeadvisors"
+        title="Subscription: 3rdeyeadvisors"
         description="Subscribe to 3rdeyeadvisors for full access to DeFi courses, tutorials, and premium content. Start your 14-day free trial today."
         keywords="defi subscription, crypto education, blockchain courses, defi membership"
       />
@@ -193,9 +193,9 @@ const Subscription = () => {
                       <CardTitle className="text-foreground">Your Subscription</CardTitle>
                       <CardDescription>
                         {subscription.isGrandfathered 
-                          ? 'Grandfathered - Lifetime Free Access'
+                          ? 'Grandfathered: Lifetime Free Access'
                           : subscription.isAdmin
-                          ? 'Admin - Full Access'
+                          ? 'Admin: Full Access'
                           : subscription.plan === 'annual' 
                           ? 'Annual Plan' 
                           : 'Monthly Plan'}
@@ -246,7 +246,7 @@ const Subscription = () => {
             </Card>
           )}
 
-          {/* Pricing Cards - Show when user doesn't have paid access */}
+          {/* Pricing Cards: Show when user doesn't have paid access */}
           {(!hasAccess || isDbTrial) && (
             <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
               {/* Monthly Plan */}
@@ -357,7 +357,7 @@ const Subscription = () => {
                   How does the free trial work?
                 </h3>
                 <p className="text-foreground/70 text-sm leading-relaxed">
-                  Your 14-day trial starts immediately when you create an account - no payment required. You get full access to all content during your trial.
+                  Your 14-day trial starts immediately when you create an account: no payment required. You get full access to all content during your trial.
                 </p>
               </div>
               <div className="p-5 md:p-6 bg-card rounded-xl border border-border">

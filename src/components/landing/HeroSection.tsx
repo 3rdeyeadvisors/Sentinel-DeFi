@@ -1,87 +1,81 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { BookOpen, Users, ArrowDown } from 'lucide-react';
-import AnimatedSection from './AnimatedSection';
 import { useGalaxySounds } from '@/hooks/useGalaxySounds';
 
 const HeroSection = () => {
-  const { playPing, playDeepHum } = useGalaxySounds();
-  const scrollToContent = () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-  };
+  const { playDeepHum, playPing } = useGalaxySounds();
 
   return (
-    <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden pt-12 md:pt-16 lg:pt-20">
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background" />
-      
-      {/* Subtle grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `
-            linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-        }}
-      />
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-20">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
 
-      {/* Hero glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
+      <div className="relative z-10 container mx-auto px-6 text-center max-w-5xl">
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <AnimatedSection animation="fade-up" delay={0}>
-          <span className="inline-block text-xs md:text-sm uppercase tracking-[0.4em] text-primary font-semibold mb-4 md:mb-6">
-            Institutional-Grade DeFi Intelligence for All
+        <div className="inline-flex items-center gap-2 border border-violet-500/30 bg-violet-500/10 rounded-full px-4 py-1.5 mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+          <span className="text-xs uppercase tracking-widest text-violet-300 font-body">DeFi Education Platform</span>
+        </div>
+
+        <h1 className="font-consciousness text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Everything Your Financial<br />
+          <span className="bg-gradient-to-r from-violet-400 via-purple-300 to-blue-400 bg-clip-text text-transparent">
+            Advisor Won't Tell You
           </span>
-        </AnimatedSection>
+        </h1>
 
-        <AnimatedSection animation="fade-up" delay={100}>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-consciousness font-bold text-foreground mb-4 md:mb-8 leading-[1.1] tracking-tighter max-w-5xl mx-auto">
-            Advanced Blockchain Education for the{' '}
-            <span className="bg-gradient-to-r from-white via-primary to-primary bg-clip-text text-transparent">
-              Modern Financial Era.
-            </span>
-          </h1>
-        </AnimatedSection>
+        <p className="font-body text-lg md:text-xl text-white/60 mb-4 max-w-2xl mx-auto leading-relaxed">
+          3rdeyeadvisors turns complete beginners into confident DeFi participants. Plain language. No hype. No gatekeeping.
+        </p>
 
-        <AnimatedSection animation="fade-up" delay={200}>
-          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground font-consciousness mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed opacity-90">
-            Empowering individuals, families, and corporations with institutional-grade insights into decentralized protocols. Rigorous, research-driven, and strictly hype-free.
-          </p>
-        </AnimatedSection>
+        <p className="font-body text-sm text-white/40 mb-12 max-w-xl mx-auto">
+          Used by individuals, families, financial advisors, and law firms navigating digital assets for the first time.
+        </p>
 
-        <AnimatedSection animation="fade-up" delay={300}>
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center">
-            <Link to="/courses">
-              <Button 
-                size="lg" 
-                onMouseEnter={playDeepHum}
-                onClick={playPing}
-                className="group relative overflow-hidden bg-white text-black hover:bg-white/90 px-10 py-7 text-lg font-semibold min-w-[240px] rounded-none transition-all duration-300 shadow-2xl"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  <BookOpen className="w-5 h-5" />
-                  Access Research
-                </span>
-              </Button>
-            </Link>
-            
-            <Link to="/subscription">
-              <Button 
-                variant="outline"
-                size="lg" 
-                onMouseEnter={playDeepHum}
-                onClick={playPing}
-                className="group border-white/20 hover:border-white/40 hover:bg-white/5 px-10 py-7 text-lg font-semibold min-w-[240px] rounded-none backdrop-blur-sm transition-all duration-300"
-              >
-                <Users className="w-5 h-5 mr-2" />
-                Access Platform
-              </Button>
-            </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <Link to="/courses">
+            <Button
+              size="lg"
+              onMouseEnter={playDeepHum}
+              onClick={playPing}
+              className="font-body bg-violet-600 hover:bg-violet-500 text-white px-8 py-6 text-base font-semibold rounded-xl shadow-lg shadow-violet-900/40 transition-all duration-300 hover:shadow-violet-700/50 hover:scale-105 min-w-[200px]"
+            >
+              Start Learning Free
+            </Button>
+          </Link>
+          <Link to="/subscription">
+            <Button
+              variant="outline"
+              size="lg"
+              onMouseEnter={playDeepHum}
+              onClick={playPing}
+              className="font-body border-white/20 hover:border-violet-500/50 hover:bg-violet-500/10 text-white/80 hover:text-white px-8 py-6 text-base rounded-xl transition-all duration-300 min-w-[200px]"
+            >
+              View Membership Plans
+            </Button>
+          </Link>
+        </div>
+
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 text-white/40">
+          <div className="flex items-center gap-2">
+            <span className="font-consciousness text-2xl font-bold text-white/70">14</span>
+            <span className="font-body text-xs uppercase tracking-wider">Day Free Trial</span>
           </div>
-        </AnimatedSection>
+          <div className="w-px h-8 bg-white/10 hidden sm:block" />
+          <div className="flex items-center gap-2">
+            <span className="font-consciousness text-2xl font-bold text-white/70">5</span>
+            <span className="font-body text-xs uppercase tracking-wider">Core Courses</span>
+          </div>
+          <div className="w-px h-8 bg-white/10 hidden sm:block" />
+          <div className="flex items-center gap-2">
+            <span className="font-consciousness text-2xl font-bold text-white/70">12+</span>
+            <span className="font-body text-xs uppercase tracking-wider">Hands-On Tutorials</span>
+          </div>
+          <div className="w-px h-8 bg-white/10 hidden sm:block" />
+          <div className="flex items-center gap-2">
+            <span className="font-consciousness text-2xl font-bold text-white/70">0</span>
+            <span className="font-body text-xs uppercase tracking-wider">Crypto Knowledge Required</span>
+          </div>
+        </div>
       </div>
     </section>
   );

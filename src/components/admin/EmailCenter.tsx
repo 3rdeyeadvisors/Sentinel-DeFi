@@ -44,7 +44,7 @@ export function EmailCenter() {
 
   const getRaffleEmailHTML = () => {
     const rafflePeriod = activeRaffle 
-      ? `${formatRaffleDate(activeRaffle.start_date)} – ${formatRaffleDate(activeRaffle.end_date)}`
+      ? `${formatRaffleDate(activeRaffle.start_date)} to ${formatRaffleDate(activeRaffle.end_date)}`
       : "Check website for current dates";
     
     const prizeAmount = activeRaffle?.prize_amount || 50;
@@ -71,7 +71,7 @@ export function EmailCenter() {
                   </p>
                   
                   <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px 0; font-family: Arial, sans-serif; color: #333333;">
-                    The future of finance is decentralized — and now, learning it pays.
+                    The future of finance is decentralized: and now, learning it pays.
                   </p>
                   
                   <p style="font-size: 16px; line-height: 1.6; margin: 0 0 30px 0; font-family: Arial, sans-serif; color: #333333;">
@@ -120,7 +120,7 @@ export function EmailCenter() {
                   </table>
                   
                   <p style="font-size: 16px; line-height: 1.6; font-style: italic; text-align: center; color: #666666; margin: 0 0 40px 0; font-family: Arial, sans-serif;">
-                    The more you learn, the more you earn — because awareness is the real currency.
+                    The more you learn, the more you earn: because awareness is the real currency.
                   </p>
                   
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top: 1px solid #e5e5e5; padding-top: 20px;">
@@ -130,7 +130,7 @@ export function EmailCenter() {
                           Awareness is advantage.
                         </p>
                         <p style="font-size: 14px; color: #666666; margin: 0; font-family: Arial, sans-serif;">
-                          — 3rdeyeadvisors
+                         : 3rdeyeadvisors
                         </p>
                       </td>
                     </tr>

@@ -139,7 +139,7 @@ const VaultDepositTutorial = () => {
               </div>
               <div className="flex items-start gap-2 md:gap-3">
                 <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
-                <p className="text-sm md:text-base">Your wallet address is shown at the top of MetaMask – click to copy it</p>
+                <p className="text-sm md:text-base">Your wallet address is shown at the top of MetaMask :  click to copy it</p>
               </div>
               <div className="flex items-start gap-2 md:gap-3">
                 <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
@@ -298,7 +298,7 @@ const VaultDepositTutorial = () => {
               </div>
               <div className="flex items-start gap-2 md:gap-3">
                 <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
-                <p className="text-sm md:text-base">MetaMask will pop up – click <strong>"Connect"</strong> to approve the connection</p>
+                <p className="text-sm md:text-base">MetaMask will pop up :  click <strong>"Connect"</strong> to approve the connection</p>
               </div>
               <div className="flex items-start gap-2 md:gap-3">
                 <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
@@ -355,7 +355,7 @@ const VaultDepositTutorial = () => {
               </div>
               <div className="flex items-start gap-2 md:gap-3">
                 <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
-                <p className="text-sm md:text-base">MetaMask will pop up showing the transaction – review the gas fee and click <strong>"Confirm"</strong></p>
+                <p className="text-sm md:text-base">MetaMask will pop up showing the transaction :  review the gas fee and click <strong>"Confirm"</strong></p>
               </div>
               <div className="flex items-start gap-2 md:gap-3">
                 <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />

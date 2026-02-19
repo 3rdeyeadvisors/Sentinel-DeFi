@@ -104,7 +104,7 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
     'Every future course release included',
     'Full community channel access',
     'Priority access to new features',
-    '70% referral commission (highest tier)',
+    '70% referral commission at the highest tier',
     '10 bonus raffle entries per raffle',
     'Founding member recognition badge',
     '3x weighted vote on platform roadmap',
@@ -132,7 +132,7 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
           </h2>
           
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground font-consciousness max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground font-body max-w-2xl mx-auto">
             Secure lifetime access to the 3EA ecosystem. Only 33 spots available.
           </p>
         </AnimatedSection>
@@ -159,7 +159,7 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
             {/* Benefits Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-8">
               {benefits.map((benefit, i) => (
-                <div key={i} className="flex items-center text-sm md:text-base text-foreground/90 font-consciousness">
+                <div key={i} className="flex items-center text-sm md:text-base text-foreground/90 font-body">
                   <CheckCircle2 className="w-5 h-5 text-amber-400 mr-3 flex-shrink-0" />
                   <span>{benefit}</span>
                 </div>
@@ -170,9 +170,9 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
             <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-5 md:p-6 mb-8">
               <div className="flex items-center justify-center gap-2 mb-3">
                 <Flame className="w-5 h-5 text-amber-400 animate-pulse" />
-                <span className="text-lg md:text-xl font-consciousness font-semibold text-foreground">
+                <span className="text-lg md:text-xl font-body font-semibold text-foreground">
                   {isSoldOut 
-                    ? 'All 33 founding spots have been claimed!' 
+                    ? 'All 33 founding spots have been claimed'
                     : `Only ${spotsRemaining} of ${spotsData.total} spots remaining`
                   }
                 </span>
@@ -185,7 +185,7 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
                   style={{ width: `${percentageClaimed}%` }}
                 />
               </div>
-              <p className="text-xs text-muted-foreground mt-2 text-center font-consciousness">
+              <p className="text-xs text-muted-foreground mt-2 text-center font-body">
                 {spotsData.claimed} founding members have already claimed their spot
               </p>
             </div>
@@ -194,7 +194,7 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
             {isSoldOut ? (
               <Button 
                 size="lg"
-                className="w-full py-7 text-lg font-consciousness font-semibold bg-muted text-muted-foreground border-0 cursor-not-allowed"
+                className="w-full py-7 text-lg font-body font-semibold bg-muted text-muted-foreground border-0 cursor-not-allowed"
                 disabled
               >
               <Lock className="w-5 h-5" />
@@ -203,7 +203,7 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
             ) : (
               <Button 
                 size="lg"
-                className="w-full py-7 text-lg font-consciousness font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black border-0 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-300"
+                className="w-full py-7 text-lg font-body font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black border-0 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-300"
                 onClick={handleSecureSeat}
                 disabled={isLoading}
               >
@@ -215,7 +215,7 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
                 ) : (
                   <>
                     <Crown className="w-5 h-5" />
-                    <span>Secure Your Founding Seat!</span>
+                    <span>Secure Your Founding Seat</span>
                   </>
                 )}
               </Button>
@@ -225,8 +225,8 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
 
         {/* Trust note */}
         <AnimatedSection delay={300}>
-          <p className="text-center text-sm text-muted-foreground font-consciousness mt-6">
-            Instant lifetime access • No recurring fees ever
+          <p className="text-center text-sm text-muted-foreground font-body mt-6">
+            Instant lifetime access. No recurring fees ever.
           </p>
         </AnimatedSection>
       </div>

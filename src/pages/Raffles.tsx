@@ -578,7 +578,7 @@ const Raffles = () => {
   return (
     <>
       <SEO 
-        title="Learn to Earn Raffles - 3rdeyeadvisors"
+        title="Learn to Earn Raffles: 3rdeyeadvisors"
         description="Participate in our Learn-to-Earn raffles. Complete educational tasks and earn entries to win crypto rewards. Awareness = Advantage."
         keywords="defi raffles, crypto giveaway, learn to earn, bitcoin rewards, defi education"
       />

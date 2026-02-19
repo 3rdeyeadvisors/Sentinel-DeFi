@@ -230,7 +230,7 @@ const AdvancedDefiProtocolsTutorial = () => {
               "Earn trading fees + farming rewards",
               "Pay interest on borrowed amount"
             ],
-            profitFormula: "(LP rewards + fees) × leverage - borrowing costs",
+            profitFormula: "(LP rewards + fees) × leverage minus borrowing costs",
             optimalConditions: "High farming rewards, low borrowing rates, stable pair"
           },
           {
@@ -242,7 +242,7 @@ const AdvancedDefiProtocolsTutorial = () => {
               "Stake total amount",
               "Earn staking rewards on larger position"
             ],
-            profitFormula: "Staking rewards × leverage - borrowing costs",
+            profitFormula: "Staking rewards × leverage minus borrowing costs",
             optimalConditions: "Staking rewards > borrowing costs + safety margin"
           },
           {
@@ -254,7 +254,7 @@ const AdvancedDefiProtocolsTutorial = () => {
               "Earn farming rewards",
               "Minimize price risk"
             ],
-            profitFormula: "Farming rewards - hedging costs - IL",
+            profitFormula: "Farming rewards - hedging costs minus IL",
             optimalConditions: "High farming rewards, efficient hedging markets"
           }
         ],
@@ -289,8 +289,8 @@ const AdvancedDefiProtocolsTutorial = () => {
         overview: "Navigate the complex world of DeFi options and derivative instruments.",
         optionsBasics: {
           definition: "Contracts giving the right (not obligation) to buy/sell assets at specific prices",
-          callOption: "Right to buy at strike price - bullish strategy",
-          putOption: "Right to sell at strike price - bearish/protective strategy",
+          callOption: "Right to buy at strike price: bullish strategy",
+          putOption: "Right to sell at strike price: bearish/protective strategy",
           premium: "Cost to purchase the option",
           expiration: "Date when option expires worthless if not exercised"
         },

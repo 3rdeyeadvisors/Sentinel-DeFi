@@ -159,8 +159,8 @@ const FirstDexSwapTutorial = () => {
         requirements: {
           polygon: {
             token: "MATIC",
-            amount: "0.1 - 1 MATIC",
-            cost: "$0.05 - $0.50",
+            amount: "0.1 to 1 MATIC",
+            cost: "$0.05 to $0.50",
             purpose: "Gas fees for transactions"
           }
         },
@@ -271,7 +271,7 @@ const FirstDexSwapTutorial = () => {
         settingsToCheck: [
           {
             setting: "Slippage Tolerance",
-            recommended: "0.5% - 1%",
+            recommended: "0.5% to 1%",
             description: "How much price can change during trade"
           },
           {
@@ -440,7 +440,7 @@ const FirstDexSwapTutorial = () => {
   return (
     <>
       <SEO 
-        title="First DEX Swap Tutorial - Uniswap Trading Guide"
+        title="First DEX Swap Tutorial: Uniswap Trading Guide"
         description="Complete beginner's guide to your first decentralized exchange swap. Learn to trade safely on Uniswap with step-by-step instructions for DeFi trading."
         keywords="DEX swap tutorial, Uniswap guide, decentralized exchange trading, DeFi trading tutorial, first crypto swap, Polygon DEX tutorial"
         url="https://www.the3rdeyeadvisors.com/tutorials/first-dex-swap"

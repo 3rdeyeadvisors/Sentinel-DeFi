@@ -86,7 +86,7 @@ const VaultAccess = () => {
                   </li>
                   <li className="flex items-center gap-2">
                     <Shield className="h-4 w-4 text-primary shrink-0" />
-                    <span>Non-custodial – you control your funds</span>
+                    <span>Non-custodial :  you control your funds</span>
                   </li>
                 </ul>
               </div>

@@ -234,7 +234,7 @@ const VaultWithdrawalTutorial = () => {
               </div>
               <div className="flex items-start gap-2 md:gap-3">
                 <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
-                <p className="text-sm md:text-base">Check the gas fee – you'll need enough ETH to cover this</p>
+                <p className="text-sm md:text-base">Check the gas fee :  you'll need enough ETH to cover this</p>
               </div>
               <div className="flex items-start gap-2 md:gap-3">
                 <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
