@@ -106,7 +106,7 @@ const NewsletterSignup = ({ variant = "default", className = "" }: NewsletterSig
   }
 
   return (
-    <Card className={`p-8 bg-gradient-cosmic-subtle border-border/50 ${className}`}>
+    <Card className={`p-0 bg-transparent border-0 ${className}`}>
       {variant === 'cosmic' ? (
         <div className="relative overflow-hidden rounded-3xl border border-violet-500/20 bg-gradient-to-b from-violet-950/30 to-black p-8 md:p-12 text-center">
           {/* Background glow */}

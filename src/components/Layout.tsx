@@ -68,7 +68,7 @@ const Layout = ({ children }: LayoutProps) => {
         isRefreshing={isRefreshing}
         isTriggered={isTriggered}
       />
-      <div className="min-h-screen bg-gradient-cosmic flex flex-col">
+      <div className="min-h-screen bg-black flex flex-col">
         <Navigation />
         <main className="pt-16 md:pt-20 flex-1">
           <AnimatePresence mode="wait">
