@@ -17,6 +17,7 @@ import { MathSprint } from '@/components/mini-games/MathSprint';
 import { IQTest } from '@/components/mini-games/IQTest';
 import { CognitiveScience } from '@/components/mini-games/CognitiveScience';
 import { supabase } from '@/integrations/supabase/client';
+import SEO from '@/components/SEO';
 import {
   Tooltip,
   TooltipContent,
