@@ -48,7 +48,7 @@ export const PointsLeaderboard = () => {
       case 1: return 'text-amber-400';
       case 2: return 'text-white/80';
       case 3: return 'text-orange-400';
-      default: return 'text-white/30';
+      default: return 'text-white/40';
     }
   };
 
@@ -135,7 +135,7 @@ export const PointsLeaderboard = () => {
             onClick={() => navigate(`/profile/${user?.id}`)}
             className="flex items-center gap-4 px-4 py-3 rounded-xl border border-violet-500/30 bg-violet-500/5 cursor-pointer"
           >
-            <div className="font-consciousness text-sm font-bold text-white/30 w-6 text-center">
+            <div className="font-consciousness text-sm font-bold text-white/40 w-6 text-center">
               {userRank.rank}
             </div>
             <Avatar className="w-8 h-8 border border-violet-500/20">

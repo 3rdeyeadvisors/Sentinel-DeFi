@@ -138,7 +138,7 @@ const NewsletterSignup = ({ variant = "default", className = "" }: NewsletterSig
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
-                  className="flex-1 font-body text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-violet-500/50 transition-colors"
+                  className="flex-1 font-body text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-violet-500/50 transition-colors"
                   required
                 />
                 <button

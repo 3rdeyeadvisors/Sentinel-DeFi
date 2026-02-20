@@ -616,16 +616,16 @@ const RaffleManager = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-body">
       <div>
-        <h2 className="text-3xl font-bold mb-2">Raffle Manager</h2>
-        <p className="text-muted-foreground">
+        <h2 className="text-3xl font-bold mb-2 font-consciousness">Raffle Manager</h2>
+        <p className="text-muted-foreground font-body">
           Manage Learn-to-Earn raffles and track participant progress
         </p>
       </div>
 
       <Tabs defaultValue="create" className="space-y-4">
-        <TabsList>
+        <TabsList className="font-body">
           <TabsTrigger value="create">
             <Gift className="w-4 h-4 mr-2" />
             Create Raffle
@@ -651,21 +651,22 @@ const RaffleManager = () => {
         <TabsContent value="create">
           <Card>
             <CardHeader>
-              <CardTitle>Create New Raffle</CardTitle>
-              <CardDescription>
+              <CardTitle className="font-consciousness">Create New Raffle</CardTitle>
+              <CardDescription className="font-body">
                 Set up a new Learn-to-Earn raffle campaign
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleCreateRaffle} className="space-y-4">
+              <form onSubmit={handleCreateRaffle} className="space-y-4 font-body">
                 <div className="space-y-2">
                   <Label htmlFor="title">Raffle Title</Label>
                   <Input
                     id="title"
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    placeholder="e.g., Learn to Earn : Bitcoin Edition"
+                    placeholder="e.g., Learn to Earn: Bitcoin Edition"
                     required
+                    className="font-body"
                   />
                 </div>
 
@@ -1102,7 +1103,7 @@ const RaffleManager = () => {
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
-                  <CardTitle>
+                  <CardTitle className="font-consciousness">
                     Raffle Participants
                     {participants.length > 0 && (
                       <span className="text-muted-foreground ml-2">
@@ -1110,7 +1111,7 @@ const RaffleManager = () => {
                       </span>
                     )}
                   </CardTitle>
-                  <CardDescription>
+                  <CardDescription className="font-body">
                     View and export participant data
                   </CardDescription>
                 </div>
@@ -1204,26 +1205,27 @@ const RaffleManager = () => {
                   </p>
                 </div>
               ) : (
+                <div className="rounded-xl border border-white/8 overflow-hidden bg-white/3">
                  <Table>
                   <TableHeader>
-                    <TableRow>
-                      <TableHead>Email</TableHead>
-                      <TableHead>Display Name</TableHead>
-                      <TableHead className="text-right">Total Entries</TableHead>
-                      <TableHead>Ticket Details</TableHead>
+                    <TableRow className="hover:bg-transparent border-b border-white/8">
+                      <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Email</TableHead>
+                      <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Display Name</TableHead>
+                      <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4 text-right">Total Entries</TableHead>
+                      <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Ticket Details</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {participants.map((participant) => (
-                      <TableRow key={participant.user_id}>
-                        <TableCell className="font-mono text-sm">
+                      <TableRow key={participant.user_id} className="border-b border-white/5 last:border-0">
+                        <TableCell className="font-body text-sm text-white/70 py-3 px-4 font-mono">
                           {participant.email}
                         </TableCell>
-                        <TableCell>{participant.display_name}</TableCell>
-                        <TableCell className="text-right font-semibold">
+                        <TableCell className="font-body text-sm text-white/70 py-3 px-4">{participant.display_name}</TableCell>
+                        <TableCell className="font-body text-sm text-white/70 py-3 px-4 text-right font-semibold">
                           {participant.entry_count}
                         </TableCell>
-                        <TableCell>
+                        <TableCell className="py-3 px-4">
                           {participant.tickets && participant.tickets.length > 0 ? (
                             <div className="space-y-1">
                               {participant.tickets.map((ticket) => (
@@ -1245,6 +1247,7 @@ const RaffleManager = () => {
                     ))}
                   </TableBody>
                 </Table>
+                </div>
               )}
             </CardContent>
           </Card>

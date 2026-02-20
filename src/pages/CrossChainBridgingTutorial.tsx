@@ -810,7 +810,7 @@ const CrossChainBridgingTutorial = () => {
                             <CardDescription className="text-xs md:text-sm">{bridge.description}</CardDescription>
                           </CardHeader>
                           <CardContent className="p-3 md:p-6 pt-0">
-                            <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3 text-xs md:text-sm mb-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 text-xs md:text-sm mb-3">
                               <div>
                                 <span className="font-medium">Speed:</span>
                                 <p className="text-muted-foreground">{bridge.speed}</p>

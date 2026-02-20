@@ -658,7 +658,7 @@ const Raffles = () => {
         {!activeRaffle ? (
           <Card className="bg-white/3 border border-white/8 rounded-3xl text-center py-16 w-full">
             <CardContent>
-              <Clock className="w-16 h-16 mx-auto mb-6 text-white/20" />
+              <Clock className="w-16 h-16 mx-auto mb-6 text-white/40" />
               <h2 className="font-consciousness text-2xl font-bold text-white mb-2">Raffle Entries Currently Closed</h2>
               <p className="font-body text-white/50 mb-8 max-w-sm mx-auto">
                 Stay tuned for the next round of rewards and challenges.
@@ -716,25 +716,28 @@ const Raffles = () => {
                   <div className="relative z-10 space-y-8">
                     <div>
                       <p className="font-body text-xs uppercase tracking-widest text-violet-400 mb-2">Current Prize</p>
-                      <h2 className="font-consciousness text-4xl md:text-5xl font-bold text-white">
-                        ${activeRaffle.prize_amount}
-                      </h2>
+                      <div className="flex items-baseline gap-1">
+                        <span className="font-body text-xl md:text-2xl text-white/70">$</span>
+                        <h2 className="font-consciousness text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                          {activeRaffle.prize_amount}
+                        </h2>
+                      </div>
                       <p className="font-body text-lg text-white/60 mt-1">{activeRaffle.prize}</p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-8 pt-6 border-t border-white/10">
                       <div>
                         <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-2">Time Remaining</p>
-                        <div className="font-consciousness text-2xl font-bold text-amber-400">
+                        <div className="font-consciousness text-xl sm:text-2xl font-bold text-amber-400">
                           <RaffleCountdown endDate={activeRaffle.end_date} />
                         </div>
                       </div>
                       <div className="text-right">
                         <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-2">Your Entries</p>
-                        <div className="font-consciousness text-5xl font-bold text-violet-400">
+                        <div className="font-consciousness text-4xl sm:text-5xl font-bold text-violet-400">
                           {totalEntries}
                         </div>
-                        <p className="font-body text-[10px] text-white/30 uppercase tracking-tighter mt-1">Total Entries</p>
+                        <p className="font-body text-[10px] text-white/40 uppercase tracking-tighter mt-1">Total Entries</p>
                       </div>
                     </div>
 
@@ -800,7 +803,7 @@ const Raffles = () => {
                         return (
                           <div
                             key={task.id}
-                            className={`flex items-center gap-3 p-4 rounded-xl border transition-all ${
+                            className={`flex items-center gap-3 p-4 min-h-[52px] rounded-xl border transition-all ${
                               isCompleted ? 'border-emerald-500/20 bg-emerald-500/5' : 'border-white/8 bg-white/3 hover:border-violet-500/20'
                             }`}
                           >
@@ -859,14 +862,14 @@ const Raffles = () => {
                       <Trophy className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-body text-[10px] uppercase tracking-widest text-white/30">Winner</p>
+                      <p className="font-body text-[10px] uppercase tracking-widest text-white/40">Winner</p>
                       <p className="font-consciousness text-sm font-bold text-amber-400">
                         {raffle.id.slice(0, 8)}... {/* Mock name as we don't have winner name here easily */}
                       </p>
                     </div>
                   </div>
                   <p className="font-body text-sm text-white/60 mb-2 truncate">{raffle.prize}</p>
-                  <p className="font-body text-xs text-white/30">
+                  <p className="font-body text-xs text-white/40">
                     {new Date(raffle.winner_selected_at!).toLocaleDateString()}
                   </p>
                 </div>

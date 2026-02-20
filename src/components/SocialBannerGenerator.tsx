@@ -189,6 +189,7 @@ export const SocialBannerGenerator = () => {
               className="w-full h-auto"
               width={1792}
               height={1024}
+              loading="lazy"
             />
           </div>
           

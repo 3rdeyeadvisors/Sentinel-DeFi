@@ -579,9 +579,9 @@ const Profile = () => {
         )}
 
         {/* Profile Header */}
-        <Card className="mb-12 bg-white/3 border border-white/8 rounded-2xl overflow-hidden">
-          <CardContent className="p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
+        <Card className="mb-12 bg-white/3 border border-white/8 rounded-2xl overflow-hidden w-full">
+          <CardContent className="p-4 sm:p-8 md:p-12">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 md:gap-10">
               {/* Avatar Section */}
               <div className="relative">
                 <div className="w-20 h-20 rounded-full bg-violet-500/20 border-2 border-violet-500/30 flex items-center justify-center overflow-hidden">
@@ -620,7 +620,7 @@ const Profile = () => {
               {/* Profile Info */}
               <div className="flex-1 space-y-6 text-center md:text-left">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
-                  <div className="flex-1">
+                  <div className="flex-1 w-full">
                     {isEditing && isOwnProfile ? (
                       <div className="space-y-6">
                         <div>
@@ -629,7 +629,7 @@ const Profile = () => {
                             id="display_name"
                             value={editForm.display_name}
                             onChange={(e) => setEditForm(prev => ({ ...prev, display_name: e.target.value }))}
-                            className="font-body text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white focus:border-violet-500/50 focus:outline-none transition-colors w-full"
+                            className="font-body text-base bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white focus:border-violet-500/50 focus:outline-none transition-colors w-full"
                             placeholder="Your display name"
                           />
                         </div>
@@ -639,7 +639,7 @@ const Profile = () => {
                             id="bio"
                             value={editForm.bio}
                             onChange={(e) => setEditForm(prev => ({ ...prev, bio: e.target.value }))}
-                            className="font-body text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white focus:border-violet-500/50 focus:outline-none transition-colors w-full resize-none"
+                            className="font-body text-base bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white focus:border-violet-500/50 focus:outline-none transition-colors w-full resize-none"
                             placeholder="Tell us about yourself..."
                             rows={3}
                           />
@@ -741,7 +741,7 @@ const Profile = () => {
 
         {/* Achievements - only show for own profile */}
         {isOwnProfile && (
-          <Card className="mb-12 bg-white/3 border border-white/8 rounded-2xl p-6">
+          <Card className="mb-12 bg-white/3 border border-white/8 rounded-2xl p-4 sm:p-6 w-full">
             <CardHeader className="text-center p-0 mb-8">
               <CardTitle className="font-consciousness text-base font-bold text-white mb-2">
                 Achievements
@@ -777,7 +777,7 @@ const Profile = () => {
 
         {/* Course Notes - only show for own profile */}
         {isOwnProfile && courseNotes.length > 0 && (
-          <Card className="mb-12 bg-white/3 border border-white/8 rounded-2xl p-6">
+          <Card className="mb-12 bg-white/3 border border-white/8 rounded-2xl p-4 sm:p-6 w-full">
             <CardHeader className="p-0 mb-8">
               <CardTitle className="font-consciousness text-base font-bold text-white mb-2">
                 Course Notes
@@ -795,7 +795,7 @@ const Profile = () => {
                         <BookOpen className="w-4 h-4 text-violet-400" />
                         {note.moduleTitle}
                       </h4>
-                      <div className="font-body text-[10px] uppercase tracking-widest text-white/30">
+                      <div className="font-body text-[10px] uppercase tracking-widest text-white/40">
                         {new Date(note.lastUpdated).toLocaleDateString()}
                       </div>
                     </div>
@@ -820,7 +820,7 @@ const Profile = () => {
 
         {/* Quick Actions - only show for own profile */}
         {isOwnProfile && (
-          <Card className="mb-12 bg-white/3 border border-white/8 rounded-2xl p-6">
+          <Card className="mb-12 bg-white/3 border border-white/8 rounded-2xl p-4 sm:p-6 w-full">
             <CardHeader className="p-0 mb-8">
               <CardTitle className="font-consciousness text-base font-bold text-white">
                 Quick Actions
@@ -850,7 +850,7 @@ const Profile = () => {
 
         {/* Danger Zone - only show for own profile */}
         {isOwnProfile && (
-          <Card className="mt-12 border-red-500/20 bg-red-500/5 rounded-2xl p-6">
+          <Card className="mt-12 border-red-500/20 bg-red-500/5 rounded-2xl p-4 sm:p-6 w-full">
             <CardHeader className="p-0 mb-8">
               <CardTitle className="font-consciousness text-base font-bold text-red-400 flex items-center gap-3">
                 <AlertTriangle className="w-5 h-5" />

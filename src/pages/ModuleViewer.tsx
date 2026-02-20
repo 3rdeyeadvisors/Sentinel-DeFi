@@ -108,7 +108,7 @@ const ModuleViewer = () => {
             <h1 className="font-consciousness text-xl md:text-3xl font-bold text-white mb-4">
               {currentModule.title}
             </h1>
-            <p className="font-body text-xs text-white/30 uppercase tracking-widest">
+            <p className="font-body text-xs text-white/40 uppercase tracking-widest">
               Module {currentModuleIndex + 1} of {course.modules.length}
             </p>
           </div>
@@ -211,7 +211,7 @@ const ModuleViewer = () => {
                         <CheckCircle className="w-4 h-4 text-emerald-400" />
                       ) : (
                         <div className={`w-5 h-5 rounded-full border flex items-center justify-center text-[10px] font-bold ${
-                          isCurrent ? "border-violet-400 text-violet-400" : "border-white/20 text-white/20"
+                          isCurrent ? "border-violet-400 text-violet-400" : "border-white/20 text-white/40"
                         }`}>
                           {index + 1}
                         </div>
@@ -221,7 +221,7 @@ const ModuleViewer = () => {
                       <p className={`font-body text-sm truncate ${isCurrent ? "font-semibold" : ""}`}>
                         {module.title}
                       </p>
-                      <p className="text-[10px] uppercase tracking-widest text-white/30 mt-0.5">
+                      <p className="text-[10px] uppercase tracking-widest text-white/40 mt-0.5">
                         {module.duration} min
                       </p>
                     </div>

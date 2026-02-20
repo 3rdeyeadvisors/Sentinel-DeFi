@@ -256,7 +256,7 @@ const Contact = () => {
                 
                 <div className="space-y-4">
                   <div>
-                    <p className="font-body text-xs uppercase tracking-widest text-white/30 mb-1">Email Support</p>
+                    <p className="font-body text-xs uppercase tracking-widest text-white/40 mb-1">Email Support</p>
                     <a
                       href="mailto:info@the3rdeyeadvisors.com"
                       className="font-consciousness text-sm font-medium text-white hover:text-violet-400 transition-colors"
@@ -266,7 +266,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <p className="font-body text-xs uppercase tracking-widest text-white/30 mb-1">Twitter / X</p>
+                    <p className="font-body text-xs uppercase tracking-widest text-white/40 mb-1">Twitter / X</p>
                     <a
                       href="https://twitter.com/3rdeyeadvisors"
                       target="_blank"

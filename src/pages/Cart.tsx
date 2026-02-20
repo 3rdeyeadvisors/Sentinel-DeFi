@@ -177,15 +177,15 @@ const CartItem = ({ item }: { item: any }) => {
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           {/* Image - Fixed aspect ratio to prevent CLS */}
-          <div className="w-20 h-20 flex-shrink-0 rounded-md overflow-hidden bg-muted flex items-center justify-center">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 rounded-md overflow-hidden bg-muted flex items-center justify-center mx-auto sm:mx-0">
             {item.image ? (
               <img 
                 src={item.image} 
                 alt={`${item.title} product image`}
-                width={80}
-                height={80}
+                width={96}
+                height={96}
                 className="w-full h-full object-cover"
                 loading="lazy"
                 onError={(e) => {
@@ -198,23 +198,24 @@ const CartItem = ({ item }: { item: any }) => {
             )}
           </div>
 
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 text-center sm:text-left">
             <h3 className="text-lg font-consciousness font-semibold text-foreground mb-1 truncate">
               {item.title}
             </h3>
-            <p className="text-sm text-muted-foreground font-consciousness mb-2">
+            <p className="text-sm text-muted-foreground font-body mb-2">
               {item.category} • {item.type}
             </p>
             {item.color && item.size && (
-              <p className="text-xs text-muted-foreground font-consciousness">
+              <p className="text-xs text-muted-foreground font-body">
                 {item.color} / {item.size}
               </p>
             )}
           </div>
 
-          <div className="flex md:hidden items-start">
+          <div className="flex md:hidden items-center justify-center sm:items-start">
+            <span className="font-body text-sm mr-1.5">$</span>
             <p className="text-lg font-consciousness font-semibold text-primary whitespace-nowrap">
-              ${typeof item.price === 'string' ? item.price : item.price.toFixed(2)}
+              {typeof item.price === 'string' ? item.price : item.price.toFixed(2)}
             </p>
           </div>
         </div>
@@ -302,9 +303,10 @@ const CartItem = ({ item }: { item: any }) => {
         )}
 
         <div className="flex items-center justify-between pt-2 border-t">
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center">
+            <span className="font-body text-sm mr-1.5">$</span>
             <p className="text-lg font-consciousness font-semibold text-primary">
-              ${typeof item.price === 'string' ? item.price : item.price.toFixed(2)}
+              {typeof item.price === 'string' ? item.price : item.price.toFixed(2)}
             </p>
           </div>
 
@@ -525,12 +527,15 @@ const Cart = () => {
               <div className="space-y-4 mb-6">
                 {items.map((item) => (
                   <div key={item.id} className="flex justify-between text-sm">
-                    <span className="font-consciousness text-muted-foreground">
+                    <span className="font-body text-muted-foreground">
                       {item.title} × {item.quantity}
                     </span>
-                    <span className="font-consciousness font-medium">
-                      ${((typeof item.price === 'string' ? parseFloat(item.price.replace('$', '')) : item.price) * item.quantity).toFixed(2)}
-                    </span>
+                    <div className="flex items-center">
+                      <span className="font-body text-xs mr-1">$</span>
+                      <span className="font-consciousness font-medium">
+                        {((typeof item.price === 'string' ? parseFloat(item.price.replace('$', '')) : item.price) * item.quantity).toFixed(2)}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -567,18 +572,27 @@ const Cart = () => {
 
               <div className="border-t pt-4 mb-6 space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="font-consciousness text-muted-foreground">Subtotal</span>
-                  <span className="font-consciousness">${total.toFixed(2)}</span>
+                  <span className="font-body text-muted-foreground">Subtotal</span>
+                  <div className="flex items-center">
+                    <span className="font-body text-xs mr-1">$</span>
+                    <span className="font-consciousness">{total.toFixed(2)}</span>
+                  </div>
                 </div>
                 {discountApplied && (
                   <div className="flex justify-between text-sm text-green-600 dark:text-green-400">
-                    <span className="font-consciousness">Discount</span>
-                    <span className="font-consciousness">-${discountAmount.toFixed(2)}</span>
+                    <span className="font-body">Discount</span>
+                    <div className="flex items-center">
+                      <span className="font-body text-xs mr-1">-$</span>
+                      <span className="font-consciousness">{discountAmount.toFixed(2)}</span>
+                    </div>
                   </div>
                 )}
                 <div className="flex justify-between text-lg border-t pt-2">
-                  <span className="font-consciousness font-bold text-foreground">Total</span>
-                  <span className="font-consciousness font-bold text-primary">${finalTotal.toFixed(2)}</span>
+                  <span className="font-body font-bold text-foreground">Total</span>
+                  <div className="flex items-center">
+                    <span className="font-body text-sm mr-1">$</span>
+                    <span className="font-consciousness font-bold text-primary">{finalTotal.toFixed(2)}</span>
+                  </div>
                 </div>
                 <p className="text-xs text-muted-foreground font-consciousness mt-2">
                   * Taxes will be calculated at checkout
@@ -588,7 +602,7 @@ const Cart = () => {
               <div className="space-y-3">
                 <Button
                   variant="cosmic"
-                  className="w-full font-consciousness"
+                  className="w-full font-body py-4"
                   onClick={handleCheckout}
                   disabled={isLoading}
                 >

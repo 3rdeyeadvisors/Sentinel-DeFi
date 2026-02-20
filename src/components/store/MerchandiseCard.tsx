@@ -167,7 +167,7 @@ export function MerchandiseCard({ product, onAddToCart, isInCart }: MerchandiseC
       >
         <img
           src={currentImage?.src || product.images?.[0]?.src}
-          alt={product.title}
+          alt={`Product image for ${product.title}`}
           loading="lazy"
           width={400}
           height={400}
@@ -232,9 +232,12 @@ export function MerchandiseCard({ product, onAddToCart, isInCart }: MerchandiseC
 
         {/* Price & Add to Cart */}
         <div className="mt-auto space-y-4">
-          <p className="font-consciousness text-lg font-bold text-white">
-            ${selectedVariant?.price?.toFixed(2) || '0.00'}
-          </p>
+          <div className="flex items-center">
+            <span className="font-body text-sm mr-1.5 text-white/70">$</span>
+            <p className="font-consciousness text-lg font-bold text-white">
+              {selectedVariant?.price?.toFixed(2) || '0.00'}
+            </p>
+          </div>
           
           <Button
             onClick={handleAddToCart}

@@ -750,7 +750,7 @@ const SpottingScamsTutorial = () => {
                           </div>
                         </CardHeader>
                         <CardContent className="pt-2 md:pt-4">
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-center sm:text-left">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-center sm:text-left">
                             <div className="min-w-0">
                               <p className="font-medium mb-0.5 text-xs md:text-sm">Scammer's goal:</p>
                               <p className="text-muted-foreground break-words text-xs md:text-sm">{scam.goal}</p>
@@ -777,7 +777,7 @@ const SpottingScamsTutorial = () => {
                         <Card key={index}>
                           <CardContent className="p-3 md:p-4 text-center sm:text-left">
                             <h4 className="font-medium mb-2 text-sm md:text-base">{check.check}</h4>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-4 text-sm">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-4 text-sm">
                               <div className="space-y-1.5 min-w-0">
                                 <div className="flex items-center gap-1.5 justify-center sm:justify-start">
                                   <CheckCircle className="h-3 w-3 text-awareness flex-shrink-0" />
@@ -815,7 +815,7 @@ const SpottingScamsTutorial = () => {
                         <Card key={index}>
                           <CardContent className="p-3 md:p-4 text-center sm:text-left">
                             <h4 className="font-medium mb-1.5 text-sm md:text-base">{item.element}</h4>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs md:text-sm mb-2">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs md:text-sm mb-2">
                               <div className="min-w-0">
                                 <span className="font-medium text-awareness">✓ Legitimate: </span>
                                 <span className="break-words">{item.legitimate}</span>
@@ -1191,7 +1191,7 @@ const SpottingScamsTutorial = () => {
                         <Card key={index}>
                           <CardContent className="p-3 md:p-4 text-center sm:text-left">
                             <h4 className="font-medium mb-1.5 text-sm md:text-base text-destructive break-words">{option.scenario}</h4>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs md:text-sm">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs md:text-sm">
                               <div className="min-w-0">
                                 <span className="font-medium text-primary">Recovery: </span>
                                 <span className="break-words">{option.recovery}</span>

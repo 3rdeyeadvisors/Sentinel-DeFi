@@ -530,8 +530,8 @@ export const EnhancedDashboard = () => {
               </AvatarFallback>
             </Avatar>
           </div>
-          <div className="flex-1 text-center sm:text-left w-full">
-            <h1 className="text-3xl md:text-5xl font-consciousness font-bold text-white mb-2">
+        <div className="flex-1 text-center sm:text-left w-full">
+          <h1 className="text-2xl md:text-5xl font-consciousness font-bold text-white mb-2">
               Welcome back, {user.email?.split('@')[0]}
             </h1>
             <p className="text-white/50 font-body text-lg">
@@ -554,7 +554,7 @@ export const EnhancedDashboard = () => {
           <Card className={`p-6 mb-12 rounded-2xl border transition-all ${hasAccess ? 'bg-white/3 border-violet-500/20' : 'bg-white/3 border-white/8'}`}>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div className="flex items-center gap-4">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${hasAccess ? 'bg-violet-500/10 text-violet-400' : 'bg-white/5 text-white/30'}`}>
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${hasAccess ? 'bg-violet-500/10 text-violet-400' : 'bg-white/5 text-white/40'}`}>
                   {hasAccess ? (
                     <Crown className="w-6 h-6" />
                   ) : (
@@ -625,7 +625,7 @@ export const EnhancedDashboard = () => {
               <div className={`w-10 h-10 rounded-xl transition-all duration-300 flex items-center justify-center ${
                 soundEnabled 
                   ? 'bg-violet-500/20 text-violet-400'
-                  : 'bg-white/5 text-white/30'
+                  : 'bg-white/5 text-white/40'
               }`}>
                 {soundEnabled ? (
                   <Volume2 className="w-5 h-5 animate-pulse" />
@@ -657,7 +657,7 @@ export const EnhancedDashboard = () => {
         <ReferralCard />
 
         {/* Enhanced Stats Cards - Now Clickable */}
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 mb-12 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 mb-12 w-full">
           {[
             { id: 'enrolled', icon: BookOpen, value: enrolledCourses, label: 'Courses Enrolled', color: 'text-violet-400' },
             { id: 'completed', icon: Trophy, value: completedCourses, label: 'Completed', color: 'text-emerald-400' },
@@ -667,7 +667,7 @@ export const EnhancedDashboard = () => {
           ].map((stat) => (
             <Card
               key={stat.id}
-              className="p-4 sm:p-5 bg-white/3 border border-white/8 rounded-2xl cursor-pointer hover:border-violet-500/20 transition-all group relative overflow-hidden"
+              className="p-4 md:p-6 bg-white/3 border border-white/8 rounded-2xl cursor-pointer hover:border-violet-500/20 transition-all group relative overflow-hidden"
               onClick={() => setOpenDetail(stat.id)}
             >
               <div className="flex flex-col gap-4">
@@ -688,9 +688,9 @@ export const EnhancedDashboard = () => {
         </div>
 
         {/* Progress Overview */}
-        <Card className="p-8 mb-12 bg-white/3 border border-white/8 rounded-2xl w-full overflow-x-auto">
-          <h3 className="font-consciousness text-lg font-bold text-white mb-8">Weekly Learning Activity</h3>
-          <div className="grid grid-cols-7 gap-4 min-w-[400px]">
+        <Card className="p-4 sm:p-8 mb-12 bg-white/3 border border-white/8 rounded-2xl w-full overflow-x-auto">
+          <h3 className="font-consciousness text-base sm:text-lg font-bold text-white mb-6 sm:mb-8">Weekly Learning Activity</h3>
+          <div className="grid grid-cols-7 gap-2 sm:gap-4 min-w-[400px]">
             {weeklyProgress.map((day, index) => {
               // Goal is 60 minutes per day
               const percentage = Math.min((day.minutes / 60) * 100, 100);
@@ -722,17 +722,19 @@ export const EnhancedDashboard = () => {
 
         {/* Main Content with Enhanced Tabs */}
         <Tabs defaultValue="progress" className="space-y-12 w-full">
-          <TabsList className="flex flex-wrap gap-3 w-full p-2 bg-white/5 rounded-2xl border border-white/8 justify-center h-auto">
-            {['progress', 'achievements', 'activity', 'analytics'].map((tab) => (
-              <TabsTrigger
-                key={tab}
-                value={tab}
-                className="flex-1 font-body text-xs uppercase tracking-widest px-6 py-3 rounded-xl transition-all data-[state=active]:bg-violet-600 data-[state=active]:text-white"
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          <div className="w-full overflow-x-auto pb-2">
+            <TabsList className="flex flex-nowrap gap-3 w-full min-w-max p-2 bg-white/5 rounded-2xl border border-white/8 justify-center h-auto">
+              {['progress', 'achievements', 'activity', 'analytics'].map((tab) => (
+                <TabsTrigger
+                  key={tab}
+                  value={tab}
+                  className="flex-1 font-body text-xs uppercase tracking-widest px-6 py-3 rounded-xl transition-all data-[state=active]:bg-violet-600 data-[state=active]:text-white whitespace-nowrap"
+                >
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
 
           <TabsContent value="progress" className="space-y-12 w-full">
             {/* Continue Learning Section */}

@@ -71,18 +71,18 @@ export const StepNavigation = ({
           variant="outline"
           onClick={onPrevious}
           disabled={currentStep === 1 || !isAuthenticated}
-          className="font-body text-xs uppercase tracking-widest border-white/10 text-white hover:bg-white/5 rounded-xl px-6 py-4 w-full sm:w-auto"
+          className="font-body text-xs uppercase tracking-widest border-white/10 text-white hover:bg-white/5 rounded-xl px-6 py-4 w-full sm:w-auto min-h-[48px]"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Previous Step
         </Button>
 
-        <div className="flex gap-3 flex-col sm:flex-row">
+        <div className="flex gap-3 flex-col sm:flex-row w-full sm:w-auto">
           {!isCurrentStepCompleted && (
             <Button
               onClick={onMarkComplete}
               disabled={!isAuthenticated}
-              className="font-body text-xs uppercase tracking-widest bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl px-6 py-4 w-full sm:w-auto"
+              className="font-body text-xs uppercase tracking-widest bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl px-6 py-4 w-full sm:w-auto min-h-[48px]"
             >
               <CheckCircle className="w-4 h-4 mr-2" />
               Mark Complete
@@ -92,7 +92,7 @@ export const StepNavigation = ({
           <Button
             onClick={onNext}
             disabled={!isAuthenticated}
-            className="font-body text-xs uppercase tracking-widest bg-violet-600 hover:bg-violet-500 text-white rounded-xl px-8 py-4 w-full sm:w-auto"
+            className="font-body text-xs uppercase tracking-widest bg-violet-600 hover:bg-violet-500 text-white rounded-xl px-8 py-4 w-full sm:w-auto min-h-[48px]"
           >
             {isLastStep ? "Complete Tutorial" : "Next Step"}
             <ArrowRight className="w-4 h-4 ml-2" />

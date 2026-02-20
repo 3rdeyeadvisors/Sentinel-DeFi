@@ -622,7 +622,7 @@ const FirstDexSwapTutorial = () => {
                         </div>
                       </CardHeader>
                       <CardContent className="p-3 md:p-6 pt-0">
-                        <div className="grid md:grid-cols-2 gap-3 md:gap-4 mb-2 md:mb-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-2 md:mb-3">
                           <div className="text-center sm:text-left">
                             <h4 className="font-medium text-success mb-1.5 md:mb-2 text-xs md:text-sm">Pros:</h4>
                             <ul className="text-xs md:text-sm space-y-0.5 md:space-y-1">
@@ -704,7 +704,7 @@ const FirstDexSwapTutorial = () => {
                           </div>
                         </CardHeader>
                         <CardContent>
-                          <div className="grid md:grid-cols-2 gap-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                               <h4 className="font-medium text-success mb-2">Pros:</h4>
                               <ul className="text-sm space-y-1">
@@ -764,7 +764,7 @@ const FirstDexSwapTutorial = () => {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                         <div>
                           <p className="font-medium">Token needed:</p>
                           <p className="text-accent">{currentStepData.content.requirements?.polygon.token}</p>
@@ -826,7 +826,7 @@ const FirstDexSwapTutorial = () => {
                       <CardTitle className="text-lg text-foreground">Example Trade</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                         <div>
                           <p className="font-medium">From:</p>
                           <p className="text-success">{currentStepData.content.tradeExample?.amount}</p>

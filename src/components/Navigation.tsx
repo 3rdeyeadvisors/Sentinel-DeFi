@@ -5,7 +5,7 @@ import {
   Menu, X, LogIn, LogOut, User, ShoppingCart, ChevronDown, 
   BookOpen, BarChart3, Package, Gift,
   Lightbulb, Vault, GraduationCap, Newspaper, FolderOpen,
-  Mail, Map, Brain, Zap
+  Mail, Map, Brain, Zap, Trophy, Building
 } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/hooks/use-toast";
@@ -220,7 +220,8 @@ const Navigation = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
-              aria-label="Toggle menu"
+              aria-label="Toggle navigation menu"
+              aria-expanded={isOpen}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -230,7 +231,7 @@ const Navigation = () => {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`fixed inset-0 top-[64px] bg-black/98 backdrop-blur-xl z-40 md:hidden transition-all duration-300 ${
+        className={`fixed inset-0 top-[64px] md:top-[80px] bg-black backdrop-blur-xl z-[60] md:hidden transition-all duration-300 ${
           isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }`}
       >
@@ -250,21 +251,21 @@ const Navigation = () => {
 
           {/* Primary action buttons */}
           <div className="grid grid-cols-2 gap-3 p-4 mb-4">
-            <Link to="/courses" className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-violet-600/20 border border-violet-500/30 hover:bg-violet-600/30 transition-all active:scale-95">
+            <Link to="/courses" className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-violet-600/20 border border-violet-500/30 hover:bg-violet-600/30 transition-all active:scale-95 min-w-0">
               <BookOpen className="w-6 h-6 text-violet-400" />
-              <span className="font-body text-sm text-white font-medium">Courses</span>
+              <span className="font-body text-sm text-white font-medium truncate w-full text-center px-1">Courses</span>
             </Link>
-            <Link to="/tutorials" className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 transition-all active:scale-95">
+            <Link to="/tutorials" className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 transition-all active:scale-95 min-w-0">
               <GraduationCap className="w-6 h-6 text-white/60" />
-              <span className="font-body text-sm text-white/80 font-medium">Tutorials</span>
+              <span className="font-body text-sm text-white/80 font-medium truncate w-full text-center px-1">Tutorials</span>
             </Link>
-            <Link to="/vault-access" className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 transition-all active:scale-95">
+            <Link to="/vault-access" className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 transition-all active:scale-95 min-w-0">
               <Vault className="w-6 h-6 text-white/60" />
-              <span className="font-body text-sm text-white/80 font-medium">Vault</span>
+              <span className="font-body text-sm text-white/80 font-medium truncate w-full text-center px-1">Vault</span>
             </Link>
-            <Link to="/store" className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 transition-all active:scale-95">
+            <Link to="/store" className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 transition-all active:scale-95 min-w-0">
               <Package className="w-6 h-6 text-white/60" />
-              <span className="font-body text-sm text-white/80 font-medium">Store</span>
+              <span className="font-body text-sm text-white/80 font-medium truncate w-full text-center px-1">Store</span>
             </Link>
           </div>
 
@@ -321,8 +322,8 @@ const Navigation = () => {
 
           {/* Legal links */}
           <div className="flex justify-center gap-6 px-4 py-4">
-            <Link to="/privacy" className="font-body text-xs text-white/30 hover:text-white/50 transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="font-body text-xs text-white/30 hover:text-white/50 transition-colors">Terms of Service</Link>
+            <Link to="/privacy" className="font-body text-xs text-white/40 hover:text-white/50 transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="font-body text-xs text-white/40 hover:text-white/50 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

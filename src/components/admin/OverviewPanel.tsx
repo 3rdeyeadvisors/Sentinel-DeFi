@@ -226,21 +226,22 @@ export function OverviewPanel() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-body">
       {/* Bot Control Card */}
       <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20">
         <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2">
+          <CardTitle className="text-lg flex items-center gap-2 font-consciousness">
             <Bot className="h-5 w-5" />
             Bot Management
           </CardTitle>
-          <CardDescription>Control leaderboard bots for social proof</CardDescription>
+          <CardDescription className="font-body">Control leaderboard bots for social proof</CardDescription>
         </CardHeader>
         <CardContent className="flex gap-3">
           <Button 
             onClick={seedBots} 
             disabled={botSeeding}
             variant="outline"
+            className="font-body"
           >
             {botSeeding ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Bot className="h-4 w-4 mr-2" />}
             Seed Bots
@@ -248,6 +249,7 @@ export function OverviewPanel() {
           <Button 
             onClick={simulateBotActivity} 
             disabled={botSimulating}
+            className="font-body"
           >
             {botSimulating ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Play className="h-4 w-4 mr-2" />}
             Run Simulation
@@ -259,8 +261,8 @@ export function OverviewPanel() {
       {activeRaffleId ? (
         <Card className="bg-gradient-to-r from-destructive/10 to-destructive/5 border-destructive/20">
           <CardHeader>
-            <CardTitle className="text-lg">Admin Quick Actions</CardTitle>
-            <CardDescription>Remove yourself from active raffles</CardDescription>
+            <CardTitle className="text-lg font-consciousness">Admin Quick Actions</CardTitle>
+            <CardDescription className="font-body">Remove yourself from active raffles</CardDescription>
           </CardHeader>
           <CardContent>
             <RemoveFromRaffleButton raffleId={activeRaffleId} />
@@ -269,11 +271,11 @@ export function OverviewPanel() {
       ) : (
         <Card className="border-muted">
           <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
+            <CardTitle className="text-lg flex items-center gap-2 font-consciousness">
               <AlertCircle className="h-5 w-5 text-muted-foreground" />
               No Active Raffle
             </CardTitle>
-            <CardDescription>There are no active raffles at the moment</CardDescription>
+            <CardDescription className="font-body">There are no active raffles at the moment</CardDescription>
           </CardHeader>
         </Card>
       )}
@@ -281,13 +283,13 @@ export function OverviewPanel() {
       {aiInsight && (
         <Card className="border-primary/20 bg-gradient-to-br from-cosmic-deep to-cosmic-void">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+            <CardTitle className="flex items-center gap-2 font-consciousness">
               <TrendingUp className="h-5 w-5 text-primary" />
-              AI-Generated Insights
+              AI Generated Insights
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">{aiInsight}</p>
+            <p className="text-muted-foreground font-body">{aiInsight}</p>
           </CardContent>
         </Card>
       )}
@@ -296,19 +298,19 @@ export function OverviewPanel() {
         {metrics.map((metric, index) => (
           <Card key={index} className="border-primary/20 hover:border-primary/40 transition-colors">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{metric.title}</CardTitle>
+              <CardTitle className="text-sm font-medium font-consciousness">{metric.title}</CardTitle>
               <metric.icon className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{metric.value}</div>
+              <div className="text-2xl font-bold font-consciousness">{metric.value}</div>
               {metric.change !== undefined && metric.trend !== "neutral" && (
-                <p className={`text-xs ${metric.trend === "up" ? "text-green-500" : "text-red-500"} flex items-center gap-1 mt-1`}>
+                <p className={`text-xs ${metric.trend === "up" ? "text-green-500" : "text-red-500"} flex items-center gap-1 mt-1 font-body`}>
                   {metric.trend === "up" ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
                   {metric.change}% from last week
                 </p>
               )}
               {metric.trend === "neutral" && (
-                <p className="text-xs text-muted-foreground mt-1">No change from last week</p>
+                <p className="text-xs text-muted-foreground mt-1 font-body">No change from last week</p>
               )}
             </CardContent>
           </Card>

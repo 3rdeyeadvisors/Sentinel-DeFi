@@ -32,7 +32,7 @@ const CourseProgressBar = ({ completed, total, showLabel = true, size = 'md' }: 
         />
       </div>
       {showLabel && (
-        <p className="font-body text-xs text-white/30 mt-1">
+        <p className="font-body text-xs text-white/40 mt-1">
           {completed} of {total} modules complete
         </p>
       )}

@@ -677,7 +677,7 @@ const DefiCalculatorsTutorial = () => {
                           <CardContent className="p-4">
                             <h4 className="font-medium mb-2">{result.metric}</h4>
                             <p className="text-sm text-muted-foreground mb-2">{result.meaning}</p>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                               <div className="flex items-center gap-2">
                                 <CheckCircle className="h-3 w-3 text-awareness" />
                                 <span className="text-awareness">Good: {result.goodExample}</span>
@@ -875,7 +875,7 @@ const DefiCalculatorsTutorial = () => {
                                 {scenario.il} IL
                               </Badge>
                             </div>
-                            <div className="grid grid-cols-2 gap-2 text-sm">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                               <div>
                                 <span className="text-muted-foreground">Token A:</span> {scenario.tokenA}
                               </div>

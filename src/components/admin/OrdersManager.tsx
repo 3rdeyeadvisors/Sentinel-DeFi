@@ -127,7 +127,7 @@ export function OrdersManager() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-body">
       <div className="grid gap-6 md:grid-cols-2">
         <ManualOrderProcessor />
         <PrintifyProductSync />
@@ -135,20 +135,20 @@ export function OrdersManager() {
       
       <Card className="border-primary/20">
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <CardTitle className="flex items-center gap-2">
-                Orders & Customers
+              <CardTitle className="flex items-center gap-2 font-consciousness">
+                Orders and Customers
                 <span className="h-2 w-2 bg-green-500 rounded-full animate-pulse" title="Real-time updates enabled" />
               </CardTitle>
-              <CardDescription>Manage and track all orders (auto-updates enabled)</CardDescription>
+              <CardDescription className="font-body">Manage and track all orders (auto updates enabled)</CardDescription>
             </div>
             <div className="flex gap-2">
-              <Button onClick={loadOrders} variant="outline" size="sm" disabled={loading}>
+              <Button onClick={loadOrders} variant="outline" size="sm" disabled={loading} className="font-body">
                 <RefreshCw className={`h-4 w-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
                 Refresh
               </Button>
-              <Button onClick={exportOrders} variant="outline" size="sm">
+              <Button onClick={exportOrders} variant="outline" size="sm" className="font-body">
                 <Download className="h-4 w-4 mr-2" />
                 Export
               </Button>
@@ -162,72 +162,74 @@ export function OrdersManager() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search by order ID, customer, email, or status..."
-              className="pl-10"
+              className="pl-10 font-body"
             />
           </div>
 
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Customer</TableHead>
-                <TableHead>Order ID</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Tracking</TableHead>
-                <TableHead>Amount</TableHead>
-                <TableHead>Date</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredOrders.length === 0 ? (
-                <TableRow>
-                  <TableCell colSpan={6} className="text-center text-muted-foreground py-8">
-                    No orders found
-                  </TableCell>
+          <div className="rounded-xl border border-white/8 overflow-hidden bg-white/3">
+            <Table>
+              <TableHeader>
+                <TableRow className="hover:bg-transparent border-b border-white/8">
+                  <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Customer</TableHead>
+                  <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Order ID</TableHead>
+                  <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Status</TableHead>
+                  <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Tracking</TableHead>
+                  <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Amount</TableHead>
+                  <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Date</TableHead>
                 </TableRow>
-              ) : (
-                filteredOrders.map((order) => (
-                  <TableRow key={order.id}>
-                    <TableCell>
-                      <div>
-                        <div className="font-medium">{order.customer_name || 'N/A'}</div>
-                        <div className="text-xs text-muted-foreground">{order.customer_email}</div>
-                      </div>
-                    </TableCell>
-                    <TableCell className="font-mono text-xs">{order.external_id}</TableCell>
-                    <TableCell>{getStatusBadge(order.status)}</TableCell>
-                    <TableCell>
-                      {order.tracking_url ? (
-                        <a 
-                          href={order.tracking_url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-primary hover:underline text-sm"
-                        >
-                          {order.tracking_number || 'Track'}
-                          <ExternalLink className="h-3 w-3" />
-                        </a>
-                      ) : order.tracking_number ? (
-                        <span className="text-sm font-mono">{order.tracking_number}</span>
-                      ) : (
-                        <span className="text-muted-foreground text-sm">-</span>
-                      )}
-                    </TableCell>
-                    <TableCell className="font-semibold">${((order.amount_paid || order.total_price) / 100).toFixed(2)}</TableCell>
-                    <TableCell>
-                      <div>
-                        <div>{new Date(order.created_at).toLocaleDateString()}</div>
-                        {order.shipped_at && (
-                          <div className="text-xs text-muted-foreground">
-                            Shipped: {new Date(order.shipped_at).toLocaleDateString()}
-                          </div>
-                        )}
-                      </div>
+              </TableHeader>
+              <TableBody>
+                {filteredOrders.length === 0 ? (
+                  <TableRow>
+                    <TableCell colSpan={6} className="text-center text-muted-foreground font-body py-8">
+                      No orders found
                     </TableCell>
                   </TableRow>
-                ))
-              )}
-            </TableBody>
-          </Table>
+                ) : (
+                  filteredOrders.map((order) => (
+                    <TableRow key={order.id} className="border-b border-white/5 last:border-0">
+                      <TableCell className="py-3 px-4">
+                        <div>
+                          <div className="font-body text-sm text-white/70">{order.customer_name || 'N/A'}</div>
+                          <div className="font-body text-xs text-white/40">{order.customer_email}</div>
+                        </div>
+                      </TableCell>
+                      <TableCell className="font-body text-xs text-white/70 font-mono py-3 px-4">{order.external_id}</TableCell>
+                      <TableCell className="py-3 px-4">{getStatusBadge(order.status)}</TableCell>
+                      <TableCell className="py-3 px-4">
+                        {order.tracking_url ? (
+                          <a
+                            href={order.tracking_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-primary hover:underline font-body text-sm"
+                          >
+                            {order.tracking_number || 'Track'}
+                            <ExternalLink className="h-3 w-3" />
+                          </a>
+                        ) : order.tracking_number ? (
+                          <span className="font-body text-sm text-white/70 font-mono">{order.tracking_number}</span>
+                        ) : (
+                          <span className="text-muted-foreground font-body text-sm">-</span>
+                        )}
+                      </TableCell>
+                      <TableCell className="font-body text-sm font-semibold text-white py-3 px-4">${((order.amount_paid || order.total_price) / 100).toFixed(2)}</TableCell>
+                      <TableCell className="py-3 px-4">
+                        <div className="font-body text-sm text-white/70">
+                          <div>{new Date(order.created_at).toLocaleDateString()}</div>
+                          {order.shipped_at && (
+                            <div className="text-xs text-white/40">
+                              Shipped: {new Date(order.shipped_at).toLocaleDateString()}
+                            </div>
+                          )}
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  ))
+                )}
+              </TableBody>
+            </Table>
+          </div>
         </CardContent>
       </Card>
     </div>

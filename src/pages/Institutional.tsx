@@ -57,7 +57,7 @@ const Institutional = () => {
           </section>
 
           {/* The Reality */}
-          <section className="py-16 px-6 max-w-6xl mx-auto">
+          <section className="py-12 md:py-16 px-6 max-w-6xl mx-auto">
             <AnimatedSection animation="fade-up">
               <div className="text-center mb-12">
                 <span className="font-body text-xs uppercase tracking-widest text-amber-400 mb-4 block">The Reality</span>
@@ -70,7 +70,7 @@ const Institutional = () => {
               </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
                 {
                   icon: FileText,
@@ -106,7 +106,7 @@ const Institutional = () => {
           </section>
 
           {/* Who This Is For */}
-          <section className="py-16 px-6 max-w-6xl mx-auto">
+          <section className="py-12 md:py-16 px-6 max-w-6xl mx-auto">
             <AnimatedSection animation="fade-up">
               <div className="text-center mb-12">
                 <span className="font-body text-xs uppercase tracking-widest text-amber-400 mb-4 block">Who We Serve</span>
@@ -165,7 +165,7 @@ const Institutional = () => {
           </section>
 
           {/* What They Get */}
-          <section className="py-16 px-6 max-w-4xl mx-auto">
+          <section className="py-12 md:py-16 px-6 max-w-4xl mx-auto">
             <AnimatedSection animation="fade-up">
               <div className="text-center mb-12">
                 <span className="font-body text-xs uppercase tracking-widest text-amber-400 mb-4 block">The Platform</span>
@@ -197,9 +197,9 @@ const Institutional = () => {
           </section>
 
           {/* CTA */}
-          <section className="py-16 px-6 max-w-3xl mx-auto text-center">
+          <section className="py-12 md:py-16 px-6 max-w-3xl mx-auto text-center">
             <AnimatedSection animation="fade-up">
-              <div className="bg-gradient-to-b from-amber-950/30 to-black border border-amber-500/20 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+              <div className="bg-gradient-to-b from-amber-950/30 to-black border border-amber-500/20 rounded-3xl p-6 md:p-12 relative overflow-hidden">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-amber-500/8 rounded-full blur-[80px] pointer-events-none" />
                 <div className="relative z-10">
                   <h2 className="font-consciousness text-3xl md:text-4xl font-bold text-white mb-4">
@@ -214,7 +214,7 @@ const Institutional = () => {
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
-                  <p className="font-body text-xs text-white/30 mt-4">
+                  <p className="font-body text-xs text-white/40 mt-4">
                     We respond to every inquiry within one business day.
                   </p>
                 </div>

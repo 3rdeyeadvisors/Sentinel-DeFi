@@ -144,7 +144,7 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
             {/* Benefits Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-8">
               {benefits.map((benefit, i) => (
-                <div key={i} className="flex items-center text-sm md:text-base text-foreground/90 font-body">
+                <div key={i} className="flex items-center text-sm md:text-base text-foreground/90 font-body py-1">
                   <CheckCircle2 className="w-5 h-5 text-amber-400 mr-3 flex-shrink-0" />
                   <span>{benefit}</span>
                 </div>

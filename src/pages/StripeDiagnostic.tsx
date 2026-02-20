@@ -211,7 +211,7 @@ const StripeDiagnostic = () => {
 
               {freeCourses.length > 0 && (
                 <div>
-                  <h3 className="font-semibold mb-2 text-muted-foreground">Free Courses (No Stripe Required):</h3>
+                  <h3 className="font-semibold mb-2 text-white/60">Free Courses (No Stripe Required):</h3>
                   <div className="space-y-2">
                     {freeCourses.map((course: any) => (
                       <div key={course.id} className="border rounded p-3 bg-muted/30">

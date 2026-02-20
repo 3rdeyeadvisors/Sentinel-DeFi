@@ -212,10 +212,10 @@ const CommissionsManager = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-body">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold">Commission Management</h2>
-        <Button onClick={fetchCommissions} variant="outline" size="sm">
+        <h2 className="text-2xl font-bold font-consciousness">Commission Management</h2>
+        <Button onClick={fetchCommissions} variant="outline" size="sm" className="font-body">
           <RefreshCw className="w-4 h-4 mr-2" />
           Refresh
         </Button>
@@ -223,16 +223,16 @@ const CommissionsManager = () => {
 
       {/* Stats Cards */}
       <div className="grid md:grid-cols-3 gap-4">
-        <Card>
+        <Card className="bg-white/3 border-white/8">
           <CardContent className="pt-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center">
                 <Clock className="w-6 h-6 text-yellow-500" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Pending Payouts</p>
-                <p className="text-2xl font-bold">{formatCurrency(totalPending)}</p>
-                <p className="text-xs text-muted-foreground">{pendingCommissions.length} commissions</p>
+                <p className="text-sm text-muted-foreground font-body">Pending Payouts</p>
+                <p className="text-2xl font-bold font-consciousness">{formatCurrency(totalPending)}</p>
+                <p className="text-xs text-muted-foreground font-body">{pendingCommissions.length} commissions</p>
               </div>
             </div>
           </CardContent>
