@@ -1,32 +1,47 @@
 
 
-# Fix: Store Not Showing Merchandise
+# One-Time Platform Upgrade Email
 
-## Root Cause
+## Approach
 
-The `printify_products_public` view was created with `security_invoker=on`. This means when a regular (non-admin) user queries the view, Postgres checks the **base table's** RLS policies using that user's role. The base table `printify_products` only allows SELECT for admins, so all non-admin users (including anonymous visitors) get an empty result.
+Create a dedicated edge function `send-platform-upgrade-email` that:
+1. Verifies admin authentication
+2. Fetches all real subscribers (excluding bots)
+3. Sends a professionally formatted HTML email with your exact content
+4. Logs each send to `email_logs`
+5. Returns success/failure counts
 
-## Fix
+## Email Details
 
-Add a SELECT policy on the `printify_products` base table that allows **everyone** to read active products. This is safe because:
-- The view already filters to `is_active = true` only
-- The view excludes sensitive columns like `stripe_product_id` and `stripe_prices`
-- Product catalog data (title, images, variants, prices) is meant to be public
+- **From:** `3rdeyeadvisors <info@the3rdeyeadvisors.com>` (via Resend)
+- **Subject:** "the platform just got a major upgrade"
+- **Recipients:** All 10 real subscribers
+- **Template:** Clean, light-background email with your exact copy preserved, including the em-dash bullet points and signature block
 
-### Database Migration
+## How to Send
 
-```sql
-CREATE POLICY "Anyone can view active printify products"
-  ON public.printify_products
-  FOR SELECT
-  USING (is_active = true);
-```
+After the function is deployed, you will call it from your browser console or admin panel while logged in as admin. I will provide the exact command.
 
-This single policy change will make the existing view return data for all visitors. No code changes needed.
+## Technical Details
 
-### Technical Notes
+### New file: `supabase/functions/send-platform-upgrade-email/index.ts`
 
-- The `printify_products_public` view with `security_invoker=on` is actually a good security pattern -- it just needs the base table to permit public reads of active products
-- Sensitive fields (`stripe_product_id`, `stripe_prices`) are already excluded from the view
-- The existing admin-only SELECT policy will still work alongside this new permissive policy
+- Admin-only (checks `user_roles` for admin)
+- Fetches subscribers from DB, excludes bot accounts
+- Sends via Resend with 600ms rate limiting between emails
+- HTML email template with:
+  - White/light background for maximum email client compatibility
+  - Purple 3EA branded header
+  - Your exact copy with proper paragraph spacing
+  - Em-dash bullet list styled as a clean list
+  - Signature block with Kevin's name, title, and links
+  - Footer with website links and disclaimer
+- Logs each send (success/fail) to `email_logs` table
 
+### After deployment
+
+I will give you a one-line command to run from your admin dashboard's browser console to trigger the send. You must be logged in as admin.
+
+### Cleanup
+
+After confirming the emails were sent successfully, we can delete this one-off function.
