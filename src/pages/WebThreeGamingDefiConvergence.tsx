@@ -3,7 +3,7 @@
  * Published: August 4, 2025
  */
 
-import { BlogSEOAutomation } from "@/components/SEOAutomation";
+import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, Clock } from "lucide-react";
@@ -213,14 +213,10 @@ Whether you're a gamer looking to monetize your skills, an investor seeking new 
 
   return (
     <>
-      {/* SEO Automation with all meta tags, structured data, and social sharing */}
-      <BlogSEOAutomation
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        author={blogPost.author}
-        publishedDate={blogPost.publishedDate}
-        category={blogPost.category}
-        tags={blogPost.tags}
+      <SEO
+        title="Web3 Gaming Meets DeFi: The 2025 Convergence | 3rdeyeadvisors"
+        description="How gaming and decentralized finance are merging in 2025 to create new economic models for players and creators."
+        url="https://www.the3rdeyeadvisors.com/blog/web3-gaming-defi-convergence-2025"
       />
 
       <div className="min-h-screen py-20">

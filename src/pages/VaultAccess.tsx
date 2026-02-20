@@ -24,9 +24,11 @@ const VaultAccess = () => {
 
   return (
     <>
-      <SEO 
-        title="Vault Access | Managed DeFi Strategies"
-        description="Access the exclusive 3EA Enzyme Vault. Three tiers of education and institutional grade DeFi management strategies."
+      <SEO
+        title="DeFi Yield Vaults | 3rdeyeadvisors"
+        description="Access curated DeFi yield vaults designed for different risk levels and strategies. Join the waitlist for early access."
+        keywords="DeFi vaults, yield farming vaults, crypto yield strategies, DeFi passive income"
+        url="https://www.the3rdeyeadvisors.com/vault-access"
       />
 
       <div className="min-h-screen bg-transparent pb-20">

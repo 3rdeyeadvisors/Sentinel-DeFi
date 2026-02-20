@@ -1,5 +1,7 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Eye, Home } from "lucide-react";
@@ -15,6 +17,15 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
+    <>
+      <SEO
+        title="Page Not Found | 3rdeyeadvisors"
+        description="This page does not exist."
+        url="https://www.the3rdeyeadvisors.com/404"
+      />
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
     <div className="min-h-screen flex items-center justify-center py-20 bg-transparent">
       <div className="container mx-auto px-4 mobile-typography-center">
         <Card className="p-12 bg-white/3 border border-white/8 max-w-md mx-auto text-center">
@@ -36,6 +47,7 @@ const NotFound = () => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 

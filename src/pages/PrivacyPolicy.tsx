@@ -1,7 +1,15 @@
 import { Card } from "@/components/ui/card";
 
+import SEO from "@/components/SEO";
+
 const PrivacyPolicy = () => {
   return (
+    <>
+      <SEO
+        title="Privacy Policy | 3rdeyeadvisors"
+        description="Privacy policy for 3rdeyeadvisors DeFi education platform. How we collect, use, and protect your data."
+        url="https://www.the3rdeyeadvisors.com/privacy"
+      />
     <div className="min-h-screen py-20 bg-transparent">
       <div className="container mx-auto px-4 max-w-4xl mobile-typography-center">
         <div className="text-center mb-12">
@@ -125,6 +133,7 @@ const PrivacyPolicy = () => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 

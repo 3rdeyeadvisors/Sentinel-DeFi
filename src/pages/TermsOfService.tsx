@@ -1,7 +1,15 @@
 import { Card } from "@/components/ui/card";
 
+import SEO from "@/components/SEO";
+
 const TermsOfService = () => {
   return (
+    <>
+      <SEO
+        title="Terms of Service | 3rdeyeadvisors"
+        description="Terms of service for the 3rdeyeadvisors DeFi education platform."
+        url="https://www.the3rdeyeadvisors.com/terms"
+      />
     <div className="min-h-screen py-20 bg-transparent">
       <div className="container mx-auto px-4 max-w-4xl mobile-typography-center">
         <div className="text-center mb-12">
@@ -191,6 +199,7 @@ const TermsOfService = () => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 

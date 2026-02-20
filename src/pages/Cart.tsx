@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Helmet } from "react-helmet-async";
 import { useCart } from "@/contexts/CartContext";
 import { Minus, Plus, Trash2, ShoppingBag, Tag, Check, AlertCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -450,6 +451,10 @@ const Cart = () => {
 
   if (items.length === 0) {
     return (
+      <>
+        <Helmet>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
       <div className="min-h-screen py-20">
         <div className="container mx-auto px-4 mobile-typography-center">
           <div className="text-center">
@@ -469,10 +474,15 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      </>
     );
   }
 
   return (
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
     <div className="min-h-screen py-20 w-full overflow-x-hidden">
       <div className="container mx-auto px-4 mobile-typography-center w-full max-w-6xl">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-consciousness font-bold text-foreground mb-6 sm:mb-8">
@@ -628,6 +638,7 @@ const Cart = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

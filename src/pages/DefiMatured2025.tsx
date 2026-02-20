@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, User, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
-import { BlogSEOAutomation } from "@/components/SEOAutomation";
+import SEO from "@/components/SEO";
 import { BRAND_AUTHOR } from "@/lib/constants";
 
 const DefiMatured2025 = () => {
@@ -17,15 +17,13 @@ const DefiMatured2025 = () => {
   };
 
   return (
-    <div className="min-h-screen py-20">
-      <BlogSEOAutomation
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        publishedDate="2025-12-22"
-        author={blogPost.author}
-        tags={blogPost.tags}
-        category={blogPost.category}
+    <>
+      <SEO
+        title="DeFi Has Matured: What Changed and What It Means For You | 3rdeyeadvisors"
+        description="DeFi in 2025 looks nothing like 2020. Here is what matured, what disappeared, and what that means for everyday users."
+        url="https://www.the3rdeyeadvisors.com/blog/defi-matured-2025"
       />
+    <div className="min-h-screen py-20">
       
       <div className="container mx-auto px-4 max-w-4xl">
         <Card className="mb-8">
@@ -223,6 +221,7 @@ const DefiMatured2025 = () => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 

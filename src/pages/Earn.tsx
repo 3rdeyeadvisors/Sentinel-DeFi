@@ -217,9 +217,10 @@ const Earn = () => {
   return (
     <>
       <SEO
-        title="Earn with 3EA: Up to 60% Commission Program"
-        description={`Earn up to 60% commission by sharing 3rdeyeadvisors. Refer friends and earn $${COMMISSIONS.monthly} to $${COMMISSIONS.annual} per subscription.`}
-        keywords="referral program, earn crypto, affiliate program, defi education"
+        title="Earn While You Learn DeFi | 3rdeyeadvisors"
+        description="Earn points, unlock rewards, and earn referral commissions by learning DeFi. Share 3rdeyeadvisors and earn 10 to 70 percent commission."
+        keywords="earn crypto education, DeFi referral program, learn to earn, crypto commissions, DeFi rewards"
+        url="https://www.the3rdeyeadvisors.com/earn"
       />
 
       <div className="min-h-screen bg-transparent relative overflow-hidden">

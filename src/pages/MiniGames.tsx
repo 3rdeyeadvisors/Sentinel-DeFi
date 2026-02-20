@@ -160,6 +160,14 @@ const MiniGames = () => {
   const ActiveGameComponent = GAMES.find(g => g.id === activeGame)?.component;
 
   return (
+    <>
+      <SEO
+        title="DeFi Brain Games | 3rdeyeadvisors"
+        description="Sharpen your DeFi knowledge with interactive brain games and cognitive challenges. Learn crypto concepts through play."
+        keywords="DeFi games, crypto learning games, blockchain education games, DeFi quiz games"
+        url="https://www.the3rdeyeadvisors.com/mini-games"
+      />
+
     <div className="min-h-screen bg-transparent relative overflow-hidden">
       {/* Nebula Glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -325,6 +333,7 @@ const MiniGames = () => {
       </div>
       </div>
     </div>
+    </>
   );
 };
 

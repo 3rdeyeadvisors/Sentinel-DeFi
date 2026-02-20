@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlogSEOAutomation } from '@/components/SEOAutomation';
+import SEO from '@/components/SEO';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, User, Clock, ExternalLink } from 'lucide-react';
@@ -63,13 +63,10 @@ const DefiRegulationAmlIntegration = () => {
 
   return (
     <>
-      <BlogSEOAutomation
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        author={blogPost.author}
-        publishedDate={blogPost.publishedDate}
-        category={blogPost.category}
-        tags={blogPost.tags}
+      <SEO
+        title="DeFi Regulation and AML Integration: What It Means For Users | 3rdeyeadvisors"
+        description="Regulators are moving into DeFi. Here is what AML integration means for everyday users, protocols, and self-custody."
+        url="https://www.the3rdeyeadvisors.com/blog/defi-regulation-aml-integration"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">

@@ -3,7 +3,7 @@
  * Published: December 29, 2024
  */
 
-import { BlogSEOAutomation } from "@/components/SEOAutomation";
+import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, Building, BarChart3, Users, AlertTriangle, Target, CheckCircle, Zap } from "lucide-react";
 import { BRAND_AUTHOR } from "@/lib/constants";
@@ -31,13 +31,10 @@ const RwaOvertakesDex2025 = () => {
 
   return (
     <>
-      <BlogSEOAutomation
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        author={blogPost.author}
-        publishedDate={blogPost.publishedDate}
-        category={blogPost.category}
-        tags={blogPost.tags}
+      <SEO
+        title="Real World Assets Are Overtaking DEX Volume in 2025 | 3rdeyeadvisors"
+        description="Tokenized real world assets crossed a major milestone in 2025. Here is what that means for DeFi and for you."
+        url="https://www.the3rdeyeadvisors.com/blog/rwa-overtakes-dex-2025"
       />
 
       <div className="min-h-screen py-20">
