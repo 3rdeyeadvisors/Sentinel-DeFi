@@ -8,8 +8,9 @@ const Institutional = () => {
   return (
     <>
       <SEO
-        title="Institutional DeFi Education for Financial Professionals"
-        description="3rdeyeadvisors provides structured DeFi education for financial advisors, law firms, accounting practices, and educational institutions. Equip your team and clients with the knowledge they need."
+        title="DeFi Education for Financial Professionals | 3rdeyeadvisors"
+        description="Help your clients navigate crypto with confidence. White-label DeFi education for financial advisors, law firms, accountants, and educational institutions."
+        keywords="DeFi education financial advisors, crypto education professionals, institutional DeFi training, blockchain education firms"
         url="https://www.the3rdeyeadvisors.com/institutional"
       />
 

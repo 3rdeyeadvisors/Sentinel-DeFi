@@ -4,7 +4,7 @@
  * Research-verified content on behavioral mistakes, CeFi vs DeFi, structure & awareness
  */
 
-import { BlogSEOAutomation } from "@/components/SEOAutomation";
+import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, Clock, TrendingDown, Shield, Brain, AlertTriangle } from "lucide-react";
@@ -22,13 +22,10 @@ const WhyMostPeopleLoseCrypto = () => {
 
   return (
     <>
-      <BlogSEOAutomation
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        author={blogPost.author}
-        publishedDate={blogPost.publishedDate}
-        category={blogPost.category}
-        tags={blogPost.tags}
+      <SEO
+        title="Why Most People Lose Money in Crypto (And How to Not Be One of Them) | 3rdeyeadvisors"
+        description="The real reasons most crypto investors lose money and the specific habits that separate the ones who do not."
+        url="https://www.the3rdeyeadvisors.com/blog/why-most-people-lose-crypto"
       />
 
       <div className="min-h-screen py-20">

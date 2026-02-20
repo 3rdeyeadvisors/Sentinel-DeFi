@@ -1,4 +1,4 @@
-import { BlogSEOAutomation } from "@/components/SEOAutomation";
+import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, Clock, ExternalLink } from "lucide-react";
@@ -16,13 +16,10 @@ const LiquidStakingTokens2025 = () => {
 
   return (
     <>
-      <BlogSEOAutomation
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        author={blogPost.author}
-        publishedDate={blogPost.publishedDate}
-        category={blogPost.category}
-        tags={blogPost.tags}
+      <SEO
+        title="Liquid Staking Tokens in 2025: The Definitive Guide | 3rdeyeadvisors"
+        description="Everything you need to know about liquid staking tokens, how they work, the top protocols, and the risks to understand."
+        url="https://www.the3rdeyeadvisors.com/blog/liquid-staking-tokens-2025"
       />
 
       <div className="min-h-screen py-20">

@@ -596,10 +596,11 @@ const Raffles = () => {
 
   return (
     <>
-      <SEO 
-        title="Learn to Earn Raffles: 3rdeyeadvisors"
-        description="Participate in our Learn-to-Earn raffles. Complete educational tasks and earn entries to win crypto rewards. Awareness = Advantage."
-        keywords="defi raffles, crypto giveaway, learn to earn, bitcoin rewards, defi education"
+      <SEO
+        title="Community Raffles | 3rdeyeadvisors"
+        description="Enter to win by completing DeFi education tasks. Raffles reward active learners in the 3rdeyeadvisors community."
+        keywords="DeFi raffle, crypto giveaway, learn to earn raffle, DeFi community rewards"
+        url="https://www.the3rdeyeadvisors.com/raffles"
       />
 
       <div className="min-h-screen bg-transparent relative overflow-hidden">

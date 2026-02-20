@@ -1,4 +1,4 @@
-import { BlogSEOAutomation } from "@/components/SEOAutomation";
+import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, Clock } from "lucide-react";
@@ -16,13 +16,10 @@ const StablecoinsDefiInfrastructure2025 = () => {
 
   return (
     <>
-      <BlogSEOAutomation
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        author={blogPost.author}
-        publishedDate={blogPost.publishedDate}
-        category={blogPost.category}
-        tags={blogPost.tags}
+      <SEO
+        title="Stablecoins as DeFi Infrastructure in 2025 | 3rdeyeadvisors"
+        description="Stablecoins are no longer just for trading. Here is how they power the entire DeFi ecosystem in 2025."
+        url="https://www.the3rdeyeadvisors.com/blog/stablecoins-defi-infrastructure-2025"
       />
 
       <div className="min-h-screen py-20">

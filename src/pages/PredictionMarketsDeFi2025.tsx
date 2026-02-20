@@ -4,7 +4,7 @@
  * Educational content on prediction markets, Polymarket, and decentralized forecasting
  */
 
-import { BlogSEOAutomation } from "@/components/SEOAutomation";
+import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Target, Globe, Users, AlertTriangle, CheckCircle, Scale, Zap } from "lucide-react";
 import { BRAND_AUTHOR } from "@/lib/constants";
@@ -32,13 +32,10 @@ const PredictionMarketsDeFi2025 = () => {
 
   return (
     <>
-      <BlogSEOAutomation
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        author={blogPost.author}
-        publishedDate={blogPost.publishedDate}
-        category={blogPost.category}
-        tags={blogPost.tags}
+      <SEO
+        title="Prediction Markets in DeFi 2025: The Next Big Primitive | 3rdeyeadvisors"
+        description="On-chain prediction markets are exploding in 2025. Here is how they work and why they matter for DeFi."
+        url="https://www.the3rdeyeadvisors.com/blog/prediction-markets-defi-2025"
       />
 
       <div className="min-h-screen py-20">

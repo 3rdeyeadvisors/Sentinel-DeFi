@@ -55,8 +55,10 @@ const Leaderboard = () => {
   return (
     <>
       <SEO
-        title="Leaderboard | Community Rankings"
-        description="The top earners on the platform. Points are earned by completing courses, passing quizzes, referring members, and participating in the community."
+        title="DeFi Learning Leaderboard | 3rdeyeadvisors"
+        description="See the top learners in the 3rdeyeadvisors community. Earn points by completing courses, tutorials, and community challenges."
+        keywords="DeFi leaderboard, crypto education rankings, learn to earn crypto, DeFi community points"
+        url="https://www.the3rdeyeadvisors.com/leaderboard"
       />
 
       <div className="min-h-screen bg-transparent pb-20">

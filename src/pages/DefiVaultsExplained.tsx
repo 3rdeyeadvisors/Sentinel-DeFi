@@ -4,7 +4,7 @@
  * Educational content on DeFi vaults, transparency, and rules-based investing
  */
 
-import { BlogSEOAutomation } from "@/components/SEOAutomation";
+import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, Clock, Vault, Shield, Eye, Scale, AlertTriangle, CheckCircle, Lock, Zap } from "lucide-react";
@@ -22,13 +22,10 @@ const DefiVaultsExplained = () => {
 
   return (
     <>
-      <BlogSEOAutomation
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        author={blogPost.author}
-        publishedDate={blogPost.publishedDate}
-        category={blogPost.category}
-        tags={blogPost.tags}
+      <SEO
+        title="DeFi Vaults Explained: How Yield Automation Works | 3rdeyeadvisors"
+        description="A plain English breakdown of how DeFi vaults automate yield farming, compound returns, and manage risk on your behalf."
+        url="https://www.the3rdeyeadvisors.com/blog/defi-vaults-explained"
       />
 
       <div className="min-h-screen py-20">

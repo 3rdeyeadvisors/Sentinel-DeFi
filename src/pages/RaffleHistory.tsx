@@ -170,10 +170,11 @@ const RaffleHistory = () => {
 
   return (
     <>
-      <SEO 
-        title="Raffle History | Past Winners"
-        description="View all past Learn-to-Earn raffles, winners, and prize distributions. See the complete history of our community reward program."
-        keywords="raffle history, past winners, crypto giveaways, defi rewards"
+      <SEO
+        title="Raffle Winners History | 3rdeyeadvisors"
+        description="See past raffle winners and prize distributions in the 3rdeyeadvisors community."
+        keywords="DeFi raffle winners, crypto giveaway history, community rewards"
+        url="https://www.the3rdeyeadvisors.com/raffle-history"
       />
 
       <div className="min-h-screen bg-transparent pb-20">

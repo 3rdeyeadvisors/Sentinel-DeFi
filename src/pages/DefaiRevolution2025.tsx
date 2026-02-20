@@ -3,7 +3,7 @@
  * Published: August 6, 2025
  */
 
-import { BlogSEOAutomation } from "@/components/SEOAutomation";
+import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, Clock, TrendingUp, Shield, Zap } from "lucide-react";
@@ -342,14 +342,10 @@ const DefaiRevolution2025 = () => {
 
   return (
     <>
-      {/* SEO Automation with all meta tags, structured data, and social sharing */}
-      <BlogSEOAutomation
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        author={blogPost.author}
-        publishedDate={blogPost.publishedDate}
-        category={blogPost.category}
-        tags={blogPost.tags}
+      <SEO
+        title="The DeFAI Revolution 2025: AI Meets Decentralized Finance | 3rdeyeadvisors"
+        description="How artificial intelligence is transforming DeFi protocols, yield strategies, and on-chain decision making in 2025."
+        url="https://www.the3rdeyeadvisors.com/blog/defai-revolution-2025"
       />
 
       <div className="min-h-screen py-20">
