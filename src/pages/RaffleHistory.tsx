@@ -197,7 +197,7 @@ const RaffleHistory = () => {
           <div className="bg-white/3 border border-white/8 rounded-2xl p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-body text-[10px] uppercase tracking-widest text-white/30 mb-1">Total Raffles</p>
+                <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-1">Total Raffles</p>
                 <p className="font-consciousness text-2xl font-bold text-white">{raffles.length}</p>
               </div>
               <History className="w-6 h-6 text-violet-400" />
@@ -207,7 +207,7 @@ const RaffleHistory = () => {
           <div className="bg-white/3 border border-white/8 rounded-2xl p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-body text-[10px] uppercase tracking-widest text-white/30 mb-1">Completed</p>
+                <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-1">Completed</p>
                 <p className="font-consciousness text-2xl font-bold text-emerald-400">
                   {raffles.filter((r) => r.winner_user_id).length}
                 </p>
@@ -220,7 +220,7 @@ const RaffleHistory = () => {
             <div className="bg-white/3 border border-white/8 rounded-2xl p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-body text-[10px] uppercase tracking-widest text-white/30 mb-1">Participants</p>
+                  <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-1">Participants</p>
                   <p className="font-consciousness text-2xl font-bold text-violet-400">
                     {raffles.reduce((sum, r) => sum + (r.participant_count || 0), 0)}
                   </p>
@@ -233,7 +233,7 @@ const RaffleHistory = () => {
           <div className="bg-white/3 border border-white/8 rounded-2xl p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-body text-[10px] uppercase tracking-widest text-white/30 mb-1">Total Prizes</p>
+                <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-1">Total Prizes</p>
                 <p className="font-consciousness text-2xl font-bold text-amber-400">
                   ${raffles.reduce((sum, r) => sum + r.prize_amount, 0)}
                 </p>
@@ -248,12 +248,12 @@ const RaffleHistory = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="md:col-span-2">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/30" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/40" />
                   <Input
                     placeholder="Search raffles, prizes, or winners..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-violet-500/50"
+                    className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-violet-500/50"
                   />
                 </div>
               </div>
@@ -307,7 +307,7 @@ const RaffleHistory = () => {
                 <div key={raffle.id} className="bg-white/3 border border-white/8 rounded-2xl p-5 md:p-6 hover:border-white/15 transition-all flex flex-col h-full group">
                   <div className="flex-1">
                     <h3 className="font-consciousness text-lg font-bold text-white mb-1 group-hover:text-violet-400 transition-colors">{raffle.title}</h3>
-                    <p className="font-body text-xs text-white/30 uppercase tracking-wider mb-4">
+                    <p className="font-body text-xs text-white/40 uppercase tracking-wider mb-4">
                       {new Date(raffle.start_date).toLocaleDateString()} to {new Date(raffle.end_date).toLocaleDateString()}
                     </p>
 
@@ -320,7 +320,7 @@ const RaffleHistory = () => {
                   <div className="border-t border-white/8 mt-4 pt-4 space-y-4">
                     {raffle.winner_user_id ? (
                       <div>
-                        <p className="font-body text-xs uppercase tracking-widest text-white/30 mb-1">Winner</p>
+                        <p className="font-body text-xs uppercase tracking-widest text-white/40 mb-1">Winner</p>
                         <p className="font-consciousness text-base font-bold text-amber-300">{raffle.winner_display_name}</p>
                       </div>
                     ) : (
@@ -335,7 +335,7 @@ const RaffleHistory = () => {
                         <span className="font-body text-xs">{raffle.participant_count || 0} Entries</span>
                       </div>
                       {raffle.winner_selected_at && (
-                        <span className="font-body text-[10px] text-white/20 uppercase">
+                        <span className="font-body text-[10px] text-white/40 uppercase">
                           {new Date(raffle.winner_selected_at).toLocaleDateString()}
                         </span>
                       )}
@@ -365,8 +365,8 @@ const RaffleHistory = () => {
 
         {/* Legal Disclaimer */}
         <div className="mt-16 text-center">
-          <p className="font-body text-xs text-white/20 max-w-2xl mx-auto leading-relaxed">
-            <strong className="text-white/30 uppercase tracking-widest mr-2">About Raffle History:</strong>
+          <p className="font-body text-xs text-white/40 max-w-2xl mx-auto leading-relaxed">
+            <strong className="text-white/40 uppercase tracking-widest mr-2">About Raffle History:</strong>
             This page displays the complete history of our Learn-to-Earn raffles.
             All winners were selected randomly from verified participants using a weighted selection based on entry counts.
           </p>

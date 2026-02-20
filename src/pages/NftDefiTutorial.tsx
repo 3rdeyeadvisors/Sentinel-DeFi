@@ -52,7 +52,7 @@ const NftDefiTutorial = () => {
           
           <div className="border rounded p-4">
             <h4 className="font-semibold mb-2">Common NFT Standards</h4>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-2 bg-muted rounded">
                 <h5 className="font-medium text-sm">ERC-721</h5>
                 <p className="text-xs text-muted-foreground">Individual unique tokens</p>
@@ -293,7 +293,7 @@ const NftDefiTutorial = () => {
           
           <Card className="p-4">
             <h4 className="font-semibold mb-2">Popular Gaming Ecosystems</h4>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-3 border rounded">
                 <h5 className="font-medium text-sm">Axie Infinity</h5>
                 <p className="text-xs text-muted-foreground">Pet battling game</p>
@@ -492,7 +492,7 @@ const NftDefiTutorial = () => {
             <CardContent>
               {steps[currentStep].content}
               
-              <div className="flex justify-between mt-6">
+              <div className="flex flex-col sm:flex-row gap-3 justify-between mt-6">
                 <Button
                   variant="outline"
                   onClick={() => {
@@ -503,15 +503,17 @@ const NftDefiTutorial = () => {
                     setCurrentStep(Math.max(0, currentStep - 1));
                   }}
                   disabled={currentStep === 0 || !user}
+                  className="w-full sm:w-auto"
                 >
                   Previous
                 </Button>
                 
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                   <Button
                     variant="outline"
                     onClick={() => handleStepComplete(currentStep)}
                     disabled={completedSteps.includes(currentStep)}
+                    className="w-full sm:w-auto"
                   >
                     {completedSteps.includes(currentStep) ? 'Completed' : 'Mark Complete'}
                   </Button>

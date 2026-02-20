@@ -341,7 +341,7 @@ export default function MerchandiseDetail() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Button variant="secondary" size="icon" className="rounded-full shadow-lg">
+                    <Button variant="secondary" size="icon" className="rounded-full shadow-lg" aria-label="Open image lightbox">
                       <Maximize2 className="h-4 w-4" />
                     </Button>
                   </div>
@@ -389,6 +389,7 @@ export default function MerchandiseDetail() {
                         width={80}
                         height={80}
                         className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                     </button>
                   ))}
@@ -397,14 +398,17 @@ export default function MerchandiseDetail() {
             </div>
 
             {/* Product Info */}
-            <div className="space-y-4 sm:space-y-6 w-full">
+            <div className="space-y-4 sm:space-y-6 w-full text-center md:text-left">
               <div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-consciousness font-bold mb-3 sm:mb-4 break-words">
                   {product.title}
                 </h1>
-                <p className="text-3xl font-consciousness font-bold text-primary">
-                  ${selectedVariant?.price?.toFixed(2) || '0.00'}
-                </p>
+                <div className="flex items-center justify-center md:justify-start">
+                  <span className="font-body text-lg mr-2 text-primary/70">$</span>
+                  <p className="text-3xl font-consciousness font-bold text-primary">
+                    {selectedVariant?.price?.toFixed(2) || '0.00'}
+                  </p>
+                </div>
               </div>
 
               {/* Description */}
@@ -422,14 +426,14 @@ export default function MerchandiseDetail() {
                     <label className="block text-sm font-consciousness font-medium mb-2">
                       Color: <span className="text-foreground">{selectedColor}</span>
                     </label>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                       {colors.map((color) => (
                         <Button
                           key={color}
                           variant={selectedColor === color ? "default" : "outline"}
                           size="sm"
                           onClick={() => handleColorChange(color)}
-                          className="min-w-[80px]"
+                          className="min-w-[80px] min-h-[44px]"
                         >
                           {color}
                         </Button>
@@ -442,7 +446,7 @@ export default function MerchandiseDetail() {
                       Size: <span className="text-foreground">{selectedSize}</span>
                     </label>
                     <Select value={selectedSize} onValueChange={handleSizeChange}>
-                      <SelectTrigger className="w-full">
+                      <SelectTrigger className="w-full h-12">
                         <SelectValue placeholder="Select size" />
                       </SelectTrigger>
                       <SelectContent>

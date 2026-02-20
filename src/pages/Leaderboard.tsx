@@ -188,7 +188,7 @@ const Leaderboard = () => {
                           : 'border-white/5 bg-white/2 hover:border-violet-500/20 hover:bg-violet-500/3'
                       }`}
                     >
-                      <span className="font-consciousness text-sm font-bold text-white/30 w-8">
+                      <span className="font-consciousness text-sm font-bold text-white/40 w-8">
                         {entry.rank}
                       </span>
                       <Avatar className="w-10 h-10 border border-white/10">
@@ -212,12 +212,12 @@ const Leaderboard = () => {
               {/* Current User Row (If not in top 10) */}
               {userRank && userRank.rank > leaderboard.length && (
                 <div className="pt-8 border-t border-white/5 mt-8">
-                  <p className="font-body text-[10px] uppercase tracking-widest text-white/30 mb-4 text-center">Your Position</p>
+                  <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-4 text-center">Your Position</p>
                   <div
                     onClick={() => navigate(`/profile/${user?.id}`)}
                     className="flex items-center gap-4 px-4 py-3 rounded-xl border border-violet-500/30 bg-violet-500/5 cursor-pointer transition-all"
                   >
-                    <span className="font-consciousness text-sm font-bold text-white/30 w-8">
+                    <span className="font-consciousness text-sm font-bold text-white/40 w-8">
                       {userRank.rank}
                     </span>
                     <Avatar className="w-10 h-10 border border-violet-500/20">

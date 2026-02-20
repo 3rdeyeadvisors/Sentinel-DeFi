@@ -103,7 +103,7 @@ const VaultSection = () => {
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {vaults.map((vault, index) => (
             <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
               <Card className="h-full border-white/10 bg-white/5 backdrop-blur-md hover:border-violet-500/30 transition-all duration-300 overflow-hidden flex flex-col">
@@ -143,7 +143,7 @@ const VaultSection = () => {
                             placeholder="your@email.com"
                             value={waitlistEmail}
                             onChange={(e) => setWaitlistEmail(e.target.value)}
-                            className="flex-1 font-body text-xs bg-white/5 border border-white/15 rounded-lg px-3 py-2 text-white placeholder:text-white/30 focus:outline-none focus:border-violet-500/50 transition-colors min-w-0"
+                            className="flex-1 font-body text-xs bg-white/5 border border-white/15 rounded-lg px-3 py-2 text-white placeholder:text-white/40 focus:outline-none focus:border-violet-500/50 transition-colors min-w-0"
                           />
                           <button
                             onClick={() => handleWaitlistSubmit(vault.name, waitlistEmail)}

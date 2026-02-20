@@ -361,7 +361,7 @@ const Auth = () => {
       </Helmet>
         <div className="min-h-screen flex items-center justify-center bg-black px-4 relative overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-600/20 blur-[120px] rounded-full pointer-events-none" />
-          <div className="bg-white/3 border border-white/8 rounded-2xl p-6 md:p-8 max-w-md w-full relative z-10">
+        <div className="bg-white/3 border border-white/8 rounded-2xl p-6 md:p-8 max-w-md w-full mx-4 relative z-10">
             <div className="text-center mb-8">
               <h1 className="font-consciousness text-2xl font-bold text-violet-400 mb-2">3rdeyeadvisors</h1>
               <p className="font-body text-sm text-white/40 uppercase tracking-widest">Reset Password</p>
@@ -377,7 +377,7 @@ const Auth = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="font-body text-base sm:text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
+                className="font-body text-base bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
                 />
               </div>
               <div className="flex flex-col gap-3">
@@ -409,7 +409,7 @@ const Auth = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-black px-4 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-600/20 blur-[120px] rounded-full pointer-events-none" />
-        <div className="bg-white/3 border border-white/8 rounded-2xl p-6 md:p-8 max-w-md w-full relative z-10">
+        <div className="bg-white/3 border border-white/8 rounded-2xl p-6 md:p-8 max-w-md w-full mx-4 relative z-10">
           <div className="text-center mb-8">
             <h1 className="font-consciousness text-2xl font-bold text-violet-400 mb-2">3rdeyeadvisors</h1>
             <p className="font-body text-sm text-white/40 uppercase tracking-widest">Set New Password</p>
@@ -427,9 +427,9 @@ const Auth = () => {
                   onChange={(e) => setNewPassword(e.target.value)}
                   required
                   minLength={8}
-                  className="font-body text-base sm:text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
+                  className="font-body text-base bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
                 />
-                <p className="font-body text-[10px] text-white/30 uppercase tracking-tight">
+                <p className="font-body text-[10px] text-white/40 uppercase tracking-tight">
                   Min. 8 characters long
                 </p>
               </div>
@@ -443,7 +443,7 @@ const Auth = () => {
                   onChange={(e) => setConfirmNewPassword(e.target.value)}
                   required
                   minLength={8}
-                  className="font-body text-base sm:text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
+                  className="font-body text-base bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
                 />
               </div>
             </div>
@@ -465,7 +465,7 @@ const Auth = () => {
       <div className="min-h-screen flex items-center justify-center bg-black px-4 py-12 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-600/15 blur-[140px] rounded-full pointer-events-none" />
 
-        <div className="bg-white/3 border border-white/8 rounded-2xl p-6 md:p-8 max-w-md w-full relative z-10">
+        <div className="bg-white/3 border border-white/8 rounded-2xl p-6 md:p-8 max-w-md w-full mx-4 relative z-10">
           <div className="text-center mb-8">
             <h1 className="font-consciousness text-3xl font-bold text-violet-400 mb-2">3rdeyeadvisors</h1>
             <p className="font-body text-sm text-white/40">Access Institutional-Grade DeFi Intelligence</p>
@@ -489,7 +489,7 @@ const Auth = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="font-body text-base sm:text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
+                      className="font-body text-base bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
                     />
                   </div>
                   <div className="space-y-1">
@@ -510,7 +510,7 @@ const Auth = () => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
-                      className="font-body text-base sm:text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
+                      className="font-body text-base bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
                     />
                   </div>
                 </div>
@@ -532,7 +532,7 @@ const Auth = () => {
                       placeholder="Your name or alias"
                       value={displayName}
                       onChange={(e) => setDisplayName(e.target.value)}
-                      className="font-body text-base sm:text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
+                      className="font-body text-base bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
                     />
                   </div>
                   <div className="space-y-1">
@@ -544,7 +544,7 @@ const Auth = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="font-body text-base sm:text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
+                      className="font-body text-base bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
                     />
                   </div>
                   <div className="space-y-1">
@@ -557,9 +557,9 @@ const Auth = () => {
                       onChange={(e) => setPassword(e.target.value)}
                       required
                       minLength={8}
-                      className="font-body text-base sm:text-sm bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
+                      className="font-body text-base bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 transition-colors w-full"
                     />
-                    <p className="font-body text-[10px] text-white/30 uppercase tracking-tighter">
+                    <p className="font-body text-[10px] text-white/40 uppercase tracking-tighter">
                       Must be 8+ characters with uppercase & number
                     </p>
                   </div>

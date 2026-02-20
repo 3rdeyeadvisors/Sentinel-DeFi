@@ -16,7 +16,7 @@ const HeroSection = () => {
           <span className="text-xs uppercase tracking-widest text-violet-300 font-body">DeFi Education Platform</span>
         </div>
 
-        <h1 className="font-consciousness text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+        <h1 className="font-consciousness text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
           Everything Your Financial<br />
           <span className="bg-gradient-to-r from-violet-400 via-purple-300 to-blue-400 bg-clip-text text-transparent">
             Advisor Won't Tell You

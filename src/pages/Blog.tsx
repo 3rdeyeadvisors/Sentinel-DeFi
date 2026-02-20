@@ -182,7 +182,7 @@ const Blog = () => {
                         </p>
                         
                         {/* Footer */}
-                        <div className="flex items-center justify-center gap-8 text-[10px] font-body uppercase tracking-widest text-white/30 mb-10">
+                        <div className="flex items-center justify-center gap-8 text-[10px] font-body uppercase tracking-widest text-white/40 mb-10">
                           <div className="flex items-center gap-2">
                             <Calendar className="w-4 h-4" />
                             <span>{parseLocalDate(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
@@ -248,7 +248,7 @@ const Blog = () => {
                 {post.excerpt}
               </p>
               
-              <div className="flex items-center justify-between text-[10px] font-body uppercase tracking-widest text-white/20 mb-6">
+              <div className="flex items-center justify-between text-[10px] font-body uppercase tracking-widest text-white/40 mb-6">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-3 h-3" />
                   <span>{parseLocalDate(post.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}</span>

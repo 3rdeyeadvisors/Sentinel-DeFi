@@ -83,7 +83,7 @@ const VaultAccess = () => {
                     <p className="font-body text-xs text-white/40">Step-by-step instructions</p>
                   </div>
                 </div>
-                <ChevronRight className="w-5 h-5 text-white/20 group-hover:text-violet-400 transition-colors" />
+                <ChevronRight className="w-5 h-5 text-white/40 group-hover:text-violet-400 transition-colors" />
               </div>
             </Link>
 
@@ -98,7 +98,7 @@ const VaultAccess = () => {
                     <p className="font-body text-xs text-white/40">Exit liquidity procedures</p>
                   </div>
                 </div>
-                <ChevronRight className="w-5 h-5 text-white/20 group-hover:text-violet-400 transition-colors" />
+                <ChevronRight className="w-5 h-5 text-white/40 group-hover:text-violet-400 transition-colors" />
               </div>
             </Link>
           </div>
@@ -114,7 +114,7 @@ const VaultAccess = () => {
               Enter Enzyme Platform
               <ExternalLink className="w-4 h-4" />
             </a>
-            <p className="font-body text-[10px] text-white/20 uppercase tracking-widest mt-4">
+            <p className="font-body text-[10px] text-white/40 uppercase tracking-widest mt-4">
               Managed on Ethereum Mainnet
             </p>
           </div>

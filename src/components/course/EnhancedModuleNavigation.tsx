@@ -325,7 +325,7 @@ export const EnhancedModuleNavigation = ({
 
               {/* Bottom Row: Duration and Progress */}
               <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-1 font-body text-[10px] uppercase tracking-widest text-white/30">
+                <div className="flex items-center gap-1 font-body text-[10px] uppercase tracking-widest text-white/40">
                   <Clock className="w-3 h-3" />
                   {module.duration}m
                 </div>

@@ -57,7 +57,7 @@ export const PointsHistory = () => {
       </div>
 
       {history.length === 0 ? (
-        <div className="font-body text-sm text-white/30 text-center py-8">
+        <div className="font-body text-sm text-white/40 text-center py-8">
           <Star className="w-12 h-12 mx-auto mb-3 opacity-20" />
           <p>No points earned yet.</p>
           <p className="text-xs">Complete activities to earn points!</p>
@@ -79,7 +79,7 @@ export const PointsHistory = () => {
                   <p className="font-body text-sm text-white/70 truncate">
                     {getActionDisplayName(transaction.action_type)}
                   </p>
-                  <p className="font-body text-xs text-white/30">
+                  <p className="font-body text-xs text-white/40">
                     {formatDistanceToNow(new Date(transaction.created_at), { addSuffix: true })}
                   </p>
                 </div>

@@ -60,7 +60,7 @@ const DaoParticipationTutorial = () => {
           
           <div className="border rounded p-4">
             <h4 className="font-semibold mb-2">Types of DAOs</h4>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-2 bg-muted rounded">
                 <h5 className="font-medium text-sm">Protocol DAOs</h5>
                 <p className="text-xs text-muted-foreground">Govern DeFi protocols</p>
@@ -249,7 +249,7 @@ const DaoParticipationTutorial = () => {
           
           <Card className="p-4">
             <h4 className="font-semibold mb-2">Voting Platforms</h4>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-3 border rounded">
                 <h5 className="font-medium text-sm">Snapshot</h5>
                 <p className="text-xs text-muted-foreground">Off-chain voting (gas-free)</p>
@@ -313,7 +313,7 @@ const DaoParticipationTutorial = () => {
             
             <Card className="p-4">
               <h4 className="font-semibold mb-2">Contributing Skills</h4>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="p-3 bg-primary/10 border border-primary/20 rounded">
                   <h5 className="font-medium text-sm text-primary">Technical</h5>
                   <ul className="text-xs text-foreground mt-1 space-y-1">

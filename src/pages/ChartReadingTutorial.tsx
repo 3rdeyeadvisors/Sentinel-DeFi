@@ -53,7 +53,7 @@ const ChartReadingTutorial = () => {
           </div>
           
           <h4 className="font-semibold mt-6">Timeframe Selection</h4>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="p-3 border rounded">
               <h5 className="font-medium text-sm">Short-term (1m to 1h)</h5>
               <p className="text-xs text-muted-foreground">Day trading, quick entries/exits</p>
@@ -192,7 +192,7 @@ const ChartReadingTutorial = () => {
             <Card className="p-4">
               <h4 className="font-semibold mb-2">Moving Averages (MA)</h4>
               <p className="text-sm text-muted-foreground mb-2">Smooth out price data to identify trend direction</p>
-              <div className="grid grid-cols-2 gap-2 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                 <div className="p-2 bg-muted rounded">
                   <strong>Simple MA (SMA):</strong> Average of closing prices
                 </div>

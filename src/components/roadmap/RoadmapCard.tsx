@@ -140,7 +140,7 @@ export const RoadmapCard = ({
 
     if (!isVotingOpen) {
       return (
-        <div className="flex items-center justify-center gap-1 text-white/20 min-h-[36px]">
+        <div className="flex items-center justify-center gap-1 text-white/40 min-h-[36px]">
           <Clock className="w-4 h-4" />
           <span className="text-sm font-semibold uppercase tracking-widest">Closed</span>
         </div>
@@ -150,7 +150,7 @@ export const RoadmapCard = ({
     if (!canVote) {
       return (
         <div className="flex gap-2 w-full">
-          <Button disabled className="flex-1 min-h-[36px] bg-white/5 border border-white/10 text-white/20 text-[10px] uppercase tracking-widest font-body rounded-lg">
+          <Button disabled className="flex-1 min-h-[36px] bg-white/5 border border-white/10 text-white/40 text-[10px] uppercase tracking-widest font-body rounded-lg">
             Upgrade to Vote
           </Button>
         </div>
@@ -248,7 +248,7 @@ export const RoadmapCard = ({
             <p className="font-consciousness text-2xl font-bold text-violet-400">
               {netVotes >= 0 ? '+' : ''}{netVotes}
             </p>
-            <p className="font-body text-[10px] uppercase tracking-widest text-white/30">Net Votes</p>
+            <p className="font-body text-[10px] uppercase tracking-widest text-white/40">Net Votes</p>
           </div>
           <div className="flex-1 max-w-[160px]">
             <VotingButtons />
@@ -258,7 +258,7 @@ export const RoadmapCard = ({
         <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
           <VoteWeightBadge />
           {!isCompleted && timeRemaining && (
-            <span className={`font-body text-[10px] uppercase tracking-widest ${timeRemaining.urgent ? 'text-amber-400' : 'text-white/30'}`}>
+            <span className={`font-body text-[10px] uppercase tracking-widest ${timeRemaining.urgent ? 'text-amber-400' : 'text-white/40'}`}>
               {formatTimeRemaining()}
             </span>
           )}

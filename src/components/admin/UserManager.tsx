@@ -96,28 +96,28 @@ export function UserManager() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-body">
       {/* Inactive Account Deletion Card */}
       <Card className="border-destructive/30 bg-destructive/5">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-destructive">
+          <CardTitle className="flex items-center gap-2 text-destructive font-consciousness">
             <AlertTriangle className="h-5 w-5" />
             Delete Inactive Accounts
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="font-body">
             Send deletion notification emails and remove accounts inactive for 30+ days
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <p className="text-sm text-muted-foreground">
-            This will identify all users who haven't signed in for 30+ days (or never signed in), 
+          <p className="text-sm text-muted-foreground font-body">
+            This will identify all users who have not signed in for 30+ days (or never signed in),
             send them an email notification about the account removal and platform upgrade, 
             then delete their accounts and all associated data.
           </p>
           
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button variant="destructive" disabled={deletingInactive}>
+              <Button variant="destructive" disabled={deletingInactive} className="font-body">
                 {deletingInactive ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -189,8 +189,8 @@ export function UserManager() {
       {/* User Database Card */}
       <Card className="border-primary/20">
         <CardHeader>
-          <CardTitle>User Database</CardTitle>
-          <CardDescription>Manage users and their roles ({users.length} total users)</CardDescription>
+          <CardTitle className="font-consciousness">User Database</CardTitle>
+          <CardDescription className="font-body">Manage users and their roles ({users.length} total users)</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="relative">
@@ -199,36 +199,38 @@ export function UserManager() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search users..."
-              className="pl-10"
+              className="pl-10 font-body"
             />
           </div>
 
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead>Email</TableHead>
-                <TableHead>Joined</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredUsers.length === 0 ? (
-                <TableRow>
-                  <TableCell colSpan={3} className="text-center text-muted-foreground">
-                    No users found
-                  </TableCell>
+          <div className="rounded-xl border border-white/8 overflow-hidden bg-white/3">
+            <Table>
+              <TableHeader>
+                <TableRow className="hover:bg-transparent border-b border-white/8">
+                  <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Name</TableHead>
+                  <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Email</TableHead>
+                  <TableHead className="font-body text-xs uppercase tracking-widest text-white/40 py-3 px-4">Joined</TableHead>
                 </TableRow>
-              ) : (
-                filteredUsers.map((user) => (
-                  <TableRow key={user.user_id}>
-                    <TableCell className="font-medium">{user.display_name || "Anonymous"}</TableCell>
-                    <TableCell className="text-muted-foreground">{user.email}</TableCell>
-                    <TableCell>{new Date(user.created_at).toLocaleDateString()}</TableCell>
+              </TableHeader>
+              <TableBody>
+                {filteredUsers.length === 0 ? (
+                  <TableRow>
+                    <TableCell colSpan={3} className="text-center text-muted-foreground font-body py-8">
+                      No users found
+                    </TableCell>
                   </TableRow>
-                ))
-              )}
-            </TableBody>
-          </Table>
+                ) : (
+                  filteredUsers.map((user) => (
+                    <TableRow key={user.user_id} className="border-b border-white/5 last:border-0">
+                      <TableCell className="font-body text-sm text-white/70 py-3 px-4">{user.display_name || "Anonymous"}</TableCell>
+                      <TableCell className="font-body text-sm text-white/70 py-3 px-4">{user.email}</TableCell>
+                      <TableCell className="font-body text-sm text-white/70 py-3 px-4">{new Date(user.created_at).toLocaleDateString()}</TableCell>
+                    </TableRow>
+                  ))
+                )}
+              </TableBody>
+            </Table>
+          </div>
         </CardContent>
       </Card>
     </div>

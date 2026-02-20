@@ -98,7 +98,7 @@ export const NFTStoreCard = () => {
         {/* Price & Supply Info - Compact */}
         <div className="grid grid-cols-2 gap-3 mb-6">
           <div className="rounded-xl bg-white/5 border border-white/10 p-3 text-center">
-            <p className="font-body text-[10px] uppercase tracking-widest text-white/30 mb-1">Price</p>
+            <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-1">Price</p>
             {isLoading && !hasDataError ? (
               <Loader2 className="h-3 w-3 animate-spin mx-auto text-violet-400" />
             ) : (
@@ -106,7 +106,7 @@ export const NFTStoreCard = () => {
             )}
           </div>
           <div className="rounded-xl bg-white/5 border border-white/10 p-3 text-center">
-            <p className="font-body text-[10px] uppercase tracking-widest text-white/30 mb-1">Supply</p>
+            <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-1">Supply</p>
             {isLoading && !hasDataError ? (
               <Loader2 className="h-3 w-3 animate-spin mx-auto text-violet-400" />
             ) : (
@@ -148,7 +148,7 @@ export const NFTStoreCard = () => {
             href={`https://etherscan.io/address/${NFT_CONTRACT_ADDRESS}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-body text-[10px] text-white/30 hover:text-white/60 transition-colors flex items-center justify-center gap-1.5 uppercase tracking-widest"
+            className="font-body text-[10px] text-white/40 hover:text-white/60 transition-colors flex items-center justify-center gap-1.5 uppercase tracking-widest"
           >
             <ExternalLink className="h-3 w-3" />
             View Contract

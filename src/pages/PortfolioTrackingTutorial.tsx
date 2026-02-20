@@ -48,7 +48,7 @@ const PortfolioTrackingTutorial = () => {
             </AlertDescription>
           </Alert>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card>
               <CardHeader>
                 <CardTitle className="text-base flex items-center gap-2">
@@ -281,7 +281,7 @@ const PortfolioTrackingTutorial = () => {
               <CardTitle className="text-base">Track These Key Metrics</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-sm">
-              <div className="grid md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <p className="font-semibold text-xs mb-1">Essential Metrics:</p>
                   <ul className="space-y-1 text-xs text-muted-foreground">
@@ -619,28 +619,30 @@ const PortfolioTrackingTutorial = () => {
               {currentStepData.content}
 
               {/* Step Navigation */}
-              <div className="flex items-center justify-between pt-6 border-t">
+              <div className="flex flex-col sm:flex-row gap-3 justify-between items-stretch sm:items-center pt-6 border-t">
                 <Button
                   variant="outline"
                   onClick={handlePrevious}
                   disabled={currentStep === 1}
+                  className="w-full sm:w-auto"
                 >
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Previous
                 </Button>
 
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                   {!isStepCompleted(currentStep) && (
                     <Button
                       variant="secondary"
                       onClick={handleStepComplete}
+                      className="w-full sm:w-auto"
                     >
                       <CheckCircle className="h-4 w-4 mr-2" />
                       Mark Complete
                     </Button>
                   )}
                   
-                  <Button onClick={handleNext}>
+                  <Button onClick={handleNext} className="w-full sm:w-auto">
                     {currentStep === totalSteps ? "Finish Tutorial" : "Next Step"}
                     {currentStep < totalSteps && <ArrowLeft className="h-4 w-4 ml-2 rotate-180" />}
                   </Button>

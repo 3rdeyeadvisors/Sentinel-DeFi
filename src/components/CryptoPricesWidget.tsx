@@ -378,7 +378,7 @@ export const CryptoPricesWidget = () => {
 
       {/* Disclaimer */}
       <div className="mt-6 pt-4 border-t border-white/5">
-        <p className="text-xs text-white/30 font-body text-center">
+        <p className="text-xs text-white/40 font-body text-center">
           Prices powered by CoinGecko. Data refreshes every 3 minutes. 
           APY rates are approximate and subject to change. Not financial advice.
         </p>

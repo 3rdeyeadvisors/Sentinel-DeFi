@@ -296,7 +296,7 @@ const Earn = () => {
                 </div>
                 {/* Current Rate Display */}
                 <div className="flex flex-col items-end">
-                  <span className="font-body text-[10px] uppercase tracking-widest text-white/30 mb-1">Your Rate</span>
+                  <span className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-1">Your Rate</span>
                   <div className="font-consciousness text-5xl font-bold text-violet-400">
                     {subscription?.plan === 'annual' ? '60%' : '50%'}
                   </div>
@@ -318,7 +318,7 @@ const Earn = () => {
                         : (PRICING.monthly.amount * 0.5).toFixed(2)
                       }
                     </div>
-                    <p className="font-body text-[10px] uppercase tracking-widest text-white/30">Earnings</p>
+                    <p className="font-body text-[10px] uppercase tracking-widest text-white/40">Earnings</p>
                   </div>
                 </div>
                 <div className="flex justify-between items-center p-6 bg-white/5 rounded-2xl border border-white/8">
@@ -333,7 +333,7 @@ const Earn = () => {
                         : (PRICING.annual.amount * 0.5).toFixed(2)
                       }
                     </div>
-                    <p className="font-body text-[10px] uppercase tracking-widest text-white/30">Earnings</p>
+                    <p className="font-body text-[10px] uppercase tracking-widest text-white/40">Earnings</p>
                   </div>
                 </div>
               </div>
@@ -407,7 +407,7 @@ const Earn = () => {
                       { tier: "Founding 33", rate: "70%", color: "text-amber-400" },
                     ].map((item) => (
                       <div key={item.tier} className="text-center p-3 bg-white/3 rounded-xl border border-white/8">
-                        <p className={`font-consciousness text-2xl font-bold ${item.color} mb-1`}>{item.rate}</p>
+                        <p className={`font-consciousness text-xl sm:text-2xl font-bold ${item.color} mb-1`}>{item.rate}</p>
                         <p className="font-body text-[10px] uppercase tracking-widest text-white/40">{item.tier}</p>
                       </div>
                     ))}
@@ -415,11 +415,11 @@ const Earn = () => {
 
                   {/* Link display */}
                   <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
-                      <span className="font-body text-sm text-white/60 flex-1 truncate">{referralLink}</span>
+                    <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3 min-w-0 overflow-hidden">
+                      <span className="font-body text-sm text-white/60 flex-1 truncate min-w-0">{referralLink}</span>
                       <button
                         onClick={handleCopyLink}
-                        className="font-body text-xs text-violet-400 hover:text-violet-300 whitespace-nowrap transition-colors flex items-center gap-1"
+                        className="font-body text-xs text-violet-400 hover:text-violet-300 whitespace-nowrap transition-colors flex items-center gap-1 flex-shrink-0"
                       >
                         <Copy className="w-3 h-3" />
                         {copied ? 'Copied!' : 'Copy'}
@@ -432,7 +432,7 @@ const Earn = () => {
                   </div>
 
                   {acceptance && (
-                    <div className="flex items-center justify-between font-body text-[10px] uppercase tracking-widest text-white/20 mt-6 pt-6 border-t border-white/5">
+                    <div className="flex items-center justify-between font-body text-[10px] uppercase tracking-widest text-white/40 mt-6 pt-6 border-t border-white/5">
                       <Link to="/referral-terms" className="hover:text-violet-400 transition-colors flex items-center gap-2">
                         <FileText className="w-3 h-3" />
                         Referral Terms
@@ -458,7 +458,7 @@ const Earn = () => {
                         <stat.icon className="w-6 h-6" />
                       </div>
                       <div>
-                        <p className="font-body text-[10px] uppercase tracking-widest text-white/30 mb-1">{stat.label}</p>
+                        <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-1">{stat.label}</p>
                         <p className="font-consciousness text-2xl font-bold text-white">{stat.value}</p>
                       </div>
                     </div>
@@ -559,7 +559,7 @@ const Earn = () => {
                     </Button>
                   )}
 
-                  <p className="font-body text-xs text-white/30 text-center">
+                  <p className="font-body text-xs text-white/40 text-center">
                     Questions about payouts? Contact{" "}
                     <a href="mailto:info@the3rdeyeadvisors.com" className="text-violet-400 hover:underline">
                       info@the3rdeyeadvisors.com

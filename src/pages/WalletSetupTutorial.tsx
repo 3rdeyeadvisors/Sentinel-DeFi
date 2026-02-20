@@ -385,7 +385,7 @@ const WalletSetupTutorial = () => {
         <div className="mb-6 md:mb-8 rounded-lg overflow-hidden">
           <img 
             src={walletHeroImage} 
-            alt="Cryptocurrency wallet setup with blockchain technology" 
+            alt="Illustration of a cryptocurrency wallet setup process"
             className="w-full h-48 md:h-64 object-cover"
             width={1200}
             height={400}
@@ -464,7 +464,7 @@ const WalletSetupTutorial = () => {
                           </div>
                         </CardHeader>
                         <CardContent className="p-3 md:p-6 pt-0">
-                          <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                             <div className="text-center sm:text-left">
                               <h4 className="font-medium text-awareness mb-1.5 md:mb-2 text-xs md:text-sm">Pros:</h4>
                               <ul className="text-xs md:text-sm space-y-0.5 md:space-y-1">

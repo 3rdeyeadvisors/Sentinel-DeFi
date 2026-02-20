@@ -295,11 +295,11 @@ const CourseDetail = () => {
                   <div className="flex items-center gap-4 min-w-0">
                     <div className="flex-shrink-0">
                       {isLocked ? (
-                        <Lock className="w-4 h-4 text-white/20" />
+                        <Lock className="w-4 h-4 text-white/40" />
                       ) : isCompleted ? (
                         <CheckCircle className="w-5 h-5 text-emerald-400" />
                       ) : (
-                        <p className="font-body text-xs uppercase tracking-widest text-white/30">
+                        <p className="font-body text-xs uppercase tracking-widest text-white/40">
                           {String(index + 1).padStart(2, '0')}
                         </p>
                       )}
@@ -314,7 +314,7 @@ const CourseDetail = () => {
                     </div>
                   </div>
                   {!isLocked && (
-                    <Play className="w-4 h-4 text-white/20 group-hover:text-violet-400 transition-colors shrink-0" />
+                    <Play className="w-4 h-4 text-white/40 group-hover:text-violet-400 transition-colors shrink-0" />
                   )}
                 </div>
               );

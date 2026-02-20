@@ -687,8 +687,8 @@ const LiquidityPoolBasicsTutorial = () => {
               <div className="space-y-6">
                 <div className="space-y-3">
                   <h3 className="font-semibold text-foreground text-lg">Constant Product Formula</h3>
-                  <div className="bg-primary/10 rounded-lg p-6 text-center">
-                    <p className="text-2xl font-mono font-bold text-primary mb-2">
+                  <div className="bg-primary/10 rounded-lg p-6 text-center overflow-x-auto">
+                    <p className="text-2xl font-mono font-bold text-primary mb-2 whitespace-nowrap">
                       {currentStepData.content.constantProduct.formula}
                     </p>
                     <p className="text-sm text-muted-foreground mb-2">
@@ -706,7 +706,7 @@ const LiquidityPoolBasicsTutorial = () => {
                     {currentStepData.content.priceCalculation.map((calc, idx) => (
                       <div key={idx} className="bg-card border border-border/50 rounded-lg p-4">
                         <h4 className="font-medium text-foreground mb-3">{calc.scenario}</h4>
-                        <div className="grid grid-cols-2 gap-2 text-sm">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                           <div>
                             <span className="text-muted-foreground">ETH:</span>
                             <span className="ml-2 font-mono text-foreground">{calc.ethAmount}</span>
@@ -1110,12 +1110,12 @@ const LiquidityPoolBasicsTutorial = () => {
             )}
 
             {/* Navigation */}
-            <div className="flex justify-between items-center pt-6 border-t border-border/50">
+            <div className="flex flex-col sm:flex-row gap-3 justify-between items-stretch sm:items-center pt-6 border-t border-border/50">
               <Button
                 variant="outline"
                 onClick={handlePrevious}
                 disabled={currentStep === 1}
-                className="gap-2"
+                className="gap-2 w-full sm:w-auto"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Previous
@@ -1124,7 +1124,7 @@ const LiquidityPoolBasicsTutorial = () => {
               {currentStep === totalSteps ? (
                 <Button 
                   onClick={handleComplete}
-                  className="gap-2 bg-primary hover:bg-primary/90"
+                  className="gap-2 bg-primary hover:bg-primary/90 w-full sm:w-auto"
                 >
                   <CheckCircle className="h-4 w-4" />
                   Complete Tutorial
@@ -1132,7 +1132,7 @@ const LiquidityPoolBasicsTutorial = () => {
               ) : (
                 <Button 
                   onClick={handleNext}
-                  className="gap-2"
+                  className="gap-2 w-full sm:w-auto"
                 >
                   Next Step
                   <ArrowRight className="h-4 w-4" />

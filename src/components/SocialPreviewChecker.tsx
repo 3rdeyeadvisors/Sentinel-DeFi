@@ -57,6 +57,7 @@ export const SocialPreviewChecker = () => {
               className="w-full max-w-lg mx-auto rounded border"
               width={1200}
               height={630}
+              loading="lazy"
             />
           </div>
           <div className="text-sm text-muted-foreground">
