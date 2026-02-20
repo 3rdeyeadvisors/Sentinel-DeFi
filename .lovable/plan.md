@@ -1,47 +1,29 @@
 
+# Fix Mini Games Page Crash
 
-# One-Time Platform Upgrade Email
+## The Problem
 
-## Approach
+The mini games page (`src/pages/MiniGames.tsx`) uses a `<SEO>` component on line 164 but has no import statement for it. This causes the page to crash entirely — users see a blank screen or error when navigating to `/mini-games`.
 
-Create a dedicated edge function `send-platform-upgrade-email` that:
-1. Verifies admin authentication
-2. Fetches all real subscribers (excluding bots)
-3. Sends a professionally formatted HTML email with your exact content
-4. Logs each send to `email_logs`
-5. Returns success/failure counts
+The build errors listed are all inside Supabase Edge Functions (backend code) and do not affect the frontend. The root cause of the mini games section being broken is solely this missing import.
 
-## Email Details
+## The Fix
 
-- **From:** `3rdeyeadvisors <info@the3rdeyeadvisors.com>` (via Resend)
-- **Subject:** "the platform just got a major upgrade"
-- **Recipients:** All 10 real subscribers
-- **Template:** Clean, light-background email with your exact copy preserved, including the em-dash bullet points and signature block
+Add one import line at the top of `src/pages/MiniGames.tsx`:
 
-## How to Send
+```
+import SEO from '@/components/SEO';
+```
 
-After the function is deployed, you will call it from your browser console or admin panel while logged in as admin. I will provide the exact command.
+That is the only change needed. No other files need to be touched.
 
-## Technical Details
+## What This Restores
 
-### New file: `supabase/functions/send-platform-upgrade-email/index.ts`
-
-- Admin-only (checks `user_roles` for admin)
-- Fetches subscribers from DB, excludes bot accounts
-- Sends via Resend with 600ms rate limiting between emails
-- HTML email template with:
-  - White/light background for maximum email client compatibility
-  - Purple 3EA branded header
-  - Your exact copy with proper paragraph spacing
-  - Em-dash bullet list styled as a clean list
-  - Signature block with Kevin's name, title, and links
-  - Footer with website links and disclaimer
-- Logs each send (success/fail) to `email_logs` table
-
-### After deployment
-
-I will give you a one-line command to run from your admin dashboard's browser console to trigger the send. You must be logged in as admin.
-
-### Cleanup
-
-After confirming the emails were sent successfully, we can delete this one-off function.
+Once the import is added, the full mini games page will work again:
+- Memory Match
+- Reaction Test
+- Pattern Sequence
+- Math Sprint
+- IQ Assessment
+- Cognitive Science dashboard
+- Daily points tracking
