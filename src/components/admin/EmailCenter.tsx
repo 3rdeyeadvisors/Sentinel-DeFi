@@ -270,7 +270,7 @@ export function EmailCenter() {
           <CardDescription>
             {activeRaffle 
               ? `Send announcement for: ${activeRaffle.title} ($${activeRaffle.prize_amount} ${activeRaffle.prize})`
-              : "No active raffle - create one first"
+              : "No active raffle. Create one first."
             }
           </CardDescription>
         </CardHeader>
@@ -301,7 +301,7 @@ export function EmailCenter() {
                 <DialogDescription>
                   {activeRaffle 
                     ? `Preview for: ${activeRaffle.title}`
-                    : "Using placeholder data - create an active raffle for real dates"
+                    : "Using placeholder data. Create an active raffle for real dates."
                   }
                 </DialogDescription>
               </DialogHeader>

@@ -30,42 +30,42 @@ export const PointsDisplay = ({ compact = false }: PointsDisplayProps) => {
     return (
       <div className="flex items-center gap-2">
         <Star className="w-4 h-4 text-accent" />
-        <span className="font-semibold">{totalPoints.toLocaleString()}</span>
-        <span className="text-xs text-muted-foreground">pts</span>
+        <span className="font-consciousness font-bold text-white">{totalPoints.toLocaleString()}</span>
+        <span className="text-xs text-muted-foreground font-body">pts</span>
       </div>
     );
   }
 
   return (
     <div className="space-y-4">
-      <Card className="p-4 sm:p-6 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 border-primary/20">
+      <Card className="p-4 sm:p-6 bg-white/3 border border-white/8">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
             <Trophy className="w-5 h-5 text-primary" />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">Monthly Points</h3>
-            <p className="text-xs text-muted-foreground">{currentMonth}</p>
+            <h3 className="font-consciousness font-bold text-white">Monthly Points</h3>
+            <p className="text-xs text-muted-foreground font-body">{currentMonth}</p>
           </div>
         </div>
 
         {/* Main Stats */}
         <div className="grid grid-cols-3 gap-3 mb-4">
           <div className="text-center p-3 bg-background/50 rounded-lg">
-            <div className="text-2xl sm:text-3xl font-bold text-primary">
+            <div className="text-2xl sm:text-3xl font-bold text-violet-400 font-consciousness">
               {totalPoints.toLocaleString()}
             </div>
-            <div className="text-xs text-muted-foreground">Total Points</div>
+            <div className="text-xs text-muted-foreground font-body">Total Points</div>
           </div>
           
           <div className="text-center p-3 bg-background/50 rounded-lg">
             <div className="flex items-center justify-center gap-1">
               <TrendingUp className="w-4 h-4 text-accent" />
-              <span className="text-2xl sm:text-3xl font-bold text-accent">
+              <span className="text-2xl sm:text-3xl font-bold text-violet-400 font-consciousness">
                 #{rank?.rank || '-'}
               </span>
             </div>
-            <div className="text-xs text-muted-foreground">
+            <div className="text-xs text-muted-foreground font-body">
               of {rank?.total_users ? rank.total_users.toLocaleString() : '...'}
             </div>
           </div>
@@ -73,11 +73,11 @@ export const PointsDisplay = ({ compact = false }: PointsDisplayProps) => {
           <div className="text-center p-3 bg-background/50 rounded-lg">
             <div className="flex items-center justify-center gap-1">
               <Calendar className="w-4 h-4 text-muted-foreground" />
-              <span className="text-2xl sm:text-3xl font-bold">
+              <span className="text-2xl sm:text-3xl font-bold text-violet-400 font-consciousness">
                 {daysRemaining}
               </span>
             </div>
-            <div className="text-xs text-muted-foreground">Days Left</div>
+            <div className="text-xs text-muted-foreground font-body">Days Left</div>
           </div>
         </div>
 
