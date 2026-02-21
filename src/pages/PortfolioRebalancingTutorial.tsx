@@ -13,6 +13,7 @@ import {
   CheckCircle,
   Target,
   RefreshCw,
+  Volume2,
   TrendingUp,
   DollarSign,
   Clock,

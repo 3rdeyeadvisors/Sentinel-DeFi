@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,6 +12,7 @@ import { QuizComponent } from "@/components/quiz/QuizComponent";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExpandableText } from "@/components/ui/expandable-text";
 import { FullscreenContentViewer } from "./FullscreenContentViewer";
+import NotesEditor from './NotesEditor';
 import AudioPlayer from '@/components/audio/AudioPlayer';
 import { useAchievementSounds } from "@/hooks/useAchievementSounds";
 import { useSwipeNavigation } from "@/hooks/useSwipeNavigation";
@@ -86,6 +87,8 @@ export const EnhancedContentPlayer = ({
   const [startTime] = useState(Date.now());
   const [isCompleted, setIsCompleted] = useState(false);
   const [notes, setNotes] = useState("");
+  const [notesInput, setNotesInput] = useState("");
+  const notesDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [readingProgress, setReadingProgress] = useState(0);
   const [activeTab, setActiveTab] = useState("content");
@@ -319,6 +322,7 @@ export const EnhancedContentPlayer = ({
       const localNotes = localStorage.getItem(`notes-${courseId}-${module.id}`);
       if (localNotes) {
         setNotes(localNotes);
+        setNotesInput(localNotes); // keep local input in sync
       }
 
       // Then try Supabase
@@ -336,6 +340,7 @@ export const EnhancedContentPlayer = ({
             const cloudNotes = (data.metadata as any).notes;
             if (cloudNotes && cloudNotes !== localNotes) {
               setNotes(cloudNotes);
+              setNotesInput(cloudNotes); // keep local input in sync
               localStorage.setItem(`notes-${courseId}-${module.id}`, cloudNotes);
             }
           }
@@ -578,26 +583,19 @@ export const EnhancedContentPlayer = ({
         </TabsContent>
 
         <TabsContent value="notes" className="space-y-6">
-          <Card className="p-6">
-            <h3 className="text-lg font-semibold mb-4 flex items-center justify-center gap-2">
-              <MessageSquare className="w-5 h-5" />
-              Personal Notes
-            </h3>
-            <Textarea
-              placeholder="Add your notes about this module..."
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              className="min-h-[200px] mb-4"
+          <div className="bg-white/3 border border-white/8 rounded-2xl p-6">
+            <NotesEditor
+              initialValue={notes}
+              onSave={(val) => {
+                setNotes(val);
+                saveNotes();
+              }}
+              onClear={() => {
+                setNotes('');
+                localStorage.removeItem(`notes-${courseId}-${module.id}`);
+              }}
             />
-            <div className="flex gap-2">
-              <Button onClick={saveNotes}>
-                Save Notes
-              </Button>
-              <Button variant="outline" onClick={() => setNotes("")}>
-                Clear
-              </Button>
-            </div>
-          </Card>
+          </div>
         </TabsContent>
 
         <TabsContent value="resources" className="space-y-6">
