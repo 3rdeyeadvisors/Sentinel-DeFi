@@ -375,8 +375,19 @@ export const EnhancedContentPlayer = ({
     if (passed) {
       toast({
         title: "Quiz Passed! 🎉",
-        description: `Great job! You scored ${score}%`,
+        description: `You scored ${score}%. Module complete!`,
       });
+      handleComplete(); // auto mark complete when quiz is passed
+      // Switch back to content tab to show the completed state
+      setActiveTab('content');
+    } else {
+      toast({
+        title: "Not quite",
+        description: `You scored ${score}%. Review the content and try again.`,
+        variant: "destructive",
+      });
+      // Switch back to content for review
+      setActiveTab('content');
     }
   };
 
@@ -400,6 +411,8 @@ export const EnhancedContentPlayer = ({
             notes={notes}
             onNotesChange={setNotes}
             resources={module.resources}
+            onComplete={handleComplete}
+            isCompleted={isCompleted}
           />
         )}
       </AnimatePresence>
@@ -514,17 +527,19 @@ export const EnhancedContentPlayer = ({
             {...swipeHandlers}
           >
             {/* Floating Focus Mode Button - Now for all content types */}
-            <Button
-              onClick={() => setIsFullscreenViewerOpen(true)}
-              className="absolute top-3 right-3 z-10 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg gap-2 px-4"
-              title="Full Screen Mode : Immersive view with swipe navigation"
-            >
-              <Maximize2 className="h-4 w-4" />
-              <span className="font-medium">Full Screen</span>
-            </Button>
+            {activeTab === 'content' && (
+              <Button
+                onClick={() => setIsFullscreenViewerOpen(true)}
+                className="absolute top-3 right-3 z-10 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg gap-2 px-4"
+                title="Full Screen Mode"
+              >
+                <Maximize2 className="h-4 w-4" />
+                <span className="font-medium">Full Screen</span>
+              </Button>
+            )}
 
             <div className="p-3 sm:p-4 md:p-6">
-              {module.type === 'text' && module.content.text && (
+              {(module.type === 'text' || module.type === 'interactive') && module.content.text && (
                 <div 
                   id="module-content"
                   className="prose-custom max-w-none overflow-y-auto max-h-[60vh] md:max-h-[calc(100vh-400px)] text-left mx-auto w-full break-words overflow-x-hidden overscroll-contain px-2 md:px-4 pt-8"
@@ -566,21 +581,48 @@ export const EnhancedContentPlayer = ({
                 </div>
               )}
 
-              {module.type === 'interactive' && (
-                <div className="flex flex-col items-center justify-center py-12 px-4 text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Brain className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">Interactive Content</h3>
-                  <p className="text-muted-foreground max-w-md mb-6">
-                    This module contains interactive elements. Switch to Full Screen mode for the best experience.
-                  </p>
-                  <Button onClick={() => setIsFullscreenViewerOpen(true)}>
-                    Enter Full Screen
-                  </Button>
-                </div>
-              )}
             </div>
+
+            {/* Post-content CTA — shown after content */}
+            {module.content.text && (
+              <div className="mt-6 pt-6 border-t border-white/8 px-6 pb-6">
+                {quiz && !isCompleted ? (
+                  <div className="flex flex-col items-center text-center gap-3 py-4">
+                    <div className="w-12 h-12 rounded-full bg-violet-500/15 flex items-center justify-center">
+                      <Brain className="w-6 h-6 text-violet-400" />
+                    </div>
+                    <p className="font-consciousness text-base font-bold text-white">Ready to test your knowledge?</p>
+                    <p className="font-body text-sm text-white/50 max-w-xs">This module has a quiz. Complete it to earn points and mark this module done.</p>
+                    <button
+                      onClick={() => setActiveTab('quiz')}
+                      className="font-body text-sm bg-violet-600 hover:bg-violet-500 text-white rounded-xl px-6 py-2.5 transition-all font-semibold flex items-center gap-2 mt-1"
+                    >
+                      <Brain className="w-4 h-4" />
+                      Take the Quiz
+                    </button>
+                  </div>
+                ) : !isCompleted && !quiz ? (
+                  <div className="flex flex-col items-center text-center gap-3 py-4">
+                    <div className="w-12 h-12 rounded-full bg-emerald-500/15 flex items-center justify-center">
+                      <CheckCircle className="w-6 h-6 text-emerald-400" />
+                    </div>
+                    <p className="font-consciousness text-base font-bold text-white">You've reached the end of this module</p>
+                    <button
+                      onClick={handleComplete}
+                      className="font-body text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl px-6 py-2.5 transition-all font-semibold flex items-center gap-2 mt-1"
+                    >
+                      <CheckCircle className="w-4 h-4" />
+                      Mark Complete & Continue
+                    </button>
+                  </div>
+                ) : isCompleted ? (
+                  <div className="flex items-center justify-center gap-2 py-4 text-emerald-400">
+                    <CheckCircle className="w-5 h-5" />
+                    <span className="font-body text-sm font-semibold">Module Completed</span>
+                  </div>
+                ) : null}
+              </div>
+            )}
           </Card>
         </TabsContent>
 
