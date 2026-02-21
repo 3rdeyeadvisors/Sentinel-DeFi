@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Play, Pause, Square, SkipForward, Volume2, VolumeX, X, ChevronUp, ChevronDown } from 'lucide-react';
+import { Play, Pause, Square, SkipForward, SkipBack, Volume2, VolumeX, X, ChevronUp, ChevronDown } from 'lucide-react';
 
 interface AudioPlayerProps {
   text: string;
@@ -271,6 +271,16 @@ const AudioPlayer = ({ text, title, onClose }: AudioPlayerProps) => {
     }
   };
 
+  const handleSkipBack = () => {
+    window.speechSynthesis.cancel();
+    const prev = Math.max(currentChunk - 5, 0);
+    setCurrentChunk(prev);
+    setProgress(Math.round((prev / chunksRef.current.length) * 100));
+    if (isPlaying) {
+      setTimeout(() => speakChunk(prev), 100);
+    }
+  };
+
   const handleSpeedChange = () => {
     const speeds = [0.75, 1, 1.25, 1.5, 2];
     const next = speeds[(speeds.indexOf(speed) + 1) % speeds.length];
@@ -326,10 +336,24 @@ const AudioPlayer = ({ text, title, onClose }: AudioPlayerProps) => {
 
         {/* Player controls */}
         <div className="px-4 py-4">
-          {/* Progress bar */}
-          <div className="w-full h-1 bg-white/10 rounded-full mb-4 overflow-hidden">
+          {/* Progress bar — clickable to seek */}
+          <div
+            className="w-full h-2 bg-white/10 rounded-full mb-4 overflow-hidden cursor-pointer group"
+            onClick={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const ratio = (e.clientX - rect.left) / rect.width;
+              const targetChunk = Math.floor(ratio * chunksRef.current.length);
+              const clamped = Math.max(0, Math.min(targetChunk, chunksRef.current.length - 1));
+              window.speechSynthesis.cancel();
+              setCurrentChunk(clamped);
+              setProgress(Math.round((clamped / chunksRef.current.length) * 100));
+              if (isPlaying) {
+                setTimeout(() => speakChunk(clamped), 100);
+              }
+            }}
+          >
             <div
-              className="h-full bg-gradient-to-r from-violet-600 to-violet-400 transition-all duration-500 rounded-full"
+              className="h-full bg-gradient-to-r from-violet-600 to-violet-400 transition-all duration-300 rounded-full group-hover:from-violet-500 group-hover:to-violet-300"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -344,6 +368,15 @@ const AudioPlayer = ({ text, title, onClose }: AudioPlayerProps) => {
                 aria-label={isMuted ? 'Unmute' : 'Mute'}
               >
                 {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+              </button>
+
+              {/* Skip back */}
+              <button
+                onClick={handleSkipBack}
+                className="p-2 text-white/50 hover:text-white transition-colors"
+                aria-label="Skip back"
+              >
+                <SkipBack className="w-4 h-4" />
               </button>
 
               {/* Stop */}

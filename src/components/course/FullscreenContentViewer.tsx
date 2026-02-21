@@ -12,7 +12,8 @@ import {
   FileText,
   ExternalLink,
   Download,
-  Save
+  Save,
+  CheckCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -47,6 +48,8 @@ interface FullscreenContentViewerProps {
   notes?: string;
   onNotesChange?: (notes: string) => void;
   resources?: Resource[];
+  onComplete?: () => void;
+  isCompleted?: boolean;
 }
 
 export const FullscreenContentViewer: React.FC<FullscreenContentViewerProps> = ({
@@ -63,7 +66,9 @@ export const FullscreenContentViewer: React.FC<FullscreenContentViewerProps> = (
   videoUrl,
   notes = "",
   onNotesChange,
-  resources = []
+  resources = [],
+  onComplete,
+  isCompleted = false,
 }) => {
   const { isFullscreen, isSupported, enter, exit, containerRef } = useFullscreen();
   const contentRef = useRef<HTMLDivElement>(null);
@@ -470,9 +475,28 @@ export const FullscreenContentViewer: React.FC<FullscreenContentViewerProps> = (
               <span className="hidden sm:inline">Previous</span>
             </Button>
 
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="hidden sm:inline">Swipe or use arrows to navigate</span>
-              <span className="sm:hidden">← Swipe →</span>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="hidden sm:inline">Swipe or use arrows to navigate</span>
+                <span className="sm:hidden">← Swipe →</span>
+              </div>
+
+              {/* Mark Complete inside fullscreen */}
+              {onComplete && !isCompleted && (
+                <button
+                  onClick={() => { onComplete(); }}
+                  className="flex items-center gap-2 font-body text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl px-5 py-2.5 transition-all font-semibold"
+                >
+                  <CheckCircle className="w-4 h-4" />
+                  Mark Complete
+                </button>
+              )}
+              {isCompleted && (
+                <div className="flex items-center gap-2 font-body text-sm text-emerald-400">
+                  <CheckCircle className="w-4 h-4" />
+                  Completed
+                </div>
+              )}
             </div>
 
             <Button
