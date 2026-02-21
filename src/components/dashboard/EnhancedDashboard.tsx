@@ -848,7 +848,7 @@ export const EnhancedDashboard = () => {
                   {notStarted.map(course => (
                     <Card
                       key={course.id}
-                      className="p-6 bg-card/60 border-white/8 hover:border-primary/40 transition-all cursor-pointer group"
+                      className="p-6 bg-white/3 border-white/8 hover:border-primary/40 transition-all cursor-pointer group"
                       onClick={() => navigate(`/courses/${course.id}`)}
                     >
                       <div className="flex items-start justify-between mb-4">
@@ -894,7 +894,7 @@ export const EnhancedDashboard = () => {
                   className={`p-6 transition-all ${
                     achievement.earned 
                       ? "bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 shadow-lg" 
-                      : "bg-card/60 border-white/8 opacity-60"
+                      : "bg-white/3 border-white/8 opacity-60"
                   }`}
                 >
                   <div className="flex items-center gap-3 mb-3">
@@ -925,7 +925,7 @@ export const EnhancedDashboard = () => {
           </TabsContent>
 
           <TabsContent value="activity" className="space-y-6">
-            <Card className="p-6 bg-card/60 border-white/8">
+            <Card className="p-6 bg-white/3 border-white/8">
               <div className="flex items-center gap-3 mb-4">
                 <Calendar className="w-6 h-6 text-primary" />
                 <h3 className="font-consciousness font-semibold text-foreground">

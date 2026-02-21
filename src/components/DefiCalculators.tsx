@@ -133,7 +133,7 @@ const DefiCalculators = () => {
         </TabsList>
 
         <TabsContent value="yield">
-          <Card className="p-6 bg-card/60 border-white/8">
+          <Card className="p-6 bg-white/3 border-white/8">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <h3 className="text-xl font-consciousness font-semibold text-foreground mb-4">
@@ -227,7 +227,7 @@ const DefiCalculators = () => {
         </TabsContent>
 
         <TabsContent value="liquidity">
-          <Card className="p-6 bg-card/60 border-white/8">
+          <Card className="p-6 bg-white/3 border-white/8">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <h3 className="text-xl font-consciousness font-semibold text-foreground mb-4">
@@ -339,7 +339,7 @@ const DefiCalculators = () => {
         </TabsContent>
 
         <TabsContent value="risk">
-          <Card className="p-6 bg-card/60 border-white/8">
+          <Card className="p-6 bg-white/3 border-white/8">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <h3 className="text-xl font-consciousness font-semibold text-foreground mb-4">

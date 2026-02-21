@@ -253,7 +253,7 @@ export default function MerchandiseDetail() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-md flex flex-col items-center justify-center p-4 md:p-8"
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 md:p-8"
             onClick={() => setIsLightboxOpen(false)}
           >
             <Button
@@ -282,7 +282,7 @@ export default function MerchandiseDetail() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="absolute left-0 md:-left-16 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur rounded-full h-12 w-12"
+                    className="absolute left-0 md:-left-16 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur rounded-full h-12 w-12"
                     onClick={(e) => {
                       e.stopPropagation();
                       prevImage();
@@ -293,7 +293,7 @@ export default function MerchandiseDetail() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="absolute right-0 md:-right-16 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur rounded-full h-12 w-12"
+                    className="absolute right-0 md:-right-16 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur rounded-full h-12 w-12"
                     onClick={(e) => {
                       e.stopPropagation();
                       nextImage();
@@ -350,7 +350,7 @@ export default function MerchandiseDetail() {
                       <Button
                         variant="outline"
                         size="icon"
-                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur"
                         onClick={prevImage}
                         aria-label="Previous product image"
                       >
@@ -359,7 +359,7 @@ export default function MerchandiseDetail() {
                       <Button
                         variant="outline"
                         size="icon"
-                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur"
                         onClick={nextImage}
                         aria-label="Next product image"
                       >
