@@ -1,10 +1,13 @@
 import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, Clock } from "lucide-react";
+import { Calendar, User, Clock, Volume2 } from "lucide-react";
 import { BRAND_AUTHOR } from "@/lib/constants";
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 
 const StablecoinsDefiInfrastructure2025 = () => {
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
   const blogPost = {
     title: "Stablecoins Are Becoming DeFi's Real Infrastructure: Here's Why That Matters",
     excerpt: "Stablecoins have evolved from simple trading tools into foundational infrastructure powering payments, lending, liquidity, and cross-border transfers across decentralized finance.",
@@ -39,6 +42,14 @@ const StablecoinsDefiInfrastructure2025 = () => {
             <h1 className="text-3xl md:text-4xl font-consciousness font-bold text-foreground mb-6">
               {blogPost.title}
             </h1>
+
+            <button
+              onClick={() => openAudio(`${blogPost.title}. ${blogPost.excerpt}`, blogPost.title)}
+              className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-4 py-2 mt-4"
+            >
+              <Volume2 className="w-4 h-4" />
+              Listen to this article
+            </button>
 
             <p className="text-lg text-foreground/80 font-consciousness mb-6 leading-relaxed">
               {blogPost.excerpt}
@@ -210,6 +221,13 @@ const StablecoinsDefiInfrastructure2025 = () => {
           </Card>
         </div>
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </>
   );
 };

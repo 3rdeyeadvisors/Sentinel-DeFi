@@ -253,7 +253,7 @@ const Store = () => {
               <div className="flex flex-col items-center gap-4 mb-8">
                 <div className="flex items-center justify-center gap-3">
                   <Package className="h-6 w-6 text-primary" aria-hidden="true" />
-                  <h2 id="merchandise-heading" className="text-2xl font-consciousness font-bold text-foreground">
+                  <h2 id="merchandise-heading" className="text-2xl font-consciousness font-bold text-white">
                     Physical Merchandise
                   </h2>
                 </div>
@@ -280,11 +280,11 @@ const Store = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
                       {[1, 2, 3, 4].map((i) => (
                         <Card key={i} className="overflow-hidden animate-pulse">
-                          <div className="aspect-square bg-muted" />
+                          <div className="aspect-square bg-white/5" />
                           <div className="p-4 space-y-3">
-                            <div className="h-5 bg-muted rounded w-3/4" />
-                            <div className="h-4 bg-muted rounded w-1/2" />
-                            <div className="h-10 bg-muted rounded w-full mt-4" />
+                            <div className="h-5 bg-white/5 rounded w-3/4" />
+                            <div className="h-4 bg-white/5 rounded w-1/2" />
+                            <div className="h-10 bg-white/5 rounded w-full mt-4" />
                           </div>
                         </Card>
                       ))}
@@ -294,12 +294,12 @@ const Store = () => {
 
                 if (filteredProducts.length === 0) {
                   return (
-                    <Card className="p-8 md:p-12 text-center border-2 bg-card/50 backdrop-blur">
-                      <Package className="h-12 w-12 md:h-16 md:w-16 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
+                    <Card className="p-8 md:p-12 text-center border-2 bg-white/3 backdrop-blur">
+                      <Package className="h-12 w-12 md:h-16 md:w-16 text-white/50 mx-auto mb-4" aria-hidden="true" />
                       <h3 className="text-lg md:text-xl font-consciousness font-semibold mb-2">
                         No Merchandise Available
                       </h3>
-                      <p className="text-sm md:text-base text-muted-foreground font-consciousness mb-6">
+                      <p className="text-sm md:text-base text-white/50 font-consciousness mb-6">
                         Check back soon for new products!
                       </p>
                       {isAdmin && (
@@ -339,7 +339,7 @@ const Store = () => {
             <section aria-labelledby="nft-heading">
               <div className="flex items-center justify-center gap-3 mb-8">
                 <Sparkles className="h-6 w-6 text-primary" aria-hidden="true" />
-                <h2 id="nft-heading" className="text-2xl font-consciousness font-bold text-foreground">
+                <h2 id="nft-heading" className="text-2xl font-consciousness font-bold text-white">
                   Digital Collectibles
                 </h2>
               </div>
@@ -351,20 +351,20 @@ const Store = () => {
                 </div>
               </div>
               
-              <p className="text-sm text-muted-foreground font-consciousness mt-6 text-center">
+              <p className="text-sm text-white/50 font-consciousness mt-6 text-center">
                 Complete your purchase on Thirdweb with your wallet.
               </p>
             </section>
           )}
 
-          <Card className="mt-12 md:mt-16 p-6 md:p-8 bg-secondary/40 border-border" role="region" aria-label="Payment information">
+          <Card className="mt-12 md:mt-16 p-6 md:p-8 bg-secondary/40 border-white/8" role="region" aria-label="Payment information">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
               <Shield className="h-8 w-8 text-primary flex-shrink-0" aria-hidden="true" />
               <div>
-                <h3 className="text-lg font-consciousness font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-consciousness font-semibold text-white mb-2">
                   Secure Payment Processing
                 </h3>
-                <p className="text-muted-foreground font-consciousness leading-relaxed">
+                <p className="text-white/50 font-consciousness leading-relaxed">
                   Merchandise is automatically fulfilled with 5 to 7 business day processing and shipping. We accept all major payment methods.
                 </p>
               </div>

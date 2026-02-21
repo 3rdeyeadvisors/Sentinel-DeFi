@@ -37,6 +37,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useAuth } from "@/components/auth/AuthProvider";
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 
 const SpottingScamsTutorial = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -46,8 +48,16 @@ const SpottingScamsTutorial = () => {
   const isMobile = useIsMobile();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
 
   const totalSteps = 7;
+
+  // Collect all tutorial text content into one string for audio
+  const getTutorialText = () => {
+    return steps.map(step =>
+      `${step.title}. ${step.content.overview || ''}`
+    ).join(' ');
+  };
   const progress = (currentStep / totalSteps) * 100;
 
   const steps = [
@@ -640,6 +650,16 @@ const SpottingScamsTutorial = () => {
               <span>{Math.round(progress)}% Complete</span>
             </div>
             <Progress value={progress} className="h-2" />
+        </div>
+
+        <div className="flex justify-end mb-4 px-4">
+          <button
+            onClick={() => openAudio(getTutorialText(), 'Spotting DeFi Scams Tutorial')}
+            className="flex items-center gap-2 font-body text-xs text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-3 py-2"
+          >
+            <Volume2 className="w-3.5 h-3.5" />
+            Listen to this tutorial
+          </button>
         </div>
 
         {/* Sign-in Alert Banner */}
@@ -1274,6 +1294,13 @@ const SpottingScamsTutorial = () => {
           </Card>
         )}
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </div>
   );
 };

@@ -16,13 +16,17 @@ import {
   Clock,
   MinusCircle,
   AlertTriangle,
-  DollarSign
+  DollarSign,
+  Volume2
 } from "lucide-react";
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 
 const ENZYME_VAULT_URL = "https://app.enzyme.finance/vault/0x8b668add6fba7c01444353c0dfdef222a816cd9f";
 const ENZYME_REDEEM_URL = "https://app.enzyme.finance/vault/0x8b668add6fba7c01444353c0dfdef222a816cd9f/redeem";
 
 const VaultWithdrawalTutorial = () => {
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
   return (
     <>
       <SEO 
@@ -47,6 +51,16 @@ const VaultWithdrawalTutorial = () => {
           <p className="text-base md:text-lg text-muted-foreground">
             A complete guide to redeeming your vault shares and getting your funds back.
           </p>
+
+          <div className="flex justify-end pt-2">
+            <button
+              onClick={() => openAudio("How to Withdraw from the 3EA Vault. A complete guide to redeeming your vault shares and getting your funds back.", 'Vault Withdrawal Tutorial')}
+              className="flex items-center gap-2 font-body text-xs text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-3 py-2"
+            >
+              <Volume2 className="w-3.5 h-3.5" />
+              Listen to this tutorial
+            </button>
+          </div>
         </div>
 
         <Separator />
@@ -324,6 +338,13 @@ const VaultWithdrawalTutorial = () => {
           </Link>
         </div>
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </>
   );
 };

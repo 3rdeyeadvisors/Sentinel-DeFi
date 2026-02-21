@@ -6,8 +6,10 @@
 
 import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
-import { Target, Globe, Users, AlertTriangle, CheckCircle, Scale, Zap } from "lucide-react";
+import { Target, Globe, Users, AlertTriangle, CheckCircle, Scale, Zap, Volume2 } from "lucide-react";
 import { BRAND_AUTHOR } from "@/lib/constants";
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 import {
   BlogHeader,
   BlogSection,
@@ -20,6 +22,7 @@ import {
 } from "@/components/blog";
 
 const PredictionMarketsDeFi2025 = () => {
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
   const blogPost = {
     title: "Prediction Markets in DeFi: How Polymarket and Decentralized Forecasting Are Changing Information Discovery",
     excerpt: "Discover how prediction markets work, why Polymarket processed over $3 billion in 2024 election volume, and how decentralized forecasting creates more accurate information than traditional polls and pundits.",
@@ -49,6 +52,16 @@ const PredictionMarketsDeFi2025 = () => {
             category={blogPost.category}
             tags={blogPost.tags}
           />
+
+          <div className="flex justify-center mb-8">
+            <button
+              onClick={() => openAudio(`${blogPost.title}. ${blogPost.excerpt}`, blogPost.title)}
+              className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-4 py-2"
+            >
+              <Volume2 className="w-4 h-4" />
+              Listen to this article
+            </button>
+          </div>
 
           <Card className="p-8">
             <article className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-consciousness prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-ul:text-foreground prose-li:text-foreground">
@@ -299,6 +312,13 @@ const PredictionMarketsDeFi2025 = () => {
           </Card>
         </div>
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </>
   );
 };

@@ -21,6 +21,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { TutorialHeader } from "@/components/course/TutorialHeader";
 import { StepNavigation } from "@/components/course/StepNavigation";
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 
 const AdvancedDefiProtocolsTutorial = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -29,8 +31,23 @@ const AdvancedDefiProtocolsTutorial = () => {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const { user } = useAuth();
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
 
   const totalSteps = 8;
+
+  // Collect all tutorial text content into one string for audio
+  const getTutorialText = () => {
+    return steps.map(step => {
+      let text = `${step.title}. ${step.content.overview || ''} `;
+      if (step.content.protocolCategories) {
+        text += step.content.protocolCategories.map((c: any) => `${c.category}: ${c.description}.`).join(' ');
+      }
+      if (step.content.coreProtocols) {
+        text += step.content.coreProtocols.map((p: any) => `${p.protocol}: ${p.bestFor}.`).join(' ');
+      }
+      return text;
+    }).join(' ');
+  };
 
   const steps = [
     {
@@ -925,6 +942,16 @@ const AdvancedDefiProtocolsTutorial = () => {
           completedSteps={completedSteps}
         />
 
+        <div className="flex justify-end mb-4 px-4">
+          <button
+            onClick={() => openAudio(getTutorialText(), 'Advanced DeFi Protocols Tutorial')}
+            className="flex items-center gap-2 font-body text-xs text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-3 py-2"
+          >
+            <Zap className="w-3.5 h-3.5" />
+            Listen to this tutorial
+          </button>
+        </div>
+
         {/* Current Step Content */}
         {currentStepData && (
           <Card className="mb-8">
@@ -1290,6 +1317,13 @@ const AdvancedDefiProtocolsTutorial = () => {
           isAuthenticated={!!user}
         />
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </div>
   );
 };

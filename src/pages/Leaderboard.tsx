@@ -92,14 +92,91 @@ const Leaderboard = () => {
             </div>
           ) : (
             <>
-              {/* Top 3 Section */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 items-end">
-                {/* 2nd Place */}
-                {topThree[1] && (
-                  <div className="order-2 md:order-1">
+              {/* Top 3 — Mobile: stacked, Desktop: podium */}
+              <div className="mb-12">
+                {/* 1st Place — always on top / center */}
+                {topThree[0] && (
+                  <div className="flex justify-center mb-4 md:hidden">
+                    <div
+                      onClick={() => navigate(`/profile/${topThree[0].user_id}`)}
+                      className="relative flex flex-col items-center p-6 rounded-3xl border border-amber-500/40 bg-amber-500/5 cursor-pointer hover:border-amber-500/60 transition-all w-full max-w-xs"
+                    >
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500/20 border border-amber-500/40 rounded-full px-4 py-1.5 flex items-center gap-1.5">
+                        <Crown className="w-4 h-4 text-amber-400 fill-amber-400" />
+                        <span className="font-consciousness text-sm font-bold text-amber-400">1st Place</span>
+                      </div>
+                      <Avatar className="w-20 h-20 mb-3 mt-2 border-2 border-amber-500/30">
+                        <AvatarImage src={topThree[0].avatar_url || ''} />
+                        <AvatarFallback className="bg-amber-500/10 text-amber-400 text-xl font-consciousness">
+                          {(topThree[0].display_name || 'A').charAt(0).toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                      <h3 className="font-consciousness text-lg font-bold text-amber-400 text-center mb-1 truncate w-full">
+                        {topThree[0].display_name || 'Anonymous'}
+                      </h3>
+                      <p className="font-consciousness text-base font-bold text-violet-400">
+                        {topThree[0].total_points.toLocaleString()} pts
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* 2nd and 3rd — mobile side by side */}
+                <div className="grid grid-cols-2 gap-3 md:hidden mb-6">
+                  {topThree[1] && (
                     <div
                       onClick={() => navigate(`/profile/${topThree[1].user_id}`)}
-                      className="relative flex flex-col items-center p-8 rounded-3xl border border-white/30 bg-white/5 cursor-pointer hover:border-white/50 transition-all group"
+                      className="relative flex flex-col items-center p-4 rounded-2xl border border-white/20 bg-white/5 cursor-pointer hover:border-white/40 transition-all"
+                    >
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white/10 border border-white/20 rounded-full px-2 py-0.5 flex items-center gap-1">
+                        <Medal className="w-3.5 h-3.5 text-white/80" />
+                        <span className="font-consciousness text-[10px] font-bold text-white/70">2nd</span>
+                      </div>
+                      <Avatar className="w-14 h-14 mb-2 mt-2 border-2 border-white/15">
+                        <AvatarImage src={topThree[1].avatar_url || ''} />
+                        <AvatarFallback className="bg-white/10 text-white/60 text-sm font-consciousness">
+                          {(topThree[1].display_name || 'A').charAt(0).toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                      <h3 className="font-consciousness text-xs font-bold text-white/80 text-center truncate w-full">
+                        {topThree[1].display_name || 'Anonymous'}
+                      </h3>
+                      <p className="font-consciousness text-xs font-bold text-violet-400 mt-0.5">
+                        {topThree[1].total_points.toLocaleString()}
+                      </p>
+                    </div>
+                  )}
+                  {topThree[2] && (
+                    <div
+                      onClick={() => navigate(`/profile/${topThree[2].user_id}`)}
+                      className="relative flex flex-col items-center p-4 rounded-2xl border border-orange-500/20 bg-orange-500/5 cursor-pointer hover:border-orange-500/40 transition-all"
+                    >
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500/10 border border-orange-500/20 rounded-full px-2 py-0.5 flex items-center gap-1">
+                        <Award className="w-3.5 h-3.5 text-orange-400" />
+                        <span className="font-consciousness text-[10px] font-bold text-orange-400">3rd</span>
+                      </div>
+                      <Avatar className="w-14 h-14 mb-2 mt-2 border-2 border-orange-500/15">
+                        <AvatarImage src={topThree[2].avatar_url || ''} />
+                        <AvatarFallback className="bg-orange-500/10 text-orange-400 text-sm font-consciousness">
+                          {(topThree[2].display_name || 'A').charAt(0).toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                      <h3 className="font-consciousness text-xs font-bold text-orange-400 text-center truncate w-full">
+                        {topThree[2].display_name || 'Anonymous'}
+                      </h3>
+                      <p className="font-consciousness text-xs font-bold text-violet-400 mt-0.5">
+                        {topThree[2].total_points.toLocaleString()}
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Desktop: original 3-column podium — hidden on mobile */}
+                <div className="hidden md:grid grid-cols-3 gap-6 items-end">
+                  {topThree[1] && (
+                    <div
+                      onClick={() => navigate(`/profile/${topThree[1].user_id}`)}
+                      className="relative flex flex-col items-center p-8 rounded-3xl border border-white/30 bg-white/5 cursor-pointer hover:border-white/50 transition-all"
                     >
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white/10 border border-white/20 rounded-full px-3 py-1 flex items-center gap-1">
                         <Medal className="w-3.5 h-3.5 text-white/80" />
@@ -118,15 +195,11 @@ const Leaderboard = () => {
                         {topThree[1].total_points.toLocaleString()}
                       </p>
                     </div>
-                  </div>
-                )}
-
-                {/* 1st Place */}
-                {topThree[0] && (
-                  <div className="order-1 md:order-2">
+                  )}
+                  {topThree[0] && (
                     <div
                       onClick={() => navigate(`/profile/${topThree[0].user_id}`)}
-                      className="relative flex flex-col items-center p-10 rounded-3xl border border-amber-500/40 bg-amber-500/5 cursor-pointer hover:border-amber-500/60 transition-all group transform md:scale-110 md:-translate-y-4"
+                      className="relative flex flex-col items-center p-10 rounded-3xl border border-amber-500/40 bg-amber-500/5 cursor-pointer hover:border-amber-500/60 transition-all transform scale-110 -translate-y-4"
                     >
                       <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-amber-500/20 border border-amber-500/40 rounded-full px-4 py-1.5 flex items-center gap-1.5 shadow-[0_0_20px_rgba(251,191,36,0.2)]">
                         <Crown className="w-4 h-4 text-amber-400 fill-amber-400" />
@@ -145,15 +218,11 @@ const Leaderboard = () => {
                         {topThree[0].total_points.toLocaleString()}
                       </p>
                     </div>
-                  </div>
-                )}
-
-                {/* 3rd Place */}
-                {topThree[2] && (
-                  <div className="order-3">
+                  )}
+                  {topThree[2] && (
                     <div
                       onClick={() => navigate(`/profile/${topThree[2].user_id}`)}
-                      className="relative flex flex-col items-center p-8 rounded-3xl border border-orange-500/30 bg-orange-500/5 cursor-pointer hover:border-orange-500/50 transition-all group"
+                      className="relative flex flex-col items-center p-8 rounded-3xl border border-orange-500/30 bg-orange-500/5 cursor-pointer hover:border-orange-500/50 transition-all"
                     >
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500/10 border border-orange-500/20 rounded-full px-3 py-1 flex items-center gap-1">
                         <Award className="w-3.5 h-3.5 text-orange-400" />
@@ -172,8 +241,8 @@ const Leaderboard = () => {
                         {topThree[2].total_points.toLocaleString()}
                       </p>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
 
               {/* Ranks 4 and Below */}

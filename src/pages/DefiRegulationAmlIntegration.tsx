@@ -2,11 +2,14 @@ import React from 'react';
 import SEO from '@/components/SEO';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, User, Clock, ExternalLink } from 'lucide-react';
+import { Calendar, User, Clock, ExternalLink, Volume2 } from 'lucide-react';
 import { BRAND_AUTHOR } from '@/lib/constants';
 import DOMPurify from 'dompurify';
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 
 const DefiRegulationAmlIntegration = () => {
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
   const blogPost = {
     title: "Can DeFi Be Regulated and Permissionless? On-Chain AML & Digital ID Integration Explained",
     excerpt: "The U.S. Treasury's proposal to embed AML frameworks and digital identity verification into DeFi smart contracts creates a fundamental tension between compliance and decentralization.",
@@ -97,6 +100,14 @@ const DefiRegulationAmlIntegration = () => {
               <h1 className="text-4xl font-bold leading-tight bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent">
                 {blogPost.title}
               </h1>
+
+              <button
+                onClick={() => openAudio(blogPost.content, blogPost.title)}
+                className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-4 py-2 mt-4"
+              >
+                <Volume2 className="w-4 h-4" />
+                Listen to this article
+              </button>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {blogPost.excerpt}
@@ -157,6 +168,13 @@ const DefiRegulationAmlIntegration = () => {
           </Card>
         </div>
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </>
   );
 };
