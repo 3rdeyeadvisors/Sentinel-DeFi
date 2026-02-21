@@ -7,10 +7,13 @@
 import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, Clock, TrendingDown, Shield, Brain, AlertTriangle } from "lucide-react";
+import { Calendar, User, Clock, TrendingDown, Shield, Brain, AlertTriangle, Volume2 } from "lucide-react";
 import { BRAND_AUTHOR } from "@/lib/constants";
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 
 const WhyMostPeopleLoseCrypto = () => {
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
   const blogPost = {
     title: "Why Most People Lose in Crypto and How DeFi Changes the Game",
     excerpt: "Explore the behavioral mistakes that cause most crypto investors to lose money, understand why centralized exchanges failed in 2022, and discover how DeFi's transparent, rules-based structure creates a fundamentally different approach to digital asset management.",
@@ -47,6 +50,14 @@ const WhyMostPeopleLoseCrypto = () => {
             <h1 className="text-3xl md:text-4xl font-consciousness font-bold text-foreground mb-6">
               {blogPost.title}
             </h1>
+
+            <button
+              onClick={() => openAudio(`${blogPost.title}. ${blogPost.excerpt}`, blogPost.title)}
+              className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-4 py-2 mt-4"
+            >
+              <Volume2 className="w-4 h-4" />
+              Listen to this article
+            </button>
 
             <p className="text-lg text-muted-foreground font-consciousness mb-6 leading-relaxed">
               {blogPost.excerpt}
@@ -333,6 +344,13 @@ const WhyMostPeopleLoseCrypto = () => {
           </Card>
         </div>
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </>
   );
 };

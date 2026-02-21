@@ -22,6 +22,9 @@ import {
   Sparkles
 } from "lucide-react";
 import { toast } from "sonner";
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
+import { Volume2 } from 'lucide-react';
 
 const ENZYME_VAULT_URL = "https://app.enzyme.finance/vault/0x8b668add6fba7c01444353c0dfdef222a816cd9f";
 const VAULT_TOKEN_ADDRESS = "0x8b668add6fba7c01444353c0dfdef222a816cd9f";
@@ -29,6 +32,7 @@ const METAMASK_DOWNLOAD_URL = "https://metamask.io/download/";
 const THIRDWEB_NFT_URL = "https://thirdweb.com/ethereum/0x91AE8ec3d88E871679F826c1D6c5B008f105506c";
 
 const VaultDepositTutorial = () => {
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
   const copyToClipboard = (text: string, label: string) => {
     navigator.clipboard.writeText(text);
     toast.success(`${label} copied to clipboard`);
@@ -58,6 +62,16 @@ const VaultDepositTutorial = () => {
           <p className="text-base md:text-lg text-muted-foreground">
             A complete guide to depositing into our Enzyme vault and viewing your vault tokens in MetaMask.
           </p>
+
+          <div className="flex justify-end pt-2">
+            <button
+              onClick={() => openAudio("How to Deposit into the 3EA Vault. A complete guide to depositing into our Enzyme vault and viewing your vault tokens in MetaMask.", 'Vault Deposit Tutorial')}
+              className="flex items-center gap-2 font-body text-xs text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-3 py-2"
+            >
+              <Volume2 className="w-3.5 h-3.5" />
+              Listen to this tutorial
+            </button>
+          </div>
         </div>
 
         <Separator />
@@ -480,6 +494,13 @@ const VaultDepositTutorial = () => {
           </Button>
         </div>
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </>
   );
 };

@@ -1,11 +1,14 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, User, AlertTriangle } from "lucide-react";
+import { Calendar, Clock, User, AlertTriangle, Volume2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { BRAND_AUTHOR } from "@/lib/constants";
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 
 const DefiMatured2025 = () => {
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
   const blogPost = {
     title: "How DeFi Quietly Matured in 2025: Real Utility, Infrastructure, and the End of Hype",
     excerpt: "Decentralized finance has moved beyond speculation. In 2025, the focus shifted to real-world utility, institutional adoption, and sustainable infrastructure: signaling a more grounded future for blockchain-based finance.",
@@ -42,6 +45,14 @@ const DefiMatured2025 = () => {
             <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
               {blogPost.title}
             </h1>
+
+            <button
+              onClick={() => openAudio(`${blogPost.title}. ${blogPost.excerpt}`, blogPost.title)}
+              className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-4 py-2 mt-4"
+            >
+              <Volume2 className="w-4 h-4" />
+              Listen to this article
+            </button>
             
             <p className="text-lg text-foreground/80 leading-relaxed">
               {blogPost.excerpt}
@@ -220,6 +231,13 @@ const DefiMatured2025 = () => {
           </CardContent>
         </Card>
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </div>
     </>
   );

@@ -180,7 +180,7 @@ const CartItem = ({ item }: { item: any }) => {
       <div className="flex flex-col gap-4">
         <div className="flex flex-col sm:flex-row gap-4">
           {/* Image - Fixed aspect ratio to prevent CLS */}
-          <div className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 rounded-md overflow-hidden bg-muted flex items-center justify-center mx-auto sm:mx-0">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 rounded-md overflow-hidden bg-white/5 flex items-center justify-center mx-auto sm:mx-0">
             {item.image ? (
               <img 
                 src={item.image} 
@@ -195,19 +195,19 @@ const CartItem = ({ item }: { item: any }) => {
                 }}
               />
             ) : (
-              <ShoppingBag className="w-8 h-8 text-muted-foreground" />
+              <ShoppingBag className="w-8 h-8 text-white/50" />
             )}
           </div>
 
           <div className="flex-1 min-w-0 text-center sm:text-left">
-            <h3 className="text-lg font-consciousness font-semibold text-foreground mb-1 truncate">
+            <h3 className="text-lg font-consciousness font-semibold text-white mb-1 truncate">
               {item.title}
             </h3>
-            <p className="text-sm text-muted-foreground font-body mb-2">
+            <p className="text-sm text-white/50 font-body mb-2">
               {item.category} • {item.type}
             </p>
             {item.color && item.size && (
-              <p className="text-xs text-muted-foreground font-body">
+              <p className="text-xs text-white/50 font-body">
                 {item.color} / {item.size}
               </p>
             )}
@@ -458,11 +458,11 @@ const Cart = () => {
       <div className="min-h-screen py-20">
         <div className="container mx-auto px-4 mobile-typography-center">
           <div className="text-center">
-            <ShoppingBag className="w-24 h-24 text-muted-foreground mx-auto mb-6" />
-            <h1 className="text-3xl font-consciousness font-bold text-foreground mb-4">
+            <ShoppingBag className="w-24 h-24 text-white/50 mx-auto mb-6" />
+            <h1 className="text-3xl font-consciousness font-bold text-white mb-4">
               Your Cart is Empty
             </h1>
-            <p className="text-muted-foreground font-consciousness mb-8 max-w-md mx-auto">
+            <p className="text-white/50 font-consciousness mb-8 max-w-md mx-auto">
               Looks like you haven't added any items to your cart yet. 
               Explore our store to find digital products and merchandise.
             </p>
@@ -485,7 +485,7 @@ const Cart = () => {
       </Helmet>
     <div className="min-h-screen py-20 w-full overflow-x-hidden">
       <div className="container mx-auto px-4 mobile-typography-center w-full max-w-6xl">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-consciousness font-bold text-foreground mb-6 sm:mb-8">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-consciousness font-bold text-white mb-6 sm:mb-8">
           Shopping Cart
         </h2>
 
@@ -498,7 +498,7 @@ const Cart = () => {
           {/* Order Summary */}
           <div className="lg:col-span-1">
             <Card className="p-6 sticky top-6">
-              <h2 className="text-xl font-consciousness font-bold text-foreground mb-6">
+              <h2 className="text-xl font-consciousness font-bold text-white mb-6">
                 Order Summary
               </h2>
 
@@ -537,7 +537,7 @@ const Cart = () => {
               <div className="space-y-4 mb-6">
                 {items.map((item) => (
                   <div key={item.id} className="flex justify-between text-sm">
-                    <span className="font-body text-muted-foreground">
+                    <span className="font-body text-white/50">
                       {item.title} × {item.quantity}
                     </span>
                     <div className="flex items-center">
@@ -582,7 +582,7 @@ const Cart = () => {
 
               <div className="border-t pt-4 mb-6 space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="font-body text-muted-foreground">Subtotal</span>
+                  <span className="font-body text-white/50">Subtotal</span>
                   <div className="flex items-center">
                     <span className="font-body text-xs mr-1">$</span>
                     <span className="font-consciousness">{total.toFixed(2)}</span>
@@ -598,13 +598,13 @@ const Cart = () => {
                   </div>
                 )}
                 <div className="flex justify-between text-lg border-t pt-2">
-                  <span className="font-body font-bold text-foreground">Total</span>
+                  <span className="font-body font-bold text-white">Total</span>
                   <div className="flex items-center">
                     <span className="font-body text-sm mr-1">$</span>
                     <span className="font-consciousness font-bold text-primary">{finalTotal.toFixed(2)}</span>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground font-consciousness mt-2">
+                <p className="text-xs text-white/50 font-consciousness mt-2">
                   * Taxes will be calculated at checkout
                 </p>
               </div>

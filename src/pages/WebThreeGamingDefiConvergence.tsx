@@ -6,11 +6,14 @@
 import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, Clock } from "lucide-react";
+import { Calendar, User, Clock, Volume2 } from "lucide-react";
 import { BRAND_AUTHOR } from "@/lib/constants";
 import DOMPurify from "dompurify";
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 
 const WebThreeGamingDefiConvergence = () => {
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
   const blogPost = {
     title: "Level Up Your Finances: The Web3 Gaming Revolution Meets DeFi",
     excerpt: "Discover how Web3 gaming is merging with DeFi to create the ultimate financial playground. From play-to-earn models to cross-chain gaming economies, explore the secret level where gamers become investors.",
@@ -239,6 +242,14 @@ Whether you're a gamer looking to monetize your skills, an investor seeking new 
               {blogPost.title}
             </h1>
 
+            <button
+              onClick={() => openAudio(blogPost.content, blogPost.title)}
+              className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-4 py-2 mt-4 mb-6"
+            >
+              <Volume2 className="w-4 h-4" />
+              Listen to this article
+            </button>
+
             <p className="text-lg text-muted-foreground font-consciousness mb-6 leading-relaxed">
               {blogPost.excerpt}
             </p>
@@ -274,6 +285,13 @@ Whether you're a gamer looking to monetize your skills, an investor seeking new 
           </Card>
         </div>
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </>
   );
 };

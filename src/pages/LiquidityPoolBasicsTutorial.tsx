@@ -24,6 +24,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { TutorialHeader } from "@/components/course/TutorialHeader";
 import { StepNavigation } from "@/components/course/StepNavigation";
 import { useAuth } from "@/components/auth/AuthProvider";
+import AudioPlayer from '@/components/audio/AudioPlayer';
+import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 
 const LiquidityPoolBasicsTutorial = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -32,8 +34,16 @@ const LiquidityPoolBasicsTutorial = () => {
   const isMobile = useIsMobile();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const { isOpen: audioOpen, audioText, audioTitle, openAudio, closeAudio } = useAudioPlayer();
 
   const totalSteps = 8;
+
+  // Collect all tutorial text content into one string for audio
+  const getTutorialText = () => {
+    return steps.map(step =>
+      `${step.title}. ${step.content.overview || ''}`
+    ).join(' ');
+  };
   const progress = (currentStep / totalSteps) * 100;
 
   const steps = [
@@ -594,6 +604,16 @@ const LiquidityPoolBasicsTutorial = () => {
           </div>
         </div>
 
+        <div className="flex justify-end mb-4 px-4">
+          <button
+            onClick={() => openAudio(getTutorialText(), 'Liquidity Pool Basics Tutorial')}
+            className="flex items-center gap-2 font-body text-xs text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-3 py-2"
+          >
+            <Volume2 className="w-3.5 h-3.5" />
+            Listen to this tutorial
+          </button>
+        </div>
+
         {/* Sign-in Alert Banner */}
         {!user && (
           <Alert className="mb-6 border-primary/50 bg-primary/5">
@@ -1142,6 +1162,13 @@ const LiquidityPoolBasicsTutorial = () => {
           </CardContent>
         </Card>
       </div>
+      {audioOpen && (
+        <AudioPlayer
+          text={audioText}
+          title={audioTitle}
+          onClose={closeAudio}
+        />
+      )}
     </div>
   );
 };

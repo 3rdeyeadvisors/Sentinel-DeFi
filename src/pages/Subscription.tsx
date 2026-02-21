@@ -114,10 +114,10 @@ const Subscription = () => {
                 {user && !hasAccess && !trialExpired ? 'Your Free Trial is Active!' : '14 Day Free Trial'}
               </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-5">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5">
               {hasAccess ? 'Your Subscription' : 'Unlock Your DeFi Potential'}
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
               {hasAccess 
                 ? 'You have full access to all courses, tutorials, and premium content.'
                 : 'Full access to all courses, tutorials, and premium content. Cancel anytime during your trial.'}
@@ -131,8 +131,8 @@ const Subscription = () => {
                 <div className="flex items-center gap-4">
                   <AlertTriangle className="w-8 h-8 text-destructive flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Your Free Trial Has Ended</h3>
-                    <p className="text-foreground/70 text-sm">
+                    <h3 className="font-semibold text-white mb-1">Your Free Trial Has Ended</h3>
+                    <p className="text-white/70 text-sm">
                       Subscribe now to continue accessing all courses and premium content.
                     </p>
                   </div>
@@ -149,7 +149,7 @@ const Subscription = () => {
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-primary" />
                     <div>
-                      <CardTitle className="text-foreground">Free Trial Active</CardTitle>
+                      <CardTitle className="text-white">Free Trial Active</CardTitle>
                       <CardDescription>
                         {daysRemaining} day{daysRemaining !== 1 ? 's' : ''} remaining
                       </CardDescription>
@@ -161,11 +161,11 @@ const Subscription = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center gap-2 text-muted-foreground mb-4">
+                <div className="flex items-center gap-2 text-white/50 mb-4">
                   <Calendar className="w-4 h-4" />
                   <span>Trial ends: {formatDate(subscription?.trialEnd || null)}</span>
                 </div>
-                <p className="text-sm text-foreground/70 mb-4">
+                <p className="text-sm text-white/70 mb-4">
                   You have full access to all content. Subscribe before your trial ends to keep your access.
                 </p>
                 <div className="flex gap-3">
@@ -192,7 +192,7 @@ const Subscription = () => {
                   <div className="flex items-center gap-3">
                     <Crown className="w-6 h-6 text-primary" />
                     <div>
-                      <CardTitle className="text-foreground">Your Subscription</CardTitle>
+                      <CardTitle className="text-white">Your Subscription</CardTitle>
                       <CardDescription>
                         {subscription.isGrandfathered 
                           ? 'Grandfathered: Lifetime Free Access'
@@ -212,13 +212,13 @@ const Subscription = () => {
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   {subscription.trialEnd && (
-                    <div className="flex items-center gap-2 text-muted-foreground">
+                    <div className="flex items-center gap-2 text-white/50">
                       <Calendar className="w-4 h-4" />
                       <span>Trial ends: {formatDate(subscription.trialEnd)}</span>
                     </div>
                   )}
                   {subscription.subscriptionEnd && !subscription.isGrandfathered && !subscription.isAdmin && (
-                    <div className="flex items-center gap-2 text-muted-foreground">
+                    <div className="flex items-center gap-2 text-white/50">
                       <CreditCard className="w-4 h-4" />
                       <span>
                         {subscription.cancelAtPeriodEnd 
@@ -254,11 +254,11 @@ const Subscription = () => {
               {/* Monthly Plan */}
               <Card className="relative p-6 md:p-8 flex flex-col">
                 <div className="text-center mb-6">
-                  <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">Monthly</h3>
-                  <p className="text-sm text-foreground/70 mb-5">Full access, billed monthly</p>
+                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-2">Monthly</h3>
+                  <p className="text-sm text-white/70 mb-5">Full access, billed monthly</p>
                   <div>
-                    <span className="text-4xl md:text-5xl font-bold text-foreground">{PRICING.monthly.display}</span>
-                    <span className="text-foreground/70">{PRICING.monthly.period}</span>
+                    <span className="text-4xl md:text-5xl font-bold text-white">{PRICING.monthly.display}</span>
+                    <span className="text-white/70">{PRICING.monthly.period}</span>
                   </div>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
@@ -271,7 +271,7 @@ const Subscription = () => {
                   ].map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
                       <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-foreground/80 text-sm">{feature}</span>
+                      <span className="text-white/80 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -302,11 +302,11 @@ const Subscription = () => {
                   </Badge>
                 </div>
                 <div className="text-center mb-6 pt-2">
-                  <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">Annual</h3>
-                  <p className="text-sm text-foreground/70 mb-5">Full year commitment</p>
+                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-2">Annual</h3>
+                  <p className="text-sm text-white/70 mb-5">Full year commitment</p>
                   <div>
-                    <span className="text-4xl md:text-5xl font-bold text-foreground">{PRICING.annual.display}</span>
-                    <span className="text-foreground/70">{PRICING.annual.period}</span>
+                    <span className="text-4xl md:text-5xl font-bold text-white">{PRICING.annual.display}</span>
+                    <span className="text-white/70">{PRICING.annual.period}</span>
                   </div>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
@@ -322,7 +322,7 @@ const Subscription = () => {
                   ].map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
                       <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-foreground/80 text-sm">{feature}</span>
+                      <span className="text-white/80 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -350,39 +350,39 @@ const Subscription = () => {
 
           {/* FAQ */}
           <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 md:mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">
               Frequently Asked Questions
             </h2>
             <div className="max-w-2xl mx-auto space-y-4 text-left">
-              <div className="p-5 md:p-6 bg-card rounded-xl border border-border">
-                <h3 className="font-semibold text-foreground mb-3 text-base">
+              <div className="p-5 md:p-6 bg-white/3 rounded-xl border border-white/8">
+                <h3 className="font-semibold text-white mb-3 text-base">
                   How does the free trial work?
                 </h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">
+                <p className="text-white/70 text-sm leading-relaxed">
                   Your 14 day trial starts immediately when you create an account: no payment required. You get full access to all content during your trial.
                 </p>
               </div>
-              <div className="p-5 md:p-6 bg-card rounded-xl border border-border">
-                <h3 className="font-semibold text-foreground mb-3 text-base">
+              <div className="p-5 md:p-6 bg-white/3 rounded-xl border border-white/8">
+                <h3 className="font-semibold text-white mb-3 text-base">
                   What happens when my trial ends?
                 </h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">
+                <p className="text-white/70 text-sm leading-relaxed">
                   After your trial, you'll need to subscribe to continue accessing premium content. You can subscribe anytime during or after your trial.
                 </p>
               </div>
-              <div className="p-5 md:p-6 bg-card rounded-xl border border-border">
-                <h3 className="font-semibold text-foreground mb-3 text-base">
+              <div className="p-5 md:p-6 bg-white/3 rounded-xl border border-white/8">
+                <h3 className="font-semibold text-white mb-3 text-base">
                   Can I cancel anytime?
                 </h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">
+                <p className="text-white/70 text-sm leading-relaxed">
                   Yes! Cancel anytime and you'll keep access until the end of your billing period. No questions asked.
                 </p>
               </div>
-              <div className="p-5 md:p-6 bg-card rounded-xl border border-border">
-                <h3 className="font-semibold text-foreground mb-3 text-base">
+              <div className="p-5 md:p-6 bg-white/3 rounded-xl border border-white/8">
+                <h3 className="font-semibold text-white mb-3 text-base">
                   What payment methods do you accept?
                 </h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">
+                <p className="text-white/70 text-sm leading-relaxed">
                   We accept all major credit cards and debit cards through our secure Stripe payment processing.
                 </p>
               </div>

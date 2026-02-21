@@ -12,6 +12,7 @@ import { QuizComponent } from "@/components/quiz/QuizComponent";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExpandableText } from "@/components/ui/expandable-text";
 import { FullscreenContentViewer } from "./FullscreenContentViewer";
+import AudioPlayer from '@/components/audio/AudioPlayer';
 import { useAchievementSounds } from "@/hooks/useAchievementSounds";
 import { useSwipeNavigation } from "@/hooks/useSwipeNavigation";
 import { 
@@ -93,6 +94,7 @@ export const EnhancedContentPlayer = ({
   const [playbackSpeed, setPlaybackSpeed] = useState(1);
   const [volume, setVolume] = useState(80);
   const [isFullscreenViewerOpen, setIsFullscreenViewerOpen] = useState(false);
+  const [showAudio, setShowAudio] = useState(false);
   const { toast } = useToast();
 
   // Integrated swipe navigation for the main viewer
@@ -419,6 +421,13 @@ export const EnhancedContentPlayer = ({
                 Quiz Available
               </Badge>
             )}
+            <button
+              onClick={() => setShowAudio(true)}
+              className="flex items-center gap-2 font-body text-xs text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-3 py-2"
+            >
+              <Volume2 className="w-3.5 h-3.5" />
+              Listen
+            </button>
           </div>
           
           <div className="flex items-center justify-center md:justify-end gap-1.5 sm:gap-2">
@@ -685,6 +694,13 @@ export const EnhancedContentPlayer = ({
           </div>
         )}
       </div>
+      {showAudio && module.content.text && (
+        <AudioPlayer
+          text={module.content.text}
+          title={module.title}
+          onClose={() => setShowAudio(false)}
+        />
+      )}
     </div>
   );
 };
