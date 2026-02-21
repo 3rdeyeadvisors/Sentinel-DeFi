@@ -18,7 +18,8 @@ import {
   Lock,
   Eye,
   Zap,
-  RefreshCw
+  RefreshCw,
+  Volume2
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link, useNavigate } from "react-router-dom";

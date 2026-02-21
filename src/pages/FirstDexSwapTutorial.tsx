@@ -27,7 +27,8 @@ import {
   TrendingUp,
   Eye,
   RefreshCw,
-  Lock
+  Lock,
+  Volume2
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link, useNavigate } from "react-router-dom";

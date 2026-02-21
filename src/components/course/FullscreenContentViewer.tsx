@@ -22,6 +22,7 @@ import { Separator } from '@/components/ui/separator';
 import { useFullscreen } from '@/hooks/useFullscreen';
 import { useSwipeNavigation } from '@/hooks/useSwipeNavigation';
 import { EnhancedMarkdownRenderer } from './EnhancedMarkdownRenderer';
+import NotesEditor from './NotesEditor';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
 
@@ -392,18 +393,11 @@ export const FullscreenContentViewer: React.FC<FullscreenContentViewerProps> = (
                   </div>
 
                   <TabsContent value="notes" className="flex-1 overflow-hidden flex flex-col p-4 mt-0">
-                    <div className="flex-1 flex flex-col gap-3">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-sm font-medium">Your Notes</h3>
-                        <span className="text-[10px] text-muted-foreground italic">Auto-saving...</span>
-                      </div>
-                      <Textarea
-                        placeholder="Type your notes here as you learn..."
-                        value={notes}
-                        onChange={(e) => onNotesChange?.(e.target.value)}
-                        className="flex-1 min-h-[200px] resize-none bg-muted/30 focus-visible:ring-primary/30 border-muted"
-                      />
-                    </div>
+                    <NotesEditor
+                      initialValue={notes}
+                      onSave={onNotesChange || (() => {})}
+                      onClear={() => onNotesChange?.('')}
+                    />
                   </TabsContent>
 
                   <TabsContent value="resources" className="flex-1 overflow-hidden flex flex-col p-4 mt-0">

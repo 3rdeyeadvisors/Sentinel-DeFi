@@ -16,7 +16,8 @@ import {
   Calculator,
   Zap,
   Target,
-  Lock
+  Lock,
+  Volume2
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link, useNavigate } from "react-router-dom";
