@@ -188,7 +188,7 @@ const Tutorials = () => {
       case "Critical": return "bg-destructive/90";
       case "High": return "bg-accent/90";
       case "Medium": return "bg-primary/90";
-      default: return "bg-muted-foreground/90";
+      default: return "bg-white/20";
     }
   };
 
