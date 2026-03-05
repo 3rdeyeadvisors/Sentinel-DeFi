@@ -187,6 +187,7 @@ const VaultDepositTutorial = () => {
                 <CardTitle className="flex items-center gap-2 text-base md:text-lg">
                   <Sparkles className="h-4 w-4 md:h-5 md:w-5 shrink-0" />
                   <span>Get the Sentinel DeFi Earth Access NFT</span>
+                  <span>Get the Sentinel Earth Access NFT</span>
                 </CardTitle>
                 <CardDescription className="text-sm mt-1">Your membership key to the vault</CardDescription>
               </div>
@@ -195,6 +196,7 @@ const VaultDepositTutorial = () => {
           <CardContent className="space-y-4 p-4 pt-0 md:p-6 md:pt-0">
             <p className="text-sm md:text-base text-white/50">
               The Sentinel DeFi Earth Access NFT is required to deposit into the vault. Without it, you won't be able to access the vault even if you connect your wallet.
+              The Sentinel Earth Access NFT is required to deposit into the vault. Without it, you won't be able to access the vault even if you connect your wallet.
             </p>
             
             <div className="space-y-3">
