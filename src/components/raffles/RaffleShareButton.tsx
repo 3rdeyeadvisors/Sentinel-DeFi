@@ -46,7 +46,7 @@ const RaffleShareButton = ({ userId }: RaffleShareButtonProps) => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "Join 3rdeyeadvisors Learn-to-Earn Raffle",
+          title: "Join Sentinel DeFi Learn-to-Earn Raffle",
           text: "Learn about DeFi and earn raffle entries for crypto prizes!",
           url: referralUrl,
         });

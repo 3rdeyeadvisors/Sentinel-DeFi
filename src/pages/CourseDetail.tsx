@@ -126,7 +126,7 @@ const CourseDetail = () => {
         title={`${course.title}: DeFi Course`}
         description={course.description}
         keywords={`DeFi course, ${course.title.toLowerCase()}, decentralized finance, cryptocurrency education, blockchain learning, free course`}
-        url={`https://www.the3rdeyeadvisors.com/courses/${courseId}`}
+        url={`https://www.sentineldefi.com/courses/${courseId}`}
         schema={{
           type: 'Course',
           data: {

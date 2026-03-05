@@ -597,10 +597,10 @@ const Raffles = () => {
   return (
     <>
       <SEO
-        title="Community Raffles | 3rdeyeadvisors"
-        description="Enter to win by completing DeFi education tasks. Raffles reward active learners in the 3rdeyeadvisors community."
+        title="Community Raffles | Sentinel DeFi"
+        description="Enter to win by completing DeFi education tasks. Raffles reward active learners in the Sentinel DeFi community."
         keywords="DeFi raffle, crypto giveaway, learn to earn raffle, DeFi community rewards"
-        url="https://www.the3rdeyeadvisors.com/raffles"
+        url="https://www.sentineldefi.com/raffles"
       />
 
       <div className="min-h-screen bg-transparent relative overflow-hidden">
@@ -629,7 +629,7 @@ const Raffles = () => {
           <CardContent className="pt-6 px-4 md:px-6">
             <div className="prose prose-invert max-w-none">
               <p className="text-base sm:text-lg mb-4 text-white">
-                At <span className="font-semibold text-primary">3rdeyeadvisors</span>, we believe in <span className="font-semibold">earning after learning</span>, returning that energy back to you.
+                At <span className="font-semibold text-primary">Sentinel DeFi</span>, we believe in <span className="font-semibold">earning after learning</span>, returning that energy back to you.
               </p>
               
               <p className="text-base sm:text-lg mb-4 text-white">

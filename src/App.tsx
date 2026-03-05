@@ -234,15 +234,15 @@ const App = () => {
     const search = window.location.search;
     const hash = window.location.hash;
     
-    // Redirect 3rdeyeadvisors.com (without "the") to the3rdeyeadvisors.com
-    if (hostname === '3rdeyeadvisors.com' || hostname === 'www.3rdeyeadvisors.com') {
-      const redirectUrl = `https://the3rdeyeadvisors.com${pathname}${search}${hash}`;
+    // Redirect Sentinel DeFi.com (without "the") to sentineldefi.com
+    if (hostname === 'sentineldefi.com' || hostname === 'www.sentineldefi.com') {
+      const redirectUrl = `https://sentineldefi.com${pathname}${search}${hash}`;
       window.location.replace(redirectUrl);
       return;
     }
     
-    // Ensure HTTPS on the3rdeyeadvisors.com domain
-    if (hostname.endsWith('the3rdeyeadvisors.com') && protocol === 'http:') {
+    // Ensure HTTPS on sentineldefi.com domain
+    if (hostname.endsWith('sentineldefi.com') && protocol === 'http:') {
       const redirectUrl = `https://${hostname}${pathname}${search}${hash}`;
       window.location.replace(redirectUrl);
     }

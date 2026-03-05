@@ -54,10 +54,10 @@ const Roadmap = () => {
   return (
     <>
       <SEO
-        title="Platform Roadmap | 3rdeyeadvisors"
-        description="Vote on upcoming features and see what is being built next on the 3rdeyeadvisors DeFi education platform."
+        title="Platform Roadmap | Sentinel DeFi"
+        description="Vote on upcoming features and see what is being built next on the Sentinel DeFi DeFi education platform."
         keywords="DeFi platform roadmap, crypto education features, community voting, DeFi tools upcoming"
-        url="https://www.the3rdeyeadvisors.com/roadmap"
+        url="https://www.sentineldefi.com/roadmap"
       />
 
       <div className="min-h-screen bg-transparent overflow-hidden relative">

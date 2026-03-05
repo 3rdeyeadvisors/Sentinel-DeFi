@@ -6,9 +6,9 @@ const PrivacyPolicy = () => {
   return (
     <>
       <SEO
-        title="Privacy Policy | 3rdeyeadvisors"
-        description="Privacy policy for 3rdeyeadvisors DeFi education platform. How we collect, use, and protect your data."
-        url="https://www.the3rdeyeadvisors.com/privacy"
+        title="Privacy Policy | Sentinel DeFi"
+        description="Privacy policy for Sentinel DeFi DeFi education platform. How we collect, use, and protect your data."
+        url="https://www.sentineldefi.com/privacy"
       />
     <div className="min-h-screen py-20 bg-transparent">
       <div className="container mx-auto px-4 max-w-4xl mobile-typography-center">
@@ -118,7 +118,7 @@ const PrivacyPolicy = () => {
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
               <p className="mt-2">
-                <strong>Email:</strong> info@the3rdeyeadvisors.com
+                <strong>Email:</strong> info@sentineldefi.com
               </p>
             </section>
 

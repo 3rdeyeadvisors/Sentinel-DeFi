@@ -5,7 +5,7 @@
 
 export const BRAND_NAME = "Sentinel DeFi";
 export const BRAND_AUTHOR = "Sentinel DeFi Research Team";
-export const BRAND_EMAIL = "info@the3rdeyeadvisors.com";
+export const BRAND_EMAIL = "info@sentineldefi.com";
 export const BRAND_DOMAIN = "sentineldefi.com";
 export const BRAND_URL = "https://www.sentineldefi.com";
 

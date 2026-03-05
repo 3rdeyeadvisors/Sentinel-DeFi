@@ -157,7 +157,7 @@ export const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="font-consciousness">Welcome to 3rdeyeadvisors</DialogTitle>
+          <DialogTitle className="font-consciousness">Welcome to Sentinel DeFi</DialogTitle>
         </DialogHeader>
         
         <Tabs defaultValue="signin" className="w-full">

@@ -35,9 +35,9 @@ const RwaOvertakesDex2025 = () => {
   return (
     <>
       <SEO
-        title="Real World Assets Are Overtaking DEX Volume in 2025 | 3rdeyeadvisors"
+        title="Real World Assets Are Overtaking DEX Volume in 2025 | Sentinel DeFi"
         description="Tokenized real world assets crossed a major milestone in 2025. Here is what that means for DeFi and for you."
-        url="https://www.the3rdeyeadvisors.com/blog/rwa-overtakes-dex-2025"
+        url="https://www.sentineldefi.com/blog/rwa-overtakes-dex-2025"
       />
 
       <div className="min-h-screen py-20">

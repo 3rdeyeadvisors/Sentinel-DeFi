@@ -20,9 +20,9 @@ const StablecoinsDefiInfrastructure2025 = () => {
   return (
     <>
       <SEO
-        title="Stablecoins as DeFi Infrastructure in 2025 | 3rdeyeadvisors"
+        title="Stablecoins as DeFi Infrastructure in 2025 | Sentinel DeFi"
         description="Stablecoins are no longer just for trading. Here is how they power the entire DeFi ecosystem in 2025."
-        url="https://www.the3rdeyeadvisors.com/blog/stablecoins-defi-infrastructure-2025"
+        url="https://www.sentineldefi.com/blog/stablecoins-defi-infrastructure-2025"
       />
 
       <div className="min-h-screen py-20">
@@ -201,14 +201,14 @@ const StablecoinsDefiInfrastructure2025 = () => {
               <section className="bg-white/5 p-6 rounded-lg border border-white/8 mt-8 text-center">
                 <h3 className="text-lg font-semibold mb-2 text-foreground">Educational Disclaimer</h3>
                 <p className="text-sm text-foreground/80 leading-relaxed">
-                  This article is for educational and informational purposes only. It does not constitute financial, investment, legal, or tax advice. Stablecoins and DeFi protocols carry inherent risks including smart contract vulnerabilities, regulatory uncertainty, and potential loss of funds. Always conduct your own research and consult with qualified professionals before making any financial decisions. Past performance does not guarantee future results. 3rdeyeadvisors does not endorse or recommend any specific stablecoins, protocols, or investment strategies mentioned in this article.
+                  This article is for educational and informational purposes only. It does not constitute financial, investment, legal, or tax advice. Stablecoins and DeFi protocols carry inherent risks including smart contract vulnerabilities, regulatory uncertainty, and potential loss of funds. Always conduct your own research and consult with qualified professionals before making any financial decisions. Past performance does not guarantee future results. Sentinel DeFi does not endorse or recommend any specific stablecoins, protocols, or investment strategies mentioned in this article.
                 </p>
               </section>
 
               <section className="bg-primary/10 p-6 rounded-lg border border-primary/20 mt-8">
                 <h2 className="text-2xl font-bold mb-4 text-foreground">Continue Your DeFi Education</h2>
                 <p className="text-foreground/90 leading-relaxed mb-4">
-                  Ready to deepen your understanding of decentralized finance infrastructure? 3rdeyeadvisors offers comprehensive courses covering stablecoins, lending protocols, liquidity strategies, and risk management: all designed to help you navigate DeFi with confidence.
+                  Ready to deepen your understanding of decentralized finance infrastructure? Sentinel DeFi offers comprehensive courses covering stablecoins, lending protocols, liquidity strategies, and risk management: all designed to help you navigate DeFi with confidence.
                 </p>
                 <a 
                   href="/courses" 

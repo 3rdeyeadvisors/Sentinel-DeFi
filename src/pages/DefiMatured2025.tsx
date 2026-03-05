@@ -22,9 +22,9 @@ const DefiMatured2025 = () => {
   return (
     <>
       <SEO
-        title="DeFi Has Matured: What Changed and What It Means For You | 3rdeyeadvisors"
+        title="DeFi Has Matured: What Changed and What It Means For You | Sentinel DeFi"
         description="DeFi in 2025 looks nothing like 2020. Here is what matured, what disappeared, and what that means for everyday users."
-        url="https://www.the3rdeyeadvisors.com/blog/defi-matured-2025"
+        url="https://www.sentineldefi.com/blog/defi-matured-2025"
       />
     <div className="min-h-screen py-20">
       
@@ -201,7 +201,7 @@ const DefiMatured2025 = () => {
                   For those interested in understanding this space, the emphasis should be on education, awareness, and long-term thinking rather than short-term speculation. The infrastructure being built today will likely shape the financial systems of tomorrow.
                 </p>
               <p className="text-foreground/90 leading-relaxed">
-                  At <strong className="text-foreground font-semibold">3rdeyeadvisors</strong>, we believe that informed participation: grounded in research and understanding: is the foundation for navigating this evolving landscape.
+                  At <strong className="text-foreground font-semibold">Sentinel DeFi</strong>, we believe that informed participation: grounded in research and understanding: is the foundation for navigating this evolving landscape.
                 </p>
               </section>
 

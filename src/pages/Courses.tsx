@@ -134,7 +134,7 @@ const Courses = () => {
     {
       id: 5,
       title: "Understanding DeFi Vaults: Your Complete Guide to Managed Investing",
-      description: "Access professional-grade investment strategies through DeFi vaults while maintaining full custody of your assets. Understand how vaults automate complex strategies, evaluate vault protocols like Enzyme and Yearn, and learn the security considerations before depositing. Includes a step-by-step guide to accessing the 3EA Vault.",
+      description: "Access professional-grade investment strategies through DeFi vaults while maintaining full custody of your assets. Understand how vaults automate complex strategies, evaluate vault protocols like Enzyme and Yearn, and learn the security considerations before depositing. Includes a step-by-step guide to accessing the Sentinel DeFi Vault.",
       category: "free",
       type: "course",
       duration: "2.5 hours",
@@ -146,7 +146,7 @@ const Courses = () => {
         "Major Vault Protocols Explained (Enzyme, Yearn, and More)",
         "Staying Safe with Vaults (Security and Red Flags)",
         "How to Choose the Right Vault for You",
-        "Getting Access to the 3EA Vault (Step-by-Step Guide)"
+        "Getting Access to the Sentinel DeFi Vault (Step-by-Step Guide)"
       ],
       icon: BookOpen,
       early_access_date: null,
@@ -271,14 +271,14 @@ const Courses = () => {
         title="DeFi Courses & Cryptocurrency Education: Learn Blockchain Investing"
         description="Comprehensive DeFi courses from beginner to advanced. Learn yield farming, staking, DeFi protocols, and passive income strategies. Free and paid courses available for cryptocurrency education."
         keywords="DeFi courses, cryptocurrency education, blockchain courses, yield farming course, DeFi beginner guide, crypto passive income, DeFi training, blockchain investing course"
-        url="https://www.the3rdeyeadvisors.com/courses"
+        url="https://www.sentineldefi.com/courses"
         schema={{
           type: 'Course',
           data: {
             provider: {
               "@type": "Organization",
-               name: "3rdeyeadvisors",
-               url: "https://www.the3rdeyeadvisors.com"
+               name: "Sentinel DeFi",
+               url: "https://www.sentineldefi.com"
             },
             educationalLevel: "Beginner to Advanced",
             teaches: [

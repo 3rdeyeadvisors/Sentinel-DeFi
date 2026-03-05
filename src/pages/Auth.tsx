@@ -363,7 +363,7 @@ const Auth = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-600/20 blur-[120px] rounded-full pointer-events-none" />
         <div className="bg-white/3 border border-white/8 rounded-2xl p-6 md:p-8 max-w-md w-full mx-4 relative z-10">
             <div className="text-center mb-8">
-              <h1 className="font-consciousness text-2xl font-bold text-violet-400 mb-2">3rdeyeadvisors</h1>
+              <h1 className="font-consciousness text-2xl font-bold text-violet-400 mb-2">Sentinel DeFi</h1>
               <p className="font-body text-sm text-white/40 uppercase tracking-widest">Reset Password</p>
             </div>
 
@@ -411,7 +411,7 @@ const Auth = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-600/20 blur-[120px] rounded-full pointer-events-none" />
         <div className="bg-white/3 border border-white/8 rounded-2xl p-6 md:p-8 max-w-md w-full mx-4 relative z-10">
           <div className="text-center mb-8">
-            <h1 className="font-consciousness text-2xl font-bold text-violet-400 mb-2">3rdeyeadvisors</h1>
+            <h1 className="font-consciousness text-2xl font-bold text-violet-400 mb-2">Sentinel DeFi</h1>
             <p className="font-body text-sm text-white/40 uppercase tracking-widest">Set New Password</p>
           </div>
 
@@ -467,7 +467,7 @@ const Auth = () => {
 
         <div className="bg-white/3 border border-white/8 rounded-2xl p-6 md:p-8 max-w-md w-full mx-4 relative z-10">
           <div className="text-center mb-8">
-            <h1 className="font-consciousness text-3xl font-bold text-violet-400 mb-2">3rdeyeadvisors</h1>
+            <h1 className="font-consciousness text-3xl font-bold text-violet-400 mb-2">Sentinel DeFi</h1>
             <p className="font-body text-sm text-white/40">Access Institutional-Grade DeFi Intelligence</p>
           </div>
 

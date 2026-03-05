@@ -28,7 +28,7 @@ const Philosophy = () => {
         title="Financial Consciousness & DeFi Philosophy: Money Awakening"
         description="Transform your relationship with money through financial consciousness and DeFi education. Break free from traditional banking and discover financial sovereignty through decentralized finance."
         keywords="financial consciousness, DeFi philosophy, financial sovereignty, money consciousness, decentralized finance mindset, financial awakening, crypto philosophy, financial freedom"
-        url="https://www.the3rdeyeadvisors.com/philosophy"
+        url="https://www.sentineldefi.com/philosophy"
         schema={{
           type: 'WebPage',
           data: {
@@ -63,7 +63,7 @@ const Philosophy = () => {
         <PageHero
           eyebrow="Our Belief"
           title="Why This Exists"
-          subtitle="The philosophy behind 3rdeyeadvisors and why financial education without gatekeeping matters."
+          subtitle="The philosophy behind Sentinel DeFi and why financial education without gatekeeping matters."
         />
 
         <div className="max-w-4xl mx-auto px-6 pb-20 relative z-10">

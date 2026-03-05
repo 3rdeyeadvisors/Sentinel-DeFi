@@ -26,9 +26,9 @@ const DefiVaultsExplained = () => {
   return (
     <>
       <SEO
-        title="DeFi Vaults Explained: How Yield Automation Works | 3rdeyeadvisors"
+        title="DeFi Vaults Explained: How Yield Automation Works | Sentinel DeFi"
         description="A plain English breakdown of how DeFi vaults automate yield farming, compound returns, and manage risk on your behalf."
-        url="https://www.the3rdeyeadvisors.com/blog/defi-vaults-explained"
+        url="https://www.sentineldefi.com/blog/defi-vaults-explained"
       />
 
       <div className="min-h-screen py-20">

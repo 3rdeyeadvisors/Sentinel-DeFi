@@ -79,13 +79,13 @@ const Blog = () => {
         title="DeFi Blog: Cryptocurrency Articles & Blockchain Education"
         description="Expert DeFi blog with cryptocurrency analysis, yield farming insights, blockchain education, and DeFi security guides. Stay updated with the latest decentralized finance trends and strategies."
         keywords="DeFi blog, cryptocurrency articles, blockchain education, DeFi analysis, crypto news, yield farming insights, DeFi security, cryptocurrency trends, blockchain analysis"
-        url="https://www.the3rdeyeadvisors.com/blog"
+        url="https://www.sentineldefi.com/blog"
         schema={{
           type: 'WebPage',
           data: {
             mainEntity: {
               "@type": "Blog",
-              name: "3rdeyeadvisors DeFi Blog",
+              name: "Sentinel DeFi DeFi Blog",
               description: "Educational content about decentralized finance, cryptocurrency, and blockchain technology"
             }
           }

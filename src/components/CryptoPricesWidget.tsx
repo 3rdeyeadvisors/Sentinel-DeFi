@@ -241,7 +241,7 @@ export const CryptoPricesWidget = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 mb-4">
             <div className="flex items-center gap-2">
               <Star className="w-5 h-5 text-primary fill-primary" />
-              <h3 className="text-lg font-consciousness font-semibold text-foreground">3EA Recommended</h3>
+              <h3 className="text-lg font-consciousness font-semibold text-foreground">Sentinel DeFi Recommended</h3>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -339,12 +339,12 @@ export const CryptoPricesWidget = () => {
         )}
       </div>
 
-      {/* 3EA Recommended Section */}
+      {/* Sentinel DeFi Recommended Section */}
       <div>
         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 mb-4">
           <div className="flex items-center gap-2">
             <Star className="w-5 h-5 text-primary fill-primary" />
-            <h3 className="text-lg font-consciousness font-semibold text-foreground">3EA Recommended</h3>
+            <h3 className="text-lg font-consciousness font-semibold text-foreground">Sentinel DeFi Recommended</h3>
           </div>
           <Badge variant="secondary" className="font-consciousness">Our Picks</Badge>
         </div>

@@ -25,10 +25,10 @@ const VaultAccess = () => {
   return (
     <>
       <SEO
-        title="DeFi Yield Vaults | 3rdeyeadvisors"
+        title="DeFi Yield Vaults | Sentinel DeFi"
         description="Access curated DeFi yield vaults designed for different risk levels and strategies. Join the waitlist for early access."
         keywords="DeFi vaults, yield farming vaults, crypto yield strategies, DeFi passive income"
-        url="https://www.the3rdeyeadvisors.com/vault-access"
+        url="https://www.sentineldefi.com/vault-access"
       />
 
       <div className="min-h-screen bg-transparent pb-20">

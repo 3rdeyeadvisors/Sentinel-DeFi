@@ -9,8 +9,8 @@ const ReferralTerms = () => {
   return (
     <>
       <SEO
-        title="Referral Program Terms & Conditions | 3rdeyeadvisors"
-        description="Terms and conditions for the 3rdeyeadvisors referral program. Learn about commission rates, payment terms, and program rules."
+        title="Referral Program Terms & Conditions | Sentinel DeFi"
+        description="Terms and conditions for the Sentinel DeFi referral program. Learn about commission rates, payment terms, and program rules."
         keywords="referral terms, affiliate program terms, commission terms"
       />
 
@@ -31,12 +31,12 @@ const ReferralTerms = () => {
                   <CardTitle className="text-xl">1. Program Overview</CardTitle>
                 </CardHeader>
                 <p className="text-white/80 leading-relaxed">
-                  The 3rdeyeadvisors Referral Program ("Program") allows registered users ("Referrers") to earn 
+                  The Sentinel DeFi Referral Program ("Program") allows registered users ("Referrers") to earn
                   commissions by referring new subscribers to our platform. By participating in this Program, 
                   you agree to be bound by these terms and conditions.
                 </p>
                 <p className="text-white/80 leading-relaxed mt-4">
-                  <strong>Eligibility:</strong> You must be a registered user of 3rdeyeadvisors with a verified 
+                  <strong>Eligibility:</strong> You must be a registered user of Sentinel DeFi with a verified
                   email address to participate in the Program. You must be at least 18 years old or the age of 
                   majority in your jurisdiction.
                 </p>
@@ -193,8 +193,8 @@ const ReferralTerms = () => {
                 </CardHeader>
                 <p className="text-white/80 leading-relaxed">
                   If you have a dispute regarding the Program, commissions, or these terms, please contact us 
-                  at <a href="mailto:info@the3rdeyeadvisors.com" className="text-primary hover:underline">
-                  info@the3rdeyeadvisors.com</a>. We will work in good faith to resolve disputes within 30 
+                  at <a href="mailto:info@sentineldefi.com" className="text-primary hover:underline">
+                  info@sentineldefi.com</a>. We will work in good faith to resolve disputes within 30
                   days. Any disputes that cannot be resolved will be subject to binding arbitration in accordance 
                   with our <Link to="/terms" className="text-primary hover:underline">Terms of Service</Link>.
                 </p>
@@ -217,8 +217,8 @@ const ReferralTerms = () => {
               <section className="border-t border-white/8 pt-6">
                 <p className="text-white/80">
                   For questions about the Referral Program, please contact us at{" "}
-                  <a href="mailto:info@the3rdeyeadvisors.com" className="text-primary hover:underline">
-                    info@the3rdeyeadvisors.com
+                  <a href="mailto:info@sentineldefi.com" className="text-primary hover:underline">
+                    info@sentineldefi.com
                   </a>
                 </p>
               </section>

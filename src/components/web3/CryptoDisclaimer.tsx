@@ -47,7 +47,7 @@ export const CryptoDisclaimer = ({ onAccept, onDecline }: CryptoDisclaimerProps)
             <ul className="list-disc list-inside space-y-1 text-white/50">
               <li>Enzyme Finance is an independent, third-party DeFi protocol</li>
               <li>Vault deposits and withdrawals occur on Enzyme's external platform</li>
-              <li>3EA does not custody your funds: you maintain full control</li>
+              <li>Sentinel DeFi does not custody your funds: you maintain full control</li>
               <li>Smart contract risks exist with any DeFi protocol</li>
             </ul>
           </div>

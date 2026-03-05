@@ -26,9 +26,9 @@ const WhyMostPeopleLoseCrypto = () => {
   return (
     <>
       <SEO
-        title="Why Most People Lose Money in Crypto (And How to Not Be One of Them) | 3rdeyeadvisors"
+        title="Why Most People Lose Money in Crypto (And How to Not Be One of Them) | Sentinel DeFi"
         description="The real reasons most crypto investors lose money and the specific habits that separate the ones who do not."
-        url="https://www.the3rdeyeadvisors.com/blog/why-most-people-lose-crypto"
+        url="https://www.sentineldefi.com/blog/why-most-people-lose-crypto"
       />
 
       <div className="min-h-screen py-20">
@@ -330,7 +330,7 @@ const WhyMostPeopleLoseCrypto = () => {
                 <div className="border-t border-white/8 pt-8">
                   <h2 className="text-lg font-semibold text-foreground mb-4">Educational Disclaimer</h2>
                   <p className="text-foreground/70 text-sm leading-relaxed">
-                    This content is provided for educational and informational purposes only. It does not constitute financial advice, investment advice, trading advice, or any other type of advice. You should not treat any of the content as such. The 3rdeyeadvisors Research Team does not recommend that any cryptocurrency, token, or investment strategy is suitable for any specific person.
+                    This content is provided for educational and informational purposes only. It does not constitute financial advice, investment advice, trading advice, or any other type of advice. You should not treat any of the content as such. The Sentinel DeFi Research Team does not recommend that any cryptocurrency, token, or investment strategy is suitable for any specific person.
                   </p>
                   <p className="text-foreground/70 text-sm leading-relaxed mt-4">
                     All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results. Cryptocurrency markets are highly volatile and speculative. Always conduct your own research and consult with qualified financial professionals before making any investment decisions.

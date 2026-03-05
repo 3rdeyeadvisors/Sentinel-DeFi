@@ -2,7 +2,7 @@
 // This module contains configuration for the Enzyme vault integration
 
 export const ENZYME_CONFIG = {
-  // ComptrollerProxy address for the 3EA vault
+  // ComptrollerProxy address for the Sentinel DeFi vault
   comptrollerProxy: "0x8b668add6fba7c01444353c0dfdef222a816cd9f",
   
   // Enzyme app URL for external access

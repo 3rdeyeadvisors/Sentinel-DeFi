@@ -24,7 +24,7 @@ const HeroSection = () => {
         </h1>
 
         <p className="font-body text-lg md:text-xl text-white/60 mb-4 max-w-2xl mx-auto leading-relaxed">
-          3rdeyeadvisors turns complete beginners into confident DeFi participants. Plain language. No hype. No gatekeeping.
+          Sentinel DeFi turns complete beginners into confident DeFi participants. Plain language. No hype. No gatekeeping.
         </p>
 
         <p className="font-body text-sm text-white/40 mb-12 max-w-xl mx-auto">

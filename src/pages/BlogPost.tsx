@@ -87,24 +87,24 @@ const BlogPost = () => {
     "@type": "BlogPosting",
     "headline": post.title,
     "description": post.excerpt,
-    "image": "https://www.the3rdeyeadvisors.com/social-share.jpg",
+    "image": "https://www.sentineldefi.com/social-share.jpg",
     "author": {
       "@type": "Person",
       "name": BRAND_AUTHOR
     },
     "publisher": {
       "@type": "Organization",
-      "name": "3rdeyeadvisors",
+      "name": "Sentinel DeFi",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.the3rdeyeadvisors.com/favicon-3rdeyeadvisors.png?v=4"
+        "url": "https://www.sentineldefi.com/favicon-sentineldefi.png?v=4"
       }
     },
     "datePublished": getPublishedDate(post.date),
     "dateModified": getPublishedDate(post.date),
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.the3rdeyeadvisors.com/blog/${post.slug}`
+      "@id": `https://www.sentineldefi.com/blog/${post.slug}`
     },
     "keywords": `${post.category.toLowerCase()}, DeFi, cryptocurrency, ${post.tags.join(', ')}`
   };
@@ -112,10 +112,10 @@ const BlogPost = () => {
   return (
     <>
       <SEO 
-        title={`${post.title} | 3rdeyeadvisors Blog`}
+        title={`${post.title} | Sentinel DeFi Blog`}
         description={post.excerpt}
         keywords={`${post.category.toLowerCase()}, DeFi, cryptocurrency, ${post.title.toLowerCase()}`}
-        url={`https://www.the3rdeyeadvisors.com/blog/${post.slug}`}
+        url={`https://www.sentineldefi.com/blog/${post.slug}`}
         type="article"
         article={{
           publishedTime: post.date,

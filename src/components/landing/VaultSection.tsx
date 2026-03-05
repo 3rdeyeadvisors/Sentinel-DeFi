@@ -93,7 +93,7 @@ const VaultSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection animation="fade-up" className="text-center mb-16">
           <Badge variant="outline" className="mb-4 font-body border-violet-500/30 text-violet-400">
-            3EA Managed Vaults
+            Sentinel DeFi Managed Vaults
           </Badge>
           <h2 className="font-consciousness text-3xl md:text-5xl font-bold text-white mb-6">
             Institutional Grade Management for All

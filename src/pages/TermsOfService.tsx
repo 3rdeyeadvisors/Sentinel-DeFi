@@ -6,9 +6,9 @@ const TermsOfService = () => {
   return (
     <>
       <SEO
-        title="Terms of Service | 3rdeyeadvisors"
-        description="Terms of service for the 3rdeyeadvisors DeFi education platform."
-        url="https://www.the3rdeyeadvisors.com/terms"
+        title="Terms of Service | Sentinel DeFi"
+        description="Terms of service for the Sentinel DeFi DeFi education platform."
+        url="https://www.sentineldefi.com/terms"
       />
     <div className="min-h-screen py-20 bg-transparent">
       <div className="container mx-auto px-4 max-w-4xl mobile-typography-center">
@@ -27,7 +27,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
               <p>
-                By accessing and using 3rdeyeadvisors, you accept and agree to be bound by these 
+                By accessing and using Sentinel DeFi, you accept and agree to be bound by these
                 Terms of Service. If you do not agree to these terms, please do not use our services.
               </p>
             </section>
@@ -35,7 +35,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-bold mb-4">2. Educational Services</h2>
               <p className="mb-4">
-                3rdeyeadvisors provides educational content about decentralized finance (DeFi), 
+                Sentinel DeFi provides educational content about decentralized finance (DeFi),
                 cryptocurrency, and financial technologies. Our services include:
               </p>
               <ul className="list-disc pl-6 space-y-2">
@@ -52,7 +52,7 @@ const TermsOfService = () => {
               <div className="bg-awareness/10 border border-awareness/20 p-6 rounded-lg">
                 <p className="font-semibold mb-2">IMPORTANT DISCLAIMER:</p>
                 <p>
-                  All content provided by 3rdeyeadvisors is for educational purposes only and 
+                  All content provided by Sentinel DeFi is for educational purposes only and
                   does not constitute financial, investment, or trading advice. We do not recommend 
                   any specific investments or trading strategies. Always conduct your own research 
                   and consult with qualified financial advisors before making investment decisions.
@@ -101,7 +101,7 @@ const TermsOfService = () => {
               <h2 className="text-2xl font-bold mb-4">7. Intellectual Property</h2>
               <p>
                 All content, including courses, videos, text, graphics, and software, is owned by 
-                3rdeyeadvisors or our licensors and is protected by copyright and other intellectual 
+                Sentinel DeFi or our licensors and is protected by copyright and other intellectual
                 property laws. You may not reproduce, distribute, or create derivative works without 
                 our written permission.
               </p>
@@ -135,7 +135,7 @@ const TermsOfService = () => {
                 <p className="font-semibold mb-2">ENZYME VAULT: THIRD-PARTY SERVICE:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>The Enzyme Vault is operated by Enzyme Finance, an independent third-party DeFi protocol.</li>
-                  <li>3EA does not custody your funds: deposits and withdrawals occur on Enzyme's external platform.</li>
+                  <li>Sentinel DeFi does not custody your funds: deposits and withdrawals occur on Enzyme's external platform.</li>
                   <li>Smart contract risks exist with any DeFi protocol; always verify you're on the official Enzyme Finance website.</li>
                   <li>Past vault performance does not guarantee future results.</li>
                 </ul>
@@ -157,7 +157,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-bold mb-4">10. Limitation of Liability</h2>
               <p>
-                To the maximum extent permitted by law, 3rdeyeadvisors shall not be liable for any 
+                To the maximum extent permitted by law, Sentinel DeFi shall not be liable for any
                 indirect, incidental, special, or consequential damages resulting from your use of 
                 our services, including but not limited to investment losses.
               </p>
@@ -185,7 +185,7 @@ const TermsOfService = () => {
                 If you have questions about these Terms of Service, please contact us at:
               </p>
               <p className="mt-2">
-                <strong>Email:</strong> info@the3rdeyeadvisors.com
+                <strong>Email:</strong> info@sentineldefi.com
               </p>
             </section>
 

@@ -99,10 +99,10 @@ const Contact = () => {
   return (
     <>
       <SEO 
-        title="Contact & About: Connect with 3rdeyeadvisors"
-        description="Contact 3rdeyeadvisors for DeFi education inquiries and support. Connect with our team to join the mission of financial awakening and consciousness."
-        keywords="contact 3rdeyeadvisors, DeFi education support, financial consciousness contact, crypto education inquiry"
-        url="https://www.the3rdeyeadvisors.com/contact"
+        title="Contact & About: Connect with Sentinel DeFi"
+        description="Contact Sentinel DeFi for DeFi education inquiries and support. Connect with our team to join the mission of financial awakening and consciousness."
+        keywords="contact Sentinel DeFi, DeFi education support, financial consciousness contact, crypto education inquiry"
+        url="https://www.sentineldefi.com/contact"
       />
       <div className="min-h-screen bg-transparent overflow-hidden relative">
         {/* Nebula Glow */}
@@ -222,7 +222,7 @@ const Contact = () => {
                 <div className="flex items-center mb-6">
                   <Globe className="w-6 h-6 text-violet-400 mr-3" />
                   <h2 className="text-2xl font-consciousness font-bold text-white">
-                    About 3rdeyeadvisors
+                    About Sentinel DeFi
                   </h2>
                 </div>
 
@@ -258,22 +258,22 @@ const Contact = () => {
                   <div>
                     <p className="font-body text-xs uppercase tracking-widest text-white/40 mb-1">Email Support</p>
                     <a
-                      href="mailto:info@the3rdeyeadvisors.com"
+                      href="mailto:info@sentineldefi.com"
                       className="font-consciousness text-sm font-medium text-white hover:text-violet-400 transition-colors"
                     >
-                      info@the3rdeyeadvisors.com
+                      info@sentineldefi.com
                     </a>
                   </div>
 
                   <div>
                     <p className="font-body text-xs uppercase tracking-widest text-white/40 mb-1">Instagram</p>
                     <a
-                      href="https://www.instagram.com/3rdeyeadvisors"
+                      href="https://www.instagram.com/sentineldefi"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-consciousness text-sm font-medium text-white hover:text-violet-400 transition-colors"
                     >
-                      @3rdeyeadvisors
+                      @sentineldefi
                     </a>
                   </div>
                 </div>

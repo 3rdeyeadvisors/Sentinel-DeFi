@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Coins, Package, Loader2, AlertCircle, CheckCircle2 } from "lucide-react";
 import nftImage from "@/assets/nft/3ea-earth-access.png";
 
-// Token ID for the 3EA Access NFT (first token in the ERC1155 collection)
+// Token ID for the Sentinel DeFi Access NFT (first token in the ERC1155 collection)
 const ACCESS_TOKEN_ID = 0n;
 
 // Fallback values when blockchain data can't be fetched

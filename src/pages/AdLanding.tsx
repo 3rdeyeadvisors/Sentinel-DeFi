@@ -18,7 +18,7 @@ const AdLanding = () => {
   return (
     <>
       <SEO
-        title="Start Your Financial Awareness Journey | 3EA"
+        title="Start Your Financial Awareness Journey | Sentinel DeFi"
         description="Learn how money, markets, and decentralized systems are shifting. Understand the new financial system with clarity instead of confusion."
         keywords="financial education, DeFi learning, cryptocurrency education, awareness movement, decentralized finance"
       />
@@ -56,12 +56,12 @@ const AdLanding = () => {
           </div>
         </section>
 
-        {/* SECTION 2: What You Get Inside 3EA */}
+        {/* SECTION 2: What You Get Inside Sentinel DeFi */}
         <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 w-full bg-secondary/30">
           <div className="max-w-5xl mx-auto w-full">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-consciousness font-bold mb-4 text-foreground">
-                What You Get Inside 3EA
+                What You Get Inside Sentinel DeFi
               </h2>
               <p className="text-base sm:text-lg text-foreground/80 max-w-2xl mx-auto">
                 Everything you need to understand the new financial system
@@ -168,19 +168,19 @@ const AdLanding = () => {
           </div>
         </section>
 
-        {/* SECTION 4: Why 3EA Is Different */}
+        {/* SECTION 4: Why Sentinel DeFi Is Different */}
         <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 w-full bg-secondary/30">
           <div className="max-w-4xl mx-auto w-full">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-consciousness font-bold mb-4 text-foreground">
-                Why 3EA Is Different
+                Why Sentinel DeFi Is Different
               </h2>
             </div>
 
             <Card className="border-primary/30 bg-white/3 backdrop-blur w-full">
               <CardContent className="p-8 sm:p-10 md:p-12">
                 <p className="text-base sm:text-lg md:text-xl text-card-foreground leading-relaxed mb-6">
-                  3EA is not a trading group or hype project. We don't promise overnight riches or "secret strategies."
+                  Sentinel DeFi is not a trading group or hype project. We don't promise overnight riches or "secret strategies."
                 </p>
                 <p className="text-base sm:text-lg md:text-xl text-card-foreground leading-relaxed mb-6">
                   We are a <span className="font-consciousness font-bold text-primary-glow">conscious learning movement</span> that teaches how the new financial system is being built, so you understand what is happening, rather than being left behind or manipulated by those who profit from your confusion.

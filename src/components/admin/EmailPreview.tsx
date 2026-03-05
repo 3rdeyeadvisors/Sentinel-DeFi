@@ -52,7 +52,7 @@ const EmailPreview = () => {
                       </p>
                       
                       <p style="font-size: 16px; line-height: 1.6; margin: 0 0 32px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; color: #1f2937;">
-                        <strong style="color: #3B82F6;">3rdeyeadvisors</strong> has officially launched the <strong>Learn-to-Earn Raffle</strong>, rewarding our community for learning and engaging in DeFi education.
+                        <strong style="color: #3B82F6;">Sentinel DeFi</strong> has officially launched the <strong>Learn-to-Earn Raffle</strong>, rewarding our community for learning and engaging in DeFi education.
                       </p>
                       
                       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #3B82F6; border-radius: 12px; margin: 30px 0;">
@@ -64,7 +64,7 @@ const EmailPreview = () => {
                             
                             <div style="text-align: left; margin: 0 0 30px 0;">
                               <p style="font-size: 16px; line-height: 2; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; margin: 8px 0;">
-                                ✅ <strong>Follow us on Instagram</strong> @3rdeyeadvisors
+                                ✅ <strong>Follow us on Instagram</strong> @sentineldefi
                               </p>
                               <p style="font-size: 16px; line-height: 2; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; margin: 8px 0;">
                                 ✅ <strong>Subscribe to the newsletter</strong> (you're already in! 🎉)
@@ -103,7 +103,7 @@ const EmailPreview = () => {
                       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                         <tr>
                           <td align="center" style="padding: 40px 0 30px 0;">
-                            <a href="https://the3rdeyeadvisors.com/raffles" style="display: inline-block; background-color: #3B82F6; color: #ffffff; padding: 18px 40px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 18px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">
+                            <a href="https://sentineldefi.com/raffles" style="display: inline-block; background-color: #3B82F6; color: #ffffff; padding: 18px 40px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 18px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">
                               Join the Raffle Now →
                             </a>
                           </td>
@@ -121,7 +121,7 @@ const EmailPreview = () => {
                               Awareness is advantage.
                             </p>
                             <p style="font-size: 14px; color: #6b7280; margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">
-                             3rdeyeadvisors
+                             Sentinel DeFi
                             </p>
                           </td>
                         </tr>
@@ -138,7 +138,7 @@ const EmailPreview = () => {
     },
     confirmation: {
       title: "Entry Confirmation Email",
-      subject: "You're officially entered: 3rdeyeadvisors Learn-to-Earn Raffle 🎟",
+      subject: "You're officially entered: Sentinel DeFi Learn-to-Earn Raffle 🎟",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h1 style="color: #3B82F6; margin-bottom: 20px;">You're In! 🎉</h1>
@@ -176,13 +176,13 @@ const EmailPreview = () => {
               Awareness is advantage.
             </p>
             <p style="font-size: 14px; color: #666;">
-             The 3rdeyeadvisors Team
+             The Sentinel DeFi Team
             </p>
           </div>
           
           <div style="margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px; text-align: center;">
             <p style="font-size: 14px; color: #666; margin: 0;">
-              Want more entries? Share your referral link from your <a href="https://the3rdeyeadvisors.com/raffles" style="color: #3B82F6; text-decoration: none;">raffle dashboard</a>.
+              Want more entries? Share your referral link from your <a href="https://sentineldefi.com/raffles" style="color: #3B82F6; text-decoration: none;">raffle dashboard</a>.
             </p>
           </div>
         </div>
@@ -217,7 +217,7 @@ const EmailPreview = () => {
             <p style="font-size: 16px; line-height: 1.6; margin-bottom: 0;">
               🎯 We're currently verifying all entries and selecting the winner<br>
               📧 The winner will be announced via email soon<br>
-              🌐 All results will be visible on our <a href="https://the3rdeyeadvisors.com/raffle-history" style="color: #3B82F6; text-decoration: none;">Raffle History</a> page
+              🌐 All results will be visible on our <a href="https://sentineldefi.com/raffle-history" style="color: #3B82F6; text-decoration: none;">Raffle History</a> page
             </p>
           </div>
           
@@ -226,7 +226,7 @@ const EmailPreview = () => {
           </p>
           
           <div style="text-align: center; margin: 40px 0;">
-            <a href="https://the3rdeyeadvisors.com/courses" style="display: inline-block; background: #3B82F6; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
+            <a href="https://sentineldefi.com/courses" style="display: inline-block; background: #3B82F6; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
               Continue Learning →
             </a>
           </div>
@@ -236,7 +236,7 @@ const EmailPreview = () => {
               Awareness is advantage.
             </p>
             <p style="font-size: 14px; color: #666;">
-             The 3rdeyeadvisors Team
+             The Sentinel DeFi Team
             </p>
           </div>
         </div>
@@ -282,7 +282,7 @@ const EmailPreview = () => {
               Awareness is advantage.
             </p>
             <p style="font-size: 14px; color: #666;">
-             The 3rdeyeadvisors Team
+             The Sentinel DeFi Team
             </p>
           </div>
         </div>
@@ -319,12 +319,12 @@ const EmailPreview = () => {
             <p style="font-size: 16px; line-height: 1.6; margin-bottom: 0;">
               🎟 More Learn-to-Earn raffles are coming<br>
               📚 Keep learning and earning entries<br>
-              🔔 Follow us on <a href="https://instagram.com/3rdeyeadvisors" style="color: #3B82F6; text-decoration: none;">Instagram</a> for updates
+              🔔 Follow us on <a href="https://instagram.com/sentineldefi" style="color: #3B82F6; text-decoration: none;">Instagram</a> for updates
             </p>
           </div>
           
           <div style="text-align: center; margin: 40px 0;">
-            <a href="https://the3rdeyeadvisors.com/courses" style="display: inline-block; background: #3B82F6; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
+            <a href="https://sentineldefi.com/courses" style="display: inline-block; background: #3B82F6; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
               Continue Learning →
             </a>
           </div>
@@ -334,13 +334,13 @@ const EmailPreview = () => {
               Awareness is advantage.
             </p>
             <p style="font-size: 14px; color: #666;">
-             The 3rdeyeadvisors Team
+             The Sentinel DeFi Team
             </p>
           </div>
           
           <div style="margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px; text-align: center;">
             <p style="font-size: 14px; color: #666; margin: 0;">
-              View all past winners on our <a href="https://the3rdeyeadvisors.com/raffle-history" style="color: #3B82F6; text-decoration: none;">Raffle History</a> page.
+              View all past winners on our <a href="https://sentineldefi.com/raffle-history" style="color: #3B82F6; text-decoration: none;">Raffle History</a> page.
             </p>
           </div>
         </div>

@@ -26,11 +26,11 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <AnimatedSection animation="fade-right">
             <h2 className="font-consciousness text-4xl md:text-5xl font-bold text-white mb-8">
-              What Is 3EA?
+              What Is Sentinel DeFi?
             </h2>
             <div className="space-y-6">
               <p className="font-body text-lg text-white/70 leading-relaxed">
-                3EA teaches you to protect and grow what you own in a system where no institution can freeze it, inflate it away, or restrict your access to it. This is not an investment course. It is a new way of thinking about money, freedom, and what it means to own something.
+                Sentinel DeFi teaches you to protect and grow what you own in a system where no institution can freeze it, inflate it away, or restrict your access to it. This is not an investment course. It is a new way of thinking about money, freedom, and what it means to own something.
               </p>
               <p className="font-body text-lg text-white/70 leading-relaxed">
                 Traditional finance locks people out based on geography, credit history, and arbitrary gatekeeping. Decentralized finance opens the door to anyone with an internet connection. We teach you how to walk through it safely.

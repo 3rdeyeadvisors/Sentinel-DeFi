@@ -83,7 +83,7 @@ export const SocialBannerGenerator = () => {
       ctx.fillRect(0, 0, width, height);
 
       // Wordmark: EXACT single unbroken word
-      const word = '3rdeyeadvisors';
+      const word = 'Sentinel DeFi';
       // Choose a clean geometric sans; fall back to system
       let fontSize = 220; // will shrink to fit
       const padding = 120; // safe margins
@@ -132,7 +132,7 @@ export const SocialBannerGenerator = () => {
 
       toast({
         title: 'Social banner updated',
-        description: 'Centered text "3rdeyeadvisors" (single unbroken word) with site theme applied.',
+        description: 'Centered text "Sentinel DeFi" (single unbroken word) with site theme applied.',
       });
     } catch (error: any) {
       console.error('Error generating banner:', error);
@@ -167,7 +167,7 @@ export const SocialBannerGenerator = () => {
       <div className="text-center space-y-4">
         <h2 className="text-2xl font-bold text-foreground">Generate Social Share Banner</h2>
         <p className="text-muted-foreground">
-          Create a futuristic 3EA social share banner for your DeFi education platform
+          Create a futuristic Sentinel DeFi social share banner for your DeFi education platform
         </p>
         
         <Button 
@@ -185,7 +185,7 @@ export const SocialBannerGenerator = () => {
           <div className="relative bg-card rounded-lg overflow-hidden border">
             <img 
               src={generatedImage} 
-              alt="3EA Social Share Banner - 3rdeyeadvisors wordmark"
+              alt="Sentinel DeFi Social Share Banner - Sentinel DeFi wordmark"
               className="w-full h-auto"
               width={1792}
               height={1024}

@@ -1,7 +1,7 @@
 import { createThirdwebClient, getContract, defineChain } from "thirdweb";
 
 /**
- * Thirdweb Configuration for 3rdeyeadvisors
+ * Thirdweb Configuration for Sentinel DeFi
  * 
  * IMPORTANT: For production, ensure these values are correct:
  * - THIRDWEB_CLIENT_ID: Get from https://thirdweb.com/dashboard/settings/api-keys
@@ -28,18 +28,18 @@ export const thirdwebClient = createThirdwebClient({
 // App metadata for WalletConnect - shown in wallet connection prompts
 // This helps users identify your app when connecting from their wallet
 export const appMetadata = {
-  name: "3rdeyeadvisors",
+  name: "Sentinel DeFi",
   description: "DeFi Education & NFT-Gated Vault Access",
-  url: typeof window !== "undefined" ? window.location.origin : "https://the3rdeyeadvisors.com",
-  logoUrl: "https://the3rdeyeadvisors.com/android-chrome-192x192.png",
+  url: typeof window !== "undefined" ? window.location.origin : "https://sentineldefi.com",
+  logoUrl: "https://sentineldefi.com/android-chrome-192x192.png",
   // Additional fields for better wallet UX
-  icons: ["https://the3rdeyeadvisors.com/android-chrome-192x192.png"],
+  icons: ["https://sentineldefi.com/android-chrome-192x192.png"],
 };
 
 // Ethereum Mainnet chain
 export const ethereum = defineChain(1);
 
-// NFT Contract Address (3EA Access NFT)
+// NFT Contract Address (Sentinel DeFi Access NFT)
 export const NFT_CONTRACT_ADDRESS = "0x91AE8ec3d88E871679F826c1D6c5B008f105506c";
 
 // Enzyme Vault ComptrollerProxy Address
