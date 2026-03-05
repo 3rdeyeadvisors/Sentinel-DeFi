@@ -25,7 +25,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Mail, href: 'mailto:info@the3rdeyeadvisors.com', label: 'Email' },
-    { icon: Instagram, href: 'https://instagram.com/3rdeyeadvisors', label: 'Instagram' },
+    { icon: Instagram, href: 'https://instagram.com/sentineldefi', label: 'Instagram' },
   ];
 
   return (
@@ -119,7 +119,7 @@ const Footer = () => {
         <div className="pt-4 md:pt-6 border-t border-white/8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-2">
-              <span className="font-consciousness font-bold text-foreground">3rdeyeadvisors</span>
+              <span className="font-consciousness font-bold text-foreground">Sentinel DeFi</span>
               <span className="text-xs text-white/50 font-consciousness">
                 © {currentYear} All Rights Reserved
               </span>
