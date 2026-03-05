@@ -18,19 +18,19 @@ const Index = () => {
     <>
       <SEO 
         title="Everything Your Financial Advisor Won't Tell You"
-        description="3rdeyeadvisors teaches complete beginners how to understand and use decentralized finance. Plain language. No hype. No gatekeeping. Used by individuals, families, financial advisors, and law firms."
+        description="Sentinel DeFi teaches complete beginners how to understand and use decentralized finance. Plain language. No hype. No gatekeeping. Used by individuals, families, financial advisors, and law firms."
         keywords="DeFi education, crypto for beginners, decentralized finance, blockchain basics, financial advisor crypto, cryptocurrency learning"
-        url="https://www.the3rdeyeadvisors.com/"
+        url="https://www.sentineldefi.com/"
         type="website"
         schema={{
           type: "Organization",
           data: {
             "@type": "Organization",
-            "name": "3rdeyeadvisors",
+            "name": "Sentinel DeFi",
             "description": "Expert DeFi education and cryptocurrency training platform",
-            "url": "https://www.the3rdeyeadvisors.com",
+            "url": "https://www.sentineldefi.com",
             "sameAs": [
-              "https://twitter.com/3rdeyeadvisors"
+              "https://twitter.com/sentineldefi"
             ]
           }
         }}

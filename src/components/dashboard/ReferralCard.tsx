@@ -131,7 +131,7 @@ export const ReferralCard = () => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "Join 3rdeyeadvisors",
+          title: "Join Sentinel DeFi",
           text: "Learn DeFi with me! Sign up using my referral link and we both earn bonus raffle entries.",
           url: referralLink,
         });

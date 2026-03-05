@@ -48,7 +48,7 @@ ${result.percentile ? `Percentile: Top ${result.percentile}` : ''}
 
 ${result.description || ''}
 
-Train your mind at: https://the3rdeyeadvisors.com/mini-games
+Train your mind at: https://sentineldefi.com/mini-games
   `.trim();
 
   const mailtoUrl = `mailto:${result.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

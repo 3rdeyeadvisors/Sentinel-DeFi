@@ -50,7 +50,7 @@ export function AdminSidebar({ activeSection, onSectionChange }: AdminSidebarPro
 
       <SidebarContent className="font-body">
         <SidebarGroup>
-          <SidebarGroupLabel className="font-consciousness uppercase tracking-widest text-violet-400/70">3rdeyeadvisors Admin</SidebarGroupLabel>
+          <SidebarGroupLabel className="font-consciousness uppercase tracking-widest text-violet-400/70">Sentinel DeFi Admin</SidebarGroupLabel>
 
           <SidebarGroupContent>
             <SidebarMenu>

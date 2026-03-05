@@ -103,7 +103,7 @@ const Subscription = () => {
     <>
       <SEO
         title="Subscription"
-        description="Subscribe to 3rdeyeadvisors for full access to DeFi courses, tutorials, and premium content. Start your 14 day free trial today."
+        description="Subscribe to Sentinel DeFi for full access to DeFi courses, tutorials, and premium content. Start your 14 day free trial today."
         keywords="defi subscription, crypto education, blockchain courses, defi membership"
       />
 

@@ -232,12 +232,12 @@ export const IQTest: React.FC<{ onComplete: (iq: number, score: number) => void 
             if (navigator.share) {
               navigator.share({
                 title: 'My IQ Assessment Result',
-                text: `I just scored an IQ of ${roundedIQ} on 3rdeyeadvisors! Can you beat my score?`,
+                text: `I just scored an IQ of ${roundedIQ} on Sentinel DeFi! Can you beat my score?`,
                 url: window.location.href,
               });
             } else {
               toast.info("Copied to clipboard!");
-              navigator.clipboard.writeText(`I just scored an IQ of ${roundedIQ} on 3rdeyeadvisors!`);
+              navigator.clipboard.writeText(`I just scored an IQ of ${roundedIQ} on Sentinel DeFi!`);
             }
           }}>
             <Share2 className="w-4 h-4" /> Share Results

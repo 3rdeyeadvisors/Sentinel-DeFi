@@ -41,8 +41,8 @@ const VaultDepositTutorial = () => {
   return (
     <>
       <SEO 
-        title="How to Deposit into the 3EA Vault | Tutorial"
-        description="Step-by-step guide to depositing into the 3EA Enzyme Vault using MetaMask. Learn how to connect, deposit, and view your vault tokens."
+        title="How to Deposit into the Sentinel DeFi Vault | Tutorial"
+        description="Step-by-step guide to depositing into the Sentinel DeFi Enzyme Vault using MetaMask. Learn how to connect, deposit, and view your vault tokens."
       />
 
       <div className="container max-w-3xl px-4 py-8 md:py-12 space-y-6 md:space-y-8">
@@ -58,14 +58,14 @@ const VaultDepositTutorial = () => {
             <Wallet className="h-3 w-3 mr-1" />
             Tutorial
           </Badge>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">How to Deposit into the 3EA Vault</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">How to Deposit into the Sentinel DeFi Vault</h1>
           <p className="text-base md:text-lg text-white/50">
             A complete guide to depositing into our Enzyme vault and viewing your vault tokens in MetaMask.
           </p>
 
           <div className="flex justify-end pt-2">
             <button
-              onClick={() => openAudio("How to Deposit into the 3EA Vault. A complete guide to depositing into our Enzyme vault and viewing your vault tokens in MetaMask.", 'Vault Deposit Tutorial')}
+              onClick={() => openAudio("How to Deposit into the Sentinel DeFi Vault. A complete guide to depositing into our Enzyme vault and viewing your vault tokens in MetaMask.", 'Vault Deposit Tutorial')}
               className="flex items-center gap-2 font-body text-xs text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-3 py-2"
             >
               <Volume2 className="w-3.5 h-3.5" />
@@ -288,7 +288,7 @@ const VaultDepositTutorial = () => {
                   <Link2 className="h-4 w-4 md:h-5 md:w-5 shrink-0" />
                   <span>Connect to the Enzyme Vault</span>
                 </CardTitle>
-                <CardDescription className="text-sm mt-1">Link your wallet to the 3EA vault</CardDescription>
+                <CardDescription className="text-sm mt-1">Link your wallet to the Sentinel DeFi vault</CardDescription>
               </div>
             </div>
           </CardHeader>
@@ -300,7 +300,7 @@ const VaultDepositTutorial = () => {
             <div className="space-y-3">
               <div className="flex items-start gap-2 md:gap-3">
                 <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
-                <p className="text-sm md:text-base">Click the button below to open the 3EA Vault on Enzyme Finance</p>
+                <p className="text-sm md:text-base">Click the button below to open the Sentinel DeFi Vault on Enzyme Finance</p>
               </div>
               <div className="flex items-start gap-2 md:gap-3">
                 <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
@@ -322,7 +322,7 @@ const VaultDepositTutorial = () => {
 
             <Button asChild className="gap-2 w-full sm:w-auto">
               <a href={ENZYME_VAULT_URL} target="_blank" rel="noopener noreferrer">
-                Open 3EA Vault on Enzyme
+                Open Sentinel DeFi Vault on Enzyme
                 <ExternalLink className="h-4 w-4" />
               </a>
             </Button>

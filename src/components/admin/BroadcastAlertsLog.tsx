@@ -82,7 +82,7 @@ export const BroadcastAlertsLog = () => {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>3EA Broadcast Alerts</CardTitle>
+          <CardTitle>Sentinel DeFi Broadcast Alerts</CardTitle>
           <CardDescription>
             Monitor and manage broadcast automation alerts
           </CardDescription>

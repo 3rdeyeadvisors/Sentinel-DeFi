@@ -102,6 +102,7 @@ const Contact = () => {
         title="Contact & About: Connect with Sentinel DeFi"
         description="Contact Sentinel DeFi for DeFi education inquiries and support. Connect with our team to join the mission of financial awakening and consciousness."
         keywords="contact Sentinel DeFi, DeFi education support, financial consciousness contact, crypto education inquiry"
+        url="https://www.sentineldefi.com/contact"
         url="https://www.the3rdeyeadvisors.com/contact"
       />
       <div className="min-h-screen bg-transparent overflow-hidden relative">
@@ -258,10 +259,10 @@ const Contact = () => {
                   <div>
                     <p className="font-body text-xs uppercase tracking-widest text-white/40 mb-1">Email Support</p>
                     <a
-                      href="mailto:info@the3rdeyeadvisors.com"
+                      href="mailto:info@sentineldefi.com"
                       className="font-consciousness text-sm font-medium text-white hover:text-violet-400 transition-colors"
                     >
-                      info@the3rdeyeadvisors.com
+                      info@sentineldefi.com
                     </a>
                   </div>
 

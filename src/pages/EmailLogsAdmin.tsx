@@ -58,7 +58,7 @@ const EmailLogsAdmin = () => {
   const [selectedEmails, setSelectedEmails] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [emailSubject, setEmailSubject] = useState("Welcome to 3rdeyeadvisors");
+  const [emailSubject, setEmailSubject] = useState("Welcome to Sentinel DeFi");
   const [emailBody, setEmailBody] = useState("");
   const [previewHtml, setPreviewHtml] = useState("");
   const [showPreview, setShowPreview] = useState(false);
@@ -320,7 +320,7 @@ const EmailLogsAdmin = () => {
                 <!-- Header -->
                 <tr>
                   <td style="padding: 48px 40px 32px 40px; text-align: center;">
-                    <h1 style="color: #8B5CF6; font-size: 28px; margin: 0 0 8px 0; font-weight: 700;">3rdeyeadvisors</h1>
+                    <h1 style="color: #8B5CF6; font-size: 28px; margin: 0 0 8px 0; font-weight: 700;">Sentinel DeFi</h1>
                     <p style="color: #9CA3AF; font-size: 14px; margin: 0; font-weight: 500; letter-spacing: 0.5px;">CONSCIOUS DEFI EDUCATION</p>
                   </td>
                 </tr>
@@ -350,7 +350,7 @@ const EmailLogsAdmin = () => {
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                       <tr>
                         <td style="border-radius: 6px; background: #8B5CF6; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);">
-                          <a href="https://the3rdeyeadvisors.com" style="display: inline-block; padding: 14px 32px; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; letter-spacing: 0.3px;">Visit 3rdeyeadvisors</a>
+                          <a href="https://sentineldefi.com" style="display: inline-block; padding: 14px 32px; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; letter-spacing: 0.3px;">Visit Sentinel DeFi</a>
                         </td>
                       </tr>
                     </table>
@@ -361,12 +361,12 @@ const EmailLogsAdmin = () => {
                 <tr>
                   <td style="padding: 24px 40px 32px 40px; background-color: #F9FAFB; border-radius: 0 0 8px 8px;">
                     <p style="color: #9CA3AF; font-size: 12px; margin: 0 0 12px 0; line-height: 1.6; text-align: center;">
-                      You're receiving this because you're part of the 3rdeyeadvisors community.
+                      You're receiving this because you're part of the Sentinel DeFi community.
                     </p>
                     <p style="margin: 0; text-align: center;">
-                      <a href="https://the3rdeyeadvisors.com" style="color: #8B5CF6; text-decoration: none; font-size: 12px; font-weight: 600;">Visit Website</a>
+                      <a href="https://sentineldefi.com" style="color: #8B5CF6; text-decoration: none; font-size: 12px; font-weight: 600;">Visit Website</a>
                       <span style="color: #D1D5DB; margin: 0 8px;">|</span>
-                      <a href="https://the3rdeyeadvisors.com/contact" style="color: #8B5CF6; text-decoration: none; font-size: 12px; font-weight: 600;">Contact Us</a>
+                      <a href="https://sentineldefi.com/contact" style="color: #8B5CF6; text-decoration: none; font-size: 12px; font-weight: 600;">Contact Us</a>
                     </p>
                   </td>
                 </tr>

@@ -1012,7 +1012,7 @@ Prove your expertise in DeFi vaults and managed investing.
               { id: "q5-e19", question: "What is 'Liquidity Risk'?", type: "single", options: ["Risk of too much water", "Risk of not being able to withdraw assets due to low pool liquidity", "Risk of price going up", "Risk of low gas fees"], correctAnswers: [1], points: 3 },
               { id: "q5-e20", question: "Which vault would be best for someone who wants exposure to ETH yield?", type: "single", options: ["USDC vault", "ETH yield vault", "BTC vault", "Stablecoin vault"], correctAnswers: [1], points: 3 },
               { id: "q5-e21", question: "What is a 'Stablecoin'?", type: "single", options: ["A volatile asset", "An asset pegged to a stable value like $1 USD", "A fast token", "A mining token"], correctAnswers: [1], points: 3 },
-              { id: "q5-e22", question: "True or False: 3EA offers a managed vault solution.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
+              { id: "q5-e22", question: "True or False: Sentinel DeFi offers a managed vault solution.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
               { id: "q5-e23", question: "What is the role of a 'Governance Token' in a vault protocol?", type: "single", options: ["Paying for gas", "Voting on protocol changes and strategies", "Mining", "Storing data"], correctAnswers: [1], points: 3 },
               { id: "q5-e24", question: "What is 'Slippage'?", type: "single", options: ["A wallet error", "The difference between expected and actual price in a trade", "A type of vault", "A gas refund"], correctAnswers: [1], points: 3 },
               { id: "q5-e25", question: "What should you do if a vault has no audit?", type: "single", options: ["Invest everything", "Approach with extreme caution or avoid", "Assume it's safe", "Tell all your friends to invest"], correctAnswers: [1], points: 3 },
@@ -6063,7 +6063,7 @@ Demonstrate your ability to manage and grow a DeFi portfolio.
   {
     id: 5,
     title: "Understanding DeFi Vaults: Your Complete Guide to Managed Investing",
-    description: "Learn what DeFi vaults are, how they work, and how to choose the right vault for your investment goals. Includes access guidance for the 3EA managed vault.",
+    description: "Learn what DeFi vaults are, how they work, and how to choose the right vault for your investment goals. Includes access guidance for the Sentinel DeFi managed vault.",
     category: "free",
     difficulty: "Intermediate",
     estimatedTime: "2.5 hours",
@@ -6155,7 +6155,7 @@ Some vaults require you to keep funds deposited for a minimum time. Not all vaul
 ### 4. Managed Strategy Vaults
 • **Purpose**: Follow curated investment strategies
 • **Strategy**: Active management by experienced strategists
-• **Example**: Enzyme Finance vaults, 3EA Vault
+• **Example**: Enzyme Finance vaults, Sentinel DeFi Vault
 • **Risk Level**: Varies by strategy
 
 ### 5. Delta-Neutral Vaults
@@ -7048,7 +7048,7 @@ Choosing a vault isn't just about finding the highest APY. It's about finding th
 }
 [/COMPONENT]
 
-*Next module: Getting access to the 3EA managed vault: step by step.*`,
+*Next module: Getting access to the Sentinel DeFi managed vault: step by step.*`,
           quiz: {
             id: "quiz-5-4",
             title: "Choosing the Right Vault: Knowledge Check",
@@ -7140,17 +7140,17 @@ Choosing a vault isn't just about finding the highest APY. It's about finding th
       },
       {
         id: "5-5",
-        title: "Getting Access to the 3EA Vault (Step-by-Step Guide)",
+        title: "Getting Access to the Sentinel DeFi Vault (Step-by-Step Guide)",
         type: "text",
         duration: 25,
         content: {
-          text: `# Getting Access to the 3EA Vault
+          text: `# Getting Access to the Sentinel DeFi Vault
 
-This module provides a step-by-step guide to understanding and accessing the 3EA managed vault on Enzyme Finance.
+This module provides a step-by-step guide to understanding and accessing the Sentinel DeFi managed vault on Enzyme Finance.
 
-## About the 3EA Vault 🏦
+## About the Sentinel DeFi Vault 🏦
 
-The 3EA Vault is a managed investment vault on the Enzyme Finance protocol, providing curated DeFi strategy exposure with transparent, on-chain execution.
+The Sentinel DeFi Vault is a managed investment vault on the Enzyme Finance protocol, providing curated DeFi strategy exposure with transparent, on-chain execution.
 
 ### Key Features
 • **Platform**: Enzyme Finance (established 2017)
@@ -7168,7 +7168,7 @@ The 3EA Vault is a managed investment vault on the Enzyme Finance protocol, prov
 
 ## How Access Works 🔑
 
-Unlike open vaults where anyone can deposit, the 3EA Vault uses a **whitelisting system** to manage access. Here's how it works:
+Unlike open vaults where anyone can deposit, the Sentinel DeFi Vault uses a **whitelisting system** to manage access. Here's how it works:
 
 ### The NFT Access Model
 
@@ -7297,22 +7297,22 @@ Ready to explore vault access? Here are your next steps:
 [COMPONENT:KEY_TAKEAWAY]
 {
   "title": "Course Complete!",
-  "content": "Congratulations on completing the DeFi Vaults course! You now understand:\n\n• What vaults are and how they work\n• Major protocols and their differences\n• How to stay safe and identify red flags\n• How to choose the right vault for your goals\n• How to access the 3EA managed vault\n\nRemember: Education is ongoing. Stay curious, stay safe, and never stop learning."
+  "content": "Congratulations on completing the DeFi Vaults course! You now understand:\n\n• What vaults are and how they work\n• Major protocols and their differences\n• How to stay safe and identify red flags\n• How to choose the right vault for your goals\n• How to access the Sentinel DeFi managed vault\n\nRemember: Education is ongoing. Stay curious, stay safe, and never stop learning."
 }
 [/COMPONENT]
 
 *Ready to explore? Visit the Vault Access page to learn more about membership options.*`,
           quiz: {
             id: "quiz-5-5",
-            title: "3EA Vault Access: Knowledge Check",
-            description: "Test your understanding of the 3EA vault access process and requirements.",
+            title: "Sentinel DeFi Vault Access: Knowledge Check",
+            description: "Test your understanding of the Sentinel DeFi vault access process and requirements.",
             passingScore: 70,
             timeLimit: 10,
             maxAttempts: 3,
             questions: [
               {
                 id: "q5-5-1",
-                question: "What is required to access the 3EA managed vault?",
+                question: "What is required to access the Sentinel DeFi managed vault?",
                 type: "single",
                 options: [
                   "Just an Ethereum wallet",
@@ -7321,7 +7321,7 @@ Ready to explore vault access? Here are your next steps:
                   "KYC verification documents"
                 ],
                 correctAnswers: [1],
-                explanation: "Access to the 3EA vault requires purchasing the 3EA Earth Access NFT and waiting for your wallet to be whitelisted (up to 7 days).",
+                explanation: "Access to the Sentinel DeFi vault requires purchasing the 3EA Earth Access NFT and waiting for your wallet to be whitelisted (up to 7 days).",
                 points: 10
               },
               {
@@ -7340,7 +7340,7 @@ Ready to explore vault access? Here are your next steps:
               },
               {
                 id: "q5-5-3",
-                question: "Which platform hosts the 3EA managed vault?",
+                question: "Which platform hosts the Sentinel DeFi managed vault?",
                 type: "single",
                 options: [
                   "Yearn Finance",
@@ -7349,12 +7349,12 @@ Ready to explore vault access? Here are your next steps:
                   "Aave"
                 ],
                 correctAnswers: [2],
-                explanation: "The 3EA Vault operates on Enzyme Finance, an established asset management protocol that has been operating since 2017.",
+                explanation: "The Sentinel DeFi Vault operates on Enzyme Finance, an established asset management protocol that has been operating since 2017.",
                 points: 10
               },
               {
                 id: "q5-5-4",
-                question: "Which of the following are true about the 3EA vault? (Select all that apply)",
+                question: "Which of the following are true about the Sentinel DeFi vault? (Select all that apply)",
                 type: "multiple",
                 options: [
                   "All actions are verifiable on-chain",
@@ -7380,7 +7380,7 @@ Ready to explore vault access? Here are your next steps:
         },
         resources: [
           {
-            title: "3EA Vault Access Page",
+            title: "Sentinel DeFi Vault Access Page",
             url: "/vault-access",
             type: "link"
           },
@@ -8886,7 +8886,7 @@ You've completed the **Tokenizing Real World Assets** course! This course was de
 • Practice with small amounts first
 • Stay updated on RWA developments
 
-*Thank you for learning with 3rdeyeadvisors!*`,
+*Thank you for learning with Sentinel DeFi!*`,
           quiz: {
             id: "quiz-6-5",
             title: "The Future of Tokenization: Knowledge Check",
@@ -8965,7 +8965,7 @@ You've completed the **Tokenizing Real World Assets** course! This course was de
         },
         resources: [
           {
-            title: "3rdeyeadvisors Courses",
+            title: "Sentinel DeFi Courses",
             url: "/courses",
             type: "link"
           },

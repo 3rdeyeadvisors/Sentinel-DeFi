@@ -54,19 +54,19 @@ const SEOAutomation = ({
         <meta property="og:description" content={seoConfig.description} />
         <meta property="og:type" content={seoConfig.type || 'website'} />
         <meta property="og:url" content={seoConfig.url} />
-        <meta property="og:image" content={`${window.location.origin}/social-share-3rdeyeadvisors.jpg`} />
+        <meta property="og:image" content={`${window.location.origin}/social-share-sentinel-defi.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="3rdeyeadvisors" />
+        <meta property="og:site_name" content="Sentinel DeFi" />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoConfig.title} />
         <meta name="twitter:description" content={seoConfig.description} />
-        <meta name="twitter:image" content={`${window.location.origin}/social-share-3rdeyeadvisors.jpg`} />
-        <meta name="twitter:creator" content="@3rdeyeadvisors" />
-        <meta name="twitter:site" content="@3rdeyeadvisors" />
+        <meta name="twitter:image" content={`${window.location.origin}/social-share-sentinel-defi.jpg`} />
+        <meta name="twitter:creator" content="@sentineldefi" />
+        <meta name="twitter:site" content="@sentineldefi" />
 
         {/* Schema.org Structured Data */}
         {schema && (
@@ -79,14 +79,14 @@ const SEOAutomation = ({
                 name: seoConfig.title,
                 description: seoConfig.description,
                 url: seoConfig.url,
-                image: `${window.location.origin}/social-share-3rdeyeadvisors.jpg`,
+                image: `${window.location.origin}/social-share-sentinel-defi.jpg`,
                 publisher: {
                   "@type": "Organization",
-                  name: "3rdeyeadvisors",
-                  url: "https://www.the3rdeyeadvisors.com",
+                  name: "Sentinel DeFi",
+                  url: "https://www.sentineldefi.com",
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://www.the3rdeyeadvisors.com/favicon-3rdeyeadvisors.png?v=4"
+                    url: "https://www.sentineldefi.com/favicon-sentineldefi.png?v=4"
                   }
                 },
                 ...schema.data

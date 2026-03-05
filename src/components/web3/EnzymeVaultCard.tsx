@@ -41,7 +41,7 @@ export const EnzymeVaultCard = ({ isWhitelisted = false, walletAddress }: Enzyme
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-primary" />
-            3EA Enzyme Vault
+            Sentinel DeFi Enzyme Vault
           </CardTitle>
           <Badge variant="secondary" className="bg-success/10 text-success border-success/30">
             <Shield className="h-3 w-3 mr-1" />
@@ -106,7 +106,7 @@ export const EnzymeVaultCard = ({ isWhitelisted = false, walletAddress }: Enzyme
         <div className="rounded-lg bg-warning/10 border border-warning/30 p-4">
           <p className="text-xs text-warning">
             <strong>External Service:</strong> Deposits and withdrawals are processed through Enzyme Finance's platform. 
-            3EA does not custody your funds. Always verify you're on the official Enzyme Finance website.
+            Sentinel DeFi does not custody your funds. Always verify you're on the official Enzyme Finance website.
           </p>
         </div>
       </CardContent>

@@ -339,16 +339,16 @@ const DefaiRevolution2025 = () => {
 
 <p>The future of finance is being written right now, and those who understand and responsibly adopt DeFAI technologies today will be best positioned to benefit from the autonomous financial systems of tomorrow.</p>
 
-<p><strong>Want to stay ahead of the curve in DeFi and automation? Explore our free DeFi courses and tools at 3rdeyeadvisors to master the fundamentals before diving into advanced AI-powered strategies.</strong></p>
+<p><strong>Want to stay ahead of the curve in DeFi and automation? Explore our free DeFi courses and tools at Sentinel DeFi to master the fundamentals before diving into advanced AI-powered strategies.</strong></p>
     `
   };
 
   return (
     <>
       <SEO
-        title="The DeFAI Revolution 2025: AI Meets Decentralized Finance | 3rdeyeadvisors"
+        title="The DeFAI Revolution 2025: AI Meets Decentralized Finance | Sentinel DeFi"
         description="How artificial intelligence is transforming DeFi protocols, yield strategies, and on-chain decision making in 2025."
-        url="https://www.the3rdeyeadvisors.com/blog/defai-revolution-2025"
+        url="https://www.sentineldefi.com/blog/defai-revolution-2025"
       />
 
       <div className="min-h-screen py-20">

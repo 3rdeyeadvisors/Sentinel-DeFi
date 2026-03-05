@@ -20,9 +20,9 @@ const CheckoutSuccess = () => {
   return (
     <>
       <SEO
-        title="Welcome to 3rdeyeadvisors"
+        title="Welcome to Sentinel DeFi"
         description="Your membership is confirmed. Start learning DeFi today."
-        url="https://www.the3rdeyeadvisors.com/checkout/success"
+        url="https://www.sentineldefi.com/checkout/success"
       />
       <div className="min-h-screen bg-transparent flex items-center justify-center px-6">
         {/* Background glow */}

@@ -129,8 +129,8 @@ const Earn = () => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "Join 3rdeyeadvisors",
-          text: "Learn DeFi with 3rdeyeadvisors: Start your free trial today!",
+          title: "Join Sentinel DeFi",
+          text: "Learn DeFi with Sentinel DeFi: Start your free trial today!",
           url: referralLink,
         });
       } catch {
@@ -217,10 +217,10 @@ const Earn = () => {
   return (
     <>
       <SEO
-        title="Earn While You Learn DeFi | 3rdeyeadvisors"
+        title="Earn While You Learn DeFi | Sentinel DeFi"
         description="Earn points, unlock rewards, and earn referral commissions by learning DeFi. Monthly subscribers earn 50%, annual subscribers earn 60%, Founding 33 members earn 70%."
         keywords="earn crypto education, DeFi referral program, learn to earn, crypto commissions, DeFi rewards"
-        url="https://www.the3rdeyeadvisors.com/earn"
+        url="https://www.sentineldefi.com/earn"
       />
 
       <div className="min-h-screen bg-transparent relative overflow-hidden">
@@ -266,7 +266,7 @@ const Earn = () => {
               <h3 className="font-consciousness text-lg font-bold text-white mb-2">Daily Presence</h3>
               <div className="font-consciousness text-4xl font-bold text-violet-400 mb-4">10 PTS</div>
               <p className="font-body text-sm text-white/50 mb-8 flex-grow">
-                Stay active in the ecosystem. Earn daily points just for being part of the 3rdeyeadvisors community.
+                Stay active in the ecosystem. Earn daily points just for being part of the Sentinel DeFi community.
               </p>
               <Button asChild className="font-body bg-violet-600 hover:bg-violet-500 text-white rounded-xl py-6 transition-all">
                 <Link to="/dashboard">Go to Dashboard</Link>
@@ -565,8 +565,8 @@ const Earn = () => {
 
                   <p className="font-body text-xs text-white/40 text-center">
                     Questions about payouts? Contact{" "}
-                    <a href="mailto:info@the3rdeyeadvisors.com" className="text-violet-400 hover:underline">
-                      info@the3rdeyeadvisors.com
+                    <a href="mailto:info@sentineldefi.com" className="text-violet-400 hover:underline">
+                      info@sentineldefi.com
                     </a>
                   </p>
                 </CardContent>

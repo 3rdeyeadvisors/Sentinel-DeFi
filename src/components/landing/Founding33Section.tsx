@@ -118,7 +118,7 @@ const Founding33Section = ({ totalSpots = 33, claimedSpots: initialClaimed = 0 }
           
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/50 font-body max-w-2xl mx-auto">
-            Secure lifetime access to the 3EA ecosystem. Only 33 spots available.
+            Secure lifetime access to the Sentinel DeFi ecosystem. Only 33 spots available.
           </p>
         </AnimatedSection>
 

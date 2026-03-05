@@ -239,10 +239,10 @@ export default function MerchandiseDetail() {
   return (
     <>
       <SEO 
-        title={`${product.title} | 3rdeyeadvisors Store`}
+        title={`${product.title} | Sentinel DeFi Store`}
         description={productDescription.replace(/<[^>]*>/g, '') || `Premium merchandise: ${product.title}`}
         keywords={`${product.title}, DeFi merchandise, crypto apparel, blockchain clothing`}
-        url={`https://www.the3rdeyeadvisors.com/store/merchandise/${productId}`}
+        url={`https://www.sentineldefi.com/store/merchandise/${productId}`}
         type="product"
         image={productImages[0]?.src}
       />

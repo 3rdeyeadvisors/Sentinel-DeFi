@@ -19,9 +19,9 @@ const NotFound = () => {
   return (
     <>
       <SEO
-        title="Page Not Found | 3rdeyeadvisors"
+        title="Page Not Found | Sentinel DeFi"
         description="This page does not exist."
-        url="https://www.the3rdeyeadvisors.com/404"
+        url="https://www.sentineldefi.com/404"
       />
       <Helmet>
         <meta name="robots" content="noindex, nofollow" />

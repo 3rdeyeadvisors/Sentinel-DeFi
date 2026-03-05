@@ -9,7 +9,7 @@ const CheckoutCancel = () => {
       <SEO
         title="Checkout Canceled"
         description="Your checkout was canceled. Your spot is still available."
-        url="https://www.the3rdeyeadvisors.com/checkout/cancel"
+        url="https://www.sentineldefi.com/checkout/cancel"
       />
       <div className="min-h-screen bg-transparent flex items-center justify-center px-6">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/2 rounded-full blur-[100px] pointer-events-none" />
@@ -34,8 +34,8 @@ const CheckoutCancel = () => {
               <HelpCircle className="w-5 h-5 text-violet-400 flex-shrink-0 mt-0.5" />
               <p className="font-body text-sm text-white/50">
                 If something went wrong during checkout or you have a question about membership, reach out to us at{' '}
-                <a href="mailto:info@the3rdeyeadvisors.com" className="text-violet-400 hover:text-violet-300 transition-colors">
-                  info@the3rdeyeadvisors.com
+                <a href="mailto:info@sentineldefi.com" className="text-violet-400 hover:text-violet-300 transition-colors">
+                  info@sentineldefi.com
                 </a>
               </p>
             </div>

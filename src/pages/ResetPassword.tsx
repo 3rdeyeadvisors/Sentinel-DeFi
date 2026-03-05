@@ -210,7 +210,7 @@ const ResetPassword = () => {
               Reset Your Password
             </CardTitle>
             <CardDescription className="text-white/50">
-              Create a new secure password for your 3rdeyeadvisors account
+              Create a new secure password for your Sentinel DeFi account
             </CardDescription>
           </div>
         </CardHeader>

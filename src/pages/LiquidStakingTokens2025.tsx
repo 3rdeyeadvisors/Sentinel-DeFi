@@ -20,9 +20,9 @@ const LiquidStakingTokens2025 = () => {
   return (
     <>
       <SEO
-        title="Liquid Staking Tokens in 2025: The Definitive Guide | 3rdeyeadvisors"
+        title="Liquid Staking Tokens in 2025: The Definitive Guide | Sentinel DeFi"
         description="Everything you need to know about liquid staking tokens, how they work, the top protocols, and the risks to understand."
-        url="https://www.the3rdeyeadvisors.com/blog/liquid-staking-tokens-2025"
+        url="https://www.sentineldefi.com/blog/liquid-staking-tokens-2025"
       />
 
       <div className="min-h-screen py-20">
@@ -175,9 +175,9 @@ const LiquidStakingTokens2025 = () => {
               </section>
 
               <section className="bg-primary/5 p-6 rounded-lg border border-primary/20 mt-8">
-                <h2 className="text-2xl font-bold mb-4 text-foreground">Explore DeFi with 3rdeyeadvisors</h2>
+                <h2 className="text-2xl font-bold mb-4 text-foreground">Explore DeFi with Sentinel DeFi</h2>
                 <p className="text-white/50 leading-relaxed mb-4">
-                  Ready to navigate the evolving DeFi landscape with confidence? 3rdeyeadvisors provides cutting-edge education, risk frameworks, and strategic insights for both newcomers and experienced yield farmers. From LST comparison guides to portfolio optimization tools, we help you make informed decisions in this fast-moving space.
+                  Ready to navigate the evolving DeFi landscape with confidence? Sentinel DeFi provides cutting-edge education, risk frameworks, and strategic insights for both newcomers and experienced yield farmers. From LST comparison guides to portfolio optimization tools, we help you make informed decisions in this fast-moving space.
                 </p>
                 <a 
                   href="/courses" 

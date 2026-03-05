@@ -37,7 +37,7 @@ BlackRock's BUIDL fund, improved regulatory clarity, and institutional demand fo
     readTime: "8 min read",
     date: "2025-12-29",
     featured: true,
-    author: "3EA Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["Real World Assets", "RWA", "DEX", "TVL", "Tokenization", "DeFi 2025"]
   },
   {
@@ -72,7 +72,7 @@ Prediction markets represent a fundamental improvement in how societies can aggr
     readTime: "10 min read",
     date: "2025-12-26",
     featured: true,
-    author: "3EA Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["Prediction Markets", "Polymarket", "DeFi", "Forecasting", "Information Markets"]
   },
   {
@@ -121,7 +121,7 @@ DeFi vaults represent a fundamental shift in how investment management can work.
     readTime: "12 min read",
     date: "2025-12-24",
     featured: true,
-    author: "3EA Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["DeFi Vaults", "Smart Contracts", "Transparency", "Rules-Based Investing"]
   },
   {
@@ -169,7 +169,7 @@ The maturation of DeFi creates a different landscape for participants. The most 
     readTime: "10 min read",
     date: "2025-12-22",
     featured: true,
-    author: "3rdeyeadvisors Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["DeFi 2025", "Stablecoins", "Institutional DeFi", "BlackRock BUIDL", "TVL Growth"]
   },
   {
@@ -256,7 +256,7 @@ The solution is not more information. It is better systems:
     readTime: "8 min read",
     date: "2025-12-17",
     featured: true,
-    author: "3rdeyeadvisors Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["Crypto Psychology", "CeFi vs DeFi", "Self-Custody", "FTX Collapse", "Risk Management"]
   },
   {
@@ -345,7 +345,7 @@ For users, builders, and observers of DeFi, understanding stablecoins is no long
     readTime: "8 min read",
     date: "2025-12-15",
     featured: true,
-    author: "3rdeyeadvisors Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["Stablecoins", "USDC", "DAI", "DeFi Infrastructure", "Payments"]
   },
   {
@@ -412,7 +412,7 @@ The convergence of liquid staking, restaking, and cross-chain bridges hints at a
     readTime: "7 min read",
     date: "2025-01-15",
     featured: true,
-    author: "3rdeyeadvisors Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["Liquid Staking", "ETH Staking", "Lido", "EigenLayer", "DeFi Yield"]
   },
   {
@@ -513,7 +513,7 @@ The open letter was signed by over 110 industry leaders, including major compani
     readTime: "5 min read",
     date: "2025-08-29",
     featured: true,
-    author: "3rdeyeadvisors Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["DeFi Regulation", "Crypto Policy", "U.S. Legislation", "Compliance"]
   },
   {
@@ -639,7 +639,7 @@ As Wall Street continues its march into DeFi, the question isn't whether to part
     readTime: "4 min read",
     date: "2025-08-27",
     featured: true,
-    author: "3rdeyeadvisors Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["Ethereum DeFi", "Institutional Crypto", "Wall Street", "TVL"]
   },
   {
@@ -717,7 +717,7 @@ Whether you're looking to hedge existing positions or capitalize on potential pr
     readTime: "3 min read",
     date: "2025-08-25",
     featured: true,
-    author: "3EA Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["Solana", "Token Unlocks", "Market Volatility", "Trading Strategy"]
   },
   {
@@ -803,7 +803,7 @@ The AI token revolution represents more than a new investment category: it's the
     readTime: "6 min read",
     date: "2025-08-21",
     featured: true,
-    author: "3EA Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: ["AI Tokens", "DeFAI", "Machine Learning", "Autonomous Trading"]
   },
   {
@@ -833,7 +833,7 @@ As the Treasury's consultation period progresses, the DeFi community faces a def
     readTime: "4 min read",
     date: "2025-08-18",
     featured: true,
-    author: "3rdeyeadvisors",
+    author: "Sentinel DeFi",
     tags: ["DeFi Regulation", "AML Compliance", "Digital Identity", "KYC"]
   },
   {
@@ -910,7 +910,7 @@ Join our free DeFi Fundamentals mini-course to master the essentials of tokenize
     readTime: "4 min read",
     date: "2025-08-15",
     featured: true,
-    author: "3rdeyeadvisors Team",
+    author: "Sentinel DeFi Team",
     tags: ["RWA Tokenization", "MakerDAO", "Ondo Finance", "Asset Tokenization"]
   },
   {
@@ -988,7 +988,7 @@ The convergence of these factors: Aave's milestone, Solana's surge, record TVL, 
     readTime: "4 min read",
     date: "2025-08-13",
     featured: true,
-    author: "3rdeyeadvisors Team",
+    author: "Sentinel DeFi Team",
     tags: ["Aave", "Solana", "DeFi TVL", "Market Analysis"]
   },
   {
@@ -1022,7 +1022,7 @@ DeFi is maturing on two fronts at once: traditional validation (like S&P ratings
     readTime: "5 min read",
     date: "2025-08-11",
     featured: false,
-    author: "3rdeyeadvisors Team",
+    author: "Sentinel DeFi Team",
     tags: ["DeFi TVL", "Crypto Lending", "AI DeFi", "Ethereum"]
   },
   {
@@ -1223,7 +1223,7 @@ Whether you're a gamer looking to monetize your skills, an investor seeking new 
     readTime: "8 min read",
     date: "2025-08-04",
     featured: true,
-    author: "3EA Gaming Research Team",
+    author: "Sentinel DeFi Gaming Research Team",
     tags: ["Web3 Gaming", "Play-to-Earn", "NFT Gaming", "Metaverse"]
   },
   {
@@ -1504,12 +1504,12 @@ Whether you're a DeFi veteran looking to enhance your strategies with AI, a trad
 
 The future of finance is being written right now, and those who understand and responsibly adopt DeFAI technologies today will be best positioned to benefit from the autonomous financial systems of tomorrow.
 
-**Want to stay ahead of the curve in DeFi and automation? Explore our free DeFi courses and tools at 3rdeyeadvisors to master the fundamentals before diving into advanced AI-powered strategies.**`,
+**Want to stay ahead of the curve in DeFi and automation? Explore our free DeFi courses and tools at Sentinel DeFi to master the fundamentals before diving into advanced AI-powered strategies.**`,
     category: "DeFAI",
     readTime: "12 min read",
     date: "2025-08-06",
     featured: true,
-    author: "3EA DeFAI Research Team",
+    author: "Sentinel DeFi DeFAI Research Team",
     tags: ["AI in DeFi", "DeFAI 2025", "AI crypto agents", "automated yield farming", "AI trading in DeFi", "decentralized AI finance", "crypto bots", "DAO automation", "blockchain AI"]
   },
   {
@@ -1550,7 +1550,7 @@ The movement toward decentralized finance represents humanity's opportunity to b
     readTime: "4 min read",
     date: "2024-12-10",
     featured: false,
-    author: "3EA Team",
+    author: "Sentinel DeFi Team",
     tags: ["DeFi", "decentralized finance", "smart contracts", "permissionless finance", "DeFi tools", "DeFi education"]
   },
   {
@@ -2577,7 +2577,7 @@ AI is the new edge in DeFi: faster signal extraction, clearer risk, and fewer gu
     readTime: "9 min read",
     date: "2025-08-08",
     featured: true,
-    author: "3EA Research Team",
+    author: "Sentinel DeFi Research Team",
     tags: [
       "AI DeFi tools",
       "DeFi dashboards 2025",
