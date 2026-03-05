@@ -106,9 +106,9 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/8 pt-[env(safe-area-inset-top)]">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center group transition-all duration-300" aria-label="3rdeyeadvisors home">
+          <Link to="/" className="flex items-center group transition-all duration-300" aria-label="Sentinel DeFi home">
             <span className="font-consciousness font-bold text-violet-400 text-lg group-hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.4)] transition-all">
-              3rdeyeadvisors
+              Sentinel DeFi
             </span>
           </Link>
 

@@ -63,7 +63,7 @@ const Philosophy = () => {
         <PageHero
           eyebrow="Our Belief"
           title="Why This Exists"
-          subtitle="The philosophy behind 3rdeyeadvisors and why financial education without gatekeeping matters."
+          subtitle="The philosophy behind Sentinel DeFi and why financial education without gatekeeping matters."
         />
 
         <div className="max-w-4xl mx-auto px-6 pb-20 relative z-10">
