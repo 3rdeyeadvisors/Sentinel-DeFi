@@ -63,12 +63,14 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
   const [timeLeft, setTimeLeft] = useState(quiz.timeLimit ? quiz.timeLimit * 60 : null);
   const [quizStarted, setQuizStarted] = useState(false);
   const [attempts, setAttempts] = useState<any[]>([]);
+  const [localAttemptCount, setLocalAttemptCount] = useState(0);
   const [loading, setLoading] = useState(false);
 
   // Load previous attempts
   useEffect(() => {
     if (user) {
       loadAttempts();
+      setLocalAttemptCount(0);
     }
   }, [user, quiz.id]);
 
@@ -108,7 +110,7 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
   };
 
   const canTakeQuiz = () => {
-    return attempts.length < quiz.maxAttempts;
+    return (attempts.length + localAttemptCount) < quiz.maxAttempts;
   };
 
   const startQuiz = () => {
@@ -123,10 +125,26 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
   };
 
   const handleAnswerChange = (questionId: string, answer: any) => {
+    const question = quiz.questions.find(q => q.id === questionId);
+    const prevAnswer = answers[questionId];
+
     setAnswers(prev => ({
       ...prev,
       [questionId]: answer
     }));
+
+    // Play feedback sounds
+    if (question?.type !== 'multiple') {
+      if (question?.correctAnswers.includes(answer)) {
+        playCorrectAnswer();
+      } else {
+        playWrongAnswer();
+      }
+    } else {
+      // For multiple, play sound on final selection or keep quiet until submit?
+      // Usually better to play on each toggle if it's "correct so far" but that's complex.
+      // Let's stick to single/true-false for now or follow existing pattern if any.
+    }
   };
 
   const handleNext = () => {
@@ -219,12 +237,15 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
       setShowResults(true);
       setQuizStarted(false);
       
+      // Increment local attempt count after submission
+      setLocalAttemptCount(prev => prev + 1);
+
       // Show prominent toast notification
       toast({
         title: passed ? "🎉 Quiz Passed!" : "📝 Quiz Submitted",
         description: passed 
           ? `Excellent work! You scored ${finalScore}% (passing: ${quiz.passingScore}%)` 
-          : `You scored ${finalScore}%. You need ${quiz.passingScore}% to pass. ${canTakeQuiz() ? 'You can try again!' : ''}`,
+          : `You scored ${finalScore}%. You need ${quiz.passingScore}% to pass. ${(attempts.length + localAttemptCount + 1) < quiz.maxAttempts ? 'You can try again!' : ''}`,
         variant: passed ? "default" : "destructive",
         duration: 5000,
       });
@@ -263,11 +284,11 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
       }
       
       // Try to reload attempts (may not work for courseContent quizzes)
-      try {
-        await loadAttempts();
-      } catch (e) {
-        // Could not reload attempts
-      }
+      // try {
+      //   await loadAttempts();
+      // } catch (e) {
+      //   // Could not reload attempts
+      // }
     } catch (error) {
       console.error('Error calculating quiz score:', error);
       
@@ -302,6 +323,9 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
 
     return (
       <div className="space-y-3 w-full">
+        {question.type === 'multiple' && (
+          <p className="text-xs text-white/40 mb-3">Select all that apply</p>
+        )}
         {question.options.map((option, index) => {
           const isSelected = question.type === 'multiple'
             ? userAnswer?.includes(index)
@@ -329,10 +353,16 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
               }`}
             >
               <div className="flex items-center gap-3">
-                <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ${
+                <div className={`w-5 h-5 border flex items-center justify-center shrink-0 ${
+                  question.type === 'multiple' ? "rounded-sm" : "rounded-full"
+                } ${
                   isSelected ? "border-violet-400 bg-violet-400 text-black" : "border-white/20"
                 }`}>
-                  {isSelected && <div className="w-2 h-2 bg-black rounded-full" />}
+                  {isSelected && (
+                    question.type === 'multiple'
+                      ? <span className="text-xs font-bold">✓</span>
+                      : <div className="w-2 h-2 bg-black rounded-full" />
+                  )}
                 </div>
                 <span>{option}</span>
               </div>
@@ -374,17 +404,9 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
               className="w-full font-body border border-white/15 hover:border-violet-500/30 text-white/70 hover:text-white rounded-xl px-6 py-4 transition-all bg-transparent"
             >
               <RotateCcw className="w-4 h-4 mr-2" />
-              Retry Quiz ({quiz.maxAttempts - attempts.length} left)
+              Retry Quiz ({quiz.maxAttempts - (attempts.length + localAttemptCount)} left)
             </Button>
           )}
-
-          <Button
-            onClick={() => setShowResults(false)}
-            variant="outline"
-            className="w-full font-body border-white/10 text-white/40 hover:text-white rounded-xl px-6 py-4"
-          >
-            Review Answers
-          </Button>
         </div>
 
         {/* Detailed Results Section (shown when Review Answers is clicked or just keep it simple) */}
@@ -476,7 +498,7 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
           </div>
         </div>
 
-        {attempts.length > 0 && (
+        {(attempts.length + localAttemptCount) > 0 && (
           <div className="mb-6">
             <h3 className="font-semibold mb-3">Previous Attempts</h3>
             <div className="space-y-2">
@@ -491,6 +513,17 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
                   </div>
                 </div>
               ))}
+              {localAttemptCount > 0 && (
+                <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+                  <span>Current Session Attempt</span>
+                  <div className="flex items-center gap-2">
+                    <Badge variant={score >= quiz.passingScore ? "default" : "destructive"}>
+                      {score}%
+                    </Badge>
+                    {score >= quiz.passingScore && <CheckCircle className="w-4 h-4 text-green-600" />}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}
