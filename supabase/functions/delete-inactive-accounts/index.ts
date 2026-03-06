@@ -73,7 +73,7 @@ function generateDeletionEmail(userName: string): string {
               
               <p style="margin: 20px 0 0 0; font-size: 14px; line-height: 1.6; color: #94a3b8;">
                 If you have any questions or need assistance, feel free to reach out to us at 
-                <a href="mailto:info@the3rdeyeadvisors.com" style="color: #a78bfa; text-decoration: none;">info@the3rdeyeadvisors.com</a>
+                <a href="mailto:info@sentineldefi.online" style="color: #a78bfa; text-decoration: none;">info@sentineldefi.online</a>
               </p>
             </td>
           </tr>
