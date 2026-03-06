@@ -105,7 +105,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send winner notification
     await resend.emails.send({
-      from: "Sentinel DeFi <info@the3rdeyeadvisors.com>",
+      from: "Sentinel DeFi <info@sentineldefi.online>",
       to: [winnerEmail?.email || ''],
       subject: "🎉 YOU WON! Sentinel DeFi Raffle Winner",
       html: `
