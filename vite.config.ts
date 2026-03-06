@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => ({
         theme_color: '#0A1628',
         background_color: '#0A1628',
         display: 'standalone',
-        start_url: '/?v=2.1.0',
+        start_url: '/?v=2.2.0',
         scope: '/',
         orientation: 'portrait',
         icons: [
@@ -66,6 +66,7 @@ export default defineConfig(({ mode }) => ({
         // Skip waiting and claim clients immediately for seamless updates
         skipWaiting: true,
         clientsClaim: true,
+        cleanupOutdatedCaches: true,
         maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, // 10 MB limit for large thirdweb bundle
         // Only cache essential static assets
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
