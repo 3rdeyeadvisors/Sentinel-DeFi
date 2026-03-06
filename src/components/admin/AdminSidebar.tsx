@@ -8,7 +8,8 @@ import {
   Eye,
   Activity,
   DollarSign,
-  Map
+  Map,
+  Search
 } from "lucide-react";
 import {
   Sidebar,
@@ -30,6 +31,7 @@ const menuItems = [
   { id: "commissions", title: "Commissions", icon: DollarSign },
   { id: "participation", title: "Tutorial/Course Participation", icon: Activity },
   { id: "roadmap", title: "Roadmap Manager", icon: Map },
+  { id: "seo", title: "SEO Settings", icon: Search },
   { id: "email", title: "Email Center", icon: Mail },
   { id: "email-preview", title: "Email Preview", icon: Eye },
   { id: "users", title: "User Management", icon: Users },

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 // Legacy SEO component - Consider using SEOAutomation for new pages
 // This component is maintained for backwards compatibility
@@ -28,18 +29,26 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "Decentralized DeFi Education & Wealth Tools | Sentinel DeFi",
-  description = "Transform your financial future with comprehensive DeFi education. Learn decentralized finance, yield farming, blockchain investing, and cryptocurrency strategies from beginner to advanced levels.",
-  keywords = "DeFi education, decentralized finance, yield farming, blockchain investing, cryptocurrency courses, financial consciousness, DeFi beginner guide, crypto education, smart contracts, liquidity pools",
-  image = `${window.location.origin}/social-share-sentinel-defi.jpg`,
+  title,
+  description,
+  keywords,
+  image,
   url = "https://www.sentineldefi.online",
   type = "website",
   article,
   schema,
   faq
 }: SEOProps) => {
-  const siteTitle = "Sentinel DeFi";
-  const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
+  const { settings } = useSiteSettings();
+
+  const effectiveTitle = title || settings?.default_meta_title || "Decentralized DeFi Education & Wealth Tools | Sentinel DeFi";
+  const effectiveDescription = description || settings?.default_meta_description || "Transform your financial future with comprehensive DeFi education. Learn decentralized finance, yield farming, blockchain investing, and cryptocurrency strategies from beginner to advanced levels.";
+  const effectiveKeywords = keywords || settings?.default_meta_keywords || "DeFi education, decentralized finance, yield farming, blockchain investing, cryptocurrency courses, financial consciousness, DeFi beginner guide, crypto education, smart contracts, liquidity pools";
+  const effectiveImage = image || settings?.og_image_url || `${window.location.origin}/social-share-sentinel-defi.jpg`;
+  const twitterHandle = settings?.twitter_handle || "@sentineldefi";
+
+  const siteTitle = settings?.site_name || "Sentinel DeFi";
+  const fullTitle = effectiveTitle.includes(siteTitle) ? effectiveTitle : `${effectiveTitle} | ${siteTitle}`;
 
   // Generate schema markup based on type
   const generateSchema = () => {
@@ -48,10 +57,10 @@ const SEO = ({
     const baseSchema = {
       "@context": "https://schema.org",
       "@type": schema.type,
-      name: title,
-      description: description,
+      name: effectiveTitle,
+      description: effectiveDescription,
       url: url,
-      image: image,
+      image: effectiveImage,
       publisher: {
         "@type": "Organization",
         name: "Sentinel DeFi",
@@ -138,21 +147,24 @@ const SEO = ({
     <Helmet>
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+      <meta name="description" content={effectiveDescription} />
+      <meta name="keywords" content={effectiveKeywords} />
+      {settings?.google_site_verification && (
+        <meta name="google-site-verification" content={settings.google_site_verification} />
+      )}
       {/* Canonical URL is handled by Layout component */}
       
       {/* AI Crawler Optimization */}
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="robots" content={settings?.robots_default || "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
       <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
       {/* Open Graph Tags */}
       <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={effectiveDescription} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={effectiveImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content={siteTitle} />
@@ -161,10 +173,10 @@ const SEO = ({
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-      <meta name="twitter:creator" content="@sentineldefi" />
-      <meta name="twitter:site" content="@sentineldefi" />
+      <meta name="twitter:description" content={effectiveDescription} />
+      <meta name="twitter:image" content={effectiveImage} />
+      <meta name="twitter:creator" content={twitterHandle} />
+      <meta name="twitter:site" content={twitterHandle} />
 
       {/* Article-specific meta tags */}
       {article && (
