@@ -24,8 +24,10 @@ export function OverviewPanel() {
 
   useEffect(() => {
     loadMetrics();
-    loadAIInsights();
     loadActiveRaffle();
+    // Only load AI insights if not already loaded
+    if (!aiInsight) loadAIInsights();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const seedBots = async () => {

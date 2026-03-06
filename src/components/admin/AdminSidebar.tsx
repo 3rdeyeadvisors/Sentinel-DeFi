@@ -1,17 +1,4 @@
-import { 
-  LayoutDashboard, 
-  ShoppingCart, 
-  Mail, 
-  Users, 
-  Package,
-  Gift,
-  Eye,
-  Settings,
-  Activity,
-  DollarSign,
-  Map,
-  Search
-} from "lucide-react";
+import { LayoutDashboard, ShoppingCart, Mail, Users, Package, Gift, Eye, Activity, DollarSign, Map, Search, Settings, Globe } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
