@@ -2,6 +2,21 @@ import { useEffect } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 
+export interface SiteSettings {
+  id: string;
+  site_name: string;
+  site_tagline: string;
+  default_meta_title: string;
+  default_meta_description: string;
+  default_meta_keywords: string;
+  og_image_url: string;
+  twitter_handle: string;
+  robots_default: string;
+  google_site_verification: string | null;
+  updated_at: string;
+  updated_by: string | null;
+}
+
 export const useSiteSettings = () => {
   const queryClient = useQueryClient();
 
@@ -15,7 +30,7 @@ export const useSiteSettings = () => {
         .maybeSingle();
 
       if (error) throw error;
-      return data;
+      return data as unknown as SiteSettings | null;
     },
   });
 

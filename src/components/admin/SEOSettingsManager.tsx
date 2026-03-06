@@ -46,16 +46,17 @@ export const SEOSettingsManager = () => {
 
       if (error) throw error;
       if (data) {
+        const settings = data as any;
         setFields({
-          site_name: data.site_name || "",
-          site_tagline: data.site_tagline || "",
-          default_meta_title: data.default_meta_title || "",
-          default_meta_description: data.default_meta_description || "",
-          default_meta_keywords: data.default_meta_keywords || "",
-          og_image_url: data.og_image_url || "",
-          twitter_handle: data.twitter_handle || "",
-          google_site_verification: data.google_site_verification || "",
-          robots_default: data.robots_default || "index, follow",
+          site_name: settings.site_name || "",
+          site_tagline: settings.site_tagline || "",
+          default_meta_title: settings.default_meta_title || "",
+          default_meta_description: settings.default_meta_description || "",
+          default_meta_keywords: settings.default_meta_keywords || "",
+          og_image_url: settings.og_image_url || "",
+          twitter_handle: settings.twitter_handle || "",
+          google_site_verification: settings.google_site_verification || "",
+          robots_default: settings.robots_default || "index, follow",
         });
       }
     } catch (error) {
