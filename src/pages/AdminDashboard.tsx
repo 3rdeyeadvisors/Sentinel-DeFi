@@ -16,6 +16,7 @@ import EmailPreview from "@/components/admin/EmailPreview";
 import { TutorialCourseParticipation } from "@/components/admin/TutorialCourseParticipation";
 import CommissionsManager from "@/components/admin/CommissionsManager";
 import RoadmapManager from "@/components/admin/RoadmapManager";
+import { SEOSettingsManager } from "@/components/admin/SEOSettingsManager";
 import { isAdminEmail } from "@/lib/admin";
 
 const AdminDashboard = () => {
@@ -100,6 +101,8 @@ const AdminDashboard = () => {
         return <TutorialCourseParticipation />;
       case "roadmap":
         return <RoadmapManager />;
+      case "seo":
+        return <SEOSettingsManager />;
       default:
         return <OverviewPanel />;
     }
