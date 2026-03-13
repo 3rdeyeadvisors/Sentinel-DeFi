@@ -34,7 +34,7 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         success: true,
-        products: printifyProducts.map(p => ({
+        products: printifyProducts.map((p: any) => ({
           id: p.id,
           name: p.name,
           metadata: p.metadata
