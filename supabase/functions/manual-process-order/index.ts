@@ -33,7 +33,7 @@ serve(async (req) => {
     // If it's a payment intent ID
     if (paymentId.startsWith("pi_") || paymentId.startsWith("pm_")) {
       const charges = await stripe.charges.list({ limit: 100 });
-      const charge = charges.data.find(c => 
+      const charge = charges.data.find((c: any) => 
         c.payment_intent?.toString().includes(paymentId) || 
         c.payment_method?.toString() === paymentId
       );
