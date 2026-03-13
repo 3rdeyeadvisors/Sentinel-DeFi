@@ -110,7 +110,7 @@ serve(async (req) => {
       
       // Check if it's an annual subscription (interval = year)
       const isAnnual = subscription.items.data.some(
-        item => item.price.recurring?.interval === 'year'
+        (item: any) => item.price.recurring?.interval === 'year'
       );
       
       if (isAnnual && customer.email) {
