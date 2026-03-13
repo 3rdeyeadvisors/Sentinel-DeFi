@@ -260,11 +260,11 @@ serve(async (req) => {
         } else {
           // Dynamic price
           return {
-            name: item.price_data.product_data.name,
-            unit_price_cents: item.price_data.unit_amount,
-            unit_price_dollars: (item.price_data.unit_amount / 100).toFixed(2),
+            name: item.price_data?.product_data?.name,
+            unit_price_cents: item.price_data?.unit_amount,
+            unit_price_dollars: ((item.price_data?.unit_amount || 0) / 100).toFixed(2),
             quantity: item.quantity,
-            total_cents: item.price_data.unit_amount * item.quantity
+            total_cents: (item.price_data?.unit_amount || 0) * item.quantity
           };
         }
       })
