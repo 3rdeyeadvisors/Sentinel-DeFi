@@ -283,9 +283,9 @@ serve(async (req) => {
         })
         .single();
 
-      if (discountResult && discountResult.is_valid) {
-        discountId = discountResult.discount_id;
-        discountAmount = discountResult.discount_amount * 100;
+      if ((discountResult as any)?.is_valid) {
+        discountId = (discountResult as any).discount_id;
+        discountAmount = (discountResult as any).discount_amount * 100;
         console.log('Discount applied:', { discountId, discountAmount });
       }
     }
