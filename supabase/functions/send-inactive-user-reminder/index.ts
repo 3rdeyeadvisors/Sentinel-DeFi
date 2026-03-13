@@ -102,7 +102,7 @@ const handler = async (req: Request): Promise<Response> => {
     for (const user of usersToEmail) {
       if (!user.email) continue;
       
-      const displayName = profileMap.get(user.id) || user.email.split('@')[0];
+      const displayName = profileMap.get(user.id) || user.email?.split('@')[0] || 'User';
       const firstName = displayName.split(' ')[0] || 'there';
       
       try {
