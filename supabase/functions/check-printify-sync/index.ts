@@ -25,7 +25,7 @@ serve(async (req) => {
     console.log(`Found ${products.data.length} active Stripe products`);
 
     // Filter to only Printify products
-    const printifyProducts = products.data.filter(p => 
+    const printifyProducts = products.data.filter((p: any) =>
       p.metadata?.type === 'printify' || p.metadata?.printify_product_id
     );
 
