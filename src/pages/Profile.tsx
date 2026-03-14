@@ -111,18 +111,6 @@ const Profile = () => {
     }
   }, [user, loading, navigate, isOwnProfile]);
 
-  // Load user profile and stats
-  useEffect(() => {
-    if (targetUserId) {
-      loadProfile();
-      // Only load stats for own profile
-      if (isOwnProfile && user) {
-        loadUserStats();
-        loadCourseNotes();
-      }
-    }
-  }, [targetUserId, user, isOwnProfile, loadProfile, loadUserStats, loadCourseNotes]);
-
   const loadProfile = useCallback(async () => {
     if (!targetUserId) return;
 
