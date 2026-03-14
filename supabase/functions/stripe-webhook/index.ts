@@ -251,7 +251,7 @@ serve(async (req) => {
         return;
       }
 
-      let session = event.data.object as Stripe.Checkout.Session;
+      const session = event.data.object as Stripe.Checkout.Session;
       
       // ============ FOUNDING 33 PAYMENT HANDLING ============
       if (session.metadata?.purchase_type === "founding_33") {
