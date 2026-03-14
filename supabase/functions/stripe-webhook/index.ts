@@ -667,9 +667,16 @@ serve(async (req) => {
               discount_amount: session.total_details.amount_discount,
             });
 
+          // Increment current_uses via RPC or manual increment
+          const { data: currentDiscount } = await supabaseClient
+            .from('discount_codes')
+            .select('current_uses')
+            .eq('id', session.metadata.discount_id)
+            .single();
+          
           await supabaseClient
             .from('discount_codes')
-            .update({ current_uses: (supabaseClient as any).sql`current_uses + 1` })
+            .update({ current_uses: ((currentDiscount as any)?.current_uses || 0) + 1 })
             .eq('id', session.metadata.discount_id);
 
           console.log("✅ Discount usage recorded");
