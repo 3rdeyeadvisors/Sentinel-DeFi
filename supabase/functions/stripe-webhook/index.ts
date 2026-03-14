@@ -343,10 +343,8 @@ serve(async (req) => {
       }
       // ============ END FOUNDING 33 HANDLING ============
 
-      let cartSession = event.data.object as Stripe.Checkout.Session;
-      
-      // Retrieve full session with line items and shipping details
-      session = await stripe.checkout.sessions.retrieve(session.id, {
+      // Re-retrieve session with full details for cart checkout
+      let session = await stripe.checkout.sessions.retrieve((event.data.object as Stripe.Checkout.Session).id, {
         expand: ['line_items', 'line_items.data.price.product', 'customer', 'shipping_details']
       });
       
