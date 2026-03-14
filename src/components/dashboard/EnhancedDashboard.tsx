@@ -434,6 +434,16 @@ export const EnhancedDashboard = () => {
     }
   }, [user, courseProgress]);
 
+  // Load quiz statistics
+  useEffect(() => {
+    if (user) {
+      loadQuizStats();
+      loadRecentActivity();
+      loadWeeklyProgress();
+      loadAnalyticsStats();
+    }
+  }, [user, loadQuizStats, loadRecentActivity, loadWeeklyProgress, loadAnalyticsStats]);
+
   // currentStreak is now calculated in useEffect above
 
   const getCategoryColor = (category: string) => {

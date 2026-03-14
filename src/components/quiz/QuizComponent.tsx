@@ -67,30 +67,6 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
   const [loading, setLoading] = useState(false);
 
   // Load previous attempts
-  useEffect(() => {
-    if (user) {
-      loadAttempts();
-      setLocalAttemptCount(0);
-    }
-  }, [user, quiz.id, loadAttempts]);
-
-  // Timer
-  useEffect(() => {
-    if (quizStarted && timeLeft !== null && timeLeft > 0 && !showResults) {
-      const timer = setInterval(() => {
-        setTimeLeft(prev => {
-          if (prev && prev <= 1) {
-            handleSubmitQuiz();
-            return 0;
-          }
-          return prev ? prev - 1 : null;
-        });
-      }, 1000);
-
-      return () => clearInterval(timer);
-    }
-  }, [quizStarted, timeLeft, showResults, handleSubmitQuiz]);
-
   const loadAttempts = useCallback(async () => {
     if (!user) return;
 
