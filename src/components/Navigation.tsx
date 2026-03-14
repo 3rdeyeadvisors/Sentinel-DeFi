@@ -266,7 +266,7 @@ const Navigation = () => {
               { path: "/philosophy", label: "Philosophy", icon: Lightbulb, isTopLevel: true },
               { path: "/institutional", label: "For Professionals", icon: Building, isTopLevel: true },
               { path: "/contact", label: "Contact", icon: Mail },
-            ].filter(item => item.isTopLevel || isPageVisible(item.path)).map((item) => (
+            ].filter(item => isPageVisible(item.path)).map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
