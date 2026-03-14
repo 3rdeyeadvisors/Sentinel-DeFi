@@ -671,7 +671,7 @@ serve(async (req) => {
 
           await supabaseClient
             .from('discount_codes')
-            .update({ current_uses: supabaseClient.sql`current_uses + 1` })
+            .update({ current_uses: (supabaseClient as any).sql`current_uses + 1` })
             .eq('id', session.metadata.discount_id);
 
           console.log("✅ Discount usage recorded");
