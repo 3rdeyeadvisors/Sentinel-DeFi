@@ -153,8 +153,8 @@ serve(async (req) => {
                         // Annual price ID from constants
                         const annualPriceId = "price_1Sl04YLxeGPiI62jjtRmPeC9";
                         
-                        referrerIsAnnual = referrerSubs.data.some(sub =>
-                          sub.items.data.some(item => item.price.id === annualPriceId)
+                        referrerIsAnnual = referrerSubs.data.some((sub: any) =>
+                          sub.items.data.some((item: any) => item.price.id === annualPriceId)
                         );
                         
                         logStep("Referrer subscription check complete", { 
