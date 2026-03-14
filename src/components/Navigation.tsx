@@ -241,7 +241,7 @@ const Navigation = () => {
               { path: "/courses", label: "Courses", icon: BookOpen, iconColor: "text-violet-400", bgColor: "bg-violet-600/20", borderColor: "border-violet-500/30" },
               { path: "/tutorials", label: "Tutorials", icon: GraduationCap, iconColor: "text-white/60", bgColor: "bg-white/5", borderColor: "border-white/10" },
               { path: "/store", label: "Store", icon: Package, iconColor: "text-white/60", bgColor: "bg-white/5", borderColor: "border-white/10", isTopLevel: true },
-            ].filter(item => item.isTopLevel || isPageVisible(item.path)).map((item) => (
+            ].filter(item => isPageVisible(item.path)).map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
