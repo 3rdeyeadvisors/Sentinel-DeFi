@@ -228,8 +228,8 @@ serve(async (req) => {
                         },
                       });
                       logStep("Commission notification sent to admin");
-                    } catch (notifyError) {
-                      logStep("Failed to send commission notification", { error: notifyError.message });
+                    } catch (notifyError: unknown) {
+                      logStep("Failed to send commission notification", { error: notifyError instanceof Error ? notifyError.message : 'Unknown error' });
                     }
                   }
                 } else {
