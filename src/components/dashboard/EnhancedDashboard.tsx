@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useProfile } from "@/hooks/useProfile";
@@ -128,16 +128,6 @@ export const EnhancedDashboard = () => {
       navigate("/auth");
     }
   }, [user, navigate]);
-
-  // Load quiz statistics
-  useEffect(() => {
-    if (user) {
-      loadQuizStats();
-      loadRecentActivity();
-      loadWeeklyProgress();
-      loadAnalyticsStats();
-    }
-  }, [user, loadQuizStats, loadRecentActivity, loadWeeklyProgress, loadAnalyticsStats]);
 
   const loadQuizStats = useCallback(async () => {
     if (!user) return;
@@ -443,6 +433,16 @@ export const EnhancedDashboard = () => {
       console.error('Error loading analytics:', error);
     }
   }, [user, courseProgress]);
+
+  // Load quiz statistics
+  useEffect(() => {
+    if (user) {
+      loadQuizStats();
+      loadRecentActivity();
+      loadWeeklyProgress();
+      loadAnalyticsStats();
+    }
+  }, [user, loadQuizStats, loadRecentActivity, loadWeeklyProgress, loadAnalyticsStats]);
 
   // currentStreak is now calculated in useEffect above
 

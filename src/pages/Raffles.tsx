@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import RaffleCountdown from "@/components/raffles/RaffleCountdown";
 import RaffleShareButton from "@/components/raffles/RaffleShareButton";
 import SocialVerificationForm from "@/components/raffles/SocialVerificationForm";
-import { ANNUAL_BENEFITS, FOUNDING33_BENEFITS } from "@/lib/constants";
+import { ANNUAL_BENEFITS } from "@/lib/constants";
 
 interface Raffle {
   id: string;
@@ -378,8 +378,9 @@ const Raffles = () => {
 
       // If Founding 33 or annual subscriber, create bonus tickets
       if (bonusTickets > 0) {
-        const ticketSource = isFounder ? 'founding_33_bonus' : 'annual_bonus';
-        const benefitType = isFounder ? 'founding_33_member_bonus' : 'annual_subscriber_bonus';
+        const isAnnual = subscription?.plan === 'annual';
+        const ticketSource = isAnnual ? 'annual_bonus' : 'annual_bonus';
+        const benefitType = isAnnual ? 'annual_subscriber_bonus' : 'annual_subscriber_bonus';
         
         const bonusTicketInserts = Array.from({ length: bonusTickets }, () => ({
           user_id: user.id,

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useProfile } from "@/hooks/useProfile";
 import { useNavigate, useParams } from "react-router-dom";
@@ -111,51 +111,6 @@ const Profile = () => {
     }
   }, [user, loading, navigate, isOwnProfile]);
 
-  // Load user profile and stats
-  useEffect(() => {
-    if (targetUserId) {
-      loadProfile();
-      // Only load stats for own profile
-      if (isOwnProfile && user) {
-        loadUserStats();
-        loadCourseNotes();
-      }
-    }
-  }, [targetUserId, user, isOwnProfile, loadProfile, loadUserStats, loadCourseNotes]);
-
-  const loadProfile = useCallback(async () => {
-    if (!targetUserId) return;
-
-    try {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('user_id', targetUserId)
-        .single();
-
-      if (error && error.code !== 'PGRST116') { // PGRST116 is "not found"
-        console.error('Error loading profile:', error);
-        return;
-      }
-
-      if (data) {
-        setProfile(data);
-        setEditForm({
-          display_name: data.display_name || "",
-          bio: data.bio || "",
-          avatar_url: data.avatar_url || ""
-        });
-      } else {
-        // Create profile if it doesn't exist
-        await createProfile();
-      }
-    } catch (error) {
-      console.error('Error loading profile:', error);
-    } finally {
-      setProfileLoading(false);
-    }
-  }, [targetUserId, user, createProfile]);
-
   const createProfile = useCallback(async () => {
     if (!user) return;
 
@@ -183,6 +138,38 @@ const Profile = () => {
       console.error('Error creating profile:', error);
     }
   }, [user]);
+
+  const loadProfile = useCallback(async () => {
+    if (!targetUserId) return;
+
+    try {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('user_id', targetUserId)
+        .single();
+
+      if (error && error.code !== 'PGRST116') {
+        console.error('Error loading profile:', error);
+        return;
+      }
+
+      if (data) {
+        setProfile(data);
+        setEditForm({
+          display_name: data.display_name || "",
+          bio: data.bio || "",
+          avatar_url: data.avatar_url || ""
+        });
+      } else {
+        await createProfile();
+      }
+    } catch (error) {
+      console.error('Error loading profile:', error);
+    } finally {
+      setProfileLoading(false);
+    }
+  }, [targetUserId, user, createProfile]);
 
   const loadCourseNotes = useCallback(async () => {
     if (!user) return;
@@ -276,6 +263,18 @@ const Profile = () => {
       console.error('Error loading user stats:', error);
     }
   }, [user]);
+
+  // Load user profile and stats
+  useEffect(() => {
+    if (targetUserId) {
+      loadProfile();
+      if (isOwnProfile && user) {
+        loadUserStats();
+        loadCourseNotes();
+      }
+    }
+  }, [targetUserId, user, isOwnProfile, loadProfile, loadUserStats, loadCourseNotes]);
+
 
   // Compress image before upload for faster uploads and smaller storage
   const compressImage = async (file: File): Promise<Blob> => {

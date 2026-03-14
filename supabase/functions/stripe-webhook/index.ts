@@ -56,8 +56,8 @@ serve(async (req) => {
     event = await stripe.webhooks.constructEventAsync(body, signature, webhookSecret);
     logStep("Webhook signature verified", { eventType: event.type });
 
-  } catch (verifyError) {
-    logStep("ERROR: Signature verification failed", { message: verifyError.message });
+  } catch (verifyError: unknown) {
+    logStep("ERROR: Signature verification failed", { message: verifyError instanceof Error ? verifyError.message : 'Unknown error' });
     return new Response(
       JSON.stringify({ error: "invalid signature" }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" }, status: 400 }
@@ -153,8 +153,8 @@ serve(async (req) => {
                         // Annual price ID from constants
                         const annualPriceId = "price_1Sl04YLxeGPiI62jjtRmPeC9";
                         
-                        referrerIsAnnual = referrerSubs.data.some(sub =>
-                          sub.items.data.some(item => item.price.id === annualPriceId)
+                        referrerIsAnnual = referrerSubs.data.some((sub: any) =>
+                          sub.items.data.some((item: any) => item.price.id === annualPriceId)
                         );
                         
                         logStep("Referrer subscription check complete", { 
@@ -166,9 +166,9 @@ serve(async (req) => {
                       }
                     }
                   }
-                } catch (lookupError) {
+                } catch (lookupError: unknown) {
                   logStep("Error checking referrer subscription, using default 50% rate", { 
-                    error: lookupError.message 
+                    error: lookupError instanceof Error ? lookupError.message : 'Unknown error'
                   });
                 }
 
@@ -228,8 +228,8 @@ serve(async (req) => {
                         },
                       });
                       logStep("Commission notification sent to admin");
-                    } catch (notifyError) {
-                      logStep("Failed to send commission notification", { error: notifyError.message });
+                    } catch (notifyError: unknown) {
+                      logStep("Failed to send commission notification", { error: notifyError instanceof Error ? notifyError.message : 'Unknown error' });
                     }
                   }
                 } else {
@@ -251,7 +251,7 @@ serve(async (req) => {
         return;
       }
 
-      let session = event.data.object as Stripe.Checkout.Session;
+      const session = event.data.object as Stripe.Checkout.Session;
       
       // ============ FOUNDING 33 PAYMENT HANDLING ============
       if (session.metadata?.purchase_type === "founding_33") {
@@ -330,23 +330,21 @@ serve(async (req) => {
               },
             });
             logStep("Confirmation email triggered");
-          } catch (emailError) {
-            logStep("ERROR sending confirmation email", { error: emailError.message });
+          } catch (emailError: unknown) {
+            logStep("ERROR sending confirmation email", { error: emailError instanceof Error ? emailError.message : 'Unknown error' });
           }
 
           logStep("Founding 33 purchase completed successfully", { seatNumber, userId });
           return;
-        } catch (founding33Error) {
-          logStep("ERROR processing Founding 33 purchase", { error: founding33Error.message });
+        } catch (founding33Error: unknown) {
+          logStep("ERROR processing Founding 33 purchase", { error: founding33Error instanceof Error ? founding33Error.message : 'Unknown error' });
           return;
         }
       }
       // ============ END FOUNDING 33 HANDLING ============
 
-      let session = event.data.object as Stripe.Checkout.Session;
-      
-      // Retrieve full session with line items and shipping details
-      session = await stripe.checkout.sessions.retrieve(session.id, {
+      // Re-retrieve session with full details for cart checkout
+      let session = await stripe.checkout.sessions.retrieve((event.data.object as Stripe.Checkout.Session).id, {
         expand: ['line_items', 'line_items.data.price.product', 'customer', 'shipping_details']
       });
       
@@ -472,13 +470,13 @@ serve(async (req) => {
               });
             }
           }
-        } catch (printifyErr) {
+        } catch (printifyErr: unknown) {
           console.error("❌ Printify order failed:", printifyErr);
           await supabaseClient.from('order_action_logs').insert({
             order_id: session.id,
             action_type: 'printify_created',
             status: 'error',
-            error_message: printifyErr.message
+            error_message: printifyErr instanceof Error ? printifyErr.message : 'Unknown error'
           });
         }
       }
@@ -576,19 +574,19 @@ serve(async (req) => {
             metadata: { items_count: digitalDownloadItems.length }
           });
 
-        } catch (digitalErr) {
+        } catch (digitalErr: unknown) {
           console.error("❌ Digital purchase processing failed:", digitalErr);
           await supabaseClient.from('order_action_logs').insert({
             order_id: session.id,
             action_type: 'digital_links_generated',
             status: 'error',
-            error_message: digitalErr.message
+            error_message: digitalErr instanceof Error ? digitalErr.message : 'Unknown error'
           });
         }
       }
 
       // Prepare email items
-      const emailItems = lineItems.data.map(item => {
+      const emailItems = lineItems.data.map((item: any) => {
         const product = item.price?.product as Stripe.Product;
         const isPrintify = product.metadata?.printify_id || product.metadata?.printify_product_id;
         
@@ -669,9 +667,16 @@ serve(async (req) => {
               discount_amount: session.total_details.amount_discount,
             });
 
+          // Increment current_uses via RPC or manual increment
+          const { data: currentDiscount } = await supabaseClient
+            .from('discount_codes')
+            .select('current_uses')
+            .eq('id', session.metadata.discount_id)
+            .single();
+          
           await supabaseClient
             .from('discount_codes')
-            .update({ current_uses: supabaseClient.sql`current_uses + 1` })
+            .update({ current_uses: ((currentDiscount as any)?.current_uses || 0) + 1 })
             .eq('id', session.metadata.discount_id);
 
           console.log("✅ Discount usage recorded");
@@ -687,7 +692,7 @@ serve(async (req) => {
   };
 
   // Start background work without blocking response
-  EdgeRuntime.waitUntil(backgroundWork());
+  (globalThis as any).EdgeRuntime?.waitUntil?.(backgroundWork()) ?? backgroundWork();
 
   return responsePromise;
 });
