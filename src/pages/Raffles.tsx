@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import RaffleCountdown from "@/components/raffles/RaffleCountdown";
 import RaffleShareButton from "@/components/raffles/RaffleShareButton";
 import SocialVerificationForm from "@/components/raffles/SocialVerificationForm";
-import { ANNUAL_BENEFITS, FOUNDING33_BENEFITS } from "@/lib/constants";
+import { ANNUAL_BENEFITS } from "@/lib/constants";
 
 interface Raffle {
   id: string;
