@@ -102,7 +102,11 @@ const Navigation = () => {
     { label: "Store", path: "/store" },
     { label: "Philosophy", path: "/philosophy" },
     { label: "For Professionals", path: "/institutional" },
-  ];
+  ].filter(item => {
+    if (item.path) return isPageVisible(item.path);
+    if (item.children) return item.children.length > 0;
+    return true;
+  });
 
   return (
     <>
@@ -237,7 +241,7 @@ const Navigation = () => {
               { path: "/courses", label: "Courses", icon: BookOpen, iconColor: "text-violet-400", bgColor: "bg-violet-600/20", borderColor: "border-violet-500/30" },
               { path: "/tutorials", label: "Tutorials", icon: GraduationCap, iconColor: "text-white/60", bgColor: "bg-white/5", borderColor: "border-white/10" },
               { path: "/store", label: "Store", icon: Package, iconColor: "text-white/60", bgColor: "bg-white/5", borderColor: "border-white/10", isTopLevel: true },
-            ].filter(item => item.isTopLevel || isPageVisible(item.path)).map((item) => (
+            ].filter(item => isPageVisible(item.path)).map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
@@ -262,7 +266,7 @@ const Navigation = () => {
               { path: "/philosophy", label: "Philosophy", icon: Lightbulb, isTopLevel: true },
               { path: "/institutional", label: "For Professionals", icon: Building, isTopLevel: true },
               { path: "/contact", label: "Contact", icon: Mail },
-            ].filter(item => item.isTopLevel || isPageVisible(item.path)).map((item) => (
+            ].filter(item => isPageVisible(item.path)).map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
