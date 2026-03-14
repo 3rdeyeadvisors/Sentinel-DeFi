@@ -576,13 +576,13 @@ serve(async (req) => {
             metadata: { items_count: digitalDownloadItems.length }
           });
 
-        } catch (digitalErr) {
+        } catch (digitalErr: unknown) {
           console.error("❌ Digital purchase processing failed:", digitalErr);
           await supabaseClient.from('order_action_logs').insert({
             order_id: session.id,
             action_type: 'digital_links_generated',
             status: 'error',
-            error_message: digitalErr.message
+            error_message: digitalErr instanceof Error ? digitalErr.message : 'Unknown error'
           });
         }
       }
