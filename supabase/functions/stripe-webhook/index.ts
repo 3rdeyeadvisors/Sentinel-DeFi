@@ -330,8 +330,8 @@ serve(async (req) => {
               },
             });
             logStep("Confirmation email triggered");
-          } catch (emailError) {
-            logStep("ERROR sending confirmation email", { error: emailError.message });
+          } catch (emailError: unknown) {
+            logStep("ERROR sending confirmation email", { error: emailError instanceof Error ? emailError.message : 'Unknown error' });
           }
 
           logStep("Founding 33 purchase completed successfully", { seatNumber, userId });
