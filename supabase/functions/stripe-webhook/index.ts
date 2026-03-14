@@ -472,13 +472,13 @@ serve(async (req) => {
               });
             }
           }
-        } catch (printifyErr) {
+        } catch (printifyErr: unknown) {
           console.error("❌ Printify order failed:", printifyErr);
           await supabaseClient.from('order_action_logs').insert({
             order_id: session.id,
             action_type: 'printify_created',
             status: 'error',
-            error_message: printifyErr.message
+            error_message: printifyErr instanceof Error ? printifyErr.message : 'Unknown error'
           });
         }
       }
