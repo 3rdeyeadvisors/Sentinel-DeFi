@@ -82,6 +82,7 @@ const Roadmap = lazy(() => import("./pages/Roadmap"));
 const MiniGames = lazy(() => import("./pages/MiniGames"));
 const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess"));
 const CheckoutCancel = lazy(() => import("./pages/CheckoutCancel"));
+const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
