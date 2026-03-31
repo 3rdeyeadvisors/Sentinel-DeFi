@@ -210,6 +210,7 @@ const AnimatedRoutes = () => {
         <Route path="/mini-games" element={<PageTransition><MiniGames /></PageTransition>} />
         <Route path="/checkout/success" element={<PageTransition><CheckoutSuccess /></PageTransition>} />
         <Route path="/checkout/cancel" element={<PageTransition><CheckoutCancel /></PageTransition>} />
+        <Route path="/unsubscribe" element={<PageTransition><Unsubscribe /></PageTransition>} />
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </Suspense>
