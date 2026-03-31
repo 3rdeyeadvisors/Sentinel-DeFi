@@ -82,6 +82,7 @@ const Roadmap = lazy(() => import("./pages/Roadmap"));
 const MiniGames = lazy(() => import("./pages/MiniGames"));
 const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess"));
 const CheckoutCancel = lazy(() => import("./pages/CheckoutCancel"));
+const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -209,6 +210,7 @@ const AnimatedRoutes = () => {
         <Route path="/mini-games" element={<PageTransition><MiniGames /></PageTransition>} />
         <Route path="/checkout/success" element={<PageTransition><CheckoutSuccess /></PageTransition>} />
         <Route path="/checkout/cancel" element={<PageTransition><CheckoutCancel /></PageTransition>} />
+        <Route path="/unsubscribe" element={<PageTransition><Unsubscribe /></PageTransition>} />
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </Suspense>
