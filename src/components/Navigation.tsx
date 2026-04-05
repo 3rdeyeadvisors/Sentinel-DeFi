@@ -19,9 +19,8 @@ const Navigation = () => {
   const { itemCount } = useCart();
   const { isPageVisible } = usePageVisibility();
   const [isOpen, setIsOpen] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
   const location = useLocation();
-  const { user, signOut, session } = useAuth();
+  const { user, signOut } = useAuth();
   const { displayName, avatarUrl } = useProfile();
   const { toast } = useToast();
 
@@ -29,31 +28,7 @@ const Navigation = () => {
     setIsOpen(false);
   }, [location.pathname]);
 
-  useEffect(() => {
-    const checkAdmin = async () => {
-      if (!user) {
-        setIsAdmin(false);
-        return;
-      }
-      if (isAdminEmail(user.email)) {
-        setIsAdmin(true);
-        return;
-      }
-      try {
-        const { data } = await supabase
-          .from('user_roles')
-          .select('role')
-          .eq('user_id', user.id)
-          .eq('role', 'admin')
-          .maybeSingle();
-        setIsAdmin(!!data);
-      } catch (error) {
-        console.error("Error checking admin status:", error);
-        setIsAdmin(false);
-      }
-    };
-    checkAdmin();
-  }, [user]);
+  const isAdmin = user && (isAdminEmail(user.email) || user.app_metadata?.role === 'admin');
 
   useEffect(() => {
     if (isOpen) {
