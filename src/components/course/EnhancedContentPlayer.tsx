@@ -441,6 +441,7 @@ export const EnhancedContentPlayer = ({
             )}
             {module.content.text && module.content.text.trim().length > 200 && (
               <button
+                type="button"
                 onClick={() => setShowAudio(true)}
                 className="flex items-center gap-2 font-body text-xs text-white/50 hover:text-violet-400 transition-colors bg-white/5 hover:bg-white/8 border border-white/10 hover:border-violet-500/30 rounded-xl px-3 py-2"
               >
@@ -594,6 +595,7 @@ export const EnhancedContentPlayer = ({
                     <p className="font-consciousness text-base font-bold text-white">Ready to test your knowledge?</p>
                     <p className="font-body text-sm text-white/50 max-w-xs">This module has a quiz. Complete it to earn points and mark this module done.</p>
                     <button
+                      type="button"
                       onClick={() => setActiveTab('quiz')}
                       className="font-body text-sm bg-violet-600 hover:bg-violet-500 text-white rounded-xl px-6 py-2.5 transition-all font-semibold flex items-center gap-2 mt-1"
                     >
@@ -608,6 +610,7 @@ export const EnhancedContentPlayer = ({
                     </div>
                     <p className="font-consciousness text-base font-bold text-white">You've reached the end of this module</p>
                     <button
+                      type="button"
                       onClick={handleComplete}
                       className="font-body text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl px-6 py-2.5 transition-all font-semibold flex items-center gap-2 mt-1"
                     >
