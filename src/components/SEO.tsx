@@ -1,8 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 
-// Legacy SEO component - Consider using SEOAutomation for new pages
-// This component is maintained for backwards compatibility
+import SEOAutomation from "./SEOAutomation";
+
+// Standardized SEO component that wraps SEOAutomation
+// Maintained for backwards compatibility but uses the new automation system internally
 
 interface SEOProps {
   title?: string;
@@ -10,7 +12,7 @@ interface SEOProps {
   keywords?: string;
   image?: string;
   url?: string;
-  type?: string;
+  type?: "website" | "article" | "product" | "course";
   article?: {
     publishedTime?: string;
     modifiedTime?: string;
@@ -33,7 +35,7 @@ const SEO = ({
   description,
   keywords,
   image,
-  url = "https://www.sentineldefi.online",
+  url,
   type = "website",
   article,
   schema,
@@ -41,172 +43,23 @@ const SEO = ({
 }: SEOProps) => {
   const { settings } = useSiteSettings();
 
-  const effectiveTitle = title || settings?.default_meta_title || "Decentralized DeFi Education & Wealth Tools | Sentinel DeFi";
-  const effectiveDescription = description || settings?.default_meta_description || "Transform your financial future with comprehensive DeFi education. Learn decentralized finance, yield farming, blockchain investing, and cryptocurrency strategies from beginner to advanced levels.";
-  const effectiveKeywords = keywords || settings?.default_meta_keywords || "DeFi education, decentralized finance, yield farming, blockchain investing, cryptocurrency courses, financial consciousness, DeFi beginner guide, crypto education, smart contracts, liquidity pools";
-  const effectiveImage = image || settings?.og_image_url || `${window.location.origin}/social-share-sentinel-defi.jpg`;
-  const twitterHandle = settings?.twitter_handle || "@sentineldefi";
+  // Use values from props or settings or defaults
+  const effectiveTitle = title || settings?.default_meta_title || "Decentralized DeFi Education & Wealth Tools";
+  const effectiveDescription = description || settings?.default_meta_description || "Expert DeFi education and tools.";
 
-  const siteTitle = settings?.site_name || "Sentinel DeFi";
-  const fullTitle = effectiveTitle.includes(siteTitle) ? effectiveTitle : `${effectiveTitle} | ${siteTitle}`;
-
-  // Generate schema markup based on type
-  const generateSchema = () => {
-    if (!schema) return null;
-
-    const baseSchema = {
-      "@context": "https://schema.org",
-      "@type": schema.type,
-      name: effectiveTitle,
-      description: effectiveDescription,
-      url: url,
-      image: effectiveImage,
-      publisher: {
-        "@type": "Organization",
-        name: "Sentinel DeFi",
-        url: "https://www.sentineldefi.online",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.sentineldefi.online/favicon-sentinel-defi.png"
-        }
-      },
-      ...schema.data
-    };
-
-    // Add Course-specific schema enhancements
-    if (schema.type === 'Course') {
-      // Add proper offers object
-      if (schema.data?.offers) {
-        baseSchema.offers = {
-          "@type": "Offer",
-          price: schema.data.offers.price || "0",
-          priceCurrency: schema.data.offers.priceCurrency || "USD",
-          availability: "https://schema.org/InStock",
-          url: url,
-          validFrom: new Date().toISOString(),
-          seller: {
-            "@type": "Organization",
-            name: "Sentinel DeFi",
-            url: "https://www.sentineldefi.online"
-          }
-        };
-      }
-
-      // Add proper hasCourseInstance object
-      if (schema.data?.hasCourseInstance) {
-        baseSchema.hasCourseInstance = {
-          "@type": "CourseInstance",
-          courseMode: "online",
-          instructor: {
-            "@type": "Person",
-            name: "Sentinel DeFi Team"
-          },
-          startDate: new Date().toISOString().split('T')[0], // Today's date
-          endDate: "2025-12-31", // Self-paced courses available through end of year
-          courseSchedule: {
-            "@type": "Schedule",
-            scheduleTimezone: "UTC",
-            repeatFrequency: "P1D",
-            byDay: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-          }
-        };
-      }
-
-      // Add course-specific properties
-      baseSchema.coursePrerequisites = schema.data?.coursePrerequisites || "No prior experience required";
-      baseSchema.educationalLevel = schema.data?.educationalLevel || "Beginner to Advanced";
-      baseSchema.inLanguage = "en-US";
-      baseSchema.isAccessibleForFree = schema.data?.offers?.price === "0" || schema.data?.offers?.price === 0;
-    }
-
-    return baseSchema;
-  };
-
-  // Generate FAQ schema
-  const generateFAQSchema = () => {
-    if (!faq || faq.length === 0) return null;
-
-    return {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faq.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.answer
-        }
-      }))
-    };
-  };
-
-  const schemaMarkup = generateSchema();
-  const faqMarkup = generateFAQSchema();
+  // Convert type to category for SEOAutomation
+  const category = type === "course" ? "DeFi Course" : type === "article" ? "DeFi Blog" : "DeFi Education";
 
   return (
-    <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
-      <meta name="description" content={effectiveDescription} />
-      <meta name="keywords" content={effectiveKeywords} />
-      {settings?.google_site_verification && (
-        <meta name="google-site-verification" content={settings.google_site_verification} />
-      )}
-      {/* Canonical URL is handled by Layout component */}
-      
-      {/* AI Crawler Optimization */}
-      <meta name="robots" content={settings?.robots_default || "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
-      <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-      <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-
-      {/* Open Graph Tags */}
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={effectiveDescription} />
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={url} />
-      <meta property="og:image" content={effectiveImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content={siteTitle} />
-      <meta property="og:locale" content="en_US" />
-
-      {/* Twitter Card Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={effectiveDescription} />
-      <meta name="twitter:image" content={effectiveImage} />
-      <meta name="twitter:creator" content={twitterHandle} />
-      <meta name="twitter:site" content={twitterHandle} />
-
-      {/* Article-specific meta tags */}
-      {article && (
-        <>
-          <meta property="article:published_time" content={article.publishedTime} />
-          <meta property="article:modified_time" content={article.modifiedTime} />
-          <meta property="article:author" content={article.author} />
-          <meta property="article:section" content={article.section} />
-          {article.tags?.map((tag, index) => (
-            <meta key={index} property="article:tag" content={tag} />
-          ))}
-        </>
-      )}
-
-      {/* Schema.org Structured Data */}
-      {schemaMarkup && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-        />
-      )}
-
-      {/* FAQ Schema */}
-      {faqMarkup && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqMarkup) }}
-        />
-      )}
-    </Helmet>
+    <SEOAutomation
+      title={effectiveTitle}
+      description={effectiveDescription}
+      category={category}
+      faq={faq}
+      tags={article?.tags || keywords?.split(",").map(k => k.trim())}
+      author={article?.author}
+      publishedDate={article?.publishedTime}
+    />
   );
 };
 

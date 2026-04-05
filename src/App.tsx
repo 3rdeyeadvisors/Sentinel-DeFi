@@ -9,6 +9,7 @@ import { HelmetProvider } from "react-helmet-async";
 import SecurityHeaders from "@/components/SecurityHeaders";
 import Layout from "./components/Layout";
 import PageTransition from "./components/PageTransition";
+import ErrorBoundary from "./components/ErrorBoundary";
 import { AuthProvider } from "./components/auth/AuthProvider";
 import { ProgressProvider } from "./components/progress/ProgressProvider";
 import { SubscriptionProvider } from "./hooks/useSubscription";
@@ -117,6 +118,7 @@ const AnimatedRoutes = () => {
   };
 
   return (
+    <ErrorBoundary>
     <Suspense fallback={<PageLoader />}>
       <Routes location={location} key={getStableKey()}>
         <Route path="/" element={<PageTransition><Index /></PageTransition>} />
@@ -214,6 +216,7 @@ const AnimatedRoutes = () => {
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </Suspense>
+    </ErrorBoundary>
   );
 };
 
@@ -236,7 +239,7 @@ const App = () => {
     }
 
     // Redirect legacy domains to www.sentineldefi.online
-    if (hostname.includes('the3rdeyeadvisors.com')) {
+    if (hostname.includes('the3rdeyeadvisors.com') || hostname.includes('3rdeyeadvisors.com')) {
       const redirectUrl = `https://www.sentineldefi.online${pathname}${search}${hash}`;
       window.location.replace(redirectUrl);
       return;
