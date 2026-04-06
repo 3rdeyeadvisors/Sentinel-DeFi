@@ -33,11 +33,8 @@ const SEO = ({
   title,
   description,
   keywords,
-  _image,
-  _url,
   type = "website",
   article,
-  _schema,
   faq
 }: SEOProps) => {
   const { settings } = useSiteSettings();

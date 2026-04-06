@@ -1,4 +1,4 @@
-import { LayoutDashboard, ShoppingCart, Mail, Users, Package, Gift, Eye, Activity, DollarSign, Map, Search, Settings, Globe } from "lucide-react";
+import { LayoutDashboard, ShoppingCart, Mail, Users, Package, Gift, Activity, DollarSign, Map, Search, Settings } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -32,7 +32,7 @@ interface AdminSidebarProps {
 }
 
 export function AdminSidebar({ activeSection, onSectionChange }: AdminSidebarProps) {
-  const { state } = useSidebar();
+  const { } = useSidebar();
 
   return (
     <Sidebar className="w-60">

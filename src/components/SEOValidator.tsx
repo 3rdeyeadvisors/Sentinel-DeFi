@@ -3,7 +3,7 @@
  * Real-time SEO monitoring and validation for development
  */
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { AlertTriangle, CheckCircle, AlertCircle, X } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';

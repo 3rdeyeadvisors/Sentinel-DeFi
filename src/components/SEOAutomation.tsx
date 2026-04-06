@@ -26,7 +26,6 @@ const SEOAutomation = ({
     seoConfig, 
     schema, 
     faqSchema, 
-    validation, 
     report, 
     isLoading 
   } = useSEOAutomation(options);
@@ -142,7 +141,6 @@ const SEOAutomation = ({
 export const BlogSEOAutomation = ({ 
   title, 
   excerpt, 
-  author, 
   publishedDate, 
   category, 
   tags, 

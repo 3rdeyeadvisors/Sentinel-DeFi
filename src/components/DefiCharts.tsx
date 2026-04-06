@@ -6,7 +6,7 @@ import { Tooltip as UITooltip, TooltipContent, TooltipProvider, TooltipTrigger }
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from '@/components/ui/carousel';
 import { MobileCarouselWrapper } from '@/components/MobileCarouselWrapper';
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Area, AreaChart } from 'recharts';
-import { TrendingUp, TrendingDown, DollarSign, BarChart3, Activity, Loader2, RefreshCw } from 'lucide-react';
+import { TrendingUp, TrendingDown, DollarSign, BarChart3, Activity, Loader2, Clock, RefreshCw } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 interface DefiProtocol {
