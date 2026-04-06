@@ -123,7 +123,7 @@ export const AnalyticsDashboard = () => {
       });
 
       recentProgress?.forEach(progress => {
-        const dateStr = new Date(progress.updated_at).toISOString().split('T')[0];
+        const dateStr = new Date(progress.updated_at || progress.created_at).toISOString().split('T')[0];
         if (engagementByDay[dateStr]) {
           engagementByDay[dateStr].activeUsers.add(progress.user_id);
           if (progress.completion_percentage === 100) {
