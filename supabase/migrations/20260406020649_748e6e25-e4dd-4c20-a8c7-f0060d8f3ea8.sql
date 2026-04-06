@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Admin upload access for resources" ON storage.objects;
