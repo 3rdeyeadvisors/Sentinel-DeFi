@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 import SEOAutomation from "./SEOAutomation";
@@ -34,11 +33,11 @@ const SEO = ({
   title,
   description,
   keywords,
-  image,
-  url,
+  _image,
+  _url,
   type = "website",
   article,
-  schema,
+  _schema,
   faq
 }: SEOProps) => {
   const { settings } = useSiteSettings();

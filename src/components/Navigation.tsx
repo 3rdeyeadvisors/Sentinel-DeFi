@@ -11,7 +11,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { useProfile } from "@/hooks/useProfile";
 import { useToast } from "@/hooks/use-toast";
 import { useCart } from "@/contexts/CartContext";
-import { supabase } from "@/integrations/supabase/client";
+
 import { isAdminEmail } from "@/lib/admin";
 import { usePageVisibility } from "@/hooks/usePageVisibility";
 
