@@ -5,7 +5,6 @@ import { ProgressBar } from '@/components/progress/ProgressBar';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { useProgress } from '@/components/progress/ProgressProvider';
 import { LucideIcon, Star, Lock, Clock, ChevronRight } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 interface Course {
   id: number;
@@ -31,7 +30,7 @@ interface CourseCardProps {
 export const CourseCard = ({ course, index, onStartCourse, onAuthRequired }: CourseCardProps) => {
   const { user } = useAuth();
   const { getCourseProgress, isCourseCompleted } = useProgress();
-  const _isMobile = useIsMobile();
+  
 
   const userCourseProgress = user ? getCourseProgress(course.id) : null;
   const isCompleted = user ? isCourseCompleted(course.id) : false;
@@ -45,7 +44,8 @@ export const CourseCard = ({ course, index, onStartCourse, onAuthRequired }: Cou
     onStartCourse(course.id);
   };
 
-  const _getButtonText = () => {
+  // getButtonText removed - unused
+  // const getButtonText = () => {
     if (course.isLocked) return "Upgrade to Annual";
     if (!user) return "Start Learning";
     if (isCompleted) return "Course Completed";
