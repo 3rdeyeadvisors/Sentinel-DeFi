@@ -73,17 +73,17 @@ export const EnhancedContentPlayer = ({
   currentModuleIndex,
   totalModules,
   courseTitle,
-  allModules
+  _allModules
 }: EnhancedContentPlayerProps) => {
   const { user } = useAuth();
   const { getCourseProgress, updateModuleProgress } = useProgress();
-  const { playModuleComplete, playPointsEarned } = useAchievementSounds();
+  const { playModuleComplete } = useAchievementSounds();
   const [timeSpent, setTimeSpent] = useState(0);
   const [startTime] = useState(Date.now());
   const [isCompleted, setIsCompleted] = useState(false);
   const [notes, setNotes] = useState("");
-  const [notesInput, setNotesInput] = useState("");
-  const notesDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [_notesInput, setNotesInput] = useState("");
+  const _notesDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [readingProgress, setReadingProgress] = useState(0);
   const [activeTab, setActiveTab] = useState("content");
@@ -177,7 +177,7 @@ export const EnhancedContentPlayer = ({
       }
 
       // Fall back to database quiz
-      const { data, error } = await supabase
+      const { data } = await supabase
         .from('quizzes_public')
         .select('*')
         .eq('course_id', courseId)
@@ -198,11 +198,11 @@ export const EnhancedContentPlayer = ({
           setQuiz({
             id: data.id,
             title: data.title,
-            description: data.description,
+            description: data.description ?? undefined,
             questions: questions,
-            passingScore: data.passing_score || 70,
-            timeLimit: data.time_limit,
-            maxAttempts: data.max_attempts || 3
+            passingScore: data.passing_score ?? 70,
+            timeLimit: data.time_limit ?? undefined,
+            maxAttempts: data.max_attempts ?? 3
           });
         } else {
           console.error('Database quiz has invalid structure');
@@ -299,11 +299,11 @@ export const EnhancedContentPlayer = ({
     }
   };
 
-  const togglePlayback = () => {
+  const _togglePlayback = () => {
     setIsPlaying(!isPlaying);
   };
 
-  const changePlaybackSpeed = () => {
+  const _changePlaybackSpeed = () => {
     const speeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
     const currentIndex = speeds.indexOf(playbackSpeed);
     const nextIndex = (currentIndex + 1) % speeds.length;
@@ -323,7 +323,7 @@ export const EnhancedContentPlayer = ({
       // Then try Supabase
       if (user) {
         try {
-          const { data, error } = await supabase
+          const { data } = await supabase
             .from('user_presence')
             .select('metadata')
             .eq('user_id', user.id)
