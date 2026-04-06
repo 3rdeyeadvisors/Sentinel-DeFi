@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from 'react';
 import { useAuth } from '@/components/auth/AuthProvider';
-import { usePoints, PointActionType, POINT_VALUES } from '@/hooks/usePoints';
+import { usePoints, PointActionType } from '@/hooks/usePoints';
 import { useAchievementSounds } from '@/hooks/useAchievementSounds';
 import { toast } from 'sonner';
 

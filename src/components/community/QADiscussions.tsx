@@ -8,7 +8,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { useBatchProfiles } from "@/hooks/useBatchProfiles";
 import { 
@@ -28,7 +27,7 @@ interface Discussion {
   user_id: string;
   title: string;
   description: string;
-  tags: string[];
+  tags: string[] | null;
   is_solved: boolean;
   views_count: number;
   replies_count: number;
@@ -365,10 +364,10 @@ export const QADiscussions = ({ contentType, contentId, title }: QADiscussionsPr
                         {discussion.description}
                       </p>
                       
-                      {discussion.tags.length > 0 && (
+                      {discussion.tags?.length > 0 && (
                         <div className="flex items-center gap-1 mb-3">
                           <Tag className="w-3 h-3 text-white/50" />
-                          {discussion.tags.slice(0, 3).map((tag, index) => (
+                          {discussion.tags?.slice(0, 3).map((tag, index) => (
                             <Badge key={index} variant="secondary" className="text-xs">
                               {tag}
                             </Badge>
@@ -447,10 +446,10 @@ export const QADiscussions = ({ contentType, contentId, title }: QADiscussionsPr
                   {selectedDiscussion.description}
                 </p>
                 
-                {selectedDiscussion.tags.length > 0 && (
+                {(selectedDiscussion.tags?.length ?? 0) > 0 && (
                   <div className="flex items-center gap-2 mb-4">
                     <Tag className="w-4 h-4 text-white/50" />
-                    {selectedDiscussion.tags.map((tag, index) => (
+                    {selectedDiscussion.tags?.map((tag, index) => (
                       <Badge key={index} variant="secondary">
                         {tag}
                       </Badge>

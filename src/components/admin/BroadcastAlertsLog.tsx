@@ -151,7 +151,7 @@ export const BroadcastAlertsLog = () => {
                               </details>
                             )}
 
-                            {alert.retry_count > 0 && (
+                            {(alert.retry_count ?? 0) > 0 && (
                               <p className="text-sm text-muted-foreground">
                                 Retry attempts: {alert.retry_count}
                               </p>
@@ -205,8 +205,8 @@ export const BroadcastAlertsLog = () => {
                         </p>
                         <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
                           <span>{summary.total_broadcasts_sent}/{summary.total_broadcasts_scheduled} broadcasts</span>
-                          <span>{summary.total_emails_sent.toLocaleString()} emails</span>
-                          <span>{summary.total_subscribers.toLocaleString()} subscribers</span>
+                          <span>{(summary.total_emails_sent ?? 0).toLocaleString()} emails</span>
+                          <span>{(summary.total_subscribers ?? 0).toLocaleString()} subscribers</span>
                         </div>
                       </div>
                       <div className="text-right">

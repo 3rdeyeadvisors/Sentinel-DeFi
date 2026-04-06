@@ -41,7 +41,6 @@ import {
   BarChart3,
   FileText,
   ChevronDown,
-  ChevronUp,
   Trophy,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";

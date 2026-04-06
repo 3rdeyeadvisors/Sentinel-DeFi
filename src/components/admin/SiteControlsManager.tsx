@@ -3,7 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useQueryClient } from "@tanstack/react-query";
 import { useSocialLinks, SocialLink } from "@/hooks/useSocialLinks";
-import { usePageVisibility, PageVisibility } from "@/hooks/usePageVisibility";
+import { usePageVisibility } from "@/hooks/usePageVisibility";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -31,7 +31,7 @@ export const SiteControlsManager = () => {
   const [links, setLinks] = useState<Partial<SocialLink>[]>([]);
   const [deletedIds, setDeletedIds] = useState<string[]>([]);
   const [savingLinks, setSavingLinks] = useState(false);
-  const [pageStatus, setPageStatus] = useState<Record<string, 'success' | 'error' | null>>({});
+  const [pageStatus, setPageStatus] = useState<Record<string, 'success' | 'error' | null>>({ });
 
   useEffect(() => {
     if (initialLinks) {
@@ -86,7 +86,7 @@ export const SiteControlsManager = () => {
         ...link,
         sort_order: index,
         // If it's a new link without an ID, let Supabase generate one
-        ...(link.id ? { id: link.id } : {})
+        ...(link.id ? { id: link.id } : { })
       }));
 
       if (linksToUpsert.length > 0) {

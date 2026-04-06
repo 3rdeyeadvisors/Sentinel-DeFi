@@ -30,7 +30,7 @@ interface BroadcastEmail {
 export function BroadcastPreview() {
   const [broadcasts, setBroadcasts] = useState<BroadcastEmail[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedBroadcast, setSelectedBroadcast] = useState<BroadcastEmail | null>(null);
+  const [_selectedBroadcast, setSelectedBroadcast] = useState<BroadcastEmail | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [sendingId, setSendingId] = useState<string | null>(null);
   const [liveMarketData, setLiveMarketData] = useState<string>("");

@@ -2,9 +2,8 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, Check, AlertCircle } from "lucide-react";
+import { Mail, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { newsletterSchema, sanitizeInput, checkRateLimit } from "@/lib/validation";
 import { supabase } from "@/integrations/supabase/client";
 
 interface NewsletterSignupProps {

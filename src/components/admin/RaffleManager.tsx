@@ -29,7 +29,7 @@ interface Raffle {
   start_date: string;
   end_date: string;
   is_active: boolean;
-  winner_user_id?: string;
+  winner_user_id?: string | null;
 }
 
 interface Participant {
@@ -141,7 +141,7 @@ export const RaffleManager = () => {
       if (entriesError) throw entriesError;
 
       // Fetch all tickets for this raffle
-      const { data: ticketsData, error: ticketsError } = await supabase
+      const { data: ticketsData } = await supabase
         .from('raffle_tickets')
         .select('id, user_id, ticket_source, earned_at, metadata')
         .eq('raffle_id', raffleId)
@@ -281,7 +281,7 @@ export const RaffleManager = () => {
     try {
       // Always use admin function for approvals to ensure entries are created with service role
       if (approved) {
-        const { data, error } = await supabase.functions.invoke('admin-mark-verified', {
+        const { error } = await supabase.functions.invoke('admin-mark-verified', {
           body: { taskIds: [taskId], skipEmail },
         });
 

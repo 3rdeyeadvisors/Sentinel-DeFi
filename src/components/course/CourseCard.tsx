@@ -4,8 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { ProgressBar } from '@/components/progress/ProgressBar';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { useProgress } from '@/components/progress/ProgressProvider';
-import { LucideIcon, Star, Lock, Clock, CheckCircle2, ChevronRight } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { LucideIcon, Star, Lock, Clock, ChevronRight } from 'lucide-react';
 
 interface Course {
   id: number;
@@ -30,8 +29,8 @@ interface CourseCardProps {
 
 export const CourseCard = ({ course, index, onStartCourse, onAuthRequired }: CourseCardProps) => {
   const { user } = useAuth();
-  const { courseProgress, getCourseProgress, isCourseCompleted } = useProgress();
-  const isMobile = useIsMobile();
+  const { getCourseProgress, isCourseCompleted } = useProgress();
+  
 
   const userCourseProgress = user ? getCourseProgress(course.id) : null;
   const isCompleted = user ? isCourseCompleted(course.id) : false;

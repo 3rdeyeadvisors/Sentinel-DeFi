@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { CheckCircle, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface Step {

@@ -23,7 +23,7 @@ interface ParticipantTrackerProps {
 interface Participant {
   user_id: string;
   display_name: string;
-  last_seen: string;
+  last_seen: string | null;
   progress_percentage: number;
   metadata: any;
 }
@@ -136,7 +136,7 @@ export const ParticipantTracker = ({ contentType, contentId }: ParticipantTracke
   const activeCount = participants.length;
   const fiveMinutesAgo = Date.now() - 5 * 60 * 1000;
   const recentlyActiveCount = participants.filter(
-    p => new Date(p.last_seen).getTime() > fiveMinutesAgo
+    p => new Date(p.last_seen || '').getTime() > fiveMinutesAgo
   ).length;
 
   const formatTimeSince = (timestamp: string) => {
@@ -213,7 +213,7 @@ export const ParticipantTracker = ({ contentType, contentId }: ParticipantTracke
                         <p className="font-medium text-foreground">{participant.display_name}</p>
                         <div className="flex items-center gap-2 text-xs text-muted-foreground">
                           <Clock className="h-3 w-3" />
-                          <span>{formatTimeSince(participant.last_seen)}</span>
+                          <span>{formatTimeSince(participant.last_seen || '')}</span>
                         </div>
                       </div>
                     </div>
@@ -229,12 +229,12 @@ export const ParticipantTracker = ({ contentType, contentId }: ParticipantTracke
                       <Badge
                         variant="outline"
                         className={
-                          new Date(participant.last_seen).getTime() > fiveMinutesAgo
+                          new Date(participant.last_seen || '').getTime() > fiveMinutesAgo
                             ? "bg-awareness/20 text-awareness border-awareness/30"
                             : "bg-muted/20 text-muted-foreground border-muted"
                         }
                       >
-                        {new Date(participant.last_seen).getTime() > fiveMinutesAgo ? "Active" : "Away"}
+                        {new Date(participant.last_seen || '').getTime() > fiveMinutesAgo ? "Active" : "Away"}
                       </Badge>
                     </div>
                   </div>

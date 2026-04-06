@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,7 +9,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
 import { 
-  DollarSign, Users, Clock, CheckCircle2, Loader2, 
+  Users, Clock, CheckCircle2, Loader2, 
   Wallet, Mail, RefreshCw, Search
 } from "lucide-react";
 
@@ -78,8 +78,8 @@ export const CommissionsManager = () => {
 
       // Get unique user IDs (referrers and referred users)
       const referrerIds = [...new Set(commissionsData.map(c => c.referrer_id))];
-      const referredIds = [...new Set(commissionsData.map(c => c.referred_user_id))];
-      const allUserIds = [...new Set([...referrerIds, ...referredIds])];
+      const _referredIds = [...new Set(commissionsData.map(c => c.referred_user_id))];
+      // user IDs collected above
 
       // Batch fetch all profiles in one query
       const { data: profilesData } = await supabase
@@ -91,7 +91,7 @@ export const CommissionsManager = () => {
       const { data: emailsData } = await supabase.rpc("get_user_emails_with_profiles");
 
       // Create lookup maps for O(1) access
-      const profileMap: ProfileMap = {};
+      const profileMap: ProfileMap = { };
       profilesData?.forEach(p => {
         profileMap[p.user_id] = {
           display_name: p.display_name,
@@ -101,7 +101,7 @@ export const CommissionsManager = () => {
         };
       });
 
-      const emailMap: EmailMap = {};
+      const emailMap: EmailMap = { };
       emailsData?.forEach((e: { user_id: string; email: string }) => {
         emailMap[e.user_id] = e.email;
       });

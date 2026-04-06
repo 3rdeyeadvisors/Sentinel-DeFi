@@ -4,20 +4,15 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { useProfile } from "@/hooks/useProfile";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { useBatchProfiles } from "@/hooks/useBatchProfiles";
 import { 
   Heart, 
   MessageSquare, 
-  Reply, 
-  MoreHorizontal, 
-  Flag,
-  Edit,
-  Trash,
+  Reply,
   ChevronDown,
   ChevronUp
 } from "lucide-react";

@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Calculator, TrendingUp, AlertTriangle, DollarSign, Percent, Clock } from "lucide-react";
+import { Calculator, TrendingUp, AlertTriangle, DollarSign, Percent } from "lucide-react";
 
 const DefiCalculators = () => {
   const [yieldData, setYieldData] = useState({

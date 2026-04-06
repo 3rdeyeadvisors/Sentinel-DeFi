@@ -1,19 +1,12 @@
 
-import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ExternalLink, RefreshCw } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export const SocialPreviewChecker = () => {
-  const [isChecking, setIsChecking] = useState(false);
   const currentUrl = window.location.origin;
   const socialImage = `${currentUrl}/social-share-sentinel-defi.jpg`;
-
-  const checkPreview = () => {
-    setIsChecking(true);
-    // Simulate checking
-    setTimeout(() => setIsChecking(false), 2000);
-  };
 
   const debugTools = [
     {

@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, useCallback } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { courseContent } from '@/data/courseContent';
@@ -8,10 +8,10 @@ import { useAchievementSounds } from '@/hooks/useAchievementSounds';
 
 interface CourseProgress {
   course_id: number;
-  completed_modules: number[];
-  started_at: string;
-  last_accessed: string;
-  completion_percentage: number;
+  completed_modules: number[] | null;
+  started_at: string | null;
+  last_accessed: string | null;
+  completion_percentage: number | null;
 }
 
 interface ProgressContextType {

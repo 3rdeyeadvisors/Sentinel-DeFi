@@ -1,16 +1,15 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Textarea } from "@/components/ui/textarea";
+
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useProgress } from "@/components/progress/ProgressProvider";
 import { QuizComponent } from "@/components/quiz/QuizComponent";
-import { motion, AnimatePresence } from "framer-motion";
-import { ExpandableText } from "@/components/ui/expandable-text";
+import { AnimatePresence } from "framer-motion";
 import { FullscreenContentViewer } from "./FullscreenContentViewer";
 import NotesEditor from './NotesEditor';
 import AudioPlayer from '@/components/audio/AudioPlayer';
@@ -27,16 +26,11 @@ import {
   BookmarkCheck,
   ChevronLeft,
   ChevronRight,
-  Play,
-  Pause,
-  RotateCcw,
   Volume2,
-  Settings,
   Maximize2,
   MessageSquare,
   Brain,
-  Star,
-  Monitor
+
 } from "lucide-react";
 import { ModuleContent } from "@/data/courseContent";
 import { EnhancedMarkdownRenderer } from "./EnhancedMarkdownRenderer";
@@ -78,17 +72,17 @@ export const EnhancedContentPlayer = ({
   currentModuleIndex,
   totalModules,
   courseTitle,
-  allModules
+  allModules: _allModules
 }: EnhancedContentPlayerProps) => {
   const { user } = useAuth();
   const { getCourseProgress, updateModuleProgress } = useProgress();
-  const { playModuleComplete, playPointsEarned } = useAchievementSounds();
+  const { playModuleComplete } = useAchievementSounds();
   const [timeSpent, setTimeSpent] = useState(0);
   const [startTime] = useState(Date.now());
   const [isCompleted, setIsCompleted] = useState(false);
   const [notes, setNotes] = useState("");
-  const [notesInput, setNotesInput] = useState("");
-  const notesDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [_notesInput, setNotesInput] = useState("");
+  const _notesDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [readingProgress, setReadingProgress] = useState(0);
   const [activeTab, setActiveTab] = useState("content");
@@ -182,14 +176,14 @@ export const EnhancedContentPlayer = ({
       }
 
       // Fall back to database quiz
-      const { data, error } = await supabase
+      const { data, error: queryError } = await supabase
         .from('quizzes_public')
         .select('*')
         .eq('course_id', courseId)
         .eq('module_id', module.id)
         .single();
 
-      if (error && error.code !== 'PGRST116') throw error;
+      if (queryError && queryError.code !== 'PGRST116') throw queryError;
       
       if (data && data.questions) {
         
@@ -203,11 +197,11 @@ export const EnhancedContentPlayer = ({
           setQuiz({
             id: data.id,
             title: data.title,
-            description: data.description,
+            description: data.description ?? undefined,
             questions: questions,
-            passingScore: data.passing_score || 70,
-            timeLimit: data.time_limit,
-            maxAttempts: data.max_attempts || 3
+            passingScore: data.passing_score ?? 70,
+            timeLimit: data.time_limit ?? undefined,
+            maxAttempts: data.max_attempts ?? 3
           });
         } else {
           console.error('Database quiz has invalid structure');
@@ -304,11 +298,11 @@ export const EnhancedContentPlayer = ({
     }
   };
 
-  const togglePlayback = () => {
+  const _togglePlayback = () => {
     setIsPlaying(!isPlaying);
   };
 
-  const changePlaybackSpeed = () => {
+  const _changePlaybackSpeed = () => {
     const speeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
     const currentIndex = speeds.indexOf(playbackSpeed);
     const nextIndex = (currentIndex + 1) % speeds.length;
@@ -328,7 +322,7 @@ export const EnhancedContentPlayer = ({
       // Then try Supabase
       if (user) {
         try {
-          const { data, error } = await supabase
+          const { data } = await supabase
             .from('user_presence')
             .select('metadata')
             .eq('user_id', user.id)

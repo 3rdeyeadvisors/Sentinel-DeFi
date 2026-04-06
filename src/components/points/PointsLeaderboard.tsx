@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
 import { usePoints } from '@/hooks/usePoints';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { Trophy, Medal, Award } from 'lucide-react';

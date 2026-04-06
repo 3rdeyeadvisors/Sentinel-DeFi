@@ -6,7 +6,6 @@ import {
   ArrowUpRight,
   Check,
   X,
-  Clock,
   Eye
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
