@@ -49,8 +49,8 @@ export const EnhancedModuleNavigation = ({
   const [searchTerm, setSearchTerm] = useState("");
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
   const [filterType, setFilterType] = useState<'all' | 'text' | 'video' | 'interactive'>('all');
-  const [showCompleted, setShowCompleted] = useState(true);
-  const [showIncomplete, setShowIncomplete] = useState(true);
+  const [showCompleted, _setShowCompleted] = useState(true);
+  const [showIncomplete, _setShowIncomplete] = useState(true);
 
   const course = getCourseContent(courseId);
   const progress = getCourseProgress(courseId);
@@ -281,7 +281,7 @@ export const EnhancedModuleNavigation = ({
 
       {/* Module List/Grid */}
       <div className={`space-y-2.5 sm:space-y-3 ${viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 space-y-0' : ''}`}>
-        {filteredModules.map((module, originalIndex) => {
+        {filteredModules.map((module, _originalIndex) => {
           const moduleIndex = course.modules.findIndex(m => m.id === module.id);
           const isCompleted = isModuleCompleted(moduleIndex);
           const isCurrent = module.id === currentModuleId;

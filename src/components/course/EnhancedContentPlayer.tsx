@@ -31,7 +31,6 @@ import {
   MessageSquare,
   Brain,
 
-
 } from "lucide-react";
 import { ModuleContent } from "@/data/courseContent";
 import { EnhancedMarkdownRenderer } from "./EnhancedMarkdownRenderer";
@@ -73,7 +72,7 @@ export const EnhancedContentPlayer = ({
   currentModuleIndex,
   totalModules,
   courseTitle,
-  _allModules
+  allModules: _allModules
 }: EnhancedContentPlayerProps) => {
   const { user } = useAuth();
   const { getCourseProgress, updateModuleProgress } = useProgress();

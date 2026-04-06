@@ -8,7 +8,6 @@ import { ComparisonTable } from './ComparisonTable';
 import { TermDefinition } from './TermDefinition';
 import { Card, CardContent } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { AlertTriangle, CheckCircle, Info } from 'lucide-react';
 
 interface EnhancedMarkdownRendererProps {
   content: string;
