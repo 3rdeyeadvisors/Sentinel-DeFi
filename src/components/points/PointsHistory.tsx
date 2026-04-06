@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 
 import { usePoints } from '@/hooks/usePoints';
-import { Clock, Star, TrendingUp, BookOpen, CheckCircle2, Users, MessageSquare, User, Trophy, Brain, Zap, Map } from 'lucide-react';
+import { Clock, Star, BookOpen, Users, MessageSquare, User, Trophy, Brain, Zap, Map } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 
 interface PointTransaction {

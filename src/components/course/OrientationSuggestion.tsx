@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { RotateCw, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';

@@ -3,14 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Textarea } from "@/components/ui/textarea";
+
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useProgress } from "@/components/progress/ProgressProvider";
 import { QuizComponent } from "@/components/quiz/QuizComponent";
 import { AnimatePresence } from "framer-motion";
-import { ExpandableText } from "@/components/ui/expandable-text";
 import { FullscreenContentViewer } from "./FullscreenContentViewer";
 import NotesEditor from './NotesEditor';
 import AudioPlayer from '@/components/audio/AudioPlayer';
@@ -31,8 +30,8 @@ import {
   Maximize2,
   MessageSquare,
   Brain,
-  Star,
-  Monitor
+
+
 } from "lucide-react";
 import { ModuleContent } from "@/data/courseContent";
 import { EnhancedMarkdownRenderer } from "./EnhancedMarkdownRenderer";
