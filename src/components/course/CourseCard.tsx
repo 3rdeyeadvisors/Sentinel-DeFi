@@ -44,8 +44,7 @@ export const CourseCard = ({ course, index, onStartCourse, onAuthRequired }: Cou
     onStartCourse(course.id);
   };
 
-  // getButtonText removed - unused
-  // const getButtonText = () => {
+  const getButtonText = () => {
     if (course.isLocked) return "Upgrade to Annual";
     if (!user) return "Start Learning";
     if (isCompleted) return "Course Completed";
@@ -53,7 +52,7 @@ export const CourseCard = ({ course, index, onStartCourse, onAuthRequired }: Cou
     return "Start Learning";
   };
 
-  const _getDaysUntil = (dateString: string) => {
+  const getDaysUntil = (dateString: string) => {
     const date = new Date(dateString);
     const diffTime = date.getTime() - new Date().getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
