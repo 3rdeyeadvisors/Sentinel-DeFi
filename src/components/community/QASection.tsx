@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useProfile } from "@/hooks/useProfile";
 import { supabase } from "@/integrations/supabase/client";
-import { HelpCircle, MessageSquare, CheckCircle, ThumbsUp, Trash2 } from "lucide-react";
+import { HelpCircle, CheckCircle, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { formatDistanceToNow } from "date-fns";
 import { useFoundingMemberStatus } from "@/hooks/useFoundingMemberStatus";
@@ -46,7 +46,7 @@ export const QASection = ({ courseId, moduleId }: QASectionProps) => {
   const [questions, setQuestions] = useState<QAItem[]>([]);
   const [newQuestionTitle, setNewQuestionTitle] = useState("");
   const [newQuestionContent, setNewQuestionContent] = useState("");
-  const [replyContent, setReplyContent] = useState<{ [key: string]: string }>({});
+  const [replyContent, setReplyContent] = useState<{ [key: string]: string }>({ });
   const [editingQuestionId, setEditingQuestionId] = useState<string | null>(null);
   const [editQuestionTitle, setEditQuestionTitle] = useState("");
   const [editQuestionContent, setEditQuestionContent] = useState("");

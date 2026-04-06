@@ -9,7 +9,6 @@ import {
   BookOpen, 
   MessageCircle,
   Star,
-  Clock,
   Award,
   BarChart3
 } from "lucide-react";
@@ -73,7 +72,7 @@ export const AnalyticsDashboard = () => {
         .eq('content_type', 'tutorial');
 
       // Calculate real tutorial ratings
-      const tutorialRatings: Record<string, { total: number; count: number }> = {};
+      const tutorialRatings: Record<string, { total: number; count: number }> = { };
       ratingsData?.forEach(r => {
         if (!tutorialRatings[r.content_id]) {
           tutorialRatings[r.content_id] = { total: 0, count: 0 };
@@ -107,7 +106,7 @@ export const AnalyticsDashboard = () => {
         .gte('updated_at', sevenDaysAgo.toISOString());
 
       // Build engagement data by day
-      const engagementByDay: Record<string, { activeUsers: Set<string>; completions: number }> = {};
+      const engagementByDay: Record<string, { activeUsers: Set<string>; completions: number }> = { };
       
       for (let i = 6; i >= 0; i--) {
         const date = new Date();
@@ -155,17 +154,17 @@ export const AnalyticsDashboard = () => {
         : { data: [] };
 
       // Count contributions per user
-      const contributionCounts: Record<string, number> = {};
+      const contributionCounts: Record<string, number> = { };
       commentsByUser?.forEach(c => {
         contributionCounts[c.user_id] = (contributionCounts[c.user_id] || 0) + 1;
       });
 
-      const badgeCounts: Record<string, number> = {};
+      const badgeCounts: Record<string, number> = { };
       badgesByUser?.forEach(b => {
         badgeCounts[b.user_id] = (badgeCounts[b.user_id] || 0) + 1;
       });
 
-      const profileMap: Record<string, string> = {};
+      const profileMap: Record<string, string> = { };
       profiles?.forEach(p => {
         profileMap[p.user_id] = p.display_name || 'Anonymous User';
       });

@@ -8,7 +8,6 @@ import { Separator } from "@/components/ui/separator";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useProgress } from "@/components/progress/ProgressProvider";
 import { 
-  BookOpen, 
   Clock, 
   CheckCircle, 
   FileText, 

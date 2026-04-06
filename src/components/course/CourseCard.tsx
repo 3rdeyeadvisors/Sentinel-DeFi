@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { ProgressBar } from '@/components/progress/ProgressBar';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { useProgress } from '@/components/progress/ProgressProvider';
-import { LucideIcon, Star, Lock, Clock, CheckCircle2, ChevronRight } from 'lucide-react';
+import { LucideIcon, Star, Lock, Clock, ChevronRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 interface Course {

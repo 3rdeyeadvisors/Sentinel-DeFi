@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { getBadgeDefinition, BadgeDefinition } from "@/lib/badges";
+import { getBadgeDefinition } from "@/lib/badges";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface BadgeDisplayProps {
