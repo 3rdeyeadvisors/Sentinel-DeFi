@@ -512,7 +512,7 @@ export const EnhancedDashboard = () => {
         const allDates = new Set<string>();
         quizAttempts?.forEach(a => allDates.add(new Date(a.created_at).toDateString()));
         presenceQuizzes?.forEach(p => allDates.add(new Date(p.created_at || p.last_seen!).toDateString()));
-        progressUpdates?.forEach(p => allDates.add(new Date(p.updated_at).toDateString()));
+        progressUpdates?.forEach(p => allDates.add(new Date(p.updated_at || '').toDateString()));
 
         // Calculate streak
         let streak = 0;

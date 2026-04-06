@@ -10,7 +10,7 @@ interface PointTransaction {
   points: number;
   action_type: string;
   action_id: string | null;
-  metadata: Record<string, any>;
+  metadata: any;
   created_at: string;
 }
 
