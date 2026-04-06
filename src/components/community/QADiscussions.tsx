@@ -446,7 +446,7 @@ export const QADiscussions = ({ contentType, contentId, title }: QADiscussionsPr
                   {selectedDiscussion.description}
                 </p>
                 
-                {selectedDiscussion.tags?.length > 0 && (
+                {(selectedDiscussion.tags?.length ?? 0) > 0 && (
                   <div className="flex items-center gap-2 mb-4">
                     <Tag className="w-4 h-4 text-white/50" />
                     {selectedDiscussion.tags?.map((tag, index) => (
