@@ -176,14 +176,14 @@ export const EnhancedContentPlayer = ({
       }
 
       // Fall back to database quiz
-      const { data } = await supabase
+      const { data, error: queryError } = await supabase
         .from('quizzes_public')
         .select('*')
         .eq('course_id', courseId)
         .eq('module_id', module.id)
         .single();
 
-      if (error && error.code !== 'PGRST116') throw error;
+      if (queryError && queryError.code !== 'PGRST116') throw queryError;
       
       if (data && data.questions) {
         
