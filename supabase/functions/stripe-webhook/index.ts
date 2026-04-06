@@ -251,7 +251,7 @@ serve(async (req) => {
         return;
       }
 
-      const session = event.data.object as Stripe.Checkout.Session;
+      let session = event.data.object as Stripe.Checkout.Session;
       
       // ============ FOUNDING 33 PAYMENT HANDLING ============
       if (session.metadata?.purchase_type === "founding_33") {
@@ -344,7 +344,7 @@ serve(async (req) => {
       // ============ END FOUNDING 33 HANDLING ============
 
       // Re-retrieve session with full details for cart checkout
-      let session = await stripe.checkout.sessions.retrieve((event.data.object as Stripe.Checkout.Session).id, {
+      session = await stripe.checkout.sessions.retrieve((event.data.object as Stripe.Checkout.Session).id, {
         expand: ['line_items', 'line_items.data.price.product', 'customer', 'shipping_details']
       });
       
