@@ -23,7 +23,7 @@ interface ParticipantTrackerProps {
 interface Participant {
   user_id: string;
   display_name: string;
-  last_seen: string;
+  last_seen: string | null;
   progress_percentage: number;
   metadata: any;
 }

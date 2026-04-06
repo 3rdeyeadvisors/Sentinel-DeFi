@@ -18,7 +18,7 @@ export const ManualOrderProcessor = () => {
 
     setLoading(true);
     try {
-      const { data, error } = await supabase.functions.invoke('manual-process-order', {
+      const { error } = await supabase.functions.invoke('manual-process-order', {
         body: { paymentId: sessionId.trim() }
       });
 

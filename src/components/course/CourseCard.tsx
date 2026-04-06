@@ -30,8 +30,8 @@ interface CourseCardProps {
 
 export const CourseCard = ({ course, index, onStartCourse, onAuthRequired }: CourseCardProps) => {
   const { user } = useAuth();
-  const { courseProgress, getCourseProgress, isCourseCompleted } = useProgress();
-  const isMobile = useIsMobile();
+  const { getCourseProgress, isCourseCompleted } = useProgress();
+  const _isMobile = useIsMobile();
 
   const userCourseProgress = user ? getCourseProgress(course.id) : null;
   const isCompleted = user ? isCourseCompleted(course.id) : false;

@@ -29,7 +29,7 @@ interface Raffle {
   start_date: string;
   end_date: string;
   is_active: boolean;
-  winner_user_id?: string;
+  winner_user_id?: string | null;
 }
 
 interface Participant {

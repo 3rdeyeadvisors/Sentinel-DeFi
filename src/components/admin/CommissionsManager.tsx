@@ -79,7 +79,7 @@ export const CommissionsManager = () => {
       // Get unique user IDs (referrers and referred users)
       const referrerIds = [...new Set(commissionsData.map(c => c.referrer_id))];
       const referredIds = [...new Set(commissionsData.map(c => c.referred_user_id))];
-      const allUserIds = [...new Set([...referrerIds, ...referredIds])];
+      const _allUserIds = [...new Set([...referrerIds, ...referredIds])];
 
       // Batch fetch all profiles in one query
       const { data: profilesData } = await supabase

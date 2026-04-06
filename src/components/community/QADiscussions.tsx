@@ -28,7 +28,7 @@ interface Discussion {
   user_id: string;
   title: string;
   description: string;
-  tags: string[];
+  tags: string[] | null;
   is_solved: boolean;
   views_count: number;
   replies_count: number;

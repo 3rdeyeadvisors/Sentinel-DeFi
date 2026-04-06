@@ -20,7 +20,7 @@ export const RemoveFromRaffleButton = ({ raffleId, onRemoved }: RemoveFromRaffle
 
     setLoading(true);
     try {
-      const { data, error } = await supabase.functions.invoke('admin-remove-from-raffle', {
+      const { error } = await supabase.functions.invoke('admin-remove-from-raffle', {
         body: { raffleId }
       });
 
