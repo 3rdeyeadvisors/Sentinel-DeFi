@@ -17,9 +17,9 @@ interface LeaderboardEntry {
 
 export const PointsLeaderboard = () => {
   const { user } = useAuth();
-  const { getLeaderboard, rank: userRank, leaderboardLoading: loading } = usePoints();
-  const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
   const [period, setPeriod] = useState<'weekly' | 'monthly' | 'all-time'>('monthly');
+  const { getLeaderboard, rank: userRank, leaderboardLoading: loading } = usePoints(period);
+  const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export const PointsLeaderboard = () => {
       setLeaderboard(data);
     };
     loadLeaderboard();
-  }, [getLeaderboard]);
+  }, [getLeaderboard, period]);
 
   const getRankStyle = (rank: number) => {
     switch (rank) {
