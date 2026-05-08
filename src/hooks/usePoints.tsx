@@ -129,6 +129,7 @@ export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['user-points', user?.id] });
       queryClient.invalidateQueries({ queryKey: ['points-history', user?.id] });
+      queryClient.invalidateQueries({ queryKey: ['points-leaderboard'] });
     }
   });
 
