@@ -57,32 +57,26 @@ interface UserRank {
   total_users: number;
 }
 
-export const usePoints = () => {
+export type LeaderboardPeriod = 'weekly' | 'monthly' | 'all-time';
+
+export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
   const { user } = useAuth();
   const queryClient = useQueryClient();
 
-  // Get current month in YYYY-MM format
+  // Get current month in YYYY-MM format (UTC, matches Postgres to_char(now(),'YYYY-MM'))
   const getCurrentMonth = () => {
     return new Date().toISOString().slice(0, 7);
   };
 
-  // 1. Query for User Points and Rank
+  // 1. Query for User Points and Rank (period-aware)
   const { data: pointsData, isLoading: pointsLoading, refetch: refreshPoints } = useQuery({
-    queryKey: ['user-points', user?.id],
+    queryKey: ['user-points', user?.id, period],
     queryFn: async () => {
       if (!user) return null;
 
-      // Get user's monthly total
-      const { data: monthlyData } = await supabase
-        .from('user_points_monthly')
-        .select('total_points')
-        .eq('user_id', user.id)
-        .eq('month_year', getCurrentMonth())
-        .maybeSingle();
-
-      // Get user's rank using database function
+      // Period-aware total + rank
       const { data: rankData } = await supabase
-        .rpc('get_user_points_rank', { _user_id: user.id });
+        .rpc('get_user_points_rank_period', { _user_id: user.id, _period: period });
 
       // Get today's points
       const today = new Date().toISOString().slice(0, 10);
