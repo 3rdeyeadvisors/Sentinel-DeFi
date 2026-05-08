@@ -160,13 +160,22 @@ export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
     }
   }, [awardPointsMutation]);
 
-  // 3. Mutation for daily login check
+  // 3. Mutation for daily login check (sends client local date so the day boundary respects the user's timezone)
   const checkDailyLoginMutation = useMutation({
     mutationFn: async () => {
       if (!user) return { already_logged_in: true, points_awarded: 0 };
 
+      const localDate = (() => {
+        const d = new Date();
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${y}-${m}-${day}`;
+      })();
+
       const { data, error } = await supabase.rpc('check_daily_login', {
         _user_id: user.id,
+        _local_date: localDate,
       });
 
       if (error) throw error;
@@ -175,6 +184,7 @@ export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
     onSuccess: (result) => {
       if (result && !result.already_logged_in) {
         queryClient.invalidateQueries({ queryKey: ['user-points', user?.id] });
+        queryClient.invalidateQueries({ queryKey: ['points-leaderboard'] });
       }
     }
   });
