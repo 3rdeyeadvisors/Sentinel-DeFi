@@ -25,11 +25,9 @@ const SecurityHeaders = () => {
         // Fonts: Google Fonts
         "font-src 'self' https://fonts.gstatic.com data:",
         // Connections: Supabase, Stripe, and other APIs
-        "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.resend.com https://*.stripe.com https://api.stripe.com https://*.thirdweb.com https://*.ethereum.org https://*.infura.io https://*.alchemy.com https://www.google-analytics.com https://stats.g.doubleclick.net",
+        "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.resend.com https://*.stripe.com https://api.stripe.com https://*.thirdweb.com https://*.ethereum.org https://*.infura.io https://*.alchemy.com https://www.google-analytics.com https://stats.g.doubleclick.net https://analytics.tiktok.com https://*.tiktok.com",
         // Frames: allow Stripe for payment processing
         "frame-src 'self' https://*.stripe.com https://js.stripe.com",
-        // Prevent clickjacking
-        "frame-ancestors 'self'",
         // Restrict base URI
         "base-uri 'self'",
         // Restrict form submissions
@@ -39,29 +37,12 @@ const SecurityHeaders = () => {
       ].join('; ');
       document.head.appendChild(cspMeta);
 
-      // X-Content-Type-Options - Prevent MIME sniffing
-      const xContentTypeMeta = document.createElement('meta');
-      xContentTypeMeta.httpEquiv = 'X-Content-Type-Options';
-      xContentTypeMeta.content = 'nosniff';
-      document.head.appendChild(xContentTypeMeta);
-
-      // X-Frame-Options - Allow same origin for App Store compatibility
-      const xFrameMeta = document.createElement('meta');
-      xFrameMeta.httpEquiv = 'X-Frame-Options';
-      xFrameMeta.content = 'SAMEORIGIN';
-      document.head.appendChild(xFrameMeta);
-
       // Referrer Policy - Balanced privacy and functionality
       const referrerMeta = document.createElement('meta');
       referrerMeta.name = 'referrer';
       referrerMeta.content = 'strict-origin-when-cross-origin';
       document.head.appendChild(referrerMeta);
 
-      // Permissions Policy - Restrict browser features for security
-      const permissionsMeta = document.createElement('meta');
-      permissionsMeta.httpEquiv = 'Permissions-Policy';
-      permissionsMeta.content = 'camera=(), microphone=(), geolocation=(), payment=(self)';
-      document.head.appendChild(permissionsMeta);
     };
 
     setSecurityHeaders();

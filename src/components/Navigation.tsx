@@ -190,9 +190,10 @@ const Navigation = () => {
 
       {/* Mobile Navigation Overlay - outside nav to avoid backdrop-filter containing block */}
       <div
-        className={`fixed inset-x-0 top-[64px] bottom-0 bg-black z-[60] md:hidden transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-x-0 bottom-0 bg-black z-[60] md:hidden transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{ top: 'calc(64px + env(safe-area-inset-top))' }}
       >
         <div className="h-full overflow-y-auto flex flex-col">
           {user && (

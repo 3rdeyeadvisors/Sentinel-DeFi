@@ -116,26 +116,32 @@
 
 .animate-nebula-1 {
   animation: nebula-drift-1 30s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-nebula-2 {
   animation: nebula-drift-2 40s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-nebula-3 {
   animation: nebula-drift-3 25s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-drift-1 {
   animation: star-drift-1 120s linear infinite alternate;
+  will-change: transform;
 }
 
 .animate-drift-2 {
   animation: star-drift-2 90s linear infinite alternate;
+  will-change: transform;
 }
 
 .animate-drift-3 {
   animation: star-drift-3 150s linear infinite alternate;
+  will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
