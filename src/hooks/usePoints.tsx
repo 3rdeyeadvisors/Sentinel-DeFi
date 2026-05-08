@@ -219,24 +219,25 @@ export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
     enabled: !!user,
   });
 
-  // 5. Query for leaderboard
+  // 5. Query for leaderboard (period-aware)
   const { data: leaderboard = [], isLoading: leaderboardLoading } = useQuery({
-    queryKey: ['points-leaderboard'],
+    queryKey: ['points-leaderboard', period],
     queryFn: async () => {
-      const { data, error } = await supabase.rpc('get_points_leaderboard', {
+      const { data, error } = await supabase.rpc('get_points_leaderboard_period', {
+        _period: period,
         _limit: 10,
       });
 
       if (error) throw error;
-      return data as LeaderboardEntry[] || [];
+      return (data as LeaderboardEntry[]) || [];
     },
   });
 
-  // Get days remaining in month
+  // Days remaining in current month (always at least 1 on the final day so the card never shows 0)
   const getDaysRemaining = () => {
     const now = new Date();
     const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
-    return endOfMonth.getDate() - now.getDate();
+    return Math.max(1, endOfMonth.getDate() - now.getDate());
   };
 
   // Get action display name
