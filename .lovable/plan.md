@@ -1,83 +1,91 @@
-## What’s actually wrong
 
-Your platform is not broadly “down” — the live failure is a **stale PWA/service-worker deployment bug affecting returning clients**, especially mobile Safari/home-screen users.
+## Goal
 
-### Root cause
-- The app currently ships `vite-plugin-pwa` in `vite.config.ts`.
-- The live `sw.js` is still registering a Workbox navigation fallback:
-  `createHandlerBoundToURL("index.html")`
-- That means the service worker can keep serving an **old app shell / old `index.html`** after a new deploy.
-- Your app uses **`React.lazy()` for nearly every route/page** in `src/App.tsx`.
-- When the old HTML tries to import a chunk from the previous deploy, that hashed JS file no longer exists, so users get:
-  `TypeError: Importing a module script failed.`
-- The visible card in your screenshot is coming from `src/components/ErrorBoundary.tsx`.
+1. Actually walk through both the **sign-up** and **sign-in** flows myself in the browser tool (not just read code) and report what works and what breaks.
+2. Audit and fix every place "the month" drives a tracker, dashboard widget, or leaderboard so the values are correct and the period toggles actually do something.
 
-### Why my previous “it’s working” statement was wrong
-A fresh desktop visit loads the newest files and looks normal. That does **not** prove older mobile clients are healthy. Your screenshot is the real failure mode: **stale returning client + lazy chunk mismatch**.
+---
 
-## Evidence I verified
+## Part 1 — In-browser verification (no code changes)
 
-### In code
-- `vite.config.ts`
-  - PWA plugin is enabled
-  - `navigateFallback: 'index.html'`
-- `src/App.tsx`
-  - many pages are loaded via `lazy(() => import(...))`
-- `src/components/ErrorBoundary.tsx`
-  - matches the exact UI shown in your screenshot
-- `src/lib/sw-recovery.ts`
-  - recovery exists, but it relies on global `error` / `unhandledrejection`
+I will run the browser tool against the published site and capture screenshots + console/network at each step.
 
-### On the live site
-- The published `sw.js` still contains:
-  - `NavigationRoute(createHandlerBoundToURL("index.html"))`
-  - runtime HTML caching
-- Current chunk files exist for fresh visits, which explains why new sessions can look fine while old cached clients still break.
+A. **New-user sign-up end-to-end**
+- Open `/signup`, register a throwaway email, accept terms.
+- Confirm: account is created, auto-signed-in, redirected to `/dashboard`.
+- Verify the Welcome toast, that `handle_new_user` ran (profile + 14-day trial row), that `check_daily_login` awarded +10 pts, and that the Monthly Points card shows the correct month, my points, my rank, and "Days Left".
+- Verify the referral path by signing up a second account with `?ref=<first-user-id>` and checking referral row + raffle ticket.
 
-## Why the current recovery is not enough
-- `React.lazy()` failures are often surfaced inside React rendering flow.
-- React can hand that failure to your `ErrorBoundary` before the global recovery handler can reliably self-heal.
-- So affected users land on the error card instead of automatic cleanup/reload.
+B. **Existing-user sign-in**
+- Sign in with a known account, confirm redirect to `/dashboard`, no error toasts, subscription/founder status resolved.
+- Reload to confirm session persists and there's no white-screen / chunk-load error after the recent SW kill-switch deploy.
 
-## Plan to fix
+C. **Tracker walk-through**
+- Visit `/dashboard`, `/leaderboard`, the Monthly Points card, and the Profile referral card; capture each tracker's current values vs. what the DB returns.
+- Toggle Weekly / Monthly / All-Time on the leaderboard and observe whether the data actually changes.
 
-1. **Remove the service-worker dependency from the loading path**
-   - Disable/remove full PWA service-worker behavior unless you explicitly need offline support.
-   - Keep installability via manifest only if desired.
+I'll write up findings before touching code. If the browser tool can't start, I'll say so and continue with the code fixes below.
 
-2. **Ship a kill-switch worker at the same SW path(s)**
-   - Publish a static cleanup worker for `/sw.js` (and `/service-worker.js` if ever used)
-   - It should claim clients, delete caches, navigate open tabs, and unregister itself.
-   - This is necessary because simply removing the plugin does not uninstall old workers already on client devices.
+---
 
-3. **Stop caching navigations to the app shell**
-   - No precached `index.html`
-   - No `createHandlerBoundToURL("index.html")` app-shell fallback for this project
-   - No offline-first shell behavior for HTML
+## Part 2 — "Month" bugs to fix
 
-4. **Make route-level lazy failures self-heal inside React**
-   - Wrap lazy imports with a retry/reload-aware helper so stale-chunk failures trigger cleanup even when React catches them.
-   - Do not rely only on `window` global listeners.
+Concrete defects identified from the codebase audit:
 
-5. **Republish and validate on mobile Safari behavior**
-   - Test a fresh session
-   - Test a stale-client simulation
-   - Test direct route loads and a returning-session reload
+### 2.1 Leaderboard period toggle is fake
+`src/pages/Leaderboard.tsx` and `src/components/points/PointsLeaderboard.tsx` both render Weekly / Monthly / All-Time tabs, but clicking them only updates local `period` state — `getLeaderboard()` always calls `get_points_leaderboard` which is hard-coded to the current month. Same for `get_user_points_rank`.
+
+Fix:
+- Extend `usePoints` so `getLeaderboard(period)` and the rank query take a period argument.
+- Add new RPCs `get_points_leaderboard_period(_period text, _limit int)` and `get_user_points_rank_period(_user_id uuid, _period text)` that compute totals from `user_points.created_at` for:
+  - `weekly` → last 7 days rolling (`created_at >= now() - interval '7 days'`)
+  - `monthly` → current calendar month (existing behavior)
+  - `all-time` → no date filter, sum of `user_points.points`
+- Wire the period state into the React Query keys so switching tabs actually refetches.
+
+### 2.2 Monthly card shows wrong month at month boundary
+`PointsDisplay.tsx` builds the label with `new Date().toLocaleString('default', { month: 'long', year: 'numeric' })`, but `getDaysRemaining()` returns `0` on the final day of the month and the totals come from `user_points_monthly` keyed by `to_char(now(), 'YYYY-MM')` (UTC). On the 1st of the month in a negative-UTC timezone, the label says the new month while the DB still serves the old one (and vice-versa).
+
+Fix:
+- Compute `currentMonth` label and the `month_year` key from the same source: a small helper `getCurrentMonthKey()` that uses UTC consistently (matching the DB's `to_char(now(), 'YYYY-MM')`).
+- Make `getDaysRemaining()` return at least `1` on the last calendar day so the card never reads "0 Days Left".
+
+### 2.3 Daily-login tracker can skip a day
+`check_daily_login` keys on Postgres `CURRENT_DATE` (UTC) but the client triggers it on local mount. A user in UTC-8 logging in at 9pm gets credit for "today UTC", then at 10pm it's already "tomorrow UTC" and the second login awards points again, while a 1am user in UTC+4 sees the day flip mid-session.
+
+Fix:
+- Pass the client's local date (YYYY-MM-DD) into `check_daily_login(_user_id uuid, _local_date date default null)`; if provided, use it instead of `CURRENT_DATE`.
+- Update `usePoints.checkDailyLogin()` to send the local date.
+
+### 2.4 Monthly Points "Total" is monthly-only but labelled ambiguously
+The big number in the card is the **monthly** total (`user_points_monthly.total_points`), but the label "Total Points" reads as lifetime. Either:
+- Rename to "This Month" (small, frontend-only), or
+- Show both: "This Month" + an "All-Time" sub-stat fetched via the new all-time RPC.
+
+I'll go with the second option to match the leaderboard fix.
+
+### 2.5 Dashboard "Joined / Member since" month
+Verify `EnhancedDashboard` and `ReferralCard` format `created_at` with the user's locale, not the raw ISO. (Quick spot-fix if needed; flagged for completeness, not yet a confirmed defect.)
+
+---
 
 ## Technical details
 
-Files to change in implementation:
-- `vite.config.ts`
-- `src/App.tsx`
-- `src/lib/sw-recovery.ts`
-- likely `public/sw.js` and possibly `public/service-worker.js`
+Files to change:
+- `supabase/migrations/*` — new SQL functions `get_points_leaderboard_period`, `get_user_points_rank_period`, updated `check_daily_login` signature (kept backward-compatible).
+- `src/hooks/usePoints.tsx` — accept `period`, send `localDate`, expose all-time totals, fix `getDaysRemaining` floor.
+- `src/components/points/PointsLeaderboard.tsx` and `src/pages/Leaderboard.tsx` — wire `period` into the query, refetch on toggle.
+- `src/components/points/PointsDisplay.tsx` — unified month key/label, "This Month" + "All-Time" stats.
+- `src/components/dashboard/EnhancedDashboard.tsx` / `ReferralCard.tsx` — only if browser test confirms a label issue.
 
-Implementation direction:
-- Prefer **manifest-only installability** over full PWA for this project.
-- Add a temporary cleanup worker release to flush existing bad clients.
-- Replace plain `React.lazy()` for route imports with a safe lazy loader that can trigger recovery on chunk-load failures.
+No schema changes to tables, only new/updated functions, so the Supabase types file stays valid.
 
-## Expected outcome
-- Existing broken mobile clients recover after one revisit/reload cycle.
-- New deploys stop breaking returning users with missing chunk hashes.
-- The “Something went wrong / Importing a module script failed” card stops appearing for this deployment pattern.
+---
+
+## Out of scope
+
+- Changing the underlying point values or what actions earn points.
+- Redesigning the leaderboard layout.
+- Anything unrelated to "month/tracker" bugs surfaced during testing.
+
+After you approve, I'll run Part 1 first, paste the findings, then implement Part 2 and verify with another browser pass.
