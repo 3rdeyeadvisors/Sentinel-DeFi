@@ -72,7 +72,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="min-h-screen bg-transparent flex flex-col">
         <GalaxyBackground />
         <Navigation />
-        <main className="pt-16 md:pt-20 flex-1">
+        <main className="pt-[calc(64px+env(safe-area-inset-top))] md:pt-20 flex-1">
           <AnimatePresence mode="wait">
             {children}
           </AnimatePresence>
