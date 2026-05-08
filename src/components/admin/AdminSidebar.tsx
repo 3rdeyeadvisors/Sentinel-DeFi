@@ -1,4 +1,4 @@
-import { LayoutDashboard, ShoppingCart, Mail, Users, Package, Gift, Activity, DollarSign, Map, Search, Settings } from "lucide-react";
+import { LayoutDashboard, ShoppingCart, Mail, Users, Package, Gift, Activity, DollarSign, Map, Search, Settings, HeartPulse } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -14,6 +14,7 @@ import {
 
 const menuItems = [
  { id: "overview",  title: "Overview",          icon: LayoutDashboard },
+ { id: "health",    title: "System Health",     icon: HeartPulse },
  { id: "email",     title: "Email Hub",         icon: Mail },
  { id: "users",     title: "Users",             icon: Users },
  { id: "orders",    title: "Orders",            icon: ShoppingCart },
