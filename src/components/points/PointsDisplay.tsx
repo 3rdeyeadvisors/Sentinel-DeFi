@@ -24,7 +24,10 @@ export const PointsDisplay = ({ compact = false }: PointsDisplayProps) => {
     );
   }
 
-  const currentMonth = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
+  // Use UTC so the label matches the DB month bucket (to_char(now() at UTC, 'YYYY-MM'))
+  const now = new Date();
+  const currentMonth = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1))
+    .toLocaleString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 
   if (compact) {
     return (
