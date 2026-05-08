@@ -58,7 +58,7 @@ export function useSEOAutomation(options: SEOAutomationOptions): SEOAutomationRe
         setErrors([]);
 
         // Build full URL
-        const fullUrl = `https://www.sentineldefi.online${location.pathname}`;
+        const fullUrl = `https://sentineldefi.online${location.pathname}`;
         
         // Generate automatic SEO config
         const seoConfig = generateSEOConfig(
@@ -126,7 +126,7 @@ export function useSEOAutomation(options: SEOAutomationOptions): SEOAutomationRe
       title: options.title,
       description: options.description || '',
       keywords: '',
-      url: `https://www.sentineldefi.online${location.pathname}`
+      url: `https://sentineldefi.online${location.pathname}`
     },
     schema: { type: 'WebPage', data: {} },
     validation: {

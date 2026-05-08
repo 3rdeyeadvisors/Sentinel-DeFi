@@ -22,7 +22,7 @@ const CheckoutSuccess = () => {
       <SEO
         title="Welcome to Sentinel DeFi"
         description="Your membership is confirmed. Start learning DeFi today."
-        url="https://www.sentineldefi.online/checkout/success"
+        url="https://sentineldefi.online/checkout/success"
       />
       <div className="min-h-screen bg-transparent flex items-center justify-center px-6">
         {/* Background glow */}

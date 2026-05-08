@@ -42,10 +42,10 @@ function generateArticleSchema(content: PageContent): SchemaConfig {
       publisher: {
         '@type': 'Organization',
         name: 'Sentinel DeFi',
-         url: 'https://www.sentineldefi.online',
+         url: 'https://sentineldefi.online',
          logo: {
            '@type': 'ImageObject',
-           url: 'https://www.sentineldefi.online/favicon-sentinel-defi.png'
+           url: 'https://sentineldefi.online/favicon-sentinel-defi.png'
          }
       },
       datePublished: content.publishedDate || new Date().toISOString(),
@@ -77,7 +77,7 @@ function generateCourseSchema(content: PageContent): SchemaConfig {
       provider: {
         '@type': 'Organization',
          name: 'Sentinel DeFi',
-         url: 'https://www.sentineldefi.online'
+         url: 'https://sentineldefi.online'
       },
       offers: [
         {
@@ -91,7 +91,7 @@ function generateCourseSchema(content: PageContent): SchemaConfig {
           seller: {
              '@type': 'Organization',
              name: 'Sentinel DeFi',
-             url: 'https://www.sentineldefi.online'
+             url: 'https://sentineldefi.online'
           }
         }
       ],
@@ -151,7 +151,7 @@ function generateProductSchema(content: PageContent): SchemaConfig {
         seller: {
            '@type': 'Organization',
            name: 'Sentinel DeFi',
-           url: 'https://www.sentineldefi.online'
+           url: 'https://sentineldefi.online'
         }
       },
       brand: {
@@ -189,7 +189,7 @@ function generateWebPageSchema(content: PageContent): SchemaConfig {
       isPartOf: {
          '@type': 'WebSite',
          name: 'Sentinel DeFi',
-         url: 'https://www.sentineldefi.online'
+         url: 'https://sentineldefi.online'
       },
       about: {
         '@type': 'Thing',
@@ -251,8 +251,8 @@ export function generateSchema(content: PageContent): {
         type: 'Organization',
         data: {
           name: 'Sentinel DeFi',
-           url: 'https://www.sentineldefi.online',
-           logo: 'https://www.sentineldefi.online/favicon-sentinel-defi.png',
+           url: 'https://sentineldefi.online',
+           logo: 'https://sentineldefi.online/favicon-sentinel-defi.png',
           description: 'DeFi education platform for financial consciousness and decentralized finance mastery',
           foundingDate: '2024',
           sameAs: [

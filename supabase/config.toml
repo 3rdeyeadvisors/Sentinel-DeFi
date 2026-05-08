@@ -1,7 +1,7 @@
 project_id = "zapbkuaejvzpqerkkcnc"
 
 [auth]
-  additional_redirect_urls = ["https://lovable.dev", "http://localhost:3000", "https://sentineldefi.online", "https://www.sentineldefi.online"]
+  additional_redirect_urls = ["https://lovable.dev", "http://localhost:3000", "https://sentineldefi.online", "https://sentineldefi.online"]
   enable_refresh_token_rotation = false
   enable_signup = true
   enabled = true

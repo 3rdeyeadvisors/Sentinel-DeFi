@@ -147,7 +147,7 @@ const EmailTemplates = () => {
                       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                         <tr>
                           <td align="center" style="padding: 40px 0 30px 0;">
-                            <a href="https://www.sentineldefi.online/raffles" style="display: inline-block; background-color: #3B82F6; color: #ffffff; padding: 18px 36px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">Enter Raffle Now</a>
+                            <a href="https://sentineldefi.online/raffles" style="display: inline-block; background-color: #3B82F6; color: #ffffff; padding: 18px 36px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">Enter Raffle Now</a>
                           </td>
                         </tr>
                       </table>
@@ -701,7 +701,7 @@ export function EmailHub() {
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td align="center" style="padding: 40px 0;">
-                        <a href="https://www.sentineldefi.online/raffles" style="display: inline-block; background-color: #3B82F6; color: #ffffff; padding: 18px 36px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">Enter Raffle Now</a>
+                        <a href="https://sentineldefi.online/raffles" style="display: inline-block; background-color: #3B82F6; color: #ffffff; padding: 18px 36px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">Enter Raffle Now</a>
                       </td>
                     </tr>
                   </table>

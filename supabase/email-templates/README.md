@@ -64,7 +64,7 @@ After applying templates, verify these settings in Supabase:
 - **Site URL:** `https://sentineldefi.online`
 - **Redirect URLs:** 
   - `https://sentineldefi.online`
-  - `https://www.sentineldefi.online`
+  - `https://sentineldefi.online`
   - `https://sentineldefi.online/auth?verified=true`
 
 ### Authentication → Email Auth

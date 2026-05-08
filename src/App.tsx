@@ -222,7 +222,8 @@ const AnimatedRoutes = () => {
 };
 
 const App = () => {
-  // Handle domain and protocol redirects in production only
+  // Handle protocol redirects in production only
+  // Domain redirects (www to naked) are handled by the server (Cloudflare)
   useEffect(() => {
     if (!import.meta.env.PROD) return;
     
@@ -231,20 +232,6 @@ const App = () => {
     const pathname = window.location.pathname;
     const search = window.location.search;
     const hash = window.location.hash;
-    
-    // Redirect sentineldefi.online (without www) to www.sentineldefi.online
-    if (hostname === 'sentineldefi.online') {
-      const redirectUrl = `https://www.sentineldefi.online${pathname}${search}${hash}`;
-      window.location.replace(redirectUrl);
-      return;
-    }
-
-    // Redirect legacy domains to www.sentineldefi.online
-    if (hostname.includes('the3rdeyeadvisors.com') || hostname.includes('3rdeyeadvisors.com')) {
-      const redirectUrl = `https://www.sentineldefi.online${pathname}${search}${hash}`;
-      window.location.replace(redirectUrl);
-      return;
-    }
     
     // Ensure HTTPS on sentineldefi.online domain
     if (hostname.endsWith('sentineldefi.online') && protocol === 'http:') {
