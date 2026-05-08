@@ -73,9 +73,9 @@ const OrionChat = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
-            className="absolute bottom-16 right-0 w-64 md:w-72"
+            className="absolute bottom-20 right-0 w-[calc(100vw-2rem)] max-w-[280px] md:w-72 md:bottom-16"
           >
-            <div className="relative bg-white/3 border border-white/8 rounded-2xl rounded-br-sm p-4 shadow-xl">
+            <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl rounded-br-sm p-4 shadow-2xl">
               <button
                 onClick={dismissGreeting}
                 className="absolute top-2 right-2 p-1 rounded-full hover:bg-white/5 transition-colors"
