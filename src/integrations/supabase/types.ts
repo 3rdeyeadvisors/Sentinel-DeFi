@@ -2174,13 +2174,21 @@ export type Database = {
           success: boolean
         }[]
       }
-      check_daily_login: {
-        Args: { _user_id: string }
-        Returns: {
-          already_logged_in: boolean
-          points_awarded: number
-        }[]
-      }
+      check_daily_login:
+        | {
+            Args: { _user_id: string }
+            Returns: {
+              already_logged_in: boolean
+              points_awarded: number
+            }[]
+          }
+        | {
+            Args: { _local_date?: string; _user_id: string }
+            Returns: {
+              already_logged_in: boolean
+              points_awarded: number
+            }[]
+          }
       check_rate_limit: {
         Args: {
           _action_type: string
@@ -2203,6 +2211,16 @@ export type Database = {
       get_next_founding33_seat: { Args: never; Returns: number }
       get_points_leaderboard: {
         Args: { _limit?: number }
+        Returns: {
+          avatar_url: string
+          display_name: string
+          rank: number
+          total_points: number
+          user_id: string
+        }[]
+      }
+      get_points_leaderboard_period: {
+        Args: { _limit?: number; _period?: string }
         Returns: {
           avatar_url: string
           display_name: string
@@ -2240,6 +2258,14 @@ export type Database = {
       }
       get_user_points_rank: {
         Args: { _user_id: string }
+        Returns: {
+          rank: number
+          total_points: number
+          total_users: number
+        }[]
+      }
+      get_user_points_rank_period: {
+        Args: { _period?: string; _user_id: string }
         Returns: {
           rank: number
           total_points: number
