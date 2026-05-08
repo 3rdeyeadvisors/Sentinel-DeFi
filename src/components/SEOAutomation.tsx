@@ -82,10 +82,10 @@ const SEOAutomation = ({
                 publisher: {
                   "@type": "Organization",
                   name: "Sentinel DeFi",
-                  url: "https://www.sentineldefi.online",
+                  url: "https://sentineldefi.online",
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://www.sentineldefi.online/favicon-sentineldefi.png?v=4"
+                    url: "https://sentineldefi.online/favicon-sentineldefi.png?v=4"
                   }
                 },
                 ...schema.data
