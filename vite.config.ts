@@ -68,10 +68,23 @@ export default defineConfig(({ mode }) => ({
         clientsClaim: true,
         cleanupOutdatedCaches: true,
         maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, // 10 MB limit for large thirdweb bundle
-        // Only cache essential static assets
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
-        // Minimal runtime caching - prioritize network for live data
+        // Precache only content-hashed assets. NEVER precache index.html —
+        // doing so pins returning users to old chunk URLs after a redeploy
+        // and causes "Importing a module script failed" errors.
+        globPatterns: ['assets/**/*.{js,css,woff,woff2}', '**/*.{ico,png,svg}'],
+        globIgnores: ['**/index.html', '**/sw.js', '**/workbox-*.js'],
+        // Always try the network for HTML/navigation so a fresh index.html
+        // (with current chunk hashes) is fetched whenever the user is online.
         runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.mode === 'navigate' || request.destination === 'document',
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'html-cache',
+              networkTimeoutSeconds: 3,
+              expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 },
+            },
+          },
           // Fonts - cache forever
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,

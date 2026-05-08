@@ -1,44 +1,61 @@
-## What's actually happening
+## What's actually wrong
 
-Your **preview** (the sandbox) loads the homepage cleanly — hero, "Start Learning Free" CTA, Orion chat, everything. I screenshotted it to confirm.
+The live site error you screenshotted is:
 
-The "Something went wrong" card you saw is on the **published production site** (`sentineldefi.online`). That's a separate, older deployment. It is the global `ErrorBoundary` in `src/components/ErrorBoundary.tsx` catching a runtime crash from one of the providers or lazy routes inside `<AnimatedRoutes />`.
+> TypeError: Importing a module script failed.
 
-So: this isn't a "platform-wide" bug — it's a stale production build that was deployed before the recent fix-ups (the TypeScript relaxation, the null-safety patches in `EnhancedDashboard`, `ParticipantTracker`, `ProgressProvider`, etc.). Those fixes only exist in your editor/preview right now.
+This is **not** a code bug in any component. It is the classic PWA stale-cache problem:
 
-## Plan
+1. Your app uses `vite-plugin-pwa` with `registerType: 'autoUpdate'` and aggressive Workbox caching (`globPatterns: ['**/*.{js,css,html,...}']` + `skipWaiting: true`).
+2. A returning visitor (you, on iOS Safari) still has the **old service worker** active. It serves a cached `index.html` that references old hashed chunks like `assets/index-CYAFCS6A.js` and old lazy chunks for `Index`, `HeroSection`, etc.
+3. Those old chunk filenames no longer exist on the new deploy (because you've shipped 50+ file changes since). The browser tries to `import()` them, gets a 404 / wrong MIME, and throws `Importing a module script failed`.
+4. React's lazy/Suspense bubbles it to `ErrorBoundary` → "Something went wrong".
 
-### Step 1 — Republish first (most likely fix)
-The recent batch of changes (50+ files, tsconfig loosened, null guards added in dashboard/analytics/progress code, security migrations applied) has not been pushed to production yet. Publishing will roll all of it out and almost certainly clear the ErrorBoundary, since the preview build of the exact same code is healthy.
+The other console noise (X-Frame-Options meta warning, apple-touch-icon manifest warning, GA blocked) is unrelated and harmless.
 
-### Step 2 — If the error persists after republish, capture the real cause
-The current ErrorBoundary swallows the error and only logs `console.error("Uncaught error:", error, errorInfo)`. On production we need the actual error message + component stack to know which provider/route blew up. I'll:
+## The fix (2 small, surgical changes)
 
-1. Enhance `ErrorBoundary` to **display** the error message and component stack in a collapsible details block (only when present), so you can read it on the live site without needing devtools.
-2. Add a "Copy error details" button so you can paste it back to me in one click.
-3. Keep the existing branded fallback UI intact.
+### 1. Self-heal on dynamic-import failure
 
-### Step 3 — Targeted fix based on what Step 2 reveals
-Most likely suspects, ranked by probability based on recent changes:
-- `ProgressProvider` / `PointsProvider` / `SubscriptionProvider` — recently touched, wrap the whole tree, a thrown init error here takes down every route.
-- `ThirdwebProvider` — third-party, network-sensitive.
-- A lazy-loaded landing section (`HeroSection`, `PricingSection`, `InstitutionalSection`) — `PricingSection` was recently edited.
+Add a tiny script (loaded as early as possible from `index.html`, or from `src/main.tsx` before anything else) that:
 
-I'll patch whichever one Step 2 fingerprints.
+- Listens for `window` `error` and `unhandledrejection`.
+- If the message matches any of: `Importing a module script failed`, `Failed to fetch dynamically imported module`, `error loading dynamically imported module`, `ChunkLoadError`:
+  1. Unregister all service workers.
+  2. `caches.keys()` → `caches.delete(...)` for every cache.
+  3. Set a one-shot `sessionStorage` flag (`__sw_recovered`) so we don't reload-loop.
+  4. `location.reload()` once.
+- If the flag is already set, do nothing (let `ErrorBoundary` show).
 
-## Technical details
+This unblocks every existing visitor automatically on next page load — they won't need to clear cache manually.
 
-- ErrorBoundary location: `src/components/ErrorBoundary.tsx` (class component, currently fallback-only, no error display).
-- It wraps `<Suspense><Routes>…</Routes></Suspense>` inside `AnimatedRoutes` in `src/App.tsx`, so any throw from a route, a lazy import, or any of the seven providers above it bubbles here.
-- The CORS/manifest/postMessage warnings in console are unrelated noise from the Lovable preview iframe and the PWA manifest auth bridge — they don't trigger ErrorBoundary.
+### 2. Make future deploys safer
 
-## What I need from you
+In `vite.config.ts` for the `VitePWA` block:
 
-Approve the plan and I'll:
-1. Patch `ErrorBoundary` to surface the real error.
-2. Ask you to **publish**, then reload `sentineldefi.online`.
-3. If it still errors, paste the now-visible error text and I'll fix the root cause immediately.
+- Add `skipWaiting: true` + `clientsClaim: true` are already set — keep them.
+- Tighten `globPatterns` so the SW does **not** precache `index.html` (the html fallback is what pins users to old chunk URLs). Replace with: precache only hashed `assets/**/*.{js,css}` (these are content-hashed and safe), and use `NetworkFirst` runtime caching for `index.html` / navigation requests.
+- Set `navigateFallback: 'index.html'` together with a `NetworkFirst` route for navigations so a fresh `index.html` (with current chunk hashes) is fetched whenever online.
 
-<lov-actions>
-<lov-open-publish>Publish your app</lov-open-publish>
-</lov-actions>
+Net effect: future redeploys can never strand a returning user on stale chunk URLs.
+
+### 3. (Optional cleanup, low priority)
+
+- Remove `<meta http-equiv="X-Frame-Options" ...>` from `index.html` if present — must be an HTTP header, not a meta tag (that's what's spamming console).
+- Verify `/apple-touch-icon.png?v=3` actually exists in `public/` (manifest warning).
+
+## Files touched
+
+- `src/main.tsx` (or new `src/lib/sw-recovery.ts` imported first thing) — add the self-heal listener.
+- `vite.config.ts` — adjust `VitePWA` precache + add `NetworkFirst` for navigations.
+- `index.html` — remove stray `X-Frame-Options` meta if present.
+
+## What you do after
+
+1. Approve the plan; I implement the 3 edits.
+2. Click **Publish → Update**.
+3. Reload `sentineldefi.online` once. Your phone will hit the recovery path, swap to the fresh worker, and the homepage will render. Every other returning visitor heals the same way automatically.
+
+## Why this isn't an ErrorBoundary issue
+
+ErrorBoundary already shows the right message ("Importing a module script failed") — it's doing its job. There is no React render bug to fix; the failure happens at the network/module-loader level before any component mounts. The cure is at the service-worker layer, not in app code.
