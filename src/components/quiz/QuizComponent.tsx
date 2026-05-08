@@ -13,6 +13,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { usePoints } from "@/hooks/usePoints";
 import { useBadges } from "@/hooks/useBadges";
 import { useAchievementSounds } from "@/hooks/useAchievementSounds";
+import { getCurrentMonthUTC } from "@/lib/date-utils";
 import { 
   Clock, 
   CheckCircle, 
@@ -260,14 +261,14 @@ export const QuizComponent = ({ courseId, moduleId, quiz, onComplete }: QuizComp
         playQuizPass();
         
         try {
-          await awardPoints('quiz_passed', `${quiz.id}_${new Date().toISOString().slice(0, 7)}`);
+          await awardPoints('quiz_passed', `${quiz.id}_${getCurrentMonthUTC()}`);
           
           // Award quiz_master badge after 5 quizzes
           // Note: This is a simplified check - in production you'd query the DB
           
           // Award bonus for perfect score
           if (finalScore === 100) {
-            await awardPoints('quiz_perfect', `${quiz.id}_perfect_${new Date().toISOString().slice(0, 7)}`);
+            await awardPoints('quiz_perfect', `${quiz.id}_perfect_${getCurrentMonthUTC()}`);
             // Award perfectionist badge
             await awardBadge('perfectionist');
           }

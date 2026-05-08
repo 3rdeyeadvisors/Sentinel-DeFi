@@ -7,6 +7,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { AICommandBar } from "@/components/admin/AICommandBar";
 import { OverviewPanel } from "@/components/admin/OverviewPanel";
+import { SystemHealth } from "@/components/admin/SystemHealth";
 import { OrdersManager } from "@/components/admin/OrdersManager";
 import { EmailHub } from "@/components/admin/EmailHub";
 import { UserManager } from "@/components/admin/UserManager";
@@ -85,6 +86,7 @@ const AdminDashboard = () => {
   const renderActiveSection = () => {
     switch (activeSection) {
       case "overview":      return <OverviewPanel />;
+      case "health":        return <SystemHealth />;
       case "email":         return <EmailHub />;
       case "users":         return <UserManager />;
       case "orders":        return <OrdersManager />;

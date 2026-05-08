@@ -2,6 +2,13 @@ import { useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import {
+  getCurrentMonthUTC,
+  getLocalDate,
+  getDaysRemainingInMonth,
+  getStartOfTodayUTC,
+  getEndOfTodayUTC
+} from '@/lib/date-utils';
 
 // Point values for different actions
 export const POINT_VALUES = {
@@ -63,11 +70,6 @@ export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
   const { user } = useAuth();
   const queryClient = useQueryClient();
 
-  // Get current month in YYYY-MM format (UTC, matches Postgres to_char(now(),'YYYY-MM'))
-  const getCurrentMonth = () => {
-    return new Date().toISOString().slice(0, 7);
-  };
-
   // 1. Query for User Points and Rank (period-aware)
   const { data: pointsData, isLoading: pointsLoading, refetch: refreshPoints } = useQuery({
     queryKey: ['user-points', user?.id, period],
@@ -79,13 +81,12 @@ export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
         .rpc('get_user_points_rank_period', { _user_id: user.id, _period: period });
 
       // Get today's points
-      const today = new Date().toISOString().slice(0, 10);
       const { data: todayData } = await supabase
         .from('user_points')
         .select('points')
         .eq('user_id', user.id)
-        .gte('created_at', `${today}T00:00:00`)
-        .lte('created_at', `${today}T23:59:59`);
+        .gte('created_at', getStartOfTodayUTC())
+        .lte('created_at', getEndOfTodayUTC());
 
       const todayTotal = todayData?.reduce((sum, p) => sum + p.points, 0) || 0;
 
@@ -165,17 +166,9 @@ export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
     mutationFn: async () => {
       if (!user) return { already_logged_in: true, points_awarded: 0 };
 
-      const localDate = (() => {
-        const d = new Date();
-        const y = d.getFullYear();
-        const m = String(d.getMonth() + 1).padStart(2, '0');
-        const day = String(d.getDate()).padStart(2, '0');
-        return `${y}-${m}-${day}`;
-      })();
-
       const { data, error } = await supabase.rpc('check_daily_login', {
         _user_id: user.id,
-        _local_date: localDate,
+        _local_date: getLocalDate(),
       });
 
       if (error) throw error;
@@ -235,9 +228,7 @@ export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
 
   // Days remaining in current month (always at least 1 on the final day so the card never shows 0)
   const getDaysRemaining = () => {
-    const now = new Date();
-    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
-    return Math.max(1, endOfMonth.getDate() - now.getDate());
+    return getDaysRemainingInMonth();
   };
 
   // Get action display name
