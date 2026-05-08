@@ -19,9 +19,9 @@ interface LeaderboardEntry {
 const Leaderboard = () => {
   const { user } = useAuth();
   const { displayName: ownDisplayName, avatarUrl: ownAvatarUrl } = useProfile();
-  const { getLeaderboard, rank: userRank, leaderboardLoading } = usePoints();
-  const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
   const [period, setPeriod] = useState<'weekly' | 'monthly' | 'all-time'>('monthly');
+  const { getLeaderboard, rank: userRank, leaderboardLoading } = usePoints(period);
+  const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Leaderboard = () => {
       setLeaderboard(data);
     };
     loadLeaderboard();
-  }, [getLeaderboard]);
+  }, [getLeaderboard, period]);
 
   const periods: { id: 'weekly' | 'monthly' | 'all-time'; label: string }[] = [
     { id: 'weekly', label: 'Weekly' },
