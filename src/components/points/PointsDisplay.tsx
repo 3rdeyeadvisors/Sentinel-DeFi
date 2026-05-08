@@ -24,7 +24,10 @@ export const PointsDisplay = ({ compact = false }: PointsDisplayProps) => {
     );
   }
 
-  const currentMonth = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
+  // Use UTC so the label matches the DB month bucket (to_char(now() at UTC, 'YYYY-MM'))
+  const now = new Date();
+  const currentMonth = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1))
+    .toLocaleString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 
   if (compact) {
     return (
@@ -55,7 +58,7 @@ export const PointsDisplay = ({ compact = false }: PointsDisplayProps) => {
             <div className="text-2xl sm:text-3xl font-bold text-violet-400 font-consciousness">
               {totalPoints.toLocaleString()}
             </div>
-            <div className="text-xs text-white/50 font-body">Total Points</div>
+            <div className="text-xs text-white/50 font-body">This Month</div>
           </div>
           
           <div className="text-center p-3 bg-black/50 rounded-lg">

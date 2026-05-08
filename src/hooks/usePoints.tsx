@@ -57,32 +57,26 @@ interface UserRank {
   total_users: number;
 }
 
-export const usePoints = () => {
+export type LeaderboardPeriod = 'weekly' | 'monthly' | 'all-time';
+
+export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
   const { user } = useAuth();
   const queryClient = useQueryClient();
 
-  // Get current month in YYYY-MM format
+  // Get current month in YYYY-MM format (UTC, matches Postgres to_char(now(),'YYYY-MM'))
   const getCurrentMonth = () => {
     return new Date().toISOString().slice(0, 7);
   };
 
-  // 1. Query for User Points and Rank
+  // 1. Query for User Points and Rank (period-aware)
   const { data: pointsData, isLoading: pointsLoading, refetch: refreshPoints } = useQuery({
-    queryKey: ['user-points', user?.id],
+    queryKey: ['user-points', user?.id, period],
     queryFn: async () => {
       if (!user) return null;
 
-      // Get user's monthly total
-      const { data: monthlyData } = await supabase
-        .from('user_points_monthly')
-        .select('total_points')
-        .eq('user_id', user.id)
-        .eq('month_year', getCurrentMonth())
-        .maybeSingle();
-
-      // Get user's rank using database function
+      // Period-aware total + rank
       const { data: rankData } = await supabase
-        .rpc('get_user_points_rank', { _user_id: user.id });
+        .rpc('get_user_points_rank_period', { _user_id: user.id, _period: period });
 
       // Get today's points
       const today = new Date().toISOString().slice(0, 10);
@@ -96,7 +90,7 @@ export const usePoints = () => {
       const todayTotal = todayData?.reduce((sum, p) => sum + p.points, 0) || 0;
 
       return {
-        totalPoints: monthlyData?.total_points || 0,
+        totalPoints: rankData?.[0]?.total_points || 0,
         rank: rankData && rankData.length > 0 ? {
           total_points: rankData[0].total_points,
           rank: rankData[0].rank,
@@ -135,6 +129,7 @@ export const usePoints = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['user-points', user?.id] });
       queryClient.invalidateQueries({ queryKey: ['points-history', user?.id] });
+      queryClient.invalidateQueries({ queryKey: ['points-leaderboard'] });
     }
   });
 
@@ -165,13 +160,22 @@ export const usePoints = () => {
     }
   }, [awardPointsMutation]);
 
-  // 3. Mutation for daily login check
+  // 3. Mutation for daily login check (sends client local date so the day boundary respects the user's timezone)
   const checkDailyLoginMutation = useMutation({
     mutationFn: async () => {
       if (!user) return { already_logged_in: true, points_awarded: 0 };
 
+      const localDate = (() => {
+        const d = new Date();
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${y}-${m}-${day}`;
+      })();
+
       const { data, error } = await supabase.rpc('check_daily_login', {
         _user_id: user.id,
+        _local_date: localDate,
       });
 
       if (error) throw error;
@@ -180,6 +184,7 @@ export const usePoints = () => {
     onSuccess: (result) => {
       if (result && !result.already_logged_in) {
         queryClient.invalidateQueries({ queryKey: ['user-points', user?.id] });
+        queryClient.invalidateQueries({ queryKey: ['points-leaderboard'] });
       }
     }
   });
@@ -214,24 +219,25 @@ export const usePoints = () => {
     enabled: !!user,
   });
 
-  // 5. Query for leaderboard
+  // 5. Query for leaderboard (period-aware)
   const { data: leaderboard = [], isLoading: leaderboardLoading } = useQuery({
-    queryKey: ['points-leaderboard'],
+    queryKey: ['points-leaderboard', period],
     queryFn: async () => {
-      const { data, error } = await supabase.rpc('get_points_leaderboard', {
+      const { data, error } = await supabase.rpc('get_points_leaderboard_period', {
+        _period: period,
         _limit: 10,
       });
 
       if (error) throw error;
-      return data as LeaderboardEntry[] || [];
+      return (data as LeaderboardEntry[]) || [];
     },
   });
 
-  // Get days remaining in month
+  // Days remaining in current month (always at least 1 on the final day so the card never shows 0)
   const getDaysRemaining = () => {
     const now = new Date();
     const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
-    return endOfMonth.getDate() - now.getDate();
+    return Math.max(1, endOfMonth.getDate() - now.getDate());
   };
 
   // Get action display name
