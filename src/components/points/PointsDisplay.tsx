@@ -58,7 +58,7 @@ export const PointsDisplay = ({ compact = false }: PointsDisplayProps) => {
             <div className="text-2xl sm:text-3xl font-bold text-violet-400 font-consciousness">
               {totalPoints.toLocaleString()}
             </div>
-            <div className="text-xs text-white/50 font-body">Total Points</div>
+            <div className="text-xs text-white/50 font-body">This Month</div>
           </div>
           
           <div className="text-center p-3 bg-black/50 rounded-lg">
