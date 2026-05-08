@@ -90,7 +90,7 @@ export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
       const todayTotal = todayData?.reduce((sum, p) => sum + p.points, 0) || 0;
 
       return {
-        totalPoints: monthlyData?.total_points || 0,
+        totalPoints: rankData?.[0]?.total_points || 0,
         rank: rankData && rankData.length > 0 ? {
           total_points: rankData[0].total_points,
           rank: rankData[0].rank,
