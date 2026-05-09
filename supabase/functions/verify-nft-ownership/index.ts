@@ -18,12 +18,30 @@ Deno.serve(async (req) => {
   }
 
   try {
+    // Require authenticated caller — and the caller must match the userId
+    // they're trying to whitelist for.
+    const { requireUser } = await import("../_shared/admin-auth.ts");
+    const auth = await requireUser(req);
+    if (!auth.ok) {
+      return new Response(JSON.stringify({ error: auth.message }), {
+        status: auth.status,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const { walletAddress, userId } = await req.json();
 
     if (!walletAddress || !userId) {
       return new Response(
         JSON.stringify({ error: 'walletAddress and userId are required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    if (userId !== auth.userId) {
+      return new Response(
+        JSON.stringify({ error: 'userId does not match authenticated user' }),
+        { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 

@@ -20,6 +20,21 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Authorize: either an authenticated admin OR a webhook with the shared secret.
+    const webhookSecret = Deno.env.get('BROADCAST_WEBHOOK_SECRET');
+    const providedSecret = req.headers.get('x-webhook-secret');
+    const secretOk = !!webhookSecret && providedSecret === webhookSecret;
+    if (!secretOk) {
+      const { requireAdmin } = await import("../_shared/admin-auth.ts");
+      const auth = await requireAdmin(req);
+      if (!auth.ok) {
+        return new Response(JSON.stringify({ error: auth.message }), {
+          status: auth.status,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''

@@ -28,26 +28,7 @@ serve(async (req) => {
     if (!authHeader) throw new Error("No authorization header provided");
     logStep("Authorization header found");
 
-    // Parse JWT directly instead of using getUser() - more reliable
     const token = authHeader.replace("Bearer ", "");
-    let userId: string;
-    let userEmail: string;
-    
-    try {
-      const payloadBase64 = token.split('.')[1];
-      const payload = JSON.parse(atob(payloadBase64));
-      userId = payload.sub;
-      userEmail = payload.email;
-      
-      if (!userId || !userEmail) {
-        throw new Error("Invalid token payload");
-      }
-      
-      logStep("User authenticated via JWT parsing", { userId, email: userEmail });
-    } catch (parseError) {
-      logStep("JWT parsing failed", { error: String(parseError) });
-      throw new Error("Invalid or expired token");
-    }
 
     // Create service role client for database queries
     const supabaseClient = createClient(
@@ -55,6 +36,17 @@ serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
       { auth: { persistSession: false } }
     );
+
+    // Cryptographically verify the JWT instead of decoding it client-side.
+    const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
+    if (userError || !userData?.user) {
+      logStep("JWT verification failed", { error: userError?.message });
+      throw new Error("Invalid or expired token");
+    }
+    const userId = userData.user.id;
+    const userEmail = userData.user.email ?? "";
+    if (!userEmail) throw new Error("Authenticated user has no email");
+    logStep("User authenticated", { userId, email: userEmail });
 
     // Check if user is admin FIRST (before grandfathered to ensure isAdmin flag is always set)
     const { data: adminRole } = await supabaseClient

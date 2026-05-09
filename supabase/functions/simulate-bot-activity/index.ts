@@ -41,6 +41,16 @@ serve(async (req) => {
   }
 
   try {
+    // Require admin auth — bot simulation directly affects leaderboards.
+    const { requireAdmin } = await import("../_shared/admin-auth.ts");
+    const auth = await requireAdmin(req);
+    if (!auth.ok) {
+      return new Response(JSON.stringify({ error: auth.message }), {
+        status: auth.status,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
     const supabaseAdmin = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '',

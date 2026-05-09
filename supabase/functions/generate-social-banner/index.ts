@@ -18,6 +18,16 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Admin-only — generates paid OpenAI image content.
+    const { requireAdmin } = await import("../_shared/admin-auth.ts");
+    const auth = await requireAdmin(req);
+    if (!auth.ok) {
+      return new Response(JSON.stringify({ error: auth.message }), {
+        status: auth.status,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
     if (!OPENAI_API_KEY) {
       throw new Error('OPENAI_API_KEY is not set in environment variables');

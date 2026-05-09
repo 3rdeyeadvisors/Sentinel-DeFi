@@ -419,7 +419,7 @@ const Auth = () => {
                 />
               </div>
             </div>
-            <Button type="submit" disabled={loading} className="font-body bg-violet-600 hover:bg-violet-500 text-white rounded-xl py-6 font-medium transition-all w-full text-base" disabled={loading}>
+            <Button type="submit" disabled={loading} className="font-body bg-violet-600 hover:bg-violet-500 text-white rounded-xl py-6 font-medium transition-all w-full text-base">
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Update Password
             </Button>
