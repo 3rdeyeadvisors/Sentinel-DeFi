@@ -107,6 +107,16 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Require admin auth — this endpoint mass-deletes accounts.
+    const { requireAdmin } = await import("../_shared/admin-auth.ts");
+    const auth = await requireAdmin(req);
+    if (!auth.ok) {
+      return new Response(JSON.stringify({ error: auth.message }), {
+        status: auth.status,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     console.log("Starting inactive account deletion process...");
 
     // Create Supabase admin client

@@ -13,6 +13,16 @@ serve(async (req) => {
   }
 
   try {
+    // Require admin auth — this can trigger Printify fulfillment.
+    const { requireAdmin } = await import("../_shared/admin-auth.ts");
+    const auth = await requireAdmin(req);
+    if (!auth.ok) {
+      return new Response(JSON.stringify({ error: auth.message }), {
+        status: auth.status,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const { paymentId } = await req.json();
     
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {

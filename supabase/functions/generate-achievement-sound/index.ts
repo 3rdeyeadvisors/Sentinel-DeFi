@@ -12,6 +12,16 @@ serve(async (req) => {
   }
 
   try {
+    // Require an authenticated user — this calls a paid third-party API.
+    const { requireUser } = await import("../_shared/admin-auth.ts");
+    const auth = await requireUser(req);
+    if (!auth.ok) {
+      return new Response(JSON.stringify({ error: auth.message }), {
+        status: auth.status,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const { prompt, duration } = await req.json();
     
     if (!prompt) {
