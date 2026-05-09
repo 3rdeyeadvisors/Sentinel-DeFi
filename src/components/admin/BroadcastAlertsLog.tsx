@@ -48,10 +48,25 @@ export const BroadcastAlertsLog = () => {
 
   const handleRetry = async (alertId: string) => {
     try {
-      window.open(`https://zapbkuaejvzpqerkkcnc.supabase.co/functions/v1/retry-broadcast?alert_id=${alertId}`, '_blank');
-      toast.success("Retry initiated : check the new tab for results");
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        toast.error("You must be signed in as admin");
+        return;
+      }
+      const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/retry-broadcast?alert_id=${encodeURIComponent(alertId)}`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${session.access_token}`,
+          'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+          'Content-Type': 'application/json',
+        },
+      });
+      if (!res.ok) throw new Error(await res.text());
+      toast.success("Retry initiated");
       setTimeout(() => refetch(), 2000);
     } catch (error) {
+      console.error(error);
       toast.error("Failed to initiate retry");
     }
   };
