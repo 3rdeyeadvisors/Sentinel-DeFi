@@ -19,7 +19,7 @@ project_id = "zapbkuaejvzpqerkkcnc"
   enabled = true
 
 [functions]
-  [functions.3ea-broadcast]
+  [functions.broadcast-3ea]
     verify_jwt = false
   [functions.admin-ai-command]
     verify_jwt = true
