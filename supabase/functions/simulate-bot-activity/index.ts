@@ -41,21 +41,33 @@ serve(async (req) => {
   }
 
   try {
-    // Require admin auth — bot simulation directly affects leaderboards.
-    const { requireAdmin } = await import("../_shared/admin-auth.ts");
-    const auth = await requireAdmin(req);
-    if (!auth.ok) {
-      return new Response(JSON.stringify({ error: auth.message }), {
-        status: auth.status,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      });
-    }
-
     const supabaseAdmin = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '',
       { auth: { autoRefreshToken: false, persistSession: false } }
     );
+
+    // Require admin auth — bot simulation directly affects leaderboards.
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+        status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+    const token = authHeader.replace(/^Bearer\s+/i, '');
+    const { data: u, error: uErr } = await supabaseAdmin.auth.getUser(token);
+    if (uErr || !u?.user) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+        status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+    const { data: roleRow } = await supabaseAdmin.from('user_roles')
+      .select('role').eq('user_id', u.user.id).eq('role', 'admin').maybeSingle();
+    if (!roleRow) {
+      return new Response(JSON.stringify({ error: 'Admin role required' }), {
+        status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     const currentMonth = new Date().toISOString().slice(0, 7); // YYYY-MM format
     console.log(`Running bot simulation for month: ${currentMonth}`);
