@@ -31,23 +31,43 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    // Require service-role JWT (DB webhook) or CRON_SECRET
-    const authHeader = req.headers.get("Authorization") ?? "";
-    const cronSecret = req.headers.get("x-cron-secret");
-    const expectedSecret = Deno.env.get("CRON_SECRET");
-    const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
-    const isService = serviceKey && authHeader === `Bearer ${serviceKey}`;
-    const isCron = expectedSecret && cronSecret === expectedSecret;
-    if (!isService && !isCron) {
-      return new Response(JSON.stringify({ error: "Unauthorized" }), {
-        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-
     const payload: NotificationPayload = await req.json();
     console.log('Received notification payload:', payload);
 
     const { table, record } = payload;
+    if (table !== 'subscribers' && table !== 'profiles') {
+      return new Response(JSON.stringify({ error: "Invalid table" }), {
+        status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // Anti-spoofing: verify the referenced row actually exists in the database.
+    // This blocks unauthenticated attackers from forging arbitrary signup notifications,
+    // while still allowing the legitimate DB trigger (which inserts the row first) to call us.
+    if (table === 'subscribers') {
+      const { data: row } = await supabase
+        .from('subscribers')
+        .select('id,email')
+        .eq('id', record.id)
+        .maybeSingle();
+      if (!row || row.email !== record.email) {
+        return new Response(JSON.stringify({ error: "Unknown subscriber" }), {
+          status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+    } else {
+      const { data: row } = await supabase
+        .from('profiles')
+        .select('user_id')
+        .eq('id', record.id)
+        .maybeSingle();
+      if (!row) {
+        return new Response(JSON.stringify({ error: "Unknown profile" }), {
+          status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+    }
+
     const email = record.email;
     const name = record.name || record.display_name || 'New User';
     const firstName = name.split(' ')[0] || 'there';
