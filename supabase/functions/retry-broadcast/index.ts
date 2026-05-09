@@ -45,7 +45,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log('Retrying broadcast from alert:', alert_id);
 
     // Retry the broadcast by calling the 3ea-broadcast function
-    const { data: retryData, error: retryError } = await supabase.functions.invoke('3ea-broadcast', {
+    const { data: retryData, error: retryError } = await supabase.functions.invoke('broadcast-3ea', {
       body: alert.failed_payload,
     });
 
