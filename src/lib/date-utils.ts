@@ -40,6 +40,18 @@ export const getDaysRemainingInMonth = () => {
 };
 
 /**
+ * Returns number of days remaining in the current week (local time).
+ * Assumes week ends on Sunday.
+ * Always returns at least 1.
+ */
+export const getDaysRemainingInWeek = () => {
+  const now = new Date();
+  const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday...
+  const daysToSunday = dayOfWeek === 0 ? 0 : 7 - dayOfWeek;
+  return Math.max(1, daysToSunday);
+};
+
+/**
  * Returns start of today in UTC ISO string.
  */
 export const getStartOfTodayUTC = () => {

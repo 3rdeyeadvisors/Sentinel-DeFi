@@ -1,36 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { usePoints } from '@/hooks/usePoints';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { useProfile } from '@/hooks/useProfile';
-import { Trophy, Medal, Award, Crown } from 'lucide-react';
+import { Trophy, Medal, Award, Crown, Timer } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import PageHero from '@/components/PageHero';
 import SEO from '@/components/SEO';
-
-interface LeaderboardEntry {
-  user_id: string;
-  display_name: string | null;
-  avatar_url: string | null;
-  total_points: number;
-  rank: number;
-}
+import { motion } from 'framer-motion';
 
 const Leaderboard = () => {
   const { user } = useAuth();
   const { displayName: ownDisplayName, avatarUrl: ownAvatarUrl } = useProfile();
   const [period, setPeriod] = useState<'weekly' | 'monthly' | 'all-time'>('monthly');
-  const { getLeaderboard, rank: userRank, leaderboardLoading } = usePoints(period);
-  const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
+  const { leaderboard, rank: userRank, leaderboardLoading, getDaysRemaining } = usePoints(period);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const loadLeaderboard = async () => {
-      const data = await getLeaderboard();
-      setLeaderboard(data);
-    };
-    loadLeaderboard();
-  }, [getLeaderboard, period]);
 
   const periods: { id: 'weekly' | 'monthly' | 'all-time'; label: string }[] = [
     { id: 'weekly', label: 'Weekly' },
@@ -38,21 +22,10 @@ const Leaderboard = () => {
     { id: 'all-time', label: 'All Time' },
   ];
 
-  const getRankIcon = (rank: number) => {
-    switch (rank) {
-      case 1:
-        return <Trophy className="w-5 h-5 text-amber-400" />;
-      case 2:
-        return <Medal className="w-5 h-5 text-white/80" />;
-      case 3:
-        return <Award className="w-5 h-5 text-orange-400" />;
-      default:
-        return null;
-    }
-  };
-
   const topThree = leaderboard.slice(0, 3);
   const remaining = leaderboard.slice(3);
+
+  const daysRemaining = getDaysRemaining();
 
   return (
     <>
@@ -72,7 +45,7 @@ const Leaderboard = () => {
 
         <div className="max-w-5xl mx-auto px-6">
           {/* Time Period Tabs - Responsive Container */}
-          <div className="flex justify-center mb-12">
+          <div className="flex flex-col items-center gap-6 mb-12">
             <div className="inline-flex p-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full gap-1 overflow-x-auto no-scrollbar max-w-full">
               {periods.map((p) => (
                 <button
@@ -88,6 +61,19 @@ const Leaderboard = () => {
                 </button>
               ))}
             </div>
+
+            {period !== 'all-time' && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400"
+              >
+                <Timer className="w-4 h-4" />
+                <span className="font-consciousness text-xs font-bold uppercase tracking-widest">
+                  {daysRemaining} {daysRemaining === 1 ? 'Day' : 'Days'} Remaining
+                </span>
+              </motion.div>
+            )}
           </div>
 
           {leaderboardLoading ? (
@@ -98,12 +84,14 @@ const Leaderboard = () => {
             <>
               {/* Top 3 — Mobile: stacked, Desktop: podium */}
               <div className="mb-12">
-                {/* 1st Place — always on top / center */}
-                {topThree[0] && (
-                  <div className="flex justify-center mb-4 md:hidden">
-                    <div
+                {/* Mobile Top 3 */}
+                <div className="flex flex-col gap-4 md:hidden">
+                  {topThree[0] && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
                       onClick={() => navigate(`/profile/${topThree[0].user_id}`)}
-                      className="relative flex flex-col items-center p-6 rounded-3xl border border-amber-500/40 bg-amber-500/5 cursor-pointer hover:border-amber-500/60 transition-all w-full max-w-xs"
+                      className="relative flex flex-col items-center p-6 rounded-3xl border border-amber-500/40 bg-amber-500/5 cursor-pointer hover:border-amber-500/60 transition-all shadow-[0_0_30px_rgba(251,191,36,0.1)]"
                     >
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500/20 border border-amber-500/40 rounded-full px-4 py-1.5 flex items-center gap-1.5">
                         <Crown className="w-4 h-4 text-amber-400 fill-amber-400" />
@@ -121,72 +109,78 @@ const Leaderboard = () => {
                       <p className="font-consciousness text-base font-bold text-violet-400">
                         {topThree[0].total_points.toLocaleString()} pts
                       </p>
-                    </div>
-                  </div>
-                )}
+                    </motion.div>
+                  )}
 
-                {/* 2nd and 3rd — mobile side by side */}
-                <div className="grid grid-cols-2 gap-3 md:hidden mb-6">
-                  {topThree[1] && (
-                    <div
-                      onClick={() => navigate(`/profile/${topThree[1].user_id}`)}
-                      className="relative flex flex-col items-center p-4 rounded-2xl border border-white/20 bg-white/5 cursor-pointer hover:border-white/40 transition-all"
-                    >
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white/10 border border-white/20 rounded-full px-2 py-0.5 flex items-center gap-1">
-                        <Medal className="w-3.5 h-3.5 text-white/80" />
-                        <span className="font-consciousness text-[10px] font-bold text-white/70">2nd</span>
-                      </div>
-                      <Avatar className="w-14 h-14 mb-2 mt-2 border-2 border-white/15">
-                        <AvatarImage src={topThree[1].avatar_url || ''} />
-                        <AvatarFallback className="bg-white/10 text-white/60 text-sm font-consciousness">
-                          {(topThree[1].display_name || 'A').charAt(0).toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                      <h3 className="font-consciousness text-xs font-bold text-white/80 text-center truncate w-full">
-                        {topThree[1].display_name || 'Anonymous'}
-                      </h3>
-                      <p className="font-consciousness text-xs font-bold text-violet-400 mt-0.5">
-                        {topThree[1].total_points.toLocaleString()}
-                      </p>
-                    </div>
-                  )}
-                  {topThree[2] && (
-                    <div
-                      onClick={() => navigate(`/profile/${topThree[2].user_id}`)}
-                      className="relative flex flex-col items-center p-4 rounded-2xl border border-orange-500/20 bg-orange-500/5 cursor-pointer hover:border-orange-500/40 transition-all"
-                    >
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500/10 border border-orange-500/20 rounded-full px-2 py-0.5 flex items-center gap-1">
-                        <Award className="w-3.5 h-3.5 text-orange-400" />
-                        <span className="font-consciousness text-[10px] font-bold text-orange-400">3rd</span>
-                      </div>
-                      <Avatar className="w-14 h-14 mb-2 mt-2 border-2 border-orange-500/15">
-                        <AvatarImage src={topThree[2].avatar_url || ''} />
-                        <AvatarFallback className="bg-orange-500/10 text-orange-400 text-sm font-consciousness">
-                          {(topThree[2].display_name || 'A').charAt(0).toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                      <h3 className="font-consciousness text-xs font-bold text-orange-400 text-center truncate w-full">
-                        {topThree[2].display_name || 'Anonymous'}
-                      </h3>
-                      <p className="font-consciousness text-xs font-bold text-violet-400 mt-0.5">
-                        {topThree[2].total_points.toLocaleString()}
-                      </p>
-                    </div>
-                  )}
+                  <div className="grid grid-cols-2 gap-3">
+                    {topThree[1] && (
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        onClick={() => navigate(`/profile/${topThree[1].user_id}`)}
+                        className="relative flex flex-col items-center p-4 rounded-2xl border border-white/20 bg-white/5 cursor-pointer hover:border-white/40 transition-all"
+                      >
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white/10 border border-white/20 rounded-full px-2 py-0.5 flex items-center gap-1">
+                          <Medal className="w-3.5 h-3.5 text-white/80" />
+                          <span className="font-consciousness text-[10px] font-bold text-white/70">2nd</span>
+                        </div>
+                        <Avatar className="w-14 h-14 mb-2 mt-2 border-2 border-white/15">
+                          <AvatarImage src={topThree[1].avatar_url || ''} />
+                          <AvatarFallback className="bg-white/10 text-white/60 text-sm font-consciousness">
+                            {(topThree[1].display_name || 'A').charAt(0).toUpperCase()}
+                          </AvatarFallback>
+                        </Avatar>
+                        <h3 className="font-consciousness text-xs font-bold text-white/80 text-center truncate w-full">
+                          {topThree[1].display_name || 'Anonymous'}
+                        </h3>
+                        <p className="font-consciousness text-xs font-bold text-violet-400 mt-0.5">
+                          {topThree[1].total_points.toLocaleString()}
+                        </p>
+                      </motion.div>
+                    )}
+                    {topThree[2] && (
+                      <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        onClick={() => navigate(`/profile/${topThree[2].user_id}`)}
+                        className="relative flex flex-col items-center p-4 rounded-2xl border border-orange-500/20 bg-orange-500/5 cursor-pointer hover:border-orange-500/40 transition-all"
+                      >
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500/10 border border-orange-500/20 rounded-full px-2 py-0.5 flex items-center gap-1">
+                          <Award className="w-3.5 h-3.5 text-orange-400" />
+                          <span className="font-consciousness text-[10px] font-bold text-orange-400">3rd</span>
+                        </div>
+                        <Avatar className="w-14 h-14 mb-2 mt-2 border-2 border-orange-500/15">
+                          <AvatarImage src={topThree[2].avatar_url || ''} />
+                          <AvatarFallback className="bg-orange-500/10 text-orange-400 text-sm font-consciousness">
+                            {(topThree[2].display_name || 'A').charAt(0).toUpperCase()}
+                          </AvatarFallback>
+                        </Avatar>
+                        <h3 className="font-consciousness text-xs font-bold text-orange-400 text-center truncate w-full">
+                          {topThree[2].display_name || 'Anonymous'}
+                        </h3>
+                        <p className="font-consciousness text-xs font-bold text-violet-400 mt-0.5">
+                          {topThree[2].total_points.toLocaleString()}
+                        </p>
+                      </motion.div>
+                    )}
+                  </div>
                 </div>
 
-                {/* Desktop: original 3-column podium — hidden on mobile */}
+                {/* Desktop Podium */}
                 <div className="hidden md:grid grid-cols-3 gap-6 items-end mt-10">
+                  {/* 2nd Place */}
                   {topThree[1] && (
-                    <div
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
                       onClick={() => navigate(`/profile/${topThree[1].user_id}`)}
-                      className="relative flex flex-col items-center p-8 rounded-3xl border border-white/30 bg-white/5 cursor-pointer hover:border-white/50 transition-all"
+                      className="relative flex flex-col items-center p-8 rounded-3xl border border-white/30 bg-white/5 cursor-pointer hover:border-white/50 transition-all group"
                     >
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white/10 border border-white/20 rounded-full px-3 py-1 flex items-center gap-1">
                         <Medal className="w-3.5 h-3.5 text-white/80" />
                         <span className="font-consciousness text-xs font-bold text-white/80">2nd</span>
                       </div>
-                      <Avatar className="w-20 h-20 mb-4 border-2 border-white/20">
+                      <Avatar className="w-20 h-20 mb-4 border-2 border-white/20 group-hover:scale-105 transition-transform">
                         <AvatarImage src={topThree[1].avatar_url || ''} />
                         <AvatarFallback className="bg-white/10 text-white/80 text-xl font-consciousness">
                           {(topThree[1].display_name || 'A').charAt(0).toUpperCase()}
@@ -198,18 +192,22 @@ const Leaderboard = () => {
                       <p className="font-consciousness text-lg font-bold text-violet-400">
                         {topThree[1].total_points.toLocaleString()}
                       </p>
-                    </div>
+                    </motion.div>
                   )}
+
+                  {/* 1st Place */}
                   {topThree[0] && (
-                    <div
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
                       onClick={() => navigate(`/profile/${topThree[0].user_id}`)}
-                      className="relative flex flex-col items-center p-10 rounded-3xl border border-amber-500/40 bg-amber-500/5 cursor-pointer hover:border-amber-500/60 transition-all transform scale-110 -translate-y-4"
+                      className="relative flex flex-col items-center p-10 rounded-3xl border border-amber-500/40 bg-amber-500/5 cursor-pointer hover:border-amber-500/60 transition-all transform scale-110 -translate-y-4 group"
                     >
                       <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-amber-500/20 border border-amber-500/40 rounded-full px-4 py-1.5 flex items-center gap-1.5 shadow-[0_0_20px_rgba(251,191,36,0.2)]">
                         <Crown className="w-4 h-4 text-amber-400 fill-amber-400" />
                         <span className="font-consciousness text-sm font-bold text-amber-400">1st</span>
                       </div>
-                      <Avatar className="w-24 h-24 mb-4 border-2 border-amber-500/30">
+                      <Avatar className="w-24 h-24 mb-4 border-2 border-amber-500/30 group-hover:scale-105 transition-transform">
                         <AvatarImage src={topThree[0].avatar_url || ''} />
                         <AvatarFallback className="bg-amber-500/10 text-amber-400 text-2xl font-consciousness">
                           {(topThree[0].display_name || 'A').charAt(0).toUpperCase()}
@@ -221,18 +219,22 @@ const Leaderboard = () => {
                       <p className="font-consciousness text-xl font-bold text-violet-400">
                         {topThree[0].total_points.toLocaleString()}
                       </p>
-                    </div>
+                    </motion.div>
                   )}
+
+                  {/* 3rd Place */}
                   {topThree[2] && (
-                    <div
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
                       onClick={() => navigate(`/profile/${topThree[2].user_id}`)}
-                      className="relative flex flex-col items-center p-8 rounded-3xl border border-orange-500/30 bg-orange-500/5 cursor-pointer hover:border-orange-500/50 transition-all"
+                      className="relative flex flex-col items-center p-8 rounded-3xl border border-orange-500/30 bg-orange-500/5 cursor-pointer hover:border-orange-500/50 transition-all group"
                     >
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500/10 border border-orange-500/20 rounded-full px-3 py-1 flex items-center gap-1">
                         <Award className="w-3.5 h-3.5 text-orange-400" />
                         <span className="font-consciousness text-xs font-bold text-orange-400">3rd</span>
                       </div>
-                      <Avatar className="w-20 h-20 mb-4 border-2 border-orange-500/20">
+                      <Avatar className="w-20 h-20 mb-4 border-2 border-orange-500/20 group-hover:scale-105 transition-transform">
                         <AvatarImage src={topThree[2].avatar_url || ''} />
                         <AvatarFallback className="bg-orange-500/10 text-orange-400 text-xl font-consciousness">
                           {(topThree[2].display_name || 'A').charAt(0).toUpperCase()}
@@ -244,22 +246,25 @@ const Leaderboard = () => {
                       <p className="font-consciousness text-lg font-bold text-violet-400">
                         {topThree[2].total_points.toLocaleString()}
                       </p>
-                    </div>
+                    </motion.div>
                   )}
                 </div>
               </div>
 
               {/* Ranks 4 and Below */}
               <div className="space-y-3 mb-12">
-                {remaining.map((entry) => {
+                {remaining.map((entry, index) => {
                   const isCurrentUser = entry.user_id === user?.id;
                   return (
-                    <div
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.05 }}
                       key={entry.user_id}
                       onClick={() => navigate(`/profile/${entry.user_id}`)}
                       className={`flex items-center gap-4 px-4 py-3 rounded-xl border transition-all cursor-pointer ${
                         isCurrentUser
-                          ? 'border-violet-500/30 bg-violet-500/5'
+                          ? 'border-violet-500/30 bg-violet-500/5 shadow-[inset_0_0_20px_rgba(139,92,246,0.05)]'
                           : 'border-white/5 bg-white/2 hover:border-violet-500/20 hover:bg-violet-500/3'
                       }`}
                     >
@@ -279,18 +284,23 @@ const Leaderboard = () => {
                       <span className="font-consciousness text-sm font-bold text-violet-400">
                         {entry.total_points.toLocaleString()}
                       </span>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
 
               {/* Current User Row (If not in top 10) */}
               {userRank && userRank.rank > leaderboard.length && (
-                <div className="pt-8 border-t border-white/5 mt-8">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  className="pt-8 border-t border-white/5 mt-8"
+                >
                   <p className="font-body text-[10px] uppercase tracking-widest text-white/40 mb-4 text-center">Your Position</p>
                   <div
                     onClick={() => navigate(`/profile/${user?.id}`)}
-                    className="flex items-center gap-4 px-4 py-3 rounded-xl border border-violet-500/40 bg-violet-500/10 cursor-pointer transition-all hover:bg-violet-500/15 group"
+                    className="flex items-center gap-4 px-4 py-3 rounded-xl border border-violet-500/40 bg-violet-500/10 cursor-pointer transition-all hover:bg-violet-500/15 group shadow-[0_0_20px_rgba(139,92,246,0.1)]"
                   >
                     <span className="font-consciousness text-sm font-bold text-violet-400/60 w-8">
                       {userRank.rank}
@@ -308,7 +318,7 @@ const Leaderboard = () => {
                       {userRank.total_points.toLocaleString()} pts
                     </span>
                   </div>
-                </div>
+                </motion.div>
               )}
             </>
           )}
