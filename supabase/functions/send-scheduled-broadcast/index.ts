@@ -14,6 +14,18 @@ const handler = async (req: Request): Promise<Response> => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Auth: cron secret OR service-role JWT
+  const cronSecret = Deno.env.get('CRON_SECRET');
+  const provided = req.headers.get('x-cron-secret');
+  const authHeader = req.headers.get('Authorization') ?? '';
+  const isServiceRole = authHeader === `Bearer ${Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''}`;
+  if (!isServiceRole && (!cronSecret || provided !== cronSecret)) {
+    return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+      status: 401,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
   try {
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
