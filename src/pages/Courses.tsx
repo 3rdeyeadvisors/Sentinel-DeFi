@@ -132,6 +132,27 @@ const Courses = () => {
     },
     {
       id: 5,
+      title: "Understanding DeFi Vaults: Your Complete Guide to Managed Investing",
+      description: "Learn what DeFi vaults are, how they work, and how to choose the right vault for your investment goals. Discover the mechanics of yield aggregators, risk assessment strategies, and how to diversify your portfolio using automated vault protocols like Yearn and Beefy Finance.",
+      category: "free",
+      type: "course",
+      duration: "2.5 hours",
+      difficulty: "Intermediate",
+      rating: 4.8,
+      students: 621,
+      modules: [
+        "What Are DeFi Vaults? (Core Concepts and Key Terms)",
+        "Major Vault Protocols Explained (Yearn, Beefy, and More)",
+        "Staying Safe with Vaults (Security and Red Flags)",
+        "How to Choose the Right Vault for You",
+        "Course 5 Final Exam: Vault Mastery"
+      ],
+      icon: BookOpen,
+      early_access_date: null,
+      public_release_date: null
+    },
+    {
+      id: 6,
       title: "Tokenizing Real World Assets: From Traditional Finance to Blockchain",
       description: "Discover how blockchain technology is transforming real estate, treasuries, commodities, and infrastructure into tradeable digital tokens. Learn about fractional ownership, evaluate RWA protocols, and understand the regulatory landscape shaping the $30+ billion tokenization market. This course was created based on community voting through our Platform Roadmap.",
       category: "free",
