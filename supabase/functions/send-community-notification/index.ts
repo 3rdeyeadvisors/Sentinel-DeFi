@@ -32,10 +32,46 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const payload: CommunityNotificationPayload = await req.json();
-    console.log('Sending community notification:', payload);
+    // Require authenticated user
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const { data: { user }, error: userErr } = await supabase.auth.getUser(
+      authHeader.replace("Bearer ", "")
+    );
+    if (userErr || !user) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
-    const { type, user_name, user_email, content_id, content_type, title, content, rating, review } = payload;
+    const payload: CommunityNotificationPayload = await req.json();
+
+    const ALLOWED_TYPES = new Set(['comment', 'rating', 'question', 'answer']);
+    if (!ALLOWED_TYPES.has(payload.type)) {
+      return new Response(JSON.stringify({ error: "Invalid type" }), {
+        status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // Escape HTML in user-controlled fields to prevent injection in admin email
+    const esc = (s: unknown) => String(s ?? "")
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;").slice(0, 2000);
+
+    // Trust authenticated identity for the actor; sanitize the rest
+    const type = payload.type;
+    const user_name = esc(user.user_metadata?.display_name ?? user.email ?? 'User');
+    const user_email = esc(user.email ?? '');
+    const content_id = esc(payload.content_id);
+    const content_type = esc(payload.content_type);
+    const title = payload.title ? esc(payload.title) : undefined;
+    const content = payload.content ? esc(payload.content) : undefined;
+    const rating = typeof payload.rating === 'number' ? payload.rating : undefined;
+    const review = payload.review ? esc(payload.review) : undefined;
     
     let subject = "";
     let emailHtml = "";
