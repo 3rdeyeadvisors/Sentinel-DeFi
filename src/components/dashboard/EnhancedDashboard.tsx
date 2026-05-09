@@ -757,37 +757,56 @@ export const EnhancedDashboard = () => {
         </div>
 
         {/* Progress Overview */}
-        <Card className="p-4 sm:p-8 mb-12 bg-white/3 border border-white/8 rounded-2xl w-full overflow-x-auto">
-          <h3 className="font-consciousness text-base sm:text-lg font-bold text-white mb-6 sm:mb-8">Weekly Learning Activity</h3>
-          <div className="grid grid-cols-7 gap-2 sm:gap-4 min-w-[400px]">
-            {weeklyProgress.map((day, index) => {
-              // Goal is 60 minutes per day
-              const percentage = Math.min((day.minutes / 60) * 100, 100);
-              return (
-                <div key={index} className="text-center group">
-                  <p className="font-body text-xs uppercase tracking-widest text-white/40 mb-3 group-hover:text-violet-400 transition-colors">{day.day}</p>
-                  <div className="space-y-3">
-                    <div className="h-24 bg-white/5 rounded-xl flex items-end justify-center overflow-hidden relative">
-                      <div
-                        className="bg-violet-600 transition-all duration-1000 w-full"
-                        style={{ height: `${percentage}%` }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+        {weeklyProgress.some(day => day.minutes > 0) ? (
+          <Card className="p-4 sm:p-8 mb-12 bg-white/3 border border-white/8 rounded-2xl w-full overflow-x-auto">
+            <h3 className="font-consciousness text-base sm:text-lg font-bold text-white mb-6 sm:mb-8">Weekly Learning Activity</h3>
+            <div className="grid grid-cols-7 gap-2 sm:gap-4 min-w-[400px]">
+              {weeklyProgress.map((day, index) => {
+                // Goal is 60 minutes per day
+                const percentage = Math.min((day.minutes / 60) * 100, 100);
+                return (
+                  <div key={index} className="text-center group">
+                    <p className="font-body text-xs uppercase tracking-widest text-white/40 mb-3 group-hover:text-violet-400 transition-colors">{day.day}</p>
+                    <div className="space-y-3">
+                      <div className="h-24 bg-white/5 rounded-xl flex items-end justify-center overflow-hidden relative">
+                        <div
+                          className="bg-violet-600 transition-all duration-1000 w-full"
+                          style={{ height: `${percentage}%` }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                      </div>
+                      <p className="font-consciousness text-sm font-bold text-white">{day.minutes}m</p>
                     </div>
-                    <p className="font-consciousness text-sm font-bold text-white">{day.minutes}m</p>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="mt-4 flex items-center gap-4 text-xs text-white/50 justify-center sm:justify-start">
-            <div className="flex items-center gap-1">
-              <div className="w-2 h-2 rounded-full bg-primary" />
-              <span>Goal: 60m / day</span>
+                );
+              })}
             </div>
-            <span>• Estimated 10m per module</span>
-          </div>
-        </Card>
+            <div className="mt-4 flex items-center gap-4 text-xs text-white/50 justify-center sm:justify-start">
+              <div className="flex items-center gap-1">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span>Goal: 60m / day</span>
+              </div>
+              <span>• Estimated 10m per module</span>
+            </div>
+          </Card>
+        ) : (
+          <Card className="p-8 mb-12 bg-white/3 border border-dashed border-white/20 rounded-2xl w-full flex flex-col items-center justify-center text-center">
+            <div className="w-12 h-12 bg-violet-500/10 rounded-full flex items-center justify-center mb-4">
+              <Clock className="w-6 h-6 text-violet-400" />
+            </div>
+            <h3 className="font-consciousness text-lg font-bold text-white mb-2">No activity this week</h3>
+            <p className="text-white/40 font-body max-w-sm mb-6 text-sm">
+              You haven't completed any modules or quizzes yet this week. Start a course to see your learning progress here.
+            </p>
+            <Button
+              variant="outline"
+              className="font-body border-violet-500/30 text-violet-400 hover:bg-violet-500/10"
+              onClick={() => navigate('/courses')}
+            >
+              Start Learning
+            </Button>
+          </Card>
+        )}
 
         {/* Main Content with Enhanced Tabs */}
         <Tabs defaultValue="progress" className="space-y-12 w-full">
@@ -1054,8 +1073,9 @@ export const EnhancedDashboard = () => {
           </TabsContent>
 
           <TabsContent value="analytics" className="space-y-12">
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="p-8 bg-white/3 border border-white/8 rounded-2xl">
+            {analyticsStats.modulesCompleted > 0 || quizStats.completedQuizzes > 0 ? (
+              <div className="grid md:grid-cols-2 gap-8">
+                <Card className="p-8 bg-white/3 border border-white/8 rounded-2xl">
                 <h3 className="font-consciousness text-lg font-bold text-white mb-8 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400">
                     <BarChart3 className="w-5 h-5" />
@@ -1101,6 +1121,23 @@ export const EnhancedDashboard = () => {
                 </div>
               </Card>
             </div>
+            ) : (
+              <Card className="p-12 bg-white/3 border border-dashed border-white/20 rounded-3xl flex flex-col items-center justify-center text-center">
+                <div className="w-16 h-16 bg-violet-500/10 rounded-full flex items-center justify-center mb-6">
+                  <BarChart3 className="w-8 h-8 text-violet-400" />
+                </div>
+                <h3 className="font-consciousness text-xl font-bold text-white mb-2">No analytics available yet</h3>
+                <p className="text-white/40 font-body max-w-md mb-8">
+                  As you complete modules and take quizzes, your learning patterns and performance data will appear here.
+                </p>
+                <Button
+                  className="font-body bg-violet-600 hover:bg-violet-500 text-white rounded-xl px-8 h-auto py-4"
+                  onClick={() => navigate('/courses')}
+                >
+                  Start Your First Lesson
+                </Button>
+              </Card>
+            )}
           </TabsContent>
         </Tabs>
 

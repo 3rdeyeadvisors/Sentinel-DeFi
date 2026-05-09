@@ -68,7 +68,7 @@ export const CognitiveScience = () => {
         };
       });
 
-      return { radarData, dailyPoints };
+      return { radarData, dailyPoints, hasData: (points?.length || 0) > 0 };
     },
     enabled: !!user
   });
@@ -80,6 +80,49 @@ export const CognitiveScience = () => {
         <Skeleton className="h-[400px] w-full rounded-3xl" />
       </div>
     );
+  }
+
+  if (!user) return null;
+
+  if (!performanceData || !performanceData.hasData) {
+    return (
+      <Card className="p-12 bg-white/3 backdrop-blur-sm border-dashed border-2 border-violet-500/20 flex flex-col items-center justify-center text-center rounded-3xl">
+        <div className="w-16 h-16 bg-violet-500/10 rounded-full flex items-center justify-center mb-6">
+          <Activity className="w-8 h-8 text-violet-400" />
+        </div>
+        <h3 className="text-xl font-bold font-consciousness text-white mb-2">No Performance Data Yet</h3>
+        <p className="text-white/50 max-w-md font-body">
+          Start playing brain games above to build your cognitive profile and track your improvement over time.
+        </p>
+      </Card>
+    );
+  }
+
+  // Calculate dynamic metrics
+  const totalPoints = performanceData.dailyPoints.reduce((sum, d) => sum + d.points, 0);
+
+  let neuralPlasticity = "Average";
+  if (totalPoints > 500) neuralPlasticity = "Exceptional";
+  else if (totalPoints > 250) neuralPlasticity = "High Average";
+  else if (totalPoints > 100) neuralPlasticity = "Active";
+  else neuralPlasticity = "Establishing";
+
+  // Focus stability based on consistency
+  const daysWithData = performanceData.dailyPoints.filter(d => d.points > 0).length;
+  let focusStability = "Establishing";
+  if (daysWithData >= 5) focusStability = "Highly Stable";
+  else if (daysWithData >= 3) focusStability = "Improving";
+  else if (daysWithData >= 1) focusStability = "Developing";
+
+  // Processing speed improvement trend
+  const firstHalf = performanceData.dailyPoints.slice(0, 3).reduce((sum, d) => sum + d.points, 0);
+  const secondHalf = performanceData.dailyPoints.slice(4).reduce((sum, d) => sum + d.points, 0);
+  let improvementText = "0% this week";
+  if (firstHalf > 0) {
+    const improvement = ((secondHalf - firstHalf) / firstHalf) * 100;
+    improvementText = `${improvement > 0 ? '+' : ''}${Math.round(improvement)}% this week`;
+  } else if (secondHalf > 0) {
+    improvementText = "New baseline";
   }
 
   return (
@@ -159,21 +202,21 @@ export const CognitiveScience = () => {
           <Activity className="w-8 h-8 text-primary opacity-50" />
           <div>
             <div className="text-sm text-white/50">Neural Plasticity</div>
-            <div className="text-lg font-bold">High Average</div>
+            <div className="text-lg font-bold">{neuralPlasticity}</div>
           </div>
         </Card>
         <Card className="p-4 bg-primary/5 border-primary/10 flex items-center gap-4">
           <Target className="w-8 h-8 text-primary opacity-50" />
           <div>
             <div className="text-sm text-white/50">Focus Stability</div>
-            <div className="text-lg font-bold">Improving</div>
+            <div className="text-lg font-bold">{focusStability}</div>
           </div>
         </Card>
         <Card className="p-4 bg-primary/5 border-primary/10 flex items-center gap-4">
           <TrendingUp className="w-8 h-8 text-primary opacity-50" />
           <div>
             <div className="text-sm text-white/50">Processing Speed</div>
-            <div className="text-lg font-bold">+12% this week</div>
+            <div className="text-lg font-bold">{improvementText}</div>
           </div>
         </Card>
       </div>

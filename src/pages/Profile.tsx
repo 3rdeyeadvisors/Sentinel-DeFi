@@ -531,7 +531,7 @@ const Profile = () => {
     return achievements;
   };
 
-  if (loading || profileLoading) {
+  if (loading || (profileLoading && targetUserId)) {
     return (
       <div className="min-h-screen flex items-center justify-center py-20">
         <div className="text-center">
@@ -542,19 +542,43 @@ const Profile = () => {
     );
   }
 
-  // For viewing own profile, require authentication
-  if (isOwnProfile && !user) {
-    return null;
+  // If no user is logged in and no userId is provided in params, show a sign-in CTA
+  if (!user && !viewUserId) {
+    return (
+      <div className="min-h-screen bg-transparent py-24 flex items-center justify-center relative overflow-hidden">
+        {/* Nebula Glow */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-500/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
+
+        <div className="container mx-auto px-6 max-w-md text-center relative z-10">
+          <Card className="p-12 bg-white/3 border border-dashed border-violet-500/20 rounded-3xl">
+            <div className="w-16 h-16 bg-violet-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <User className="w-8 h-8 text-violet-400" />
+            </div>
+            <h1 className="font-consciousness text-2xl font-bold text-white mb-4">Your Profile</h1>
+            <p className="text-white/40 font-body mb-8">
+              Sign in to view your learning stats, achievements, and personal notes.
+            </p>
+            <Button
+              className="w-full font-body bg-violet-600 hover:bg-violet-500 text-white rounded-xl py-6 h-auto"
+              onClick={() => navigate('/auth')}
+            >
+              Sign In
+            </Button>
+          </Card>
+        </div>
+      </div>
+    );
   }
 
   // For viewing other profiles, allow even if not logged in but profile must exist
-  if (!isOwnProfile && !profile) {
+  if (!profile) {
     return (
       <div className="min-h-screen flex items-center justify-center py-20">
         <div className="text-center">
           <User className="w-16 h-16 mx-auto mb-4 text-white/50" />
           <h2 className="text-xl font-semibold mb-2">Profile Not Found</h2>
-          <p className="text-white/50 mb-4">This user doesn't have a public profile.</p>
+          <p className="text-white/50 mb-4">This user doesn't have a public profile or it could not be found.</p>
           <Button onClick={() => navigate(-1)}>
             <ArrowLeft className="w-4 h-4 mr-2" />
             Go Back
