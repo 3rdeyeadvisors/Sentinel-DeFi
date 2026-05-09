@@ -15,12 +15,7 @@ import {
 const menuItems = [
  { id: "overview",  title: "Overview",          icon: LayoutDashboard },
  { id: "health",    title: "System Health",     icon: HeartPulse },
- { id: "email",     title: "Email Hub",         icon: Mail },
  { id: "users",     title: "Users",             icon: Users },
- { id: "orders",    title: "Orders",            icon: ShoppingCart },
- { id: "products",  title: "Products",          icon: Package },
- { id: "raffles",   title: "Raffles",           icon: Gift },
- { id: "commissions", title: "Commissions",     icon: DollarSign },
  { id: "participation", title: "Participation", icon: Activity },
  { id: "roadmap",   title: "Roadmap",           icon: Map },
  { id: "seo",       title: "SEO Settings",      icon: Search },

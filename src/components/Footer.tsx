@@ -10,7 +10,6 @@ const Footer = () => {
   const learnLinks = [
     { label: 'Courses', href: '/courses' },
     { label: 'Tutorials', href: '/tutorials' },
-    { label: 'Store', href: '/store' },
     { label: 'Blog', href: '/blog' },
     { label: 'For Professionals', href: '/institutional' },
   ];

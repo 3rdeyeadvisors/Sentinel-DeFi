@@ -6,7 +6,7 @@ import AnimatedSection from './AnimatedSection';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { PRICING, COMMISSION_RATES, ANNUAL_BENEFITS } from '@/lib/constants';
+import { PRICING } from '@/lib/constants';
 
 const PricingSection = () => {
   const { user, session } = useAuth();
@@ -88,7 +88,6 @@ const PricingSection = () => {
                     'All DeFi courses and tutorials',
                     'Exclusive content and resources',
                     'Community access',
-                    `${Math.round(COMMISSION_RATES.monthly * 100)}% referral commission`,
                     'Cancel anytime'
                   ].map((feature, i) => (
                     <li key={i} className="flex items-center text-sm text-foreground/80 font-body">
@@ -150,9 +149,7 @@ const PricingSection = () => {
                     '14 day free trial',
                     'All DeFi courses and tutorials',
                     'Early access to new courses',
-                    `${ANNUAL_BENEFITS.bonusRaffleTickets} bonus raffle entries per raffle`,
                     'Priority email announcements',
-                    `${Math.round(COMMISSION_RATES.annual * 100)}% referral commission`,
                     'Vote on platform roadmap'
                   ].map((feature, i) => (
                     <li key={i} className="flex items-center text-sm text-foreground/80 font-body">

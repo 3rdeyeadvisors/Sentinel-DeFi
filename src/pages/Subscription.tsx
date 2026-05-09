@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
 import { Check, Crown, Loader2, Sparkles, Calendar, CreditCard, Clock, AlertTriangle } from 'lucide-react';
 import SEO from '@/components/SEO';
-import { PRICING, ANNUAL_BENEFITS, COMMISSION_RATES } from '@/lib/constants';
+import { PRICING } from '@/lib/constants';
 
 /**
  * Subscription Page - Audited for pricing consistency with constants.ts
@@ -269,7 +269,6 @@ const Subscription = () => {
                     'All DeFi courses and tutorials',
                     'Exclusive content and resources',
                     'Community access',
-                    `${Math.round(COMMISSION_RATES.monthly * 100)}% referral commission`,
                     'Cancel anytime',
                   ].map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
@@ -318,9 +317,7 @@ const Subscription = () => {
                     'Exclusive content and resources',
                     'Community access',
                     'Early access to new courses',
-                    `${ANNUAL_BENEFITS.bonusRaffleTickets} bonus raffle entries per raffle`,
                     'Priority educational support',
-                    `${Math.round(COMMISSION_RATES.annual * 100)}% referral commission`,
                     'Input on platform direction',
                   ].map((feature) => (
                     <li key={feature} className="flex items-center gap-3">

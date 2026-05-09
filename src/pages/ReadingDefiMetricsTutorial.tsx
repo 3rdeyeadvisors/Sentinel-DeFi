@@ -278,7 +278,7 @@ const ReadingDefiMetricsTutorial = () => {
           {
             model: "Performance Fees",
             description: "Percentage of profits generated",
-            examples: ["Yearn vaults", "Alpha Homora"],
+            examples: ["Yield aggregators", "Alpha Homora"],
             sustainability: "Variable: depends on performance",
             analysis: ["Fee structure", "Performance consistency", "Benchmark"],
             concerns: ["Poor performance", "Fee sensitivity", "Competition"]

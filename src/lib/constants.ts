@@ -29,34 +29,8 @@ export const PRICING = {
 };
 
 /**
- * Commission rates for referrals
- * - Monthly subscribers: 50% commission
- * - Annual subscribers: 60% commission (premium benefit)
- */
-export const COMMISSION_RATES = {
-  monthly: 0.5,
-  annual: 0.6,
-};
-
-/**
- * Legacy commission rate (for backward compatibility)
- * @deprecated Use COMMISSION_RATES instead
- */
-export const COMMISSION_RATE = 0.5;
-
-/**
  * Annual subscriber premium benefits
  */
 export const ANNUAL_BENEFITS = {
-  bonusRaffleTickets: 5,
   earlyAccessDays: 7,
-  commissionRate: 0.6,
-};
-
-/**
- * Calculated commission amounts based on pricing and tiered rates
- */
-export const COMMISSIONS = {
-  monthly: Math.round(PRICING.monthly.amount * COMMISSION_RATES.monthly * 100) / 100,
-  annual: Math.round(PRICING.annual.amount * COMMISSION_RATES.annual * 100) / 100,
 };

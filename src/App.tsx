@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect, Suspense } from "react";
 import { safeLazy as lazy } from "@/lib/safe-lazy";
-import { CartProvider } from "@/contexts/CartContext";
 import { HelmetProvider } from "react-helmet-async";
 import SecurityHeaders from "@/components/SecurityHeaders";
 import Layout from "./components/Layout";
@@ -26,9 +25,6 @@ const Philosophy = lazy(() => import("./pages/Philosophy"));
 const Courses = lazy(() => import("./pages/Courses"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Resources = lazy(() => import("./pages/Resources"));
-const Store = lazy(() => import("./pages/Store"));
-const MerchandiseDetail = lazy(() => import("./pages/MerchandiseDetail"));
-const Cart = lazy(() => import("./pages/Cart"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Auth = lazy(() => import("./pages/Auth"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
@@ -71,15 +67,10 @@ const WhyMostPeopleLoseCrypto = lazy(() => import("./pages/WhyMostPeopleLoseCryp
 const DefiMatured2025 = lazy(() => import("./pages/DefiMatured2025"));
 const PredictionMarketsDeFi2025 = lazy(() => import("./pages/PredictionMarketsDeFi2025"));
 const RwaOvertakesDex2025 = lazy(() => import("./pages/RwaOvertakesDex2025"));
-const AdminStoreDashboard = lazy(() => import("./pages/AdminStoreDashboard"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
-const Raffles = lazy(() => import("./pages/Raffles"));
-const RaffleHistory = lazy(() => import("./pages/RaffleHistory"));
 const AwarenessBlueprintLanding = lazy(() => import("./pages/AwarenessBlueprintLanding"));
 const AdLanding = lazy(() => import("./pages/AdLanding"));
 const UploadResourceFile = lazy(() => import("./pages/UploadResourceFile"));
-const Earn = lazy(() => import("./pages/Earn"));
-const ReferralTerms = lazy(() => import("./pages/ReferralTerms"));
 const Roadmap = lazy(() => import("./pages/Roadmap"));
 const MiniGames = lazy(() => import("./pages/MiniGames"));
 const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess"));
@@ -158,9 +149,6 @@ const AnimatedRoutes = () => {
         <Route path="/tutorials/chart-reading" element={<PageTransition><ChartReadingTutorial /></PageTransition>} />
         <Route path="/tutorials/nft-defi" element={<PageTransition><NftDefiTutorial /></PageTransition>} />
         <Route path="/tutorials/dao-participation" element={<PageTransition><DaoParticipationTutorial /></PageTransition>} />
-        <Route path="/store" element={<PageTransition><Store /></PageTransition>} />
-        <Route path="/store/merchandise/:productId" element={<PageTransition><MerchandiseDetail /></PageTransition>} />
-        <Route path="/cart" element={<PageTransition><Cart /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/signin" element={<PageTransition><Auth /></PageTransition>} />
         <Route path="/signup" element={<PageTransition><Auth /></PageTransition>} />
@@ -195,20 +183,11 @@ const AnimatedRoutes = () => {
             <PageTransition><EmailLogsAdmin /></PageTransition>
           </ProtectedRoute>
         } />
-        <Route path="/admin/store" element={
-          <ProtectedRoute requireRole="admin">
-            <PageTransition><AdminStoreDashboard /></PageTransition>
-          </ProtectedRoute>
-        } />
         <Route path="/admin" element={
           <ProtectedRoute requireRole="admin">
             <PageTransition><AdminDashboard /></PageTransition>
           </ProtectedRoute>
         } />
-        <Route path="/raffles" element={<PageTransition><Raffles /></PageTransition>} />
-        <Route path="/raffle-history" element={<PageTransition><RaffleHistory /></PageTransition>} />
-        <Route path="/earn" element={<PageTransition><Earn /></PageTransition>} />
-        <Route path="/referral-terms" element={<PageTransition><ReferralTerms /></PageTransition>} />
         <Route path="/roadmap" element={<PageTransition><Roadmap /></PageTransition>} />
         <Route path="/mini-games" element={<PageTransition><MiniGames /></PageTransition>} />
         <Route path="/checkout/success" element={<PageTransition><CheckoutSuccess /></PageTransition>} />
@@ -245,7 +224,6 @@ const App = () => {
       <QueryClientProvider client={queryClient}>
         <ThirdwebProvider>
           <TooltipProvider>
-            <CartProvider>
               <AuthProvider>
                 <SubscriptionProvider>
                   <ProgressProvider>
@@ -263,7 +241,6 @@ const App = () => {
                   </ProgressProvider>
                 </SubscriptionProvider>
               </AuthProvider>
-            </CartProvider>
           </TooltipProvider>
         </ThirdwebProvider>
       </QueryClientProvider>

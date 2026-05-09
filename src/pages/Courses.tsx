@@ -132,26 +132,6 @@ const Courses = () => {
     },
     {
       id: 5,
-      title: "Understanding DeFi Vaults: Your Complete Guide to Managed Investing",
-      description: "Learn how to access professional-grade investment strategies through DeFi vaults while maintaining full custody of your assets. Understand how vaults automate complex strategies, evaluate major vault protocols, and learn the essential security considerations before interacting with them.",
-      category: "free",
-      type: "course",
-      duration: "2.5 hours",
-      difficulty: "Intermediate",
-      rating: 4.8,
-      students: 412,
-      modules: [
-        "What Are DeFi Vaults? (Core Concepts and Key Terms)",
-        "Major Vault Protocols Explained",
-        "Staying Safe with Vaults (Security and Red Flags)",
-        "How to Choose the Right Vault for You"
-      ],
-      icon: BookOpen,
-      early_access_date: null,
-      public_release_date: null
-    },
-    {
-      id: 6,
       title: "Tokenizing Real World Assets: From Traditional Finance to Blockchain",
       description: "Discover how blockchain technology is transforming real estate, treasuries, commodities, and infrastructure into tradeable digital tokens. Learn about fractional ownership, evaluate RWA protocols, and understand the regulatory landscape shaping the $30+ billion tokenization market. This course was created based on community voting through our Platform Roadmap.",
       category: "free",
@@ -327,7 +307,7 @@ const Courses = () => {
         <PageHero
           eyebrow="Education"
           title="Master DeFi From the Ground Up"
-          subtitle="Five structured courses that take you from complete beginner to confident DeFi participant. Start anywhere. Go at your own pace."
+        subtitle="Professional-grade courses that take you from complete beginner to confident DeFi participant. Start anywhere. Go at your own pace."
         />
 
         <div className="max-w-7xl mx-auto px-6 pb-20 relative z-10">

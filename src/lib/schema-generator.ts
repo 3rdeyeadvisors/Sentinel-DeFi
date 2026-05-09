@@ -134,7 +134,7 @@ function generateCourseSchema(content: PageContent): SchemaConfig {
  * Generate Product schema for store items and tools
  */
 function generateProductSchema(content: PageContent): SchemaConfig {
-  const isDigitalProduct = content.url.includes('/store/') || content.title.toLowerCase().includes('ebook') || content.title.toLowerCase().includes('template');
+  const isDigitalProduct = content.title.toLowerCase().includes('ebook') || content.title.toLowerCase().includes('template');
   
   return {
     type: isDigitalProduct ? 'SoftwareApplication' : 'FinancialProduct',

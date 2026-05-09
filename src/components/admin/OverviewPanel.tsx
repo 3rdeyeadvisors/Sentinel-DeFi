@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
-import { DollarSign, Users, BookOpen, Package, TrendingUp, TrendingDown, AlertCircle, Bot, Play, Loader2 } from "lucide-react";
+import { Users, BookOpen, TrendingUp, TrendingDown, Bot, Play, Loader2 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { RemoveFromRaffleButton } from "./RemoveFromRaffleButton";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+
 interface MetricCard {
   title: string;
   value: string | number;
@@ -18,13 +18,11 @@ export function OverviewPanel() {
   const [metrics, setMetrics] = useState<MetricCard[]>([]);
   const [loading, setLoading] = useState(true);
   const [aiInsight, setAiInsight] = useState("");
-  const [activeRaffleId, setActiveRaffleId] = useState<string | null>(null);
   const [botSeeding, setBotSeeding] = useState(false);
   const [botSimulating, setBotSimulating] = useState(false);
 
   useEffect(() => {
     loadMetrics();
-    loadActiveRaffle();
     // Only load AI insights if not already loaded
     if (!aiInsight) loadAIInsights();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -56,24 +54,6 @@ export function OverviewPanel() {
       toast.error('Failed to simulate bot activity');
     } finally {
       setBotSimulating(false);
-    }
-  };
-
-  const loadActiveRaffle = async () => {
-    try {
-      const { data } = await supabase
-        .from("raffles")
-        .select("id")
-        .eq("is_active", true)
-        .order("created_at", { ascending: false })
-        .limit(1)
-        .single();
-
-      if (data) {
-        setActiveRaffleId(data.id);
-      }
-    } catch (error) {
-      // No active raffle found, that's okay
     }
   };
 
@@ -122,28 +102,6 @@ export function OverviewPanel() {
         .gte("created_at", twoWeeksAgo.toISOString())
         .lt("created_at", oneWeekAgo.toISOString());
 
-      // Fetch all orders with revenue
-      const { data: allOrders } = await supabase
-        .from("printify_orders")
-        .select("total_price, created_at");
-
-      // Calculate total revenue
-      const totalRevenue = allOrders?.reduce((sum, order) => sum + (order.total_price || 0), 0) || 0;
-
-      // Calculate revenue this week
-      const revenueThisWeek = allOrders
-        ?.filter(o => new Date(o.created_at) >= oneWeekAgo)
-        .reduce((sum, order) => sum + (order.total_price || 0), 0) || 0;
-
-      // Calculate revenue last week
-      const revenueLastWeek = allOrders
-        ?.filter(o => new Date(o.created_at) >= twoWeeksAgo && new Date(o.created_at) < oneWeekAgo)
-        .reduce((sum, order) => sum + (order.total_price || 0), 0) || 0;
-
-      // Count orders this week vs last week
-      const ordersThisWeek = allOrders?.filter(o => new Date(o.created_at) >= oneWeekAgo).length || 0;
-      const ordersLastWeek = allOrders?.filter(o => new Date(o.created_at) >= twoWeeksAgo && new Date(o.created_at) < oneWeekAgo).length || 0;
-
       // Calculate percentage changes
       const calculateChange = (current: number, previous: number): { change: number; trend: "up" | "down" | "neutral" } => {
         if (previous === 0) {
@@ -156,19 +114,10 @@ export function OverviewPanel() {
         };
       };
 
-      const revenueChange = calculateChange(revenueThisWeek, revenueLastWeek);
       const userChange = calculateChange(usersThisWeek || 0, usersLastWeek || 0);
       const enrollmentChange = calculateChange(enrollmentsThisWeek || 0, enrollmentsLastWeek || 0);
-      const orderChange = calculateChange(ordersThisWeek, ordersLastWeek);
 
       setMetrics([
-        {
-          title: "Total Revenue",
-          value: `$${(totalRevenue / 100).toFixed(2)}`,
-          change: revenueChange.change,
-          icon: DollarSign,
-          trend: revenueChange.trend
-        },
         {
           title: "Active Users",
           value: userCount || 0,
@@ -182,13 +131,6 @@ export function OverviewPanel() {
           change: enrollmentChange.change,
           icon: BookOpen,
           trend: enrollmentChange.trend
-        },
-        {
-          title: "Product Sales",
-          value: allOrders?.length || 0,
-          change: orderChange.change,
-          icon: Package,
-          trend: orderChange.trend
         }
       ]);
     } catch (error) {
@@ -218,8 +160,8 @@ export function OverviewPanel() {
     return (
       <div className="space-y-6">
         <Skeleton className="h-32 w-full" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[1, 2, 3, 4].map((i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          {[1, 2].map((i) => (
             <Skeleton key={i} className="h-32" />
           ))}
         </div>
@@ -259,28 +201,6 @@ export function OverviewPanel() {
         </CardContent>
       </Card>
 
-      {/* Admin Quick Actions Card */}
-      {activeRaffleId ? (
-        <Card className="bg-gradient-to-r from-destructive/10 to-destructive/5 border-destructive/20">
-          <CardHeader>
-            <CardTitle className="text-lg font-consciousness">Admin Quick Actions</CardTitle>
-            <CardDescription className="font-body">Remove yourself from active raffles</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <RemoveFromRaffleButton raffleId={activeRaffleId} />
-          </CardContent>
-        </Card>
-      ) : (
-        <Card className="border-muted">
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2 font-consciousness">
-              <AlertCircle className="h-5 w-5 text-muted-foreground" />
-              No Active Raffle
-            </CardTitle>
-            <CardDescription className="font-body">There are no active raffles at the moment</CardDescription>
-          </CardHeader>
-        </Card>
-      )}
 
       {aiInsight && (
         <Card className="border-primary/20 bg-gradient-to-br from-cosmic-deep to-cosmic-void">
@@ -296,7 +216,7 @@ export function OverviewPanel() {
         </Card>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {metrics.map((metric, index) => (
           <Card key={index} className="border-primary/20 hover:border-primary/40 transition-colors">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

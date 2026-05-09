@@ -5,42 +5,23 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Users, Copy, Check, Gift, Share2, FileText, Shield, ChevronDown, DollarSign, UserCheck } from "lucide-react";
+import { Users, Copy, Check, Gift, Share2, FileText, ChevronDown } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
-import { useReferralTerms } from "@/hooks/useReferralTerms";
-import { ReferralTermsModal } from "@/components/referral/ReferralTermsModal";
 import { ReferredUsersList } from "./ReferredUsersList";
 
 interface ReferralStats {
   totalReferrals: number;
-  bonusEntries: number;
-  convertedReferrals: number;
-  pendingCommissions: number;
-  paidCommissions: number;
-}
-
-interface ActiveRaffle {
-  id: string;
-  title: string;
-  end_date: string;
 }
 
 export const ReferralCard = () => {
   const { user } = useAuth();
-  const { hasAcceptedTerms, loading: termsLoading, refreshTermsStatus, acceptance } = useReferralTerms();
   const [copied, setCopied] = useState(false);
   const [stats, setStats] = useState<ReferralStats>({ 
-    totalReferrals: 0, 
-    bonusEntries: 0,
-    convertedReferrals: 0,
-    pendingCommissions: 0,
-    paidCommissions: 0
+    totalReferrals: 0
   });
   const [loading, setLoading] = useState(true);
-  const [activeRaffle, setActiveRaffle] = useState<ActiveRaffle | null>(null);
-  const [showTermsModal, setShowTermsModal] = useState(false);
   const [showReferrals, setShowReferrals] = useState(false);
 
   const referralLink = user ? `${window.location.origin}/auth?ref=${user.id}&tab=signup` : "";
@@ -48,26 +29,8 @@ export const ReferralCard = () => {
   useEffect(() => {
     if (user) {
       loadReferralStats();
-      loadActiveRaffle();
     }
   }, [user]);
-
-  const loadActiveRaffle = async () => {
-    try {
-      const { data, error } = await supabase
-        .from('raffles')
-        .select('id, title, end_date')
-        .eq('is_active', true)
-        .gt('end_date', new Date().toISOString())
-        .maybeSingle();
-
-      if (!error && data) {
-        setActiveRaffle(data);
-      }
-    } catch (error) {
-      console.error('Error loading active raffle:', error);
-    }
-  };
 
   const loadReferralStats = async () => {
     if (!user) return;
@@ -77,28 +40,12 @@ export const ReferralCard = () => {
       // Count referrals where current user is the referrer
       const { data: referrals, error } = await supabase
         .from('referrals')
-        .select('id, bonus_awarded')
+        .select('id')
         .eq('referrer_id', user.id);
 
       if (error) throw error;
 
-      // Get commission stats (converted referrals = actual paying customers)
-      const { data: commissions } = await supabase
-        .from('commissions')
-        .select('commission_amount_cents, status')
-        .eq('referrer_id', user.id);
-
-      const totalReferrals = referrals?.length || 0;
-      const bonusEntries = referrals?.filter(r => r.bonus_awarded).length || 0;
-      const convertedReferrals = commissions?.length || 0;
-      const pendingCommissions = commissions
-        ?.filter(c => c.status === 'pending')
-        .reduce((sum, c) => sum + c.commission_amount_cents, 0) || 0;
-      const paidCommissions = commissions
-        ?.filter(c => c.status === 'paid')
-        .reduce((sum, c) => sum + c.commission_amount_cents, 0) || 0;
-
-      setStats({ totalReferrals, bonusEntries, convertedReferrals, pendingCommissions, paidCommissions });
+      setStats({ totalReferrals: referrals?.length || 0 });
     } catch (error) {
       console.error('Error loading referral stats:', error);
     } finally {
@@ -107,11 +54,6 @@ export const ReferralCard = () => {
   };
 
   const copyToClipboard = async () => {
-    if (!hasAcceptedTerms) {
-      setShowTermsModal(true);
-      return;
-    }
-
     try {
       await navigator.clipboard.writeText(referralLink);
       setCopied(true);
@@ -123,16 +65,11 @@ export const ReferralCard = () => {
   };
 
   const shareLink = async () => {
-    if (!hasAcceptedTerms) {
-      setShowTermsModal(true);
-      return;
-    }
-
     if (navigator.share) {
       try {
         await navigator.share({
           title: "Join Sentinel DeFi",
-          text: "Learn DeFi with me! Sign up using my referral link and we both earn bonus raffle entries.",
+          text: "Join me on Sentinel DeFi and start your journey into decentralized finance education!",
           url: referralLink,
         });
       } catch (error) {
@@ -146,56 +83,7 @@ export const ReferralCard = () => {
     }
   };
 
-  const handleTermsAccepted = () => {
-    setShowTermsModal(false);
-    refreshTermsStatus();
-  };
-
   if (!user) return null;
-
-  // Show terms acceptance required state
-  if (!termsLoading && !hasAcceptedTerms) {
-    return (
-      <>
-        <Card className="p-4 sm:p-6 mb-6 sm:mb-8 bg-gradient-to-r from-accent/10 to-primary/10 border-accent/30">
-          <div className="flex flex-col gap-4">
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-accent/20 rounded-lg">
-                  <Gift className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">Invite Friends & Earn Rewards</h3>
-                  <p className="text-sm text-white/50">
-                    Accept the referral terms to get your unique link
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-white/5 rounded-lg border border-white/8">
-              <div className="flex items-center gap-3 flex-1">
-                <Shield className="w-5 h-5 text-primary flex-shrink-0" />
-                <p className="text-sm text-foreground/80">
-                  Review and accept our referral program terms to start earning commissions and bonus entries.
-                </p>
-              </div>
-              <Button onClick={() => setShowTermsModal(true)} className="w-full sm:w-auto">
-                <FileText className="w-4 h-4 mr-2" />
-                View Terms
-              </Button>
-            </div>
-          </div>
-        </Card>
-
-        <ReferralTermsModal
-          open={showTermsModal}
-          onOpenChange={setShowTermsModal}
-          onAccepted={handleTermsAccepted}
-        />
-      </>
-    );
-  }
 
   return (
     <>
@@ -207,16 +95,12 @@ export const ReferralCard = () => {
                 <Gift className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">Invite Friends & Earn Rewards</h3>
+                <h3 className="font-semibold text-foreground">Invite Friends & Grow the Community</h3>
                 <p className="text-sm text-white/50">
-                  {activeRaffle 
-                    ? `Share your referral link and earn bonus entries for "${activeRaffle.title}"`
-                    : "Share your referral link: bonus entries will be awarded when a raffle is active"
-                  }
+                  Share your link and help others start their DeFi journey.
                 </p>
               </div>
             </div>
-            
           </div>
 
           {/* Stats badges */}
@@ -224,25 +108,8 @@ export const ReferralCard = () => {
             <div className="flex flex-wrap items-center gap-2">
               <Badge variant="secondary" className="flex items-center gap-1">
                 <Users className="w-3 h-3" />
-                {stats.totalReferrals} Signup{stats.totalReferrals !== 1 ? 's' : ''}
+                {stats.totalReferrals} Friend{stats.totalReferrals !== 1 ? 's' : ''} Invited
               </Badge>
-              {stats.convertedReferrals > 0 && (
-                <Badge className="bg-awareness/20 text-awareness border-awareness/30 flex items-center gap-1">
-                  <UserCheck className="w-3 h-3" />
-                  {stats.convertedReferrals} Converted
-                </Badge>
-              )}
-              {(stats.pendingCommissions > 0 || stats.paidCommissions > 0) && (
-                <Badge className="bg-primary/20 text-primary border-primary/30 flex items-center gap-1">
-                  <DollarSign className="w-3 h-3" />
-                  ${((stats.pendingCommissions + stats.paidCommissions) / 100).toFixed(2)} Earned
-                </Badge>
-              )}
-              {stats.bonusEntries > 0 && (
-                <Badge className="bg-accent text-accent-foreground">
-                  +{stats.bonusEntries} bonus entries
-                </Badge>
-              )}
             </div>
           )}
 
@@ -293,26 +160,15 @@ export const ReferralCard = () => {
             </Collapsible>
           )}
 
-          {/* Terms accepted indicator */}
-          {acceptance && (
-            <div className="flex items-center justify-between text-xs text-white/50 border-t border-white/8 pt-3">
-              <Link to="/referral-terms" className="hover:text-primary transition-colors flex items-center gap-1">
+          {/* Direct link to terms if needed or remove if gone */}
+          <div className="flex items-center justify-between text-xs text-white/50 border-t border-white/8 pt-3">
+             <span className="flex items-center gap-1">
                 <FileText className="w-3 h-3" />
-                View Referral Terms
-              </Link>
-              <span>
-                Terms accepted: {new Date(acceptance.accepted_at).toLocaleDateString()}
+                Help us grow our community of DeFi researchers.
               </span>
-            </div>
-          )}
+          </div>
         </div>
       </Card>
-
-      <ReferralTermsModal
-        open={showTermsModal}
-        onOpenChange={setShowTermsModal}
-        onAccepted={handleTermsAccepted}
-      />
     </>
   );
 };

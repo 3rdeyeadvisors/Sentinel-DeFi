@@ -15,6 +15,9 @@ import { ReactionTime } from '@/components/mini-games/ReactionTime';
 import { PatternSequence } from '@/components/mini-games/PatternSequence';
 import { MathSprint } from '@/components/mini-games/MathSprint';
 import { IQTest } from '@/components/mini-games/IQTest';
+import { WordMemory } from '@/components/mini-games/WordMemory';
+import { StroopEffect } from '@/components/mini-games/StroopEffect';
+import { GridFocus } from '@/components/mini-games/GridFocus';
 import { CognitiveScience } from '@/components/mini-games/CognitiveScience';
 import { supabase } from '@/integrations/supabase/client';
 import SEO from '@/components/SEO';
@@ -73,6 +76,39 @@ const GAMES = [
     component: MathSprint,
     category: 'Agility',
     benefit: 'Enhances fluid intelligence and mental arithmetic speed.'
+  },
+  {
+    id: 'word-memory',
+    title: 'Word Chain',
+    description: 'Test your verbal memory with complex sequences.',
+    icon: Award,
+    color: 'text-orange-500',
+    bgColor: 'bg-orange-500/10',
+    component: WordMemory,
+    category: 'Memory',
+    benefit: 'Strengthens auditory loops and verbal processing capacity.'
+  },
+  {
+    id: 'stroop',
+    title: 'Stroop Test',
+    description: 'Overcome cognitive interference in this classic test.',
+    icon: Activity,
+    color: 'text-emerald-500',
+    bgColor: 'bg-emerald-500/10',
+    component: StroopEffect,
+    category: 'Attention',
+    benefit: 'Improves selective attention and executive control.'
+  },
+  {
+    id: 'grid',
+    title: 'Grid Focus',
+    description: 'Find numbers in sequence as the grid expands.',
+    icon: Target,
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-400/10',
+    component: GridFocus,
+    category: 'Focus',
+    benefit: 'Enhances peripheral vision and visual search speed.'
   },
   {
     id: 'iq',
