@@ -197,31 +197,6 @@ export function useCourseSEOAutomation(options: {
 }
 
 /**
- * Hook for product/store SEO automation
- */
-export function useProductSEOAutomation(options: {
-  title: string;
-  description?: string;
-  price: number;
-  category: string;
-  features?: string[];
-}) {
-  return useSEOAutomation({
-    title: options.title,
-    description: options.description,
-    price: options.price,
-    category: options.category,
-    tags: [
-      'DeFi tool',
-      'crypto product',
-      'financial calculator',
-      ...(options.features || [])
-    ],
-    autoOptimize: true
-  });
-}
-
-/**
  * Real-time SEO monitoring
  */
 export function useSEOMonitoring() {

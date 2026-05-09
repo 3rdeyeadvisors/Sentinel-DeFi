@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { supabase } from "@/integrations/supabase/client";
-import { User, CheckCircle2, Clock, DollarSign } from "lucide-react";
+import { User } from "lucide-react";
 import { format } from "date-fns";
 
 interface ReferredUser {
@@ -13,9 +13,6 @@ interface ReferredUser {
   display_name: string | null;
   avatar_url: string | null;
   signed_up_at: string;
-  has_paid: boolean;
-  commission_status: 'pending' | 'paid' | null;
-  commission_amount: number | null;
 }
 
 export const ReferredUsersList = () => {
@@ -56,25 +53,15 @@ export const ReferredUsersList = () => {
         .select('user_id, display_name, avatar_url')
         .in('user_id', referredUserIds);
 
-      // Get commissions for all referred users
-      const { data: commissions } = await supabase
-        .from('commissions')
-        .select('referred_user_id, status, commission_amount_cents')
-        .eq('referrer_id', user.id);
-
       // Combine the data
       const users: ReferredUser[] = referrals.map(referral => {
         const profile = profiles?.find(p => p.user_id === referral.referred_user_id);
-        const commission = commissions?.find(c => c.referred_user_id === referral.referred_user_id);
 
         return {
           id: referral.referred_user_id,
           display_name: profile?.display_name || null,
           avatar_url: profile?.avatar_url || null,
           signed_up_at: referral.created_at,
-          has_paid: !!commission,
-          commission_status: commission?.status as 'pending' | 'paid' | null,
-          commission_amount: commission?.commission_amount_cents || null,
         };
       });
 
@@ -107,7 +94,7 @@ export const ReferredUsersList = () => {
       <div className="text-center py-6 text-white/50">
         <User className="w-8 h-8 mx-auto mb-2 opacity-50" />
         <p className="text-sm">No referrals yet</p>
-        <p className="text-xs mt-1">Share your link to start earning!</p>
+        <p className="text-xs mt-1">Share your link to help grow the community!</p>
       </div>
     );
   }
@@ -132,41 +119,14 @@ export const ReferredUsersList = () => {
               <span className="font-medium text-foreground truncate">
                 {referredUser.display_name || "Anonymous User"}
               </span>
-              {referredUser.has_paid ? (
-                <Badge className="bg-awareness/20 text-awareness border-awareness/30 text-xs">
-                  <CheckCircle2 className="w-3 h-3 mr-1" />
-                  Subscribed
-                </Badge>
-              ) : (
-                <Badge variant="secondary" className="text-xs">
-                  Signed Up
-                </Badge>
-              )}
+              <Badge variant="secondary" className="text-xs">
+                Joined
+              </Badge>
             </div>
             <p className="text-xs text-white/50">
               {format(new Date(referredUser.signed_up_at), "MMM d, yyyy")}
             </p>
           </div>
-
-          {referredUser.has_paid && referredUser.commission_amount && (
-            <div className="text-right">
-              <div className="flex items-center gap-1 text-awareness font-medium text-sm">
-                <DollarSign className="w-3 h-3" />
-                {(referredUser.commission_amount / 100).toFixed(2)}
-              </div>
-              {referredUser.commission_status === 'pending' ? (
-                <span className="text-xs text-white/50 flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
-                  Pending
-                </span>
-              ) : (
-                <span className="text-xs text-awareness flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3" />
-                  Paid
-                </span>
-              )}
-            </div>
-          )}
         </Link>
       ))}
     </div>

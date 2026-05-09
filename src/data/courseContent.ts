@@ -970,64 +970,6 @@ With proper education, security practices, and gradual exposure, DeFi can be a v
           }
         ]
       },
-      {
-        id: "5-exam",
-        title: "Course 5 Final Exam: Vault Mastery",
-        type: "interactive",
-        duration: 60,
-        content: {
-          text: `# Final Exam: Vault Mastery
-
-Prove your expertise in DeFi vaults and managed investing.
-
-### Exam Details:
-• **Questions**: 33
-• **Passing Score**: 80%
-• **Time Limit**: 60 minutes`,
-          quiz: {
-            id: "exam-5",
-            title: "Vault Mastery Final Exam",
-            passingScore: 80,
-            timeLimit: 60,
-            maxAttempts: 3,
-            questions: [
-              { id: "q5-e1", question: "What is a DeFi vault?", type: "single", options: ["A physical safe", "An automated investment smart contract", "A type of token", "A centralized exchange"], correctAnswers: [1], points: 3 },
-              { id: "q5-e2", question: "What are 'Vault Shares'?", type: "single", options: ["Stock in a company", "Tokens representing your portion of the vault's assets", "Reward tokens only", "A type of stablecoin"], correctAnswers: [1], points: 3 },
-              { id: "q5-e3", question: "True or False: Vaults automate complex strategies like compounding and rebalancing.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
-              { id: "q5-e4", question: "Which fee is typically charged based on the profits earned by the vault?", type: "single", options: ["Management Fee", "Performance Fee", "Withdrawal Fee", "Deposit Fee"], correctAnswers: [1], points: 3 },
-              { id: "q5-e5", question: "What is 'TVL' in the context of a vault?", type: "single", options: ["Total Value Locked", "Token Volume Limit", "Total Variable Liquidity", "Transfer Value Log"], correctAnswers: [0], points: 3 },
-              { id: "q5-e6", question: "Which type of vault is designed to find the best yields across different protocols?", type: "single", options: ["Governance vault", "Yield Aggregator", "Leveraged vault", "NFT vault"], correctAnswers: [1], points: 3 },
-              { id: "q5-e7", question: "What is the benefit of 'Auto-Compounding'?", type: "single", options: ["It saves on gas fees and maximizes growth", "It makes the token price go up", "It reduces security risk", "It increases withdrawal fees"], correctAnswers: [0], points: 3 },
-              { id: "q5-e8", question: "True or False: All vaults have a 1-year lock-up period.", type: "true-false", options: ["True", "False"], correctAnswers: [1], points: 3 },
-              { id: "q5-e9", question: "Which firm is a well-known DeFi security auditor?", type: "single", options: ["Trail of Bits", "OpenZeppelin", "Quantstamp", "All of the above"], correctAnswers: [3], points: 3 },
-              { id: "q5-e10", question: "What is 'Smart Contract Risk'?", type: "single", options: ["The risk of the contract being too smart", "The risk of bugs or exploits in the vault code", "Market volatility", "Gas fee spikes"], correctAnswers: [1], points: 3 },
-              { id: "q5-e11", question: "What is a 'Strategist'?", type: "single", options: ["An AI bot", "The person or team that designs the vault's investment logic", "A regular user", "A tax accountant"], correctAnswers: [1], points: 3 },
-              { id: "q5-e12", question: "Which of these is a popular yield aggregator protocol?", type: "single", options: ["Yearn Finance", "Beefy Finance", "Badger DAO", "All of the above"], correctAnswers: [3], points: 3 },
-              { id: "q5-e13", question: "True or False: You should check if a vault is open-source before depositing.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
-              { id: "q5-e14", question: "What is an 'Index Vault'?", type: "single", options: ["A vault for books", "A vault that holds a basket of different tokens", "A vault with only one token", "A vault for stablecoins only"], correctAnswers: [1], points: 3 },
-              { id: "q5-e15", question: "What does 'Harvesting' mean in a vault?", type: "single", options: ["Collecting rewards and reinvesting them", "Closing the vault", "Withdrawing all funds", "A type of hack"], correctAnswers: [0], points: 3 },
-              { id: "q5-e16", question: "Which of these is a sign of a sustainable APY?", type: "single", options: ["1,000,000% APY", "APY matching market lending/trading rates", "No explanation of where yield comes from", "Guaranteed 10% daily"], correctAnswers: [1], points: 3 },
-              { id: "q5-e17", question: "What is the 'Management Fee' used for?", type: "single", options: ["Paying for protocol maintenance and strategists", "Buying back tokens", "Paying gas fees for users", "Nothing, it's a scam"], correctAnswers: [0], points: 3 },
-              { id: "q5-e18", question: "True or False: High TVL always means a vault is 100% safe.", type: "true-false", options: ["True", "False"], correctAnswers: [1], points: 3 },
-              { id: "q5-e19", question: "What is 'Liquidity Risk'?", type: "single", options: ["Risk of too much water", "Risk of not being able to withdraw assets due to low pool liquidity", "Risk of price going up", "Risk of low gas fees"], correctAnswers: [1], points: 3 },
-              { id: "q5-e20", question: "Which vault would be best for someone who wants exposure to ETH yield?", type: "single", options: ["USDC vault", "ETH yield vault", "BTC vault", "Stablecoin vault"], correctAnswers: [1], points: 3 },
-              { id: "q5-e21", question: "What is a 'Stablecoin'?", type: "single", options: ["A volatile asset", "An asset pegged to a stable value like $1 USD", "A fast token", "A mining token"], correctAnswers: [1], points: 3 },
-              { id: "q5-e22", question: "True or False: DeFi vaults can offer managed investment strategies.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
-              { id: "q5-e23", question: "What is the role of a 'Governance Token' in a vault protocol?", type: "single", options: ["Paying for gas", "Voting on protocol changes and strategies", "Mining", "Storing data"], correctAnswers: [1], points: 3 },
-              { id: "q5-e24", question: "What is 'Slippage'?", type: "single", options: ["A wallet error", "The difference between expected and actual price in a trade", "A type of vault", "A gas refund"], correctAnswers: [1], points: 3 },
-              { id: "q5-e25", question: "What should you do if a vault has no audit?", type: "single", options: ["Invest everything", "Approach with extreme caution or avoid", "Assume it's safe", "Tell all your friends to invest"], correctAnswers: [1], points: 3 },
-              { id: "q5-e26", question: "What is 'Backtesting'?", type: "single", options: ["Testing a strategy against historical data", "Testing a strategy in the future", "Not testing at all", "Testing with real money first"], correctAnswers: [0], points: 3 },
-              { id: "q5-e27", question: "Which of these is a 'Red Flag'?", type: "single", options: ["Transparent team", "Anonymous team with no track record", "Detailed documentation", "Active community"], correctAnswers: [1], points: 3 },
-              { id: "q5-e28", question: "True or False: Impermanent Loss can affect vaults that use liquidity pools.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
-              { id: "q5-e29", question: "What is the 'Withdrawal Fee' designed to do?", type: "single", options: ["Prevent 'vampire attacks' and frequent hopping", "Make the team rich", "Pay for gas", "Discourage users from ever leaving"], correctAnswers: [0], points: 3 },
-              { id: "q5-e30", question: "What is 'APY'?", type: "single", options: ["Annual Percentage Yield", "Actual Profit Yearly", "Asset Price Yield", "Average Profit Yearly"], correctAnswers: [0], points: 3 },
-              { id: "q5-e31", question: "True or False: You can track vault performance on most DeFi dashboards.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
-              { id: "q5-e32", question: "What is the main benefit of using a vault over manual management?", type: "single", options: ["Higher risk", "Automation, efficiency, and expert strategies", "It's free", "No gas fees ever"], correctAnswers: [1], points: 3 },
-              { id: "q5-e33", question: "What is the golden rule of DeFi investing?", type: "single", options: ["Follow the hype", "Only invest what you can afford to lose", "Never take profits", "Ignore security"], correctAnswers: [1], points: 4 }
-            ]
-          }
-        }
-      }
     ]
   },
   // Add content for other courses...
@@ -3848,14 +3790,14 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 ✅ **No need to constantly** monitor and adjust
 
 #### What You Can Do:
-• **Deposit into vaults**: let strategies run automatically
+• **Deposit into protocol vaults**: let strategies run automatically
 • **Earn optimized yields**: often better than DIY approaches
 • **Set and forget**: minimal ongoing management required
 
 #### Getting Started:
 1. Visit yearn.finance
-2. Browse available vaults
-3. Start with stablecoin vaults for lower risk
+2. Research available protocol vaults
+3. Start with stablecoin protocol vaults for lower risk
 4. Deposit tokens and let automation work
 5. Check performance periodically
 
@@ -3930,7 +3872,7 @@ The DeFi space can be overwhelming with hundreds of protocols. Here are the most
 **Goal**: Find your preferred approach and scale appropriately
 
 • **Week 9 to 10**: Try Layer 2 solutions (Polygon or Arbitrum)
-• **Week 11 to 12**: Experiment with Yearn vaults or similar automation
+• **Week 11 to 12**: Experiment with Yearn yield aggregators or similar automation
 • **Strategy**: Focus on what worked best from first 60 days
 
 **Total Investment**: Based on comfort level and results
@@ -4145,7 +4087,7 @@ Your first DeFi portfolio is primarily an **education vehicle** that happens to 
 #### Allocation:
 • **40% Curve 3pool** (USDC/DAI/USDT)
 • **30% Aave USDC** lending
-• **20% Yearn USDC** vault
+• **20% Yearn USDC** yield aggregator
 • **10% experimental**
 
 #### Advantages:
@@ -6060,7 +6002,7 @@ Demonstrate your ability to manage and grow a DeFi portfolio.
       }
     ]
   },
-  {
+    {
     id: 5,
     title: "Understanding DeFi Vaults: Your Complete Guide to Managed Investing",
     description: "Learn what DeFi vaults are, how they work, and how to choose the right vault for your investment goals.",
@@ -7082,10 +7024,68 @@ Choosing a vault isn't just about finding the highest APY. It's about finding th
             type: "pdf"
           }
         ]
+      },
+      {
+        id: "5-exam",
+        title: "Course 5 Final Exam: Vault Mastery",
+        type: "interactive",
+        duration: 60,
+        content: {
+          text: `# Final Exam: Vault Mastery
+
+Prove your expertise in DeFi vaults and managed investing.
+
+### Exam Details:
+• **Questions**: 33
+• **Passing Score**: 80%
+• **Time Limit**: 60 minutes`,
+          quiz: {
+            id: "exam-5",
+            title: "Vault Mastery Final Exam",
+            passingScore: 80,
+            timeLimit: 60,
+            maxAttempts: 3,
+            questions: [
+              { id: "q5-e1", question: "What is a DeFi vault?", type: "single", options: ["A physical safe", "An automated investment smart contract", "A type of token", "A centralized exchange"], correctAnswers: [1], points: 3 },
+              { id: "q5-e2", question: "What are 'Vault Shares'?", type: "single", options: ["Stock in a company", "Tokens representing your portion of the vault's assets", "Reward tokens only", "A type of stablecoin"], correctAnswers: [1], points: 3 },
+              { id: "q5-e3", question: "True or False: Vaults automate complex strategies like compounding and rebalancing.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
+              { id: "q5-e4", question: "Which fee is typically charged based on the profits earned by the vault?", type: "single", options: ["Management Fee", "Performance Fee", "Withdrawal Fee", "Deposit Fee"], correctAnswers: [1], points: 3 },
+              { id: "q5-e5", question: "What is 'TVL' in the context of a vault?", type: "single", options: ["Total Value Locked", "Token Volume Limit", "Total Variable Liquidity", "Transfer Value Log"], correctAnswers: [0], points: 3 },
+              { id: "q5-e6", question: "Which type of vault is designed to find the best yields across different protocols?", type: "single", options: ["Governance vault", "Yield Aggregator", "Leveraged vault", "NFT vault"], correctAnswers: [1], points: 3 },
+              { id: "q5-e7", question: "What is the benefit of 'Auto-Compounding'?", type: "single", options: ["It saves on gas fees and maximizes growth", "It makes the token price go up", "It reduces security risk", "It increases withdrawal fees"], correctAnswers: [0], points: 3 },
+              { id: "q5-e8", question: "True or False: All vaults have a 1-year lock-up period.", type: "true-false", options: ["True", "False"], correctAnswers: [1], points: 3 },
+              { id: "q5-e9", question: "Which firm is a well-known DeFi security auditor?", type: "single", options: ["Trail of Bits", "OpenZeppelin", "Quantstamp", "All of the above"], correctAnswers: [3], points: 3 },
+              { id: "q5-e10", question: "What is 'Smart Contract Risk'?", type: "single", options: ["The risk of the contract being too smart", "The risk of bugs or exploits in the vault code", "Market volatility", "Gas fee spikes"], correctAnswers: [1], points: 3 },
+              { id: "q5-e11", question: "What is a 'Strategist'?", type: "single", options: ["An AI bot", "The person or team that designs the vault's investment logic", "A regular user", "A tax accountant"], correctAnswers: [1], points: 3 },
+              { id: "q5-e12", question: "Which of these is a popular yield aggregator protocol?", type: "single", options: ["Yearn Finance", "Beefy Finance", "Badger DAO", "All of the above"], correctAnswers: [3], points: 3 },
+              { id: "q5-e13", question: "True or False: You should check if a vault is open-source before depositing.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
+              { id: "q5-e14", question: "What is an 'Index Vault'?", type: "single", options: ["A vault for books", "A vault that holds a basket of different tokens", "A vault with only one token", "A vault for stablecoins only"], correctAnswers: [1], points: 3 },
+              { id: "q5-e15", question: "What does 'Harvesting' mean in a vault?", type: "single", options: ["Collecting rewards and reinvesting them", "Closing the vault", "Withdrawing all funds", "A type of hack"], correctAnswers: [0], points: 3 },
+              { id: "q5-e16", question: "Which of these is a sign of a sustainable APY?", type: "single", options: ["1,000,000% APY", "APY matching market lending/trading rates", "No explanation of where yield comes from", "Guaranteed 10% daily"], correctAnswers: [1], points: 3 },
+              { id: "q5-e17", question: "What is the 'Management Fee' used for?", type: "single", options: ["Paying for protocol maintenance and strategists", "Buying back tokens", "Paying gas fees for users", "Nothing, it's a scam"], correctAnswers: [0], points: 3 },
+              { id: "q5-e18", question: "True or False: High TVL always means a vault is 100% safe.", type: "true-false", options: ["True", "False"], correctAnswers: [1], points: 3 },
+              { id: "q5-e19", question: "What is 'Liquidity Risk'?", type: "single", options: ["Risk of too much water", "Risk of not being able to withdraw assets due to low pool liquidity", "Risk of price going up", "Risk of low gas fees"], correctAnswers: [1], points: 3 },
+              { id: "q5-e20", question: "Which vault would be best for someone who wants exposure to ETH yield?", type: "single", options: ["USDC vault", "ETH yield vault", "BTC vault", "Stablecoin vault"], correctAnswers: [1], points: 3 },
+              { id: "q5-e21", question: "What is a 'Stablecoin'?", type: "single", options: ["A volatile asset", "An asset pegged to a stable value like $1 USD", "A fast token", "A mining token"], correctAnswers: [1], points: 3 },
+              { id: "q5-e22", question: "True or False: DeFi vaults can offer managed investment strategies.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
+              { id: "q5-e23", question: "What is the role of a 'Governance Token' in a vault protocol?", type: "single", options: ["Paying for gas", "Voting on protocol changes and strategies", "Mining", "Storing data"], correctAnswers: [1], points: 3 },
+              { id: "q5-e24", question: "What is 'Slippage'?", type: "single", options: ["A wallet error", "The difference between expected and actual price in a trade", "A type of vault", "A gas refund"], correctAnswers: [1], points: 3 },
+              { id: "q5-e25", question: "What should you do if a vault has no audit?", type: "single", options: ["Invest everything", "Approach with extreme caution or avoid", "Assume it's safe", "Tell all your friends to invest"], correctAnswers: [1], points: 3 },
+              { id: "q5-e26", question: "What is 'Backtesting'?", type: "single", options: ["Testing a strategy against historical data", "Testing a strategy in the future", "Not testing at all", "Testing with real money first"], correctAnswers: [0], points: 3 },
+              { id: "q5-e27", question: "Which of these is a 'Red Flag'?", type: "single", options: ["Transparent team", "Anonymous team with no track record", "Detailed documentation", "Active community"], correctAnswers: [1], points: 3 },
+              { id: "q5-e28", question: "True or False: Impermanent Loss can affect vaults that use liquidity pools.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
+              { id: "q5-e29", question: "What is the 'Withdrawal Fee' designed to do?", type: "single", options: ["Prevent 'vampire attacks' and frequent hopping", "Make the team rich", "Pay for gas", "Discourage users from ever leaving"], correctAnswers: [0], points: 3 },
+              { id: "q5-e30", question: "What is 'APY'?", type: "single", options: ["Annual Percentage Yield", "Actual Profit Yearly", "Asset Price Yield", "Average Profit Yearly"], correctAnswers: [0], points: 3 },
+              { id: "q5-e31", question: "True or False: You can track vault performance on most DeFi dashboards.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
+              { id: "q5-e32", question: "What is the main benefit of using a vault over manual management?", type: "single", options: ["Higher risk", "Automation, efficiency, and expert strategies", "It's free", "No gas fees ever"], correctAnswers: [1], points: 3 },
+              { id: "q5-e33", question: "What is the golden rule of DeFi investing?", type: "single", options: ["Follow the hype", "Only invest what you can afford to lose", "Never take profits", "Ignore security"], correctAnswers: [1], points: 4 }
+            ]
+          }
+        }
       }
     ]
   },
-  {
+{
     id: 6,
     title: "Tokenizing Real World Assets: From Traditional Finance to Blockchain",
     description: "Discover how blockchain technology is transforming real estate, treasuries, commodities, and infrastructure into tradeable digital tokens. Learn about fractional ownership, evaluate RWA protocols, and understand the regulatory landscape shaping the $30+ billion tokenization market. This course was created based on community voting through our Platform Roadmap.",
@@ -8711,7 +8711,7 @@ Prove your knowledge of Real World Asset tokenization and its impact on finance.
               { id: "q6-e20", question: "True or False: Tokenization removes the need for all legal documents.", type: "true-false", options: ["True", "False"], correctAnswers: [1], points: 3 },
               { id: "q6-e21", question: "What is 'Market Transparency'?", type: "single", options: ["Hidden transactions", "Publicly verifiable ownership and transaction data", "Anonymous trading only", "Closed-door meetings"], correctAnswers: [1], points: 3 },
               { id: "q6-e22", question: "Which of these is a risk in RWA tokenization?", type: "single", options: ["Increased liquidity", "Regulatory changes and legal uncertainty", "Lower entry costs", "Faster settlement"], correctAnswers: [1], points: 3 },
-              { id: "q6-e23", question: "What is 'Tokenized Gold'?", type: "single", options: ["Digital representation of physical gold held in a vault", "Fake gold", "Gold-colored tokens", "A type of Bitcoin"], correctAnswers: [0], points: 3 },
+              { id: "q6-e23", question: "What is 'Tokenized Gold'?", type: "single", options: ["Digital representation of physical gold held in a secure location", "Fake gold", "Gold-colored tokens", "A type of Bitcoin"], correctAnswers: [0], points: 3 },
               { id: "q6-e24", question: "True or False: The RWA market has grown significantly since 2024.", type: "true-false", options: ["True", "False"], correctAnswers: [0], points: 3 },
               { id: "q6-e25", question: "What is the role of a 'Custodian' in RWA?", type: "single", options: ["Building the website", "Safekeeping the physical/off-chain assets", "Trading the tokens", "Marketing the project"], correctAnswers: [1], points: 3 },
               { id: "q6-e26", question: "Which region has a clear regulatory framework called 'MiCA'?", type: "single", options: ["United States", "European Union", "Singapore", "Japan"], correctAnswers: [1], points: 3 },

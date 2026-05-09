@@ -344,9 +344,9 @@ export const useOfflineData = () => {
         '/blog',
         '/resources',
         '/philosophy',
-        '/raffles',
-        '/store',
-        '/dashboard'
+        '/dashboard',
+        '/mini-games',
+        '/leaderboard'
       ];
       
       await preCachePages(essentialPages);

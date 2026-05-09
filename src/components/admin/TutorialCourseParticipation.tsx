@@ -41,14 +41,13 @@ export const TutorialCourseParticipation = () => {
     { id: 'dao-participation', title: 'DAO Participation & Governance', category: 'advanced' }
   ];
 
-  // All 6 courses - updated to match courseContent.ts
+  // All 5 courses - updated to match courseContent.ts
   const courseDefinitions = [
     { id: '1', title: 'DeFi Foundations' },
     { id: '2', title: 'Staying Safe in DeFi' },
     { id: '3', title: 'Earning with DeFi' },
     { id: '4', title: 'Managing Your Own DeFi Portfolio' },
-    { id: '5', title: 'Understanding DeFi Vaults' },
-    { id: '6', title: 'Tokenizing Real World Assets' }
+    { id: '5', title: 'Tokenizing Real World Assets' }
   ];
 
   useEffect(() => {

@@ -8,13 +8,8 @@ import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { AICommandBar } from "@/components/admin/AICommandBar";
 import { OverviewPanel } from "@/components/admin/OverviewPanel";
 import { SystemHealth } from "@/components/admin/SystemHealth";
-import { OrdersManager } from "@/components/admin/OrdersManager";
-import { EmailHub } from "@/components/admin/EmailHub";
 import { UserManager } from "@/components/admin/UserManager";
-import { ProductManager } from "@/components/admin/ProductManager";
-import { RaffleManager } from "@/components/admin/RaffleManager";
 import { TutorialCourseParticipation } from "@/components/admin/TutorialCourseParticipation";
-import { CommissionsManager } from "@/components/admin/CommissionsManager";
 import { RoadmapManager } from "@/components/admin/RoadmapManager";
 import { SEOSettingsManager } from "@/components/admin/SEOSettingsManager";
 import { SiteControlsManager } from "@/components/admin/SiteControlsManager";
@@ -87,12 +82,7 @@ const AdminDashboard = () => {
     switch (activeSection) {
       case "overview":      return <OverviewPanel />;
       case "health":        return <SystemHealth />;
-      case "email":         return <EmailHub />;
       case "users":         return <UserManager />;
-      case "orders":        return <OrdersManager />;
-      case "products":      return <ProductManager />;
-      case "raffles":       return <RaffleManager />;
-      case "commissions":   return <CommissionsManager />;
       case "participation": return <TutorialCourseParticipation />;
       case "roadmap":       return <RoadmapManager />;
       case "seo":           return <SEOSettingsManager />;

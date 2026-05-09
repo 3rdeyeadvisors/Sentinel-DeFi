@@ -2,21 +2,19 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { 
-  Menu, X, LogIn, LogOut, User, ShoppingCart, ChevronDown, 
-  BookOpen, BarChart3, Package, Gift,
+  Menu, X, LogIn, LogOut, User, ChevronDown,
+  BookOpen, BarChart3,
   Lightbulb, GraduationCap, Newspaper, FolderOpen,
   Mail, Map, Brain, Zap, Trophy, Building
 } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useProfile } from "@/hooks/useProfile";
 import { useToast } from "@/hooks/use-toast";
-import { useCart } from "@/contexts/CartContext";
 
 import { isAdminEmail } from "@/lib/admin";
 import { usePageVisibility } from "@/hooks/usePageVisibility";
 
 const Navigation = () => {
-  const { itemCount } = useCart();
   const { isPageVisible } = usePageVisibility();
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -66,15 +64,11 @@ const Navigation = () => {
     {
       label: "Community",
       children: [
-        { path: "/raffles", label: "Raffles", description: "Enter to win by completing educational tasks" },
-        { path: "/earn", label: "Earn", description: "Points, rewards, and referral commissions" },
         { path: "/roadmap", label: "Roadmap", description: "Vote on what gets built next" },
-        { path: "/raffle-history", label: "Raffle History", description: "Past winners and prize distributions" },
         { path: "/leaderboard", label: "Leaderboard", description: "Community rankings and point leaders" },
         { path: "/analytics", label: "Analytics", description: "Platform data and market insights" },
       ].filter(child => isPageVisible(child.path))
     },
-    { label: "Store", path: "/store" },
     { label: "Philosophy", path: "/philosophy" },
     { label: "For Professionals", path: "/institutional" },
   ].filter(item => {
@@ -137,15 +131,6 @@ const Navigation = () => {
           </div>
 
           <div className="flex items-center gap-2 md:gap-4">
-            <Link to="/cart" className="relative p-2 text-white/70 hover:text-violet-400 transition-colors">
-              <ShoppingCart className="w-5 h-5" />
-              {itemCount > 0 && (
-                <span className="absolute top-1 right-1 bg-violet-600 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold border border-black">
-                  {itemCount}
-                </span>
-              )}
-            </Link>
-
             <div className="hidden md:flex items-center gap-3">
               {user ? (
                 <>
@@ -216,7 +201,6 @@ const Navigation = () => {
             {[
               { path: "/courses", label: "Courses", icon: BookOpen, iconColor: "text-violet-400", bgColor: "bg-violet-600/20", borderColor: "border-violet-500/30" },
               { path: "/tutorials", label: "Tutorials", icon: GraduationCap, iconColor: "text-white/60", bgColor: "bg-white/5", borderColor: "border-white/10" },
-              { path: "/store", label: "Store", icon: Package, iconColor: "text-white/60", bgColor: "bg-white/5", borderColor: "border-white/10", isTopLevel: true },
             ].filter(item => isPageVisible(item.path)).map((item) => (
               <Link
                 key={item.path}
@@ -234,8 +218,6 @@ const Navigation = () => {
               { path: "/blog", label: "Blog", icon: Newspaper },
               { path: "/resources", label: "Resources", icon: FolderOpen },
               { path: "/mini-games", label: "Brain Games", icon: Brain },
-              { path: "/raffles", label: "Raffles", icon: Gift },
-              { path: "/earn", label: "Earn", icon: Zap },
               { path: "/roadmap", label: "Roadmap", icon: Map },
               { path: "/leaderboard", label: "Leaderboard", icon: Trophy },
               { path: "/analytics", label: "Analytics", icon: BarChart3 },

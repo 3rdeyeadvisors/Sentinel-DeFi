@@ -28,7 +28,6 @@ export function detectPageType(url: string, title?: string): 'article' | 'course
   if (path === '/' || path === '/index') return 'homepage';
   if (path.includes('/blog/') || path.includes('/articles/')) return 'article';
   if (path.includes('/course') || path.includes('/tutorial')) return 'course';
-  if (path.includes('/store/') || path.includes('/product/')) return 'product';
   
   // Detect by title patterns
   if (title?.toLowerCase().includes('course') || title?.toLowerCase().includes('tutorial')) return 'course';
@@ -78,7 +77,7 @@ export function generateKeywords(pageType: string, title: string, url: string): 
   const typeKeywords = {
     article: ['DeFi blog', 'crypto insights', 'blockchain analysis', 'DeFi news'],
     course: ['DeFi course', 'crypto education', 'DeFi training', 'blockchain learning'],
-    product: ['DeFi tools', 'crypto calculator', 'DeFi guide', 'financial product'],
+    product: ['DeFi tools', 'crypto guidance', 'financial product'],
     page: ['DeFi education', 'financial consciousness', 'crypto guidance'],
     homepage: ['DeFi platform', 'crypto education hub', 'financial sovereignty']
   };

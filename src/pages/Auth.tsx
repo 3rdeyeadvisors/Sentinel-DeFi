@@ -187,48 +187,20 @@ const Auth = () => {
           variant: "destructive",
         });
       } else {
-        // If there's a referrer, create referral record after successful signup
-        // The database trigger (award_referral_ticket) handles ticket creation automatically
+        // Record the referral without any raffle association
         if (referrerId && data.user) {
           try {
-            // Get active raffle (must have future end_date)
-            const { data: activeRaffle } = await supabase
-              .from('raffles')
-              .select('id')
-              .eq('is_active', true)
-              .gt('end_date', new Date().toISOString())
-              .maybeSingle();
+            const { error: refInsertError } = await supabase
+              .from('referrals')
+              .insert({
+                referrer_id: referrerId,
+                referred_user_id: data.user.id,
+                raffle_id: null,
+                bonus_awarded: false,
+              });
 
-            if (activeRaffle) {
-              // Create referral record - the trigger handles ticket creation
-              const { error: refInsertError } = await supabase
-                .from('referrals')
-                .insert({
-                  referrer_id: referrerId,
-                  referred_user_id: data.user.id,
-                  raffle_id: activeRaffle.id,
-                  bonus_awarded: true,
-                });
-
-              if (refInsertError) {
-                console.error('Error inserting referral:', refInsertError);
-              } else {
-              }
-            } else {
-              // No active raffle, still record the referral without raffle association
-              const { error: refInsertError } = await supabase
-                .from('referrals')
-                .insert({
-                  referrer_id: referrerId,
-                  referred_user_id: data.user.id,
-                  raffle_id: null,
-                  bonus_awarded: false,
-                });
-
-              if (refInsertError) {
-                console.error('Error inserting referral (no active raffle):', refInsertError);
-              } else {
-              }
+            if (refInsertError) {
+              console.error('Error recording referral:', refInsertError);
             }
           } catch (refError) {
             console.error('Error in referral process:', refError);
@@ -447,7 +419,7 @@ const Auth = () => {
                 />
               </div>
             </div>
-            <Button type="submit" disabled={loading} className="font-body bg-violet-600 hover:bg-violet-500 text-white rounded-xl py-6 font-medium transition-all w-full">
+            <Button type="submit" disabled={loading} className="font-body bg-violet-600 hover:bg-violet-500 text-white rounded-xl py-6 font-medium transition-all w-full text-base" disabled={loading}>
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Update Password
             </Button>

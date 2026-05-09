@@ -346,10 +346,10 @@ const AdvancedDefiProtocolsTutorial = () => {
         ],
         strategiesGuide: [
           {
-            strategy: "Covered Calls (Ribbon Theta Vaults)",
+            strategy: "Covered Calls (Ribbon Theta Strategies)",
             description: "Earn premium by selling call options on holdings",
             when: "Neutral to slightly bullish market outlook",
-            howItWorks: "Deposit ETH → Vault sells weekly calls → Earn premium",
+            howItWorks: "Deposit ETH → Strategy sells weekly calls → Earn premium",
             maxGain: "Premium received + any appreciation up to strike",
             maxLoss: "Opportunity cost if price rises above strike",
             suitability: "Conservative investors wanting steady income"
@@ -514,8 +514,8 @@ const AdvancedDefiProtocolsTutorial = () => {
           },
           {
             approach: "Automated Strategies",
-            description: "Use aggregators and vaults for optimized yields",
-            example: "Yearn vault automatically moves funds to highest yield",
+            description: "Use aggregators for optimized yields",
+            example: "Yield aggregator automatically moves funds to highest yield",
             complexity: "Low",
             benefits: ["Professional management", "Gas optimization", "Automatic rebalancing"],
             risks: ["Strategy risk", "Fee drag", "Limited control"]
