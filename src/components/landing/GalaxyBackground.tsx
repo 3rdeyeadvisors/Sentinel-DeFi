@@ -10,9 +10,9 @@ const GalaxyBackground = () => {
       <div className="absolute top-1/2 left-1/2 w-[50vw] h-[50vh] rounded-full bg-indigo-700/6 blur-[100px] -translate-x-1/2 -translate-y-1/2 animate-nebula-3 hidden md:block" />
 
       {/* Star layers - Single layer on mobile for performance */}
-      <div className="stars-layer-1 absolute inset-0 animate-drift-1" />
-      <div className="stars-layer-2 absolute inset-0 animate-drift-2 hidden md:block" />
-      <div className="stars-layer-3 absolute inset-0 animate-drift-3 hidden lg:block" />
+      <div className="stars-layer-1 absolute inset-0 animate-drift-1 [will-change:transform]" />
+      <div className="stars-layer-2 absolute inset-0 animate-drift-2 hidden md:block [will-change:transform]" />
+      <div className="stars-layer-3 absolute inset-0 animate-drift-3 hidden lg:block [will-change:transform]" />
     </div>
   );
 };

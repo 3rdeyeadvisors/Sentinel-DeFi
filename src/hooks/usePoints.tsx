@@ -6,6 +6,7 @@ import {
   getCurrentMonthUTC,
   getLocalDate,
   getDaysRemainingInMonth,
+  getDaysRemainingInWeek,
   getStartOfTodayUTC,
   getEndOfTodayUTC
 } from '@/lib/date-utils';
@@ -226,8 +227,9 @@ export const usePoints = (period: LeaderboardPeriod = 'monthly') => {
     },
   });
 
-  // Days remaining in current month (always at least 1 on the final day so the card never shows 0)
+  // Days remaining in current period (always at least 1 on the final day so the card never shows 0)
   const getDaysRemaining = () => {
+    if (period === 'weekly') return getDaysRemainingInWeek();
     return getDaysRemainingInMonth();
   };
 

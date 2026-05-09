@@ -149,6 +149,7 @@ export const usePullToRefresh = ({
 
     const handleTouchCancel = () => {
       isPullingRef.current = false;
+      isCarouselTouchRef.current = false;
       isHorizontalScrollRef.current = false;
       setPullDistance(0);
     };
