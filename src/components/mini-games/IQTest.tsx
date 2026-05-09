@@ -8,6 +8,7 @@ import { shareResultsViaEmail } from '@/lib/email';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { useAchievementSounds } from '@/hooks/useAchievementSounds';
 import { toast } from 'sonner';
+import { GameIntro } from './GameIntro';
 
 interface IQQuestion {
   id: number;
@@ -132,6 +133,7 @@ export const IQTest: React.FC<{ onComplete: (iq: number, score: number) => void 
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [isFinished, setIsFinished] = useState(false);
+  const [isStarted, setIsStarted] = useState(false);
   const [isSending, setIsSending] = useState(false);
 
   const handleAnswer = (optionIndex: number) => {
@@ -202,6 +204,23 @@ export const IQTest: React.FC<{ onComplete: (iq: number, score: number) => void 
     });
     setIsSending(false);
   };
+
+  if (!isStarted) {
+    return (
+      <GameIntro
+        title="IQ Assessment"
+        description="A comprehensive evaluation of your logical, mathematical, and spatial reasoning skills."
+        icon={Brain}
+        instructions={[
+          "There are 15 questions in total.",
+          "Questions cover patterns, logic, math, and spatial awareness.",
+          "Think carefully before selecting an answer.",
+          "Your estimated IQ will be calculated at the end."
+        ]}
+        onStart={() => setIsStarted(true)}
+      />
+    );
+  }
 
   if (isFinished) {
     const finalIQ = 70 + (answers.filter((ans, idx) => ans === QUESTIONS[idx].correct).length * 5.33);

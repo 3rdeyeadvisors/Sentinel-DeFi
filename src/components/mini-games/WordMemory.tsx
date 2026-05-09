@@ -5,6 +5,7 @@ import { Progress } from '@/components/ui/progress';
 import { Brain, Trophy, Timer, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAchievementSounds } from '@/hooks/useAchievementSounds';
+import { GameIntro } from './GameIntro';
 
 const WORDS = [
   "CRYPTO", "BLOCK", "CHAIN", "TOKEN", "STAKE", "YIELD", "MINER", "WALLET",
@@ -15,10 +16,12 @@ export const WordMemory: React.FC<{ onComplete: (score: number) => void }> = ({ 
   const { playClick, playSuccess, playError } = useAchievementSounds();
   const [sequence, setSequence] = useState<string[]>([]);
   const [isShowing, setIsShowing] = useState(true);
+  const [displayIndex, setDisplayIndex] = useState(0);
   const [currentIndex, setCurrentStep] = useState(0);
   const [level, setLevel] = useState(1);
   const [score, setScore] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [isStarted, setIsStarted] = useState(false);
 
   const startLevel = useCallback(() => {
     const newSequence = [];
@@ -27,17 +30,29 @@ export const WordMemory: React.FC<{ onComplete: (score: number) => void }> = ({ 
     }
     setSequence(newSequence);
     setIsShowing(true);
+    setDisplayIndex(0);
     setCurrentStep(0);
-
-    // Show each word for 1.5 seconds
-    setTimeout(() => {
-      setIsShowing(false);
-    }, (level + 2) * 1500);
   }, [level]);
 
   useEffect(() => {
-    startLevel();
-  }, [level, startLevel]);
+    if (isStarted) {
+      startLevel();
+    }
+  }, [level, startLevel, isStarted]);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (isShowing && sequence.length > 0) {
+      if (displayIndex < sequence.length) {
+        timer = setTimeout(() => {
+          setDisplayIndex(prev => prev + 1);
+        }, 1500);
+      } else {
+        setIsShowing(false);
+      }
+    }
+    return () => clearTimeout(timer);
+  }, [isShowing, displayIndex, sequence.length]);
 
   const handleWordClick = (word: string) => {
     if (isShowing || isGameOver) return;
@@ -66,13 +81,37 @@ export const WordMemory: React.FC<{ onComplete: (score: number) => void }> = ({ 
     onComplete(score);
   };
 
+  const resetGame = () => {
+    setLevel(1);
+    setScore(0);
+    setIsGameOver(false);
+    startLevel();
+  };
+
+  if (!isStarted) {
+    return (
+      <GameIntro
+        title="Word Chain"
+        description="Test your verbal memory and auditory loops with complex sequences of DeFi-related terms."
+        icon={Brain}
+        instructions={[
+          "Observe the sequence of words carefully as they appear.",
+          "Once the sequence ends, click the words in the exact same order.",
+          "The sequence gets longer with each level.",
+          "A single mistake ends the game."
+        ]}
+        onStart={() => setIsStarted(true)}
+      />
+    );
+  }
+
   if (isGameOver) {
     return (
       <div className="text-center space-y-6">
         <Trophy className="w-16 h-16 text-yellow-500 mx-auto glow-yellow" />
         <h3 className="text-2xl font-bold font-consciousness">Game Over</h3>
         <p className="text-4xl font-bold text-primary">{score} Points</p>
-        <Button onClick={() => window.location.reload()}>Try Again</Button>
+        <Button onClick={resetGame}>Try Again</Button>
       </div>
     );
   }
@@ -94,14 +133,13 @@ export const WordMemory: React.FC<{ onComplete: (score: number) => void }> = ({ 
         <AnimatePresence mode="wait">
           {isShowing ? (
             <motion.div
-              key={`word-${currentIndex}`}
+              key={`word-${displayIndex}`}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
               className="text-4xl font-bold text-white tracking-widest"
             >
-              {sequence[Math.floor((Date.now() % (sequence.length * 1500)) / 1500)] || sequence[0]}
-              {/* Note: This is a simplification for the demo, real logic would use a timer for sequential display */}
+              {sequence[displayIndex]}
             </motion.div>
           ) : (
             <div className="text-center">

@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Zap, Clock, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAchievementSounds } from '@/hooks/useAchievementSounds';
+import { GameIntro } from './GameIntro';
 
 export const ReactionTime: React.FC<{ onComplete: (score: number) => void }> = ({ onComplete }) => {
   const { playSuccess, playWrongAnswer, playClick } = useAchievementSounds();
@@ -67,6 +68,23 @@ export const ReactionTime: React.FC<{ onComplete: (score: number) => void }> = (
       default: return 'bg-white/3 border-white/8';
     }
   };
+
+  if (gameState === 'idle') {
+    return (
+      <GameIntro
+        title="Reaction Test"
+        description="Improve mental agility and physical reflex speed with this lightning-fast challenge."
+        icon={Zap}
+        instructions={[
+          "Click the screen once to start the timer.",
+          "Wait for the red background to turn blue.",
+          "Click as FAST as you can when you see blue!",
+          "Don't click too early, or you'll have to restart."
+        ]}
+        onStart={startTest}
+      />
+    );
+  }
 
   return (
     <div className="flex flex-col items-center gap-6 p-4 w-full max-w-md mx-auto">
