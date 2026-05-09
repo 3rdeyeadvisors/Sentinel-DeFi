@@ -20,25 +20,37 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    // Authorize: either an authenticated admin OR a webhook with the shared secret.
-    const webhookSecret = Deno.env.get('BROADCAST_WEBHOOK_SECRET');
-    const providedSecret = req.headers.get('x-webhook-secret');
-    const secretOk = !!webhookSecret && providedSecret === webhookSecret;
-    if (!secretOk) {
-      const { requireAdmin } = await import("../_shared/admin-auth.ts");
-      const auth = await requireAdmin(req);
-      if (!auth.ok) {
-        return new Response(JSON.stringify({ error: auth.message }), {
-          status: auth.status,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        });
-      }
-    }
-
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
+
+    // Authorize: webhook shared secret OR authenticated admin user.
+    const webhookSecret = Deno.env.get('BROADCAST_WEBHOOK_SECRET');
+    const providedSecret = req.headers.get('x-webhook-secret');
+    const secretOk = !!webhookSecret && providedSecret === webhookSecret;
+    if (!secretOk) {
+      const authHeader = req.headers.get('Authorization');
+      if (!authHeader) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      const token = authHeader.replace(/^Bearer\s+/i, '');
+      const { data: u, error: uErr } = await supabase.auth.getUser(token);
+      if (uErr || !u?.user) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      const { data: roleRow } = await supabase.from('user_roles')
+        .select('role').eq('user_id', u.user.id).eq('role', 'admin').maybeSingle();
+      if (!roleRow) {
+        return new Response(JSON.stringify({ error: 'Admin role required' }), {
+          status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
 
     const payload: BroadcastPayload = await req.json();
     console.log('Received broadcast content:', payload);

@@ -14,26 +14,39 @@ serve(async (req) => {
 
   try {
     // Require admin auth — this can trigger Printify fulfillment.
-    const { requireAdmin } = await import("../_shared/admin-auth.ts");
-    const auth = await requireAdmin(req);
-    if (!auth.ok) {
-      return new Response(JSON.stringify({ error: auth.message }), {
-        status: auth.status,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-
-    const { paymentId } = await req.json();
-    
-    const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
-      apiVersion: "2023-10-16",
-    });
-
     const supabaseClient = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
       { auth: { persistSession: false } }
     );
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const token = authHeader.replace(/^Bearer\s+/i, "");
+    const { data: u, error: uErr } = await supabaseClient.auth.getUser(token);
+    if (uErr || !u?.user) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const { data: roleRow } = await supabaseClient.from("user_roles")
+      .select("role").eq("user_id", u.user.id).eq("role", "admin").maybeSingle();
+    if (!roleRow) {
+      return new Response(JSON.stringify({ error: "Admin role required" }), {
+        status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    const { paymentId } = await req.json();
+
+    const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
+      apiVersion: "2023-10-16",
+    });
+
+    // supabaseClient already created above for auth check
 
     console.log("Looking up payment:", paymentId);
 
