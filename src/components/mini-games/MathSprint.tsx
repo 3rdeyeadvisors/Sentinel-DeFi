@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Timer, Zap, CheckCircle2, XCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAchievementSounds } from '@/hooks/useAchievementSounds';
+import { GameIntro } from './GameIntro';
 
 interface Problem {
   text: string;
@@ -92,6 +93,23 @@ export const MathSprint: React.FC<{ onComplete: (score: number) => void }> = ({ 
     }
   };
 
+  if (gameState === 'idle') {
+    return (
+      <GameIntro
+        title="Math Sprint"
+        description="Fast-paced mental arithmetic to sharpen your fluid intelligence and speed."
+        icon={Timer}
+        instructions={[
+          "Solve as many math problems as you can before time runs out.",
+          "Type your answer and press Enter.",
+          "Correct answers increase your score.",
+          "The game lasts for 30 seconds."
+        ]}
+        onStart={startGame}
+      />
+    );
+  }
+
   return (
     <div className="flex flex-col items-center gap-6 p-4 w-full max-w-md mx-auto">
       <div className="flex justify-between w-full items-center px-2">
@@ -116,12 +134,6 @@ export const MathSprint: React.FC<{ onComplete: (score: number) => void }> = ({ 
             </motion.div>
           )}
         </AnimatePresence>
-
-        {gameState === 'idle' && (
-          <Button onClick={startGame} size="lg" className="gap-2">
-            <Zap className="w-5 h-5" /> Start Math Sprint
-          </Button>
-        )}
 
         {gameState === 'playing' && problem && (
           <motion.form

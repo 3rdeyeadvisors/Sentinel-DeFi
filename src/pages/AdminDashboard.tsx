@@ -30,6 +30,11 @@ const AdminDashboard = () => {
     return () => clearInterval(timer);
   }, []);
 
+  // Scroll to top when switching sections
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [activeSection]);
+
   const checkAdminStatus = async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();

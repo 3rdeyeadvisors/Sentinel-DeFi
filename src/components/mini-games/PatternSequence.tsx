@@ -2,6 +2,8 @@ import React, { useState, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { useAchievementSounds } from '@/hooks/useAchievementSounds';
+import { GameIntro } from './GameIntro';
+import { Target } from 'lucide-react';
 
 const COLORS = [
   { id: 0, color: 'bg-red-500', glow: 'shadow-[0_0_20px_#ef4444]' },
@@ -71,6 +73,23 @@ export const PatternSequence: React.FC<{ onComplete: (score: number) => void }> 
     startNextLevel([]);
   };
 
+  if (gameState === 'idle') {
+    return (
+      <GameIntro
+        title="Pattern Sequence"
+        description="Enhance focus and sequence recognition by following a growing pattern of colors and sounds."
+        icon={Target}
+        instructions={[
+          "Watch the sequence of colors as they light up.",
+          "Repeat the sequence by clicking the colors in the same order.",
+          "The sequence grows by one color each level.",
+          "See how many levels you can complete without a mistake."
+        ]}
+        onStart={startGame}
+      />
+    );
+  }
+
   return (
     <div className="flex flex-col items-center gap-8 p-4 w-full max-w-md mx-auto">
       <div className="text-2xl font-consciousness text-primary">Level: {level}</div>
@@ -93,9 +112,6 @@ export const PatternSequence: React.FC<{ onComplete: (score: number) => void }> 
       </motion.div>
 
       <div className="text-center h-12 flex items-center justify-center">
-        {gameState === 'idle' && (
-          <Button onClick={startGame} size="lg">Start Pattern Test</Button>
-        )}
         {gameState === 'showing' && <p className="text-lg text-primary animate-pulse">Watch the pattern...</p>}
         {gameState === 'playing' && <p className="text-lg text-primary">Your turn!</p>}
         {gameState === 'gameOver' && (

@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Brain, Trophy, Zap, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAchievementSounds } from '@/hooks/useAchievementSounds';
+import { GameIntro } from './GameIntro';
 
 const COLORS = ["#EF4444", "#3B82F6", "#10B981", "#F59E0B"];
 const COLOR_NAMES = ["RED", "BLUE", "GREEN", "YELLOW"];
@@ -60,16 +61,28 @@ export const StroopEffect: React.FC<{ onComplete: (score: number) => void }> = (
     onComplete(score);
   };
 
+  const resetGame = () => {
+    setScore(0);
+    setTimeLeft(30);
+    setIsGameOver(false);
+    setIsStarted(true);
+    nextChallenge();
+  };
+
   if (!isStarted) {
     return (
-      <div className="text-center space-y-6 max-w-sm">
-        <Zap className="w-16 h-16 text-yellow-500 mx-auto" />
-        <h3 className="text-2xl font-bold font-consciousness">Stroop Test</h3>
-        <p className="text-white/60 text-sm">
-          Select the color of the text, NOT what the word says. Speed and accuracy matter!
-        </p>
-        <Button onClick={handleStart} className="w-full">Start Game</Button>
-      </div>
+      <GameIntro
+        title="Stroop Test"
+        description="Overcome cognitive interference by identifying the color of the text rather than reading the word itself."
+        icon={Zap}
+        instructions={[
+          "Look at the word displayed in the center.",
+          "Identify the actual color of the font.",
+          "Ignore what the word says.",
+          "Click the button corresponding to the font color as fast as possible."
+        ]}
+        onStart={handleStart}
+      />
     );
   }
 
@@ -79,7 +92,7 @@ export const StroopEffect: React.FC<{ onComplete: (score: number) => void }> = (
         <Trophy className="w-16 h-16 text-yellow-500 mx-auto glow-yellow" />
         <h3 className="text-2xl font-bold font-consciousness">Test Complete</h3>
         <p className="text-4xl font-bold text-primary">{score} Points</p>
-        <Button onClick={() => window.location.reload()}>Try Again</Button>
+        <Button onClick={resetGame}>Try Again</Button>
       </div>
     );
   }

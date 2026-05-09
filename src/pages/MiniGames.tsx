@@ -198,6 +198,11 @@ const MiniGames = () => {
 
   const ActiveGameComponent = GAMES.find(g => g.id === activeGame)?.component;
 
+  // Scroll to top when switching between game list and an active game
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [activeGame]);
+
   return (
     <>
       <SEO

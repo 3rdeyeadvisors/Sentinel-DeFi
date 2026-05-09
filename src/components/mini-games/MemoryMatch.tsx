@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Brain, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAchievementSounds } from '@/hooks/useAchievementSounds';
+import { GameIntro } from './GameIntro';
 
 interface MemoryCard {
   id: number;
@@ -20,6 +21,7 @@ export const MemoryMatch: React.FC<{ onComplete: (score: number) => void }> = ({
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const [moves, setMoves] = useState(0);
   const [isWon, setIsWon] = useState(false);
+  const [isStarted, setIsStarted] = useState(false);
 
   const initGame = useCallback(() => {
     const shuffled = [...SYMBOLS, ...SYMBOLS]
@@ -37,8 +39,10 @@ export const MemoryMatch: React.FC<{ onComplete: (score: number) => void }> = ({
   }, []);
 
   useEffect(() => {
-    initGame();
-  }, [initGame]);
+    if (isStarted) {
+      initGame();
+    }
+  }, [isStarted, initGame]);
 
   const handleCardClick = (id: number) => {
     if (flippedCards.length === 2 || cards[id].isFlipped || cards[id].isMatched || isWon) return;
@@ -79,6 +83,23 @@ export const MemoryMatch: React.FC<{ onComplete: (score: number) => void }> = ({
       }
     }
   };
+
+  if (!isStarted) {
+    return (
+      <GameIntro
+        title="Memory Match"
+        description="Strengthen short-term memory and visual focus by matching pairs of symbols."
+        icon={Brain}
+        instructions={[
+          "Click a card to reveal its symbol.",
+          "Click another card to find its match.",
+          "If they match, they stay flipped.",
+          "Match all pairs in as few moves as possible."
+        ]}
+        onStart={() => setIsStarted(true)}
+      />
+    );
+  }
 
   return (
     <div className="flex flex-col items-center gap-6 p-4">

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAchievementSounds } from '@/hooks/useAchievementSounds';
 import { Target, Trophy, Timer } from 'lucide-react';
 import { toast } from "sonner";
+import { GameIntro } from './GameIntro';
 
 export const GridFocus: React.FC<{ onComplete: (score: number) => void }> = ({ onComplete }) => {
   const { playClick, playSuccess, playError } = useAchievementSounds();
@@ -70,16 +71,31 @@ export const GridFocus: React.FC<{ onComplete: (score: number) => void }> = ({ o
     onComplete(score);
   };
 
+  const resetGame = () => {
+    setGridSize(3);
+    setTargetNumber(1);
+    setNumbers([]);
+    setTimeLeft(30);
+    setScore(0);
+    setIsGameOver(false);
+    setIsStarted(true);
+    generateGrid();
+  };
+
   if (!isStarted) {
     return (
-      <div className="text-center space-y-6 max-w-sm">
-        <Target className="w-16 h-16 text-primary mx-auto" />
-        <h3 className="text-2xl font-bold font-consciousness">Grid Focus</h3>
-        <p className="text-white/60 text-sm">
-          Click the numbers in order from 1 to {gridSize * gridSize}. How many grids can you clear?
-        </p>
-        <Button onClick={handleStart} className="w-full">Start Game</Button>
-      </div>
+      <GameIntro
+        title="Grid Focus"
+        description="Enhance peripheral vision and visual search speed by locating numbers in sequence."
+        icon={Target}
+        instructions={[
+          `Locate and click numbers in sequence from 1 to ${gridSize * gridSize}.`,
+          "The grid will expand as you progress.",
+          "Speed is rewarded with bonus points.",
+          "Complete as many grids as possible before time runs out."
+        ]}
+        onStart={handleStart}
+      />
     );
   }
 
@@ -89,7 +105,7 @@ export const GridFocus: React.FC<{ onComplete: (score: number) => void }> = ({ o
         <Trophy className="w-16 h-16 text-yellow-500 mx-auto glow-yellow" />
         <h3 className="text-2xl font-bold font-consciousness">Time's Up!</h3>
         <p className="text-4xl font-bold text-primary">{score} Points</p>
-        <Button onClick={() => window.location.reload()}>Try Again</Button>
+        <Button onClick={resetGame}>Try Again</Button>
       </div>
     );
   }
