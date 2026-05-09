@@ -24,7 +24,35 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { email, game_type, score, iq_score, percentile, description }: MiniGameResultRequest = await req.json();
+    // Require authenticated user
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const supabaseAuth = createClient(
+      Deno.env.get("SUPABASE_URL") ?? "",
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
+      { auth: { persistSession: false } }
+    );
+    const { data: { user }, error: userErr } = await supabaseAuth.auth.getUser(
+      authHeader.replace("Bearer ", "")
+    );
+    if (userErr || !user) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    const body: MiniGameResultRequest = await req.json();
+    const game_type = String(body.game_type ?? "").slice(0, 80);
+    const score = Number.isFinite(Number(body.score)) ? Number(body.score) : 0;
+    const iq_score = body.iq_score !== undefined ? Number(body.iq_score) : undefined;
+    const percentile = body.percentile ? String(body.percentile).slice(0, 40) : undefined;
+    const description = body.description ? String(body.description).slice(0, 500) : undefined;
+    // Force recipient to authenticated user's email — prevents email relay abuse
+    const email = user.email!;
 
     console.log(`Sending ${game_type} results to:`, email);
 
