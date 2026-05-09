@@ -46,11 +46,7 @@ serve(async (req) => {
       apiVersion: "2023-10-16",
     });
 
-    const supabaseClient = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
-      { auth: { persistSession: false } }
-    );
+    // supabaseClient already created above for auth check
 
     console.log("Looking up payment:", paymentId);
 
