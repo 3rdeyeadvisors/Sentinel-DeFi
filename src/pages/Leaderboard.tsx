@@ -4,7 +4,9 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { useProfile } from '@/hooks/useProfile';
 import { Trophy, Medal, Award, Crown, Timer } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 import PageHero from '@/components/PageHero';
 import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
@@ -44,6 +46,24 @@ const Leaderboard = () => {
         />
 
         <div className="max-w-5xl mx-auto px-6">
+          {!user && (
+            <Card className="p-8 mb-12 bg-white/3 border border-dashed border-violet-500/20 rounded-3xl flex flex-col items-center justify-center text-center">
+              <div className="w-16 h-16 bg-violet-500/10 rounded-full flex items-center justify-center mb-6">
+                <Trophy className="w-8 h-8 text-violet-400" />
+              </div>
+              <h3 className="font-consciousness text-xl font-bold text-white mb-2">Join the Competition</h3>
+              <p className="text-white/40 font-body max-w-md mb-8">
+                Sign in to start earning points, climb the leaderboard, and see how you rank against the community.
+              </p>
+              <Button
+                className="font-body bg-violet-600 hover:bg-violet-500 text-white rounded-xl px-8 h-auto py-4"
+                onClick={() => navigate('/auth')}
+              >
+                Sign In to Participate
+              </Button>
+            </Card>
+          )}
+
           {/* Time Period Tabs - Responsive Container */}
           <div className="flex flex-col items-center gap-6 mb-12">
             <div className="inline-flex p-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full gap-1 overflow-x-auto no-scrollbar max-w-full">

@@ -56,7 +56,7 @@ export const PointsDisplay = ({ compact = false }: PointsDisplayProps) => {
         <div className="grid grid-cols-3 gap-3 mb-4">
           <div className="text-center p-3 bg-black/50 rounded-lg">
             <div className="text-2xl sm:text-3xl font-bold text-violet-400 font-consciousness">
-              {totalPoints.toLocaleString()}
+              {totalPoints > 0 ? totalPoints.toLocaleString() : '0'}
             </div>
             <div className="text-xs text-white/50 font-body">This Month</div>
           </div>
@@ -65,11 +65,11 @@ export const PointsDisplay = ({ compact = false }: PointsDisplayProps) => {
             <div className="flex items-center justify-center gap-1">
               <TrendingUp className="w-4 h-4 text-accent" />
               <span className="text-2xl sm:text-3xl font-bold text-violet-400 font-consciousness">
-                #{rank?.rank || '-'}
+                {rank?.rank ? `#${rank.rank}` : '-'}
               </span>
             </div>
             <div className="text-xs text-white/50 font-body">
-              of {rank?.total_users ? rank.total_users.toLocaleString() : '...'}
+              {rank?.total_users ? `of ${rank.total_users.toLocaleString()}` : 'Global Rank'}
             </div>
           </div>
           

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { usePoints } from '@/hooks/usePoints';
 import { useBadges } from '@/hooks/useBadges';
 import { useAchievementSounds } from '@/hooks/useAchievementSounds';
@@ -125,6 +126,7 @@ const GAMES = [
 
 const MiniGames = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const { awardPoints, refreshPoints } = usePoints();
   const { awardBadge, hasBadge } = useBadges();
   const { playPointsEarned, playBadgeEarned, playSuccess } = useAchievementSounds();
@@ -305,23 +307,35 @@ const MiniGames = () => {
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-2xl font-bold mb-2">Cognitive Science & Performance</h3>
                   <p className="text-white/50">
-                    Regular engagement with these exercises leverages neuroplasticity to improve processing speed,
-                    working memory, and problem-solving efficiency. For maximum benefit, train for at least 15 minutes daily.
+                    {user
+                      ? "Regular engagement with these exercises leverages neuroplasticity to improve processing speed, working memory, and problem-solving efficiency."
+                      : "Sign in to track your cognitive performance, earn points, and unlock achievements as you sharpen your mind."}
                   </p>
                 </div>
-                <Button
-                  variant={showAnalytics ? "default" : "outline"}
-                  size="lg"
-                  className="min-h-[44px]"
-                  onClick={() => setShowAnalytics(!showAnalytics)}
-                >
-                  {showAnalytics ? "Hide Analytics" : "View Performance Dashboard"}
-                </Button>
+                {user ? (
+                  <Button
+                    variant={showAnalytics ? "default" : "outline"}
+                    size="lg"
+                    className="min-h-[44px]"
+                    onClick={() => setShowAnalytics(!showAnalytics)}
+                  >
+                    {showAnalytics ? "Hide Analytics" : "View Performance Dashboard"}
+                  </Button>
+                ) : (
+                  <Button
+                    variant="default"
+                    size="lg"
+                    className="min-h-[44px] bg-violet-600 hover:bg-violet-500"
+                    onClick={() => navigate('/auth')}
+                  >
+                    Sign In to Track Progress
+                  </Button>
+                )}
               </div>
             </Card>
 
             <AnimatePresence>
-              {showAnalytics && (
+              {user && showAnalytics && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
