@@ -31,6 +31,19 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Require service-role JWT (DB webhook) or CRON_SECRET
+    const authHeader = req.headers.get("Authorization") ?? "";
+    const cronSecret = req.headers.get("x-cron-secret");
+    const expectedSecret = Deno.env.get("CRON_SECRET");
+    const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+    const isService = serviceKey && authHeader === `Bearer ${serviceKey}`;
+    const isCron = expectedSecret && cronSecret === expectedSecret;
+    if (!isService && !isCron) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const payload: NotificationPayload = await req.json();
     console.log('Received notification payload:', payload);
 
