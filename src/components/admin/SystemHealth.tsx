@@ -118,7 +118,7 @@ export const SystemHealth = () => {
                 <TableHeader>
                   <TableRow className="hover:bg-transparent border-white/10">
                     <TableHead className="text-white/70">Recipient</TableHead>
-                    <TableHead className="text-white/70">Subject</TableHead>
+                    <TableHead className="text-white/70">Type</TableHead>
                     <TableHead className="text-white/70">Status</TableHead>
                     <TableHead className="text-white/70">Date</TableHead>
                   </TableRow>
@@ -134,7 +134,7 @@ export const SystemHealth = () => {
                     emailLogs?.map((log) => (
                       <TableRow key={log.id} className="border-white/10 hover:bg-white/5">
                         <TableCell className="text-white/80">{log.recipient_email}</TableCell>
-                        <TableCell className="text-white/80">{log.subject}</TableCell>
+                        <TableCell className="text-white/80">{log.email_type}</TableCell>
                         <TableCell>
                           <Badge variant="destructive">{log.status}</Badge>
                         </TableCell>
