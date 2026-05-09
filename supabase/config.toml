@@ -58,11 +58,11 @@ project_id = "zapbkuaejvzpqerkkcnc"
   [functions.get-founding33-spots]
     verify_jwt = false
   [functions.mailchimp-sync]
-    verify_jwt = false
+    verify_jwt = true
   [functions.manual-process-order]
-    verify_jwt = false
+    verify_jwt = true
   [functions.manual-send-broadcast]
-    verify_jwt = false
+    verify_jwt = true
   [functions.notify-new-signup]
     verify_jwt = false
   [functions.orion-chat]
@@ -74,7 +74,7 @@ project_id = "zapbkuaejvzpqerkkcnc"
   [functions.seed-bot-users]
     verify_jwt = false
   [functions.send-admin-order-notification]
-    verify_jwt = false
+    verify_jwt = true
   [functions.send-contact-email]
     verify_jwt = false
   [functions.send-course-reminder]
@@ -92,9 +92,9 @@ project_id = "zapbkuaejvzpqerkkcnc"
   [functions.send-platform-upgrade-email]
     verify_jwt = false
   [functions.send-raffle-announcement]
-    verify_jwt = false
+    verify_jwt = true
   [functions.send-raffle-ended]
-    verify_jwt = false
+    verify_jwt = true
   [functions.send-scheduled-broadcast]
     verify_jwt = false
   [functions.send-shipping-notification]
@@ -102,9 +102,9 @@ project_id = "zapbkuaejvzpqerkkcnc"
   [functions.send-subscriber-signup-reminder]
     verify_jwt = false
   [functions.send-trial-expiring-email]
-    verify_jwt = false
+    verify_jwt = true
   [functions.send-winner-announcement]
-    verify_jwt = false
+    verify_jwt = true
   [functions.setup-course-stripe-products]
     verify_jwt = true
   [functions.simulate-bot-activity]
@@ -131,3 +131,7 @@ project_id = "zapbkuaejvzpqerkkcnc"
     verify_jwt = false
   [functions.verify-nft-ownership]
     verify_jwt = false
+  [functions.send-broadcast-alert]
+    verify_jwt = true
+  [functions.send-username-verification-email]
+    verify_jwt = true

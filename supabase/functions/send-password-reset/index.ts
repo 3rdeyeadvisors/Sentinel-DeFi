@@ -27,6 +27,30 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     console.log("Received password reset request");
     const { email, resetUrl }: PasswordResetRequest = await req.json();
+
+    // Security: Validate resetUrl
+    const isUrlSecure = (url: string) => {
+      try {
+        const parsedUrl = new URL(url);
+        const allowedHosts = [
+          "sentineldefi.online",
+          "www.sentineldefi.online",
+          "localhost"
+        ];
+        return allowedHosts.includes(parsedUrl.hostname) && parsedUrl.protocol === (parsedUrl.hostname === 'localhost' ? 'http:' : 'https:');
+      } catch {
+        return false;
+      }
+    };
+
+    if (!isUrlSecure(resetUrl)) {
+      console.error("Invalid reset URL:", resetUrl);
+      return new Response(
+        JSON.stringify({ error: "Invalid reset URL" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
     console.log(`Processing password reset for email: ${email?.substring(0, 5)}...`);
 
     // Get user's name from profiles table
